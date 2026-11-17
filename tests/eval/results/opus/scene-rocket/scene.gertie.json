@@ -1,0 +1,3439 @@
+{
+ "gertie": 1,
+ "name": "rocket-liftoff",
+ "tier": "scene",
+ "canvas": {
+  "w": 1024,
+  "h": 1024,
+  "background": "#070b1f"
+ },
+ "fps": 30,
+ "duration": 5.0,
+ "loop": false,
+ "poster": 2.6,
+ "palette": {
+  "sky-top": "#070b1f",
+  "sky-mid": "#141a44",
+  "sky-low": "#3a2a63",
+  "star": "#fff6d8",
+  "star-blue": "#bfd4ff",
+  "hill-far": "#1c1f45",
+  "hill-near": "#11132e",
+  "ground": "#0b0c1f",
+  "tower": "#2a2f5c",
+  "tower-light": "#ff5a5f",
+  "hull": "#eef1f7",
+  "hull-shade": "#b9c0d4",
+  "hull-tint": "#ffffff",
+  "red": "#e8434b",
+  "red-shade": "#a9262f",
+  "glass": "#5fd0ff",
+  "glass-shade": "#2a7fb8",
+  "metal": "#5b6382",
+  "flame-out": "#ff7a1a",
+  "flame-mid": "#ffc83a",
+  "flame-core": "#fff4c2",
+  "smoke": "#d9d6e6",
+  "smoke-shade": "#9c97b3"
+ },
+ "nodes": [
+  {
+   "id": "sky",
+   "type": "rect",
+   "x": 512,
+   "y": 512,
+   "w": 1024,
+   "h": 1024,
+   "fill": {
+    "type": "linear",
+    "from": [
+     0,
+     -512
+    ],
+    "to": [
+     0,
+     400
+    ],
+    "stops": [
+     [
+      0,
+      "$sky-top"
+     ],
+     [
+      0.6,
+      "$sky-mid"
+     ],
+     [
+      1,
+      "$sky-low"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "moon",
+   "type": "group",
+   "x": 820,
+   "y": 190,
+   "children": [
+    {
+     "id": "moon-glow",
+     "type": "ellipse",
+     "r": 90,
+     "fill": {
+      "type": "radial",
+      "center": [
+       0,
+       0
+      ],
+      "radius": 90,
+      "stops": [
+       [
+        0,
+        "#fff6d855"
+       ],
+       [
+        0.6,
+        "#fff6d814"
+       ],
+       [
+        1,
+        "#fff6d800"
+       ]
+      ]
+     }
+    },
+    {
+     "id": "moon-disc",
+     "type": "path",
+     "fill": "#f4ecd0",
+     "d": "M 0 -44 C 24 -44 44 -24 44 0 C 44 24 24 44 0 44 C -24 44 -44 24 -44 0 C -44 -24 -24 -44 0 -44 Z"
+    },
+    {
+     "id": "moon-crater-a",
+     "type": "path",
+     "fill": "#d9cfae",
+     "d": "M -14 -12 C -6 -14 0 -8 -2 0 C -4 6 -14 6 -18 0 C -20 -6 -18 -10 -14 -12 Z"
+    },
+    {
+     "id": "moon-crater-b",
+     "type": "path",
+     "fill": "#d9cfae",
+     "d": "M 14 10 C 20 8 26 14 24 20 C 22 26 14 26 10 22 C 8 16 10 12 14 10 Z"
+    },
+    {
+     "id": "moon-crater-c",
+     "type": "path",
+     "fill": "#d9cfae",
+     "d": "M 10 -26 C 14 -28 18 -24 16 -20 C 14 -16 8 -18 8 -22 C 8 -24 9 -26 10 -26 Z"
+    }
+   ]
+  },
+  {
+   "id": "stars",
+   "type": "group",
+   "stagger": {
+    "phase": 0.17,
+    "order": "random",
+    "seed": 4
+   },
+   "motion": [
+    {
+     "preset": "twinkle",
+     "duration": 2.5,
+     "repeat": "loop",
+     "dip": 0.4,
+     "applyTo": "children"
+    }
+   ],
+   "children": [
+    {
+     "id": "star-0",
+     "type": "ellipse",
+     "x": 361,
+     "y": 184,
+     "r": 1.5,
+     "fill": "$star"
+    },
+    {
+     "id": "star-1",
+     "type": "ellipse",
+     "x": 404,
+     "y": 89,
+     "r": 1.5,
+     "fill": "$star"
+    },
+    {
+     "id": "star-2",
+     "type": "path",
+     "x": 474,
+     "y": 458,
+     "fill": "$star",
+     "d": "M 0 -11 C 1.5 -2 2 -1.5 11 0 C 2 1.5 1.5 2 0 11 C -1.5 2 -2 1.5 -11 0 C -2 -1.5 -1.5 -2 0 -11 Z"
+    },
+    {
+     "id": "star-3",
+     "type": "ellipse",
+     "x": 90,
+     "y": 156,
+     "r": 1.5,
+     "fill": "$star"
+    },
+    {
+     "id": "star-4",
+     "type": "path",
+     "x": 620,
+     "y": 436,
+     "fill": "$star",
+     "d": "M 0 -13 C 1.5 -2 2 -1.5 13 0 C 2 1.5 1.5 2 0 13 C -1.5 2 -2 1.5 -13 0 C -2 -1.5 -1.5 -2 0 -13 Z"
+    },
+    {
+     "id": "star-6",
+     "type": "path",
+     "x": 326,
+     "y": 459,
+     "fill": "$star",
+     "d": "M 0 -11 C 1.5 -2 2 -1.5 11 0 C 2 1.5 1.5 2 0 11 C -1.5 2 -2 1.5 -11 0 C -2 -1.5 -1.5 -2 0 -11 Z"
+    },
+    {
+     "id": "star-7",
+     "type": "path",
+     "x": 603,
+     "y": 215,
+     "fill": "$star",
+     "d": "M 0 -9 C 1.5 -2 2 -1.5 9 0 C 2 1.5 1.5 2 0 9 C -1.5 2 -2 1.5 -9 0 C -2 -1.5 -1.5 -2 0 -9 Z"
+    },
+    {
+     "id": "star-8",
+     "type": "ellipse",
+     "x": 411,
+     "y": 129,
+     "r": 1.5,
+     "fill": "$star"
+    },
+    {
+     "id": "star-9",
+     "type": "ellipse",
+     "x": 663,
+     "y": 240,
+     "r": 2.5,
+     "fill": "$star"
+    },
+    {
+     "id": "star-10",
+     "type": "ellipse",
+     "x": 506,
+     "y": 494,
+     "r": 2,
+     "fill": "$star"
+    },
+    {
+     "id": "star-11",
+     "type": "path",
+     "x": 745,
+     "y": 279,
+     "fill": "$star",
+     "d": "M 0 -11 C 1.5 -2 2 -1.5 11 0 C 2 1.5 1.5 2 0 11 C -1.5 2 -2 1.5 -11 0 C -2 -1.5 -1.5 -2 0 -11 Z"
+    },
+    {
+     "id": "star-12",
+     "type": "ellipse",
+     "x": 926,
+     "y": 381,
+     "r": 1.5,
+     "fill": "$star"
+    },
+    {
+     "id": "star-13",
+     "type": "ellipse",
+     "x": 150,
+     "y": 554,
+     "r": 2,
+     "fill": "$star-blue"
+    },
+    {
+     "id": "star-14",
+     "type": "ellipse",
+     "x": 985,
+     "y": 530,
+     "r": 1.5,
+     "fill": "$star-blue"
+    },
+    {
+     "id": "star-15",
+     "type": "path",
+     "x": 812,
+     "y": 351,
+     "fill": "$star",
+     "d": "M 0 -11 C 1.5 -2 2 -1.5 11 0 C 2 1.5 1.5 2 0 11 C -1.5 2 -2 1.5 -11 0 C -2 -1.5 -1.5 -2 0 -11 Z"
+    },
+    {
+     "id": "star-16",
+     "type": "path",
+     "x": 623,
+     "y": 497,
+     "fill": "$star",
+     "d": "M 0 -11 C 1.5 -2 2 -1.5 11 0 C 2 1.5 1.5 2 0 11 C -1.5 2 -2 1.5 -11 0 C -2 -1.5 -1.5 -2 0 -11 Z"
+    },
+    {
+     "id": "star-17",
+     "type": "path",
+     "x": 515,
+     "y": 96,
+     "fill": "$star-blue",
+     "d": "M 0 -13 C 1.5 -2 2 -1.5 13 0 C 2 1.5 1.5 2 0 13 C -1.5 2 -2 1.5 -13 0 C -2 -1.5 -1.5 -2 0 -13 Z"
+    },
+    {
+     "id": "star-18",
+     "type": "path",
+     "x": 621,
+     "y": 486,
+     "fill": "$star",
+     "d": "M 0 -13 C 1.5 -2 2 -1.5 13 0 C 2 1.5 1.5 2 0 13 C -1.5 2 -2 1.5 -13 0 C -2 -1.5 -1.5 -2 0 -13 Z"
+    },
+    {
+     "id": "star-19",
+     "type": "ellipse",
+     "x": 385,
+     "y": 53,
+     "r": 1.5,
+     "fill": "$star"
+    },
+    {
+     "id": "star-20",
+     "type": "path",
+     "x": 535,
+     "y": 90,
+     "fill": "$star",
+     "d": "M 0 -13 C 1.5 -2 2 -1.5 13 0 C 2 1.5 1.5 2 0 13 C -1.5 2 -2 1.5 -13 0 C -2 -1.5 -1.5 -2 0 -13 Z"
+    },
+    {
+     "id": "star-21",
+     "type": "ellipse",
+     "x": 283,
+     "y": 437,
+     "r": 1.5,
+     "fill": "$star-blue"
+    },
+    {
+     "id": "star-22",
+     "type": "ellipse",
+     "x": 200,
+     "y": 489,
+     "r": 2,
+     "fill": "$star"
+    },
+    {
+     "id": "star-23",
+     "type": "ellipse",
+     "x": 868,
+     "y": 470,
+     "r": 3,
+     "fill": "$star"
+    },
+    {
+     "id": "star-24",
+     "type": "ellipse",
+     "x": 397,
+     "y": 419,
+     "r": 2,
+     "fill": "$star"
+    },
+    {
+     "id": "star-25",
+     "type": "ellipse",
+     "x": 184,
+     "y": 267,
+     "r": 2,
+     "fill": "$star"
+    },
+    {
+     "id": "star-26",
+     "type": "path",
+     "x": 299,
+     "y": 318,
+     "fill": "$star",
+     "d": "M 0 -11 C 1.5 -2 2 -1.5 11 0 C 2 1.5 1.5 2 0 11 C -1.5 2 -2 1.5 -11 0 C -2 -1.5 -1.5 -2 0 -11 Z"
+    },
+    {
+     "id": "star-27",
+     "type": "ellipse",
+     "x": 654,
+     "y": 356,
+     "r": 1.5,
+     "fill": "$star"
+    },
+    {
+     "id": "star-28",
+     "type": "ellipse",
+     "x": 497,
+     "y": 431,
+     "r": 3,
+     "fill": "$star"
+    },
+    {
+     "id": "star-29",
+     "type": "path",
+     "x": 679,
+     "y": 440,
+     "fill": "$star",
+     "d": "M 0 -9 C 1.5 -2 2 -1.5 9 0 C 2 1.5 1.5 2 0 9 C -1.5 2 -2 1.5 -9 0 C -2 -1.5 -1.5 -2 0 -9 Z"
+    },
+    {
+     "id": "star-30",
+     "type": "path",
+     "x": 481,
+     "y": 196,
+     "fill": "$star",
+     "d": "M 0 -9 C 1.5 -2 2 -1.5 9 0 C 2 1.5 1.5 2 0 9 C -1.5 2 -2 1.5 -9 0 C -2 -1.5 -1.5 -2 0 -9 Z"
+    },
+    {
+     "id": "star-31",
+     "type": "ellipse",
+     "x": 30,
+     "y": 184,
+     "r": 1.5,
+     "fill": "$star-blue"
+    },
+    {
+     "id": "star-32",
+     "type": "ellipse",
+     "x": 102,
+     "y": 242,
+     "r": 2.5,
+     "fill": "$star"
+    },
+    {
+     "id": "star-33",
+     "type": "ellipse",
+     "x": 385,
+     "y": 402,
+     "r": 3,
+     "fill": "$star"
+    }
+   ]
+  },
+  {
+   "id": "hill-far",
+   "type": "path",
+   "fill": "$hill-far",
+   "d": "M 0 720 C 120 640 220 650 330 700 C 430 745 520 690 640 660 C 760 630 880 680 1024 700 L 1024 1024 L 0 1024 Z"
+  },
+  {
+   "id": "hill-near",
+   "type": "path",
+   "fill": "$hill-near",
+   "d": "M 0 780 C 90 750 200 760 300 790 C 420 820 600 800 720 770 C 830 745 940 760 1024 790 L 1024 1024 L 0 1024 Z"
+  },
+  {
+   "id": "tower",
+   "type": "group",
+   "children": [
+    {
+     "id": "tower-leg-l",
+     "type": "rect",
+     "x": 338,
+     "y": 645.0,
+     "w": 8,
+     "h": 350,
+     "fill": "$tower"
+    },
+    {
+     "id": "tower-leg-r",
+     "type": "rect",
+     "x": 382,
+     "y": 645.0,
+     "w": 8,
+     "h": 350,
+     "fill": "$tower"
+    },
+    {
+     "id": "tower-brace-0",
+     "type": "path",
+     "fill": null,
+     "stroke": {
+      "color": "$tower",
+      "width": 4
+     },
+     "d": "M 338 480 L 382 520 M 382 480 L 338 520"
+    },
+    {
+     "id": "tower-brace-1",
+     "type": "path",
+     "fill": null,
+     "stroke": {
+      "color": "$tower",
+      "width": 4
+     },
+     "d": "M 338 520 L 382 560 M 382 520 L 338 560"
+    },
+    {
+     "id": "tower-brace-2",
+     "type": "path",
+     "fill": null,
+     "stroke": {
+      "color": "$tower",
+      "width": 4
+     },
+     "d": "M 338 560 L 382 600 M 382 560 L 338 600"
+    },
+    {
+     "id": "tower-brace-3",
+     "type": "path",
+     "fill": null,
+     "stroke": {
+      "color": "$tower",
+      "width": 4
+     },
+     "d": "M 338 600 L 382 640 M 382 600 L 338 640"
+    },
+    {
+     "id": "tower-brace-4",
+     "type": "path",
+     "fill": null,
+     "stroke": {
+      "color": "$tower",
+      "width": 4
+     },
+     "d": "M 338 640 L 382 680 M 382 640 L 338 680"
+    },
+    {
+     "id": "tower-brace-5",
+     "type": "path",
+     "fill": null,
+     "stroke": {
+      "color": "$tower",
+      "width": 4
+     },
+     "d": "M 338 680 L 382 720 M 382 680 L 338 720"
+    },
+    {
+     "id": "tower-brace-6",
+     "type": "path",
+     "fill": null,
+     "stroke": {
+      "color": "$tower",
+      "width": 4
+     },
+     "d": "M 338 720 L 382 760 M 382 720 L 338 760"
+    },
+    {
+     "id": "tower-brace-7",
+     "type": "path",
+     "fill": null,
+     "stroke": {
+      "color": "$tower",
+      "width": 4
+     },
+     "d": "M 338 760 L 382 800 M 382 760 L 338 800"
+    },
+    {
+     "id": "tower-arm-0",
+     "type": "path",
+     "fill": "$tower",
+     "d": "M 382 560 L 482 560 C 488 560 488 570 482 570 L 382 570 Z"
+    },
+    {
+     "id": "tower-arm-1",
+     "type": "path",
+     "fill": "$tower",
+     "d": "M 382 680 L 482 680 C 488 680 488 690 482 690 L 382 690 Z"
+    },
+    {
+     "id": "tower-cap",
+     "type": "path",
+     "fill": "$tower",
+     "d": "M 330 470 C 330 462 340 456 360 454 C 380 456 390 462 390 470 Z"
+    }
+   ]
+  },
+  {
+   "id": "tower-light",
+   "type": "ellipse",
+   "x": 360,
+   "y": 448,
+   "r": 6,
+   "fill": "$tower-light",
+   "motion": [
+    {
+     "preset": "flash",
+     "at": 0,
+     "duration": 1.25,
+     "count": 1,
+     "repeat": "loop"
+    }
+   ]
+  },
+  {
+   "id": "ground",
+   "type": "path",
+   "fill": "$ground",
+   "d": "M 0 830 C 200 818 400 814 512 814 C 640 814 830 818 1024 830 L 1024 1024 L 0 1024 Z"
+  },
+  {
+   "id": "pad",
+   "type": "group",
+   "children": [
+    {
+     "id": "pad-base",
+     "type": "path",
+     "fill": "$metal",
+     "d": "M 400 830 L 624 830 C 630 830 634 836 630 842 L 610 860 L 414 860 L 394 842 C 390 836 394 830 400 830 Z"
+    },
+    {
+     "id": "pad-top",
+     "type": "rect",
+     "x": 512,
+     "y": 822,
+     "w": 200,
+     "h": 14,
+     "radius": 4,
+     "fill": "$tower"
+    }
+   ]
+  },
+  {
+   "id": "rocket-shadow",
+   "type": "ellipse",
+   "x": 512,
+   "y": 824,
+   "rx": 70,
+   "ry": 8,
+   "fill": "#00000055",
+   "animate": {
+    "opacity": [
+     [
+      0,
+      1
+     ],
+     [
+      1.7,
+      1
+     ],
+     [
+      2.6,
+      0,
+      "easeOutCubic"
+     ],
+     [
+      5.0,
+      0,
+      "linear"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "smoke-back",
+   "type": "group",
+   "children": [
+    {
+     "id": "puff-3",
+     "type": "ellipse",
+     "r": 44,
+     "x": 507,
+     "y": 814,
+     "fill": "$smoke-shade",
+     "scale": 0,
+     "animate": {
+      "x": [
+       [
+        0,
+        507
+       ],
+       [
+        1.06,
+        507
+       ],
+       [
+        2.46,
+        282,
+        "easeOutCubic"
+       ],
+       [
+        5.0,
+        242,
+        "gentle"
+       ]
+      ],
+      "y": [
+       [
+        0,
+        814
+       ],
+       [
+        1.06,
+        814
+       ],
+       [
+        2.46,
+        765,
+        "easeOutQuad"
+       ],
+       [
+        5.0,
+        715,
+        "gentle"
+       ]
+      ],
+      "scale": [
+       [
+        0,
+        0
+       ],
+       [
+        1.06,
+        0.1
+       ],
+       [
+        1.6600000000000001,
+        1.2,
+        "easeOutCubic"
+       ],
+       [
+        5.0,
+        2.0,
+        "gentle"
+       ]
+      ],
+      "opacity": [
+       [
+        0,
+        0
+       ],
+       [
+        1.06,
+        0
+       ],
+       [
+        1.26,
+        0.95,
+        "easeOutCubic"
+       ],
+       [
+        3.2,
+        0.85,
+        "gentle"
+       ],
+       [
+        5.0,
+        0.35,
+        "smooth"
+       ]
+      ]
+     }
+    },
+    {
+     "id": "puff-4",
+     "type": "ellipse",
+     "r": 50,
+     "x": 506,
+     "y": 814,
+     "fill": "$smoke",
+     "scale": 0,
+     "animate": {
+      "x": [
+       [
+        0,
+        506
+       ],
+       [
+        1.18,
+        506
+       ],
+       [
+        2.58,
+        242,
+        "easeOutCubic"
+       ],
+       [
+        5.0,
+        202,
+        "gentle"
+       ]
+      ],
+      "y": [
+       [
+        0,
+        814
+       ],
+       [
+        1.18,
+        814
+       ],
+       [
+        2.58,
+        761,
+        "easeOutQuad"
+       ],
+       [
+        5.0,
+        711,
+        "gentle"
+       ]
+      ],
+      "scale": [
+       [
+        0,
+        0
+       ],
+       [
+        1.18,
+        0.1
+       ],
+       [
+        1.7799999999999998,
+        1.2,
+        "easeOutCubic"
+       ],
+       [
+        5.0,
+        2.0,
+        "gentle"
+       ]
+      ],
+      "opacity": [
+       [
+        0,
+        0
+       ],
+       [
+        1.18,
+        0
+       ],
+       [
+        1.38,
+        0.95,
+        "easeOutCubic"
+       ],
+       [
+        3.2,
+        0.85,
+        "gentle"
+       ],
+       [
+        5.0,
+        0.35,
+        "smooth"
+       ]
+      ]
+     }
+    },
+    {
+     "id": "puff-5",
+     "type": "ellipse",
+     "r": 56,
+     "x": 508,
+     "y": 814,
+     "fill": "$smoke",
+     "scale": 0,
+     "animate": {
+      "x": [
+       [
+        0,
+        508
+       ],
+       [
+        1.2999999999999998,
+        508
+       ],
+       [
+        2.6999999999999997,
+        176,
+        "easeOutCubic"
+       ],
+       [
+        5.0,
+        136,
+        "gentle"
+       ]
+      ],
+      "y": [
+       [
+        0,
+        814
+       ],
+       [
+        1.2999999999999998,
+        814
+       ],
+       [
+        2.6999999999999997,
+        756,
+        "easeOutQuad"
+       ],
+       [
+        5.0,
+        706,
+        "gentle"
+       ]
+      ],
+      "scale": [
+       [
+        0,
+        0
+       ],
+       [
+        1.2999999999999998,
+        0.1
+       ],
+       [
+        1.9,
+        1.2,
+        "easeOutCubic"
+       ],
+       [
+        5.0,
+        2.0,
+        "gentle"
+       ]
+      ],
+      "opacity": [
+       [
+        0,
+        0
+       ],
+       [
+        1.2999999999999998,
+        0
+       ],
+       [
+        1.4999999999999998,
+        0.95,
+        "easeOutCubic"
+       ],
+       [
+        3.2,
+        0.85,
+        "gentle"
+       ],
+       [
+        5.0,
+        0.35,
+        "smooth"
+       ]
+      ]
+     }
+    },
+    {
+     "id": "puff-6",
+     "type": "ellipse",
+     "r": 62,
+     "x": 496,
+     "y": 814,
+     "fill": "$smoke-shade",
+     "scale": 0,
+     "animate": {
+      "x": [
+       [
+        0,
+        496
+       ],
+       [
+        1.42,
+        496
+       ],
+       [
+        2.82,
+        132,
+        "easeOutCubic"
+       ],
+       [
+        5.0,
+        92,
+        "gentle"
+       ]
+      ],
+      "y": [
+       [
+        0,
+        814
+       ],
+       [
+        1.42,
+        814
+       ],
+       [
+        2.82,
+        767,
+        "easeOutQuad"
+       ],
+       [
+        5.0,
+        717,
+        "gentle"
+       ]
+      ],
+      "scale": [
+       [
+        0,
+        0
+       ],
+       [
+        1.42,
+        0.1
+       ],
+       [
+        2.02,
+        1.2,
+        "easeOutCubic"
+       ],
+       [
+        5.0,
+        2.0,
+        "gentle"
+       ]
+      ],
+      "opacity": [
+       [
+        0,
+        0
+       ],
+       [
+        1.42,
+        0
+       ],
+       [
+        1.6199999999999999,
+        0.95,
+        "easeOutCubic"
+       ],
+       [
+        3.2,
+        0.85,
+        "gentle"
+       ],
+       [
+        5.0,
+        0.35,
+        "smooth"
+       ]
+      ]
+     }
+    },
+    {
+     "id": "puff-10",
+     "type": "ellipse",
+     "r": 44,
+     "x": 528,
+     "y": 814,
+     "fill": "$smoke",
+     "scale": 0,
+     "animate": {
+      "x": [
+       [
+        0,
+        528
+       ],
+       [
+        1.11,
+        528
+       ],
+       [
+        2.51,
+        744,
+        "easeOutCubic"
+       ],
+       [
+        5.0,
+        784,
+        "gentle"
+       ]
+      ],
+      "y": [
+       [
+        0,
+        814
+       ],
+       [
+        1.11,
+        814
+       ],
+       [
+        2.51,
+        777,
+        "easeOutQuad"
+       ],
+       [
+        5.0,
+        727,
+        "gentle"
+       ]
+      ],
+      "scale": [
+       [
+        0,
+        0
+       ],
+       [
+        1.11,
+        0.1
+       ],
+       [
+        1.71,
+        1.2,
+        "easeOutCubic"
+       ],
+       [
+        5.0,
+        2.0,
+        "gentle"
+       ]
+      ],
+      "opacity": [
+       [
+        0,
+        0
+       ],
+       [
+        1.11,
+        0
+       ],
+       [
+        1.31,
+        0.95,
+        "easeOutCubic"
+       ],
+       [
+        3.2,
+        0.85,
+        "gentle"
+       ],
+       [
+        5.0,
+        0.35,
+        "smooth"
+       ]
+      ]
+     }
+    },
+    {
+     "id": "puff-11",
+     "type": "ellipse",
+     "r": 50,
+     "x": 519,
+     "y": 814,
+     "fill": "$smoke-shade",
+     "scale": 0,
+     "animate": {
+      "x": [
+       [
+        0,
+        519
+       ],
+       [
+        1.23,
+        519
+       ],
+       [
+        2.63,
+        802,
+        "easeOutCubic"
+       ],
+       [
+        5.0,
+        842,
+        "gentle"
+       ]
+      ],
+      "y": [
+       [
+        0,
+        814
+       ],
+       [
+        1.23,
+        814
+       ],
+       [
+        2.63,
+        755,
+        "easeOutQuad"
+       ],
+       [
+        5.0,
+        705,
+        "gentle"
+       ]
+      ],
+      "scale": [
+       [
+        0,
+        0
+       ],
+       [
+        1.23,
+        0.1
+       ],
+       [
+        1.83,
+        1.2,
+        "easeOutCubic"
+       ],
+       [
+        5.0,
+        2.0,
+        "gentle"
+       ]
+      ],
+      "opacity": [
+       [
+        0,
+        0
+       ],
+       [
+        1.23,
+        0
+       ],
+       [
+        1.43,
+        0.95,
+        "easeOutCubic"
+       ],
+       [
+        3.2,
+        0.85,
+        "gentle"
+       ],
+       [
+        5.0,
+        0.35,
+        "smooth"
+       ]
+      ]
+     }
+    },
+    {
+     "id": "puff-12",
+     "type": "ellipse",
+     "r": 56,
+     "x": 519,
+     "y": 814,
+     "fill": "$smoke",
+     "scale": 0,
+     "animate": {
+      "x": [
+       [
+        0,
+        519
+       ],
+       [
+        1.3499999999999999,
+        519
+       ],
+       [
+        2.75,
+        843,
+        "easeOutCubic"
+       ],
+       [
+        5.0,
+        883,
+        "gentle"
+       ]
+      ],
+      "y": [
+       [
+        0,
+        814
+       ],
+       [
+        1.3499999999999999,
+        814
+       ],
+       [
+        2.75,
+        765,
+        "easeOutQuad"
+       ],
+       [
+        5.0,
+        715,
+        "gentle"
+       ]
+      ],
+      "scale": [
+       [
+        0,
+        0
+       ],
+       [
+        1.3499999999999999,
+        0.1
+       ],
+       [
+        1.9499999999999997,
+        1.2,
+        "easeOutCubic"
+       ],
+       [
+        5.0,
+        2.0,
+        "gentle"
+       ]
+      ],
+      "opacity": [
+       [
+        0,
+        0
+       ],
+       [
+        1.3499999999999999,
+        0
+       ],
+       [
+        1.5499999999999998,
+        0.95,
+        "easeOutCubic"
+       ],
+       [
+        3.2,
+        0.85,
+        "gentle"
+       ],
+       [
+        5.0,
+        0.35,
+        "smooth"
+       ]
+      ]
+     }
+    },
+    {
+     "id": "puff-13",
+     "type": "ellipse",
+     "r": 62,
+     "x": 518,
+     "y": 814,
+     "fill": "$smoke",
+     "scale": 0,
+     "animate": {
+      "x": [
+       [
+        0,
+        518
+       ],
+       [
+        1.47,
+        518
+       ],
+       [
+        2.87,
+        899,
+        "easeOutCubic"
+       ],
+       [
+        5.0,
+        939,
+        "gentle"
+       ]
+      ],
+      "y": [
+       [
+        0,
+        814
+       ],
+       [
+        1.47,
+        814
+       ],
+       [
+        2.87,
+        753,
+        "easeOutQuad"
+       ],
+       [
+        5.0,
+        703,
+        "gentle"
+       ]
+      ],
+      "scale": [
+       [
+        0,
+        0
+       ],
+       [
+        1.47,
+        0.1
+       ],
+       [
+        2.07,
+        1.2,
+        "easeOutCubic"
+       ],
+       [
+        5.0,
+        2.0,
+        "gentle"
+       ]
+      ],
+      "opacity": [
+       [
+        0,
+        0
+       ],
+       [
+        1.47,
+        0
+       ],
+       [
+        1.67,
+        0.95,
+        "easeOutCubic"
+       ],
+       [
+        3.2,
+        0.85,
+        "gentle"
+       ],
+       [
+        5.0,
+        0.35,
+        "smooth"
+       ]
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "steam",
+   "type": "group",
+   "animate": {
+    "opacity": [
+     [
+      0,
+      1
+     ],
+     [
+      0.7,
+      1
+     ],
+     [
+      1.0,
+      0,
+      "easeOutCubic"
+     ],
+     [
+      5.0,
+      0,
+      "linear"
+     ]
+    ]
+   },
+   "children": [
+    {
+     "id": "steam-0",
+     "type": "path",
+     "x": 470,
+     "y": 800,
+     "fill": "#cfcde0aa",
+     "d": "M -12 0 C -14 -10 -6 -18 0 -16 C 6 -20 14 -12 12 -2 C 10 6 -10 6 -12 0 Z",
+     "motion": [
+      {
+       "preset": "rise",
+       "duration": 2.5,
+       "repeat": "loop",
+       "phase": 0.25,
+       "distance": 60
+      }
+     ]
+    },
+    {
+     "id": "steam-1",
+     "type": "path",
+     "x": 556,
+     "y": 800,
+     "fill": "#cfcde0aa",
+     "d": "M -12 0 C -14 -10 -6 -18 0 -16 C 6 -20 14 -12 12 -2 C 10 6 -10 6 -12 0 Z",
+     "motion": [
+      {
+       "preset": "rise",
+       "duration": 2.5,
+       "repeat": "loop",
+       "phase": 0.75,
+       "distance": 60
+      }
+     ]
+    },
+    {
+     "id": "steam-2",
+     "type": "path",
+     "x": 500,
+     "y": 800,
+     "fill": "#cfcde0aa",
+     "d": "M -12 0 C -14 -10 -6 -18 0 -16 C 6 -20 14 -12 12 -2 C 10 6 -10 6 -12 0 Z",
+     "motion": [
+      {
+       "preset": "rise",
+       "duration": 2.5,
+       "repeat": "loop",
+       "phase": 0.5,
+       "distance": 60
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "trail",
+   "type": "group",
+   "children": [
+    {
+     "id": "trail-0",
+     "type": "ellipse",
+     "x": 517,
+     "y": 780,
+     "r": 40,
+     "fill": "$smoke-shade",
+     "animate": {
+      "scale": [
+       [
+        0,
+        0
+       ],
+       [
+        2.0,
+        0.2
+       ],
+       [
+        2.7,
+        1.4,
+        "easeOutCubic"
+       ],
+       [
+        5.0,
+        2.0,
+        "gentle"
+       ]
+      ],
+      "opacity": [
+       [
+        0,
+        0
+       ],
+       [
+        2.0,
+        0
+       ],
+       [
+        2.15,
+        0.8,
+        "easeOutCubic"
+       ],
+       [
+        5.0,
+        0.0,
+        "easeInQuad"
+       ]
+      ],
+      "y": [
+       [
+        0,
+        780
+       ],
+       [
+        2.0,
+        780
+       ],
+       [
+        5.0,
+        740,
+        "gentle"
+       ]
+      ]
+     }
+    },
+    {
+     "id": "trail-1",
+     "type": "ellipse",
+     "x": 513,
+     "y": 780,
+     "r": 43,
+     "fill": "$smoke",
+     "animate": {
+      "scale": [
+       [
+        0,
+        0
+       ],
+       [
+        2.2,
+        0.2
+       ],
+       [
+        2.9000000000000004,
+        1.4,
+        "easeOutCubic"
+       ],
+       [
+        5.0,
+        2.0,
+        "gentle"
+       ]
+      ],
+      "opacity": [
+       [
+        0,
+        0
+       ],
+       [
+        2.2,
+        0
+       ],
+       [
+        2.35,
+        0.8,
+        "easeOutCubic"
+       ],
+       [
+        5.0,
+        0.0,
+        "easeInQuad"
+       ]
+      ],
+      "y": [
+       [
+        0,
+        780
+       ],
+       [
+        2.2,
+        780
+       ],
+       [
+        5.0,
+        740,
+        "gentle"
+       ]
+      ]
+     }
+    },
+    {
+     "id": "trail-2",
+     "type": "ellipse",
+     "x": 502,
+     "y": 780,
+     "r": 46,
+     "fill": "$smoke-shade",
+     "animate": {
+      "scale": [
+       [
+        0,
+        0
+       ],
+       [
+        2.4,
+        0.2
+       ],
+       [
+        3.0999999999999996,
+        1.4,
+        "easeOutCubic"
+       ],
+       [
+        5.0,
+        2.0,
+        "gentle"
+       ]
+      ],
+      "opacity": [
+       [
+        0,
+        0
+       ],
+       [
+        2.4,
+        0
+       ],
+       [
+        2.55,
+        0.8,
+        "easeOutCubic"
+       ],
+       [
+        5.0,
+        0.0,
+        "easeInQuad"
+       ]
+      ],
+      "y": [
+       [
+        0,
+        780
+       ],
+       [
+        2.4,
+        780
+       ],
+       [
+        5.0,
+        740,
+        "gentle"
+       ]
+      ]
+     }
+    },
+    {
+     "id": "trail-3",
+     "type": "ellipse",
+     "x": 502,
+     "y": 780,
+     "r": 49,
+     "fill": "$smoke",
+     "animate": {
+      "scale": [
+       [
+        0,
+        0
+       ],
+       [
+        2.6,
+        0.2
+       ],
+       [
+        3.3,
+        1.4,
+        "easeOutCubic"
+       ],
+       [
+        5.0,
+        2.0,
+        "gentle"
+       ]
+      ],
+      "opacity": [
+       [
+        0,
+        0
+       ],
+       [
+        2.6,
+        0
+       ],
+       [
+        2.75,
+        0.8,
+        "easeOutCubic"
+       ],
+       [
+        5.0,
+        0.0,
+        "easeInQuad"
+       ]
+      ],
+      "y": [
+       [
+        0,
+        780
+       ],
+       [
+        2.6,
+        780
+       ],
+       [
+        5.0,
+        740,
+        "gentle"
+       ]
+      ]
+     }
+    },
+    {
+     "id": "trail-4",
+     "type": "ellipse",
+     "x": 510,
+     "y": 780,
+     "r": 52,
+     "fill": "$smoke-shade",
+     "animate": {
+      "scale": [
+       [
+        0,
+        0
+       ],
+       [
+        2.8,
+        0.2
+       ],
+       [
+        3.5,
+        1.4,
+        "easeOutCubic"
+       ],
+       [
+        5.0,
+        2.0,
+        "gentle"
+       ]
+      ],
+      "opacity": [
+       [
+        0,
+        0
+       ],
+       [
+        2.8,
+        0
+       ],
+       [
+        2.9499999999999997,
+        0.8,
+        "easeOutCubic"
+       ],
+       [
+        5.0,
+        0.0,
+        "easeInQuad"
+       ]
+      ],
+      "y": [
+       [
+        0,
+        780
+       ],
+       [
+        2.8,
+        780
+       ],
+       [
+        5.0,
+        740,
+        "gentle"
+       ]
+      ]
+     }
+    },
+    {
+     "id": "trail-5",
+     "type": "ellipse",
+     "x": 517,
+     "y": 780,
+     "r": 55,
+     "fill": "$smoke",
+     "animate": {
+      "scale": [
+       [
+        0,
+        0
+       ],
+       [
+        3.0,
+        0.2
+       ],
+       [
+        3.7,
+        1.4,
+        "easeOutCubic"
+       ],
+       [
+        5.0,
+        2.0,
+        "gentle"
+       ]
+      ],
+      "opacity": [
+       [
+        0,
+        0
+       ],
+       [
+        3.0,
+        0
+       ],
+       [
+        3.15,
+        0.8,
+        "easeOutCubic"
+       ],
+       [
+        5.0,
+        0.0,
+        "easeInQuad"
+       ]
+      ],
+      "y": [
+       [
+        0,
+        780
+       ],
+       [
+        3.0,
+        780
+       ],
+       [
+        5.0,
+        740,
+        "gentle"
+       ]
+      ]
+     }
+    },
+    {
+     "id": "trail-6",
+     "type": "ellipse",
+     "x": 510,
+     "y": 780,
+     "r": 58,
+     "fill": "$smoke-shade",
+     "animate": {
+      "scale": [
+       [
+        0,
+        0
+       ],
+       [
+        3.2,
+        0.2
+       ],
+       [
+        3.9000000000000004,
+        1.4,
+        "easeOutCubic"
+       ],
+       [
+        5.0,
+        2.0,
+        "gentle"
+       ]
+      ],
+      "opacity": [
+       [
+        0,
+        0
+       ],
+       [
+        3.2,
+        0
+       ],
+       [
+        3.35,
+        0.8,
+        "easeOutCubic"
+       ],
+       [
+        5.0,
+        0.0,
+        "easeInQuad"
+       ]
+      ],
+      "y": [
+       [
+        0,
+        780
+       ],
+       [
+        3.2,
+        780
+       ],
+       [
+        5.0,
+        740,
+        "gentle"
+       ]
+      ]
+     }
+    },
+    {
+     "id": "trail-7",
+     "type": "ellipse",
+     "x": 508,
+     "y": 787.4,
+     "r": 61,
+     "fill": "$smoke",
+     "animate": {
+      "scale": [
+       [
+        0,
+        0
+       ],
+       [
+        3.4,
+        0.2
+       ],
+       [
+        4.1,
+        1.4,
+        "easeOutCubic"
+       ],
+       [
+        5.0,
+        2.0,
+        "gentle"
+       ]
+      ],
+      "opacity": [
+       [
+        0,
+        0
+       ],
+       [
+        3.4,
+        0
+       ],
+       [
+        3.55,
+        0.8,
+        "easeOutCubic"
+       ],
+       [
+        5.0,
+        0.0,
+        "easeInQuad"
+       ]
+      ],
+      "y": [
+       [
+        0,
+        787.4
+       ],
+       [
+        3.4,
+        787.4
+       ],
+       [
+        5.0,
+        747.4,
+        "gentle"
+       ]
+      ]
+     }
+    },
+    {
+     "id": "trail-8",
+     "type": "ellipse",
+     "x": 521,
+     "y": 705.4,
+     "r": 64,
+     "fill": "$smoke-shade",
+     "animate": {
+      "scale": [
+       [
+        0,
+        0
+       ],
+       [
+        3.6,
+        0.2
+       ],
+       [
+        4.3,
+        1.4,
+        "easeOutCubic"
+       ],
+       [
+        5.0,
+        2.0,
+        "gentle"
+       ]
+      ],
+      "opacity": [
+       [
+        0,
+        0
+       ],
+       [
+        3.6,
+        0
+       ],
+       [
+        3.75,
+        0.8,
+        "easeOutCubic"
+       ],
+       [
+        5.0,
+        0.0,
+        "easeInQuad"
+       ]
+      ],
+      "y": [
+       [
+        0,
+        705.4
+       ],
+       [
+        3.6,
+        705.4
+       ],
+       [
+        5.0,
+        665.4,
+        "gentle"
+       ]
+      ]
+     }
+    },
+    {
+     "id": "trail-9",
+     "type": "ellipse",
+     "x": 513,
+     "y": 608.4,
+     "r": 67,
+     "fill": "$smoke",
+     "animate": {
+      "scale": [
+       [
+        0,
+        0
+       ],
+       [
+        3.8,
+        0.2
+       ],
+       [
+        4.5,
+        1.4,
+        "easeOutCubic"
+       ],
+       [
+        5.0,
+        2.0,
+        "gentle"
+       ]
+      ],
+      "opacity": [
+       [
+        0,
+        0
+       ],
+       [
+        3.8,
+        0
+       ],
+       [
+        3.9499999999999997,
+        0.8,
+        "easeOutCubic"
+       ],
+       [
+        5.0,
+        0.0,
+        "easeInQuad"
+       ]
+      ],
+      "y": [
+       [
+        0,
+        608.4
+       ],
+       [
+        3.8,
+        608.4
+       ],
+       [
+        5.0,
+        568.4,
+        "gentle"
+       ]
+      ]
+     }
+    },
+    {
+     "id": "trail-10",
+     "type": "ellipse",
+     "x": 516,
+     "y": 495.3,
+     "r": 70,
+     "fill": "$smoke-shade",
+     "animate": {
+      "scale": [
+       [
+        0,
+        0
+       ],
+       [
+        4.0,
+        0.2
+       ],
+       [
+        4.7,
+        1.4,
+        "easeOutCubic"
+       ],
+       [
+        5.0,
+        2.0,
+        "gentle"
+       ]
+      ],
+      "opacity": [
+       [
+        0,
+        0
+       ],
+       [
+        4.0,
+        0
+       ],
+       [
+        4.15,
+        0.8,
+        "easeOutCubic"
+       ],
+       [
+        5.0,
+        0.0,
+        "easeInQuad"
+       ]
+      ],
+      "y": [
+       [
+        0,
+        495.3
+       ],
+       [
+        4.0,
+        495.3
+       ],
+       [
+        5.0,
+        455.3,
+        "gentle"
+       ]
+      ]
+     }
+    },
+    {
+     "id": "trail-11",
+     "type": "ellipse",
+     "x": 513,
+     "y": 365.4,
+     "r": 73,
+     "fill": "$smoke",
+     "animate": {
+      "scale": [
+       [
+        0,
+        0
+       ],
+       [
+        4.2,
+        0.2
+       ],
+       [
+        4.9,
+        1.4,
+        "easeOutCubic"
+       ],
+       [
+        5.0,
+        2.0,
+        "gentle"
+       ]
+      ],
+      "opacity": [
+       [
+        0,
+        0
+       ],
+       [
+        4.2,
+        0
+       ],
+       [
+        4.3500000000000005,
+        0.8,
+        "easeOutCubic"
+       ],
+       [
+        5.0,
+        0.0,
+        "easeInQuad"
+       ]
+      ],
+      "y": [
+       [
+        0,
+        365.4
+       ],
+       [
+        4.2,
+        365.4
+       ],
+       [
+        5.0,
+        325.4,
+        "gentle"
+       ]
+      ]
+     }
+    },
+    {
+     "id": "trail-12",
+     "type": "ellipse",
+     "x": 513,
+     "y": 217.7,
+     "r": 76,
+     "fill": "$smoke-shade",
+     "animate": {
+      "scale": [
+       [
+        0,
+        0
+       ],
+       [
+        4.4,
+        0.2
+       ],
+       [
+        4.9,
+        1.4,
+        "easeOutCubic"
+       ],
+       [
+        5.0,
+        2.0,
+        "gentle"
+       ]
+      ],
+      "opacity": [
+       [
+        0,
+        0
+       ],
+       [
+        4.4,
+        0
+       ],
+       [
+        4.550000000000001,
+        0.8,
+        "easeOutCubic"
+       ],
+       [
+        5.0,
+        0.0,
+        "easeInQuad"
+       ]
+      ],
+      "y": [
+       [
+        0,
+        217.7
+       ],
+       [
+        4.4,
+        217.7
+       ],
+       [
+        5.0,
+        177.7,
+        "gentle"
+       ]
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "rocket",
+   "type": "group",
+   "x": 512,
+   "y": 812,
+   "pivot": [
+    0,
+    0
+   ],
+   "animate": {
+    "x": [
+     [
+      0,
+      512
+     ],
+     [
+      0.8,
+      515.0,
+      "smooth"
+     ],
+     [
+      0.9,
+      509.0,
+      "smooth"
+     ],
+     [
+      1.0,
+      515.0,
+      "smooth"
+     ],
+     [
+      1.1,
+      509.0,
+      "smooth"
+     ],
+     [
+      1.2,
+      515.0,
+      "smooth"
+     ],
+     [
+      1.3,
+      509.0,
+      "smooth"
+     ],
+     [
+      1.4,
+      515.0,
+      "smooth"
+     ],
+     [
+      1.5,
+      509.0,
+      "smooth"
+     ],
+     [
+      1.6,
+      515.0,
+      "smooth"
+     ],
+     [
+      1.7,
+      509.0,
+      "smooth"
+     ],
+     [
+      1.8,
+      515.0,
+      "smooth"
+     ],
+     [
+      1.9,
+      509.0,
+      "smooth"
+     ],
+     [
+      2.0,
+      515.0,
+      "smooth"
+     ],
+     [
+      2.1,
+      509.0,
+      "smooth"
+     ],
+     [
+      2.2,
+      515.0,
+      "smooth"
+     ],
+     [
+      2.3,
+      512,
+      "smooth"
+     ],
+     [
+      5.0,
+      512,
+      "gentle"
+     ]
+    ],
+    "y": [
+     [
+      0,
+      812
+     ],
+     [
+      1.45,
+      812
+     ],
+     [
+      1.7,
+      818,
+      "easeOutCubic"
+     ],
+     [
+      2.2,
+      801.8,
+      "easeInQuad"
+     ],
+     [
+      2.8,
+      733.1,
+      "linear"
+     ],
+     [
+      3.4,
+      567.4,
+      "linear"
+     ],
+     [
+      4.0,
+      275.3,
+      "linear"
+     ],
+     [
+      4.5,
+      -83.0,
+      "linear"
+     ],
+     [
+      5.0,
+      -560.0,
+      "linear"
+     ]
+    ],
+    "scale": [
+     [
+      0,
+      [
+       1,
+       1
+      ]
+     ],
+     [
+      1.45,
+      [
+       1,
+       1
+      ]
+     ],
+     [
+      1.7,
+      [
+       1.05,
+       0.95
+      ],
+      "easeOutCubic"
+     ],
+     [
+      2.0,
+      [
+       0.96,
+       1.05
+      ],
+      "snap"
+     ],
+     [
+      2.5,
+      [
+       1,
+       1
+      ],
+      "settle"
+     ],
+     [
+      5.0,
+      [
+       1,
+       1
+      ],
+      "linear"
+     ]
+    ]
+   },
+   "children": [
+    {
+     "id": "flame",
+     "type": "group",
+     "y": -36,
+     "pivot": [
+      0,
+      0
+     ],
+     "animate": {
+      "scale": [
+       [
+        0,
+        [
+         0.2,
+         0
+        ]
+       ],
+       [
+        0.6,
+        [
+         0.2,
+         0
+        ]
+       ],
+       {
+        "t": 1.0,
+        "v": [
+         1,
+         1
+        ],
+        "ease": "snap",
+        "overshoot": {
+         "past": 0.15,
+         "back": 0.04,
+         "time": 0.35
+        }
+       },
+       [
+        1.7,
+        [
+         1,
+         1.05
+        ],
+        "smooth"
+       ],
+       [
+        2.8,
+        [
+         1.15,
+         1.9
+        ],
+        "easeOutCubic"
+       ],
+       [
+        5.0,
+        [
+         1.1,
+         2.2
+        ],
+        "gentle"
+       ]
+      ],
+      "opacity": [
+       [
+        0,
+        0
+       ],
+       [
+        0.6,
+        0
+       ],
+       [
+        0.75,
+        1,
+        "easeOutCubic"
+       ],
+       [
+        5.0,
+        1,
+        "linear"
+       ]
+      ]
+     },
+     "children": [
+      {
+       "id": "flame-outer",
+       "type": "path",
+       "fill": "$flame-out",
+       "pivot": [
+        0,
+        0
+       ],
+       "d": "M -34 0 C -42 40 -26 110 0 190 C 26 110 42 40 34 0 C 20 6 -20 6 -34 0 Z",
+       "motion": [
+        {
+         "preset": "flicker",
+         "duration": 0.5,
+         "repeat": "loop",
+         "lean": 4,
+         "stretch": 0.12
+        }
+       ]
+      },
+      {
+       "id": "flame-mid",
+       "type": "path",
+       "fill": "$flame-mid",
+       "pivot": [
+        0,
+        0
+       ],
+       "d": "M -24 0 C -30 34 -18 84 0 140 C 18 84 30 34 24 0 C 14 4 -14 4 -24 0 Z",
+       "motion": [
+        {
+         "preset": "flicker",
+         "duration": 0.5,
+         "repeat": "loop",
+         "lean": 3,
+         "stretch": 0.1,
+         "phase": 0.3
+        }
+       ]
+      },
+      {
+       "id": "flame-core",
+       "type": "path",
+       "fill": "$flame-core",
+       "pivot": [
+        0,
+        0
+       ],
+       "d": "M -14 0 C -18 24 -10 54 0 86 C 10 54 18 24 14 0 C 8 3 -8 3 -14 0 Z",
+       "motion": [
+        {
+         "preset": "flicker",
+         "duration": 0.5,
+         "repeat": "loop",
+         "lean": 2,
+         "stretch": 0.14,
+         "phase": 0.6
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "nozzle",
+     "type": "path",
+     "fill": "$metal",
+     "d": "M -26 -46 L 26 -46 L 34 -30 C 30 -26 -30 -26 -34 -30 Z"
+    },
+    {
+     "id": "fin-l",
+     "type": "path",
+     "fill": "$red",
+     "d": "M -44 -170 C -70 -150 -96 -110 -100 -50 C -96 -36 -84 -34 -76 -44 C -66 -56 -56 -62 -46 -62 Z"
+    },
+    {
+     "id": "fin-r",
+     "type": "path",
+     "fill": "$red-shade",
+     "d": "M 44 -170 C 70 -150 96 -110 100 -50 C 96 -36 84 -34 76 -44 C 66 -56 56 -62 46 -62 Z"
+    },
+    {
+     "id": "body",
+     "type": "path",
+     "fill": "$hull",
+     "d": "M -46 -40 C -52 -140 -48 -250 -32 -320 C -22 -370 -10 -400 0 -412 C 10 -400 22 -370 32 -320 C 48 -250 52 -140 46 -40 Z"
+    },
+    {
+     "id": "body-shade",
+     "type": "path",
+     "fill": "$hull-shade",
+     "clip": {
+      "type": "path",
+      "d": "M -46 -40 C -52 -140 -48 -250 -32 -320 C -22 -370 -10 -400 0 -412 C 10 -400 22 -370 32 -320 C 48 -250 52 -140 46 -40 Z"
+     },
+     "d": "M 14 -420 C 30 -300 34 -150 24 -30 L 80 -30 L 80 -420 Z"
+    },
+    {
+     "id": "body-tint",
+     "type": "path",
+     "fill": "$hull-tint",
+     "clip": {
+      "type": "path",
+      "d": "M -46 -40 C -52 -140 -48 -250 -32 -320 C -22 -370 -10 -400 0 -412 C 10 -400 22 -370 32 -320 C 48 -250 52 -140 46 -40 Z"
+     },
+     "d": "M -34 -300 C -40 -220 -40 -140 -36 -60 C -30 -60 -26 -60 -24 -60 C -28 -140 -28 -220 -22 -300 Z"
+    },
+    {
+     "id": "nose",
+     "type": "path",
+     "fill": "$red",
+     "clip": {
+      "type": "path",
+      "d": "M -46 -40 C -52 -140 -48 -250 -32 -320 C -22 -370 -10 -400 0 -412 C 10 -400 22 -370 32 -320 C 48 -250 52 -140 46 -40 Z"
+     },
+     "d": "M -60 -330 C -20 -318 20 -318 60 -330 L 60 -430 L -60 -430 Z"
+    },
+    {
+     "id": "nose-shade",
+     "type": "path",
+     "fill": "$red-shade",
+     "clip": {
+      "type": "path",
+      "d": "M -46 -40 C -52 -140 -48 -250 -32 -320 C -22 -370 -10 -400 0 -412 C 10 -400 22 -370 32 -320 C 48 -250 52 -140 46 -40 Z"
+     },
+     "d": "M 12 -430 C 22 -380 26 -350 30 -320 L 60 -320 L 60 -430 Z"
+    },
+    {
+     "id": "band",
+     "type": "path",
+     "fill": "$red",
+     "clip": {
+      "type": "path",
+      "d": "M -46 -40 C -52 -140 -48 -250 -32 -320 C -22 -370 -10 -400 0 -412 C 10 -400 22 -370 32 -320 C 48 -250 52 -140 46 -40 Z"
+     },
+     "d": "M -60 -96 C -20 -88 20 -88 60 -96 L 60 -78 C 20 -70 -20 -70 -60 -78 Z"
+    },
+    {
+     "id": "window-rim",
+     "type": "ellipse",
+     "y": -240,
+     "r": 26,
+     "fill": "$metal"
+    },
+    {
+     "id": "window",
+     "type": "ellipse",
+     "y": -240,
+     "r": 19,
+     "fill": {
+      "type": "radial",
+      "center": [
+       -6,
+       -6
+      ],
+      "radius": 24,
+      "stops": [
+       [
+        0,
+        "#c8f1ff"
+       ],
+       [
+        0.5,
+        "$glass"
+       ],
+       [
+        1,
+        "$glass-shade"
+       ]
+      ]
+     }
+    },
+    {
+     "id": "window-glint",
+     "type": "path",
+     "fill": "#ffffffcc",
+     "d": "M -12 -246 C -12 -254 -6 -258 0 -258 C -4 -254 -7 -250 -8 -244 C -9 -242 -12 -242 -12 -246 Z"
+    },
+    {
+     "id": "fin-mid",
+     "type": "path",
+     "fill": "$red-shade",
+     "d": "M -6 -150 C -6 -110 -6 -70 -4 -36 C -2 -30 2 -30 4 -36 C 6 -70 6 -110 6 -150 C 4 -156 -4 -156 -6 -150 Z"
+    }
+   ]
+  },
+  {
+   "id": "smoke-front",
+   "type": "group",
+   "children": [
+    {
+     "id": "puff-0",
+     "type": "ellipse",
+     "r": 26,
+     "x": 497,
+     "y": 814,
+     "fill": "$smoke-shade",
+     "scale": 0,
+     "animate": {
+      "x": [
+       [
+        0,
+        497
+       ],
+       [
+        0.7,
+        497
+       ],
+       [
+        2.0999999999999996,
+        448,
+        "easeOutCubic"
+       ],
+       [
+        5.0,
+        408,
+        "gentle"
+       ]
+      ],
+      "y": [
+       [
+        0,
+        814
+       ],
+       [
+        0.7,
+        814
+       ],
+       [
+        2.0999999999999996,
+        780,
+        "easeOutQuad"
+       ],
+       [
+        5.0,
+        730,
+        "gentle"
+       ]
+      ],
+      "scale": [
+       [
+        0,
+        0
+       ],
+       [
+        0.7,
+        0.1
+       ],
+       [
+        1.2999999999999998,
+        1.2,
+        "easeOutCubic"
+       ],
+       [
+        5.0,
+        2.0,
+        "gentle"
+       ]
+      ],
+      "opacity": [
+       [
+        0,
+        0
+       ],
+       [
+        0.7,
+        0
+       ],
+       [
+        0.8999999999999999,
+        0.95,
+        "easeOutCubic"
+       ],
+       [
+        3.2,
+        0.85,
+        "gentle"
+       ],
+       [
+        5.0,
+        0.35,
+        "smooth"
+       ]
+      ]
+     }
+    },
+    {
+     "id": "puff-1",
+     "type": "ellipse",
+     "r": 32,
+     "x": 510,
+     "y": 814,
+     "fill": "$smoke",
+     "scale": 0,
+     "animate": {
+      "x": [
+       [
+        0,
+        510
+       ],
+       [
+        0.82,
+        510
+       ],
+       [
+        2.2199999999999998,
+        398,
+        "easeOutCubic"
+       ],
+       [
+        5.0,
+        358,
+        "gentle"
+       ]
+      ],
+      "y": [
+       [
+        0,
+        814
+       ],
+       [
+        0.82,
+        814
+       ],
+       [
+        2.2199999999999998,
+        797,
+        "easeOutQuad"
+       ],
+       [
+        5.0,
+        747,
+        "gentle"
+       ]
+      ],
+      "scale": [
+       [
+        0,
+        0
+       ],
+       [
+        0.82,
+        0.1
+       ],
+       [
+        1.42,
+        1.2,
+        "easeOutCubic"
+       ],
+       [
+        5.0,
+        2.0,
+        "gentle"
+       ]
+      ],
+      "opacity": [
+       [
+        0,
+        0
+       ],
+       [
+        0.82,
+        0
+       ],
+       [
+        1.02,
+        0.95,
+        "easeOutCubic"
+       ],
+       [
+        3.2,
+        0.85,
+        "gentle"
+       ],
+       [
+        5.0,
+        0.35,
+        "smooth"
+       ]
+      ]
+     }
+    },
+    {
+     "id": "puff-2",
+     "type": "ellipse",
+     "r": 38,
+     "x": 502,
+     "y": 814,
+     "fill": "$smoke",
+     "scale": 0,
+     "animate": {
+      "x": [
+       [
+        0,
+        502
+       ],
+       [
+        0.94,
+        502
+       ],
+       [
+        2.34,
+        349,
+        "easeOutCubic"
+       ],
+       [
+        5.0,
+        309,
+        "gentle"
+       ]
+      ],
+      "y": [
+       [
+        0,
+        814
+       ],
+       [
+        0.94,
+        814
+       ],
+       [
+        2.34,
+        786,
+        "easeOutQuad"
+       ],
+       [
+        5.0,
+        736,
+        "gentle"
+       ]
+      ],
+      "scale": [
+       [
+        0,
+        0
+       ],
+       [
+        0.94,
+        0.1
+       ],
+       [
+        1.54,
+        1.2,
+        "easeOutCubic"
+       ],
+       [
+        5.0,
+        2.0,
+        "gentle"
+       ]
+      ],
+      "opacity": [
+       [
+        0,
+        0
+       ],
+       [
+        0.94,
+        0
+       ],
+       [
+        1.14,
+        0.95,
+        "easeOutCubic"
+       ],
+       [
+        3.2,
+        0.85,
+        "gentle"
+       ],
+       [
+        5.0,
+        0.35,
+        "smooth"
+       ]
+      ]
+     }
+    },
+    {
+     "id": "puff-7",
+     "type": "ellipse",
+     "r": 26,
+     "x": 514,
+     "y": 814,
+     "fill": "$smoke",
+     "scale": 0,
+     "animate": {
+      "x": [
+       [
+        0,
+        514
+       ],
+       [
+        0.75,
+        514
+       ],
+       [
+        2.15,
+        582,
+        "easeOutCubic"
+       ],
+       [
+        5.0,
+        622,
+        "gentle"
+       ]
+      ],
+      "y": [
+       [
+        0,
+        814
+       ],
+       [
+        0.75,
+        814
+       ],
+       [
+        2.15,
+        794,
+        "easeOutQuad"
+       ],
+       [
+        5.0,
+        744,
+        "gentle"
+       ]
+      ],
+      "scale": [
+       [
+        0,
+        0
+       ],
+       [
+        0.75,
+        0.1
+       ],
+       [
+        1.35,
+        1.2,
+        "easeOutCubic"
+       ],
+       [
+        5.0,
+        2.0,
+        "gentle"
+       ]
+      ],
+      "opacity": [
+       [
+        0,
+        0
+       ],
+       [
+        0.75,
+        0
+       ],
+       [
+        0.95,
+        0.95,
+        "easeOutCubic"
+       ],
+       [
+        3.2,
+        0.85,
+        "gentle"
+       ],
+       [
+        5.0,
+        0.35,
+        "smooth"
+       ]
+      ]
+     }
+    },
+    {
+     "id": "puff-8",
+     "type": "ellipse",
+     "r": 32,
+     "x": 523,
+     "y": 814,
+     "fill": "$smoke-shade",
+     "scale": 0,
+     "animate": {
+      "x": [
+       [
+        0,
+        523
+       ],
+       [
+        0.87,
+        523
+       ],
+       [
+        2.27,
+        633,
+        "easeOutCubic"
+       ],
+       [
+        5.0,
+        673,
+        "gentle"
+       ]
+      ],
+      "y": [
+       [
+        0,
+        814
+       ],
+       [
+        0.87,
+        814
+       ],
+       [
+        2.27,
+        796,
+        "easeOutQuad"
+       ],
+       [
+        5.0,
+        746,
+        "gentle"
+       ]
+      ],
+      "scale": [
+       [
+        0,
+        0
+       ],
+       [
+        0.87,
+        0.1
+       ],
+       [
+        1.47,
+        1.2,
+        "easeOutCubic"
+       ],
+       [
+        5.0,
+        2.0,
+        "gentle"
+       ]
+      ],
+      "opacity": [
+       [
+        0,
+        0
+       ],
+       [
+        0.87,
+        0
+       ],
+       [
+        1.07,
+        0.95,
+        "easeOutCubic"
+       ],
+       [
+        3.2,
+        0.85,
+        "gentle"
+       ],
+       [
+        5.0,
+        0.35,
+        "smooth"
+       ]
+      ]
+     }
+    },
+    {
+     "id": "puff-9",
+     "type": "ellipse",
+     "r": 38,
+     "x": 519,
+     "y": 814,
+     "fill": "$smoke",
+     "scale": 0,
+     "animate": {
+      "x": [
+       [
+        0,
+        519
+       ],
+       [
+        0.99,
+        519
+       ],
+       [
+        2.3899999999999997,
+        683,
+        "easeOutCubic"
+       ],
+       [
+        5.0,
+        723,
+        "gentle"
+       ]
+      ],
+      "y": [
+       [
+        0,
+        814
+       ],
+       [
+        0.99,
+        814
+       ],
+       [
+        2.3899999999999997,
+        768,
+        "easeOutQuad"
+       ],
+       [
+        5.0,
+        718,
+        "gentle"
+       ]
+      ],
+      "scale": [
+       [
+        0,
+        0
+       ],
+       [
+        0.99,
+        0.1
+       ],
+       [
+        1.5899999999999999,
+        1.2,
+        "easeOutCubic"
+       ],
+       [
+        5.0,
+        2.0,
+        "gentle"
+       ]
+      ],
+      "opacity": [
+       [
+        0,
+        0
+       ],
+       [
+        0.99,
+        0
+       ],
+       [
+        1.19,
+        0.95,
+        "easeOutCubic"
+       ],
+       [
+        3.2,
+        0.85,
+        "gentle"
+       ],
+       [
+        5.0,
+        0.35,
+        "smooth"
+       ]
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "glow",
+   "type": "ellipse",
+   "x": 512,
+   "y": 826,
+   "rx": 220,
+   "ry": 40,
+   "fill": {
+    "type": "radial",
+    "center": [
+     0,
+     0
+    ],
+    "radius": 220,
+    "stops": [
+     [
+      0,
+      "#ffb34788"
+     ],
+     [
+      0.5,
+      "#ff7a1a33"
+     ],
+     [
+      1,
+      "#ff7a1a00"
+     ]
+    ]
+   },
+   "animate": {
+    "opacity": [
+     [
+      0,
+      0
+     ],
+     [
+      0.6,
+      0
+     ],
+     [
+      1.0,
+      1,
+      "easeOutCubic"
+     ],
+     [
+      2.4,
+      0.8,
+      "smooth"
+     ],
+     [
+      3.4,
+      0,
+      "easeInQuad"
+     ],
+     [
+      5.0,
+      0,
+      "linear"
+     ]
+    ]
+   }
+  }
+ ]
+}

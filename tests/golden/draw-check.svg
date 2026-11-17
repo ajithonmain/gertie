@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+<style>
+@keyframes gzg6-disc__s{0%{transform:scale(0,0);animation-timing-function:cubic-bezier(0.34,1.56,0.64,1)}30.5555%{transform:scale(1,1);animation-timing-function:step-end}100%{transform:scale(1,1)}}
+@keyframes gzg6-check__trim{0%{stroke-dasharray:0 1;stroke-dashoffset:0;animation-timing-function:step-end}24.999%{stroke-dasharray:0 1;stroke-dashoffset:0;animation-timing-function:cubic-bezier(0.33,1,0.68,1)}75%{stroke-dasharray:1 1;stroke-dashoffset:0;animation-timing-function:step-end}100%{stroke-dasharray:1 1;stroke-dashoffset:0}}
+@keyframes gzg6-check__guard{0%{stroke-opacity:0;animation-timing-function:step-end}0.0001%{stroke-opacity:0;animation-timing-function:step-end}24.999%{stroke-opacity:0;animation-timing-function:step-end}25.0001%{stroke-opacity:1;animation-timing-function:step-end}74.999%{stroke-opacity:1;animation-timing-function:step-end}100%{stroke-opacity:1}}
+.gzg6-disc__s{animation:gzg6-disc__s 1.2s linear 1 both;transform-origin:0 0}
+.gzg6-check__sh{animation:gzg6-check__trim 1.2s linear 1 both,gzg6-check__guard 1.2s linear 1 both}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+<g transform="translate(128 128)">
+<g class="gzg6-disc__s" transform="scale(0 0)">
+<ellipse rx="90" ry="90" fill="#14532d"/>
+</g>
+</g>
+<path class="gzg6-check__sh" d="M84 132C84 132 118 164 118 164C118 164 176 96 176 96" fill="none" stroke="#4ade80" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" pathLength="1" stroke-dasharray="0 1" stroke-dashoffset="0" stroke-opacity="0"/>
+</svg>

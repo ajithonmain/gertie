@@ -1,0 +1,54 @@
+{
+  "gertie": 1,
+  "name": "tab-bar-underline",
+  "canvas": { "w": 512, "h": 256, "background": "#f8fafc" },
+  "duration": 4,
+  "loop": true,
+  "poster": 1.1,
+  "palette": {
+    "ink": "#1e293b",
+    "accent": "#2563eb",
+    "bar": "#ffffff"
+  },
+  "nodes": [
+    { "id": "bar", "type": "rect", "x": 256, "y": 128, "w": 448, "h": 120, "radius": 20, "fill": "$bar" },
+
+    { "id": "tab-one", "type": "group", "x": 69, "y": 96, "children": [
+      { "id": "one-o", "type": "ellipse", "x": 10, "y": 18, "rx": 8, "ry": 16, "fill": null, "stroke": { "color": "$ink", "width": 4 } },
+      { "id": "one-n", "type": "path", "x": 28, "fill": null, "stroke": { "color": "$ink", "width": 4 },
+        "d": "M0 36 L0 0 L20 36 L20 0" },
+      { "id": "one-e", "type": "path", "x": 56, "fill": null, "stroke": { "color": "$ink", "width": 4 },
+        "d": "M20 0 L0 0 L0 36 L20 36 M0 18 L14 18" }
+    ] },
+
+    { "id": "tab-two", "type": "group", "x": 218, "y": 96, "children": [
+      { "id": "two-t", "type": "path", "fill": null, "stroke": { "color": "$ink", "width": 4 },
+        "d": "M0 0 L20 0 M10 0 L10 36" },
+      { "id": "two-w", "type": "path", "x": 28, "fill": null, "stroke": { "color": "$ink", "width": 4 },
+        "d": "M0 0 L5 36 L10 10 L15 36 L20 0" },
+      { "id": "two-o", "type": "ellipse", "x": 66, "y": 18, "rx": 8, "ry": 16, "fill": null, "stroke": { "color": "$ink", "width": 4 } }
+    ] },
+
+    { "id": "tab-three", "type": "group", "x": 339, "y": 96, "children": [
+      { "id": "three-t", "type": "path", "fill": null, "stroke": { "color": "$ink", "width": 4 },
+        "d": "M0 0 L20 0 M10 0 L10 36" },
+      { "id": "three-h", "type": "path", "x": 28, "fill": null, "stroke": { "color": "$ink", "width": 4 },
+        "d": "M0 0 L0 36 M20 0 L20 36 M0 18 L20 18" },
+      { "id": "three-r", "type": "path", "x": 56, "fill": null, "stroke": { "color": "$ink", "width": 4 },
+        "d": "M0 36 L0 0 L12 0 Q20 0 20 9 Q20 18 12 18 L0 18 M10 18 L20 36" },
+      { "id": "three-e1", "type": "path", "x": 84, "fill": null, "stroke": { "color": "$ink", "width": 4 },
+        "d": "M20 0 L0 0 L0 36 L20 36 M0 18 L14 18" },
+      { "id": "three-e2", "type": "path", "x": 112, "fill": null, "stroke": { "color": "$ink", "width": 4 },
+        "d": "M20 0 L0 0 L0 36 L20 36 M0 18 L14 18" }
+    ] },
+
+    { "id": "track", "type": "rect", "x": 256, "y": 150, "w": 384, "h": 2, "radius": 1, "fill": "#e2e8f0" },
+
+    { "id": "underline", "type": "rect", "x": 107, "y": 150, "w": 76, "h": 5, "radius": 2.5, "fill": "$accent",
+      "animate": {
+        "x": [[0, 107], [0.6, 107], [1.1, 256, "smooth"], [1.7, 256], [2.2, 405, "smooth"], [2.9, 405], [3.4, 107, "settle"], [4, 107]],
+        "w": [[0, 76], [1.1, 76], [2.2, 132, "smooth"], [2.9, 132], [3.4, 76, "settle"], [4, 76]]
+      }
+    }
+  ]
+}

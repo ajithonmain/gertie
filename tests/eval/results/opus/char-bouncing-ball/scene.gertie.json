@@ -1,0 +1,242 @@
+{
+  "gertie": 1,
+  "name": "bouncing-ball",
+  "tier": "icon",
+  "canvas": {
+    "w": 512,
+    "h": 512,
+    "background": "#f3eee4"
+  },
+  "fps": 60,
+  "duration": 1.2,
+  "poster": 0.6,
+  "palette": {
+    "ball-light": "#ff9a6b",
+    "ball": "#f0522f",
+    "ball-dark": "#a8261a",
+    "shadow": "#1e1b2e",
+    "floor": "#e2d9c8"
+  },
+  "nodes": [
+    {
+      "id": "floor",
+      "type": "rect",
+      "x": 256,
+      "y": 481,
+      "w": 512,
+      "h": 70,
+      "fill": "$floor"
+    },
+    {
+      "id": "shadow",
+      "type": "ellipse",
+      "x": 256,
+      "y": 446,
+      "rx": 54,
+      "ry": 10,
+      "fill": "$shadow",
+      "animate": {
+        "scale": [
+          [
+            0,
+            [
+              1.2,
+              1.1
+            ]
+          ],
+          [
+            0.06,
+            [
+              1.1,
+              1
+            ],
+            "snap"
+          ],
+          [
+            0.6,
+            [
+              0.5,
+              0.5
+            ],
+            "easeOutQuad"
+          ],
+          [
+            1.14,
+            [
+              1.1,
+              1
+            ],
+            "easeInQuad"
+          ],
+          [
+            1.2,
+            [
+              1.2,
+              1.1
+            ],
+            "snap"
+          ]
+        ],
+        "opacity": [
+          [
+            0,
+            0.38
+          ],
+          [
+            0.06,
+            0.34,
+            "snap"
+          ],
+          [
+            0.6,
+            0.12,
+            "easeOutQuad"
+          ],
+          [
+            1.14,
+            0.34,
+            "easeInQuad"
+          ],
+          [
+            1.2,
+            0.38,
+            "snap"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "ball",
+      "type": "group",
+      "x": 256,
+      "y": 446,
+      "animate": {
+        "y": [
+          [
+            0,
+            446
+          ],
+          [
+            0.05,
+            446,
+            "snap"
+          ],
+          [
+            0.6,
+            170,
+            "easeOutQuad"
+          ],
+          [
+            1.15,
+            446,
+            "easeInQuad"
+          ],
+          [
+            1.2,
+            446,
+            "snap"
+          ]
+        ],
+        "scale": [
+          [
+            0,
+            [
+              1.3,
+              0.72
+            ]
+          ],
+          [
+            0.07,
+            [
+              0.88,
+              1.16
+            ],
+            "snap"
+          ],
+          [
+            0.32,
+            [
+              1,
+              1
+            ],
+            "smooth"
+          ],
+          [
+            0.88,
+            [
+              1,
+              1
+            ],
+            "smooth"
+          ],
+          [
+            1.14,
+            [
+              0.88,
+              1.16
+            ],
+            "easeInQuad"
+          ],
+          [
+            1.2,
+            [
+              1.3,
+              0.72
+            ],
+            "snap"
+          ]
+        ]
+      },
+      "children": [
+        {
+          "id": "ball-body",
+          "type": "ellipse",
+          "y": -48,
+          "r": 48,
+          "fill": {
+            "type": "radial",
+            "center": [
+              -16,
+              -18
+            ],
+            "radius": 72,
+            "stops": [
+              [
+                0,
+                "$ball-light"
+              ],
+              [
+                0.55,
+                "$ball"
+              ],
+              [
+                1,
+                "$ball-dark"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "ball-band",
+          "type": "path",
+          "d": "M -46 -60 C -20 -44 20 -44 46 -60",
+          "fill": null,
+          "stroke": {
+            "color": "#ffffff55",
+            "width": 5
+          }
+        },
+        {
+          "id": "ball-highlight",
+          "type": "ellipse",
+          "x": -18,
+          "y": -70,
+          "rx": 12,
+          "ry": 7,
+          "rotation": -30,
+          "fill": "#ffffffcc"
+        }
+      ]
+    }
+  ]
+}

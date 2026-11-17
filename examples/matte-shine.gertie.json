@@ -1,0 +1,29 @@
+{
+  "gertie": 1,
+  "name": "matte-shine",
+  "canvas": { "w": 512, "h": 512, "background": "#0f172a" },
+  "duration": 3,
+  "tier": "icon",
+  "palette": { "gold": "#f59e0b", "rim": "#b45309", "tint": "#fde68a" },
+  "nodes": [
+    {
+      "id": "badge", "type": "path", "x": 256, "y": 256,
+      "d": "M 0 -150 C 60 -150 150 -90 150 0 C 150 90 60 150 0 150 C -60 150 -150 90 -150 0 C -150 -90 -60 -150 0 -150 Z",
+      "fill": "$gold", "stroke": { "color": "$rim", "width": 12 }
+    },
+    {
+      "id": "badge-star", "type": "star", "x": 256, "y": 256, "points": 5, "r": 80, "innerR": 34,
+      "fill": "$tint", "stroke": { "color": "$rim", "width": 6, "join": "miter" }
+    },
+    {
+      "id": "badge-shape", "type": "path", "x": 256, "y": 256,
+      "d": "M 0 -150 C 60 -150 150 -90 150 0 C 150 90 60 150 0 150 C -60 150 -150 90 -150 0 C -150 -90 -60 -150 0 -150 Z",
+      "fill": "#ffffff"
+    },
+    {
+      "id": "shine", "type": "rect", "w": 56, "h": 420, "x": 0, "y": 256, "rotation": 20, "fill": "#ffffffcc",
+      "matte": { "by": "badge-shape", "mode": "alpha" },
+      "animate": { "x": [[0, -80], [1.6, 600, "easeInOut"], [3, -80, "hold"]] }
+    }
+  ]
+}

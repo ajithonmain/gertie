@@ -1,0 +1,19 @@
+{
+  "gertie": 1,
+  "name": "draw-check",
+  "canvas": { "w": 256, "h": 256 },
+  "duration": 1.2,
+  "loop": false,
+  "nodes": [
+    {
+      "id": "disc", "type": "ellipse", "r": 90, "x": 128, "y": 128, "fill": "#14532d",
+      "animate": { "scale": [[0, 0], [0.35, 1, "easeOutBack"]] }
+    },
+    {
+      "id": "check", "type": "path", "d": "M84 132 L118 164 L176 96",
+      "stroke": { "color": "#4ade80", "width": 14, "cap": "round", "join": "round" },
+      "trim": { "start": 0, "end": 0 },
+      "animate": { "trim.end": [[0.3, 0], [0.9, 1, "easeOut"]] }
+    }
+  ]
+}

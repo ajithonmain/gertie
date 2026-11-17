@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+<style>
+@keyframes g13f-ring__s{0%{transform:scale(0.6,0.6);animation-timing-function:cubic-bezier(0.33,1,0.68,1)}91.6666%{transform:scale(1.4,1.4);animation-timing-function:step-end}100%{transform:scale(0.6,0.6)}}
+@keyframes g13f-ring__o{0%{opacity:0;animation-timing-function:cubic-bezier(0.33,1,0.68,1)}8.3333%{opacity:0.9;animation-timing-function:cubic-bezier(0.33,1,0.68,1)}91.6666%{opacity:0;animation-timing-function:cubic-bezier(0.65,0,0.35,1)}100%{opacity:0}}
+@keyframes g13f-core__s{0%{transform:scale(1,1);animation-timing-function:cubic-bezier(0.65,0,0.35,1)}50%{transform:scale(1.15,1.15);animation-timing-function:cubic-bezier(0.65,0,0.35,1)}100%{transform:scale(1,1)}}
+.g13f-ring__s{animation:g13f-ring__s 1.2s linear infinite both;transform-origin:0 0}
+.g13f-ring__sh{animation:g13f-ring__o 1.2s linear infinite both}
+.g13f-core__s{animation:g13f-core__s 1.2s linear infinite both;transform-origin:0 0}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+<g transform="translate(128 128)">
+<g class="g13f-ring__s" transform="scale(0.6 0.6)">
+<ellipse class="g13f-ring__sh" rx="70" ry="70" fill="none" stroke="#fb7185" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" opacity="0"/>
+</g>
+</g>
+<g transform="translate(128 128)">
+<g class="g13f-core__s" transform="scale(1 1)">
+<ellipse rx="50" ry="50" fill="#fb7185"/>
+</g>
+</g>
+</svg>

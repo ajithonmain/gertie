@@ -1,0 +1,19 @@
+{
+  "gertie": 1,
+  "name": "clip-reveal",
+  "canvas": { "w": 256, "h": 256 },
+  "duration": 2,
+  "nodes": [
+    {
+      "id": "window", "type": "group", "x": 128, "y": 128,
+      "clip": { "type": "rect", "w": 160, "h": 160, "radius": 24 },
+      "children": [
+        { "id": "backdrop", "type": "rect", "w": 200, "h": 200, "fill": "#1e293b" },
+        {
+          "id": "slider", "type": "ellipse", "r": 60, "fill": "#f472b6",
+          "animate": { "x": [[0, -140], [1, 140, "easeInOut"], [2, -140, "easeInOut"]] }
+        }
+      ]
+    }
+  ]
+}

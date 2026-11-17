@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+<style>
+@keyframes g1y1-orb__t{0%{transform:translate(128px,128px);animation-timing-function:cubic-bezier(0.65,0,0.35,1)}50%{transform:translate(128px,108px);animation-timing-function:cubic-bezier(0.65,0,0.35,1)}100%{transform:translate(128px,128px)}}
+@keyframes g1y1-shadow__s{0%{transform:scale(1,1);animation-timing-function:cubic-bezier(0.65,0,0.35,1)}50%{transform:scale(0.8,0.8);animation-timing-function:cubic-bezier(0.65,0,0.35,1)}100%{transform:scale(1,1)}}
+.g1y1-orb__t{animation:g1y1-orb__t 2s linear infinite both;transform-origin:0 0}
+.g1y1-shadow__s{animation:g1y1-shadow__s 2s linear infinite both;transform-origin:0 0}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+<defs>
+<radialGradient id="g1y1-orb__grad" gradientUnits="userSpaceOnUse" cx="-20" cy="-20" r="110"><stop offset="0" stop-color="#e0f2fe"/><stop offset="0.5" stop-color="#38bdf8"/><stop offset="1" stop-color="#1d4ed8"/></radialGradient>
+<linearGradient id="g1y1-shadow__grad" gradientUnits="userSpaceOnUse" x1="-60" y1="0" x2="60" y2="0"><stop offset="0" stop-color="#0f172a" stop-opacity="0"/><stop offset="0.5" stop-color="#38bdf8" stop-opacity="0.3333"/><stop offset="1" stop-color="#0f172a" stop-opacity="0"/></linearGradient>
+</defs>
+<rect width="256" height="256" fill="#020617"/>
+<g class="g1y1-orb__t" transform="translate(128 128)">
+<ellipse rx="80" ry="80" fill="url(#g1y1-orb__grad)"/>
+</g>
+<g transform="translate(128 220)">
+<g class="g1y1-shadow__s" transform="scale(1 1)">
+<ellipse rx="60" ry="10" fill="url(#g1y1-shadow__grad)"/>
+</g>
+</g>
+</svg>

@@ -1,0 +1,90 @@
+{
+  "gertie": 1,
+  "name": "rocket-liftoff",
+  "canvas": { "w": 512, "h": 512, "background": "#0b1026" },
+  "fps": 30,
+  "duration": 3,
+  "loop": false,
+  "poster": 1.6,
+  "palette": {
+    "body": "#e2e8f0",
+    "body-shade": "#94a3b8",
+    "accent": "#ef4444",
+    "window": "#38bdf8",
+    "flame-out": "#f97316",
+    "flame-in": "#fde047",
+    "nozzle": "#475569",
+    "pad": "#334155",
+    "smoke": "#e2e8f0",
+    "star": "#fef9c3"
+  },
+  "nodes": [
+    { "id": "stars", "type": "group", "children": [
+      { "id": "star-1", "type": "star", "points": 5, "r": 9, "innerR": 4, "x": 60, "y": 70, "fill": "$star",
+        "motion": [{ "preset": "twinkle", "duration": 1.5, "repeat": "loop", "phase": 0.1 }] },
+      { "id": "star-2", "type": "star", "points": 5, "r": 6, "innerR": 2.5, "x": 150, "y": 40, "fill": "#ffffff",
+        "motion": [{ "preset": "twinkle", "duration": 1.5, "repeat": "loop", "phase": 0.4 }] },
+      { "id": "star-3", "type": "star", "points": 5, "r": 8, "innerR": 3.5, "x": 300, "y": 60, "fill": "$star",
+        "motion": [{ "preset": "twinkle", "duration": 1.5, "repeat": "loop", "phase": 0.7 }] },
+      { "id": "star-4", "type": "star", "points": 5, "r": 10, "innerR": 4.5, "x": 440, "y": 50, "fill": "#bae6fd",
+        "motion": [{ "preset": "twinkle", "duration": 1.5, "repeat": "loop", "phase": 0.2 }] },
+      { "id": "star-5", "type": "star", "points": 5, "r": 6, "innerR": 2.5, "x": 470, "y": 150, "fill": "#ffffff",
+        "motion": [{ "preset": "twinkle", "duration": 1.5, "repeat": "loop", "phase": 0.55 }] },
+      { "id": "star-6", "type": "star", "points": 5, "r": 7, "innerR": 3, "x": 40, "y": 200, "fill": "$star",
+        "motion": [{ "preset": "twinkle", "duration": 1.5, "repeat": "loop", "phase": 0.85 }] },
+      { "id": "star-7", "type": "star", "points": 5, "r": 5, "innerR": 2, "x": 120, "y": 260, "fill": "#ffffff",
+        "motion": [{ "preset": "twinkle", "duration": 1.5, "repeat": "loop", "phase": 0.3 }] },
+      { "id": "star-8", "type": "star", "points": 5, "r": 8, "innerR": 3.5, "x": 430, "y": 250, "fill": "$star",
+        "motion": [{ "preset": "twinkle", "duration": 1.5, "repeat": "loop", "phase": 0.65 }] },
+      { "id": "star-9", "type": "star", "points": 5, "r": 6, "innerR": 2.5, "x": 90, "y": 400, "fill": "#bae6fd",
+        "motion": [{ "preset": "twinkle", "duration": 1.5, "repeat": "loop", "phase": 0.45 }] },
+      { "id": "star-10", "type": "star", "points": 5, "r": 9, "innerR": 4, "x": 400, "y": 380, "fill": "$star",
+        "motion": [{ "preset": "twinkle", "duration": 1.5, "repeat": "loop", "phase": 0.15 }] },
+      { "id": "star-11", "type": "star", "points": 5, "r": 5, "innerR": 2, "x": 470, "y": 330, "fill": "#ffffff",
+        "motion": [{ "preset": "twinkle", "duration": 1.5, "repeat": "loop", "phase": 0.9 }] },
+      { "id": "star-12", "type": "star", "points": 5, "r": 4, "innerR": 2, "x": 210, "y": 150, "fill": "$star",
+        "motion": [{ "preset": "twinkle", "duration": 1.5, "repeat": "loop", "phase": 0.6 }] }
+    ] },
+    { "id": "pad", "type": "rect", "x": 256, "y": 500, "w": 160, "h": 16, "radius": 4, "fill": "$pad" },
+    { "id": "smoke", "type": "group", "children": [
+      { "id": "puff-1", "type": "ellipse", "x": 232, "y": 470, "rx": 22, "ry": 18, "fill": "$smoke",
+        "motion": [{ "preset": "rise", "at": 0.1, "duration": 1.6 }] },
+      { "id": "puff-2", "type": "ellipse", "x": 280, "y": 468, "rx": 26, "ry": 22, "fill": "$smoke",
+        "motion": [{ "preset": "rise", "at": 0.0, "duration": 1.8 }] },
+      { "id": "puff-3", "type": "ellipse", "x": 256, "y": 476, "rx": 18, "ry": 15, "fill": "$smoke",
+        "motion": [{ "preset": "rise", "at": 0.25, "duration": 1.5 }] },
+      { "id": "puff-4", "type": "ellipse", "x": 206, "y": 482, "rx": 16, "ry": 13, "fill": "$smoke",
+        "motion": [{ "preset": "rise", "at": 0.35, "duration": 1.4 }] },
+      { "id": "puff-5", "type": "ellipse", "x": 306, "y": 480, "rx": 18, "ry": 14, "fill": "$smoke",
+        "motion": [{ "preset": "rise", "at": 0.45, "duration": 1.4 }] }
+    ] },
+    { "id": "rocket", "type": "group", "x": 256, "y": 310,
+      "animate": {
+        "x": [[0, 256], [0.12, 252, "smooth"], [0.24, 260, "smooth"], [0.36, 253, "smooth"], [0.48, 258, "smooth"], [0.6, 256, "smooth"]],
+        "y": [[0, 310], [0.5, 316, "smooth"], [0.8, 314, "smooth"], [3, -150, "easeInCubic"]]
+      },
+      "children": [
+        { "id": "flame", "type": "group", "pivot": [0, 92],
+          "motion": [{ "preset": "flicker", "duration": 1.0, "repeat": "loop" }],
+          "children": [
+            { "id": "flame-outer", "type": "path", "fill": "$flame-out",
+              "d": "M -22 92 C -28 124 -12 146 0 178 C 12 146 28 124 22 92 Z" },
+            { "id": "flame-inner", "type": "path", "fill": "$flame-in",
+              "d": "M -11 92 C -14 116 -6 132 0 146 C 6 132 14 116 11 92 Z" }
+          ] },
+        { "id": "fin-l", "type": "path", "fill": "$accent",
+          "d": "M -40 20 C -62 30 -76 66 -76 106 L -42 92 Z" },
+        { "id": "fin-r", "type": "path", "fill": "$accent",
+          "d": "M 40 20 C 62 30 76 66 76 106 L 42 92 Z" },
+        { "id": "body", "type": "path", "fill": "$body",
+          "d": "M 0 -125 C 26 -102 42 -62 42 -12 L 42 88 L -42 88 L -42 -12 C -42 -62 -26 -102 0 -125 Z" },
+        { "id": "body-shade", "type": "path", "fill": "$body-shade",
+          "clip": { "type": "path", "d": "M 0 -125 C 26 -102 42 -62 42 -12 L 42 88 L -42 88 L -42 -12 C -42 -62 -26 -102 0 -125 Z" },
+          "d": "M 16 -120 C 36 -90 48 -50 48 -10 L 48 100 L 16 100 Z" },
+        { "id": "window", "type": "ellipse", "x": 0, "y": -30, "r": 17, "fill": "$window",
+          "stroke": { "color": "#0f172a", "width": 6 } },
+        { "id": "window-glint", "type": "ellipse", "x": -6, "y": -36, "r": 5, "fill": "#e0f2fe" },
+        { "id": "nozzle", "type": "rect", "x": 0, "y": 94, "w": 44, "h": 12, "radius": 3, "fill": "$nozzle" }
+      ] }
+  ]
+}

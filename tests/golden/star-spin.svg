@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+<style>
+@keyframes gu0u-star__r{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+@keyframes gu0u-hex__r{0%{transform:rotate(0deg)}100%{transform:rotate(-360deg)}}
+.gu0u-star__r{animation:gu0u-star__r 2s linear infinite both;transform-origin:0 0}
+.gu0u-hex__r{animation:gu0u-hex__r 2s linear infinite both;transform-origin:0 0}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+<g transform="translate(128 128)">
+<g class="gu0u-star__r" transform="rotate(0)">
+<path d="M0 -90C0 -90 22.34 -30.74 22.34 -30.74C22.34 -30.74 85.6 -27.81 85.6 -27.81C85.6 -27.81 36.14 11.74 36.14 11.74C36.14 11.74 52.9 72.81 52.9 72.81C52.9 72.81 0 38 0 38C0 38 -52.9 72.81 -52.9 72.81C-52.9 72.81 -36.14 11.74 -36.14 11.74C-36.14 11.74 -85.6 -27.81 -85.6 -27.81C-85.6 -27.81 -22.34 -30.74 -22.34 -30.74C-22.34 -30.74 0 -90 0 -90Z" fill="#facc15"/>
+</g>
+</g>
+<g transform="translate(128 128)">
+<g class="gu0u-hex__r" transform="rotate(0)">
+<path d="M0 -26C0 -26 22.52 -13 22.52 -13C22.52 -13 22.52 13 22.52 13C22.52 13 0 26 0 26C0 26 -22.52 13 -22.52 13C-22.52 13 -22.52 -13 -22.52 -13C-22.52 -13 0 -26 0 -26Z" fill="#0f172a"/>
+</g>
+</g>
+</svg>

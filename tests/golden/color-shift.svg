@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+<style>
+@keyframes g1n2-tile__r{0%{transform:rotate(-10deg);animation-timing-function:cubic-bezier(0.65,0,0.35,1)}50%{transform:rotate(10deg);animation-timing-function:cubic-bezier(0.65,0,0.35,1)}100%{transform:rotate(-10deg)}}
+@keyframes g1n2-tile__fill{0%{fill:#3b82f6;animation-timing-function:cubic-bezier(0.65,0,0.35,1)}50%{fill:#ec4899;animation-timing-function:cubic-bezier(0.65,0,0.35,1)}100%{fill:#3b82f6}}
+.g1n2-tile__r{animation:g1n2-tile__r 2s linear infinite both;transform-origin:0 0}
+.g1n2-tile__sh{animation:g1n2-tile__fill 2s linear infinite both}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+<g transform="translate(128 128)">
+<g class="g1n2-tile__r" transform="rotate(-10)">
+<rect class="g1n2-tile__sh" x="-70" y="-70" width="140" height="140" rx="32" fill="#3b82f6"/>
+</g>
+</g>
+</svg>

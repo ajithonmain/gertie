@@ -1,0 +1,17 @@
+{
+  "story": 1,
+  "name": "app-intro",
+  "canvas": { "w": 540, "h": 960, "background": "#0b0f19" },
+  "fps": 30,
+  "audio": { "src": "music.mp3", "volume": 0.6, "fadeOut": 1.0 },
+  "scenes": [
+    { "id": "hook", "src": "scenes/hook.gertie.json", "duration": 3.0,
+      "caption": "Tired of spreadsheets?",
+      "transition": { "type": "fade", "duration": 0.4 } },
+    { "id": "demo", "src": "scenes/demo.gertie.json", "duration": 5.0,
+      "caption": "Meet Tally.",
+      "transition": { "type": "slide-left", "duration": 0.5 } },
+    { "id": "cta", "src": "scenes/cta.gertie.json", "duration": 3.0, "caption": "Try it free today" }
+  ],
+  "captions": { "position": "bottom", "size": 44, "color": "#ffffff", "box": true }
+}

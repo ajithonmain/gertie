@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+<style>
+@keyframes gjio-sun__s{0%{transform:scale(1,1);animation-timing-function:cubic-bezier(0.65,0,0.35,1)}50%{transform:scale(1.1,1.1);animation-timing-function:cubic-bezier(0.65,0,0.35,1)}100%{transform:scale(1,1)}}
+.gjio-sun__s{animation:gjio-sun__s 4s linear infinite both;transform-origin:0 0}
+.gjio-hole__matte-inv__src [fill]:not([fill="none"]){fill:#000!important}
+.gjio-hole__matte-inv__src [stroke]{stroke:#000!important}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+<defs>
+<mask id="gjio-hole__matte-inv" maskUnits="userSpaceOnUse" x="-512" y="-512" width="1536" height="1536"><rect x="-512" y="-512" width="1536" height="1536" fill="#fff"/><g class="gjio-hole__matte-inv__src"><g transform="translate(256 256)"><ellipse rx="10" ry="10" fill="#000000"><animate attributeName="rx" dur="4s" repeatCount="indefinite" calcMode="spline" values="10;300;300;10" keyTimes="0;0.375;0.625;1" keySplines="0.65 0 0.35 1;0.65 0 0.35 1;0.65 0 0.35 1"/><animate attributeName="ry" dur="4s" repeatCount="indefinite" calcMode="spline" values="10;300;300;10" keyTimes="0;0.375;0.625;1" keySplines="0.65 0 0.35 1;0.65 0 0.35 1;0.65 0 0.35 1"/></ellipse></g></g></mask>
+</defs>
+<rect width="512" height="512" fill="#0b1020"/>
+<g transform="translate(256 256)">
+<rect x="-200" y="-200" width="400" height="400" rx="40" fill="#38bdf8"/>
+</g>
+<g transform="translate(330 190)">
+<g class="gjio-sun__s" transform="scale(1 1)">
+<ellipse rx="60" ry="60" fill="#fb923c"/>
+</g>
+</g>
+<g transform="translate(256 330)">
+<path d="M-200 70C-120 -60 0 -40 80 0C130 20 170 10 200 -20C200 -20 200 70 200 70C200 70 -200 70 -200 70Z" fill="#34d399"/>
+</g>
+<g mask="url(#gjio-hole__matte-inv)">
+<g transform="translate(256 256)">
+<rect x="-200" y="-200" width="400" height="400" rx="40" fill="#1e293b"/>
+</g>
+</g>
+</svg>

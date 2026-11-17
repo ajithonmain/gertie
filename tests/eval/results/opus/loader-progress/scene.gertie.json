@@ -1,0 +1,21 @@
+{
+  "gertie": 1,
+  "name": "progress-bar",
+  "tier": "icon",
+  "canvas": { "w": 512, "h": 128 },
+  "fps": 30,
+  "duration": 2.4,
+  "poster": 1.8,
+  "palette": { "track": "#1e293b", "fill": "#38bdf8" },
+  "nodes": [
+    { "id": "track", "type": "rect", "x": 256, "y": 64, "w": 432, "h": 28, "radius": 14, "fill": "$track" },
+    { "id": "bar", "type": "line", "x1": 54, "y1": 64, "x2": 458, "y2": 64,
+      "stroke": { "color": "$fill", "width": 20, "cap": "round" },
+      "trim": { "start": 0, "end": 0 },
+      "animate": {
+        "trim.end": [[0, 0], [0.1, 0], [1.8, 1, "easeInOutCubic"], [2.15, 1], [2.2, 0, "hold"], [2.4, 0]],
+        "opacity":  [[0, 1], [1.95, 1], [2.15, 0, "easeOut"], [2.2, 1, "hold"], [2.4, 1]]
+      }
+    }
+  ]
+}

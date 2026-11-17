@@ -1,0 +1,111 @@
+{
+  "gertie": 1,
+  "name": "blob-wave",
+  "tier": "character",
+  "canvas": { "w": 512, "h": 512 },
+  "fps": 30,
+  "duration": 6,
+  "loop": true,
+  "poster": 1.6,
+  "palette": {
+    "body": "#34d399",
+    "body-shade": "#10b981",
+    "body-tint": "#a7f3d0",
+    "ink": "#0f172a",
+    "cheek": "#f472b6"
+  },
+  "nodes": [
+    {
+      "id": "blob",
+      "type": "group",
+      "x": 256,
+      "y": 440,
+      "motion": [
+        { "preset": "rig-idle", "armSway": 0, "repeat": "loop" },
+        { "preset": "rig-blink", "every": 2.6, "seed": 7 },
+        { "preset": "rig-wave", "arm": "r", "at": 1.0, "raise": 120, "angle": 24, "count": 3 }
+      ],
+      "children": [
+        {
+          "id": "blob-shadow",
+          "type": "ellipse",
+          "rx": 130,
+          "ry": 14,
+          "x": 0,
+          "y": 2,
+          "fill": "#00000033"
+        },
+        {
+          "id": "blob-arm-l",
+          "type": "group",
+          "x": -118,
+          "y": -120,
+          "pivot": [0, 0],
+          "children": [
+            { "id": "blob-arm-l-limb", "type": "rect", "x": 0, "y": 45, "w": 34, "h": 110, "radius": 17, "fill": "$body-shade" },
+            { "id": "blob-hand-l", "type": "ellipse", "r": 20, "x": 0, "y": 104, "fill": "$body-shade" }
+          ]
+        },
+        {
+          "id": "blob-body",
+          "type": "group",
+          "pivot": [0, 0],
+          "children": [
+            {
+              "id": "blob-torso",
+              "type": "path",
+              "fill": "$body",
+              "d": "M 0 -240 C 85 -240 125 -175 125 -115 C 125 -50 110 0 0 0 C -110 0 -125 -50 -125 -115 C -125 -175 -85 -240 0 -240 Z"
+            },
+            {
+              "id": "blob-shade",
+              "type": "path",
+              "fill": "$body-shade",
+              "clip": { "type": "path", "d": "M 0 -240 C 85 -240 125 -175 125 -115 C 125 -50 110 0 0 0 C -110 0 -125 -50 -125 -115 C -125 -175 -85 -240 0 -240 Z" },
+              "d": "M 60 -250 C 140 -200 150 -120 130 -60 C 115 -20 60 -5 -10 10 L 200 10 L 200 -250 Z"
+            },
+            {
+              "id": "blob-highlight",
+              "type": "ellipse",
+              "rx": 20,
+              "ry": 32,
+              "x": -62,
+              "y": -170,
+              "rotation": -20,
+              "fill": "$body-tint"
+            },
+            {
+              "id": "blob-arm-r",
+              "type": "group",
+              "x": 118,
+              "y": -120,
+              "pivot": [0, 0],
+              "children": [
+                { "id": "blob-arm-r-limb", "type": "rect", "x": 0, "y": 45, "w": 34, "h": 110, "radius": 17, "fill": "$body-shade" },
+                { "id": "blob-hand-r", "type": "ellipse", "r": 20, "x": 0, "y": 104, "fill": "$body-shade" }
+              ]
+            },
+            {
+              "id": "blob-head",
+              "type": "group",
+              "pivot": [0, -120],
+              "children": [
+                { "id": "blob-cheek-l", "type": "ellipse", "rx": 16, "ry": 9, "x": -75, "y": -118, "fill": "$cheek", "opacity": 0.6 },
+                { "id": "blob-cheek-r", "type": "ellipse", "rx": 16, "ry": 9, "x": 75, "y": -118, "fill": "$cheek", "opacity": 0.6 },
+                { "id": "blob-eye-l", "type": "ellipse", "rx": 14, "ry": 22, "x": -42, "y": -150, "fill": "$ink" },
+                { "id": "blob-eye-r", "type": "ellipse", "rx": 14, "ry": 22, "x": 42, "y": -150, "fill": "$ink" },
+                {
+                  "id": "blob-mouth",
+                  "type": "path",
+                  "fill": null,
+                  "stroke": { "color": "$ink", "width": 6, "cap": "round" },
+                  "d": "M -20 -103 Q 0 -83 20 -103"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

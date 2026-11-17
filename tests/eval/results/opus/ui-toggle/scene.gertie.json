@@ -1,0 +1,45 @@
+{
+  "gertie": 1,
+  "name": "toggle-switch",
+  "tier": "icon",
+  "canvas": { "w": 512, "h": 512 },
+  "fps": 30,
+  "duration": 2.4,
+  "poster": 1.2,
+  "palette": {
+    "off": "#cbd5e1",
+    "on": "#22c55e",
+    "off-edge": "#94a3b8",
+    "on-edge": "#16a34a",
+    "knob": "#ffffff",
+    "shadow": "#0f172a33"
+  },
+  "nodes": [
+    {
+      "id": "track", "type": "rect", "x": 256, "y": 256, "w": 280, "h": 140, "radius": 70,
+      "fill": "$off",
+      "stroke": { "color": "$off-edge", "width": 4 },
+      "animate": {
+        "fill": [[0, "$off"], [0.4, "$off"], [0.8, "$on", "easeOutCubic"], [1.6, "$on"], [2.0, "$off", "easeOutCubic"], [2.4, "$off"]],
+        "stroke.color": [[0, "$off-edge"], [0.45, "$off-edge"], [0.85, "$on-edge", "easeOutCubic"], [1.65, "$on-edge"], [2.05, "$off-edge", "easeOutCubic"], [2.4, "$off-edge"]]
+      }
+    },
+    {
+      "id": "knob", "type": "group", "x": 186, "y": 256,
+      "animate": {
+        "x": [[0, 186], [0.4, 186], [0.8, 326, "easeOutBack"], [1.6, 326], [2.0, 186, "easeOutBack"], [2.4, 186]],
+        "scale": [[0, [1, 1]], [0.4, [1, 1]], [0.58, [1.14, 0.9], "easeOutQuad"], [0.85, [1, 1], "settle"], [1.6, [1, 1]], [1.78, [1.14, 0.9], "easeOutQuad"], [2.05, [1, 1], "settle"], [2.4, [1, 1]]]
+      },
+      "children": [
+        { "id": "knob-shadow", "type": "ellipse", "r": 56, "y": 5, "fill": "$shadow" },
+        { "id": "knob-body", "type": "ellipse", "r": 56,
+          "fill": { "type": "radial", "center": [-14, -18], "radius": 72, "stops": [[0, "#ffffff"], [1, "#e2e8f0"]] } },
+        { "id": "check", "type": "path", "d": "M -18 2 L -5 15 L 20 -12",
+          "stroke": { "color": "$on", "width": 9 }, "trim": { "start": 0, "end": 0 },
+          "animate": {
+            "trim.end": [[0, 0], [0.7, 0], [1.0, 1, "easeOutCubic"], [1.6, 1], [1.8, 0, "easeInQuad"], [2.4, 0]]
+          } }
+      ]
+    }
+  ]
+}

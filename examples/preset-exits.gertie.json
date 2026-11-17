@@ -1,0 +1,105 @@
+{
+  "gertie": 1,
+  "name": "preset-exits",
+  "canvas": {
+    "w": 512,
+    "h": 256,
+    "background": "#111827"
+  },
+  "duration": 3,
+  "loop": false,
+  "nodes": [
+    {
+      "id": "ground",
+      "type": "rect",
+      "w": 440,
+      "h": 4,
+      "radius": 2,
+      "x": 256,
+      "y": 200,
+      "fill": "#374151"
+    },
+    {
+      "id": "fade",
+      "type": "ellipse",
+      "r": 24,
+      "x": 51,
+      "y": 128,
+      "fill": "#6366f1",
+      "motion": [
+        {
+          "preset": "fade-out",
+          "at": 0.5
+        }
+      ]
+    },
+    {
+      "id": "pop",
+      "type": "rect",
+      "w": 44,
+      "h": 44,
+      "radius": 8,
+      "x": 154,
+      "y": 128,
+      "fill": "#22c55e",
+      "motion": [
+        {
+          "preset": "pop-out",
+          "at": 0.8
+        }
+      ]
+    },
+    {
+      "id": "slide",
+      "type": "rect",
+      "w": 44,
+      "h": 44,
+      "radius": 8,
+      "x": 256,
+      "y": 128,
+      "fill": "#f59e0b",
+      "motion": [
+        {
+          "preset": "slide-out",
+          "at": 1.1,
+          "to": "top",
+          "distance": 70
+        }
+      ]
+    },
+    {
+      "id": "draw",
+      "type": "path",
+      "d": "M-20 2 L-6 16 L22 -16",
+      "x": 358,
+      "y": 128,
+      "stroke": {
+        "color": "#38bdf8",
+        "width": 8
+      },
+      "motion": [
+        {
+          "preset": "draw-off",
+          "at": 1.4,
+          "duration": 0.8
+        }
+      ]
+    },
+    {
+      "id": "shrink",
+      "type": "star",
+      "points": 5,
+      "r": 28,
+      "innerR": 13,
+      "x": 461,
+      "y": 128,
+      "fill": "#e879f9",
+      "motion": [
+        {
+          "preset": "shrink-out",
+          "at": 1.7
+        }
+      ]
+    }
+  ]
+}

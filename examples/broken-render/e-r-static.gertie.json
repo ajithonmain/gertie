@@ -1,0 +1,6 @@
+{
+  "gertie": 1, "name": "no-motion", "canvas": { "w": 200, "h": 200 }, "duration": 1,
+  "nodes": [
+    { "id": "ball", "type": "ellipse", "r": 30, "x": 100, "y": 100, "fill": "#ef4444" }
+  ]
+}

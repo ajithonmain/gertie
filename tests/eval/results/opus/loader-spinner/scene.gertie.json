@@ -1,0 +1,26 @@
+{
+  "gertie": 1,
+  "name": "loading-spinner",
+  "tier": "icon",
+  "canvas": { "w": 512, "h": 512 },
+  "fps": 60,
+  "duration": 1.6,
+  "palette": { "track": "#3b82f62e", "arc": "#3b82f6" },
+  "nodes": [
+    { "id": "track", "type": "ellipse", "r": 140, "x": 256, "y": 256,
+      "stroke": { "color": "$track", "width": 28 } },
+    { "id": "spinner", "type": "group", "x": 256, "y": 256,
+      "animate": { "rotation": [[0, 0], [1.6, 360, "linear"]] },
+      "children": [
+        { "id": "arc", "type": "ellipse", "r": 140,
+          "stroke": { "color": "$arc", "width": 28, "cap": "round" },
+          "trim": { "start": 0, "end": 0.05 },
+          "animate": {
+            "trim.end": [[0, 0.05], [0.4, 0.55, "easeInOutCubic"], [0.8, 0.05, "easeInOutCubic"],
+                         [1.2, 0.55, "easeInOutCubic"], [1.6, 0.05, "easeInOutCubic"]],
+            "rotation": [[0, 0], [0.4, 0], [0.8, 180, "easeInOutCubic"],
+                         [1.2, 180], [1.6, 360, "easeInOutCubic"]]
+          } }
+      ] }
+  ]
+}

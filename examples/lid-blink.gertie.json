@@ -1,0 +1,22 @@
+{
+  "gertie": 1,
+  "name": "lid-blink",
+  "canvas": { "w": 320, "h": 240, "background": "#0f172a" },
+  "duration": 3,
+  "nodes": [
+    { "id": "face", "type": "ellipse", "rx": 100, "ry": 110, "x": 160, "y": 120, "fill": "#e6b08e" },
+    { "id": "eye-l", "type": "ellipse", "rx": 24, "ry": 16, "x": 118, "y": 108, "fill": "#f8fafc" },
+    { "id": "eye-r", "type": "ellipse", "rx": 24, "ry": 16, "x": 202, "y": 108, "fill": "#f8fafc" },
+    { "id": "iris-l", "type": "ellipse", "r": 10, "x": 118, "y": 108, "fill": "#2f6b4f", "motion": [{ "preset": "float", "distance": 3, "duration": 3 }] },
+    { "id": "iris-r", "type": "ellipse", "r": 10, "x": 202, "y": 108, "fill": "#2f6b4f", "motion": [{ "preset": "float", "distance": 3, "duration": 3 }] },
+    { "id": "mouth", "type": "path", "d": "M135 170 Q160 188 185 170", "stroke": { "color": "#9b4a4a", "width": 5 } },
+    {
+      "id": "lid-l", "type": "ellipse", "rx": 26, "ry": 18, "x": 118, "y": 108, "pivot": [0, -18], "fill": "#e6b08e",
+      "motion": [{ "preset": "lid-blink", "at": 0.8 }, { "preset": "lid-blink", "at": 2.0 }]
+    },
+    {
+      "id": "lid-r", "type": "ellipse", "rx": 26, "ry": 18, "x": 202, "y": 108, "pivot": [0, -18], "fill": "#e6b08e",
+      "motion": [{ "preset": "lid-blink", "at": 0.8 }, { "preset": "lid-blink", "at": 2.0 }]
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "gertie": 1,
+  "name": "broken-marker",
+  "canvas": { "w": 200, "h": 200 },
+  "duration": 2,
+  "markers": { "intro": [1.5, 1] },
+  "nodes": [
+    { "id": "dot", "type": "ellipse", "r": 20, "x": 100, "y": 100, "fill": "#3b82f6", "animate": { "x": [[0, 60], [2, 140]] } }
+  ]
+}

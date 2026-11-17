@@ -1,0 +1,42 @@
+{
+  "gertie": 1,
+  "name": "success-checkmark",
+  "canvas": { "w": 512, "h": 512 },
+  "fps": 30,
+  "duration": 2.4,
+  "loop": false,
+  "poster": 2.4,
+  "tier": "icon",
+  "palette": { "green": "#22c55e", "ring": "#16a34a" },
+  "nodes": [
+    {
+      "id": "badge",
+      "type": "group",
+      "children": [
+        {
+          "id": "ring",
+          "type": "ellipse",
+          "r": 200,
+          "x": 256,
+          "y": 256,
+          "rotation": -90,
+          "stroke": { "color": "$ring", "width": 24, "cap": "round" },
+          "trim": { "start": 0, "end": 0 },
+          "motion": [
+            { "preset": "draw-on", "at": 0.1, "duration": 0.7 }
+          ]
+        },
+        {
+          "id": "tick",
+          "type": "path",
+          "d": "M 166 262 L 228 322 L 352 192",
+          "stroke": { "color": "$green", "width": 30, "cap": "round", "join": "round" },
+          "trim": { "start": 0, "end": 0 },
+          "animate": {
+            "trim.end": [[0.7, 0], [1.2, 1, "easeOutCubic"]]
+          }
+        }
+      ]
+    }
+  ]
+}

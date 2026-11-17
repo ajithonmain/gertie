@@ -1,0 +1,30 @@
+{
+  "gertie": 1,
+  "name": "hamburger-to-close",
+  "canvas": { "w": 192, "h": 192 },
+  "duration": 1.6,
+  "palette": { "ink": "#e2e8f0" },
+  "nodes": [
+    {
+      "id": "top", "type": "rect", "w": 80, "h": 10, "radius": 5, "x": 96, "y": 68, "fill": "$ink",
+      "animate": {
+        "y": [[0, 68], [0.5, 96, "easeInOut"], [1, 96], [1.5, 68, "easeInOut"], [1.6, 68]],
+        "rotation": [[0, 0], [0.5, 45, "easeInOut"], [1, 45], [1.5, 0, "easeInOut"], [1.6, 0]]
+      }
+    },
+    {
+      "id": "middle", "type": "rect", "w": 80, "h": 10, "radius": 5, "x": 96, "y": 96, "fill": "$ink",
+      "animate": {
+        "opacity": [[0, 1], [0.3, 0, "easeOut"], [1.2, 0], [1.5, 1, "easeIn"], [1.6, 1]],
+        "scale": [[0, [1, 1]], [0.3, [0.2, 1], "easeOut"], [1.2, [0.2, 1]], [1.5, [1, 1], "easeIn"], [1.6, [1, 1]]]
+      }
+    },
+    {
+      "id": "bottom", "type": "rect", "w": 80, "h": 10, "radius": 5, "x": 96, "y": 124, "fill": "$ink",
+      "animate": {
+        "y": [[0, 124], [0.5, 96, "easeInOut"], [1, 96], [1.5, 124, "easeInOut"], [1.6, 124]],
+        "rotation": [[0, 0], [0.5, -45, "easeInOut"], [1, -45], [1.5, 0, "easeInOut"], [1.6, 0]]
+      }
+    }
+  ]
+}

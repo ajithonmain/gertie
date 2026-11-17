@@ -1,0 +1,12 @@
+{
+  "gertie": 1,
+  "name": "typing-dots",
+  "canvas": { "w": 160, "h": 80 },
+  "duration": 1.2,
+  "palette": { "ink": "#94a3b8" },
+  "nodes": [
+    { "id": "dot-1", "type": "ellipse", "r": 9, "x": 40, "y": 40, "fill": "$ink", "animate": { "opacity": [[0, 0.25], [0.3, 1, "easeOut"], [0.6, 0.25, "easeIn"], [1.2, 0.25]] } },
+    { "id": "dot-2", "type": "ellipse", "r": 9, "x": 80, "y": 40, "fill": "$ink", "animate": { "opacity": [[0, 0.25], [0.2, 0.25], [0.5, 1, "easeOut"], [0.8, 0.25, "easeIn"], [1.2, 0.25]] } },
+    { "id": "dot-3", "type": "ellipse", "r": 9, "x": 120, "y": 40, "fill": "$ink", "animate": { "opacity": [[0, 0.25], [0.4, 0.25], [0.7, 1, "easeOut"], [1.0, 0.25, "easeIn"], [1.2, 0.25]] } }
+  ]
+}

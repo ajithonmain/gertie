@@ -1,0 +1,16 @@
+{
+  "gertie": 1,
+  "name": "image-float",
+  "canvas": { "w": 192, "h": 192, "background": "#0f172a" },
+  "duration": 2,
+  "nodes": [
+    { "id": "shadow", "type": "ellipse", "rx": 30, "ry": 6, "x": 96, "y": 160, "fill": "#020617", "animate": { "scale": [[0, 1], [1, 0.75, "easeInOut"], [2, 1, "easeInOut"]] } },
+    {
+      "id": "badge", "type": "image", "src": "badge.png", "w": 64, "h": 64, "x": 64, "y": 60, "pivot": [32, 32],
+      "animate": {
+        "y": [[0, 60], [1, 44, "easeInOut"], [2, 60, "easeInOut"]],
+        "rotation": [[0, -6], [1, 6, "easeInOut"], [2, -6, "easeInOut"]]
+      }
+    }
+  ]
+}

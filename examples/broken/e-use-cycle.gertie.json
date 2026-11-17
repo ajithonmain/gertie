@@ -1,0 +1,56 @@
+{
+  "gertie": 1,
+  "name": "broken",
+  "canvas": {
+    "w": 200,
+    "h": 200
+  },
+  "duration": 1,
+  "nodes": [
+    {
+      "id": "a",
+      "type": "rect",
+      "w": 50,
+      "h": 50,
+      "x": 100,
+      "y": 100,
+      "fill": "#ffffff",
+      "animate": {
+        "x": [
+          [
+            0,
+            50
+          ],
+          [
+            1,
+            50
+          ]
+        ]
+      }
+    }
+  ],
+  "defs": {
+    "a": {
+      "id": "def-a",
+      "type": "group",
+      "children": [
+        {
+          "id": "use-b",
+          "type": "use",
+          "ref": "b"
+        }
+      ]
+    },
+    "b": {
+      "id": "def-b",
+      "type": "group",
+      "children": [
+        {
+          "id": "use-a",
+          "type": "use",
+          "ref": "a"
+        }
+      ]
+    }
+  }
+}

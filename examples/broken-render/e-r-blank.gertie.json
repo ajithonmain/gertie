@@ -1,0 +1,7 @@
+{
+  "gertie": 1, "name": "off-canvas", "canvas": { "w": 200, "h": 200 }, "duration": 1,
+  "nodes": [
+    { "id": "ball", "type": "ellipse", "r": 30, "x": 900, "y": 100, "fill": "#ef4444",
+      "animate": { "x": [[0, 900], [0.5, 1000], [1, 900]] } }
+  ]
+}

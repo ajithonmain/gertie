@@ -1,0 +1,24 @@
+{
+  "gertie": 1,
+  "name": "gradient-sweep",
+  "canvas": { "w": 320, "h": 200, "background": "#0b1220" },
+  "duration": 2,
+  "nodes": [
+    {
+      "id": "bar", "type": "rect", "w": 240, "h": 40, "radius": 20, "x": 160, "y": 50,
+      "fill": { "type": "linear", "from": [-120, 0], "to": [-40, 0], "stops": [[0, "#1e3a8a"], [0.5, "#7dd3fc"], [1, "#1e3a8a"]] },
+      "animate": {
+        "fill.from": [[0, [-120, 0]], [1, [40, 0], "easeInOut"], [2, [-120, 0], "easeInOut"]],
+        "fill.to": [[0, [-40, 0]], [1, [120, 0], "easeInOut"], [2, [-40, 0], "easeInOut"]]
+      }
+    },
+    {
+      "id": "orb", "type": "ellipse", "r": 44, "x": 160, "y": 135,
+      "fill": { "type": "radial", "center": [-16, -16], "radius": 60, "stops": [[0, "#fef3c7"], [0.55, "#f59e0b"], [1, "#9a3412"]] },
+      "animate": {
+        "fill.center": [[0, [-16, -16]], [1, [16, 12], "easeInOut"], [2, [-16, -16], "easeInOut"]],
+        "fill.radius": [[0, 60], [1, 80, "easeInOut"], [2, 60, "easeInOut"]]
+      }
+    }
+  ]
+}

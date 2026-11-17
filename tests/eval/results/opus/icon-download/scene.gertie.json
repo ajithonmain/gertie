@@ -1,0 +1,51 @@
+{
+  "gertie": 1,
+  "name": "download-icon",
+  "tier": "icon",
+  "canvas": { "w": 512, "h": 512 },
+  "fps": 30,
+  "duration": 2,
+  "poster": 1.0,
+  "palette": { "arrow": "#2563eb", "tray": "#475569" },
+  "nodes": [
+    {
+      "id": "tray", "type": "path", "x": 256, "y": 400, "pivot": [0, 0],
+      "d": "M -120 -100 V -24 Q -120 0 -96 0 H 96 Q 120 0 120 -24 V -100",
+      "stroke": { "color": "$tray", "width": 30, "cap": "round", "join": "round" },
+      "animate": {
+        "scale": [
+          [0, [1, 1]],
+          [0.8, [1, 1], "smooth"],
+          [0.92, [1.06, 0.9], "snap"],
+          { "t": 1.1, "v": [1, 1], "ease": "smooth", "overshoot": { "past": 0.4, "back": 0, "time": 0.25 } },
+          [2, [1, 1], "smooth"]
+        ]
+      }
+    },
+    {
+      "id": "arrow", "type": "group", "x": 256,
+      "animate": {
+        "y": [
+          [0, 120],
+          [0.2, 120, "smooth"],
+          { "t": 0.85, "v": 240, "ease": "snap", "overshoot": { "past": 0.12, "back": 0.03, "time": 0.3 } },
+          [1.5, 275, "smooth"],
+          [2, 120, "smooth"]
+        ],
+        "opacity": [
+          [0, 0],
+          [0.35, 1, "smooth"],
+          [1.25, 1, "smooth"],
+          [1.5, 0, "smooth"],
+          [2, 0, "smooth"]
+        ]
+      },
+      "children": [
+        { "id": "shaft", "type": "line", "x1": 0, "y1": -90, "x2": 0, "y2": 40,
+          "stroke": { "color": "$arrow", "width": 30, "cap": "round" } },
+        { "id": "head", "type": "path", "d": "M -52 -12 L 0 40 L 52 -12",
+          "stroke": { "color": "$arrow", "width": 30, "cap": "round", "join": "round" } }
+      ]
+    }
+  ]
+}

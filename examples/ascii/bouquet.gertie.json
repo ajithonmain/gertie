@@ -1,0 +1,63 @@
+{
+  "gertie": 1,
+  "name": "bouquet",
+  "canvas": { "w": 640, "h": 640, "background": "#000000" },
+  "fps": 30,
+  "duration": 6,
+  "loop": false,
+  "poster": 5.5,
+  "palette": { "stem": "#5cae3c", "leaf": "#4f9a35", "pink": "#f48fb1", "rose": "#ec6f9c", "white": "#f5f5f5" },
+  "defs": {
+    "bloom-pink": { "id": "bloom-pink", "type": "group", "children": [
+      { "id": "p1", "type": "ellipse", "rx": 15, "ry": 30, "y": -28, "pivot": [0, 28], "rotation": 0, "fill": "$pink" },
+      { "id": "p2", "type": "ellipse", "rx": 15, "ry": 30, "y": -28, "pivot": [0, 28], "rotation": 60, "fill": "$rose" },
+      { "id": "p3", "type": "ellipse", "rx": 15, "ry": 30, "y": -28, "pivot": [0, 28], "rotation": 120, "fill": "$pink" },
+      { "id": "p4", "type": "ellipse", "rx": 15, "ry": 30, "y": -28, "pivot": [0, 28], "rotation": 180, "fill": "$rose" },
+      { "id": "p5", "type": "ellipse", "rx": 15, "ry": 30, "y": -28, "pivot": [0, 28], "rotation": 240, "fill": "$pink" },
+      { "id": "p6", "type": "ellipse", "rx": 15, "ry": 30, "y": -28, "pivot": [0, 28], "rotation": 300, "fill": "$rose" },
+      { "id": "heart", "type": "ellipse", "r": 14, "fill": "$white" }
+    ] },
+    "bloom-white": { "id": "bloom-white", "type": "group", "children": [
+      { "id": "w1", "type": "ellipse", "rx": 13, "ry": 32, "y": -30, "pivot": [0, 30], "rotation": 0, "fill": "$white" },
+      { "id": "w2", "type": "ellipse", "rx": 13, "ry": 32, "y": -30, "pivot": [0, 30], "rotation": 45, "fill": "$white" },
+      { "id": "w3", "type": "ellipse", "rx": 13, "ry": 32, "y": -30, "pivot": [0, 30], "rotation": 90, "fill": "$white" },
+      { "id": "w4", "type": "ellipse", "rx": 13, "ry": 32, "y": -30, "pivot": [0, 30], "rotation": 135, "fill": "$white" },
+      { "id": "w5", "type": "ellipse", "rx": 13, "ry": 32, "y": -30, "pivot": [0, 30], "rotation": 180, "fill": "$white" },
+      { "id": "w6", "type": "ellipse", "rx": 13, "ry": 32, "y": -30, "pivot": [0, 30], "rotation": 225, "fill": "$white" },
+      { "id": "w7", "type": "ellipse", "rx": 13, "ry": 32, "y": -30, "pivot": [0, 30], "rotation": 270, "fill": "$white" },
+      { "id": "w8", "type": "ellipse", "rx": 13, "ry": 32, "y": -30, "pivot": [0, 30], "rotation": 315, "fill": "$white" },
+      { "id": "eye", "type": "ellipse", "r": 13, "fill": "$pink" }
+    ] }
+  },
+  "nodes": [
+    { "id": "stems", "type": "group",
+      "stagger": { "each": 0.15, "order": "center-out" },
+      "motion": [ { "preset": "draw-on", "at": 0.1, "duration": 1.4, "applyTo": "children" } ],
+      "children": [
+        { "id": "stem-1", "type": "path", "d": "M320 620 Q300 430 196 250", "stroke": { "color": "$stem", "width": 10 } },
+        { "id": "stem-2", "type": "path", "d": "M320 620 Q312 400 238 352", "stroke": { "color": "$stem", "width": 10 } },
+        { "id": "stem-3", "type": "path", "d": "M320 620 Q326 380 320 150", "stroke": { "color": "$stem", "width": 11 } },
+        { "id": "stem-4", "type": "path", "d": "M320 620 Q330 420 406 336", "stroke": { "color": "$stem", "width": 10 } },
+        { "id": "stem-5", "type": "path", "d": "M320 620 Q344 430 448 226", "stroke": { "color": "$stem", "width": 10 } }
+      ] },
+    { "id": "leaves", "type": "group",
+      "stagger": { "each": 0.12, "order": "forward" },
+      "motion": [ { "preset": "pop-in", "at": 1.0, "duration": 0.5, "applyTo": "children" } ],
+      "children": [
+        { "id": "leaf-1", "type": "ellipse", "rx": 12, "ry": 34, "x": 290, "y": 470, "rotation": -50, "fill": "$leaf" },
+        { "id": "leaf-2", "type": "ellipse", "rx": 12, "ry": 34, "x": 352, "y": 450, "rotation": 50, "fill": "$leaf" },
+        { "id": "leaf-3", "type": "ellipse", "rx": 10, "ry": 28, "x": 268, "y": 360, "rotation": -35, "fill": "$leaf" },
+        { "id": "leaf-4", "type": "ellipse", "rx": 10, "ry": 28, "x": 380, "y": 370, "rotation": 35, "fill": "$leaf" }
+      ] },
+    { "id": "flower-1", "type": "use", "ref": "bloom-pink", "x": 196, "y": 246, "scale": 1.15, "rotation": -12,
+      "motion": [ { "preset": "pop-in", "at": 1.7, "duration": 0.6 }, { "preset": "sway", "at": 2.3, "duration": 3.7, "angle": 4 } ] },
+    { "id": "flower-2", "type": "use", "ref": "bloom-white", "x": 238, "y": 348, "scale": 0.8,
+      "motion": [ { "preset": "pop-in", "at": 2.0, "duration": 0.6 }, { "preset": "sway", "at": 2.6, "duration": 3.4, "angle": 3 } ] },
+    { "id": "flower-3", "type": "use", "ref": "bloom-pink", "x": 320, "y": 146, "scale": 1.35,
+      "motion": [ { "preset": "pop-in", "at": 2.3, "duration": 0.6 }, { "preset": "sway", "at": 2.9, "duration": 3.1, "angle": 3 } ] },
+    { "id": "flower-4", "type": "use", "ref": "bloom-white", "x": 406, "y": 332, "scale": 0.9, "rotation": 10,
+      "motion": [ { "preset": "pop-in", "at": 2.6, "duration": 0.6 }, { "preset": "sway", "at": 3.2, "duration": 2.8, "angle": 4 } ] },
+    { "id": "flower-5", "type": "use", "ref": "bloom-pink", "x": 448, "y": 222, "scale": 1.1, "rotation": 15,
+      "motion": [ { "preset": "pop-in", "at": 2.9, "duration": 0.6 }, { "preset": "sway", "at": 3.5, "duration": 2.5, "angle": 4 } ] }
+  ]
+}

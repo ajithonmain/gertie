@@ -1,0 +1,198 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Gertie ASCII canvas renderer</title>
+<style>
+  html, body { margin: 0; padding: 0; background: #0b0b0d; }
+  /* While Gertie captures frames the page is transparent, so a transparent animation stays transparent. */
+  html.capture, html.capture body { background: transparent; }
+  canvas { position: absolute; left: 0; top: 0; display: block; }
+</style>
+</head>
+<body>
+<canvas id="grid"></canvas>
+<script>
+  // The canvas renderer for dense ASCII animations. Node calls draw(frame, style) for one frame, or drawBatch(frames, style)
+  // for several, which captures each frame with canvas.toBlob and returns the PNGs. Every draw repaints the whole canvas, and
+  // nothing of a frame is kept once its PNG is returned, so a long animation costs no memory here.
+  // The geometry (cell size, padding, baseline, gradient line, dot sizes) is computed in Node by the same code as the SVG
+  // emitter, so the two renderers place every cell on the same pixels.
+  //
+  // A frame arrives packed, because a list of colour strings per cell costs more to send than to draw:
+  //   rows: one string of `cols` characters per row
+  //   table: the colours used in this frame
+  //   colors, backgrounds: null, or one string per row with one character per cell; char code 0x100 means no colour of its
+  //   own, 0x101 + i means table[i].
+  const canvas = document.getElementById("grid");
+  const ctx = canvas.getContext("2d");
+  // Glyphs are drawn on their own layer so that the glow can blur them without blurring the cell backgrounds.
+  const layer = document.createElement("canvas");
+  const lctx = layer.getContext("2d");
+  let sized = "";
+
+  function size(style) {
+    const dpr = window.devicePixelRatio || 1;
+    const key = style.w + "x" + style.h + "@" + dpr;
+    if (key === sized) return dpr;
+    for (const c of [canvas, layer]) { c.width = Math.round(style.w * dpr); c.height = Math.round(style.h * dpr); }
+    canvas.style.width = style.w + "px";
+    canvas.style.height = style.h + "px";
+    sized = key;
+    return dpr;
+  }
+
+  // The colour of cell c of a packed colour row, or null.
+  const colorAt = (row, table, c) => {
+    if (!row) return null;
+    const k = row.charCodeAt(c) - 0x101;
+    return k >= 0 ? table[k] : null;
+  };
+
+  function paintBackground(style, dpr) {
+    ctx.setTransform(1, 0, 0, 1, 0, 0);
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    if (style.gradient) {
+      const g = style.gradient;
+      const lg = ctx.createLinearGradient(g.x1, g.y1, g.x2, g.y2);
+      lg.addColorStop(0, g.from);
+      lg.addColorStop(1, g.to);
+      ctx.fillStyle = lg;
+      ctx.fillRect(0, 0, style.w, style.h);
+    } else if (style.background !== null) {
+      ctx.fillStyle = style.background;
+      ctx.fillRect(0, 0, style.w, style.h);
+    }
+  }
+
+  // Cell backgrounds: one rectangle per run of one colour along a row, whole pixels, as in the SVG.
+  function paintCellBackgrounds(frame, style) {
+    if (!frame.backgrounds) return;
+    for (let r = 0; r < style.rows; r++) {
+      const row = frame.backgrounds[r];
+      let c = 0;
+      while (c < style.cols) {
+        const color = colorAt(row, frame.table, c);
+        if (color === null) { c++; continue; }
+        let n = 1;
+        while (c + n < style.cols && colorAt(row, frame.table, c + n) === color) n++;
+        ctx.fillStyle = color;
+        ctx.fillRect(style.pad + c * style.cw, style.pad + r * style.ch, n * style.cw, style.ch);
+        c += n;
+      }
+    }
+  }
+
+  // Runs of one row as the SVG emitter makes them: a space never starts or ends a run and has no colour of its own,
+  // so a space between two characters of one colour stays inside that run.
+  function rowRuns(cells, colors, table) {
+    const runs = [];
+    let cur = null;
+    const close = () => { if (cur) { cur.text = cur.text.replace(/ +$/, ""); if (cur.text !== "") runs.push(cur); } cur = null; };
+    const chars = [...cells];
+    for (let i = 0; i < chars.length; i++) {
+      const ch = chars[i];
+      if (ch === " ") { if (cur) cur.text += ch; continue; }
+      const color = colorAt(colors, table, i);
+      if (cur && cur.color === color) cur.text += ch;
+      else { close(); cur = { col: i, text: ch, color }; }
+    }
+    close();
+    return runs;
+  }
+
+  // Glyphs, on the layer. Text: each run starts at its cell and is stretched to exactly its cell count times the cell width,
+  // which is what textLength with lengthAdjust="spacingAndGlyphs" does in the SVG. Dots and squares: a filled shape centred in the cell.
+  function paintGlyphs(g, frame, style, dpr) {
+    let drew = false;
+    g.setTransform(1, 0, 0, 1, 0, 0);
+    g.clearRect(0, 0, layer.width, layer.height);
+    const side = Math.min(style.cw, style.ch);
+    let fill = null;
+    const setFill = (c) => { if (c !== fill) { g.fillStyle = c; fill = c; } };
+    if (style.glyph === "text") {
+      g.font = style.fontSize + "px " + style.fontFamily;
+      g.textBaseline = "alphabetic";
+      g.textAlign = "left";
+      for (let r = 0; r < style.rows; r++) {
+        const colors = frame.colors ? frame.colors[r] : null;
+        const y = style.base + r * style.ch;
+        for (const run of rowRuns(frame.rows[r], colors, frame.table)) {
+          const n = [...run.text].length;
+          g.setTransform(1, 0, 0, 1, 0, 0);
+          const natural = g.measureText(run.text).width || n * style.cw;
+          setFill(run.color || style.color);
+          g.setTransform((dpr * n * style.cw) / natural, 0, 0, dpr, dpr * (style.pad + run.col * style.cw), dpr * y);
+          g.fillText(run.text, 0, 0);
+          drew = true;
+        }
+      }
+    } else {
+      g.setTransform(dpr, 0, 0, dpr, 0, 0);
+      for (let r = 0; r < style.rows; r++) {
+        const colors = frame.colors ? frame.colors[r] : null;
+        let c = 0;
+        for (const ch of frame.rows[r]) {
+          const k = ch === " " ? 0 : style.sizes[ch] || 0;
+          if (k > 0) {
+            const s = k * side;
+            const cx = style.pad + (c + 0.5) * style.cw;
+            const cy = style.pad + (r + 0.5) * style.ch;
+            setFill(colorAt(colors, frame.table, c) || style.color);
+            if (style.glyph === "dot") { g.beginPath(); g.arc(cx, cy, s / 2, 0, Math.PI * 2); g.fill(); }
+            else g.fillRect(cx - s / 2, cy - s / 2, s, s);
+            drew = true;
+          }
+          c++;
+        }
+      }
+    }
+    return drew;
+  }
+
+  // Paints one frame: background or gradient, cell backgrounds, then glyphs, then the glow under them. See canvasStyle in
+  // src/render/ascii-canvas.ts for `style`.
+  window.draw = (frame, style) => {
+    const dpr = size(style);
+    paintBackground(style, dpr);
+    paintCellBackgrounds(frame, style);
+    const drew = paintGlyphs(lctx, frame, style, dpr);
+    if (!drew) return;
+    ctx.setTransform(1, 0, 0, 1, 0, 0);
+    if (style.glow > 0) {
+      // A blurred copy of the glyph layer under the sharp one: the same Gaussian (standard deviation glow * fontSize) and
+      // opacity as the SVG filter. A canvas filter is used rather than shadowBlur, which would paint every shadow in one colour.
+      ctx.filter = "blur(" + style.glow * style.fontSize * dpr + "px)";
+      ctx.globalAlpha = 0.6;
+      ctx.drawImage(layer, 0, 0);
+      ctx.filter = "none";
+      ctx.globalAlpha = 1;
+    }
+    ctx.drawImage(layer, 0, 0);
+  };
+
+  const blobBase64 = (blob) => new Promise((resolve, reject) => {
+    const r = new FileReader();
+    r.onload = () => resolve(String(r.result).slice(String(r.result).indexOf(",") + 1));
+    r.onerror = () => reject(r.error);
+    r.readAsDataURL(blob);
+  });
+
+  // Draws each frame and captures it with toBlob, which copies the canvas at once and encodes it while the next frame is drawn.
+  // Returns one base64 PNG per frame, at the device pixel size, transparent where nothing is drawn.
+  window.drawBatch = async (frames, style) => {
+    const pending = [];
+    for (const f of frames) {
+      window.draw(f, style);
+      pending.push(new Promise((resolve, reject) => canvas.toBlob((b) => (b ? resolve(b) : reject(new Error("toBlob gave no image"))), "image/png")));
+    }
+    const blobs = await Promise.all(pending);
+    const out = [];
+    for (const b of blobs) out.push(await blobBase64(b));
+    return out;
+  };
+  window.ready = true;
+</script>
+</body>
+</html>

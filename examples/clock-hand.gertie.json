@@ -1,0 +1,15 @@
+{
+  "gertie": 1,
+  "name": "clock-hand",
+  "canvas": { "w": 256, "h": 256 },
+  "duration": 3,
+  "nodes": [
+    { "id": "face", "type": "ellipse", "r": 100, "x": 128, "y": 128, "fill": "#111827", "stroke": { "color": "#e5e7eb", "width": 6 } },
+    {
+      "id": "hand", "type": "rect", "w": 80, "h": 8, "radius": 4, "x": 168, "y": 128,
+      "pivot": [-40, 0], "fill": "#f9fafb",
+      "animate": { "rotation": [[0, 0], [3, 360, "linear"]] }
+    },
+    { "id": "hub", "type": "ellipse", "r": 8, "x": 128, "y": 128, "fill": "#ef4444" }
+  ]
+}

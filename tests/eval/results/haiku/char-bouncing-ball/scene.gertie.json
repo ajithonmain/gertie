@@ -1,0 +1,85 @@
+{
+  "gertie": 1,
+  "name": "bouncing-ball",
+  "canvas": { "w": 512, "h": 512, "background": "#f8fafc" },
+  "fps": 30,
+  "duration": 1.2,
+  "loop": true,
+  "poster": 0.6,
+  "palette": {
+    "ground": "#cbd5e1",
+    "shadow": "#0f172a"
+  },
+  "nodes": [
+    {
+      "id": "floor",
+      "type": "line",
+      "x1": 0, "y1": 440, "x2": 512, "y2": 440,
+      "stroke": { "color": "$ground", "width": 3, "cap": "butt" }
+    },
+    {
+      "id": "ground-shadow",
+      "type": "ellipse",
+      "rx": 70, "ry": 12,
+      "x": 256, "y": 440,
+      "fill": "$shadow",
+      "opacity": 0.35,
+      "animate": {
+        "scale": [
+          [0, [1, 1]],
+          [0.6, [0.45, 0.45], "easeOutQuad"],
+          [1.2, [1, 1], "easeInQuad"]
+        ],
+        "opacity": [
+          [0, 0.35],
+          [0.6, 0.12, "easeOutQuad"],
+          [1.2, 0.35, "easeInQuad"]
+        ]
+      }
+    },
+    {
+      "id": "ball",
+      "type": "group",
+      "x": 256,
+      "y": 400,
+      "pivot": [0, 40],
+      "animate": {
+        "y": [
+          [0, 400],
+          [0.6, 150, "easeOutQuad"],
+          [1.2, 400, "easeInQuad"]
+        ],
+        "scale": [
+          [0, [1.2, 0.8]],
+          [0.12, [0.9, 1.1], "easeOutQuad"],
+          [0.6, [1, 1], "easeInOutSine"],
+          [1.0, [0.9, 1.1], "easeInQuad"],
+          [1.17, [1.2, 0.8], "easeInQuad"],
+          [1.2, [1.2, 0.8]]
+        ]
+      },
+      "children": [
+        {
+          "id": "ball-body",
+          "type": "ellipse",
+          "r": 40,
+          "fill": {
+            "type": "radial",
+            "center": [-12, -12],
+            "radius": 56,
+            "stops": [[0, "#fdba74"], [1, "#c2410c"]]
+          }
+        },
+        {
+          "id": "ball-highlight",
+          "type": "ellipse",
+          "r": 9,
+          "x": -14,
+          "y": -14,
+          "fill": "#ffffff",
+          "opacity": 0.6
+        }
+      ]
+    }
+  ]
+}

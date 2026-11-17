@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+<style>
+@keyframes gyxp-shine__t{0%{transform:translate(-80px,256px);animation-timing-function:cubic-bezier(0.65,0,0.35,1)}53.3333%{transform:translate(600px,256px);animation-timing-function:step-end}100%{transform:translate(-80px,256px)}}
+.gyxp-shine__t{animation:gyxp-shine__t 3s linear infinite both;transform-origin:0 0}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+<defs>
+<mask id="gyxp-badge-shape__matte" maskUnits="userSpaceOnUse" x="-512" y="-512" width="1536" height="1536" mask-type="alpha" style="mask-type:alpha"><g transform="translate(256 256)"><path d="M0 -150C60 -150 150 -90 150 0C150 90 60 150 0 150C-60 150 -150 90 -150 0C-150 -90 -60 -150 0 -150Z" fill="#ffffff"/></g></mask>
+</defs>
+<rect width="512" height="512" fill="#0f172a"/>
+<g transform="translate(256 256)">
+<path d="M0 -150C60 -150 150 -90 150 0C150 90 60 150 0 150C-60 150 -150 90 -150 0C-150 -90 -60 -150 0 -150Z" fill="#f59e0b" stroke="#b45309" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4"/>
+</g>
+<g transform="translate(256 256)">
+<path d="M0 -80C0 -80 19.98 -27.51 19.98 -27.51C19.98 -27.51 76.08 -24.72 76.08 -24.72C76.08 -24.72 32.34 10.51 32.34 10.51C32.34 10.51 47.02 64.72 47.02 64.72C47.02 64.72 0 34 0 34C0 34 -47.02 64.72 -47.02 64.72C-47.02 64.72 -32.34 10.51 -32.34 10.51C-32.34 10.51 -76.08 -24.72 -76.08 -24.72C-76.08 -24.72 -19.98 -27.51 -19.98 -27.51C-19.98 -27.51 0 -80 0 -80Z" fill="#fde68a" stroke="#b45309" stroke-width="6" stroke-linecap="round" stroke-linejoin="miter" stroke-miterlimit="4"/>
+</g>
+<g mask="url(#gyxp-badge-shape__matte)">
+<g class="gyxp-shine__t" transform="translate(-80 256)">
+<g transform="rotate(20)">
+<rect x="-28" y="-210" width="56" height="420" fill="#ffffff" fill-opacity="0.8"/>
+</g>
+</g>
+</g>
+</svg>

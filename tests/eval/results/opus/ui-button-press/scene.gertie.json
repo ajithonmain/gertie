@@ -1,0 +1,60 @@
+{
+  "gertie": 1,
+  "name": "cta-shine",
+  "tier": "icon",
+  "canvas": { "w": 512, "h": 256 },
+  "fps": 30,
+  "duration": 3,
+  "loop": true,
+  "poster": 1.1,
+  "palette": {
+    "top": "#7c5cff",
+    "bottom": "#5b3df5",
+    "edge": "#4a2fd6",
+    "shadow": "#2a1a8a40",
+    "label": "#ffffff",
+    "chip": "#ffffff2e"
+  },
+  "nodes": [
+    {
+      "id": "button",
+      "type": "group",
+      "x": 256,
+      "y": 124,
+      "children": [
+        { "id": "shadow", "type": "rect", "y": 10, "w": 352, "h": 100, "radius": 50, "fill": "$shadow" },
+        { "id": "base", "type": "rect", "w": 360, "h": 104, "radius": 52,
+          "fill": { "type": "linear", "from": [0, -52], "to": [0, 52], "stops": [[0, "$top"], [1, "$bottom"]] },
+          "stroke": { "color": "$edge", "width": 2 } },
+        { "id": "highlight", "type": "rect", "y": -26, "w": 320, "h": 40, "radius": 20,
+          "fill": { "type": "linear", "from": [0, -20], "to": [0, 20], "stops": [[0, "#ffffff30"], [1, "#ffffff00"]] } },
+        { "id": "mask", "type": "rect", "w": 360, "h": 104, "radius": 52, "fill": "#ffffff" },
+        {
+          "id": "shine",
+          "type": "path",
+          "d": "M -20 -70 L 30 -70 L 0 70 L -50 70 Z",
+          "fill": { "type": "linear", "from": [-50, 0], "to": [30, 0], "stops": [[0, "#ffffff00"], [0.5, "#ffffff59"], [1, "#ffffff00"]] },
+          "matte": { "by": "mask", "mode": "alpha" },
+          "animate": {
+            "x": [[0, -250], [0.7, -250], [1.6, 290, "easeInOutSine"], [3, -250, "hold"]]
+          }
+        },
+        {
+          "id": "label",
+          "type": "group",
+          "x": -14,
+          "children": [
+            { "id": "letters", "type": "path",
+              "d": "M -102 -10 C -104 -14 -109 -15 -113 -15 C -119 -15 -122 -10 -120 -5 C -118 -1 -110 -1 -105 2 C -100 6 -102 14 -110 15 C -116 16 -121 13 -123 9 M -92 -15 L -72 -15 M -82 -15 L -82 15 M -64 15 L -54 -15 L -44 15 M -60 5 L -48 5 M -34 15 L -34 -15 L -24 -15 C -13 -15 -13 1 -24 1 L -34 1 M -25 1 L -14 15 M -4 -15 L 16 -15 M 6 -15 L 6 15",
+              "stroke": { "color": "$label", "width": 6, "cap": "round", "join": "round" } },
+            { "id": "chip", "type": "ellipse", "x": 112, "r": 30, "fill": "$chip" },
+            { "id": "arrow", "type": "path", "x": 112,
+              "d": "M -10 0 L 10 0 M 2 -8 L 10 0 L 2 8",
+              "stroke": { "color": "$label", "width": 5, "cap": "round", "join": "round" },
+              "animate": { "x": [[0, 112], [1.1, 112], [1.45, 118, "easeOutBack"], [1.8, 112, "easeInOutSine"], [3, 112]] } }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "gertie": 1,
+  "name": "spinner-ring",
+  "canvas": { "w": 256, "h": 256 },
+  "fps": 30,
+  "duration": 1,
+  "loop": true,
+  "nodes": [
+    { "id": "track", "type": "ellipse", "r": 60, "x": 128, "y": 128, "stroke": { "color": "#1e293b", "width": 12 } },
+    {
+      "id": "arc", "type": "ellipse", "r": 60, "x": 128, "y": 128,
+      "stroke": { "color": "#38bdf8", "width": 12, "cap": "round" },
+      "trim": { "start": 0, "end": 0.3 },
+      "animate": { "rotation": [[0, 0], [1, 360, "linear"]] }
+    }
+  ]
+}

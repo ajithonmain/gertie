@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+<style>
+@keyframes g4gg-slider__t{0%{transform:translate(-140px,0px);animation-timing-function:cubic-bezier(0.65,0,0.35,1)}50%{transform:translate(140px,0px);animation-timing-function:cubic-bezier(0.65,0,0.35,1)}100%{transform:translate(-140px,0px)}}
+.g4gg-slider__t{animation:g4gg-slider__t 2s linear infinite both;transform-origin:0 0}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+<defs>
+<clipPath id="g4gg-window__clip"><path d="M-56 -80C-56 -80 56 -80 56 -80C69.25 -80 80 -69.25 80 -56C80 -56 80 56 80 56C80 69.25 69.25 80 56 80C56 80 -56 80 -56 80C-69.25 80 -80 69.25 -80 56C-80 56 -80 -56 -80 -56C-80 -69.25 -69.25 -80 -56 -80Z"/></clipPath>
+</defs>
+<g transform="translate(128 128)">
+<g clip-path="url(#g4gg-window__clip)">
+<rect x="-100" y="-100" width="200" height="200" fill="#1e293b"/>
+<g class="g4gg-slider__t" transform="translate(-140 0)">
+<ellipse rx="60" ry="60" fill="#f472b6"/>
+</g>
+</g>
+</g>
+</svg>

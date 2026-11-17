@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 224" width="192" height="224">
+<style>
+@keyframes geaa-hand__r{0%{transform:rotate(-14deg);animation-timing-function:cubic-bezier(0.65,0,0.35,1)}25%{transform:rotate(18deg);animation-timing-function:cubic-bezier(0.65,0,0.35,1)}50%{transform:rotate(-14deg);animation-timing-function:cubic-bezier(0.65,0,0.35,1)}75%{transform:rotate(18deg);animation-timing-function:cubic-bezier(0.65,0,0.35,1)}100%{transform:rotate(-14deg)}}
+.geaa-hand__r{animation:geaa-hand__r 1.6s linear infinite both;transform-origin:0 0}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+<rect width="192" height="224" fill="#111827"/>
+<g transform="translate(96 190)">
+<rect x="-30" y="-23" width="60" height="46" rx="10" fill="#6366f1"/>
+</g>
+<g transform="translate(96 166)">
+<g class="geaa-hand__r" transform="rotate(-14)">
+<g transform="translate(0 -34)">
+<ellipse rx="30" ry="34" fill="#fcd34d"/>
+</g>
+<g transform="translate(-32 -28) rotate(-30)">
+<ellipse rx="9" ry="20" fill="#fcd34d"/>
+</g>
+<g transform="translate(-17 -76)">
+<rect x="-6" y="-17" width="12" height="34" rx="6" fill="#fcd34d"/>
+</g>
+<g transform="translate(-3 -80)">
+<rect x="-6" y="-19" width="12" height="38" rx="6" fill="#fcd34d"/>
+</g>
+<g transform="translate(11 -76)">
+<rect x="-6" y="-17" width="12" height="34" rx="6" fill="#fcd34d"/>
+</g>
+</g>
+</g>
+</svg>

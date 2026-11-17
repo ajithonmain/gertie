@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 160" width="256" height="160">
+<style>
+@keyframes g1qq-eye-left__s{0%{transform:scale(1,1);animation-timing-function:step-end}74.999%{transform:scale(1,0.08);animation-timing-function:step-end}81.9434%{transform:scale(1,1);animation-timing-function:cubic-bezier(0.65,0,0.35,1)}100%{transform:scale(1,1)}}
+@keyframes g1qq-pupil-left__t{0%{transform:translate(86px,82px);animation-timing-function:cubic-bezier(0.65,0,0.35,1)}50%{transform:translate(96px,82px);animation-timing-function:cubic-bezier(0.65,0,0.35,1)}100%{transform:translate(86px,82px)}}
+@keyframes g1qq-pupil-left__o{0%{opacity:1;animation-timing-function:step-end}74.999%{opacity:0;animation-timing-function:step-end}81.9434%{opacity:1;animation-timing-function:cubic-bezier(0.65,0,0.35,1)}100%{opacity:1}}
+@keyframes g1qq-pupil-right__t{0%{transform:translate(162px,82px);animation-timing-function:cubic-bezier(0.65,0,0.35,1)}50%{transform:translate(172px,82px);animation-timing-function:cubic-bezier(0.65,0,0.35,1)}100%{transform:translate(162px,82px)}}
+.g1qq-eye-left__s{animation:g1qq-eye-left__s 2.4s linear infinite both;transform-origin:0 0}
+.g1qq-eye-right__s{animation:g1qq-eye-left__s 2.4s linear infinite both;transform-origin:0 0}
+.g1qq-pupil-left__t{animation:g1qq-pupil-left__t 2.4s linear infinite both;transform-origin:0 0}
+.g1qq-pupil-left__sh{animation:g1qq-pupil-left__o 2.4s linear infinite both}
+.g1qq-pupil-right__t{animation:g1qq-pupil-right__t 2.4s linear infinite both;transform-origin:0 0}
+.g1qq-pupil-right__sh{animation:g1qq-pupil-left__o 2.4s linear infinite both}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+<rect width="256" height="160" fill="#111827"/>
+<g transform="translate(90 80)">
+<g class="g1qq-eye-left__s" transform="scale(1 1)">
+<ellipse rx="26" ry="30" fill="#f9fafb"/>
+</g>
+</g>
+<g transform="translate(166 80)">
+<g class="g1qq-eye-right__s" transform="scale(1 1)">
+<ellipse rx="26" ry="30" fill="#f9fafb"/>
+</g>
+</g>
+<g class="g1qq-pupil-left__t" transform="translate(86 82)">
+<ellipse class="g1qq-pupil-left__sh" rx="11" ry="11" fill="#111827" opacity="1"/>
+</g>
+<g class="g1qq-pupil-right__t" transform="translate(162 82)">
+<ellipse class="g1qq-pupil-right__sh" rx="11" ry="11" fill="#111827" opacity="1"/>
+</g>
+</svg>

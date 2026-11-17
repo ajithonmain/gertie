@@ -1,0 +1,58 @@
+{
+  "gertie": 1,
+  "name": "heart-pulse",
+  "tier": "icon",
+  "canvas": { "w": 512, "h": 512 },
+  "fps": 30,
+  "duration": 1,
+  "loop": true,
+  "poster": 0.12,
+  "palette": {
+    "red": "#ef4444",
+    "deep": "#be123c",
+    "ring": "#fb7185",
+    "shine": "#ffffff"
+  },
+  "nodes": [
+    {
+      "id": "ring", "type": "path", "x": 256, "y": 268,
+      "d": "M0 80 C-60 35 -110 0 -110 -45 C-110 -85 -75 -105 -45 -105 C-20 -105 -5 -90 0 -75 C5 -90 20 -105 45 -105 C75 -105 110 -85 110 -45 C110 0 60 35 0 80 Z",
+      "pivot": [0, -12],
+      "fill": null,
+      "stroke": { "color": "$ring", "width": 8 },
+      "animate": {
+        "scale": [[0, 1], [0.06, 1], [0.75, 1.6, "easeOutCubic"], [1, 1, "hold"]],
+        "opacity": [[0, 0], [0.06, 0], [0.2, 0.6, "easeOut"], [0.75, 0, "easeOutQuad"], [1, 0]],
+        "stroke.width": [[0, 8], [0.06, 8], [0.75, 2, "easeOutCubic"], [1, 8, "hold"]]
+      }
+    },
+    {
+      "id": "heart", "type": "group", "x": 256, "y": 268,
+      "animate": {
+        "scale": [
+          [0, 1],
+          [0.12, 1.14, "easeOutBack"],
+          [0.24, 0.97, "easeInOutQuad"],
+          [0.36, 1.08, "easeOutQuad"],
+          [0.62, 1, "settle"],
+          [1, 1]
+        ]
+      },
+      "pivot": [0, -12],
+      "children": [
+        {
+          "id": "body", "type": "path",
+          "d": "M0 80 C-60 35 -110 0 -110 -45 C-110 -85 -75 -105 -45 -105 C-20 -105 -5 -90 0 -75 C5 -90 20 -105 45 -105 C75 -105 110 -85 110 -45 C110 0 60 35 0 80 Z",
+          "fill": { "type": "linear", "from": [0, -105], "to": [0, 80], "stops": [[0, "$red"], [1, "$deep"]] }
+        },
+        {
+          "id": "shine", "type": "path",
+          "d": "M-78 -52 C-80 -72 -66 -86 -48 -86",
+          "fill": null,
+          "stroke": { "color": "$shine", "width": 10, "cap": "round" },
+          "opacity": 0.55
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "gertie": 1, "name": "one-frame-flash", "canvas": { "w": 200, "h": 200 }, "duration": 1, "loop": false,
+  "nodes": [
+    { "id": "steady", "type": "ellipse", "r": 30, "x": 100, "y": 100, "fill": "#3b82f6",
+      "animate": { "scale": [[0, 1], [1, 1.1]] } },
+    { "id": "flash", "type": "rect", "w": 180, "h": 180, "x": 100, "y": 100, "fill": "#ffffff", "from": 0.3333, "to": 0.3667 }
+  ]
+}

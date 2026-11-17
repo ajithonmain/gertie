@@ -1,0 +1,8 @@
+{
+  "badge": ["region-1", "region-2"],
+  "ring": ["region-4"],
+  "bolt": ["region-3", "region-5"],
+  "star-a": ["region-6", "region-10"],
+  "star-b": ["region-7"],
+  "dots": ["region-8", "region-9"]
+}

@@ -1,0 +1,17 @@
+{
+  "ascii": 1,
+  "name": "halftone",
+  "cols": 120,
+  "rows": 120,
+  "fps": 24,
+  "duration": 4,
+  "loop": true,
+  "style": {"background":"#0c1420","fontSize":10,"glyph":"dot","ramp":" .:-=+*#%@","cellAspect":1},
+  "layers": [
+    { "id": "picture", "source": { "file": "sunflower.png", "cols": 120, "color": true } }
+  ],
+  "fx": [
+    {"effect":"reveal","by":"scatter","at":0,"duration":2,"seed":7},
+    {"effect":"hide","by":"scatter","at":3.4,"duration":0.6,"seed":7}
+  ]
+}

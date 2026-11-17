@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192" width="192" height="192">
+<style>
+@keyframes g1ww-top__t{0%{transform:translate(96px,68px);animation-timing-function:cubic-bezier(0.65,0,0.35,1)}31.25%{transform:translate(96px,96px);animation-timing-function:cubic-bezier(0.65,0,0.35,1)}62.5%{transform:translate(96px,96px);animation-timing-function:cubic-bezier(0.65,0,0.35,1)}93.75%{transform:translate(96px,68px);animation-timing-function:cubic-bezier(0.65,0,0.35,1)}100%{transform:translate(96px,68px)}}
+@keyframes g1ww-top__r{0%{transform:rotate(0deg);animation-timing-function:cubic-bezier(0.65,0,0.35,1)}31.25%{transform:rotate(45deg);animation-timing-function:cubic-bezier(0.65,0,0.35,1)}62.5%{transform:rotate(45deg);animation-timing-function:cubic-bezier(0.65,0,0.35,1)}93.75%{transform:rotate(0deg);animation-timing-function:cubic-bezier(0.65,0,0.35,1)}100%{transform:rotate(0deg)}}
+@keyframes g1ww-middle__s{0%{transform:scale(1,1);animation-timing-function:cubic-bezier(0.33,1,0.68,1)}18.75%{transform:scale(0.2,1);animation-timing-function:cubic-bezier(0.65,0,0.35,1)}75%{transform:scale(0.2,1);animation-timing-function:cubic-bezier(0.32,0,0.67,0)}93.75%{transform:scale(1,1);animation-timing-function:cubic-bezier(0.65,0,0.35,1)}100%{transform:scale(1,1)}}
+@keyframes g1ww-middle__o{0%{opacity:1;animation-timing-function:cubic-bezier(0.33,1,0.68,1)}18.75%{opacity:0;animation-timing-function:cubic-bezier(0.65,0,0.35,1)}75%{opacity:0;animation-timing-function:cubic-bezier(0.32,0,0.67,0)}93.75%{opacity:1;animation-timing-function:cubic-bezier(0.65,0,0.35,1)}100%{opacity:1}}
+@keyframes g1ww-bottom__t{0%{transform:translate(96px,124px);animation-timing-function:cubic-bezier(0.65,0,0.35,1)}31.25%{transform:translate(96px,96px);animation-timing-function:cubic-bezier(0.65,0,0.35,1)}62.5%{transform:translate(96px,96px);animation-timing-function:cubic-bezier(0.65,0,0.35,1)}93.75%{transform:translate(96px,124px);animation-timing-function:cubic-bezier(0.65,0,0.35,1)}100%{transform:translate(96px,124px)}}
+@keyframes g1ww-bottom__r{0%{transform:rotate(0deg);animation-timing-function:cubic-bezier(0.65,0,0.35,1)}31.25%{transform:rotate(-45deg);animation-timing-function:cubic-bezier(0.65,0,0.35,1)}62.5%{transform:rotate(-45deg);animation-timing-function:cubic-bezier(0.65,0,0.35,1)}93.75%{transform:rotate(0deg);animation-timing-function:cubic-bezier(0.65,0,0.35,1)}100%{transform:rotate(0deg)}}
+.g1ww-top__t{animation:g1ww-top__t 1.6s linear infinite both;transform-origin:0 0}
+.g1ww-top__r{animation:g1ww-top__r 1.6s linear infinite both;transform-origin:0 0}
+.g1ww-middle__s{animation:g1ww-middle__s 1.6s linear infinite both;transform-origin:0 0}
+.g1ww-middle__sh{animation:g1ww-middle__o 1.6s linear infinite both}
+.g1ww-bottom__t{animation:g1ww-bottom__t 1.6s linear infinite both;transform-origin:0 0}
+.g1ww-bottom__r{animation:g1ww-bottom__r 1.6s linear infinite both;transform-origin:0 0}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+<g class="g1ww-top__t" transform="translate(96 68)">
+<g class="g1ww-top__r" transform="rotate(0)">
+<rect x="-40" y="-5" width="80" height="10" rx="5" fill="#e2e8f0"/>
+</g>
+</g>
+<g transform="translate(96 96)">
+<g class="g1ww-middle__s" transform="scale(1 1)">
+<rect class="g1ww-middle__sh" x="-40" y="-5" width="80" height="10" rx="5" fill="#e2e8f0" opacity="1"/>
+</g>
+</g>
+<g class="g1ww-bottom__t" transform="translate(96 124)">
+<g class="g1ww-bottom__r" transform="rotate(0)">
+<rect x="-40" y="-5" width="80" height="10" rx="5" fill="#e2e8f0"/>
+</g>
+</g>
+</svg>

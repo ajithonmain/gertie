@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+<style>
+@keyframes gtgh-leaf-a_leaf__o{0%{opacity:1;animation-timing-function:cubic-bezier(0.65,0,0.35,1)}50%{opacity:0.5;animation-timing-function:cubic-bezier(0.65,0,0.35,1)}100%{opacity:1}}
+@keyframes gtgh-leaf-c__r{0%{transform:rotate(-15deg);animation-timing-function:cubic-bezier(0.65,0,0.35,1)}50%{transform:rotate(15deg);animation-timing-function:cubic-bezier(0.65,0,0.35,1)}100%{transform:rotate(-15deg)}}
+.gtgh-leaf-a_leaf__sh{animation:gtgh-leaf-a_leaf__o 2s linear infinite both}
+.gtgh-leaf-b_leaf__sh{animation:gtgh-leaf-a_leaf__o 2s linear infinite both}
+.gtgh-leaf-c__r{animation:gtgh-leaf-c__r 2s linear infinite both;transform-origin:0 0}
+.gtgh-leaf-c_leaf__sh{animation:gtgh-leaf-a_leaf__o 2s linear infinite both}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+<g transform="translate(70 140)">
+<path class="gtgh-leaf-a_leaf__sh" d="M0 0C10 -20 30 -20 40 0C30 20 10 20 0 0Z" fill="#2f9e44" opacity="1"/>
+</g>
+<g transform="translate(120 150) rotate(25) scale(1.5 1.5)">
+<path class="gtgh-leaf-b_leaf__sh" d="M0 0C10 -20 30 -20 40 0C30 20 10 20 0 0Z" fill="#2f9e44" opacity="1"/>
+</g>
+<g transform="translate(170 140)">
+<g class="gtgh-leaf-c__r" transform="rotate(-15)">
+<path class="gtgh-leaf-c_leaf__sh" d="M0 0C10 -20 30 -20 40 0C30 20 10 20 0 0Z" fill="#2f9e44" opacity="1"/>
+</g>
+</g>
+</svg>

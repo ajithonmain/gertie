@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+<style>
+@keyframes ge02-shadow-1__s{0%{transform:scale(1,1);animation-timing-function:cubic-bezier(0.7,0,0.3,1)}7.5757%{transform:scale(1.12,1);animation-timing-function:cubic-bezier(0.5,1,0.89,1)}24.2424%{transform:scale(0.5,0.5);animation-timing-function:cubic-bezier(0.11,0,0.5,0)}39.3939%{transform:scale(1.14,1);animation-timing-function:cubic-bezier(0.7,0,0.3,1)}100%{transform:scale(1,1)}}
+@keyframes ge02-dot-1__t{0%{transform:translate(136px,356px);animation-timing-function:cubic-bezier(0.7,0,0.3,1)}7.5757%{transform:translate(136px,356px);animation-timing-function:cubic-bezier(0.5,1,0.89,1)}24.2424%{transform:translate(136px,236px);animation-timing-function:cubic-bezier(0.11,0,0.5,0)}39.3939%{transform:translate(136px,356px);animation-timing-function:cubic-bezier(0.7,0,0.3,1)}100%{transform:translate(136px,356px)}}
+@keyframes ge02-dot-1__s{0%{transform:scale(1,1);animation-timing-function:cubic-bezier(0.7,0,0.3,1)}7.5757%{transform:scale(1.13,0.86);animation-timing-function:cubic-bezier(0.7,0,0.3,1)}15.1515%{transform:scale(0.92,1.1);animation-timing-function:cubic-bezier(0.11,0,0.5,0)}43.9393%{transform:scale(1.13,0.86);animation-timing-function:cubic-bezier(0.7,0,0.3,1)}54.5454%{transform:scale(1,1);animation-timing-function:cubic-bezier(0.7,0,0.3,1)}100%{transform:scale(1,1)}}
+@keyframes ge02-shadow-2__s{0%{transform:scale(1,1);animation-timing-function:cubic-bezier(0.7,0,0.3,1)}21.2121%{transform:scale(1.12,1);animation-timing-function:cubic-bezier(0.5,1,0.89,1)}37.8787%{transform:scale(0.5,0.5);animation-timing-function:cubic-bezier(0.11,0,0.5,0)}53.0303%{transform:scale(1.14,1);animation-timing-function:cubic-bezier(0.7,0,0.3,1)}100%{transform:scale(1,1)}}
+@keyframes ge02-dot-2__t{0%{transform:translate(256px,356px);animation-timing-function:cubic-bezier(0.7,0,0.3,1)}13.6363%{transform:translate(256px,356px);animation-timing-function:cubic-bezier(0.7,0,0.3,1)}21.2121%{transform:translate(256px,356px);animation-timing-function:cubic-bezier(0.5,1,0.89,1)}37.8787%{transform:translate(256px,236px);animation-timing-function:cubic-bezier(0.11,0,0.5,0)}53.0303%{transform:translate(256px,356px);animation-timing-function:cubic-bezier(0.7,0,0.3,1)}100%{transform:translate(256px,356px)}}
+@keyframes ge02-dot-2__s{0%{transform:scale(1,1);animation-timing-function:cubic-bezier(0.7,0,0.3,1)}13.6363%{transform:scale(1,1);animation-timing-function:cubic-bezier(0.7,0,0.3,1)}21.2121%{transform:scale(1.13,0.86);animation-timing-function:cubic-bezier(0.7,0,0.3,1)}28.7878%{transform:scale(0.92,1.1);animation-timing-function:cubic-bezier(0.11,0,0.5,0)}57.5757%{transform:scale(1.13,0.86);animation-timing-function:cubic-bezier(0.7,0,0.3,1)}68.1818%{transform:scale(1,1);animation-timing-function:cubic-bezier(0.7,0,0.3,1)}100%{transform:scale(1,1)}}
+@keyframes ge02-shadow-3__s{0%{transform:scale(1,1);animation-timing-function:cubic-bezier(0.7,0,0.3,1)}34.8484%{transform:scale(1.12,1);animation-timing-function:cubic-bezier(0.5,1,0.89,1)}51.5151%{transform:scale(0.5,0.5);animation-timing-function:cubic-bezier(0.11,0,0.5,0)}66.6666%{transform:scale(1.14,1);animation-timing-function:cubic-bezier(0.7,0,0.3,1)}100%{transform:scale(1,1)}}
+@keyframes ge02-dot-3__t{0%{transform:translate(376px,356px);animation-timing-function:cubic-bezier(0.7,0,0.3,1)}27.2727%{transform:translate(376px,356px);animation-timing-function:cubic-bezier(0.7,0,0.3,1)}34.8484%{transform:translate(376px,356px);animation-timing-function:cubic-bezier(0.5,1,0.89,1)}51.5151%{transform:translate(376px,236px);animation-timing-function:cubic-bezier(0.11,0,0.5,0)}66.6666%{transform:translate(376px,356px);animation-timing-function:cubic-bezier(0.7,0,0.3,1)}100%{transform:translate(376px,356px)}}
+@keyframes ge02-dot-3__s{0%{transform:scale(1,1);animation-timing-function:cubic-bezier(0.7,0,0.3,1)}27.2727%{transform:scale(1,1);animation-timing-function:cubic-bezier(0.7,0,0.3,1)}34.8484%{transform:scale(1.13,0.86);animation-timing-function:cubic-bezier(0.7,0,0.3,1)}42.4242%{transform:scale(0.92,1.1);animation-timing-function:cubic-bezier(0.11,0,0.5,0)}71.2121%{transform:scale(1.13,0.86);animation-timing-function:cubic-bezier(0.7,0,0.3,1)}81.8181%{transform:scale(1,1);animation-timing-function:cubic-bezier(0.7,0,0.3,1)}100%{transform:scale(1,1)}}
+.ge02-shadow-1__s{animation:ge02-shadow-1__s 2.2s linear infinite both;transform-origin:0 0}
+.ge02-dot-1__t{animation:ge02-dot-1__t 2.2s linear infinite both;transform-origin:0 0}
+.ge02-dot-1__s{animation:ge02-dot-1__s 2.2s linear infinite both;transform-origin:0 0}
+.ge02-shadow-2__s{animation:ge02-shadow-2__s 2.2s linear infinite both;transform-origin:0 0}
+.ge02-dot-2__t{animation:ge02-dot-2__t 2.2s linear infinite both;transform-origin:0 0}
+.ge02-dot-2__s{animation:ge02-dot-2__s 2.2s linear infinite both;transform-origin:0 0}
+.ge02-shadow-3__s{animation:ge02-shadow-3__s 2.2s linear infinite both;transform-origin:0 0}
+.ge02-dot-3__t{animation:ge02-dot-3__t 2.2s linear infinite both;transform-origin:0 0}
+.ge02-dot-3__s{animation:ge02-dot-3__s 2.2s linear infinite both;transform-origin:0 0}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+<g transform="translate(136 362)">
+<g class="ge02-shadow-1__s" transform="scale(1 1)">
+<ellipse rx="44" ry="9" fill="#1e1b4b" opacity="0.22"/>
+</g>
+</g>
+<g class="ge02-dot-1__t" transform="translate(136 356)">
+<g class="ge02-dot-1__s" transform="scale(1 1)">
+<path d="M0 -92C25.4 -92 46 -71.4 46 -46C46 -20.6 25.4 0 0 0C-25.4 0 -46 -20.6 -46 -46C-46 -71.4 -25.4 -92 0 -92Z" fill="#6366f1"/>
+<path d="M-36 -18C-35.6 -16 -22.8 -6.4 -12 -4C-1.2 -1.6 7.6 -1.6 18 -6C28.4 -10.4 34.6 -16.8 40 -26C45.4 -35.2 45.8 -51.2 45 -52C44.2 -52.8 42.2 -37.2 36 -30C29.8 -22.8 24 -19.2 14 -16C4 -12.8 -4 -13.6 -14 -14C-24 -14.4 -36.4 -20 -36 -18Z" fill="#4338ca"/>
+<path d="M-28 -64C-26.8 -68 -21.6 -74.4 -16 -78C-10.4 -81.6 -0.8 -83.2 0 -82C0.8 -80.8 -7.6 -76.8 -12 -72C-16.4 -67.2 -18.8 -59.6 -22 -58C-25.2 -56.4 -29.2 -60 -28 -64Z" fill="#c7d2fe"/>
+</g>
+</g>
+<g transform="translate(256 362)">
+<g class="ge02-shadow-2__s" transform="scale(1 1)">
+<ellipse rx="44" ry="9" fill="#1e1b4b" opacity="0.22"/>
+</g>
+</g>
+<g class="ge02-dot-2__t" transform="translate(256 356)">
+<g class="ge02-dot-2__s" transform="scale(1 1)">
+<path d="M0 -92C25.4 -92 46 -71.4 46 -46C46 -20.6 25.4 0 0 0C-25.4 0 -46 -20.6 -46 -46C-46 -71.4 -25.4 -92 0 -92Z" fill="#6366f1"/>
+<path d="M-36 -18C-35.6 -16 -22.8 -6.4 -12 -4C-1.2 -1.6 7.6 -1.6 18 -6C28.4 -10.4 34.6 -16.8 40 -26C45.4 -35.2 45.8 -51.2 45 -52C44.2 -52.8 42.2 -37.2 36 -30C29.8 -22.8 24 -19.2 14 -16C4 -12.8 -4 -13.6 -14 -14C-24 -14.4 -36.4 -20 -36 -18Z" fill="#4338ca"/>
+<path d="M-28 -64C-26.8 -68 -21.6 -74.4 -16 -78C-10.4 -81.6 -0.8 -83.2 0 -82C0.8 -80.8 -7.6 -76.8 -12 -72C-16.4 -67.2 -18.8 -59.6 -22 -58C-25.2 -56.4 -29.2 -60 -28 -64Z" fill="#c7d2fe"/>
+</g>
+</g>
+<g transform="translate(376 362)">
+<g class="ge02-shadow-3__s" transform="scale(1 1)">
+<ellipse rx="44" ry="9" fill="#1e1b4b" opacity="0.22"/>
+</g>
+</g>
+<g class="ge02-dot-3__t" transform="translate(376 356)">
+<g class="ge02-dot-3__s" transform="scale(1 1)">
+<path d="M0 -92C25.4 -92 46 -71.4 46 -46C46 -20.6 25.4 0 0 0C-25.4 0 -46 -20.6 -46 -46C-46 -71.4 -25.4 -92 0 -92Z" fill="#6366f1"/>
+<path d="M-36 -18C-35.6 -16 -22.8 -6.4 -12 -4C-1.2 -1.6 7.6 -1.6 18 -6C28.4 -10.4 34.6 -16.8 40 -26C45.4 -35.2 45.8 -51.2 45 -52C44.2 -52.8 42.2 -37.2 36 -30C29.8 -22.8 24 -19.2 14 -16C4 -12.8 -4 -13.6 -14 -14C-24 -14.4 -36.4 -20 -36 -18Z" fill="#4338ca"/>
+<path d="M-28 -64C-26.8 -68 -21.6 -74.4 -16 -78C-10.4 -81.6 -0.8 -83.2 0 -82C0.8 -80.8 -7.6 -76.8 -12 -72C-16.4 -67.2 -18.8 -59.6 -22 -58C-25.2 -56.4 -29.2 -60 -28 -64Z" fill="#c7d2fe"/>
+</g>
+</g>
+</svg>

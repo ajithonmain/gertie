@@ -1,0 +1,16 @@
+{
+  "ascii": 1,
+  "name": "bouquet",
+  "fps": 24,
+  "loop": false,
+  "style": {"color":"#22c55e","background":"#000000","fontSize":8,"glow":0.4},
+  "source": {
+    "file": "bouquet.gertie.json",
+    "cols": 180,
+    "ramp": "long",
+    "palette": ["#5cae3c","#f48fb1","#f5f5f5"]
+  },
+  "fx": [
+    {"effect":"reveal","by":"rows-up","at":0,"duration":1.5}
+  ]
+}

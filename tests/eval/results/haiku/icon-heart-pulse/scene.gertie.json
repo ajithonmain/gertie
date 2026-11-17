@@ -1,0 +1,44 @@
+{
+  "gertie": 1,
+  "name": "heart-pulse",
+  "canvas": { "w": 512, "h": 512 },
+  "fps": 30,
+  "duration": 1,
+  "loop": true,
+  "tier": "icon",
+  "poster": 0,
+  "nodes": [
+    {
+      "id": "heart",
+      "type": "group",
+      "pivot": [256, 276],
+      "motion": [
+        { "preset": "pulse", "amount": 1.12, "at": 0, "duration": 1, "repeat": "loop" }
+      ],
+      "children": [
+        {
+          "id": "heart-body",
+          "type": "path",
+          "d": "M 256 432 C 150 360 96 300 96 218 C 96 160 140 120 190 120 C 220 120 242 138 256 162 C 270 138 292 120 322 120 C 372 120 416 160 416 218 C 416 300 362 360 256 432 Z",
+          "fill": {
+            "type": "linear",
+            "from": [0, 120],
+            "to": [0, 432],
+            "stops": [[0, "#ff4d6d"], [1, "#c9184a"]]
+          }
+        },
+        {
+          "id": "heart-shine",
+          "type": "ellipse",
+          "rx": 26,
+          "ry": 16,
+          "x": 170,
+          "y": 190,
+          "rotation": -30,
+          "fill": "#ffffff",
+          "opacity": 0.45
+        }
+      ]
+    }
+  ]
+}

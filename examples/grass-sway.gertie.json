@@ -1,0 +1,27 @@
+{
+  "gertie": 1,
+  "name": "grass-sway",
+  "canvas": { "w": 512, "h": 512 },
+  "duration": 4,
+  "loop": true,
+  "nodes": [
+    { "id": "ground", "type": "rect", "w": 420, "h": 24, "radius": 12, "x": 256, "y": 412, "fill": "#3f6212" },
+    {
+      "id": "blades", "type": "group",
+      "stagger": { "phase": 0.12 },
+      "motion": [ { "preset": "sway", "angle": 5, "duration": 4, "repeat": "loop", "applyTo": "children" } ],
+      "children": [
+        { "id": "blade-1", "type": "rect", "w": 18, "h": 150, "radius": 9, "x": 116, "y": 330, "pivot": [0, 75], "fill": "#65a30d" },
+        { "id": "blade-2", "type": "rect", "w": 18, "h": 190, "radius": 9, "x": 172, "y": 310, "pivot": [0, 95], "fill": "#84cc16" },
+        { "id": "blade-3", "type": "rect", "w": 18, "h": 130, "radius": 9, "x": 228, "y": 340, "pivot": [0, 65], "fill": "#65a30d" },
+        { "id": "blade-4", "type": "rect", "w": 18, "h": 210, "radius": 9, "x": 284, "y": 300, "pivot": [0, 105], "fill": "#84cc16" },
+        { "id": "blade-5", "type": "rect", "w": 18, "h": 160, "radius": 9, "x": 340, "y": 325, "pivot": [0, 80], "fill": "#65a30d" },
+        { "id": "blade-6", "type": "rect", "w": 18, "h": 180, "radius": 9, "x": 396, "y": 315, "pivot": [0, 90], "fill": "#84cc16" }
+      ]
+    },
+    {
+      "id": "sun", "type": "ellipse", "r": 44, "x": 392, "y": 120, "fill": "#facc15",
+      "motion": [ { "preset": "pulse", "amount": 1.05, "duration": 2, "repeat": "loop", "phase": 0.5 } ]
+    }
+  ]
+}

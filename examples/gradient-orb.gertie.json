@@ -1,0 +1,18 @@
+{
+  "gertie": 1,
+  "name": "gradient-orb",
+  "canvas": { "w": 256, "h": 256, "background": "#020617" },
+  "duration": 2,
+  "nodes": [
+    {
+      "id": "orb", "type": "ellipse", "r": 80, "x": 128, "y": 128,
+      "fill": { "type": "radial", "center": [-20, -20], "radius": 110, "stops": [[0, "#e0f2fe"], [0.5, "#38bdf8"], [1, "#1d4ed8"]] },
+      "animate": { "y": [[0, 128], [1, 108, "easeInOut"], [2, 128, "easeInOut"]] }
+    },
+    {
+      "id": "shadow", "type": "ellipse", "rx": 60, "ry": 10, "x": 128, "y": 220,
+      "fill": { "type": "linear", "from": [-60, 0], "to": [60, 0], "stops": [[0, "#0f172a00"], [0.5, "#38bdf855"], [1, "#0f172a00"]] },
+      "animate": { "scale": [[0, 1], [1, 0.8, "easeInOut"], [2, 1, "easeInOut"]] }
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 256" width="512" height="256">
+<style>
+@keyframes g1c1-fade__o{0%{opacity:1;animation-timing-function:step-end}16.6656%{opacity:1;animation-timing-function:cubic-bezier(0.32,0,0.67,0)}30%{opacity:0;animation-timing-function:step-end}100%{opacity:0}}
+@keyframes g1c1-pop__s{0%{transform:scale(1,1);animation-timing-function:step-end}26.6656%{transform:scale(1,1);animation-timing-function:cubic-bezier(0.33,1,0.68,1)}31.1111%{transform:scale(1.1,1.1);animation-timing-function:cubic-bezier(0.32,0,0.67,0)}40%{transform:scale(0,0);animation-timing-function:step-end}100%{transform:scale(0,0)}}
+@keyframes g1c1-pop__o{0%{opacity:1;animation-timing-function:step-end}26.6656%{opacity:1;animation-timing-function:cubic-bezier(0.65,0,0.35,1)}33.3333%{opacity:1;animation-timing-function:cubic-bezier(0.32,0,0.67,0)}40%{opacity:0;animation-timing-function:step-end}100%{opacity:0}}
+@keyframes g1c1-slide__t{0%{transform:translate(256px,128px);animation-timing-function:step-end}36.6656%{transform:translate(256px,128px);animation-timing-function:cubic-bezier(0.32,0,0.67,0)}53.3333%{transform:translate(256px,58px);animation-timing-function:step-end}100%{transform:translate(256px,58px)}}
+@keyframes g1c1-slide__o{0%{opacity:1;animation-timing-function:step-end}36.6656%{opacity:1;animation-timing-function:cubic-bezier(0.65,0,0.35,1)}43.3333%{opacity:1;animation-timing-function:cubic-bezier(0.32,0,0.67,0)}53.3333%{opacity:0;animation-timing-function:step-end}100%{opacity:0}}
+@keyframes g1c1-draw__trim{0%{stroke-dasharray:1 1;stroke-dashoffset:0;animation-timing-function:step-end}46.6656%{stroke-dasharray:1 1;stroke-dashoffset:0;animation-timing-function:cubic-bezier(0.65,0,0.35,1)}73.3333%{stroke-dasharray:0 1;stroke-dashoffset:0;animation-timing-function:step-end}100%{stroke-dasharray:0 1;stroke-dashoffset:0}}
+@keyframes g1c1-draw__guard{0%{stroke-opacity:1;animation-timing-function:step-end}46.6656%{stroke-opacity:1;animation-timing-function:step-end}73.3323%{stroke-opacity:0;animation-timing-function:step-end}73.3334%{stroke-opacity:0;animation-timing-function:step-end}100%{stroke-opacity:0}}
+@keyframes g1c1-shrink__s{0%{transform:scale(1,1);animation-timing-function:step-end}56.6656%{transform:scale(1,1);animation-timing-function:cubic-bezier(0.36,0,0.66,-0.56)}70%{transform:scale(0,0);animation-timing-function:step-end}100%{transform:scale(0,0)}}
+@keyframes g1c1-shrink__o{0%{opacity:1;animation-timing-function:step-end}56.6656%{opacity:1;animation-timing-function:cubic-bezier(0.65,0,0.35,1)}65.5555%{opacity:1;animation-timing-function:cubic-bezier(0.32,0,0.67,0)}70%{opacity:0;animation-timing-function:step-end}100%{opacity:0}}
+.g1c1-fade__sh{animation:g1c1-fade__o 3s linear 1 both}
+.g1c1-pop__s{animation:g1c1-pop__s 3s linear 1 both;transform-origin:0 0}
+.g1c1-pop__sh{animation:g1c1-pop__o 3s linear 1 both}
+.g1c1-slide__t{animation:g1c1-slide__t 3s linear 1 both;transform-origin:0 0}
+.g1c1-slide__sh{animation:g1c1-slide__o 3s linear 1 both}
+.g1c1-draw__sh{animation:g1c1-draw__trim 3s linear 1 both,g1c1-draw__guard 3s linear 1 both}
+.g1c1-shrink__s{animation:g1c1-shrink__s 3s linear 1 both;transform-origin:0 0}
+.g1c1-shrink__sh{animation:g1c1-shrink__o 3s linear 1 both}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+<rect width="512" height="256" fill="#111827"/>
+<g transform="translate(256 200)">
+<rect x="-220" y="-2" width="440" height="4" rx="2" fill="#374151"/>
+</g>
+<g transform="translate(51 128)">
+<ellipse class="g1c1-fade__sh" rx="24" ry="24" fill="#6366f1" opacity="1"/>
+</g>
+<g transform="translate(154 128)">
+<g class="g1c1-pop__s" transform="scale(1 1)">
+<rect class="g1c1-pop__sh" x="-22" y="-22" width="44" height="44" rx="8" fill="#22c55e" opacity="1"/>
+</g>
+</g>
+<g class="g1c1-slide__t" transform="translate(256 128)">
+<rect class="g1c1-slide__sh" x="-22" y="-22" width="44" height="44" rx="8" fill="#f59e0b" opacity="1"/>
+</g>
+<g transform="translate(358 128)">
+<path class="g1c1-draw__sh" d="M-20 2C-20 2 -6 16 -6 16C-6 16 22 -16 22 -16" fill="none" stroke="#38bdf8" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" pathLength="1" stroke-dasharray="1 1" stroke-dashoffset="0"/>
+</g>
+<g transform="translate(461 128)">
+<g class="g1c1-shrink__s" transform="scale(1 1)">
+<path class="g1c1-shrink__sh" d="M0 -28C0 -28 7.64 -10.52 7.64 -10.52C7.64 -10.52 26.63 -8.65 26.63 -8.65C26.63 -8.65 12.36 4.02 12.36 4.02C12.36 4.02 16.46 22.65 16.46 22.65C16.46 22.65 0 13 0 13C0 13 -16.46 22.65 -16.46 22.65C-16.46 22.65 -12.36 4.02 -12.36 4.02C-12.36 4.02 -26.63 -8.65 -26.63 -8.65C-26.63 -8.65 -7.64 -10.52 -7.64 -10.52C-7.64 -10.52 0 -28 0 -28Z" fill="#e879f9" opacity="1"/>
+</g>
+</g>
+</svg>

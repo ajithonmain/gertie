@@ -1,0 +1,11 @@
+{ "gertie": 1, "name": "painting-alive",
+  "canvas": { "w": 640, "h": 480, "background": "#8fa3b8" },
+  "fps": 30, "duration": 4.8,
+  "nodes": [
+    { "id": "portrait", "type": "group", "include": "painting.cutout/grouped.fragment.json",
+      "overrides": {
+        "background": { "animate": { "x": [[0, -18], [2.4, -42, "easeInOutSine"], [4.8, -18, "easeInOutSine"]] } },
+        "face": { "pivot": [320, 345], "motion": [{ "preset": "wiggle", "angle": 2.5, "duration": 2.4, "repeat": "loop" }] },
+        "lid-l": { "motion": [{ "preset": "lid-blink", "at": 1.0 }, { "preset": "lid-blink", "at": 3.6 }] },
+        "lid-r": { "motion": [{ "preset": "lid-blink", "at": 1.0 }, { "preset": "lid-blink", "at": 3.6 }] } } }
+  ] }

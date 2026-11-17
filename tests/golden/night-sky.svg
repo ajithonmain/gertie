@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 384" width="512" height="384">
+<style>
+@keyframes g1rl-star-1__s{0%{transform:scale(1,1);animation-timing-function:cubic-bezier(0.6307,0.0291,0.3409,1)}34.375%{transform:scale(1,1);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}68.75%{transform:scale(1,1);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}84.375%{transform:scale(0.75,0.75);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}98.9583%{transform:scale(1,1);animation-timing-function:cubic-bezier(0.3407,0,0.674,0.3367)}100%{transform:scale(1,1)}}
+@keyframes g1rl-star-1__o{0%{opacity:1;animation-timing-function:cubic-bezier(0.6307,0.0291,0.3409,1)}34.375%{opacity:1;animation-timing-function:cubic-bezier(0.37,0,0.63,1)}68.75%{opacity:1;animation-timing-function:cubic-bezier(0.37,0,0.63,1)}84.375%{opacity:0.5;animation-timing-function:cubic-bezier(0.37,0,0.63,1)}98.9583%{opacity:1;animation-timing-function:cubic-bezier(0.3407,0,0.674,0.3367)}100%{opacity:1}}
+@keyframes g1rl-star-2__s{0%{transform:scale(1,1);animation-timing-function:cubic-bezier(0.1717,0.5132,0.3672,1)}16.6666%{transform:scale(1,1);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}52.0833%{transform:scale(1,1);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}66.6666%{transform:scale(0.75,0.75);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}82.2916%{transform:scale(1,1);animation-timing-function:cubic-bezier(0.6662,0,0.8192,0.5139)}100%{transform:scale(1,1)}}
+@keyframes g1rl-star-2__o{0%{opacity:1;animation-timing-function:cubic-bezier(0.1717,0.5132,0.3672,1)}16.6666%{opacity:1;animation-timing-function:cubic-bezier(0.37,0,0.63,1)}52.0833%{opacity:1;animation-timing-function:cubic-bezier(0.37,0,0.63,1)}66.6666%{opacity:0.5;animation-timing-function:cubic-bezier(0.37,0,0.63,1)}82.2916%{opacity:1;animation-timing-function:cubic-bezier(0.6662,0,0.8192,0.5139)}100%{opacity:1}}
+@keyframes g1rl-star-3__s{0%{transform:scale(1,1);animation-timing-function:cubic-bezier(0.3184,0.6597,0.6514,1)}2.0833%{transform:scale(1,1);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}37.5%{transform:scale(1,1);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}52.0833%{transform:scale(0.75,0.75);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}66.6666%{transform:scale(1,1);animation-timing-function:cubic-bezier(0.6683,0,0.3898,0.9422)}100%{transform:scale(1,1)}}
+@keyframes g1rl-star-3__o{0%{opacity:1;animation-timing-function:cubic-bezier(0.3184,0.6597,0.6514,1)}2.0833%{opacity:1;animation-timing-function:cubic-bezier(0.37,0,0.63,1)}37.5%{opacity:1;animation-timing-function:cubic-bezier(0.37,0,0.63,1)}52.0833%{opacity:0.5;animation-timing-function:cubic-bezier(0.37,0,0.63,1)}66.6666%{opacity:1;animation-timing-function:cubic-bezier(0.6683,0,0.3898,0.9422)}100%{opacity:1}}
+@keyframes g1rl-star-4__s{0%{transform:scale(1,1);animation-timing-function:cubic-bezier(0.1998,0.4566,0.3058,1)}18.75%{transform:scale(1,1);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}54.1666%{transform:scale(1,1);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}68.75%{transform:scale(0.75,0.75);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}84.375%{transform:scale(1,1);animation-timing-function:cubic-bezier(0.5975,0,0.828,0.4631)}100%{transform:scale(1,1)}}
+@keyframes g1rl-star-4__o{0%{opacity:1;animation-timing-function:cubic-bezier(0.1998,0.4566,0.3058,1)}18.75%{opacity:1;animation-timing-function:cubic-bezier(0.37,0,0.63,1)}54.1666%{opacity:1;animation-timing-function:cubic-bezier(0.37,0,0.63,1)}68.75%{opacity:0.5;animation-timing-function:cubic-bezier(0.37,0,0.63,1)}84.375%{opacity:1;animation-timing-function:cubic-bezier(0.5975,0,0.828,0.4631)}100%{opacity:1}}
+@keyframes g1rl-star-5__s{0%{transform:scale(1,1);animation-timing-function:cubic-bezier(0.3262,0.6481,0.6591,1)}3.125%{transform:scale(1,1);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}17.7083%{transform:scale(0.75,0.75);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}33.3333%{transform:scale(1,1);animation-timing-function:cubic-bezier(0.65,0,0.35,1)}67.7083%{transform:scale(1,1);animation-timing-function:cubic-bezier(0.3727,0,0.6434,0.8636)}100%{transform:scale(1,1)}}
+@keyframes g1rl-star-5__o{0%{opacity:1;animation-timing-function:cubic-bezier(0.3262,0.6481,0.6591,1)}3.125%{opacity:1;animation-timing-function:cubic-bezier(0.37,0,0.63,1)}17.7083%{opacity:0.5;animation-timing-function:cubic-bezier(0.37,0,0.63,1)}33.3333%{opacity:1;animation-timing-function:cubic-bezier(0.65,0,0.35,1)}67.7083%{opacity:1;animation-timing-function:cubic-bezier(0.3727,0,0.6434,0.8636)}100%{opacity:1}}
+@keyframes g1rl-star-6__s{0%{transform:scale(0.7527,0.7527);animation-timing-function:cubic-bezier(0.3277,0.6525,0.6608,1)}1.0416%{transform:scale(0.75,0.75);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}15.625%{transform:scale(1,1);animation-timing-function:cubic-bezier(0.65,0,0.35,1)}51.0416%{transform:scale(1,1);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}86.4583%{transform:scale(1,1);animation-timing-function:cubic-bezier(0.3722,0,0.6405,0.8911)}100%{transform:scale(0.7527,0.7527)}}
+@keyframes g1rl-star-6__o{0%{opacity:0.505;animation-timing-function:cubic-bezier(0.3277,0.6525,0.6608,1)}1.0416%{opacity:0.5;animation-timing-function:cubic-bezier(0.37,0,0.63,1)}15.625%{opacity:1;animation-timing-function:cubic-bezier(0.65,0,0.35,1)}51.0416%{opacity:1;animation-timing-function:cubic-bezier(0.37,0,0.63,1)}86.4583%{opacity:1;animation-timing-function:cubic-bezier(0.3722,0,0.6405,0.8911)}100%{opacity:0.505}}
+@keyframes g1rl-star-7__s{0%{transform:scale(1,1);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}35.4166%{transform:scale(1,1);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}50%{transform:scale(0.75,0.75);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}64.5833%{transform:scale(1,1);animation-timing-function:cubic-bezier(0.65,0,0.35,1)}100%{transform:scale(1,1)}}
+@keyframes g1rl-star-7__o{0%{opacity:1;animation-timing-function:cubic-bezier(0.37,0,0.63,1)}35.4166%{opacity:1;animation-timing-function:cubic-bezier(0.37,0,0.63,1)}50%{opacity:0.5;animation-timing-function:cubic-bezier(0.37,0,0.63,1)}64.5833%{opacity:1;animation-timing-function:cubic-bezier(0.65,0,0.35,1)}100%{opacity:1}}
+@keyframes g1rl-star-8__s{0%{transform:scale(1,1);animation-timing-function:cubic-bezier(0.3185,0.4592,0.6274,1)}19.7916%{transform:scale(1,1);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}35.4166%{transform:scale(0.75,0.75);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}50%{transform:scale(1,1);animation-timing-function:cubic-bezier(0.65,0,0.35,1)}85.4166%{transform:scale(1,1);animation-timing-function:cubic-bezier(0.3665,0,0.6867,0.4649)}100%{transform:scale(1,1)}}
+@keyframes g1rl-star-8__o{0%{opacity:1;animation-timing-function:cubic-bezier(0.3185,0.4592,0.6274,1)}19.7916%{opacity:1;animation-timing-function:cubic-bezier(0.37,0,0.63,1)}35.4166%{opacity:0.5;animation-timing-function:cubic-bezier(0.37,0,0.63,1)}50%{opacity:1;animation-timing-function:cubic-bezier(0.65,0,0.35,1)}85.4166%{opacity:1;animation-timing-function:cubic-bezier(0.3665,0,0.6867,0.4649)}100%{opacity:1}}
+.g1rl-star-1__s{animation:g1rl-star-1__s 3.2s linear infinite both;transform-origin:0 0}
+.g1rl-star-1__sh{animation:g1rl-star-1__o 3.2s linear infinite both}
+.g1rl-star-2__s{animation:g1rl-star-2__s 3.2s linear infinite both;transform-origin:0 0}
+.g1rl-star-2__sh{animation:g1rl-star-2__o 3.2s linear infinite both}
+.g1rl-star-3__s{animation:g1rl-star-3__s 3.2s linear infinite both;transform-origin:0 0}
+.g1rl-star-3__sh{animation:g1rl-star-3__o 3.2s linear infinite both}
+.g1rl-star-4__s{animation:g1rl-star-4__s 3.2s linear infinite both;transform-origin:0 0}
+.g1rl-star-4__sh{animation:g1rl-star-4__o 3.2s linear infinite both}
+.g1rl-star-5__s{animation:g1rl-star-5__s 3.2s linear infinite both;transform-origin:0 0}
+.g1rl-star-5__sh{animation:g1rl-star-5__o 3.2s linear infinite both}
+.g1rl-star-6__s{animation:g1rl-star-6__s 3.2s linear infinite both;transform-origin:0 0}
+.g1rl-star-6__sh{animation:g1rl-star-6__o 3.2s linear infinite both}
+.g1rl-star-7__s{animation:g1rl-star-7__s 3.2s linear infinite both;transform-origin:0 0}
+.g1rl-star-7__sh{animation:g1rl-star-7__o 3.2s linear infinite both}
+.g1rl-star-8__s{animation:g1rl-star-8__s 3.2s linear infinite both;transform-origin:0 0}
+.g1rl-star-8__sh{animation:g1rl-star-8__o 3.2s linear infinite both}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+<rect width="512" height="384" fill="#0b1026"/>
+<g transform="translate(70 60)">
+<g class="g1rl-star-1__s" transform="scale(1 1)">
+<ellipse class="g1rl-star-1__sh" rx="4" ry="4" fill="#fef9c3" opacity="1"/>
+</g>
+</g>
+<g transform="translate(150 140)">
+<g class="g1rl-star-2__s" transform="scale(1 1)">
+<ellipse class="g1rl-star-2__sh" rx="3" ry="3" fill="#fef9c3" opacity="1"/>
+</g>
+</g>
+<g transform="translate(230 50)">
+<g class="g1rl-star-3__s" transform="scale(1 1)">
+<ellipse class="g1rl-star-3__sh" rx="5" ry="5" fill="#fef9c3" opacity="1"/>
+</g>
+</g>
+<g transform="translate(310 120)">
+<g class="g1rl-star-4__s" transform="scale(1 1)">
+<ellipse class="g1rl-star-4__sh" rx="3" ry="3" fill="#fef9c3" opacity="1"/>
+</g>
+</g>
+<g transform="translate(390 70)">
+<g class="g1rl-star-5__s" transform="scale(1 1)">
+<ellipse class="g1rl-star-5__sh" rx="4" ry="4" fill="#fef9c3" opacity="1"/>
+</g>
+</g>
+<g transform="translate(450 160)">
+<g class="g1rl-star-6__s" transform="scale(0.7527 0.7527)">
+<ellipse class="g1rl-star-6__sh" rx="3" ry="3" fill="#fef9c3" opacity="0.505"/>
+</g>
+</g>
+<g transform="translate(110 250)">
+<g class="g1rl-star-7__s" transform="scale(1 1)">
+<ellipse class="g1rl-star-7__sh" rx="4" ry="4" fill="#fef9c3" opacity="1"/>
+</g>
+</g>
+<g transform="translate(280 230)">
+<g class="g1rl-star-8__s" transform="scale(1 1)">
+<ellipse class="g1rl-star-8__sh" rx="3" ry="3" fill="#fef9c3" opacity="1"/>
+</g>
+</g>
+</svg>

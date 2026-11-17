@@ -1,0 +1,21 @@
+{
+  "gertie": 1,
+  "name": "gift-box",
+  "canvas": { "w": 320, "h": 320, "background": "#111827" },
+  "duration": 2.16,
+  "loop": true,
+  "palette": { "box": "#e11d48", "ribbon": "#fde68a", "night": "#111827" },
+  "nodes": [
+    {
+      "id": "gift", "type": "group", "x": 160, "y": 250, "pivot": [0, 0],
+      "motion": [ { "preset": "jiggle", "repeat": "loop", "amount": 0.04, "shift": 3 } ],
+      "children": [
+        { "id": "gift-box-body", "type": "rect", "w": 140, "h": 100, "radius": 6, "x": 0, "y": -50, "fill": "$box" },
+        { "id": "gift-lid", "type": "rect", "w": 160, "h": 30, "radius": 6, "x": 0, "y": -115, "fill": "$box",
+          "animate": { "rotation": { "keys": [[0, 0], [0.27, -1.5, "gentle"], [0.54, 0, "smooth"]], "repeat": "loop" } } },
+        { "id": "ribbon-v", "type": "rect", "w": 22, "h": 130, "x": 0, "y": -65, "fill": "$ribbon" },
+        { "id": "ribbon-bow", "type": "ellipse", "rx": 22, "ry": 14, "x": 0, "y": -138, "fill": "$ribbon" }
+      ]
+    }
+  ]
+}

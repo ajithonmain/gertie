@@ -1,0 +1,17 @@
+{
+  "gertie": 1,
+  "name": "w3c-demo",
+  "canvas": { "w": 500, "h": 387 },
+  "duration": 2.4,
+  "nodes": [
+    {
+      "id": "scene", "type": "group", "include": "w3c.fragment.json",
+      "overrides": {
+        "group-34": { "motion": [{ "preset": "float", "distance": 8, "repeat": "loop" }] },
+        "group-90": { "motion": [{ "preset": "float", "distance": 4, "repeat": "loop" }] },
+        "group-5": { "pivot": [120, 270], "motion": [{ "preset": "wiggle", "angle": 3, "duration": 1.2, "repeat": "loop" }] },
+        "group-14": { "pivot": [350, 222], "motion": [{ "preset": "wiggle", "angle": 3, "duration": 1.2, "repeat": "loop" }] }
+      }
+    }
+  ]
+}

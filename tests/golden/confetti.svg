@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+<style>
+@keyframes g8vm-c1__t{0%{transform:translate(30px,-20px)}100%{transform:translate(30px,280px)}}
+@keyframes g8vm-c1__r{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+@keyframes g8vm-c2__t{0%{transform:translate(62px,-60px);animation-timing-function:step-end}6.6656%{transform:translate(62px,-60px)}100%{transform:translate(62px,240px)}}
+@keyframes g8vm-c3__t{0%{transform:translate(94px,-100px);animation-timing-function:step-end}11.6656%{transform:translate(94px,-100px)}100%{transform:translate(94px,200px)}}
+@keyframes g8vm-c3__r{0%{transform:rotate(30deg);animation-timing-function:step-end}11.6656%{transform:rotate(30deg)}100%{transform:rotate(-330deg)}}
+@keyframes g8vm-c4__t{0%{transform:translate(126px,-40px);animation-timing-function:step-end}18.3323%{transform:translate(126px,-40px)}100%{transform:translate(126px,260px)}}
+@keyframes g8vm-c5__t{0%{transform:translate(158px,-80px);animation-timing-function:step-end}8.3323%{transform:translate(158px,-80px)}100%{transform:translate(158px,220px)}}
+@keyframes g8vm-c5__r{0%{transform:rotate(0deg);animation-timing-function:step-end}8.3323%{transform:rotate(0deg)}100%{transform:rotate(720deg)}}
+@keyframes g8vm-c6__t{0%{transform:translate(190px,-10px);animation-timing-function:step-end}14.999%{transform:translate(190px,-10px)}100%{transform:translate(190px,290px)}}
+@keyframes g8vm-c7__t{0%{transform:translate(222px,-120px);animation-timing-function:step-end}3.3323%{transform:translate(222px,-120px)}100%{transform:translate(222px,180px)}}
+@keyframes g8vm-c7__r{0%{transform:rotate(-20deg);animation-timing-function:step-end}3.3323%{transform:rotate(-20deg)}100%{transform:rotate(340deg)}}
+.g8vm-c1__t{animation:g8vm-c1__t 2s linear 1 both;transform-origin:0 0}
+.g8vm-c1__r{animation:g8vm-c1__r 2s linear 1 both;transform-origin:0 0}
+.g8vm-c2__t{animation:g8vm-c2__t 2s linear 1 both;transform-origin:0 0}
+.g8vm-c3__t{animation:g8vm-c3__t 2s linear 1 both;transform-origin:0 0}
+.g8vm-c3__r{animation:g8vm-c3__r 2s linear 1 both;transform-origin:0 0}
+.g8vm-c4__t{animation:g8vm-c4__t 2s linear 1 both;transform-origin:0 0}
+.g8vm-c5__t{animation:g8vm-c5__t 2s linear 1 both;transform-origin:0 0}
+.g8vm-c5__r{animation:g8vm-c5__r 2s linear 1 both;transform-origin:0 0}
+.g8vm-c6__t{animation:g8vm-c6__t 2s linear 1 both;transform-origin:0 0}
+.g8vm-c7__t{animation:g8vm-c7__t 2s linear 1 both;transform-origin:0 0}
+.g8vm-c7__r{animation:g8vm-c7__r 2s linear 1 both;transform-origin:0 0}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+<defs>
+<g id="g8vm__def-piece"><rect x="-6" y="-10" width="12" height="20" rx="2" fill="#f472b6"/></g>
+<g id="g8vm__def-dot"><ellipse rx="6" ry="6" fill="#facc15"/></g>
+</defs>
+<rect width="256" height="256" fill="#0f172a"/>
+<g class="g8vm-c1__t" transform="translate(30 -20)">
+<g class="g8vm-c1__r" transform="rotate(0)">
+<use href="#g8vm__def-piece"/>
+</g>
+</g>
+<g class="g8vm-c2__t" transform="translate(62 -60)">
+<use href="#g8vm__def-dot"/>
+</g>
+<g class="g8vm-c3__t" transform="translate(94 -100)">
+<g class="g8vm-c3__r" transform="rotate(30)">
+<use href="#g8vm__def-piece"/>
+</g>
+</g>
+<g class="g8vm-c4__t" transform="translate(126 -40)">
+<g transform="scale(1.4 1.4)">
+<use href="#g8vm__def-dot"/>
+</g>
+</g>
+<g class="g8vm-c5__t" transform="translate(158 -80)">
+<g class="g8vm-c5__r" transform="rotate(0)">
+<g transform="scale(0.8 0.8)">
+<use href="#g8vm__def-piece"/>
+</g>
+</g>
+</g>
+<g class="g8vm-c6__t" transform="translate(190 -10)">
+<use href="#g8vm__def-dot"/>
+</g>
+<g class="g8vm-c7__t" transform="translate(222 -120)">
+<g class="g8vm-c7__r" transform="rotate(-20)">
+<use href="#g8vm__def-piece"/>
+</g>
+</g>
+</svg>

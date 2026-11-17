@@ -1,0 +1,7 @@
+{
+  "gertie": 1, "name": "ends-empty", "canvas": { "w": 200, "h": 200 }, "duration": 1, "loop": true,
+  "nodes": [
+    { "id": "ball", "type": "ellipse", "r": 30, "x": 100, "y": 100, "fill": "#ef4444", "to": 0.5,
+      "animate": { "scale": [[0, 1], [0.5, 1.3], [1, 1]] } }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "gertie": 1,
+  "name": "broken",
+  "canvas": {
+    "w": 200,
+    "h": 200
+  },
+  "duration": 2,
+  "loop": false,
+  "nodes": [
+    {
+      "id": "bot",
+      "type": "group",
+      "x": 100,
+      "y": 180,
+      "motion": [
+        {
+          "preset": "rig-nod"
+        }
+      ],
+      "children": [
+        {
+          "id": "bot-body",
+          "type": "rect",
+          "w": 40,
+          "h": 60,
+          "y": -30,
+          "fill": "#ffffff"
+        }
+      ]
+    }
+  ]
+}

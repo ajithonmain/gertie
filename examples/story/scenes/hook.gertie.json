@@ -1,0 +1,17 @@
+{
+  "gertie": 1,
+  "name": "hook",
+  "canvas": { "w": 540, "h": 960, "background": "#0b0f19" },
+  "fps": 30,
+  "duration": 3,
+  "loop": false,
+  "nodes": [
+    { "id": "sheet", "type": "rect", "w": 360, "h": 240, "radius": 16, "x": 270, "y": 420, "fill": "#1e293b",
+      "animate": { "scale": [[0, 0.6], [0.6, 1, "easeOut"]], "opacity": [[0, 0], [0.4, 1]] } },
+    { "id": "row-a", "type": "rect", "w": 280, "h": 18, "radius": 9, "x": 270, "y": 370, "fill": "#475569" },
+    { "id": "row-b", "type": "rect", "w": 220, "h": 18, "radius": 9, "x": 240, "y": 420, "fill": "#475569" },
+    { "id": "row-c", "type": "rect", "w": 250, "h": 18, "radius": 9, "x": 255, "y": 470, "fill": "#475569" },
+    { "id": "alert", "type": "ellipse", "r": 26, "x": 430, "y": 320, "fill": "#f87171",
+      "animate": { "scale": [[0.6, 0], [1.0, 1, "easeOut"], [1.4, 1.2], [1.8, 1]] } }
+  ]
+}

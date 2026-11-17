@@ -1,0 +1,19 @@
+{
+  "gertie": 1,
+  "name": "orb",
+  "canvas": { "w": 480, "h": 480, "background": "#000000" },
+  "fps": 30,
+  "duration": 4,
+  "loop": true,
+  "nodes": [
+    { "id": "planet", "type": "ellipse", "r": 160, "x": 240, "y": 240,
+      "fill": { "type": "radial", "center": [-70, -70], "radius": 250, "stops": [[0, "#ffffff"], [0.25, "#c4c4c4"], [0.5, "#767676"], [0.8, "#363636"], [1, "#1c1c1c"]] },
+      "animate": { "rotation": [[0, 0], [4, 360, "linear"]] } },
+    { "id": "orbit", "type": "group", "x": 240, "y": 240,
+      "animate": { "rotation": [[0, 0], [4, -360, "linear"]] },
+      "children": [
+        { "id": "moon", "type": "ellipse", "r": 34, "x": 205, "y": 0,
+          "fill": { "type": "radial", "center": [-10, -10], "radius": 50, "stops": [[0, "#ffffff"], [1, "#4a4a4a"]] } }
+      ] }
+  ]
+}

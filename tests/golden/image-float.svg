@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192" width="192" height="192">
+<style>
+@keyframes gy0g-shadow__s{0%{transform:scale(1,1);animation-timing-function:cubic-bezier(0.65,0,0.35,1)}50%{transform:scale(0.75,0.75);animation-timing-function:cubic-bezier(0.65,0,0.35,1)}100%{transform:scale(1,1)}}
+@keyframes gy0g-badge__t{0%{transform:translate(96px,92px);animation-timing-function:cubic-bezier(0.65,0,0.35,1)}50%{transform:translate(96px,76px);animation-timing-function:cubic-bezier(0.65,0,0.35,1)}100%{transform:translate(96px,92px)}}
+@keyframes gy0g-badge__r{0%{transform:rotate(-6deg);animation-timing-function:cubic-bezier(0.65,0,0.35,1)}50%{transform:rotate(6deg);animation-timing-function:cubic-bezier(0.65,0,0.35,1)}100%{transform:rotate(-6deg)}}
+.gy0g-shadow__s{animation:gy0g-shadow__s 2s linear infinite both;transform-origin:0 0}
+.gy0g-badge__t{animation:gy0g-badge__t 2s linear infinite both;transform-origin:0 0}
+.gy0g-badge__r{animation:gy0g-badge__r 2s linear infinite both;transform-origin:0 0}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+<rect width="192" height="192" fill="#0f172a"/>
+<g transform="translate(96 160)">
+<g class="gy0g-shadow__s" transform="scale(1 1)">
+<ellipse rx="30" ry="6" fill="#020617"/>
+</g>
+</g>
+<g class="gy0g-badge__t" transform="translate(96 92)">
+<g class="gy0g-badge__r" transform="rotate(-6)">
+<g transform="translate(-32 -32)">
+<image href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAABVElEQVR4nO3YuxUCMQxEUZqgF5qnAwrikAAxwa6kGetjJlBCgPWuHe3ldn9e/nnKF6ie1MNej+vbMtsAWIMrQdpGZ2GMCV8FMS6cDTE6noEwOpwBsU18FCE1/vsfpslEWB5vjWZjUAEqwhkQFIDqcBQiFWB1fAQBAugWHoUIAXSPZyFAANXxHgQXwJTbZ7yC8bePvoIt4hEEAXgBqiNRhEOAybcffQVb3X7kFQhAAJvFexEEIAABCEAAAhCAAASwE4I1XgAC0AcRfRLTR1EB/PwwFSESDwF0QnDsawOY9gqi8TBABwTk9g8BJiCg8acAHoRMCOdOh31UgAyEwD4YQARhBURwh9M2E0AUgQEBnGvqMgMgCF4MwjnmJhcAA2H1eHvcAJ0RIi0hgG4QSAME0AEB3R8GqIJg7U0DyIJg70sHWIGxcselAFGQzJ1SATpO+QLV8wGS6Xf0AXaPKQAAAABJRU5ErkJggg==" width="64" height="64"/>
+</g>
+</g>
+</g>
+</svg>

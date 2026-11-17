@@ -1,0 +1,17 @@
+{
+  "gertie": 1,
+  "name": "progress-bar",
+  "canvas": { "w": 256, "h": 96, "background": "#0f172a" },
+  "duration": 2,
+  "loop": false,
+  "nodes": [
+    { "id": "track", "type": "rect", "w": 200, "h": 16, "radius": 8, "x": 128, "y": 48, "fill": "#1e293b" },
+    {
+      "id": "bar", "type": "rect", "w": 16, "h": 16, "radius": 8, "x": 36, "y": 48, "fill": "#34d399",
+      "animate": {
+        "w": [[0, 16], [1.6, 200, "easeInOut"], [2, 200]],
+        "x": [[0, 36], [1.6, 128, "easeInOut"], [2, 128]]
+      }
+    }
+  ]
+}

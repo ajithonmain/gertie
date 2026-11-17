@@ -1,0 +1,14 @@
+{
+  "gertie": 1, "name": "bounce-clip",
+  "canvas": { "w": 480, "h": 270, "background": "#0f1526" },
+  "fps": 30, "duration": 3, "loop": false,
+  "nodes": [
+    { "id": "floor", "type": "line", "x1": 20, "y1": 252, "x2": 460, "y2": 252, "stroke": { "color": "#2a3550", "width": 2 } },
+    { "id": "ball", "type": "ellipse", "r": 21, "fill": "#f59e0b",
+      "animate": {
+        "x": [[0, 59], [0.4, 59], [2.2, 368, "linear"], [2.967, 419, "easeOutQuad"]],
+        "y": [[0, 59], [0.4, 59], [1.0, 231, "easeInQuad"], [1.4, 149, "easeOutQuad"], [1.767, 231, "easeInQuad"], [2.0, 194, "easeOutQuad"], [2.267, 231, "easeInQuad"]],
+        "scale": [[0, [1, 1]], [0.967, [1, 1]], [1.0, [1.25, 0.72]], [1.1, [1, 1], "easeOut"], [1.733, [1, 1]], [1.767, [1.2, 0.8]], [1.867, [1, 1], "easeOut"]]
+      } }
+  ]
+}

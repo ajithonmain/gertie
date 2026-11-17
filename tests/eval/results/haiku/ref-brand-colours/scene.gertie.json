@@ -1,0 +1,67 @@
+{
+  "gertie": 1,
+  "name": "pulse-badge",
+  "tier": "icon",
+  "canvas": { "w": 512, "h": 512 },
+  "fps": 30,
+  "duration": 2,
+  "loop": true,
+  "poster": 1,
+  "palette": {
+    "navy": "#0F172A",
+    "sky": "#38BDF8",
+    "ice": "#F8FAFC"
+  },
+  "nodes": [
+    {
+      "id": "halo",
+      "type": "path",
+      "x": 256,
+      "y": 256,
+      "fill": "$sky",
+      "d": "M 0 -200 C 110.5 -200 200 -110.5 200 0 C 200 110.5 110.5 200 0 200 C -110.5 200 -200 110.5 -200 0 C -200 -110.5 -110.5 -200 0 -200 Z",
+      "animate": {
+        "scale": [[0, 0.8], [1, 1.2, "easeOutSine"], [2, 0.8, "easeInOutSine"]],
+        "opacity": [[0, 0.45], [1, 0, "easeOutSine"], [2, 0.45, "easeInOutSine"]]
+      }
+    },
+    {
+      "id": "badge",
+      "type": "group",
+      "x": 256,
+      "y": 256,
+      "motion": [
+        { "preset": "pulse", "amount": 1.06, "duration": 2, "repeat": "loop" }
+      ],
+      "children": [
+        {
+          "id": "badge-core",
+          "type": "path",
+          "fill": "$navy",
+          "d": "M 0 -150 C 82.8 -150 150 -82.8 150 0 C 150 82.8 82.8 150 0 150 C -82.8 150 -150 82.8 -150 0 C -150 -82.8 -82.8 -150 0 -150 Z"
+        },
+        {
+          "id": "badge-ring",
+          "type": "path",
+          "fill": null,
+          "stroke": { "color": "$sky", "width": 12 },
+          "d": "M 0 -150 C 82.8 -150 150 -82.8 150 0 C 150 82.8 82.8 150 0 150 C -82.8 150 -150 82.8 -150 0 C -150 -82.8 -82.8 -150 0 -150 Z"
+        },
+        {
+          "id": "badge-inner-ring",
+          "type": "path",
+          "fill": null,
+          "opacity": 0.5,
+          "stroke": { "color": "$ice", "width": 4 },
+          "d": "M 0 -112 C 61.8 -112 112 -61.8 112 0 C 112 61.8 61.8 112 0 112 C -61.8 112 -112 61.8 -112 0 C -112 -61.8 -61.8 -112 0 -112 Z"
+        },
+        {
+          "id": "badge-dot",
+          "type": "path",
+          "fill": "$ice",
+          "d": "M 0 -44 C 24.3 -44 44 -24.3 44 0 C 44 24.3 24.3 44 0 44 C -24.3 44 -44 24.3 -44 0 C -44 -24.3 -24.3 -44 0 -44 Z"
+        }
+      ]
+    }
+  ]
+}

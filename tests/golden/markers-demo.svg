@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 160" width="256" height="160">
+<style>
+@keyframes g1d5-ball__t{0%{transform:translate(40px,80px);animation-timing-function:cubic-bezier(0.33,1,0.68,1)}33.3333%{transform:translate(128px,80px);animation-timing-function:cubic-bezier(0.65,0,0.35,1)}66.6666%{transform:translate(216px,80px);animation-timing-function:cubic-bezier(0.65,0,0.35,1)}100%{transform:translate(40px,80px)}}
+.g1d5-ball__t{animation:g1d5-ball__t 3s linear infinite both;transform-origin:0 0}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+<rect width="256" height="160" fill="#0b1220"/>
+<g class="g1d5-ball__t" transform="translate(40 80)">
+<ellipse rx="18" ry="18" fill="#38bdf8"/>
+</g>
+</svg>

@@ -1,0 +1,94 @@
+{
+  "gertie": 1,
+  "name": "padlock-open-close",
+  "tier": "icon",
+  "canvas": { "w": 512, "h": 512 },
+  "duration": 3,
+  "loop": true,
+  "poster": 0,
+  "palette": {
+    "body": "#f59e0b",
+    "body-shade": "#b45309",
+    "body-tint": "#fcd34d",
+    "steel": "#94a3b8",
+    "keyhole": "#78350f"
+  },
+  "nodes": [
+    {
+      "id": "shackle",
+      "type": "group",
+      "pivot": [336, 240],
+      "animate": {
+        "rotation": [
+          [0, 0],
+          [0.9, 0, "smooth"],
+          [1.5, 24, "smooth"],
+          [1.95, 25, "gentle"],
+          [2.6, 0, "easeOutBack"],
+          [3, 0, "smooth"]
+        ]
+      },
+      "children": [
+        {
+          "id": "shackle-arc",
+          "type": "path",
+          "fill": null,
+          "stroke": { "color": "$steel", "width": 36, "cap": "round", "join": "round" },
+          "d": "M 176 240 L 176 170 A 80 80 0 0 1 336 170 L 336 240"
+        }
+      ]
+    },
+    {
+      "id": "body",
+      "type": "group",
+      "pivot": [256, 436],
+      "animate": {
+        "scale": [
+          [0, [1, 1]],
+          [2.2, [1, 1], "smooth"],
+          [2.4, [1.03, 0.96], "easeOut"],
+          [2.75, [1, 1], "easeOutBack"],
+          [3, [1, 1], "smooth"]
+        ]
+      },
+      "children": [
+        {
+          "id": "body-base",
+          "type": "path",
+          "fill": "$body",
+          "d": "M 164 236 L 348 236 Q 376 236 376 264 L 376 408 Q 376 436 348 436 L 164 436 Q 136 436 136 408 L 136 264 Q 136 236 164 236 Z"
+        },
+        {
+          "id": "body-shade",
+          "type": "path",
+          "fill": "$body-shade",
+          "clip": {
+            "type": "path",
+            "d": "M 164 236 L 348 236 Q 376 236 376 264 L 376 408 Q 376 436 348 436 L 164 436 Q 136 436 136 408 L 136 264 Q 136 236 164 236 Z"
+          },
+          "d": "M 318 220 Q 352 310 332 450 L 400 450 L 400 220 Z"
+        },
+        {
+          "id": "body-shine",
+          "type": "path",
+          "fill": "$body-tint",
+          "d": "M 152 268 Q 152 246 174 246 L 180 246 L 180 300 Q 152 300 152 280 Z"
+        },
+        {
+          "id": "keyhole-head",
+          "type": "ellipse",
+          "r": 22,
+          "x": 256,
+          "y": 324,
+          "fill": "$keyhole"
+        },
+        {
+          "id": "keyhole-stem",
+          "type": "path",
+          "fill": "$keyhole",
+          "d": "M 246 330 L 266 330 L 272 372 L 240 372 Z"
+        }
+      ]
+    }
+  ]
+}

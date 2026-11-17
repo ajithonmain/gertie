@@ -1,0 +1,14 @@
+{
+  "gertie": 1,
+  "name": "breathe-circle",
+  "canvas": { "w": 480, "h": 480, "background": "#0f172a" },
+  "duration": 9,
+  "fps": 30,
+  "loop": true,
+  "nodes": [
+    {
+      "id": "ball", "type": "ellipse", "r": 70, "x": 240, "y": 240, "fill": "#f59e0b",
+      "motion": [ { "preset": "breathe", "repeat": "loop" } ]
+    }
+  ]
+}

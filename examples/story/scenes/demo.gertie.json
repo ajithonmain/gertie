@@ -1,0 +1,15 @@
+{
+  "gertie": 1,
+  "name": "demo",
+  "canvas": { "w": 540, "h": 960, "background": "#12301f" },
+  "fps": 30,
+  "duration": 5,
+  "loop": true,
+  "nodes": [
+    { "id": "ring", "type": "ellipse", "r": 120, "x": 270, "y": 440, "stroke": { "color": "#34d399", "width": 20, "cap": "round" },
+      "trim": { "start": 0, "end": 0.35 },
+      "animate": { "rotation": [[0, 0], [2.5, 360, "linear"]] } },
+    { "id": "core", "type": "ellipse", "r": 44, "x": 270, "y": 440, "fill": "#6ee7b7",
+      "animate": { "scale": [[0, 1], [1.25, 1.25, "easeInOut"], [2.5, 1, "easeInOut"]] } }
+  ]
+}

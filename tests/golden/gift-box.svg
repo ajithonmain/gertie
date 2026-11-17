@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 320" width="320" height="320">
+<style>
+@keyframes g15p-gift__t{0%{transform:translate(160px,250px);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}6.1538%{transform:translate(163px,250px);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}12.3076%{transform:translate(160px,250px);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}18.4615%{transform:translate(157px,250px);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}24.6153%{transform:translate(160px,250px);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}30.7692%{transform:translate(163px,250px);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}36.923%{transform:translate(160px,250px);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}43.0769%{transform:translate(157px,250px);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}49.2307%{transform:translate(160px,250px);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}55.3846%{transform:translate(163px,250px);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}63.0769%{transform:translate(160px,250px);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}69.2307%{transform:translate(157px,250px);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}75.3846%{transform:translate(160px,250px);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}81.5384%{transform:translate(163px,250px);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}87.6923%{transform:translate(160px,250px);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}93.8461%{transform:translate(157px,250px);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}100%{transform:translate(160px,250px)}}
+@keyframes g15p-gift__s{0%{transform:scale(1,1);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}6.1538%{transform:scale(1.04,0.96);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}12.3076%{transform:scale(1,1);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}18.4615%{transform:scale(1.04,0.96);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}24.6153%{transform:scale(1,1);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}30.7692%{transform:scale(1.04,0.96);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}36.923%{transform:scale(1,1);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}43.0769%{transform:scale(1.04,0.96);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}49.2307%{transform:scale(1,1);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}55.3846%{transform:scale(1.04,0.96);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}63.0769%{transform:scale(1,1);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}69.2307%{transform:scale(1.04,0.96);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}75.3846%{transform:scale(1,1);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}81.5384%{transform:scale(1.04,0.96);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}87.6923%{transform:scale(1,1);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}93.8461%{transform:scale(1.04,0.96);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}100%{transform:scale(1,1)}}
+@keyframes g15p-gift-lid__r{0%{transform:rotate(0deg);animation-timing-function:cubic-bezier(0.2,0,0.8,1)}12.3076%{transform:rotate(-1.5deg);animation-timing-function:cubic-bezier(0.7,0,0.3,1)}24.6153%{transform:rotate(0deg);animation-timing-function:cubic-bezier(0.2,0,0.8,1)}36.923%{transform:rotate(-1.5deg);animation-timing-function:cubic-bezier(0.7,0,0.3,1)}49.2307%{transform:rotate(0deg);animation-timing-function:cubic-bezier(0.2,0,0.8,1)}63.0769%{transform:rotate(-1.5deg);animation-timing-function:cubic-bezier(0.7,0,0.3,1)}75.3846%{transform:rotate(0deg);animation-timing-function:cubic-bezier(0.2,0,0.8,1)}87.6923%{transform:rotate(-1.5deg);animation-timing-function:cubic-bezier(0.7,0,0.3,1)}100%{transform:rotate(0deg)}}
+.g15p-gift__t{animation:g15p-gift__t 2.166667s linear infinite both;transform-origin:0 0}
+.g15p-gift__s{animation:g15p-gift__s 2.166667s linear infinite both;transform-origin:0 0}
+.g15p-gift-lid__r{animation:g15p-gift-lid__r 2.166667s linear infinite both;transform-origin:0 0}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+<rect width="320" height="320" fill="#111827"/>
+<g class="g15p-gift__t" transform="translate(160 250)">
+<g class="g15p-gift__s" transform="scale(1 1)">
+<g transform="translate(0 -50)">
+<rect x="-70" y="-50" width="140" height="100" rx="6" fill="#e11d48"/>
+</g>
+<g transform="translate(0 -115)">
+<g class="g15p-gift-lid__r" transform="rotate(0)">
+<rect x="-80" y="-15" width="160" height="30" rx="6" fill="#e11d48"/>
+</g>
+</g>
+<g transform="translate(0 -65)">
+<rect x="-11" y="-65" width="22" height="130" fill="#fde68a"/>
+</g>
+<g transform="translate(0 -138)">
+<ellipse rx="22" ry="14" fill="#fde68a"/>
+</g>
+</g>
+</g>
+</svg>

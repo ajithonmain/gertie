@@ -1,0 +1,17 @@
+{
+  "gertie": 1,
+  "name": "logo-source",
+  "canvas": { "w": 320, "h": 320 },
+  "duration": 1,
+  "loop": false,
+  "nodes": [
+    { "id": "badge", "type": "ellipse", "r": 150, "x": 160, "y": 160, "fill": "#4f46e5" },
+    { "id": "ring", "type": "ellipse", "r": 124, "x": 160, "y": 160, "stroke": { "color": "#818cf8", "width": 8 } },
+    { "id": "bolt", "type": "path", "d": "M178 62 L104 176 L150 176 L132 262 L218 138 L170 138 Z", "fill": "#fbbf24" },
+    { "id": "bolt-shade", "type": "path", "d": "M178 62 L170 138 L218 138 Z", "fill": "#fde68a" },
+    { "id": "star-a", "type": "star", "points": 4, "r": 20, "innerR": 6, "x": 72, "y": 84, "fill": "#fef3c7" },
+    { "id": "star-b", "type": "star", "points": 4, "r": 15, "innerR": 5, "x": 252, "y": 226, "fill": "#fef3c7" },
+    { "id": "dot-a", "type": "ellipse", "r": 7, "x": 246, "y": 92, "fill": "#a5b4fc" },
+    { "id": "dot-b", "type": "ellipse", "r": 5, "x": 84, "y": 236, "fill": "#a5b4fc" }
+  ]
+}

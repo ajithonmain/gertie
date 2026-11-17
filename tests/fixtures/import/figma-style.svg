@@ -1,0 +1,16 @@
+<svg width="320" height="240" viewBox="0 0 320 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_1_2)">
+<rect width="320" height="240" fill="#F4F4F4"/>
+<circle cx="90" cy="90" r="60" fill="url(#paint0_linear_1_2)"/>
+<path d="M160 40L280 40C291.046 40 300 48.9543 300 60V120C300 131.046 291.046 140 280 140H160V40Z" fill="#6C63FF" fill-opacity="0.85"/>
+<path d="M40 200C40 178 58 160 80 160C102 160 120 178 120 200" stroke="#1F2937" stroke-width="6" stroke-linecap="round"/>
+<g opacity="0.5" transform="translate(180 170) rotate(10)"><rect width="100" height="40" rx="8" fill="#FF6B6B"/></g>
+<use xlink:href="#dot" x="200" y="200" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+<use xlink:href="#dot" x="230" y="200" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_1_2" x1="30" y1="30" x2="150" y2="150" gradientUnits="userSpaceOnUse"><stop stop-color="#00C9A7"/><stop offset="1" stop-color="#005F73"/></linearGradient>
+<clipPath id="clip0_1_2"><rect width="320" height="240" rx="24" fill="white"/></clipPath>
+<circle id="dot" cx="0" cy="0" r="9" fill="#FFC857"/>
+</defs>
+</svg>

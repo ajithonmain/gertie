@@ -1,0 +1,29 @@
+{
+  "gertie": 1,
+  "name": "timed-nodes",
+  "canvas": { "w": 256, "h": 256, "background": "#0f172a" },
+  "duration": 1.6,
+  "loop": false,
+  "nodes": [
+    {
+      "id": "early", "type": "rect", "w": 80, "h": 80, "x": 80, "y": 128, "from": 0, "to": 0.8, "fill": "#22d3ee",
+      "animate": { "x": [[0, 60], [0.8, 100, "easeOut"]] }
+    },
+    {
+      "id": "late", "type": "ellipse", "r": 40, "x": 176, "y": 128, "from": 0.4, "fill": "#fbbf24",
+      "animate": { "scale": [[0.4, 0], [0.8, 1, "easeOutBack"]] }
+    },
+    {
+      "id": "pair", "type": "group", "y": 40,
+      "children": [
+        { "id": "pair-a", "type": "rect", "w": 24, "h": 24, "x": 100, "y": 200, "from": 0.2, "to": 1.0, "fill": "#a78bfa" },
+        { "id": "pair-b", "type": "rect", "w": 24, "h": 24, "x": 156, "y": 200, "from": 0.6, "fill": "#f472b6" }
+      ]
+    },
+    {
+      "id": "dashes", "type": "line", "x1": 30, "y1": 40, "x2": 226, "y2": 40,
+      "stroke": { "color": "#e2e8f0", "width": 4, "cap": "butt", "dash": [10, 8] },
+      "animate": { "opacity": [[0, 1], [0.8, 1], [0.9, 0], [1.6, 0]] }
+    }
+  ]
+}

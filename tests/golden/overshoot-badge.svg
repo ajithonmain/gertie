@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+<style>
+@keyframes ge7z-badge__s{0%{transform:scale(0.5,0.5);animation-timing-function:cubic-bezier(0.33,1,0.68,1)}19.4444%{transform:scale(1.05,1.05);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}25%{transform:scale(0.985,0.985);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}31.9444%{transform:scale(1,1);animation-timing-function:step-end}100%{transform:scale(1,1)}}
+@keyframes ge7z-badge__o{0%{opacity:0;animation-timing-function:cubic-bezier(0.33,1,0.68,1)}8.3333%{opacity:1;animation-timing-function:step-end}100%{opacity:1}}
+@keyframes ge7z-star__r{0%{transform:rotate(-50deg);animation-timing-function:step-end}8.3323%{transform:rotate(-50deg);animation-timing-function:cubic-bezier(0.33,1,0.68,1)}31.9444%{transform:rotate(12.5deg);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}38.8888%{transform:rotate(-4deg);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}48.6111%{transform:rotate(0deg);animation-timing-function:step-end}100%{transform:rotate(0deg)}}
+@keyframes ge7z-star__s{0%{transform:scale(0,0);animation-timing-function:step-end}8.3323%{transform:scale(0,0);animation-timing-function:cubic-bezier(0.33,1,0.68,1)}29.1666%{transform:scale(1.2,1.2);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}34.7222%{transform:scale(0.97,0.97);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}44.4444%{transform:scale(1,1);animation-timing-function:step-end}100%{transform:scale(1,1)}}
+@keyframes ge7z-pin__t{0%{transform:translate(90px,120px);animation-timing-function:step-end}12.499%{transform:translate(90px,120px);animation-timing-function:cubic-bezier(0.32,0,0.67,0)}36.1111%{transform:translate(269.28px,120px);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}41.6666%{transform:translate(251.02px,120px);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}51.3888%{transform:translate(256px,120px);animation-timing-function:step-end}100%{transform:translate(256px,120px)}}
+.ge7z-badge__s{animation:ge7z-badge__s 2.4s linear 1 both;transform-origin:0 0}
+.ge7z-badge__sh{animation:ge7z-badge__o 2.4s linear 1 both}
+.ge7z-star__r{animation:ge7z-star__r 2.4s linear 1 both;transform-origin:0 0}
+.ge7z-star__s{animation:ge7z-star__s 2.4s linear 1 both;transform-origin:0 0}
+.ge7z-pin__t{animation:ge7z-pin__t 2.4s linear 1 both;transform-origin:0 0}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+<g transform="translate(256 280)">
+<g class="ge7z-badge__s" transform="scale(1 1)">
+<ellipse class="ge7z-badge__sh" rx="130" ry="130" fill="#f59e0b" stroke="#fcd34d" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" opacity="1"/>
+</g>
+</g>
+<g transform="translate(256 280)">
+<g class="ge7z-star__r" transform="rotate(0)">
+<g class="ge7z-star__s" transform="scale(1 1)">
+<path d="M0 -64C0 -64 16.46 -22.65 16.46 -22.65C16.46 -22.65 60.87 -19.78 60.87 -19.78C60.87 -19.78 26.63 8.65 26.63 8.65C26.63 8.65 37.62 51.78 37.62 51.78C37.62 51.78 0 28 0 28C0 28 -37.62 51.78 -37.62 51.78C-37.62 51.78 -26.63 8.65 -26.63 8.65C-26.63 8.65 -60.87 -19.78 -60.87 -19.78C-60.87 -19.78 -16.46 -22.65 -16.46 -22.65C-16.46 -22.65 0 -64 0 -64Z" fill="#fef3c7"/>
+</g>
+</g>
+</g>
+<g class="ge7z-pin__t" transform="translate(256 120)">
+<rect x="-45" y="-18" width="90" height="36" rx="14" fill="#ef4444"/>
+</g>
+</svg>

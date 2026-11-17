@@ -1,0 +1,18 @@
+{
+  "gertie": 1,
+  "name": "logo-anim",
+  "canvas": { "w": 320, "h": 320 },
+  "duration": 2.4,
+  "nodes": [
+    {
+      "id": "logo", "type": "group", "include": "logo.grouped.fragment.json",
+      "overrides": {
+        "ring": { "pivot": [160, 160], "motion": [{ "preset": "breathe", "amount": 0.015, "duration": 2.4 }] },
+        "bolt": { "pivot": [161, 162], "motion": [{ "preset": "pulse", "amount": 1.08, "repeat": "loop", "phase": 0.3 }] },
+        "star-a": { "pivot": [72.5, 84], "motion": [{ "preset": "spin", "duration": 1.2, "repeat": "loop" }] },
+        "star-b": { "pivot": [252, 226.2], "motion": [{ "preset": "spin", "duration": 1.2, "direction": "ccw", "repeat": "loop" }] },
+        "dots": { "motion": [{ "preset": "float", "distance": 6, "at": 0.3, "duration": 2.1 }] }
+      }
+    }
+  ]
+}

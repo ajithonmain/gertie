@@ -1,0 +1,33 @@
+{
+  "gertie": 1,
+  "name": "rocket-launch",
+  "canvas": { "w": 256, "h": 320, "background": "#0b1020" },
+  "duration": 2.4,
+  "loop": false,
+  "nodes": [
+    {
+      "id": "rocket", "type": "group", "x": 128, "y": 250,
+      "animate": { "y": [[0, 250], [0.6, 250], [2.4, -60, "easeInQuad"]] },
+      "children": [
+        {
+          "id": "flame", "type": "group", "y": 52, "from": 0.4,
+          "children": [
+            {
+              "id": "flame-outer", "type": "path", "d": "M-14 0 C-14 24 -4 36 0 48 C4 36 14 24 14 0 Z", "fill": "#fb923c",
+              "animate": { "scale": [[0.4, [1, 0.6]], [0.7, [1, 1.1], "easeOut"], [1.1, [1, 0.9], "easeInOut"], [1.5, [1, 1.1], "easeInOut"], [2.4, [1, 1]]] }
+            },
+            { "id": "flame-core", "type": "ellipse", "rx": 6, "ry": 14, "y": 10, "fill": "#fde047" }
+          ]
+        },
+        { "id": "body", "type": "path", "d": "M0 -60 C24 -36 24 12 18 52 L-18 52 C-24 12 -24 -36 0 -60 Z", "fill": "#e2e8f0" },
+        { "id": "window", "type": "ellipse", "r": 10, "y": -14, "fill": "#38bdf8", "stroke": { "color": "#475569", "width": 4 } },
+        { "id": "fin-left", "type": "path", "d": "M-18 24 L-34 56 L-18 48 Z", "fill": "#ef4444" },
+        { "id": "fin-right", "type": "path", "d": "M18 24 L34 56 L18 48 Z", "fill": "#ef4444" }
+      ]
+    },
+    {
+      "id": "smoke", "type": "ellipse", "rx": 40, "ry": 16, "x": 128, "y": 296, "from": 0.6, "to": 1.8, "fill": "#94a3b8",
+      "animate": { "opacity": [[0.6, 0], [0.9, 0.7, "easeOut"], [1.8, 0, "easeIn"]], "scale": [[0.6, 0.4], [1.8, 1.6, "easeOut"]] }
+    }
+  ]
+}

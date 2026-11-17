@@ -1,0 +1,30 @@
+{
+  "gertie": 1,
+  "name": "star-flower",
+  "canvas": { "w": 640, "h": 480 },
+  "fps": 30,
+  "duration": 4,
+  "loop": true,
+  "palette": { "stem": "#4caf7a" },
+  "defs": {
+    "petal": { "id": "petal", "type": "ellipse", "rx": 44, "ry": 100, "y": -92, "pivot": [0, 92],
+      "fill": { "type": "radial", "center": [0, 30], "radius": 115, "stops": [[0, "#f2f6ff"], [0.5, "#9dbcff"], [1, "#5b7fff"]] } }
+  },
+  "nodes": [
+    { "id": "stem", "type": "path", "d": "M330 300 Q350 390 316 480", "stroke": { "color": "$stem", "width": 14 } },
+    { "id": "leaf", "type": "ellipse", "rx": 20, "ry": 56, "x": 372, "y": 400, "rotation": 55, "fill": "$stem",
+      "motion": [ { "preset": "sway", "angle": 6, "duration": 4, "repeat": "loop", "phase": 0.2 } ] },
+    { "id": "turn", "type": "group", "x": 320, "y": 200,
+      "animate": { "scale": [[0, [1, 1]], [1, [0.35, 1], "easeInOutSine"], [2, [1, 1], "easeInOutSine"], [3, [0.35, 1], "easeInOutSine"], [4, [1, 1], "easeInOutSine"]] },
+      "children": [
+        { "id": "head", "type": "group", "rotation": -6, "children": [
+          { "id": "pt-1", "type": "use", "ref": "petal", "rotation": 0 },
+          { "id": "pt-2", "type": "use", "ref": "petal", "rotation": 72 },
+          { "id": "pt-3", "type": "use", "ref": "petal", "rotation": 144 },
+          { "id": "pt-4", "type": "use", "ref": "petal", "rotation": 216 },
+          { "id": "pt-5", "type": "use", "ref": "petal", "rotation": 288 },
+          { "id": "core", "type": "ellipse", "r": 38, "fill": { "type": "radial", "center": [-6, -6], "radius": 34, "stops": [[0, "#fff6c8"], [1, "#f2b33d"]] } }
+        ] }
+      ] }
+  ]
+}

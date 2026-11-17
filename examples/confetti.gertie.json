@@ -1,0 +1,20 @@
+{
+  "gertie": 1,
+  "name": "confetti",
+  "canvas": { "w": 256, "h": 256, "background": "#0f172a" },
+  "duration": 2,
+  "loop": false,
+  "defs": {
+    "piece": { "id": "piece", "type": "rect", "w": 12, "h": 20, "radius": 2, "fill": "#f472b6" },
+    "dot": { "id": "dot", "type": "ellipse", "r": 6, "fill": "#facc15" }
+  },
+  "nodes": [
+    { "id": "c1", "type": "use", "ref": "piece", "x": 30, "y": 0, "animate": { "y": [[0, -20], [2, 280, "linear"]], "rotation": [[0, 0], [2, 360, "linear"]] } },
+    { "id": "c2", "type": "use", "ref": "dot", "x": 62, "y": 0, "animate": { "y": [[0.12, -60], [2, 240, "linear"]] } },
+    { "id": "c3", "type": "use", "ref": "piece", "x": 94, "y": 0, "rotation": 30, "animate": { "y": [[0.24, -100], [2, 200, "linear"]], "rotation": [[0.24, 30], [2, -330, "linear"]] } },
+    { "id": "c4", "type": "use", "ref": "dot", "x": 126, "y": 0, "scale": 1.4, "animate": { "y": [[0.36, -40], [2, 260, "linear"]] } },
+    { "id": "c5", "type": "use", "ref": "piece", "x": 158, "y": 0, "scale": 0.8, "animate": { "y": [[0.18, -80], [2, 220, "linear"]], "rotation": [[0.18, 0], [2, 720, "linear"]] } },
+    { "id": "c6", "type": "use", "ref": "dot", "x": 190, "y": 0, "animate": { "y": [[0.3, -10], [2, 290, "linear"]] } },
+    { "id": "c7", "type": "use", "ref": "piece", "x": 222, "y": 0, "rotation": -20, "animate": { "y": [[0.06, -120], [2, 180, "linear"]], "rotation": [[0.06, -20], [2, 340, "linear"]] } }
+  ]
+}

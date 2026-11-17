@@ -1,0 +1,21 @@
+{
+  "gertie": 1,
+  "name": "pulse-circle",
+  "canvas": { "w": 256, "h": 256 },
+  "duration": 1.2,
+  "palette": { "coral": "#fb7185" },
+  "nodes": [
+    {
+      "id": "ring", "type": "ellipse", "r": 70, "x": 128, "y": 128,
+      "stroke": { "color": "$coral", "width": 6 },
+      "animate": {
+        "scale": [[0, 0.6], [1.1, 1.4, "easeOut"], [1.2, 0.6, "hold"]],
+        "opacity": [[0, 0], [0.1, 0.9, "easeOut"], [1.1, 0, "easeOut"], [1.2, 0]]
+      }
+    },
+    {
+      "id": "core", "type": "ellipse", "r": 50, "x": 128, "y": 128, "fill": "$coral",
+      "animate": { "scale": [[0, 1], [0.6, 1.15, "easeInOut"], [1.2, 1, "easeInOut"]] }
+    }
+  ]
+}

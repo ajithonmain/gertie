@@ -1,0 +1,1199 @@
+{
+  "gertie": 1,
+  "name": "rain-cloud",
+  "canvas": {
+    "w": 512,
+    "h": 512,
+    "background": "#0f172a"
+  },
+  "duration": 2.4,
+  "poster": 1.2,
+  "palette": {
+    "cloud-shade": "#94a3b8",
+    "rain": "#7dd3fc"
+  },
+  "nodes": [
+    {
+      "id": "ground",
+      "type": "ellipse",
+      "x": 256,
+      "y": 446,
+      "rx": 240,
+      "ry": 60,
+      "fill": {
+        "type": "linear",
+        "from": [
+          0,
+          386
+        ],
+        "to": [
+          0,
+          506
+        ],
+        "stops": [
+          [
+            0,
+            "#334155"
+          ],
+          [
+            1,
+            "#1e293b"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "ripple-1",
+      "type": "ellipse",
+      "x": 170,
+      "y": 428,
+      "rx": 40,
+      "ry": 10,
+      "fill": null,
+      "stroke": {
+        "color": "$rain",
+        "width": 2.5
+      },
+      "animate": {
+        "scale": {
+          "keys": [
+            [
+              0,
+              [
+                0.15,
+                0.15
+              ]
+            ],
+            [
+              0.8,
+              [
+                1,
+                1
+              ],
+              "easeOut"
+            ]
+          ],
+          "repeat": "loop"
+        },
+        "opacity": {
+          "keys": [
+            [
+              0,
+              0
+            ],
+            [
+              0.13333333333333333,
+              0.85,
+              "easeOut"
+            ],
+            [
+              0.8,
+              0,
+              "easeIn"
+            ]
+          ],
+          "repeat": "loop"
+        }
+      }
+    },
+    {
+      "id": "ripple-2",
+      "type": "ellipse",
+      "x": 330,
+      "y": 418,
+      "rx": 40,
+      "ry": 10,
+      "fill": null,
+      "stroke": {
+        "color": "$rain",
+        "width": 2.5
+      },
+      "animate": {
+        "scale": {
+          "keys": [
+            [
+              0,
+              [
+                0.15,
+                0.15
+              ]
+            ],
+            [
+              1.2,
+              [
+                1,
+                1
+              ],
+              "easeOut"
+            ]
+          ],
+          "repeat": "loop"
+        },
+        "opacity": {
+          "keys": [
+            [
+              0,
+              0
+            ],
+            [
+              0.13333333333333333,
+              0.85,
+              "easeOut"
+            ],
+            [
+              1.2,
+              0,
+              "easeIn"
+            ]
+          ],
+          "repeat": "loop"
+        }
+      }
+    },
+    {
+      "id": "ripple-3",
+      "type": "ellipse",
+      "x": 250,
+      "y": 456,
+      "rx": 40,
+      "ry": 10,
+      "fill": null,
+      "stroke": {
+        "color": "$rain",
+        "width": 2.5
+      },
+      "animate": {
+        "scale": {
+          "keys": [
+            [
+              0,
+              [
+                0.15,
+                0.15
+              ]
+            ],
+            [
+              0.6,
+              [
+                1,
+                1
+              ],
+              "easeOut"
+            ]
+          ],
+          "repeat": "loop"
+        },
+        "opacity": {
+          "keys": [
+            [
+              0,
+              0
+            ],
+            [
+              0.13333333333333333,
+              0.85,
+              "easeOut"
+            ],
+            [
+              0.6,
+              0,
+              "easeIn"
+            ]
+          ],
+          "repeat": "loop"
+        }
+      }
+    },
+    {
+      "id": "ripple-4",
+      "type": "ellipse",
+      "x": 385,
+      "y": 446,
+      "rx": 40,
+      "ry": 10,
+      "fill": null,
+      "stroke": {
+        "color": "$rain",
+        "width": 2.5
+      },
+      "animate": {
+        "scale": {
+          "keys": [
+            [
+              0,
+              [
+                0.15,
+                0.15
+              ]
+            ],
+            [
+              0.8,
+              [
+                1,
+                1
+              ],
+              "easeOut"
+            ]
+          ],
+          "repeat": "loop"
+        },
+        "opacity": {
+          "keys": [
+            [
+              0,
+              0
+            ],
+            [
+              0.13333333333333333,
+              0.85,
+              "easeOut"
+            ],
+            [
+              0.8,
+              0,
+              "easeIn"
+            ]
+          ],
+          "repeat": "loop"
+        }
+      }
+    },
+    {
+      "id": "ripple-5",
+      "type": "ellipse",
+      "x": 120,
+      "y": 452,
+      "rx": 40,
+      "ry": 10,
+      "fill": null,
+      "stroke": {
+        "color": "$rain",
+        "width": 2.5
+      },
+      "animate": {
+        "scale": {
+          "keys": [
+            [
+              0,
+              [
+                0.15,
+                0.15
+              ]
+            ],
+            [
+              1.2,
+              [
+                1,
+                1
+              ],
+              "easeOut"
+            ]
+          ],
+          "repeat": "loop"
+        },
+        "opacity": {
+          "keys": [
+            [
+              0,
+              0
+            ],
+            [
+              0.13333333333333333,
+              0.85,
+              "easeOut"
+            ],
+            [
+              1.2,
+              0,
+              "easeIn"
+            ]
+          ],
+          "repeat": "loop"
+        }
+      }
+    },
+    {
+      "id": "ripple-6",
+      "type": "ellipse",
+      "x": 290,
+      "y": 440,
+      "rx": 40,
+      "ry": 10,
+      "fill": null,
+      "stroke": {
+        "color": "$rain",
+        "width": 2.5
+      },
+      "animate": {
+        "scale": {
+          "keys": [
+            [
+              0,
+              [
+                0.15,
+                0.15
+              ]
+            ],
+            [
+              0.6,
+              [
+                1,
+                1
+              ],
+              "easeOut"
+            ]
+          ],
+          "repeat": "loop"
+        },
+        "opacity": {
+          "keys": [
+            [
+              0,
+              0
+            ],
+            [
+              0.13333333333333333,
+              0.85,
+              "easeOut"
+            ],
+            [
+              0.6,
+              0,
+              "easeIn"
+            ]
+          ],
+          "repeat": "loop"
+        }
+      }
+    },
+    {
+      "id": "rain",
+      "type": "group",
+      "children": [
+        {
+          "id": "drop-1",
+          "type": "line",
+          "x": 140,
+          "y": 200,
+          "x1": 0,
+          "y1": 0,
+          "x2": -4,
+          "y2": 16,
+          "stroke": {
+            "color": "$rain",
+            "width": 3,
+            "cap": "round"
+          },
+          "animate": {
+            "y": {
+              "keys": [
+                [
+                  0,
+                  200
+                ],
+                [
+                  0.8,
+                  415,
+                  "linear"
+                ]
+              ],
+              "repeat": "loop"
+            },
+            "opacity": {
+              "keys": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  0.13333333333333333,
+                  0.9,
+                  "easeOut"
+                ],
+                [
+                  0.6666666666666667,
+                  0.9,
+                  "linear"
+                ],
+                [
+                  0.8,
+                  0,
+                  "easeIn"
+                ]
+              ],
+              "repeat": "loop"
+            }
+          }
+        },
+        {
+          "id": "drop-2",
+          "type": "line",
+          "x": 158,
+          "y": 200,
+          "x1": 0,
+          "y1": 0,
+          "x2": -4,
+          "y2": 16,
+          "stroke": {
+            "color": "$rain",
+            "width": 3,
+            "cap": "round"
+          },
+          "animate": {
+            "y": {
+              "keys": [
+                [
+                  0,
+                  200
+                ],
+                [
+                  0.6,
+                  415,
+                  "linear"
+                ]
+              ],
+              "repeat": "loop"
+            },
+            "opacity": {
+              "keys": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  0.13333333333333333,
+                  0.9,
+                  "easeOut"
+                ],
+                [
+                  0.4666666666666667,
+                  0.9,
+                  "linear"
+                ],
+                [
+                  0.6,
+                  0,
+                  "easeIn"
+                ]
+              ],
+              "repeat": "loop"
+            }
+          }
+        },
+        {
+          "id": "drop-3",
+          "type": "line",
+          "x": 176,
+          "y": 200,
+          "x1": 0,
+          "y1": 0,
+          "x2": -4,
+          "y2": 16,
+          "stroke": {
+            "color": "$rain",
+            "width": 3,
+            "cap": "round"
+          },
+          "animate": {
+            "y": {
+              "keys": [
+                [
+                  0,
+                  200
+                ],
+                [
+                  1.2,
+                  415,
+                  "linear"
+                ]
+              ],
+              "repeat": "loop"
+            },
+            "opacity": {
+              "keys": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  0.13333333333333333,
+                  0.9,
+                  "easeOut"
+                ],
+                [
+                  1.0666666666666667,
+                  0.9,
+                  "linear"
+                ],
+                [
+                  1.2,
+                  0,
+                  "easeIn"
+                ]
+              ],
+              "repeat": "loop"
+            }
+          }
+        },
+        {
+          "id": "drop-4",
+          "type": "line",
+          "x": 192,
+          "y": 200,
+          "x1": 0,
+          "y1": 0,
+          "x2": -4,
+          "y2": 16,
+          "stroke": {
+            "color": "$rain",
+            "width": 3,
+            "cap": "round"
+          },
+          "animate": {
+            "y": {
+              "keys": [
+                [
+                  0,
+                  200
+                ],
+                [
+                  0.4,
+                  415,
+                  "linear"
+                ]
+              ],
+              "repeat": "loop"
+            },
+            "opacity": {
+              "keys": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  0.13333333333333333,
+                  0.9,
+                  "easeOut"
+                ],
+                [
+                  0.2666666666666667,
+                  0.9,
+                  "linear"
+                ],
+                [
+                  0.4,
+                  0,
+                  "easeIn"
+                ]
+              ],
+              "repeat": "loop"
+            }
+          }
+        },
+        {
+          "id": "drop-5",
+          "type": "line",
+          "x": 210,
+          "y": 200,
+          "x1": 0,
+          "y1": 0,
+          "x2": -4,
+          "y2": 16,
+          "stroke": {
+            "color": "$rain",
+            "width": 3,
+            "cap": "round"
+          },
+          "animate": {
+            "y": {
+              "keys": [
+                [
+                  0,
+                  200
+                ],
+                [
+                  0.6,
+                  415,
+                  "linear"
+                ]
+              ],
+              "repeat": "loop"
+            },
+            "opacity": {
+              "keys": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  0.13333333333333333,
+                  0.9,
+                  "easeOut"
+                ],
+                [
+                  0.4666666666666667,
+                  0.9,
+                  "linear"
+                ],
+                [
+                  0.6,
+                  0,
+                  "easeIn"
+                ]
+              ],
+              "repeat": "loop"
+            }
+          }
+        },
+        {
+          "id": "drop-6",
+          "type": "line",
+          "x": 228,
+          "y": 200,
+          "x1": 0,
+          "y1": 0,
+          "x2": -4,
+          "y2": 16,
+          "stroke": {
+            "color": "$rain",
+            "width": 3,
+            "cap": "round"
+          },
+          "animate": {
+            "y": {
+              "keys": [
+                [
+                  0,
+                  200
+                ],
+                [
+                  0.8,
+                  415,
+                  "linear"
+                ]
+              ],
+              "repeat": "loop"
+            },
+            "opacity": {
+              "keys": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  0.13333333333333333,
+                  0.9,
+                  "easeOut"
+                ],
+                [
+                  0.6666666666666667,
+                  0.9,
+                  "linear"
+                ],
+                [
+                  0.8,
+                  0,
+                  "easeIn"
+                ]
+              ],
+              "repeat": "loop"
+            }
+          }
+        },
+        {
+          "id": "drop-7",
+          "type": "line",
+          "x": 246,
+          "y": 200,
+          "x1": 0,
+          "y1": 0,
+          "x2": -4,
+          "y2": 16,
+          "stroke": {
+            "color": "$rain",
+            "width": 3,
+            "cap": "round"
+          },
+          "animate": {
+            "y": {
+              "keys": [
+                [
+                  0,
+                  200
+                ],
+                [
+                  0.4,
+                  415,
+                  "linear"
+                ]
+              ],
+              "repeat": "loop"
+            },
+            "opacity": {
+              "keys": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  0.13333333333333333,
+                  0.9,
+                  "easeOut"
+                ],
+                [
+                  0.2666666666666667,
+                  0.9,
+                  "linear"
+                ],
+                [
+                  0.4,
+                  0,
+                  "easeIn"
+                ]
+              ],
+              "repeat": "loop"
+            }
+          }
+        },
+        {
+          "id": "drop-8",
+          "type": "line",
+          "x": 262,
+          "y": 200,
+          "x1": 0,
+          "y1": 0,
+          "x2": -4,
+          "y2": 16,
+          "stroke": {
+            "color": "$rain",
+            "width": 3,
+            "cap": "round"
+          },
+          "animate": {
+            "y": {
+              "keys": [
+                [
+                  0,
+                  200
+                ],
+                [
+                  1.2,
+                  415,
+                  "linear"
+                ]
+              ],
+              "repeat": "loop"
+            },
+            "opacity": {
+              "keys": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  0.13333333333333333,
+                  0.9,
+                  "easeOut"
+                ],
+                [
+                  1.0666666666666667,
+                  0.9,
+                  "linear"
+                ],
+                [
+                  1.2,
+                  0,
+                  "easeIn"
+                ]
+              ],
+              "repeat": "loop"
+            }
+          }
+        },
+        {
+          "id": "drop-9",
+          "type": "line",
+          "x": 280,
+          "y": 200,
+          "x1": 0,
+          "y1": 0,
+          "x2": -4,
+          "y2": 16,
+          "stroke": {
+            "color": "$rain",
+            "width": 3,
+            "cap": "round"
+          },
+          "animate": {
+            "y": {
+              "keys": [
+                [
+                  0,
+                  200
+                ],
+                [
+                  0.6,
+                  415,
+                  "linear"
+                ]
+              ],
+              "repeat": "loop"
+            },
+            "opacity": {
+              "keys": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  0.13333333333333333,
+                  0.9,
+                  "easeOut"
+                ],
+                [
+                  0.4666666666666667,
+                  0.9,
+                  "linear"
+                ],
+                [
+                  0.6,
+                  0,
+                  "easeIn"
+                ]
+              ],
+              "repeat": "loop"
+            }
+          }
+        },
+        {
+          "id": "drop-10",
+          "type": "line",
+          "x": 296,
+          "y": 200,
+          "x1": 0,
+          "y1": 0,
+          "x2": -4,
+          "y2": 16,
+          "stroke": {
+            "color": "$rain",
+            "width": 3,
+            "cap": "round"
+          },
+          "animate": {
+            "y": {
+              "keys": [
+                [
+                  0,
+                  200
+                ],
+                [
+                  0.4,
+                  415,
+                  "linear"
+                ]
+              ],
+              "repeat": "loop"
+            },
+            "opacity": {
+              "keys": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  0.13333333333333333,
+                  0.9,
+                  "easeOut"
+                ],
+                [
+                  0.2666666666666667,
+                  0.9,
+                  "linear"
+                ],
+                [
+                  0.4,
+                  0,
+                  "easeIn"
+                ]
+              ],
+              "repeat": "loop"
+            }
+          }
+        },
+        {
+          "id": "drop-11",
+          "type": "line",
+          "x": 314,
+          "y": 200,
+          "x1": 0,
+          "y1": 0,
+          "x2": -4,
+          "y2": 16,
+          "stroke": {
+            "color": "$rain",
+            "width": 3,
+            "cap": "round"
+          },
+          "animate": {
+            "y": {
+              "keys": [
+                [
+                  0,
+                  200
+                ],
+                [
+                  0.8,
+                  415,
+                  "linear"
+                ]
+              ],
+              "repeat": "loop"
+            },
+            "opacity": {
+              "keys": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  0.13333333333333333,
+                  0.9,
+                  "easeOut"
+                ],
+                [
+                  0.6666666666666667,
+                  0.9,
+                  "linear"
+                ],
+                [
+                  0.8,
+                  0,
+                  "easeIn"
+                ]
+              ],
+              "repeat": "loop"
+            }
+          }
+        },
+        {
+          "id": "drop-12",
+          "type": "line",
+          "x": 332,
+          "y": 200,
+          "x1": 0,
+          "y1": 0,
+          "x2": -4,
+          "y2": 16,
+          "stroke": {
+            "color": "$rain",
+            "width": 3,
+            "cap": "round"
+          },
+          "animate": {
+            "y": {
+              "keys": [
+                [
+                  0,
+                  200
+                ],
+                [
+                  0.6,
+                  415,
+                  "linear"
+                ]
+              ],
+              "repeat": "loop"
+            },
+            "opacity": {
+              "keys": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  0.13333333333333333,
+                  0.9,
+                  "easeOut"
+                ],
+                [
+                  0.4666666666666667,
+                  0.9,
+                  "linear"
+                ],
+                [
+                  0.6,
+                  0,
+                  "easeIn"
+                ]
+              ],
+              "repeat": "loop"
+            }
+          }
+        },
+        {
+          "id": "drop-13",
+          "type": "line",
+          "x": 350,
+          "y": 200,
+          "x1": 0,
+          "y1": 0,
+          "x2": -4,
+          "y2": 16,
+          "stroke": {
+            "color": "$rain",
+            "width": 3,
+            "cap": "round"
+          },
+          "animate": {
+            "y": {
+              "keys": [
+                [
+                  0,
+                  200
+                ],
+                [
+                  0.4,
+                  415,
+                  "linear"
+                ]
+              ],
+              "repeat": "loop"
+            },
+            "opacity": {
+              "keys": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  0.13333333333333333,
+                  0.9,
+                  "easeOut"
+                ],
+                [
+                  0.2666666666666667,
+                  0.9,
+                  "linear"
+                ],
+                [
+                  0.4,
+                  0,
+                  "easeIn"
+                ]
+              ],
+              "repeat": "loop"
+            }
+          }
+        },
+        {
+          "id": "drop-14",
+          "type": "line",
+          "x": 368,
+          "y": 200,
+          "x1": 0,
+          "y1": 0,
+          "x2": -4,
+          "y2": 16,
+          "stroke": {
+            "color": "$rain",
+            "width": 3,
+            "cap": "round"
+          },
+          "animate": {
+            "y": {
+              "keys": [
+                [
+                  0,
+                  200
+                ],
+                [
+                  1.2,
+                  415,
+                  "linear"
+                ]
+              ],
+              "repeat": "loop"
+            },
+            "opacity": {
+              "keys": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  0.13333333333333333,
+                  0.9,
+                  "easeOut"
+                ],
+                [
+                  1.0666666666666667,
+                  0.9,
+                  "linear"
+                ],
+                [
+                  1.2,
+                  0,
+                  "easeIn"
+                ]
+              ],
+              "repeat": "loop"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "cloud",
+      "type": "group",
+      "motion": [
+        {
+          "preset": "float",
+          "distance": 6,
+          "duration": 2.4,
+          "repeat": "loop"
+        }
+      ],
+      "children": [
+        {
+          "id": "cloud-body",
+          "type": "path",
+          "d": "M 120 190 C 75 190 68 135 115 128 C 108 78 185 62 212 100 C 228 58 305 58 322 104 C 362 92 402 124 386 160 C 424 164 428 190 396 190 Z",
+          "fill": {
+            "type": "linear",
+            "from": [
+              0,
+              60
+            ],
+            "to": [
+              0,
+              190
+            ],
+            "stops": [
+              [
+                0,
+                "#f8fafc"
+              ],
+              [
+                1,
+                "#cbd5e1"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "cloud-shade",
+          "type": "rect",
+          "x": 260,
+          "y": 180,
+          "w": 400,
+          "h": 60,
+          "fill": "$cloud-shade",
+          "clip": {
+            "type": "path",
+            "d": "M 120 190 C 75 190 68 135 115 128 C 108 78 185 62 212 100 C 228 58 305 58 322 104 C 362 92 402 124 386 160 C 424 164 428 190 396 190 Z"
+          }
+        }
+      ]
+    }
+  ]
+}

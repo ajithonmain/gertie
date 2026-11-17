@@ -1,0 +1,52 @@
+{
+  "gertie": 1, "name": "friendly-robot",
+  "canvas": { "w": 512, "h": 512 }, "duration": 2, "fps": 30,
+  "poster": 1,
+  "palette": { "body": "#94a3b8", "dark": "#334155", "accent": "#38bdf8", "light": "#e2e8f0" },
+  "nodes": [
+    { "id": "shadow", "type": "ellipse", "rx": 90, "ry": 12, "x": 256, "y": 462, "fill": "#00000040" },
+    { "id": "robot", "type": "group", "x": 256, "y": 0,
+      "animate": { "y": [[0, 0], [0.5, -6, "easeOutSine"], [1, 0, "easeInSine"], [1.5, -6, "easeOutSine"], [2, 0, "easeInSine"]] },
+      "children": [
+        { "id": "leg-l", "type": "rect", "w": 30, "h": 50, "radius": 8, "x": -35, "y": 435, "fill": "$dark" },
+        { "id": "leg-r", "type": "rect", "w": 30, "h": 50, "radius": 8, "x": 35, "y": 435, "fill": "$dark" },
+        { "id": "arm-l", "type": "group", "x": -88, "y": 255,
+          "children": [
+            { "id": "arm-l-shape", "type": "rect", "w": 26, "h": 90, "radius": 13, "y": 40, "fill": "$body" },
+            { "id": "hand-l", "type": "ellipse", "r": 18, "y": 92, "fill": "$light" }
+          ] },
+        { "id": "arm-r", "type": "group", "x": 88, "y": 255,
+          "animate": { "rotation": [
+            [0, 0], [0.35, -150, "easeOutBack"], [0.55, -178, "easeInOutSine"], [0.75, -135, "easeInOutSine"],
+            [0.95, -178, "easeInOutSine"], [1.15, -135, "easeInOutSine"], [1.35, -178, "easeInOutSine"],
+            [1.55, -140, "easeInOutSine"], [2, 0, "easeInOutCubic"]
+          ] },
+          "children": [
+            { "id": "arm-r-shape", "type": "rect", "w": 26, "h": 90, "radius": 13, "y": 40, "fill": "$body" },
+            { "id": "hand-r", "type": "ellipse", "r": 18, "y": 92, "fill": "$light" }
+          ] },
+        { "id": "torso", "type": "rect", "w": 150, "h": 150, "radius": 28, "y": 290, "fill": "$body" },
+        { "id": "chest-light", "type": "ellipse", "r": 14, "y": 330, "fill": "$accent",
+          "animate": { "opacity": [[0, 1], [1, 0.4, "easeInOutSine"], [2, 1, "easeInOutSine"]] } },
+        { "id": "neck", "type": "rect", "w": 30, "h": 24, "x": -15, "y": 212, "fill": "$dark" },
+        { "id": "head", "type": "group", "y": 180,
+          "animate": { "rotation": [[0, 0], [0.5, 5, "easeInOutSine"], [1.0, -3, "easeInOutSine"], [1.5, 5, "easeInOutSine"], [2, 0, "easeInOutSine"]] },
+          "pivot": [0, 50],
+          "children": [
+            { "id": "antenna-stem", "type": "rect", "w": 8, "h": 40, "x": 0, "y": -90, "fill": "$dark" },
+            { "id": "antenna-ball", "type": "ellipse", "r": 13, "y": -118, "fill": "$accent",
+              "animate": { "scale": [[0, 1], [0.5, 1.25, "easeInOutSine"], [1, 1, "easeInOutSine"], [1.5, 1.25, "easeInOutSine"], [2, 1, "easeInOutSine"]] } },
+            { "id": "head-shape", "type": "rect", "w": 150, "h": 120, "radius": 34, "fill": "$body" },
+            { "id": "face", "type": "rect", "w": 120, "h": 70, "radius": 24, "y": 0, "fill": "$dark" },
+            { "id": "eye-l", "type": "ellipse", "rx": 12, "ry": 14, "x": -28, "y": -4, "fill": "$accent",
+              "animate": { "scale": [[0, [1, 1]], [0.9, [1, 1]], [1.0, [1, 0.1], "easeInOutQuad"], [1.1, [1, 1], "easeInOutQuad"], [2, [1, 1]]] } },
+            { "id": "eye-r", "type": "ellipse", "rx": 12, "ry": 14, "x": 28, "y": -4, "fill": "$accent",
+              "animate": { "scale": [[0, [1, 1]], [0.9, [1, 1]], [1.0, [1, 0.1], "easeInOutQuad"], [1.1, [1, 1], "easeInOutQuad"], [2, [1, 1]]] } },
+            { "id": "mouth", "type": "path", "d": "M -22 18 Q 0 34 22 18", "fill": null,
+              "stroke": { "color": "#38bdf8", "width": 5 } },
+            { "id": "cheek-l", "type": "ellipse", "rx": 9, "ry": 6, "x": -48, "y": 22, "fill": "#fb7185aa" },
+            { "id": "cheek-r", "type": "ellipse", "rx": 9, "ry": 6, "x": 48, "y": 22, "fill": "#fb7185aa" }
+          ] }
+      ] }
+  ]
+}

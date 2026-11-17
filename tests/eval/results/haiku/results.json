@@ -1,0 +1,281 @@
+{
+  "model": "haiku",
+  "date": "2026-11-17",
+  "prompts": 30,
+  "errored": 0,
+  "firstPassPct": 80,
+  "within3Pct": 87,
+  "finalPct": 100,
+  "rows": [
+    {
+      "id": "char-blob-wave",
+      "category": "character",
+      "qaRuns": 1,
+      "firstPass": true,
+      "within3": true,
+      "final": true,
+      "seconds": 64
+    },
+    {
+      "id": "char-bouncing-ball",
+      "category": "character",
+      "qaRuns": 1,
+      "firstPass": true,
+      "within3": true,
+      "final": true,
+      "seconds": 67
+    },
+    {
+      "id": "char-cat-tail",
+      "category": "character",
+      "qaRuns": 2,
+      "firstPass": true,
+      "within3": true,
+      "final": true,
+      "seconds": 65
+    },
+    {
+      "id": "char-robot-idle",
+      "category": "character",
+      "qaRuns": 1,
+      "firstPass": true,
+      "within3": true,
+      "final": true,
+      "seconds": 69
+    },
+    {
+      "id": "icon-bell-ring",
+      "category": "icon",
+      "qaRuns": 1,
+      "firstPass": true,
+      "within3": true,
+      "final": true,
+      "seconds": 82
+    },
+    {
+      "id": "icon-checkmark",
+      "category": "icon",
+      "qaRuns": 1,
+      "firstPass": true,
+      "within3": true,
+      "final": true,
+      "seconds": 38
+    },
+    {
+      "id": "icon-download",
+      "category": "icon",
+      "qaRuns": 2,
+      "firstPass": true,
+      "within3": true,
+      "final": true,
+      "seconds": 81
+    },
+    {
+      "id": "icon-heart-pulse",
+      "category": "icon",
+      "qaRuns": 1,
+      "firstPass": true,
+      "within3": true,
+      "final": true,
+      "seconds": 45
+    },
+    {
+      "id": "icon-lock",
+      "category": "icon",
+      "qaRuns": 2,
+      "firstPass": true,
+      "within3": true,
+      "final": true,
+      "seconds": 104
+    },
+    {
+      "id": "icon-menu-close",
+      "category": "icon",
+      "qaRuns": 1,
+      "firstPass": true,
+      "within3": true,
+      "final": true,
+      "seconds": 71
+    },
+    {
+      "id": "loader-bars",
+      "category": "loader",
+      "qaRuns": 2,
+      "firstPass": true,
+      "within3": true,
+      "final": true,
+      "seconds": 95
+    },
+    {
+      "id": "loader-dots",
+      "category": "loader",
+      "qaRuns": 0,
+      "firstPass": false,
+      "within3": false,
+      "final": true,
+      "seconds": 47
+    },
+    {
+      "id": "loader-orbit",
+      "category": "loader",
+      "qaRuns": 1,
+      "firstPass": true,
+      "within3": true,
+      "final": true,
+      "seconds": 35
+    },
+    {
+      "id": "loader-progress",
+      "category": "loader",
+      "qaRuns": 3,
+      "firstPass": false,
+      "within3": true,
+      "final": true,
+      "seconds": 65
+    },
+    {
+      "id": "loader-ripple",
+      "category": "loader",
+      "qaRuns": 2,
+      "firstPass": true,
+      "within3": true,
+      "final": true,
+      "seconds": 124
+    },
+    {
+      "id": "loader-spinner",
+      "category": "loader",
+      "qaRuns": 1,
+      "firstPass": true,
+      "within3": true,
+      "final": true,
+      "seconds": 53
+    },
+    {
+      "id": "ref-brand-colours",
+      "category": "reference",
+      "qaRuns": 0,
+      "firstPass": false,
+      "within3": false,
+      "final": true,
+      "seconds": 61
+    },
+    {
+      "id": "ref-fps-spec",
+      "category": "reference",
+      "qaRuns": 4,
+      "firstPass": false,
+      "within3": true,
+      "final": true,
+      "seconds": 92
+    },
+    {
+      "id": "ref-svg-import",
+      "category": "reference",
+      "qaRuns": 1,
+      "firstPass": true,
+      "within3": true,
+      "final": true,
+      "seconds": 36
+    },
+    {
+      "id": "scene-rain",
+      "category": "scene",
+      "qaRuns": 5,
+      "firstPass": true,
+      "within3": true,
+      "final": true,
+      "seconds": 228
+    },
+    {
+      "id": "scene-rocket",
+      "category": "scene",
+      "qaRuns": 1,
+      "firstPass": true,
+      "within3": true,
+      "final": true,
+      "seconds": 97
+    },
+    {
+      "id": "scene-sunrise",
+      "category": "scene",
+      "qaRuns": 1,
+      "firstPass": true,
+      "within3": true,
+      "final": true,
+      "seconds": 92
+    },
+    {
+      "id": "transition-iris",
+      "category": "transition",
+      "qaRuns": 0,
+      "firstPass": false,
+      "within3": false,
+      "final": true,
+      "seconds": 42
+    },
+    {
+      "id": "transition-logo-reveal",
+      "category": "transition",
+      "qaRuns": 1,
+      "firstPass": true,
+      "within3": true,
+      "final": true,
+      "seconds": 38
+    },
+    {
+      "id": "transition-wipe",
+      "category": "transition",
+      "qaRuns": 2,
+      "firstPass": true,
+      "within3": true,
+      "final": true,
+      "seconds": 286
+    },
+    {
+      "id": "ui-button-press",
+      "category": "ui",
+      "qaRuns": 1,
+      "firstPass": true,
+      "within3": true,
+      "final": true,
+      "seconds": 76
+    },
+    {
+      "id": "ui-like-burst",
+      "category": "ui",
+      "qaRuns": 0,
+      "firstPass": false,
+      "within3": false,
+      "final": true,
+      "seconds": 364
+    },
+    {
+      "id": "ui-tab-underline",
+      "category": "ui",
+      "qaRuns": 2,
+      "firstPass": true,
+      "within3": true,
+      "final": true,
+      "seconds": 374
+    },
+    {
+      "id": "ui-toast",
+      "category": "ui",
+      "qaRuns": 1,
+      "firstPass": true,
+      "within3": true,
+      "final": true,
+      "seconds": 174
+    },
+    {
+      "id": "ui-toggle",
+      "category": "ui",
+      "qaRuns": 1,
+      "firstPass": true,
+      "within3": true,
+      "final": true,
+      "seconds": 79
+    }
+  ]
+}

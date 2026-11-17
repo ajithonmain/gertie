@@ -1,0 +1,40 @@
+{
+  "gertie": 1,
+  "name": "orbit-loader",
+  "canvas": { "w": 512, "h": 512 },
+  "fps": 60,
+  "duration": 3,
+  "tier": "icon",
+  "palette": {
+    "track": "#94a3b833",
+    "core": "#e2e8f0",
+    "pink": "#f472b6",
+    "violet": "#a78bfa",
+    "sky": "#38bdf8"
+  },
+  "nodes": [
+    { "id": "track-inner", "type": "ellipse", "r": 64, "x": 256, "y": 256, "stroke": { "color": "$track", "width": 2 } },
+    { "id": "track-mid", "type": "ellipse", "r": 112, "x": 256, "y": 256, "stroke": { "color": "$track", "width": 2 } },
+    { "id": "track-outer", "type": "ellipse", "r": 160, "x": 256, "y": 256, "stroke": { "color": "$track", "width": 2 } },
+
+    { "id": "core", "type": "ellipse", "r": 10, "x": 256, "y": 256, "fill": "$core" },
+
+    { "id": "orbit-inner", "type": "group", "x": 256, "y": 256,
+      "animate": { "rotation": [[0, 0], [3, 1080, "linear"]] },
+      "children": [
+        { "id": "dot-inner", "type": "ellipse", "r": 14, "y": -64, "fill": "$pink" }
+      ] },
+
+    { "id": "orbit-mid", "type": "group", "x": 256, "y": 256,
+      "animate": { "rotation": [[0, 120], [3, 840, "linear"]] },
+      "children": [
+        { "id": "dot-mid", "type": "ellipse", "r": 12, "y": -112, "fill": "$violet" }
+      ] },
+
+    { "id": "orbit-outer", "type": "group", "x": 256, "y": 256,
+      "animate": { "rotation": [[0, 240], [3, 600, "linear"]] },
+      "children": [
+        { "id": "dot-outer", "type": "ellipse", "r": 10, "y": -160, "fill": "$sky" }
+      ] }
+  ]
+}

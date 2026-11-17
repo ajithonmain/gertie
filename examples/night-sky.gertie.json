@@ -1,0 +1,25 @@
+{
+  "gertie": 1,
+  "name": "night-sky",
+  "canvas": { "w": 512, "h": 384, "background": "#0b1026" },
+  "duration": 3.2,
+  "loop": true,
+  "palette": { "sky": "#0b1026", "star": "#fef9c3" },
+  "nodes": [
+    {
+      "id": "stars", "type": "group",
+      "stagger": { "phase": 0.17, "order": "random" },
+      "motion": [ { "preset": "twinkle", "duration": 3.2, "repeat": "loop", "applyTo": "children" } ],
+      "children": [
+        { "id": "star-1", "type": "ellipse", "r": 4, "x": 70, "y": 60, "fill": "$star" },
+        { "id": "star-2", "type": "ellipse", "r": 3, "x": 150, "y": 140, "fill": "$star" },
+        { "id": "star-3", "type": "ellipse", "r": 5, "x": 230, "y": 50, "fill": "$star" },
+        { "id": "star-4", "type": "ellipse", "r": 3, "x": 310, "y": 120, "fill": "$star" },
+        { "id": "star-5", "type": "ellipse", "r": 4, "x": 390, "y": 70, "fill": "$star" },
+        { "id": "star-6", "type": "ellipse", "r": 3, "x": 450, "y": 160, "fill": "$star" },
+        { "id": "star-7", "type": "ellipse", "r": 4, "x": 110, "y": 250, "fill": "$star" },
+        { "id": "star-8", "type": "ellipse", "r": 3, "x": 280, "y": 230, "fill": "$star" }
+      ]
+    }
+  ]
+}

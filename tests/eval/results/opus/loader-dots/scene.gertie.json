@@ -1,0 +1,29 @@
+{
+  "gertie": 1,
+  "name": "typing-dots",
+  "tier": "icon",
+  "canvas": { "w": 512, "h": 512 },
+  "fps": 60,
+  "duration": 1.2,
+  "palette": { "bubble": "#e9ebf0", "tail": "#e9ebf0", "dot": "#6b7280", "dotHi": "#374151" },
+  "nodes": [
+    { "id": "bubble-tail", "type": "ellipse", "r": 20, "x": 138, "y": 322, "fill": "$tail" },
+    { "id": "bubble-tail-tip", "type": "ellipse", "r": 10, "x": 112, "y": 348, "fill": "$tail" },
+    { "id": "bubble", "type": "rect", "w": 300, "h": 140, "radius": 70, "x": 256, "y": 256, "fill": "$bubble" },
+    { "id": "dot-1", "type": "ellipse", "r": 20, "x": 186, "y": 262, "fill": "$dot",
+      "animate": {
+        "y":    [[0, 262], [0.28, 226, "easeOutQuad"], [0.56, 262, "easeInQuad"], [1.2, 262, "smooth"]],
+        "fill": [[0, "$dot"], [0.28, "$dotHi", "easeOutQuad"], [0.56, "$dot", "easeInQuad"], [1.2, "$dot", "smooth"]]
+      } },
+    { "id": "dot-2", "type": "ellipse", "r": 20, "x": 256, "y": 262, "fill": "$dot",
+      "animate": {
+        "y":    [[0, 262], [0.16, 262, "smooth"], [0.44, 226, "easeOutQuad"], [0.72, 262, "easeInQuad"], [1.2, 262, "smooth"]],
+        "fill": [[0, "$dot"], [0.16, "$dot", "smooth"], [0.44, "$dotHi", "easeOutQuad"], [0.72, "$dot", "easeInQuad"], [1.2, "$dot", "smooth"]]
+      } },
+    { "id": "dot-3", "type": "ellipse", "r": 20, "x": 326, "y": 262, "fill": "$dot",
+      "animate": {
+        "y":    [[0, 262], [0.32, 262, "smooth"], [0.6, 226, "easeOutQuad"], [0.88, 262, "easeInQuad"], [1.2, 262, "smooth"]],
+        "fill": [[0, "$dot"], [0.32, "$dot", "smooth"], [0.6, "$dotHi", "easeOutQuad"], [0.88, "$dot", "easeInQuad"], [1.2, "$dot", "smooth"]]
+      } }
+  ]
+}

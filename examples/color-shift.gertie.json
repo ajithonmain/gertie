@@ -1,0 +1,16 @@
+{
+  "gertie": 1,
+  "name": "color-shift",
+  "canvas": { "w": 256, "h": 256 },
+  "duration": 2,
+  "nodes": [
+    {
+      "id": "tile", "type": "rect", "w": 140, "h": 140, "radius": 32, "x": 128, "y": 128,
+      "fill": "#3b82f6",
+      "animate": {
+        "fill": [[0, "#3b82f6"], [1, "#ec4899", "easeInOut"], [2, "#3b82f6", "easeInOut"]],
+        "rotation": [[0, -10], [1, 10, "easeInOut"], [2, -10, "easeInOut"]]
+      }
+    }
+  ]
+}

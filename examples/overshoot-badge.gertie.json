@@ -1,0 +1,33 @@
+{
+  "gertie": 1,
+  "name": "overshoot-badge",
+  "canvas": { "w": 512, "h": 512 },
+  "fps": 30,
+  "duration": 2.4,
+  "loop": false,
+  "poster": 2.4,
+  "palette": { "ink": "#0f172a", "badge": "#f59e0b", "ring": "#fcd34d", "pin": "#ef4444", "star": "#fef3c7" },
+  "nodes": [
+    {
+      "id": "badge", "type": "ellipse", "r": 130, "x": 256, "y": 280, "fill": "$badge",
+      "stroke": { "color": "$ring", "width": 14 },
+      "animate": {
+        "scale": [[0, 0.5], { "t": 0.45, "v": 1, "ease": "easeOut", "overshoot": true }],
+        "opacity": [[0, 0], [0.2, 1, "easeOut"]]
+      }
+    },
+    {
+      "id": "star", "type": "star", "points": 5, "r": 64, "innerR": 28, "x": 256, "y": 280, "fill": "$star",
+      "animate": {
+        "rotation": [[0.2, -50], { "t": 0.75, "v": 0, "ease": "easeOut", "overshoot": { "past": 0.25, "back": 0.08, "time": 0.4 } }],
+        "scale": [[0.2, 0], { "t": 0.7, "v": 1, "ease": "easeOut", "overshoot": { "past": 0.2, "time": 0.35 } }]
+      }
+    },
+    {
+      "id": "pin", "type": "rect", "w": 90, "h": 36, "radius": 14, "x": 256, "y": 120, "fill": "$pin",
+      "animate": {
+        "x": [[0.3, 90], { "t": 0.85, "v": 256, "ease": "easeIn", "overshoot": { "past": 0.08, "back": 0.03, "time": 0.35 } }]
+      }
+    }
+  ]
+}

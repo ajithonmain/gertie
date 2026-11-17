@@ -1,0 +1,43 @@
+{
+  "gertie": 1,
+  "name": "ripple-loader",
+  "tier": "icon",
+  "canvas": { "w": 512, "h": 512 },
+  "fps": 30,
+  "duration": 2,
+  "loop": true,
+  "poster": 0.7,
+  "palette": { "cyan": "#38bdf8" },
+  "nodes": [
+    {
+      "id": "ring-a",
+      "type": "ellipse",
+      "x": 256, "y": 256, "r": 20,
+      "fill": null,
+      "stroke": { "color": "$cyan", "width": 8 },
+      "animate": {
+        "r": { "keys": [[0, 20], [1, 220, "easeOutCubic"], [2, 20, "hold"]], "repeat": "loop" },
+        "stroke.width": { "keys": [[0, 8], [1, 2, "easeOutCubic"], [2, 8, "hold"]], "repeat": "loop" },
+        "opacity": { "keys": [[0, 0], [0.1, 0.9, "smooth"], [1, 0, "easeInQuad"], [2, 0]], "repeat": "loop" }
+      }
+    },
+    {
+      "id": "ring-b",
+      "type": "ellipse",
+      "x": 256, "y": 256, "r": 220,
+      "fill": null,
+      "stroke": { "color": "$cyan", "width": 2 },
+      "animate": {
+        "r": { "keys": [[0, 220], [1, 20, "hold"], [2, 220, "easeOutCubic"]], "repeat": "loop" },
+        "stroke.width": { "keys": [[0, 2], [1, 8, "hold"], [2, 2, "easeOutCubic"]], "repeat": "loop" },
+        "opacity": { "keys": [[0, 0], [1, 0], [1.1, 0.9, "smooth"], [2, 0, "easeInQuad"]], "repeat": "loop" }
+      }
+    },
+    {
+      "id": "hub",
+      "type": "ellipse",
+      "x": 256, "y": 256, "r": 10,
+      "fill": "$cyan"
+    }
+  ]
+}

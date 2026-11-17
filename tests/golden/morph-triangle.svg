@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+<style>
+@keyframes g1m5-shape__fill{0%{fill:#f59e0b;animation-timing-function:cubic-bezier(0.65,0,0.35,1)}50%{fill:#a855f7;animation-timing-function:cubic-bezier(0.65,0,0.35,1)}100%{fill:#f59e0b}}
+.g1m5-shape__sh{animation:g1m5-shape__fill 2s linear infinite both}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+<path class="g1m5-shape__sh" d="M128 48C128 48 208 192 208 192C208 192 48 192 48 192C48 192 128 48 128 48Z" fill="#f59e0b">
+<animate attributeName="d" dur="2s" repeatCount="indefinite" calcMode="spline" values="M128 48C128 48 208 192 208 192C208 192 48 192 48 192C48 192 128 48 128 48Z;M128 208C128 208 48 64 48 64C48 64 208 64 208 64C208 64 128 208 128 208Z;M128 48C128 48 208 192 208 192C208 192 48 192 48 192C48 192 128 48 128 48Z" keyTimes="0;0.5;1" keySplines="0.65 0 0.35 1;0.65 0 0.35 1"/>
+</path>
+</svg>

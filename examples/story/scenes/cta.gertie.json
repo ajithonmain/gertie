@@ -1,0 +1,14 @@
+{
+  "gertie": 1,
+  "name": "cta",
+  "canvas": { "w": 540, "h": 960, "background": "#2b1650" },
+  "fps": 30,
+  "duration": 3,
+  "loop": false,
+  "nodes": [
+    { "id": "button", "type": "rect", "w": 320, "h": 84, "radius": 42, "x": 270, "y": 560, "fill": "#a78bfa",
+      "animate": { "scale": [[0, 0.2], [0.5, 1.1, "easeOut"], [0.8, 1, "easeInOut"]], "opacity": [[0, 0], [0.3, 1]] } },
+    { "id": "dot", "type": "ellipse", "r": 10, "x": 270, "y": 560, "fill": "#2b1650",
+      "animate": { "opacity": [[0, 0], [0.8, 1]] } }
+  ]
+}

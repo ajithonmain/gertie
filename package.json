@@ -1,0 +1,38 @@
+{
+  "name": "gertie",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Agent skill that compiles a small scene file to Lottie JSON and animated SVG.",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "build": "npm run typecheck && node scripts/build.mjs",
+    "test": "node --import tsx --test \"tests/unit/**/*.test.ts\"",
+    "test:browser": "playwright test --config tests/browser/playwright.config.ts",
+    "golden:update": "GERTIE_UPDATE_GOLDEN=1 npm test",
+    "check:licences": "node scripts/check-licences.mjs",
+    "build:site": "node --import tsx scripts/build-site.mjs"
+  },
+  "devDependencies": {
+    "@lottie-animation-community/lottie-specs": "^0.3.2",
+    "@lottiefiles/dotlottie-web": "^0.83.2",
+    "@playwright/test": "^1.65.0",
+    "@types/node": "^22.0.0",
+    "ajv": "^8.20.0",
+    "esbuild": "^0.25.0",
+    "hyperframes": "^0.9.43",
+    "lottie-web": "^5.13.0",
+    "playwright": "^1.65.0",
+    "tsx": "^4.23.15",
+    "typescript": "^5.7.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ajithonmain/gertie.git"
+  },
+  "homepage": "https://askgertie.pages.dev"
+}

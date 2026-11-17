@@ -1,0 +1,66 @@
+{
+  "gertie": 1,
+  "name": "cta-button-shine",
+  "tier": "icon",
+  "canvas": { "w": 480, "h": 200 },
+  "fps": 30,
+  "duration": 3,
+  "loop": true,
+  "poster": 0.5,
+  "palette": {
+    "top": "#3b82f6",
+    "bottom": "#1d4ed8",
+    "ink": "#ffffff"
+  },
+  "nodes": [
+    {
+      "id": "button",
+      "type": "group",
+      "x": 240,
+      "y": 100,
+      "clip": {
+        "type": "path",
+        "d": "M -112 -48 H 112 A 48 48 0 0 1 112 48 H -112 A 48 48 0 0 1 -112 -48 Z"
+      },
+      "children": [
+        {
+          "id": "body",
+          "type": "rect",
+          "w": 320,
+          "h": 96,
+          "radius": 48,
+          "fill": {
+            "type": "linear",
+            "from": [0, -48],
+            "to": [0, 48],
+            "stops": [[0, "$top"], [1, "$bottom"]]
+          }
+        },
+        {
+          "id": "arrow",
+          "type": "path",
+          "d": "M -20 0 H 20 M 8 -13 L 20 0 L 8 13",
+          "fill": null,
+          "stroke": { "color": "$ink", "width": 6, "cap": "round", "join": "round" }
+        },
+        {
+          "id": "shine",
+          "type": "rect",
+          "w": 56,
+          "h": 220,
+          "rotation": 20,
+          "x": -220,
+          "fill": {
+            "type": "linear",
+            "from": [-28, 0],
+            "to": [28, 0],
+            "stops": [[0, "#ffffff00"], [0.5, "#ffffff59"], [1, "#ffffff00"]]
+          },
+          "animate": {
+            "x": [[0, -220], [1.4, 220, "easeInOutCubic"], [3, -220, "hold"]]
+          }
+        }
+      ]
+    }
+  ]
+}

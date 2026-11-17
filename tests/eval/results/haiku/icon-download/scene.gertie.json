@@ -1,0 +1,86 @@
+{
+  "gertie": 1,
+  "name": "download-icon",
+  "tier": "icon",
+  "canvas": { "w": 512, "h": 512 },
+  "fps": 30,
+  "duration": 2,
+  "loop": true,
+  "poster": 0.4,
+  "palette": { "blue": "#3b82f6", "slate": "#334155" },
+  "nodes": [
+    {
+      "id": "ground-shadow",
+      "type": "ellipse",
+      "rx": 120,
+      "ry": 10,
+      "x": 256,
+      "y": 440,
+      "fill": "$slate",
+      "opacity": 0.2,
+      "animate": {
+        "scale": [
+          [0, [1, 1]],
+          [0.7, [1, 1], "smooth"],
+          [0.82, [1.1, 0.8], "easeOutCubic"],
+          [1.0, [1, 1], "settle"],
+          [2, [1, 1], "smooth"]
+        ]
+      }
+    },
+    {
+      "id": "tray",
+      "type": "group",
+      "pivot": [256, 420],
+      "animate": {
+        "scale": [
+          [0, [1, 1]],
+          [0.7, [1, 1], "smooth"],
+          [0.82, [1.06, 0.92], "easeOutCubic"],
+          [1.0, [1, 1], "settle"],
+          [2, [1, 1], "smooth"]
+        ]
+      },
+      "children": [
+        {
+          "id": "tray-body",
+          "type": "path",
+          "fill": null,
+          "stroke": { "color": "$slate", "width": 28, "cap": "round", "join": "round" },
+          "d": "M 128 296 L 128 404 Q 128 420 144 420 L 368 420 Q 384 420 384 404 L 384 296"
+        }
+      ]
+    },
+    {
+      "id": "arrow",
+      "type": "group",
+      "animate": {
+        "y": [
+          [0, 0],
+          [0.25, -12, "smooth"],
+          [0.7, 100, "easeInCubic"],
+          [1.0, 100, "smooth"],
+          [1.15, 0, "smooth"],
+          [2, 0, "smooth"]
+        ],
+        "opacity": [
+          [0, 1],
+          [0.55, 1, "smooth"],
+          [0.8, 0, "smooth"],
+          [1.15, 0, "smooth"],
+          [1.4, 1, "smooth"],
+          [2, 1, "smooth"]
+        ]
+      },
+      "children": [
+        {
+          "id": "arrow-shape",
+          "type": "path",
+          "fill": null,
+          "stroke": { "color": "$blue", "width": 28, "cap": "round", "join": "round" },
+          "d": "M 256 110 L 256 298 M 204 246 L 256 298 L 308 246"
+        }
+      ]
+    }
+  ]
+}

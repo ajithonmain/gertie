@@ -1,0 +1,27 @@
+{
+  "gertie": 1,
+  "name": "logo-check",
+  "canvas": { "w": 512, "h": 512 },
+  "duration": 1.6,
+  "loop": false,
+  "poster": 1.6,
+  "tier": "icon",
+  "nodes": [
+    { "id": "logo", "type": "group", "include": "logo.fragment.json", "scale": 5.12,
+      "overrides": {
+        "circle-1": {
+          "animate": {
+            "scale": [[0, 0], [0.35, 1.12, "easeOutCubic"], [0.5, 0.97, "easeInOutSine"], [0.62, 1, "settle"]],
+            "opacity": [[0, 0], [0.12, 1, "easeOut"]]
+          }
+        },
+        "path-2": {
+          "trim": { "start": 0, "end": 0 },
+          "animate": {
+            "trim.end": [[0.35, 0], [0.85, 1, "easeInOutCubic"]],
+            "opacity": [[0.33, 0],[0.35, 1, "hold"]]
+          }
+        }
+      } }
+  ]
+}

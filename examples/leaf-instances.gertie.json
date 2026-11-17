@@ -1,0 +1,20 @@
+{
+  "gertie": 1,
+  "name": "leaf-instances",
+  "canvas": { "w": 256, "h": 256 },
+  "duration": 2,
+  "defs": {
+    "leaf": {
+      "id": "leaf", "type": "path", "d": "M0 0 C10 -20 30 -20 40 0 C30 20 10 20 0 0 Z", "fill": "#2f9e44",
+      "animate": { "opacity": [[0, 1], [1, 0.5, "easeInOut"], [2, 1, "easeInOut"]] }
+    }
+  },
+  "nodes": [
+    { "id": "leaf-a", "type": "use", "ref": "leaf", "x": 70, "y": 140 },
+    { "id": "leaf-b", "type": "use", "ref": "leaf", "x": 120, "y": 150, "rotation": 25, "scale": 1.5 },
+    {
+      "id": "leaf-c", "type": "use", "ref": "leaf", "x": 170, "y": 140,
+      "animate": { "rotation": [[0, -15], [1, 15, "easeInOut"], [2, -15, "easeInOut"]] }
+    }
+  ]
+}

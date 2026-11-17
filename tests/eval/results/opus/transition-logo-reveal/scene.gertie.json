@@ -1,0 +1,69 @@
+{
+  "gertie": 1,
+  "name": "logo-reveal",
+  "tier": "icon",
+  "canvas": { "w": 512, "h": 512 },
+  "fps": 30,
+  "duration": 2.4,
+  "loop": false,
+  "poster": 2.2,
+  "palette": {
+    "indigo": "#4f46e5",
+    "violet": "#8b5cf6",
+    "core": "#f8fafc",
+    "line": "#6366f1"
+  },
+  "nodes": [
+    {
+      "id": "mark",
+      "type": "group",
+      "x": 256,
+      "y": 220,
+      "animate": {
+        "scale": [
+          [0, 0],
+          { "t": 0.55, "v": 1, "ease": "easeOut", "overshoot": { "past": 0.15, "back": 0.04, "time": 0.35 } }
+        ],
+        "rotation": [[0, -40], [0.7, 0, "settle"]],
+        "opacity": [[0, 0], [0.2, 1, "easeOut"]]
+      },
+      "children": [
+        {
+          "id": "diamond",
+          "type": "rect",
+          "w": 130,
+          "h": 130,
+          "radius": 22,
+          "rotation": 45,
+          "fill": { "type": "linear", "from": [-65, -65], "to": [65, 65], "stops": [[0, "$violet"], [1, "$indigo"]] }
+        },
+        {
+          "id": "core",
+          "type": "ellipse",
+          "r": 26,
+          "fill": "$core",
+          "animate": {
+            "scale": [
+              [0, 0],
+              [0.35, 0, "hold"],
+              { "t": 0.75, "v": 1, "ease": "easeOut", "overshoot": { "past": 0.2, "back": 0.05, "time": 0.3 } }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "underline",
+      "type": "line",
+      "x1": 166,
+      "y1": 360,
+      "x2": 346,
+      "y2": 360,
+      "stroke": { "color": "$line", "width": 6, "cap": "round" },
+      "trim": { "start": 0, "end": 0 },
+      "animate": {
+        "trim.end": [[0, 0], [1.0, 0, "hold"], [1.6, 1, "easeOutCubic"]]
+      }
+    }
+  ]
+}

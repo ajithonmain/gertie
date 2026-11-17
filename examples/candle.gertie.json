@@ -1,0 +1,40 @@
+{
+  "gertie": 1,
+  "name": "candle",
+  "canvas": { "w": 400, "h": 400, "background": "#0f172a" },
+  "duration": 4.4,
+  "loop": true,
+  "palette": { "wax": "#f5efe0", "flame": "#fbbf24", "core": "#fde68a", "night": "#0f172a" },
+  "nodes": [
+    { "id": "candle-body", "type": "rect", "w": 70, "h": 150, "radius": 8, "x": 200, "y": 290, "fill": "$wax" },
+    { "id": "wick", "type": "rect", "w": 4, "h": 18, "x": 200, "y": 205, "fill": "#1f2937" },
+    {
+      "id": "smoke-a-wave", "type": "group",
+      "animate": { "x": { "keys": [[0, 0], [1.1, 12, "easeInOutSine"], [2.2, 0, "easeInOutSine"], [3.3, -12, "easeInOutSine"], [4.4, 0, "easeInOutSine"]], "repeat": "loop" } },
+      "children": [
+        {
+          "id": "smoke-a", "type": "ellipse", "rx": 9, "ry": 9, "x": 200, "y": 150, "opacity": 0.4, "fill": "#94a3b8",
+          "motion": [ { "preset": "rise", "duration": 4.4, "distance": 90, "grow": 1.2, "repeat": "loop", "phase": 0.25 } ]
+        }
+      ]
+    },
+    {
+      "id": "smoke-b-wave", "type": "group",
+      "animate": { "x": { "keys": [[0, 0], [1.1, -9, "easeInOutSine"], [2.2, 0, "easeInOutSine"], [3.3, 9, "easeInOutSine"], [4.4, 0, "easeInOutSine"]], "repeat": "loop" } },
+      "children": [
+        {
+          "id": "smoke-b", "type": "ellipse", "rx": 7, "ry": 7, "x": 203, "y": 150, "opacity": 0.4, "fill": "#94a3b8",
+          "motion": [ { "preset": "rise", "duration": 4.4, "distance": 90, "grow": 1.2, "repeat": "loop", "phase": 0.75 } ]
+        }
+      ]
+    },
+    {
+      "id": "flame", "type": "ellipse", "rx": 16, "ry": 30, "x": 200, "y": 180, "pivot": [0, 30], "fill": "$flame",
+      "motion": [ { "preset": "flicker", "repeat": "loop" } ]
+    },
+    {
+      "id": "flame-core", "type": "ellipse", "rx": 8, "ry": 17, "x": 200, "y": 188, "pivot": [0, 17], "fill": "$core",
+      "motion": [ { "preset": "flicker", "repeat": "loop", "phase": 0.3 } ]
+    }
+  ]
+}

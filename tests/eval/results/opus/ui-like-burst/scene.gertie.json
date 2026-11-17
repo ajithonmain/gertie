@@ -1,0 +1,1301 @@
+{
+  "gertie": 1,
+  "name": "like-burst",
+  "tier": "icon",
+  "canvas": {
+    "w": 512,
+    "h": 512
+  },
+  "fps": 60,
+  "duration": 2,
+  "loop": true,
+  "poster": 1.2,
+  "palette": {
+    "red": "#f43f5e",
+    "pink": "#fb7185",
+    "orange": "#fb923c",
+    "yellow": "#facc15",
+    "grey": "#cbd5e1",
+    "card": "#ffffff",
+    "shade": "#0f172a22"
+  },
+  "nodes": [
+    {
+      "id": "shadow",
+      "type": "ellipse",
+      "r": 172,
+      "x": 256,
+      "y": 264,
+      "fill": "$shade"
+    },
+    {
+      "id": "button",
+      "type": "ellipse",
+      "r": 172,
+      "x": 256,
+      "y": 256,
+      "fill": "$card"
+    },
+    {
+      "id": "burst",
+      "type": "group",
+      "x": 256,
+      "y": 256,
+      "children": [
+        {
+          "id": "ring",
+          "type": "ellipse",
+          "r": 40,
+          "stroke": {
+            "color": "$pink",
+            "width": 18
+          },
+          "animate": {
+            "r": [
+              [
+                0,
+                40
+              ],
+              [
+                0.22,
+                40,
+                "hold"
+              ],
+              [
+                0.6,
+                120,
+                "easeOutCubic"
+              ],
+              [
+                0.62,
+                40,
+                "hold"
+              ],
+              [
+                2,
+                40,
+                "hold"
+              ]
+            ],
+            "stroke.width": [
+              [
+                0,
+                0
+              ],
+              [
+                0.22,
+                18,
+                "hold"
+              ],
+              [
+                0.6,
+                0,
+                "easeOutCubic"
+              ],
+              [
+                2,
+                0,
+                "hold"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "spark-0",
+          "type": "group",
+          "rotation": -90,
+          "children": [
+            {
+              "id": "dot-0",
+              "type": "ellipse",
+              "r": 11,
+              "x": 70,
+              "fill": "$red",
+              "animate": {
+                "x": [
+                  [
+                    0,
+                    70
+                  ],
+                  [
+                    0.26,
+                    70,
+                    "hold"
+                  ],
+                  [
+                    0.76,
+                    150,
+                    "easeOutCubic"
+                  ],
+                  [
+                    0.86,
+                    70,
+                    "hold"
+                  ],
+                  [
+                    2,
+                    70,
+                    "hold"
+                  ]
+                ],
+                "scale": [
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0.26,
+                    0,
+                    "hold"
+                  ],
+                  [
+                    0.38,
+                    1,
+                    "snap"
+                  ],
+                  [
+                    0.81,
+                    0,
+                    "easeInQuad"
+                  ],
+                  [
+                    2,
+                    0,
+                    "hold"
+                  ]
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "chip-0",
+          "type": "group",
+          "rotation": -68,
+          "children": [
+            {
+              "id": "mini-0",
+              "type": "ellipse",
+              "r": 6,
+              "x": 60,
+              "fill": "$pink",
+              "animate": {
+                "x": [
+                  [
+                    0,
+                    60
+                  ],
+                  [
+                    0.3,
+                    60,
+                    "hold"
+                  ],
+                  [
+                    0.75,
+                    118,
+                    "easeOutCubic"
+                  ],
+                  [
+                    0.8500000000000001,
+                    60,
+                    "hold"
+                  ],
+                  [
+                    2,
+                    60,
+                    "hold"
+                  ]
+                ],
+                "scale": [
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0.3,
+                    0,
+                    "hold"
+                  ],
+                  [
+                    0.4,
+                    1,
+                    "snap"
+                  ],
+                  [
+                    0.8,
+                    0,
+                    "easeInQuad"
+                  ],
+                  [
+                    2,
+                    0,
+                    "hold"
+                  ]
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "spark-1",
+          "type": "group",
+          "rotation": -45,
+          "children": [
+            {
+              "id": "dot-1",
+              "type": "ellipse",
+              "r": 11,
+              "x": 70,
+              "fill": "$orange",
+              "animate": {
+                "x": [
+                  [
+                    0,
+                    70
+                  ],
+                  [
+                    0.28,
+                    70,
+                    "hold"
+                  ],
+                  [
+                    0.78,
+                    162,
+                    "easeOutCubic"
+                  ],
+                  [
+                    0.88,
+                    70,
+                    "hold"
+                  ],
+                  [
+                    2,
+                    70,
+                    "hold"
+                  ]
+                ],
+                "scale": [
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0.28,
+                    0,
+                    "hold"
+                  ],
+                  [
+                    0.4,
+                    1,
+                    "snap"
+                  ],
+                  [
+                    0.8300000000000001,
+                    0,
+                    "easeInQuad"
+                  ],
+                  [
+                    2,
+                    0,
+                    "hold"
+                  ]
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "chip-1",
+          "type": "group",
+          "rotation": -23,
+          "children": [
+            {
+              "id": "mini-1",
+              "type": "ellipse",
+              "r": 6,
+              "x": 60,
+              "fill": "$yellow",
+              "animate": {
+                "x": [
+                  [
+                    0,
+                    60
+                  ],
+                  [
+                    0.32999999999999996,
+                    60,
+                    "hold"
+                  ],
+                  [
+                    0.78,
+                    118,
+                    "easeOutCubic"
+                  ],
+                  [
+                    0.88,
+                    60,
+                    "hold"
+                  ],
+                  [
+                    2,
+                    60,
+                    "hold"
+                  ]
+                ],
+                "scale": [
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0.32999999999999996,
+                    0,
+                    "hold"
+                  ],
+                  [
+                    0.42999999999999994,
+                    1,
+                    "snap"
+                  ],
+                  [
+                    0.83,
+                    0,
+                    "easeInQuad"
+                  ],
+                  [
+                    2,
+                    0,
+                    "hold"
+                  ]
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "spark-2",
+          "type": "group",
+          "rotation": 0,
+          "children": [
+            {
+              "id": "dot-2",
+              "type": "ellipse",
+              "r": 11,
+              "x": 70,
+              "fill": "$pink",
+              "animate": {
+                "x": [
+                  [
+                    0,
+                    70
+                  ],
+                  [
+                    0.3,
+                    70,
+                    "hold"
+                  ],
+                  [
+                    0.8,
+                    150,
+                    "easeOutCubic"
+                  ],
+                  [
+                    0.8999999999999999,
+                    70,
+                    "hold"
+                  ],
+                  [
+                    2,
+                    70,
+                    "hold"
+                  ]
+                ],
+                "scale": [
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0.3,
+                    0,
+                    "hold"
+                  ],
+                  [
+                    0.42,
+                    1,
+                    "snap"
+                  ],
+                  [
+                    0.8500000000000001,
+                    0,
+                    "easeInQuad"
+                  ],
+                  [
+                    2,
+                    0,
+                    "hold"
+                  ]
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "chip-2",
+          "type": "group",
+          "rotation": 22,
+          "children": [
+            {
+              "id": "mini-2",
+              "type": "ellipse",
+              "r": 6,
+              "x": 60,
+              "fill": "$red",
+              "animate": {
+                "x": [
+                  [
+                    0,
+                    60
+                  ],
+                  [
+                    0.3,
+                    60,
+                    "hold"
+                  ],
+                  [
+                    0.75,
+                    118,
+                    "easeOutCubic"
+                  ],
+                  [
+                    0.8500000000000001,
+                    60,
+                    "hold"
+                  ],
+                  [
+                    2,
+                    60,
+                    "hold"
+                  ]
+                ],
+                "scale": [
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0.3,
+                    0,
+                    "hold"
+                  ],
+                  [
+                    0.4,
+                    1,
+                    "snap"
+                  ],
+                  [
+                    0.8,
+                    0,
+                    "easeInQuad"
+                  ],
+                  [
+                    2,
+                    0,
+                    "hold"
+                  ]
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "spark-3",
+          "type": "group",
+          "rotation": 45,
+          "children": [
+            {
+              "id": "dot-3",
+              "type": "ellipse",
+              "r": 11,
+              "x": 70,
+              "fill": "$yellow",
+              "animate": {
+                "x": [
+                  [
+                    0,
+                    70
+                  ],
+                  [
+                    0.26,
+                    70,
+                    "hold"
+                  ],
+                  [
+                    0.76,
+                    162,
+                    "easeOutCubic"
+                  ],
+                  [
+                    0.86,
+                    70,
+                    "hold"
+                  ],
+                  [
+                    2,
+                    70,
+                    "hold"
+                  ]
+                ],
+                "scale": [
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0.26,
+                    0,
+                    "hold"
+                  ],
+                  [
+                    0.38,
+                    1,
+                    "snap"
+                  ],
+                  [
+                    0.81,
+                    0,
+                    "easeInQuad"
+                  ],
+                  [
+                    2,
+                    0,
+                    "hold"
+                  ]
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "chip-3",
+          "type": "group",
+          "rotation": 67,
+          "children": [
+            {
+              "id": "mini-3",
+              "type": "ellipse",
+              "r": 6,
+              "x": 60,
+              "fill": "$orange",
+              "animate": {
+                "x": [
+                  [
+                    0,
+                    60
+                  ],
+                  [
+                    0.32999999999999996,
+                    60,
+                    "hold"
+                  ],
+                  [
+                    0.78,
+                    118,
+                    "easeOutCubic"
+                  ],
+                  [
+                    0.88,
+                    60,
+                    "hold"
+                  ],
+                  [
+                    2,
+                    60,
+                    "hold"
+                  ]
+                ],
+                "scale": [
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0.32999999999999996,
+                    0,
+                    "hold"
+                  ],
+                  [
+                    0.42999999999999994,
+                    1,
+                    "snap"
+                  ],
+                  [
+                    0.83,
+                    0,
+                    "easeInQuad"
+                  ],
+                  [
+                    2,
+                    0,
+                    "hold"
+                  ]
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "spark-4",
+          "type": "group",
+          "rotation": 90,
+          "children": [
+            {
+              "id": "dot-4",
+              "type": "ellipse",
+              "r": 11,
+              "x": 70,
+              "fill": "$red",
+              "animate": {
+                "x": [
+                  [
+                    0,
+                    70
+                  ],
+                  [
+                    0.28,
+                    70,
+                    "hold"
+                  ],
+                  [
+                    0.78,
+                    150,
+                    "easeOutCubic"
+                  ],
+                  [
+                    0.88,
+                    70,
+                    "hold"
+                  ],
+                  [
+                    2,
+                    70,
+                    "hold"
+                  ]
+                ],
+                "scale": [
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0.28,
+                    0,
+                    "hold"
+                  ],
+                  [
+                    0.4,
+                    1,
+                    "snap"
+                  ],
+                  [
+                    0.8300000000000001,
+                    0,
+                    "easeInQuad"
+                  ],
+                  [
+                    2,
+                    0,
+                    "hold"
+                  ]
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "chip-4",
+          "type": "group",
+          "rotation": 112,
+          "children": [
+            {
+              "id": "mini-4",
+              "type": "ellipse",
+              "r": 6,
+              "x": 60,
+              "fill": "$pink",
+              "animate": {
+                "x": [
+                  [
+                    0,
+                    60
+                  ],
+                  [
+                    0.3,
+                    60,
+                    "hold"
+                  ],
+                  [
+                    0.75,
+                    118,
+                    "easeOutCubic"
+                  ],
+                  [
+                    0.8500000000000001,
+                    60,
+                    "hold"
+                  ],
+                  [
+                    2,
+                    60,
+                    "hold"
+                  ]
+                ],
+                "scale": [
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0.3,
+                    0,
+                    "hold"
+                  ],
+                  [
+                    0.4,
+                    1,
+                    "snap"
+                  ],
+                  [
+                    0.8,
+                    0,
+                    "easeInQuad"
+                  ],
+                  [
+                    2,
+                    0,
+                    "hold"
+                  ]
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "spark-5",
+          "type": "group",
+          "rotation": 135,
+          "children": [
+            {
+              "id": "dot-5",
+              "type": "ellipse",
+              "r": 11,
+              "x": 70,
+              "fill": "$orange",
+              "animate": {
+                "x": [
+                  [
+                    0,
+                    70
+                  ],
+                  [
+                    0.3,
+                    70,
+                    "hold"
+                  ],
+                  [
+                    0.8,
+                    162,
+                    "easeOutCubic"
+                  ],
+                  [
+                    0.8999999999999999,
+                    70,
+                    "hold"
+                  ],
+                  [
+                    2,
+                    70,
+                    "hold"
+                  ]
+                ],
+                "scale": [
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0.3,
+                    0,
+                    "hold"
+                  ],
+                  [
+                    0.42,
+                    1,
+                    "snap"
+                  ],
+                  [
+                    0.8500000000000001,
+                    0,
+                    "easeInQuad"
+                  ],
+                  [
+                    2,
+                    0,
+                    "hold"
+                  ]
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "chip-5",
+          "type": "group",
+          "rotation": 157,
+          "children": [
+            {
+              "id": "mini-5",
+              "type": "ellipse",
+              "r": 6,
+              "x": 60,
+              "fill": "$yellow",
+              "animate": {
+                "x": [
+                  [
+                    0,
+                    60
+                  ],
+                  [
+                    0.32999999999999996,
+                    60,
+                    "hold"
+                  ],
+                  [
+                    0.78,
+                    118,
+                    "easeOutCubic"
+                  ],
+                  [
+                    0.88,
+                    60,
+                    "hold"
+                  ],
+                  [
+                    2,
+                    60,
+                    "hold"
+                  ]
+                ],
+                "scale": [
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0.32999999999999996,
+                    0,
+                    "hold"
+                  ],
+                  [
+                    0.42999999999999994,
+                    1,
+                    "snap"
+                  ],
+                  [
+                    0.83,
+                    0,
+                    "easeInQuad"
+                  ],
+                  [
+                    2,
+                    0,
+                    "hold"
+                  ]
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "spark-6",
+          "type": "group",
+          "rotation": 180,
+          "children": [
+            {
+              "id": "dot-6",
+              "type": "ellipse",
+              "r": 11,
+              "x": 70,
+              "fill": "$pink",
+              "animate": {
+                "x": [
+                  [
+                    0,
+                    70
+                  ],
+                  [
+                    0.26,
+                    70,
+                    "hold"
+                  ],
+                  [
+                    0.76,
+                    150,
+                    "easeOutCubic"
+                  ],
+                  [
+                    0.86,
+                    70,
+                    "hold"
+                  ],
+                  [
+                    2,
+                    70,
+                    "hold"
+                  ]
+                ],
+                "scale": [
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0.26,
+                    0,
+                    "hold"
+                  ],
+                  [
+                    0.38,
+                    1,
+                    "snap"
+                  ],
+                  [
+                    0.81,
+                    0,
+                    "easeInQuad"
+                  ],
+                  [
+                    2,
+                    0,
+                    "hold"
+                  ]
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "chip-6",
+          "type": "group",
+          "rotation": 202,
+          "children": [
+            {
+              "id": "mini-6",
+              "type": "ellipse",
+              "r": 6,
+              "x": 60,
+              "fill": "$red",
+              "animate": {
+                "x": [
+                  [
+                    0,
+                    60
+                  ],
+                  [
+                    0.3,
+                    60,
+                    "hold"
+                  ],
+                  [
+                    0.75,
+                    118,
+                    "easeOutCubic"
+                  ],
+                  [
+                    0.8500000000000001,
+                    60,
+                    "hold"
+                  ],
+                  [
+                    2,
+                    60,
+                    "hold"
+                  ]
+                ],
+                "scale": [
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0.3,
+                    0,
+                    "hold"
+                  ],
+                  [
+                    0.4,
+                    1,
+                    "snap"
+                  ],
+                  [
+                    0.8,
+                    0,
+                    "easeInQuad"
+                  ],
+                  [
+                    2,
+                    0,
+                    "hold"
+                  ]
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "spark-7",
+          "type": "group",
+          "rotation": 225,
+          "children": [
+            {
+              "id": "dot-7",
+              "type": "ellipse",
+              "r": 11,
+              "x": 70,
+              "fill": "$yellow",
+              "animate": {
+                "x": [
+                  [
+                    0,
+                    70
+                  ],
+                  [
+                    0.28,
+                    70,
+                    "hold"
+                  ],
+                  [
+                    0.78,
+                    162,
+                    "easeOutCubic"
+                  ],
+                  [
+                    0.88,
+                    70,
+                    "hold"
+                  ],
+                  [
+                    2,
+                    70,
+                    "hold"
+                  ]
+                ],
+                "scale": [
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0.28,
+                    0,
+                    "hold"
+                  ],
+                  [
+                    0.4,
+                    1,
+                    "snap"
+                  ],
+                  [
+                    0.8300000000000001,
+                    0,
+                    "easeInQuad"
+                  ],
+                  [
+                    2,
+                    0,
+                    "hold"
+                  ]
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "chip-7",
+          "type": "group",
+          "rotation": 247,
+          "children": [
+            {
+              "id": "mini-7",
+              "type": "ellipse",
+              "r": 6,
+              "x": 60,
+              "fill": "$orange",
+              "animate": {
+                "x": [
+                  [
+                    0,
+                    60
+                  ],
+                  [
+                    0.32999999999999996,
+                    60,
+                    "hold"
+                  ],
+                  [
+                    0.78,
+                    118,
+                    "easeOutCubic"
+                  ],
+                  [
+                    0.88,
+                    60,
+                    "hold"
+                  ],
+                  [
+                    2,
+                    60,
+                    "hold"
+                  ]
+                ],
+                "scale": [
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0.32999999999999996,
+                    0,
+                    "hold"
+                  ],
+                  [
+                    0.42999999999999994,
+                    1,
+                    "snap"
+                  ],
+                  [
+                    0.83,
+                    0,
+                    "easeInQuad"
+                  ],
+                  [
+                    2,
+                    0,
+                    "hold"
+                  ]
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "heart",
+      "type": "path",
+      "d": "M 0 50 C -12 40 -70 6 -70 -24 C -70 -52 -42 -64 -24 -64 C -10 -64 0 -54 0 -44 C 0 -54 10 -64 24 -64 C 42 -64 70 -52 70 -24 C 70 6 12 40 0 50 Z",
+      "x": 256,
+      "y": 262,
+      "pivot": [
+        0,
+        0
+      ],
+      "fill": "$grey",
+      "animate": {
+        "fill": [
+          [
+            0,
+            "$grey"
+          ],
+          [
+            0.22,
+            "$grey",
+            "hold"
+          ],
+          [
+            0.3,
+            "$red",
+            "snap"
+          ],
+          [
+            1.55,
+            "$red",
+            "hold"
+          ],
+          [
+            1.85,
+            "$grey",
+            "smooth"
+          ],
+          [
+            2,
+            "$grey",
+            "hold"
+          ]
+        ],
+        "scale": [
+          [
+            0,
+            [
+              1,
+              1
+            ]
+          ],
+          [
+            0.16,
+            [
+              0.8,
+              0.8
+            ],
+            "smooth"
+          ],
+          {
+            "t": 0.36,
+            "v": [
+              1,
+              1
+            ],
+            "ease": "snap",
+            "overshoot": {
+              "past": 0.6,
+              "back": 0.12,
+              "time": 0.35
+            }
+          },
+          [
+            1.55,
+            [
+              1,
+              1
+            ],
+            "hold"
+          ],
+          [
+            1.7,
+            [
+              0.92,
+              0.92
+            ],
+            "smooth"
+          ],
+          [
+            1.85,
+            [
+              1,
+              1
+            ],
+            "settle"
+          ],
+          [
+            2,
+            [
+              1,
+              1
+            ],
+            "hold"
+          ]
+        ]
+      }
+    }
+  ]
+}

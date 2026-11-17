@@ -1,0 +1,17 @@
+{
+  "gertie": 1,
+  "name": "star-spin",
+  "canvas": { "w": 256, "h": 256 },
+  "duration": 2,
+  "palette": { "gold": "#facc15", "ink": "#0f172a" },
+  "nodes": [
+    {
+      "id": "star", "type": "star", "points": 5, "r": 90, "innerR": 38, "x": 128, "y": 128, "fill": "$gold",
+      "animate": { "rotation": [[0, 0], [2, 360, "linear"]] }
+    },
+    {
+      "id": "hex", "type": "polygon", "points": 6, "r": 26, "x": 128, "y": 128, "fill": "$ink",
+      "animate": { "rotation": [[0, 0], [2, -360, "linear"]] }
+    }
+  ]
+}

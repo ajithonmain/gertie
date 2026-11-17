@@ -1,0 +1,35 @@
+{
+  "gertie": 1,
+  "name": "loader-spinner",
+  "tier": "icon",
+  "canvas": { "w": 512, "h": 512 },
+  "fps": 30,
+  "duration": 1.2,
+  "loop": true,
+  "poster": 0.3,
+  "palette": { "track": "#94a3b833", "arc": "#3b82f6" },
+  "nodes": [
+    {
+      "id": "track",
+      "type": "ellipse",
+      "r": 180,
+      "x": 256,
+      "y": 256,
+      "stroke": { "color": "$track", "width": 24 }
+    },
+    {
+      "id": "arc",
+      "type": "ellipse",
+      "r": 180,
+      "x": 256,
+      "y": 256,
+      "stroke": { "color": "$arc", "width": 24, "cap": "round" },
+      "trim": { "start": 0, "end": 0.25 },
+      "animate": {
+        "rotation": [[0, 0], [1.2, 360, "linear"]],
+        "trim.start": [[0, 0], [0.6, 0.5, "smooth"], [1.2, 0, "smooth"]],
+        "trim.end": [[0, 0.25], [0.6, 0.85, "smooth"], [1.2, 0.25, "smooth"]]
+      }
+    }
+  ]
+}

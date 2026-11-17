@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+<style>
+@keyframes g1sl-early__v{0%{opacity:1;animation-timing-function:step-end}49.999%{opacity:0;animation-timing-function:step-end}100%{opacity:0}}
+@keyframes g1sl-early__t{0%{transform:translate(60px,128px);animation-timing-function:cubic-bezier(0.33,1,0.68,1)}50%{transform:translate(100px,128px);animation-timing-function:step-end}100%{transform:translate(100px,128px)}}
+@keyframes g1sl-late__v{0%{opacity:0;animation-timing-function:step-end}24.999%{opacity:1;animation-timing-function:step-end}100%{opacity:1}}
+@keyframes g1sl-late__s{0%{transform:scale(0,0);animation-timing-function:step-end}24.999%{transform:scale(0,0);animation-timing-function:cubic-bezier(0.34,1.56,0.64,1)}50%{transform:scale(1,1);animation-timing-function:step-end}100%{transform:scale(1,1)}}
+@keyframes g1sl-pair-a__v{0%{opacity:0;animation-timing-function:step-end}12.499%{opacity:1;animation-timing-function:step-end}62.499%{opacity:0;animation-timing-function:step-end}100%{opacity:0}}
+@keyframes g1sl-pair-b__v{0%{opacity:0;animation-timing-function:step-end}37.499%{opacity:1;animation-timing-function:step-end}100%{opacity:1}}
+@keyframes g1sl-dashes__o{0%{opacity:1;animation-timing-function:cubic-bezier(0.65,0,0.35,1)}50%{opacity:1;animation-timing-function:cubic-bezier(0.65,0,0.35,1)}56.25%{opacity:0;animation-timing-function:cubic-bezier(0.65,0,0.35,1)}100%{opacity:0}}
+.g1sl-early__v{animation:g1sl-early__v 1.6s linear 1 both}
+.g1sl-early__t{animation:g1sl-early__t 1.6s linear 1 both;transform-origin:0 0}
+.g1sl-late__v{animation:g1sl-late__v 1.6s linear 1 both}
+.g1sl-late__s{animation:g1sl-late__s 1.6s linear 1 both;transform-origin:0 0}
+.g1sl-pair-a__v{animation:g1sl-pair-a__v 1.6s linear 1 both}
+.g1sl-pair-b__v{animation:g1sl-pair-b__v 1.6s linear 1 both}
+.g1sl-dashes__sh{animation:g1sl-dashes__o 1.6s linear 1 both}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+<rect width="256" height="256" fill="#0f172a"/>
+<g class="g1sl-early__v" opacity="1">
+<g class="g1sl-early__t" transform="translate(60 128)">
+<rect x="-40" y="-40" width="80" height="80" fill="#22d3ee"/>
+</g>
+</g>
+<g class="g1sl-late__v" opacity="0">
+<g transform="translate(176 128)">
+<g class="g1sl-late__s" transform="scale(0 0)">
+<ellipse rx="40" ry="40" fill="#fbbf24"/>
+</g>
+</g>
+</g>
+<g transform="translate(0 40)">
+<g class="g1sl-pair-a__v" opacity="0">
+<g transform="translate(100 200)">
+<rect x="-12" y="-12" width="24" height="24" fill="#a78bfa"/>
+</g>
+</g>
+<g class="g1sl-pair-b__v" opacity="0">
+<g transform="translate(156 200)">
+<rect x="-12" y="-12" width="24" height="24" fill="#f472b6"/>
+</g>
+</g>
+</g>
+<path class="g1sl-dashes__sh" d="M30 40C30 40 226 40 226 40" fill="none" stroke="#e2e8f0" stroke-width="4" stroke-linecap="butt" stroke-linejoin="round" stroke-miterlimit="4" stroke-dasharray="10 8" opacity="1"/>
+</svg>

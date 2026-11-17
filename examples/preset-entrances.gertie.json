@@ -1,0 +1,135 @@
+{
+  "gertie": 1,
+  "name": "preset-entrances",
+  "canvas": {
+    "w": 512,
+    "h": 256,
+    "background": "#111827"
+  },
+  "duration": 3,
+  "loop": false,
+  "poster": 2.6,
+  "nodes": [
+    {
+      "id": "pop",
+      "type": "ellipse",
+      "r": 24,
+      "x": 37,
+      "y": 128,
+      "fill": "#6366f1",
+      "motion": [
+        {
+          "preset": "pop-in",
+          "at": 0.1
+        }
+      ]
+    },
+    {
+      "id": "fade",
+      "type": "rect",
+      "w": 44,
+      "h": 44,
+      "radius": 8,
+      "x": 110,
+      "y": 128,
+      "fill": "#22c55e",
+      "motion": [
+        {
+          "preset": "fade-in",
+          "at": 0.3,
+          "duration": 0.6
+        }
+      ]
+    },
+    {
+      "id": "slide",
+      "type": "rect",
+      "w": 44,
+      "h": 44,
+      "radius": 8,
+      "x": 183,
+      "y": 128,
+      "fill": "#f59e0b",
+      "motion": [
+        {
+          "preset": "slide-in",
+          "at": 0.5,
+          "from": "left",
+          "distance": 50
+        }
+      ]
+    },
+    {
+      "id": "drop",
+      "type": "star",
+      "points": 5,
+      "r": 26,
+      "innerR": 12,
+      "x": 256,
+      "y": 128,
+      "fill": "#ef4444",
+      "motion": [
+        {
+          "preset": "drop-in",
+          "at": 0.7,
+          "distance": 90
+        }
+      ]
+    },
+    {
+      "id": "draw",
+      "type": "path",
+      "d": "M-20 2 L-6 16 L22 -16",
+      "x": 329,
+      "y": 128,
+      "stroke": {
+        "color": "#38bdf8",
+        "width": 8
+      },
+      "motion": [
+        {
+          "preset": "draw-on",
+          "at": 0.9,
+          "duration": 0.7
+        }
+      ]
+    },
+    {
+      "id": "grow",
+      "type": "rect",
+      "w": 30,
+      "h": 56,
+      "radius": 6,
+      "x": 402,
+      "y": 128,
+      "pivot": [
+        0,
+        28
+      ],
+      "fill": "#e879f9",
+      "motion": [
+        {
+          "preset": "grow-in",
+          "at": 1.1,
+          "axis": "y"
+        }
+      ]
+    },
+    {
+      "id": "spin",
+      "type": "polygon",
+      "points": 3,
+      "r": 28,
+      "x": 475,
+      "y": 128,
+      "fill": "#f9fafb",
+      "motion": [
+        {
+          "preset": "spin-in",
+          "at": 1.3,
+          "turns": 0.75
+        }
+      ]
+    }
+  ]
+}

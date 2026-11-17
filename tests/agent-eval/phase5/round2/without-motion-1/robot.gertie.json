@@ -1,0 +1,55 @@
+{
+  "gertie": 1, "name": "robot-wave",
+  "canvas": { "w": 512, "h": 512 }, "duration": 2, "fps": 30,
+  "palette": { "body": "#94a3b8", "dark": "#334155", "accent": "#38bdf8", "eye": "#e0f2fe", "warm": "#fbbf24" },
+  "nodes": [
+    { "id": "shadow", "type": "ellipse", "rx": 110, "ry": 14, "x": 256, "y": 462, "fill": "#00000055",
+      "animate": { "scale": [[0, 1], [1, 0.94, "easeInOutSine"], [2, 1, "easeInOutSine"]] } },
+    { "id": "robot", "type": "group",
+      "animate": { "y": [[0, 0], [1, -6, "easeInOutSine"], [2, 0, "easeInOutSine"]] },
+      "children": [
+        { "id": "leg-l", "type": "rect", "w": 36, "h": 50, "radius": 10, "x": 222, "y": 430, "fill": "$dark" },
+        { "id": "leg-r", "type": "rect", "w": 36, "h": 50, "radius": 10, "x": 290, "y": 430, "fill": "$dark" },
+        { "id": "arm-l", "type": "group", "x": 166, "y": 330,
+          "children": [
+            { "id": "arm-l-bar", "type": "rect", "w": 26, "h": 80, "radius": 13, "x": -8, "y": 38, "rotation": 8, "fill": "$body" },
+            { "id": "hand-l", "type": "ellipse", "r": 17, "x": -14, "y": 84, "fill": "$accent" }
+          ] },
+        { "id": "body", "type": "rect", "w": 180, "h": 150, "radius": 34, "x": 256, "y": 355, "fill": "$body" },
+        { "id": "belly", "type": "rect", "w": 100, "h": 60, "radius": 16, "x": 256, "y": 362, "fill": "$dark" },
+        { "id": "light", "type": "ellipse", "r": 11, "x": 256, "y": 362, "fill": "$accent",
+          "animate": { "opacity": [[0, 1], [1, 0.4, "easeInOutSine"], [2, 1, "easeInOutSine"]] } },
+        { "id": "arm-r", "type": "group", "x": 346, "y": 330,
+          "pivot": [0, 0],
+          "animate": { "rotation": [
+            [0, -145], [0.25, -172, "easeInOutSine"], [0.5, -118, "easeInOutSine"], [0.75, -172, "easeInOutSine"],
+            [1.0, -118, "easeInOutSine"], [1.25, -172, "easeInOutSine"], [1.5, -118, "easeInOutSine"], [1.75, -172, "easeInOutSine"], [2, -145, "easeInOutSine"]
+          ] },
+          "children": [
+            { "id": "arm-r-bar", "type": "rect", "w": 26, "h": 80, "radius": 13, "x": 0, "y": 40, "fill": "$body" },
+            { "id": "hand-r", "type": "ellipse", "r": 19, "x": 0, "y": 86, "fill": "$accent" }
+          ] },
+        { "id": "neck", "type": "rect", "w": 30, "h": 24, "x": 256, "y": 278, "fill": "$dark" },
+        { "id": "head", "type": "group", "x": 256, "y": 210,
+          "animate": { "rotation": [[0, -3], [1, 3, "easeInOutSine"], [2, -3, "easeInOutSine"]] },
+          "pivot": [0, 70],
+          "children": [
+            { "id": "antenna-stem", "type": "line", "x1": 0, "y1": -66, "x2": 0, "y2": -100, "stroke": { "color": "#334155", "width": 8 } },
+            { "id": "antenna-ball", "type": "ellipse", "r": 13, "x": 0, "y": -108, "fill": "$warm",
+              "animate": { "scale": [[0, 1], [0.5, 1.25, "easeInOutSine"], [1, 1, "easeInOutSine"], [1.5, 1.25, "easeInOutSine"], [2, 1, "easeInOutSine"]] } },
+            { "id": "head-shape", "type": "rect", "w": 190, "h": 140, "radius": 44, "fill": "$body" },
+            { "id": "face", "type": "rect", "w": 150, "h": 88, "radius": 30, "y": 2, "fill": "$dark" },
+            { "id": "eye-l", "type": "ellipse", "rx": 15, "ry": 18, "x": -34, "y": -8, "fill": "$eye",
+              "animate": { "scale": [[0, [1, 1]], [1.2, [1, 1]], [1.28, [1, 0.1], "easeInOut"], [1.36, [1, 1], "easeInOut"], [2, [1, 1]]] } },
+            { "id": "eye-r", "type": "ellipse", "rx": 15, "ry": 18, "x": 34, "y": -8, "fill": "$eye",
+              "animate": { "scale": [[0, [1, 1]], [1.2, [1, 1]], [1.28, [1, 0.1], "easeInOut"], [1.36, [1, 1], "easeInOut"], [2, [1, 1]]] } },
+            { "id": "smile", "type": "path", "d": "M -26 20 Q 0 42 26 20", "fill": null,
+              "stroke": { "color": "#38bdf8", "width": 7 } },
+            { "id": "cheek-l", "type": "ellipse", "r": 8, "x": -56, "y": 18, "fill": "#f472b655" },
+            { "id": "cheek-r", "type": "ellipse", "r": 8, "x": 56, "y": 18, "fill": "#f472b655" },
+            { "id": "ear-l", "type": "rect", "w": 14, "h": 40, "radius": 6, "x": -102, "y": 0, "fill": "$accent" },
+            { "id": "ear-r", "type": "rect", "w": 14, "h": 40, "radius": 6, "x": 102, "y": 0, "fill": "$accent" }
+          ] }
+      ] }
+  ]
+}

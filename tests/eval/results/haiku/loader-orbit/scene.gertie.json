@@ -1,0 +1,37 @@
+{
+  "gertie": 1,
+  "name": "orbit-loader",
+  "tier": "icon",
+  "canvas": { "w": 512, "h": 512 },
+  "fps": 30,
+  "duration": 2,
+  "loop": true,
+  "poster": 0.5,
+  "palette": {
+    "ink": "#0f172a",
+    "slow": "#38bdf8",
+    "mid": "#a78bfa",
+    "fast": "#f472b6",
+    "track": "#e2e8f0"
+  },
+  "nodes": [
+    { "id": "track", "type": "ellipse", "x": 256, "y": 256, "r": 110,
+      "stroke": { "color": "$track", "width": 2 } },
+    { "id": "core", "type": "ellipse", "x": 256, "y": 256, "r": 8, "fill": "$ink" },
+    { "id": "orbit-slow", "type": "group", "x": 256, "y": 256,
+      "animate": { "rotation": [[0, 0], [2, 360, "linear"]] },
+      "children": [
+        { "id": "dot-slow", "type": "ellipse", "x": 0, "y": -110, "r": 12, "fill": "$slow" }
+      ] },
+    { "id": "orbit-mid", "type": "group", "x": 256, "y": 256,
+      "animate": { "rotation": [[0, 0], [2, 720, "linear"]] },
+      "children": [
+        { "id": "dot-mid", "type": "ellipse", "x": 0, "y": -110, "r": 10, "fill": "$mid" }
+      ] },
+    { "id": "orbit-fast", "type": "group", "x": 256, "y": 256,
+      "animate": { "rotation": [[0, 0], [2, 1080, "linear"]] },
+      "children": [
+        { "id": "dot-fast", "type": "ellipse", "x": 0, "y": -110, "r": 8, "fill": "$fast" }
+      ] }
+  ]
+}

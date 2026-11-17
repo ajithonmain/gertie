@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+<style>
+@keyframes g1x6-link-1__r{0%{transform:rotate(0deg);animation-timing-function:cubic-bezier(0.7,0,0.3,1)}25%{transform:rotate(9deg);animation-timing-function:cubic-bezier(0.7,0,0.3,1)}50%{transform:rotate(0deg);animation-timing-function:cubic-bezier(0.7,0,0.3,1)}75%{transform:rotate(-9deg);animation-timing-function:cubic-bezier(0.7,0,0.3,1)}100%{transform:rotate(0deg)}}
+@keyframes g1x6-link-2__r{0%{transform:rotate(-0.278deg);animation-timing-function:cubic-bezier(0.2845,0.6449,0.6145,1)}4.1666%{transform:rotate(0deg);animation-timing-function:cubic-bezier(0.7,0,0.3,1)}29.1666%{transform:rotate(11.7deg);animation-timing-function:cubic-bezier(0.7,0,0.3,1)}54.1666%{transform:rotate(0deg);animation-timing-function:cubic-bezier(0.7,0,0.3,1)}79.1666%{transform:rotate(-11.7deg);animation-timing-function:cubic-bezier(0.7629,0,0.437,0.8449)}100%{transform:rotate(-0.278deg)}}
+@keyframes g1x6-link-3__r{0%{transform:rotate(-1.651deg);animation-timing-function:cubic-bezier(0.2556,0.4419,0.5778,0.7907)}4.1666%{transform:rotate(0deg);animation-timing-function:cubic-bezier(0.2845,0.6449,0.6145,1)}8.3333%{transform:rotate(0.361deg);animation-timing-function:cubic-bezier(0.7,0,0.3,1)}33.3333%{transform:rotate(15.571deg);animation-timing-function:cubic-bezier(0.7,0,0.3,1)}58.3333%{transform:rotate(0.361deg);animation-timing-function:cubic-bezier(0.7,0,0.3,1)}83.3333%{transform:rotate(-14.849deg);animation-timing-function:cubic-bezier(0.8106,0,0.6378,0.6868)}100%{transform:rotate(-1.651deg)}}
+@keyframes g1x6-link-4__r{0%{transform:rotate(-7.271deg);animation-timing-function:cubic-bezier(0.2448,0.3698,0.4896,0.7396)}4.1666%{transform:rotate(0deg);animation-timing-function:cubic-bezier(0.2556,0.4419,0.5778,0.7907)}8.3333%{transform:rotate(2.146deg);animation-timing-function:cubic-bezier(0.2845,0.6449,0.6145,1)}12.5%{transform:rotate(2.615deg);animation-timing-function:cubic-bezier(0.7,0,0.3,1)}37.5%{transform:rotate(22.388deg);animation-timing-function:cubic-bezier(0.7,0,0.3,1)}62.5%{transform:rotate(2.615deg);animation-timing-function:cubic-bezier(0.7,0,0.3,1)}87.5%{transform:rotate(-17.158deg);animation-timing-function:cubic-bezier(0.7,0,0.85,0.5)}100%{transform:rotate(-7.271deg)}}
+.g1x6-link-1__r{animation:g1x6-link-1__r 4s linear infinite both;transform-origin:0 0}
+.g1x6-link-2__r{animation:g1x6-link-2__r 4s linear infinite both;transform-origin:0 0}
+.g1x6-link-3__r{animation:g1x6-link-3__r 4s linear infinite both;transform-origin:0 0}
+.g1x6-link-4__r{animation:g1x6-link-4__r 4s linear infinite both;transform-origin:0 0}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+<g transform="translate(256 70)">
+<rect x="-120" y="-10" width="240" height="20" rx="8" fill="#94a3b8"/>
+</g>
+<g transform="translate(256 80)">
+<g class="g1x6-link-1__r" transform="rotate(0)">
+<g transform="translate(-256 -80)">
+<g transform="translate(256 135)">
+<rect x="-17" y="-55" width="34" height="110" rx="17" fill="#38bdf8"/>
+</g>
+<g transform="translate(256 190)">
+<g class="g1x6-link-2__r" transform="rotate(-0.278)">
+<g transform="translate(-256 -190)">
+<g transform="translate(256 240)">
+<rect x="-15" y="-50" width="30" height="100" rx="15" fill="#22d3ee"/>
+</g>
+<g transform="translate(256 290)">
+<g class="g1x6-link-3__r" transform="rotate(-1.651)">
+<g transform="translate(-256 -290)">
+<g transform="translate(256 335)">
+<rect x="-13" y="-45" width="26" height="90" rx="13" fill="#2dd4bf"/>
+</g>
+<g transform="translate(256 380)">
+<g class="g1x6-link-4__r" transform="rotate(-7.271)">
+<g transform="translate(-256 -380)">
+<g transform="translate(256 415)">
+<ellipse rx="34" ry="34" fill="#34d399"/>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</svg>

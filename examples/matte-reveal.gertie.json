@@ -1,0 +1,18 @@
+{
+  "gertie": 1,
+  "name": "matte-reveal",
+  "canvas": { "w": 512, "h": 512, "background": "#0b1020" },
+  "duration": 4,
+  "tier": "icon",
+  "palette": { "cover": "#1e293b", "sun": "#fb923c", "sky": "#38bdf8", "hill": "#34d399" },
+  "nodes": [
+    { "id": "sky", "type": "rect", "w": 400, "h": 400, "x": 256, "y": 256, "radius": 40, "fill": "$sky" },
+    { "id": "sun", "type": "ellipse", "r": 60, "x": 330, "y": 190, "fill": "$sun",
+      "animate": { "scale": [[0, 1], [2, 1.1, "easeInOut"], [4, 1, "easeInOut"]] } },
+    { "id": "hill", "type": "path", "x": 256, "y": 330, "d": "M -200 70 C -120 -60 0 -40 80 0 C 130 20 170 10 200 -20 L 200 70 Z", "fill": "$hill" },
+    { "id": "hole", "type": "ellipse", "r": 10, "x": 256, "y": 256, "fill": "#000000",
+      "animate": { "r": [[0, 10], [1.5, 300, "easeInOut"], [2.5, 300], [4, 10, "easeInOut"]] } },
+    { "id": "cover", "type": "rect", "w": 400, "h": 400, "x": 256, "y": 256, "radius": 40, "fill": "$cover",
+      "matte": { "by": "hole", "mode": "alpha-inverted" } }
+  ]
+}

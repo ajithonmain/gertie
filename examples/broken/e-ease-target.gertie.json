@@ -1,0 +1,38 @@
+{
+  "gertie": 1,
+  "name": "broken",
+  "canvas": {
+    "w": 200,
+    "h": 200
+  },
+  "duration": 2,
+  "loop": false,
+  "nodes": [
+    {
+      "id": "a",
+      "type": "rect",
+      "w": 50,
+      "h": 50,
+      "x": 100,
+      "y": 100,
+      "fill": "#ffffff",
+      "stroke": {
+        "color": "#ff0000",
+        "width": 4
+      },
+      "animate": {
+        "fill": [
+          [
+            0,
+            "#ff0000"
+          ],
+          [
+            1,
+            "#0000ff",
+            "bounce"
+          ]
+        ]
+      }
+    }
+  ]
+}

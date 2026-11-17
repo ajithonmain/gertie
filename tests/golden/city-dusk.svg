@@ -1,0 +1,309 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 810" width="1080" height="810">
+<style>
+@keyframes ghi4-sun-glow__o{0%{opacity:1;animation-timing-function:cubic-bezier(0.2,0,0.8,1)}50%{opacity:0.82;animation-timing-function:cubic-bezier(0.2,0,0.8,1)}100%{opacity:1}}
+@keyframes ghi4-star-a__s{0%{transform:scale(1,1);animation-timing-function:cubic-bezier(0.7,0,0.3,1)}5%{transform:scale(1,1);animation-timing-function:cubic-bezier(0.7,0,0.3,1)}10%{transform:scale(0.3,0.3);animation-timing-function:cubic-bezier(0.3,1,0.7,1)}16.25%{transform:scale(1.2,1.2);animation-timing-function:cubic-bezier(0.2,0,0.8,1)}23.75%{transform:scale(1,1);animation-timing-function:cubic-bezier(0.7,0,0.3,1)}100%{transform:scale(1,1)}}
+@keyframes ghi4-star-b__s{0%{transform:scale(1,1);animation-timing-function:cubic-bezier(0.7,0,0.3,1)}26.25%{transform:scale(1,1);animation-timing-function:cubic-bezier(0.7,0,0.3,1)}31.25%{transform:scale(0.3,0.3);animation-timing-function:cubic-bezier(0.3,1,0.7,1)}37.5%{transform:scale(1.2,1.2);animation-timing-function:cubic-bezier(0.2,0,0.8,1)}45%{transform:scale(1,1);animation-timing-function:cubic-bezier(0.7,0,0.3,1)}100%{transform:scale(1,1)}}
+@keyframes ghi4-star-c__s{0%{transform:scale(1,1);animation-timing-function:cubic-bezier(0.7,0,0.3,1)}46.25%{transform:scale(1,1);animation-timing-function:cubic-bezier(0.7,0,0.3,1)}51.25%{transform:scale(0.3,0.3);animation-timing-function:cubic-bezier(0.3,1,0.7,1)}57.5%{transform:scale(1.2,1.2);animation-timing-function:cubic-bezier(0.2,0,0.8,1)}65%{transform:scale(1,1);animation-timing-function:cubic-bezier(0.7,0,0.3,1)}100%{transform:scale(1,1)}}
+@keyframes ghi4-star-d__s{0%{transform:scale(1,1);animation-timing-function:cubic-bezier(0.7,0,0.3,1)}15%{transform:scale(1,1);animation-timing-function:cubic-bezier(0.7,0,0.3,1)}20%{transform:scale(0.3,0.3);animation-timing-function:cubic-bezier(0.3,1,0.7,1)}26.25%{transform:scale(1.2,1.2);animation-timing-function:cubic-bezier(0.2,0,0.8,1)}33.75%{transform:scale(1,1);animation-timing-function:cubic-bezier(0.7,0,0.3,1)}100%{transform:scale(1,1)}}
+@keyframes ghi4-star-e__s{0%{transform:scale(1,1);animation-timing-function:cubic-bezier(0.7,0,0.3,1)}65%{transform:scale(1,1);animation-timing-function:cubic-bezier(0.7,0,0.3,1)}70%{transform:scale(0.3,0.3);animation-timing-function:cubic-bezier(0.3,1,0.7,1)}76.25%{transform:scale(1.2,1.2);animation-timing-function:cubic-bezier(0.2,0,0.8,1)}83.75%{transform:scale(1,1);animation-timing-function:cubic-bezier(0.7,0,0.3,1)}100%{transform:scale(1,1)}}
+@keyframes ghi4-star-f__s{0%{transform:scale(1,1);animation-timing-function:cubic-bezier(0.7,0,0.3,1)}75%{transform:scale(1,1);animation-timing-function:cubic-bezier(0.7,0,0.3,1)}80%{transform:scale(0.3,0.3);animation-timing-function:cubic-bezier(0.3,1,0.7,1)}86.25%{transform:scale(1.2,1.2);animation-timing-function:cubic-bezier(0.2,0,0.8,1)}93.75%{transform:scale(1,1);animation-timing-function:cubic-bezier(0.7,0,0.3,1)}100%{transform:scale(1,1)}}
+@keyframes ghi4-cloud-a__t{0%{transform:translate(0px,0px);animation-timing-function:cubic-bezier(0.7,0,0.3,1)}3.75%{transform:translate(0px,0px);animation-timing-function:cubic-bezier(0.2,0,0.8,1)}52.5%{transform:translate(46px,0px);animation-timing-function:cubic-bezier(0.2,0,0.8,1)}100%{transform:translate(0px,0px)}}
+@keyframes ghi4-cloud-b__t{0%{transform:translate(0px,0px);animation-timing-function:cubic-bezier(0.7,0,0.3,1)}10%{transform:translate(0px,0px);animation-timing-function:cubic-bezier(0.2,0,0.8,1)}60%{transform:translate(-38px,0px);animation-timing-function:cubic-bezier(0.2,0,0.8,1)}100%{transform:translate(0px,0px)}}
+@keyframes ghi4-b1-w02__fill{0%{fill:#ffd77a;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}6.25%{fill:#ffd77a;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}10%{fill:#63559a;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}43.75%{fill:#63559a;animation-timing-function:cubic-bezier(0.3,1,0.7,1)}46.25%{fill:#ffd77a;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}100%{fill:#ffd77a}}
+@keyframes ghi4-b1-w12__fill{0%{fill:#63559a;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}13.3333%{fill:#63559a;animation-timing-function:cubic-bezier(0.3,1,0.7,1)}15.8333%{fill:#ffb35c;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}54.5833%{fill:#ffb35c;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}58.3333%{fill:#63559a;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}100%{fill:#63559a}}
+@keyframes ghi4-b1-w22__fill{0%{fill:#ffd77a;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}17.9166%{fill:#ffd77a;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}21.6666%{fill:#63559a;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}63.3333%{fill:#63559a;animation-timing-function:cubic-bezier(0.3,1,0.7,1)}65.8333%{fill:#ffd77a;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}100%{fill:#ffd77a}}
+@keyframes ghi4-b2-w01__fill{0%{fill:#63559a;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}25%{fill:#63559a;animation-timing-function:cubic-bezier(0.3,1,0.7,1)}27.5%{fill:#ffb35c;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}74.1666%{fill:#ffb35c;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}77.9166%{fill:#63559a;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}100%{fill:#63559a}}
+@keyframes ghi4-b2-shop__fill{0%{fill:#ffb35c;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}41.25%{fill:#ffb35c;animation-timing-function:cubic-bezier(0.8,0,0.3,1)}42.9166%{fill:#ffd77a;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}45%{fill:#ffb35c;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}100%{fill:#ffb35c}}
+@keyframes ghi4-b3-w00__fill{0%{fill:#63559a;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}29.5833%{fill:#63559a;animation-timing-function:cubic-bezier(0.3,1,0.7,1)}32.0833%{fill:#ffd77a;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}67.9166%{fill:#ffd77a;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}71.6666%{fill:#63559a;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}100%{fill:#63559a}}
+@keyframes ghi4-b3-w10__fill{0%{fill:#63559a;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}36.6666%{fill:#63559a;animation-timing-function:cubic-bezier(0.3,1,0.7,1)}39.5833%{fill:#ffb35c;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}78.75%{fill:#ffb35c;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}82.5%{fill:#63559a;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}100%{fill:#63559a}}
+@keyframes ghi4-b3-w20__fill{0%{fill:#ffd77a;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}41.6666%{fill:#ffd77a;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}45.4166%{fill:#63559a;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}87.0833%{fill:#63559a;animation-timing-function:cubic-bezier(0.3,1,0.7,1)}89.5833%{fill:#ffd77a;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}100%{fill:#ffd77a}}
+@keyframes ghi4-b3-w30__fill{0%{fill:#63559a;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}48.75%{fill:#63559a;animation-timing-function:cubic-bezier(0.3,1,0.7,1)}51.25%{fill:#ffb35c;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}91.25%{fill:#ffb35c;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}95%{fill:#63559a;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}100%{fill:#63559a}}
+@keyframes ghi4-beacon__o{0%{opacity:1;animation-timing-function:cubic-bezier(0.8,0,0.3,1)}6.25%{opacity:0.15;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}15%{opacity:0.15;animation-timing-function:cubic-bezier(0.3,1,0.7,1)}17.5%{opacity:1;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}25%{opacity:1;animation-timing-function:cubic-bezier(0.8,0,0.3,1)}31.25%{opacity:0.15;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}40%{opacity:0.15;animation-timing-function:cubic-bezier(0.3,1,0.7,1)}42.5%{opacity:1;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}50%{opacity:1;animation-timing-function:cubic-bezier(0.8,0,0.3,1)}56.25%{opacity:0.15;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}65%{opacity:0.15;animation-timing-function:cubic-bezier(0.3,1,0.7,1)}67.5%{opacity:1;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}75%{opacity:1;animation-timing-function:cubic-bezier(0.8,0,0.3,1)}81.25%{opacity:0.15;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}90%{opacity:0.15;animation-timing-function:cubic-bezier(0.3,1,0.7,1)}92.5%{opacity:1;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}100%{opacity:1}}
+@keyframes ghi4-b4-w10__fill{0%{fill:#63559a;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}10.8333%{fill:#63559a;animation-timing-function:cubic-bezier(0.3,1,0.7,1)}13.3333%{fill:#ffd77a;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}49.1666%{fill:#ffd77a;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}52.9166%{fill:#63559a;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}100%{fill:#63559a}}
+@keyframes ghi4-neon__o{0%{opacity:1;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}21.25%{opacity:1;animation-timing-function:cubic-bezier(0.8,0,0.3,1)}22.5%{opacity:0.3;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}23.75%{opacity:1;animation-timing-function:cubic-bezier(0.8,0,0.3,1)}25%{opacity:0.4;animation-timing-function:cubic-bezier(0.3,1,0.7,1)}26.6666%{opacity:1;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}73.75%{opacity:1;animation-timing-function:cubic-bezier(0.8,0,0.3,1)}75%{opacity:0.35;animation-timing-function:cubic-bezier(0.3,1,0.7,1)}77.0833%{opacity:1;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}100%{opacity:1}}
+@keyframes ghi4-b5-w01__fill{0%{fill:#63559a;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}17.9166%{fill:#63559a;animation-timing-function:cubic-bezier(0.3,1,0.7,1)}20.4166%{fill:#ffb35c;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}60.4166%{fill:#ffb35c;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}64.1666%{fill:#63559a;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}100%{fill:#63559a}}
+@keyframes ghi4-b5-w11__fill{0%{fill:#ffd77a;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}22.5%{fill:#ffd77a;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}26.25%{fill:#63559a;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}68.75%{fill:#63559a;animation-timing-function:cubic-bezier(0.3,1,0.7,1)}71.25%{fill:#ffd77a;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}100%{fill:#ffd77a}}
+@keyframes ghi4-b5-w21__fill{0%{fill:#63559a;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}29.5833%{fill:#63559a;animation-timing-function:cubic-bezier(0.3,1,0.7,1)}32.0833%{fill:#ffb35c;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}79.5833%{fill:#ffb35c;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}83.3333%{fill:#63559a;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}100%{fill:#63559a}}
+@keyframes ghi4-cat-tail__r{0%{transform:rotate(9deg);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}12.5%{transform:rotate(0deg);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}25%{transform:rotate(-9deg);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}37.5%{transform:rotate(0deg);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}50%{transform:rotate(9deg);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}62.5%{transform:rotate(0deg);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}75%{transform:rotate(-9deg);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}87.5%{transform:rotate(0deg);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}100%{transform:rotate(9deg)}}
+@keyframes ghi4-cat-head__r{0%{transform:rotate(0deg);animation-timing-function:cubic-bezier(0.7,0,0.3,1)}33.75%{transform:rotate(0deg);animation-timing-function:cubic-bezier(0.8,0,0.3,1)}37.5%{transform:rotate(-14deg);animation-timing-function:cubic-bezier(0.2,0,0.8,1)}67.5%{transform:rotate(-12deg);animation-timing-function:cubic-bezier(0.7,0,0.3,1)}72.5%{transform:rotate(0deg);animation-timing-function:cubic-bezier(0.7,0,0.3,1)}100%{transform:rotate(0deg)}}
+@keyframes ghi4-lamp-a-cone__o{0%{opacity:0;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}12.5%{opacity:0;animation-timing-function:cubic-bezier(0.8,0,0.3,1)}13.75%{opacity:0.9;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}15%{opacity:0.25;animation-timing-function:cubic-bezier(0.3,1,0.7,1)}17.0833%{opacity:1;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}90%{opacity:1;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}93.75%{opacity:0;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}100%{opacity:0}}
+@keyframes ghi4-lamp-a-head__fill{0%{fill:#63559a;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}12.0833%{fill:#63559a;animation-timing-function:cubic-bezier(0.8,0,0.3,1)}14.1666%{fill:#fff1c2;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}90%{fill:#fff1c2;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}93.3333%{fill:#63559a;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}100%{fill:#63559a}}
+@keyframes ghi4-lamp-b-cone__o{0%{opacity:0;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}17.5%{opacity:0;animation-timing-function:cubic-bezier(0.8,0,0.3,1)}18.75%{opacity:0.9;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}20%{opacity:0.25;animation-timing-function:cubic-bezier(0.3,1,0.7,1)}22.0833%{opacity:1;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}91.6666%{opacity:1;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}95.4166%{opacity:0;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}100%{opacity:0}}
+@keyframes ghi4-lamp-b-head__fill{0%{fill:#63559a;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}17.0833%{fill:#63559a;animation-timing-function:cubic-bezier(0.8,0,0.3,1)}19.1666%{fill:#fff1c2;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}91.6666%{fill:#fff1c2;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}94.5833%{fill:#63559a;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}100%{fill:#63559a}}
+@keyframes ghi4-lamp-c-cone__o{0%{opacity:0;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}23.75%{opacity:0;animation-timing-function:cubic-bezier(0.8,0,0.3,1)}25%{opacity:0.9;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}26.25%{opacity:0.25;animation-timing-function:cubic-bezier(0.3,1,0.7,1)}28.3333%{opacity:1;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}93.3333%{opacity:1;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}97.0833%{opacity:0;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}100%{opacity:0}}
+@keyframes ghi4-lamp-c-head__fill{0%{fill:#63559a;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}23.3333%{fill:#63559a;animation-timing-function:cubic-bezier(0.8,0,0.3,1)}25.4166%{fill:#fff1c2;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}93.3333%{fill:#fff1c2;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}96.6666%{fill:#63559a;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}100%{fill:#63559a}}
+@keyframes ghi4-tree-a-top__r{0%{transform:rotate(2.5deg);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}25%{transform:rotate(0deg);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}50%{transform:rotate(-2.5deg);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}75%{transform:rotate(0deg);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}100%{transform:rotate(2.5deg)}}
+@keyframes ghi4-tree-b-top__r{0%{transform:rotate(-2.5deg);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}25%{transform:rotate(0deg);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}50%{transform:rotate(2.5deg);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}75%{transform:rotate(0deg);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}100%{transform:rotate(-2.5deg)}}
+@keyframes ghi4-signal-red__fill{0%{fill:#e2556b;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}25%{fill:#e2556b;animation-timing-function:cubic-bezier(0.8,0,0.3,1)}26.6666%{fill:#262048;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}81.25%{fill:#262048;animation-timing-function:cubic-bezier(0.8,0,0.3,1)}82.9166%{fill:#e2556b;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}100%{fill:#e2556b}}
+@keyframes ghi4-signal-amber__fill{0%{fill:#262048;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}73.75%{fill:#262048;animation-timing-function:cubic-bezier(0.8,0,0.3,1)}75.4166%{fill:#ffb35c;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}81.6666%{fill:#ffb35c;animation-timing-function:cubic-bezier(0.8,0,0.3,1)}83.3333%{fill:#262048;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}100%{fill:#262048}}
+@keyframes ghi4-signal-green__fill{0%{fill:#262048;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}25.8333%{fill:#262048;animation-timing-function:cubic-bezier(0.8,0,0.3,1)}27.5%{fill:#5fd38d;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}74.1666%{fill:#5fd38d;animation-timing-function:cubic-bezier(0.8,0,0.3,1)}75.8333%{fill:#262048;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}100%{fill:#262048}}
+@keyframes ghi4-car__tx{0%{transform:translateX(-420px);animation-timing-function:cubic-bezier(0.7,0,0.3,1)}30%{transform:translateX(-420px);animation-timing-function:cubic-bezier(0.2,0,0.8,1)}70%{transform:translateX(1500px);animation-timing-function:step-end}71.249%{transform:translateX(-420px);animation-timing-function:cubic-bezier(0.7,0,0.3,1)}100%{transform:translateX(-420px)}}
+@keyframes ghi4-car__ty{0%{transform:translateY(772px);animation-timing-function:cubic-bezier(0.7,0,0.3,1)}41.25%{transform:translateY(772px);animation-timing-function:cubic-bezier(0.8,0,0.3,1)}42.9166%{transform:translateY(768px);animation-timing-function:cubic-bezier(0.7,0,0.3,1)}45%{transform:translateY(773px);animation-timing-function:cubic-bezier(0.3,1,0.7,1)}47.5%{transform:translateY(772px);animation-timing-function:cubic-bezier(0.7,0,0.3,1)}100%{transform:translateY(772px)}}
+@keyframes ghi4-car-wheel-rear__r{0%{transform:rotate(0deg);animation-timing-function:cubic-bezier(0.7,0,0.3,1)}30%{transform:rotate(0deg)}70%{transform:rotate(1800deg);animation-timing-function:cubic-bezier(0.7,0,0.3,1)}100%{transform:rotate(1800deg)}}
+.ghi4-sun-glow__sh{animation:ghi4-sun-glow__o 8s linear infinite both}
+.ghi4-star-a__s{animation:ghi4-star-a__s 8s linear infinite both;transform-origin:0 0}
+.ghi4-star-b__s{animation:ghi4-star-b__s 8s linear infinite both;transform-origin:0 0}
+.ghi4-star-c__s{animation:ghi4-star-c__s 8s linear infinite both;transform-origin:0 0}
+.ghi4-star-d__s{animation:ghi4-star-d__s 8s linear infinite both;transform-origin:0 0}
+.ghi4-star-e__s{animation:ghi4-star-e__s 8s linear infinite both;transform-origin:0 0}
+.ghi4-star-f__s{animation:ghi4-star-f__s 8s linear infinite both;transform-origin:0 0}
+.ghi4-cloud-a__t{animation:ghi4-cloud-a__t 8s linear infinite both;transform-origin:0 0}
+.ghi4-cloud-b__t{animation:ghi4-cloud-b__t 8s linear infinite both;transform-origin:0 0}
+.ghi4-b1-w02__sh{animation:ghi4-b1-w02__fill 8s linear infinite both}
+.ghi4-b1-w12__sh{animation:ghi4-b1-w12__fill 8s linear infinite both}
+.ghi4-b1-w22__sh{animation:ghi4-b1-w22__fill 8s linear infinite both}
+.ghi4-b2-w01__sh{animation:ghi4-b2-w01__fill 8s linear infinite both}
+.ghi4-b2-shop__sh{animation:ghi4-b2-shop__fill 8s linear infinite both}
+.ghi4-b3-w00__sh{animation:ghi4-b3-w00__fill 8s linear infinite both}
+.ghi4-b3-w10__sh{animation:ghi4-b3-w10__fill 8s linear infinite both}
+.ghi4-b3-w20__sh{animation:ghi4-b3-w20__fill 8s linear infinite both}
+.ghi4-b3-w30__sh{animation:ghi4-b3-w30__fill 8s linear infinite both}
+.ghi4-beacon__sh{animation:ghi4-beacon__o 8s linear infinite both}
+.ghi4-b4-w10__sh{animation:ghi4-b4-w10__fill 8s linear infinite both}
+.ghi4-neon__o{animation:ghi4-neon__o 8s linear infinite both}
+.ghi4-b5-w01__sh{animation:ghi4-b5-w01__fill 8s linear infinite both}
+.ghi4-b5-w11__sh{animation:ghi4-b5-w11__fill 8s linear infinite both}
+.ghi4-b5-w21__sh{animation:ghi4-b5-w21__fill 8s linear infinite both}
+.ghi4-cat-tail__r{animation:ghi4-cat-tail__r 8s linear infinite both;transform-origin:0 0}
+.ghi4-cat-head__r{animation:ghi4-cat-head__r 8s linear infinite both;transform-origin:0 0}
+.ghi4-lamp-a-cone__sh{animation:ghi4-lamp-a-cone__o 8s linear infinite both}
+.ghi4-lamp-a-head__sh{animation:ghi4-lamp-a-head__fill 8s linear infinite both}
+.ghi4-lamp-b-cone__sh{animation:ghi4-lamp-b-cone__o 8s linear infinite both}
+.ghi4-lamp-b-head__sh{animation:ghi4-lamp-b-head__fill 8s linear infinite both}
+.ghi4-lamp-c-cone__sh{animation:ghi4-lamp-c-cone__o 8s linear infinite both}
+.ghi4-lamp-c-head__sh{animation:ghi4-lamp-c-head__fill 8s linear infinite both}
+.ghi4-tree-a-top__r{animation:ghi4-tree-a-top__r 8s linear infinite both;transform-origin:0 0}
+.ghi4-tree-b-top__r{animation:ghi4-tree-b-top__r 8s linear infinite both;transform-origin:0 0}
+.ghi4-signal-red__sh{animation:ghi4-signal-red__fill 8s linear infinite both}
+.ghi4-signal-amber__sh{animation:ghi4-signal-amber__fill 8s linear infinite both}
+.ghi4-signal-green__sh{animation:ghi4-signal-green__fill 8s linear infinite both}
+.ghi4-car__tx{animation:ghi4-car__tx 8s linear infinite both;transform-origin:0 0}
+.ghi4-car__ty{animation:ghi4-car__ty 8s linear infinite both;transform-origin:0 0}
+.ghi4-car-wheel-rear__r{animation:ghi4-car-wheel-rear__r 8s linear infinite both;transform-origin:0 0}
+.ghi4-car-wheel-front__r{animation:ghi4-car-wheel-rear__r 8s linear infinite both;transform-origin:0 0}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+<defs>
+<linearGradient id="ghi4-sky__grad" gradientUnits="userSpaceOnUse" x1="0" y1="-320" x2="0" y2="300"><stop offset="0" stop-color="#241d4a"/><stop offset="0.45" stop-color="#5d3f86"/><stop offset="0.8" stop-color="#e87f6c"/><stop offset="1" stop-color="#ffcf8a"/></linearGradient>
+<radialGradient id="ghi4-sun-glow__grad" gradientUnits="userSpaceOnUse" cx="0" cy="0" r="420"><stop offset="0" stop-color="#ffe7a8" stop-opacity="0.8"/><stop offset="0.5" stop-color="#ffb37a" stop-opacity="0.3333"/><stop offset="1" stop-color="#ff9a7a" stop-opacity="0"/></radialGradient>
+<linearGradient id="ghi4-lamp-a-cone__grad" gradientUnits="userSpaceOnUse" x1="166" y1="410" x2="166" y2="640"><stop offset="0" stop-color="#fff1c2" stop-opacity="0.6667"/><stop offset="0.5" stop-color="#fff1c2" stop-opacity="0.2667"/><stop offset="1" stop-color="#fff1c2" stop-opacity="0"/></linearGradient>
+<linearGradient id="ghi4-lamp-b-cone__grad" gradientUnits="userSpaceOnUse" x1="516" y1="410" x2="516" y2="640"><stop offset="0" stop-color="#fff1c2" stop-opacity="0.6667"/><stop offset="0.5" stop-color="#fff1c2" stop-opacity="0.2667"/><stop offset="1" stop-color="#fff1c2" stop-opacity="0"/></linearGradient>
+<linearGradient id="ghi4-lamp-c-cone__grad" gradientUnits="userSpaceOnUse" x1="936" y1="410" x2="936" y2="640"><stop offset="0" stop-color="#fff1c2" stop-opacity="0.6667"/><stop offset="0.5" stop-color="#fff1c2" stop-opacity="0.2667"/><stop offset="1" stop-color="#fff1c2" stop-opacity="0"/></linearGradient>
+<linearGradient id="ghi4-car-beam__grad" gradientUnits="userSpaceOnUse" x1="118" y1="-44" x2="340" y2="-44"><stop offset="0" stop-color="#fff1c2" stop-opacity="0.7333"/><stop offset="0.5" stop-color="#fff1c2" stop-opacity="0.3333"/><stop offset="1" stop-color="#fff1c2" stop-opacity="0"/></linearGradient>
+</defs>
+<rect width="1080" height="810" fill="#241d4a"/>
+<g transform="translate(540 320)">
+<rect x="-540" y="-320" width="1080" height="640" fill="url(#ghi4-sky__grad)"/>
+</g>
+<g transform="translate(380 610)">
+<ellipse class="ghi4-sun-glow__sh" rx="420" ry="240" fill="url(#ghi4-sun-glow__grad)" opacity="0.82"/>
+</g>
+<g transform="translate(120 90)">
+<g class="ghi4-star-a__s" transform="scale(1 1)">
+<path d="M0 -11C0 -11 1.3 -3.5 2.4 -2.4C3.5 -1.3 11 0 11 0C11 0 3.5 1.3 2.4 2.4C1.3 3.5 0 11 0 11C0 11 -1.3 3.5 -2.4 2.4C-3.5 1.3 -11 0 -11 0C-11 0 -3.5 -1.3 -2.4 -2.4C-1.3 -3.5 0 -11 0 -11Z" fill="#fff1c2"/>
+</g>
+</g>
+<g transform="translate(330 60)">
+<g class="ghi4-star-b__s" transform="scale(1 1)">
+<path d="M0 -8C0 -8 1 -2.6 1.8 -1.8C2.6 -1 8 0 8 0C8 0 2.6 1 1.8 1.8C1 2.6 0 8 0 8C0 8 -1 2.6 -1.8 1.8C-2.6 1 -8 0 -8 0C-8 0 -2.6 -1 -1.8 -1.8C-1 -2.6 0 -8 0 -8Z" fill="#fff1c2"/>
+</g>
+</g>
+<g transform="translate(560 110)">
+<g class="ghi4-star-c__s" transform="scale(0.3433 0.3433)">
+<path d="M0 -10C0 -10 1.2 -3.2 2.2 -2.2C3.2 -1.2 10 0 10 0C10 0 3.2 1.2 2.2 2.2C1.2 3.2 0 10 0 10C0 10 -1.2 3.2 -2.2 2.2C-3.2 1.2 -10 0 -10 0C-10 0 -3.2 -1.2 -2.2 -2.2C-1.2 -3.2 0 -10 0 -10Z" fill="#fff1c2"/>
+</g>
+</g>
+<g transform="translate(700 50)">
+<g class="ghi4-star-d__s" transform="scale(1 1)">
+<path d="M0 -7C0 -7 0.8 -2.2 1.5 -1.5C2.2 -0.8 7 0 7 0C7 0 2.2 0.8 1.5 1.5C0.8 2.2 0 7 0 7C0 7 -0.8 2.2 -1.5 1.5C-2.2 0.8 -7 0 -7 0C-7 0 -2.2 -0.8 -1.5 -1.5C-0.8 -2.2 0 -7 0 -7Z" fill="#fff1c2"/>
+</g>
+</g>
+<g transform="translate(1000 190)">
+<g class="ghi4-star-e__s" transform="scale(1 1)">
+<path d="M0 -9C0 -9 1.1 -2.9 2 -2C2.9 -1.1 9 0 9 0C9 0 2.9 1.1 2 2C1.1 2.9 0 9 0 9C0 9 -1.1 2.9 -2 2C-2.9 1.1 -9 0 -9 0C-9 0 -2.9 -1.1 -2 -2C-1.1 -2.9 0 -9 0 -9Z" fill="#fff1c2"/>
+</g>
+</g>
+<g transform="translate(220 190)">
+<g class="ghi4-star-f__s" transform="scale(1 1)">
+<path d="M0 -6C0 -6 0.7 -1.9 1.3 -1.3C1.9 -0.7 6 0 6 0C6 0 1.9 0.7 1.3 1.3C0.7 1.9 0 6 0 6C0 6 -0.7 1.9 -1.3 1.3C-1.9 0.7 -6 0 -6 0C-6 0 -1.9 -0.7 -1.3 -1.3C-0.7 -1.9 0 -6 0 -6Z" fill="#fff1c2"/>
+</g>
+</g>
+<path d="M872 60C876.4 56 902.8 71.6 912 86C921.2 100.4 923.6 116 918 132C912.4 148 899.2 160 884 166C868.8 172 843.6 166.8 842 162C840.4 157.2 866.4 153.2 876 142C885.6 130.8 890.8 122.4 890 106C889.2 89.6 867.6 64 872 60Z" fill="#fff1c2"/>
+<g class="ghi4-cloud-a__t" transform="translate(45.27 0)">
+<path d="M90 300C86 294.8 126 286 160 284C194 282 220 290.8 260 290C300 289.2 328 278.8 360 280C392 281.2 426 290.4 420 296C414 301.6 378 305.2 330 308C282 310.8 228 311.6 180 310C132 308.4 94 305.2 90 300Z" fill="#63559a" opacity="0.55"/>
+</g>
+<g class="ghi4-cloud-b__t" transform="translate(-32.57 0)">
+<path d="M610 236C608 231.2 652 223.6 690 222C728 220.4 758 229.2 800 228C842 226.8 868 215.2 900 216C932 216.8 968 226.4 960 232C952 237.6 912 241.2 860 244C808 246.8 750 247.6 700 246C650 244.4 612 240.8 610 236Z" fill="#ff6fa8" opacity="0.35"/>
+</g>
+<path d="M-20 600C-20 600 -20 390 -20 390C-20 390 25 390 25 390C25 390 25 330 25 330C25 330 92.5 330 92.5 330C92.5 330 92.5 360 92.5 360C92.5 360 130 360 130 360C130 360 130 600 130 600C130 600 -20 600 -20 600Z" fill="#4d3f7d"/>
+<path d="M150 600C150 600 150 350 150 350C150 350 189 350 189 350C189 350 189 270 189 270C189 270 247.5 270 247.5 270C247.5 270 247.5 310 247.5 310C247.5 310 280 310 280 310C280 310 280 600 280 600C280 600 150 600 150 600Z" fill="#4d3f7d"/>
+<path d="M300 600C300 600 300 400 300 400C300 400 351 400 351 400C351 400 351 360 351 360C351 360 427.5 360 427.5 360C427.5 360 427.5 380 427.5 380C427.5 380 470 380 470 380C470 380 470 600 470 600C470 600 300 600 300 600Z" fill="#4d3f7d"/>
+<path d="M520 600C520 600 520 340 520 340C520 340 556 340 556 340C556 340 556 250 556 250C556 250 610 250 610 250C610 250 610 295 610 295C610 295 640 295 640 295C640 295 640 600 640 600C640 600 520 600 520 600Z" fill="#4d3f7d"/>
+<path d="M700 600C700 600 700 390 700 390C700 390 748 390 748 390C748 390 748 340 748 340C748 340 820 340 820 340C820 340 820 365 820 365C820 365 860 365 860 365C860 365 860 600 860 600C860 600 700 600 700 600Z" fill="#4d3f7d"/>
+<path d="M900 600C900 600 900 360 900 360C900 360 960 360 960 360C960 360 960 290 960 290C960 290 1050 290 1050 290C1050 290 1050 325 1050 325C1050 325 1100 325 1100 325C1100 325 1100 600 1100 600C1100 600 900 600 900 600Z" fill="#4d3f7d"/>
+<path d="M34 250C34 250 222 250 222 250C225.3 250 228 252.7 228 256C228 256 228 602 228 602C228 605.3 225.3 608 222 608C222 608 34 608 34 608C30.7 608 28 605.3 28 602C28 602 28 256 28 256C28 252.7 30.7 250 34 250Z" fill="#3a3066"/>
+<path d="M188 252C188 252 220 251.4 224 252C228 252.6 227.6 222.4 228 258C228.4 293.6 228 608 228 608C228 608 176 608 176 608C176 608 182.8 460.6 184 425C185.2 389.4 188 252 188 252Z" fill="#17132e" opacity="0.22"/>
+<path d="M27 240C27 240 229 240 229 240C231.8 240 234 242.2 234 245C234 245 234 253 234 253C234 255.8 231.8 258 229 258C229 258 27 258 27 258C24.2 258 22 255.8 22 253C22 253 22 245 22 245C22 242.2 24.2 240 27 240Z" fill="#262048"/>
+<path d="M57.5 292C57.5 292 81.5 292 81.5 292C84.3 292 86.5 294.2 86.5 297C86.5 297 86.5 331 86.5 331C86.5 333.8 84.3 336 81.5 336C81.5 336 57.5 336 57.5 336C54.7 336 52.5 333.8 52.5 331C52.5 331 52.5 297 52.5 297C52.5 294.2 54.7 292 57.5 292Z" fill="#63559a"/>
+<path d="M116 292C116 292 140 292 140 292C142.8 292 145 294.2 145 297C145 297 145 331 145 331C145 333.8 142.8 336 140 336C140 336 116 336 116 336C113.2 336 111 333.8 111 331C111 331 111 297 111 297C111 294.2 113.2 292 116 292Z" fill="#63559a"/>
+<path class="ghi4-b1-w02__sh" d="M174.5 292C174.5 292 198.5 292 198.5 292C201.3 292 203.5 294.2 203.5 297C203.5 297 203.5 331 203.5 331C203.5 333.8 201.3 336 198.5 336C198.5 336 174.5 336 174.5 336C171.7 336 169.5 333.8 169.5 331C169.5 331 169.5 297 169.5 297C169.5 294.2 171.7 292 174.5 292Z" fill="#ffd77a"/>
+<path d="M57.5 366C57.5 366 81.5 366 81.5 366C84.3 366 86.5 368.2 86.5 371C86.5 371 86.5 405 86.5 405C86.5 407.8 84.3 410 81.5 410C81.5 410 57.5 410 57.5 410C54.7 410 52.5 407.8 52.5 405C52.5 405 52.5 371 52.5 371C52.5 368.2 54.7 366 57.5 366Z" fill="#63559a"/>
+<path d="M116 366C116 366 140 366 140 366C142.8 366 145 368.2 145 371C145 371 145 405 145 405C145 407.8 142.8 410 140 410C140 410 116 410 116 410C113.2 410 111 407.8 111 405C111 405 111 371 111 371C111 368.2 113.2 366 116 366Z" fill="#ffd77a"/>
+<path class="ghi4-b1-w12__sh" d="M174.5 366C174.5 366 198.5 366 198.5 366C201.3 366 203.5 368.2 203.5 371C203.5 371 203.5 405 203.5 405C203.5 407.8 201.3 410 198.5 410C198.5 410 174.5 410 174.5 410C171.7 410 169.5 407.8 169.5 405C169.5 405 169.5 371 169.5 371C169.5 368.2 171.7 366 174.5 366Z" fill="#ffb35c"/>
+<path d="M57.5 440C57.5 440 81.5 440 81.5 440C84.3 440 86.5 442.2 86.5 445C86.5 445 86.5 479 86.5 479C86.5 481.8 84.3 484 81.5 484C81.5 484 57.5 484 57.5 484C54.7 484 52.5 481.8 52.5 479C52.5 479 52.5 445 52.5 445C52.5 442.2 54.7 440 57.5 440Z" fill="#ffd77a"/>
+<path d="M116 440C116 440 140 440 140 440C142.8 440 145 442.2 145 445C145 445 145 479 145 479C145 481.8 142.8 484 140 484C140 484 116 484 116 484C113.2 484 111 481.8 111 479C111 479 111 445 111 445C111 442.2 113.2 440 116 440Z" fill="#63559a"/>
+<path class="ghi4-b1-w22__sh" d="M174.5 440C174.5 440 198.5 440 198.5 440C201.3 440 203.5 442.2 203.5 445C203.5 445 203.5 479 203.5 479C203.5 481.8 201.3 484 198.5 484C198.5 484 174.5 484 174.5 484C171.7 484 169.5 481.8 169.5 479C169.5 479 169.5 445 169.5 445C169.5 442.2 171.7 440 174.5 440Z" fill="#63559a"/>
+<path d="M114 532C114 532 146 532 146 532C149.3 532 152 534.7 152 538C152 538 152 602 152 602C152 605.3 149.3 608 146 608C146 608 114 608 114 608C110.7 608 108 605.3 108 602C108 602 108 538 108 538C108 534.7 110.7 532 114 532Z" fill="#262048"/>
+<path d="M80 188C80 188 130 188 130 188C135.5 188 140 192.5 140 198C140 198 140 224 140 224C140 229.5 135.5 234 130 234C130 234 80 234 80 234C74.5 234 70 229.5 70 224C70 224 70 198 70 198C70 192.5 74.5 188 80 188Z" fill="#262048"/>
+<path d="M80 234C80 234 80 242 80 242M105 234C105 234 105 242 105 242M130 234C130 234 130 242 130 242" fill="none" stroke="#17132e" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4"/>
+<path d="M66 190C54 187.2 76.2 180 84 176C91.8 172 96.6 170 105 170C113.4 170 118.2 172 126 176C133.8 180 156 187.2 144 190C132 192.8 78 192.8 66 190Z" fill="#17132e"/>
+<path d="M246 330C246 330 394 330 394 330C397.3 330 400 332.7 400 336C400 336 400 602 400 602C400 605.3 397.3 608 394 608C394 608 246 608 246 608C242.7 608 240 605.3 240 602C240 602 240 336 240 336C240 332.7 242.7 330 246 330Z" fill="#46356f"/>
+<path d="M368 332C368 332 392.8 331.4 396 332C399.2 332.6 399.6 310.4 400 338C400.4 365.6 400 608 400 608C400 608 358.4 608 358.4 608C358.4 608 363.8 492.6 364.8 465C365.8 437.4 368 332 368 332Z" fill="#17132e" opacity="0.22"/>
+<path d="M239 320C239 320 401 320 401 320C403.8 320 406 322.2 406 325C406 325 406 333 406 333C406 335.8 403.8 338 401 338C401 338 239 338 239 338C236.2 338 234 335.8 234 333C234 333 234 325 234 325C234 322.2 236.2 320 239 320Z" fill="#262048"/>
+<path d="M275.7 372C275.7 372 299.7 372 299.7 372C302.4 372 304.7 374.2 304.7 377C304.7 377 304.7 411 304.7 411C304.7 413.8 302.4 416 299.7 416C299.7 416 275.7 416 275.7 416C272.9 416 270.7 413.8 270.7 411C270.7 411 270.7 377 270.7 377C270.7 374.2 272.9 372 275.7 372Z" fill="#63559a"/>
+<path class="ghi4-b2-w01__sh" d="M340.3 372C340.3 372 364.3 372 364.3 372C367.1 372 369.3 374.2 369.3 377C369.3 377 369.3 411 369.3 411C369.3 413.8 367.1 416 364.3 416C364.3 416 340.3 416 340.3 416C337.6 416 335.3 413.8 335.3 411C335.3 411 335.3 377 335.3 377C335.3 374.2 337.6 372 340.3 372Z" fill="#ffb35c"/>
+<path d="M275.7 446C275.7 446 299.7 446 299.7 446C302.4 446 304.7 448.2 304.7 451C304.7 451 304.7 485 304.7 485C304.7 487.8 302.4 490 299.7 490C299.7 490 275.7 490 275.7 490C272.9 490 270.7 487.8 270.7 485C270.7 485 270.7 451 270.7 451C270.7 448.2 272.9 446 275.7 446Z" fill="#63559a"/>
+<path d="M340.3 446C340.3 446 364.3 446 364.3 446C367.1 446 369.3 448.2 369.3 451C369.3 451 369.3 485 369.3 485C369.3 487.8 367.1 490 364.3 490C364.3 490 340.3 490 340.3 490C337.6 490 335.3 487.8 335.3 485C335.3 485 335.3 451 335.3 451C335.3 448.2 337.6 446 340.3 446Z" fill="#63559a"/>
+<path class="ghi4-b2-shop__sh" d="M264 520C264 520 376 520 376 520C379.3 520 382 522.7 382 526C382 526 382 584 382 584C382 587.3 379.3 590 376 590C376 590 264 590 264 590C260.7 590 258 587.3 258 584C258 584 258 526 258 526C258 522.7 260.7 520 264 520Z" fill="#ffb35c"/>
+<path d="M250 488C250 488 390 488 390 488C390 488 401.2 505.2 398 512C394.8 518.8 383.6 522 374 522C364.4 522 359.6 512 350 512C340.4 512 335.6 522 326 522C316.4 522 311.6 512 302 512C292.4 512 287.6 522 278 522C268.4 522 261.2 514 254 512C246.8 510 242.8 516.8 242 512C241.2 507.2 250 488 250 488Z" fill="#e2556b"/>
+<path d="M354 286C354 286 372 286 372 286C374.2 286 376 287.8 376 290C376 290 376 322 376 322C376 324.2 374.2 326 372 326C372 326 354 326 354 326C351.8 326 350 324.2 350 322C350 322 350 290 350 290C350 287.8 351.8 286 354 286Z" fill="#262048"/>
+<path d="M416 180C416 180 644 180 644 180C647.3 180 650 182.7 650 186C650 186 650 602 650 602C650 605.3 647.3 608 644 608C644 608 416 608 416 608C412.7 608 410 605.3 410 602C410 602 410 186 410 186C410 182.7 412.7 180 416 180Z" fill="#302957"/>
+<path d="M602 182C602 182 641.2 181.4 646 182C650.8 182.6 649.6 145.4 650 188C650.4 230.6 650 608 650 608C650 608 587.6 608 587.6 608C587.6 608 595.8 432.6 597.2 390C598.6 347.4 602 182 602 182Z" fill="#17132e" opacity="0.22"/>
+<path d="M409 170C409 170 651 170 651 170C653.8 170 656 172.2 656 175C656 175 656 183 656 183C656 185.8 653.8 188 651 188C651 188 409 188 409 188C406.2 188 404 185.8 404 183C404 183 404 175 404 175C404 172.2 406.2 170 409 170Z" fill="#262048"/>
+<path class="ghi4-b3-w00__sh" d="M449.5 222C449.5 222 473.5 222 473.5 222C476.3 222 478.5 224.2 478.5 227C478.5 227 478.5 261 478.5 261C478.5 263.8 476.3 266 473.5 266C473.5 266 449.5 266 449.5 266C446.7 266 444.5 263.8 444.5 261C444.5 261 444.5 227 444.5 227C444.5 224.2 446.7 222 449.5 222Z" fill="#ffd77a"/>
+<path d="M518 222C518 222 542 222 542 222C544.8 222 547 224.2 547 227C547 227 547 261 547 261C547 263.8 544.8 266 542 266C542 266 518 266 518 266C515.2 266 513 263.8 513 261C513 261 513 227 513 227C513 224.2 515.2 222 518 222Z" fill="#63559a"/>
+<path d="M586.5 222C586.5 222 610.5 222 610.5 222C613.3 222 615.5 224.2 615.5 227C615.5 227 615.5 261 615.5 261C615.5 263.8 613.3 266 610.5 266C610.5 266 586.5 266 586.5 266C583.7 266 581.5 263.8 581.5 261C581.5 261 581.5 227 581.5 227C581.5 224.2 583.7 222 586.5 222Z" fill="#ffd77a"/>
+<path class="ghi4-b3-w10__sh" d="M449.5 296C449.5 296 473.5 296 473.5 296C476.3 296 478.5 298.2 478.5 301C478.5 301 478.5 335 478.5 335C478.5 337.8 476.3 340 473.5 340C473.5 340 449.5 340 449.5 340C446.7 340 444.5 337.8 444.5 335C444.5 335 444.5 301 444.5 301C444.5 298.2 446.7 296 449.5 296Z" fill="#ffb35c"/>
+<path d="M518 296C518 296 542 296 542 296C544.8 296 547 298.2 547 301C547 301 547 335 547 335C547 337.8 544.8 340 542 340C542 340 518 340 518 340C515.2 340 513 337.8 513 335C513 335 513 301 513 301C513 298.2 515.2 296 518 296Z" fill="#ffd77a"/>
+<path d="M586.5 296C586.5 296 610.5 296 610.5 296C613.3 296 615.5 298.2 615.5 301C615.5 301 615.5 335 615.5 335C615.5 337.8 613.3 340 610.5 340C610.5 340 586.5 340 586.5 340C583.7 340 581.5 337.8 581.5 335C581.5 335 581.5 301 581.5 301C581.5 298.2 583.7 296 586.5 296Z" fill="#63559a"/>
+<path class="ghi4-b3-w20__sh" d="M449.5 370C449.5 370 473.5 370 473.5 370C476.3 370 478.5 372.2 478.5 375C478.5 375 478.5 409 478.5 409C478.5 411.8 476.3 414 473.5 414C473.5 414 449.5 414 449.5 414C446.7 414 444.5 411.8 444.5 409C444.5 409 444.5 375 444.5 375C444.5 372.2 446.7 370 449.5 370Z" fill="#63559a"/>
+<path d="M518 370C518 370 542 370 542 370C544.8 370 547 372.2 547 375C547 375 547 409 547 409C547 411.8 544.8 414 542 414C542 414 518 414 518 414C515.2 414 513 411.8 513 409C513 409 513 375 513 375C513 372.2 515.2 370 518 370Z" fill="#63559a"/>
+<path d="M586.5 370C586.5 370 610.5 370 610.5 370C613.3 370 615.5 372.2 615.5 375C615.5 375 615.5 409 615.5 409C615.5 411.8 613.3 414 610.5 414C610.5 414 586.5 414 586.5 414C583.7 414 581.5 411.8 581.5 409C581.5 409 581.5 375 581.5 375C581.5 372.2 583.7 370 586.5 370Z" fill="#ffd77a"/>
+<path class="ghi4-b3-w30__sh" d="M449.5 444C449.5 444 473.5 444 473.5 444C476.3 444 478.5 446.2 478.5 449C478.5 449 478.5 483 478.5 483C478.5 485.8 476.3 488 473.5 488C473.5 488 449.5 488 449.5 488C446.7 488 444.5 485.8 444.5 483C444.5 483 444.5 449 444.5 449C444.5 446.2 446.7 444 449.5 444Z" fill="#eca764"/>
+<path d="M518 444C518 444 542 444 542 444C544.8 444 547 446.2 547 449C547 449 547 483 547 483C547 485.8 544.8 488 542 488C542 488 518 488 518 488C515.2 488 513 485.8 513 483C513 483 513 449 513 449C513 446.2 515.2 444 518 444Z" fill="#ffd77a"/>
+<path d="M586.5 444C586.5 444 610.5 444 610.5 444C613.3 444 615.5 446.2 615.5 449C615.5 449 615.5 483 615.5 483C615.5 485.8 613.3 488 610.5 488C610.5 488 586.5 488 586.5 488C583.7 488 581.5 485.8 581.5 483C581.5 483 581.5 449 581.5 449C581.5 446.2 583.7 444 586.5 444Z" fill="#63559a"/>
+<path d="M512 528C512 528 548 528 548 528C551.3 528 554 530.7 554 534C554 534 554 602 554 602C554 605.3 551.3 608 548 608C548 608 512 608 512 608C508.7 608 506 605.3 506 602C506 602 506 534 506 534C506 530.7 508.7 528 512 528Z" fill="#17132e"/>
+<path d="M530 170C530 170 530 130 530 130C530 130 530 92 530 92M516 124C516 124 530 124 530 124C530 124 544 124 544 124" fill="none" stroke="#17132e" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4"/>
+<path class="ghi4-beacon__sh" d="M530 81C533.9 81 537 84.1 537 88C537 91.9 533.9 95 530 95C526.1 95 523 91.9 523 88C523 84.1 526.1 81 530 81Z" fill="#e2556b" opacity="1"/>
+<path d="M666 300C666 300 814 300 814 300C817.3 300 820 302.7 820 306C820 306 820 602 820 602C820 605.3 817.3 608 814 608C814 608 666 608 666 608C662.7 608 660 605.3 660 602C660 602 660 306 660 306C660 302.7 662.7 300 666 300Z" fill="#3a3066"/>
+<path d="M788 302C788 302 812.8 301.4 816 302C819.2 302.6 819.6 277.4 820 308C820.4 338.6 820 608 820 608C820 608 778.4 608 778.4 608C778.4 608 783.8 480.6 784.8 450C785.8 419.4 788 302 788 302Z" fill="#17132e" opacity="0.22"/>
+<path d="M659 290C659 290 821 290 821 290C823.8 290 826 292.2 826 295C826 295 826 303 826 303C826 305.8 823.8 308 821 308C821 308 659 308 659 308C656.2 308 654 305.8 654 303C654 303 654 295 654 295C654 292.2 656.2 290 659 290Z" fill="#262048"/>
+<path d="M695.7 342C695.7 342 719.7 342 719.7 342C722.4 342 724.7 344.2 724.7 347C724.7 347 724.7 381 724.7 381C724.7 383.8 722.4 386 719.7 386C719.7 386 695.7 386 695.7 386C692.9 386 690.7 383.8 690.7 381C690.7 381 690.7 347 690.7 347C690.7 344.2 692.9 342 695.7 342Z" fill="#63559a"/>
+<path d="M760.3 342C760.3 342 784.3 342 784.3 342C787.1 342 789.3 344.2 789.3 347C789.3 347 789.3 381 789.3 381C789.3 383.8 787.1 386 784.3 386C784.3 386 760.3 386 760.3 386C757.6 386 755.3 383.8 755.3 381C755.3 381 755.3 347 755.3 347C755.3 344.2 757.6 342 760.3 342Z" fill="#63559a"/>
+<path class="ghi4-b4-w10__sh" d="M695.7 416C695.7 416 719.7 416 719.7 416C722.4 416 724.7 418.2 724.7 421C724.7 421 724.7 455 724.7 455C724.7 457.8 722.4 460 719.7 460C719.7 460 695.7 460 695.7 460C692.9 460 690.7 457.8 690.7 455C690.7 455 690.7 421 690.7 421C690.7 418.2 692.9 416 695.7 416Z" fill="#f8d17b"/>
+<path d="M760.3 416C760.3 416 784.3 416 784.3 416C787.1 416 789.3 418.2 789.3 421C789.3 421 789.3 455 789.3 455C789.3 457.8 787.1 460 784.3 460C784.3 460 760.3 460 760.3 460C757.6 460 755.3 457.8 755.3 455C755.3 455 755.3 421 755.3 421C755.3 418.2 757.6 416 760.3 416Z" fill="#63559a"/>
+<path d="M772 530C772 530 800 530 800 530C803.3 530 806 532.7 806 536C806 536 806 602 806 602C806 605.3 803.3 608 800 608C800 608 772 608 772 608C768.7 608 766 605.3 766 602C766 602 766 536 766 536C766 532.7 768.7 530 772 530Z" fill="#262048"/>
+<g class="ghi4-neon__o" opacity="1">
+<path d="M688 470C688 470 746 470 746 470C752.6 470 758 475.4 758 482C758 482 758 498 758 498C758 504.6 752.6 510 746 510C746 510 688 510 688 510C681.4 510 676 504.6 676 498C676 498 676 482 676 482C676 475.4 681.4 470 688 470Z" fill="#17132e"/>
+<path d="M690 498C694.2 492.6 695.6 480 704 480C712.4 480 709.6 498 718 498C726.4 498 723.6 480 732 480C740.4 480 741.8 492.6 746 498" fill="none" stroke="#ff6fa8" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4"/>
+</g>
+<path d="M682 528C682 528 746 528 746 528C749.3 528 752 530.7 752 534C752 534 752 582 752 582C752 585.3 749.3 588 746 588C746 588 682 588 682 588C678.7 588 676 585.3 676 582C676 582 676 534 676 534C676 530.7 678.7 528 682 528Z" fill="#ffd77a"/>
+<path d="M836 230C836 230 1046 230 1046 230C1049.3 230 1052 232.7 1052 236C1052 236 1052 602 1052 602C1052 605.3 1049.3 608 1046 608C1046 608 836 608 836 608C832.7 608 830 605.3 830 602C830 602 830 236 830 236C830 232.7 832.7 230 836 230Z" fill="#46356f"/>
+<path d="M1007.6 232C1007.6 232 1043.6 231.4 1048 232C1052.4 232.6 1051.6 200.4 1052 238C1052.4 275.6 1052 608 1052 608C1052 608 994.3 608 994.3 608C994.3 608 1001.8 452.6 1003.2 415C1004.5 377.4 1007.6 232 1007.6 232Z" fill="#17132e" opacity="0.22"/>
+<path d="M829 220C829 220 1053 220 1053 220C1055.8 220 1058 222.2 1058 225C1058 225 1058 233 1058 233C1058 235.8 1055.8 238 1053 238C1053 238 829 238 829 238C826.2 238 824 235.8 824 233C824 233 824 225 824 225C824 222.2 826.2 220 829 220Z" fill="#262048"/>
+<path d="M865 272C865 272 889 272 889 272C891.8 272 894 274.2 894 277C894 277 894 311 894 311C894 313.8 891.8 316 889 316C889 316 865 316 865 316C862.2 316 860 313.8 860 311C860 311 860 277 860 277C860 274.2 862.2 272 865 272Z" fill="#63559a"/>
+<path class="ghi4-b5-w01__sh" d="M929 272C929 272 953 272 953 272C955.8 272 958 274.2 958 277C958 277 958 311 958 311C958 313.8 955.8 316 953 316C953 316 929 316 929 316C926.2 316 924 313.8 924 311C924 311 924 277 924 277C924 274.2 926.2 272 929 272Z" fill="#ffb35c"/>
+<path d="M993 272C993 272 1017 272 1017 272C1019.8 272 1022 274.2 1022 277C1022 277 1022 311 1022 311C1022 313.8 1019.8 316 1017 316C1017 316 993 316 993 316C990.2 316 988 313.8 988 311C988 311 988 277 988 277C988 274.2 990.2 272 993 272Z" fill="#ffd77a"/>
+<path d="M865 346C865 346 889 346 889 346C891.8 346 894 348.2 894 351C894 351 894 385 894 385C894 387.8 891.8 390 889 390C889 390 865 390 865 390C862.2 390 860 387.8 860 385C860 385 860 351 860 351C860 348.2 862.2 346 865 346Z" fill="#63559a"/>
+<path class="ghi4-b5-w11__sh" d="M929 346C929 346 953 346 953 346C955.8 346 958 348.2 958 351C958 351 958 385 958 385C958 387.8 955.8 390 953 390C953 390 929 390 929 390C926.2 390 924 387.8 924 385C924 385 924 351 924 351C924 348.2 926.2 346 929 346Z" fill="#63559a"/>
+<path d="M993 346C993 346 1017 346 1017 346C1019.8 346 1022 348.2 1022 351C1022 351 1022 385 1022 385C1022 387.8 1019.8 390 1017 390C1017 390 993 390 993 390C990.2 390 988 387.8 988 385C988 385 988 351 988 351C988 348.2 990.2 346 993 346Z" fill="#63559a"/>
+<path d="M865 420C865 420 889 420 889 420C891.8 420 894 422.2 894 425C894 425 894 459 894 459C894 461.8 891.8 464 889 464C889 464 865 464 865 464C862.2 464 860 461.8 860 459C860 459 860 425 860 425C860 422.2 862.2 420 865 420Z" fill="#ffd77a"/>
+<path class="ghi4-b5-w21__sh" d="M929 420C929 420 953 420 953 420C955.8 420 958 422.2 958 425C958 425 958 459 958 459C958 461.8 955.8 464 953 464C953 464 929 464 929 464C926.2 464 924 461.8 924 459C924 459 924 425 924 425C924 422.2 926.2 420 929 420Z" fill="#ffb35c"/>
+<path d="M993 420C993 420 1017 420 1017 420C1019.8 420 1022 422.2 1022 425C1022 425 1022 459 1022 459C1022 461.8 1019.8 464 1017 464C1017 464 993 464 993 464C990.2 464 988 461.8 988 459C988 459 988 425 988 425C988 422.2 990.2 420 993 420Z" fill="#ffd77a"/>
+<path d="M924 530C924 530 958 530 958 530C961.3 530 964 532.7 964 536C964 536 964 602 964 602C964 605.3 961.3 608 958 608C958 608 924 608 924 608C920.7 608 918 605.3 918 602C918 602 918 536 918 536C918 532.7 920.7 530 924 530Z" fill="#17132e"/>
+<g transform="translate(962 222)">
+<g class="ghi4-cat-tail__r" transform="rotate(9)">
+<g transform="translate(-962 -222)">
+<path d="M962 222C970.4 220.2 978 225.6 990 216C1002 206.4 1002 204.4 1002 190C1002 175.6 993.6 174.6 990 168" fill="none" stroke="#17132e" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4"/>
+</g>
+</g>
+</g>
+<path d="M920 222C910 215.6 915.2 200.4 918 190C920.8 179.6 926.4 172.8 934 170C941.6 167.2 949.2 170 956 176C962.8 182 965.6 190.8 968 200C970.4 209.2 977.6 217.6 968 222C958.4 226.4 930 228.4 920 222Z" fill="#17132e"/>
+<g transform="translate(931 178)">
+<g class="ghi4-cat-head__r" transform="rotate(-13.208)">
+<g transform="translate(-931 -178)">
+<path d="M914 172C911.3 165.9 912.4 146.9 914 144C915.6 141.1 920.2 152.4 924 154C927.8 155.6 934.2 155.6 938 154C941.8 152.4 946.4 141.1 948 144C949.6 146.9 950.7 165.9 948 172C945.3 178.1 936.4 182 931 182C925.6 182 916.7 178.1 914 172Z" fill="#17132e"/>
+</g>
+</g>
+</g>
+<path d="M-12 600C-12 600 1092 600 1092 600C1096.4 600 1100 603.6 1100 608C1100 608 1100 638 1100 638C1100 642.4 1096.4 646 1092 646C1092 646 -12 646 -12 646C-16.4 646 -20 642.4 -20 638C-20 638 -20 608 -20 608C-20 603.6 -16.4 600 -12 600Z" fill="#3d3462"/>
+<path d="M-20 640C-20 640 428 638 540 638C652 638 1100 640 1100 640C1100 640 1100 830 1100 830C1100 830 652 830 540 830C428 830 -20 830 -20 830C-20 830 -20 640 -20 640Z" fill="#231d3d"/>
+<path d="M610 660C610 660 622 660 622 660C625.3 660 628 662.7 628 666C628 666 628 788 628 788C628 791.3 625.3 794 622 794C622 794 610 794 610 794C606.7 794 604 791.3 604 788C604 788 604 666 604 666C604 662.7 606.7 660 610 660Z" fill="#cfc6e8" opacity="0.85"/>
+<path d="M654 660C654 660 666 660 666 660C669.3 660 672 662.7 672 666C672 666 672 788 672 788C672 791.3 669.3 794 666 794C666 794 654 794 654 794C650.7 794 648 791.3 648 788C648 788 648 666 648 666C648 662.7 650.7 660 654 660Z" fill="#cfc6e8" opacity="0.85"/>
+<path d="M698 660C698 660 710 660 710 660C713.3 660 716 662.7 716 666C716 666 716 788 716 788C716 791.3 713.3 794 710 794C710 794 698 794 698 794C694.7 794 692 791.3 692 788C692 788 692 666 692 666C692 662.7 694.7 660 698 660Z" fill="#cfc6e8" opacity="0.85"/>
+<path d="M742 660C742 660 754 660 754 660C757.3 660 760 662.7 760 666C760 666 760 788 760 788C760 791.3 757.3 794 754 794C754 794 742 794 742 794C738.7 794 736 791.3 736 788C736 788 736 666 736 666C736 662.7 738.7 660 742 660Z" fill="#cfc6e8" opacity="0.85"/>
+<path d="M786 660C786 660 798 660 798 660C801.3 660 804 662.7 804 666C804 666 804 788 804 788C804 791.3 801.3 794 798 794C798 794 786 794 786 794C782.7 794 780 791.3 780 788C780 788 780 666 780 666C780 662.7 782.7 660 786 660Z" fill="#cfc6e8" opacity="0.85"/>
+<path d="M35 722C35 722 109 722 109 722C111.8 722 114 724.2 114 727C114 727 114 727 114 727C114 729.8 111.8 732 109 732C109 732 35 732 35 732C32.2 732 30 729.8 30 727C30 727 30 727 30 727C30 724.2 32.2 722 35 722Z" fill="#cfc6e8" opacity="0.6"/>
+<path d="M185 722C185 722 259 722 259 722C261.8 722 264 724.2 264 727C264 727 264 727 264 727C264 729.8 261.8 732 259 732C259 732 185 732 185 732C182.2 732 180 729.8 180 727C180 727 180 727 180 727C180 724.2 182.2 722 185 722Z" fill="#cfc6e8" opacity="0.6"/>
+<path d="M335 722C335 722 409 722 409 722C411.8 722 414 724.2 414 727C414 727 414 727 414 727C414 729.8 411.8 732 409 732C409 732 335 732 335 732C332.2 732 330 729.8 330 727C330 727 330 727 330 727C330 724.2 332.2 722 335 722Z" fill="#cfc6e8" opacity="0.6"/>
+<path d="M485 722C485 722 559 722 559 722C561.8 722 564 724.2 564 727C564 727 564 727 564 727C564 729.8 561.8 732 559 732C559 732 485 732 485 732C482.2 732 480 729.8 480 727C480 727 480 727 480 727C480 724.2 482.2 722 485 722Z" fill="#cfc6e8" opacity="0.6"/>
+<path class="ghi4-lamp-a-cone__sh" d="M150 410C150 410 182 410 182 410C182 410 271.9 601.9 270 630C268.1 658.1 191 644 166 644C141 644 63.9 658.1 62 630C60.1 601.9 150 410 150 410Z" fill="url(#ghi4-lamp-a-cone__grad)" opacity="1"/>
+<path d="M120 412C120 412 120 412 120 412C122.8 412 125 414.2 125 417C125 417 125 603 125 603C125 605.8 122.8 608 120 608C120 608 120 608 120 608C117.2 608 115 605.8 115 603C115 603 115 417 115 417C115 414.2 117.2 412 120 412Z" fill="#17132e"/>
+<path d="M120 418C122.5 412.5 119 402.5 130 396C141 389.5 155.5 393 164 392" fill="none" stroke="#17132e" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4"/>
+<path class="ghi4-lamp-a-head__sh" d="M148 392C156.8 390 175.2 390 184 392C192.8 394 192.4 398 192 402C191.6 406 190.4 410 182 412C173.6 414 158.4 414 150 412C141.6 410 140.4 406 140 402C139.6 398 139.2 394 148 392Z" fill="#fff1c2"/>
+<path class="ghi4-lamp-b-cone__sh" d="M500 410C500 410 532 410 532 410C532 410 621.9 601.9 620 630C618.1 658.1 541 644 516 644C491 644 413.9 658.1 412 630C410.1 601.9 500 410 500 410Z" fill="url(#ghi4-lamp-b-cone__grad)" opacity="1"/>
+<path d="M470 412C470 412 470 412 470 412C472.8 412 475 414.2 475 417C475 417 475 603 475 603C475 605.8 472.8 608 470 608C470 608 470 608 470 608C467.2 608 465 605.8 465 603C465 603 465 417 465 417C465 414.2 467.2 412 470 412Z" fill="#17132e"/>
+<path d="M470 418C472.5 412.5 469 402.5 480 396C491 389.5 505.5 393 514 392" fill="none" stroke="#17132e" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4"/>
+<path class="ghi4-lamp-b-head__sh" d="M498 392C506.8 390 525.2 390 534 392C542.8 394 542.4 398 542 402C541.6 406 540.4 410 532 412C523.6 414 508.4 414 500 412C491.6 410 490.4 406 490 402C489.6 398 489.2 394 498 392Z" fill="#fff1c2"/>
+<path class="ghi4-lamp-c-cone__sh" d="M920 410C920 410 952 410 952 410C952 410 1041.9 601.9 1040 630C1038.1 658.1 961 644 936 644C911 644 833.9 658.1 832 630C830.1 601.9 920 410 920 410Z" fill="url(#ghi4-lamp-c-cone__grad)" opacity="1"/>
+<path d="M890 412C890 412 890 412 890 412C892.8 412 895 414.2 895 417C895 417 895 603 895 603C895 605.8 892.8 608 890 608C890 608 890 608 890 608C887.2 608 885 605.8 885 603C885 603 885 417 885 417C885 414.2 887.2 412 890 412Z" fill="#17132e"/>
+<path d="M890 418C892.5 412.5 889 402.5 900 396C911 389.5 925.5 393 934 392" fill="none" stroke="#17132e" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4"/>
+<path class="ghi4-lamp-c-head__sh" d="M918 392C926.8 390 945.2 390 954 392C962.8 394 962.4 398 962 402C961.6 406 960.4 410 952 412C943.6 414 928.4 414 920 412C911.6 410 910.4 406 910 402C909.6 398 909.2 394 918 392Z" fill="#fff1c2"/>
+<path d="M320 520C320 520 324 520 324 520C326.8 520 329 522.2 329 525C329 525 329 601 329 601C329 603.8 326.8 606 324 606C324 606 320 606 320 606C317.2 606 315 603.8 315 601C315 601 315 525 315 525C315 522.2 317.2 520 320 520Z" fill="#17132e"/>
+<g transform="translate(322 540)">
+<g class="ghi4-tree-a-top__r" transform="rotate(-2.5)">
+<g transform="translate(-322 -540)">
+<path d="M322 430C338 430 350.8 428.8 362 440C373.2 451.2 378 468 378 486C378 504 373.2 518.4 362 530C350.8 541.6 338 544 322 544C306 544 293.2 541.6 282 530C270.8 518.4 266 504 266 486C266 468 270.8 451.2 282 440C293.2 428.8 306 430 322 430Z" fill="#2f6b5e"/>
+<path d="M352 446C357.2 446 374 469.6 376 486C378 502.4 372.8 516.8 362 528C351.2 539.2 336 541.2 322 542C308 542.8 290.8 537.2 292 532C293.2 526.8 316.4 525.2 328 516C339.6 506.8 345.2 500 350 486C354.8 472 346.8 446 352 446Z" fill="#23514a"/>
+</g>
+</g>
+</g>
+<path d="M798 520C798 520 802 520 802 520C804.8 520 807 522.2 807 525C807 525 807 601 807 601C807 603.8 804.8 606 802 606C802 606 798 606 798 606C795.2 606 793 603.8 793 601C793 601 793 525 793 525C793 522.2 795.2 520 798 520Z" fill="#17132e"/>
+<g transform="translate(800 540)">
+<g class="ghi4-tree-b-top__r" transform="rotate(2.5)">
+<g transform="translate(-800 -540)">
+<path d="M800 430C816 430 828.8 428.8 840 440C851.2 451.2 856 468 856 486C856 504 851.2 518.4 840 530C828.8 541.6 816 544 800 544C784 544 771.2 541.6 760 530C748.8 518.4 744 504 744 486C744 468 748.8 451.2 760 440C771.2 428.8 784 430 800 430Z" fill="#2f6b5e"/>
+<path d="M830 446C835.2 446 852 469.6 854 486C856 502.4 850.8 516.8 840 528C829.2 539.2 814 541.2 800 542C786 542.8 768.8 537.2 770 532C771.2 526.8 794.4 525.2 806 516C817.6 506.8 823.2 500 828 486C832.8 472 824.8 446 830 446Z" fill="#23514a"/>
+</g>
+</g>
+</g>
+<path d="M401 566C401 566 487 566 487 566C489.8 566 492 568.2 492 571C492 571 492 573 492 573C492 575.8 489.8 578 487 578C487 578 401 578 401 578C398.2 578 396 575.8 396 573C396 573 396 571 396 571C396 568.2 398.2 566 401 566Z" fill="#262048"/>
+<path d="M405 540C405 540 483 540 483 540C485.8 540 488 542.2 488 545C488 545 488 549 488 549C488 551.8 485.8 554 483 554C483 554 405 554 405 554C402.2 554 400 551.8 400 549C400 549 400 545 400 545C400 542.2 402.2 540 405 540Z" fill="#262048"/>
+<path d="M408 578C408 578 408 604 408 604M444 578C444 578 444 604 444 604M480 578C480 578 480 604 480 604" fill="none" stroke="#17132e" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4"/>
+<path d="M1015 566C1015 566 1025 566 1025 566C1028.9 566 1032 569.1 1032 573C1032 573 1032 599 1032 599C1032 602.9 1028.9 606 1025 606C1025 606 1015 606 1015 606C1011.1 606 1008 602.9 1008 599C1008 599 1008 573 1008 573C1008 569.1 1011.1 566 1015 566Z" fill="#e2556b"/>
+<path d="M1004 568C998.8 565.6 1006.8 559.6 1010 556C1013.2 552.4 1016 550 1020 550C1024 550 1026.8 552.4 1030 556C1033.2 559.6 1041.2 565.6 1036 568C1030.8 570.4 1009.2 570.4 1004 568Z" fill="#b03a52"/>
+<path d="M1005 578C1005 578 1035 578 1035 578C1037.8 578 1040 580.2 1040 583C1040 583 1040 583 1040 583C1040 585.8 1037.8 588 1035 588C1035 588 1005 588 1005 588C1002.2 588 1000 585.8 1000 583C1000 583 1000 583 1000 583C1000 580.2 1002.2 578 1005 578Z" fill="#b03a52"/>
+<path d="M636 470C636 470 636 470 636 470C638.8 470 641 472.2 641 475C641 475 641 601 641 601C641 603.8 638.8 606 636 606C636 606 636 606 636 606C633.2 606 631 603.8 631 601C631 601 631 475 631 475C631 472.2 633.2 470 636 470Z" fill="#17132e"/>
+<path d="M630 396C630 396 642 396 642 396C647.5 396 652 400.5 652 406C652 406 652 470 652 470C652 475.5 647.5 480 642 480C642 480 630 480 630 480C624.5 480 620 475.5 620 470C620 470 620 406 620 406C620 400.5 624.5 396 630 396Z" fill="#17132e"/>
+<path class="ghi4-signal-red__sh" d="M636 405C641 405 645 409 645 414C645 419 641 423 636 423C631 423 627 419 627 414C627 409 631 405 636 405Z" fill="#262048"/>
+<path class="ghi4-signal-amber__sh" d="M636 429C641 429 645 433 645 438C645 443 641 447 636 447C631 447 627 443 627 438C627 433 631 429 636 429Z" fill="#262048"/>
+<path class="ghi4-signal-green__sh" d="M636 453C641 453 645 457 645 462C645 467 641 471 636 471C631 471 627 467 627 462C627 457 631 453 636 453Z" fill="#5fd38d"/>
+<g class="ghi4-car__tx" transform="translate(540 0)">
+<g class="ghi4-car__ty" transform="translate(0 772)">
+<path d="M118 -52C118 -52 302.2 -87.8 330 -84C357.8 -80.2 350 -29.6 350 -20C350 -10.4 357.8 -2.3 330 -4C302.2 -5.7 118 -34 118 -34C118 -34 118 -52 118 -52Z" fill="url(#ghi4-car-beam__grad)"/>
+<path d="M-126 -30C-125.6 -35.8 -129.2 -51.5 -122 -58C-114.8 -64.5 -97.5 -59.2 -86 -66C-74.5 -72.8 -78.5 -90.2 -58 -96C-37.5 -101.8 5.7 -103.4 28 -98C50.3 -92.6 50.9 -73.2 66 -66C81.1 -58.8 101.2 -62.3 112 -58C122.8 -53.7 123.8 -47.8 126 -42C128.2 -36.2 124 -26 124 -26C124 -26 -124 -26 -124 -26C-124 -26 -126.4 -24.2 -126 -30Z" fill="#e2556b"/>
+<path d="M-124 -44C-111.4 -45.8 -67.6 -38.6 -40 -38C-12.4 -37.4 35.1 -39.1 60 -40C84.9 -40.9 116.4 -46.1 126 -44C135.6 -41.9 124 -26 124 -26C124 -26 -124 -26 -124 -26C-124 -26 -136.6 -42.2 -124 -44Z" fill="#b03a52"/>
+<path d="M-50 -68C-50 -68 -43.5 -85.4 -38 -88C-32.5 -90.6 -11.2 -89.8 -4 -90C3.2 -90.2 15.8 -92.6 22 -90C28.2 -87.4 48 -68 48 -68C48 -68 11.8 -68 0 -68C-11.8 -68 -50 -68 -50 -68Z" fill="#cfc6e8"/>
+<path d="M108 -56C110.4 -58 116.4 -56.4 120 -54C123.6 -51.6 126.4 -46.8 126 -44C125.6 -41.2 121.6 -40 118 -40C114.4 -40 110 -40.8 108 -44C106 -47.2 105.6 -54 108 -56Z" fill="#fff1c2"/>
+<path d="M-124 -56C-124 -56 -122 -56 -122 -56C-119.8 -56 -118 -54.2 -118 -52C-118 -52 -118 -44 -118 -44C-118 -41.8 -119.8 -40 -122 -40C-122 -40 -124 -40 -124 -40C-126.2 -40 -128 -41.8 -128 -44C-128 -44 -128 -52 -128 -52C-128 -54.2 -126.2 -56 -124 -56Z" fill="#ffb35c"/>
+<g transform="translate(-72 -22)">
+<g class="ghi4-car-wheel-rear__r" transform="rotate(900)">
+<g transform="translate(72 22)">
+<path d="M-72 -44C-59.8 -44 -50 -34.2 -50 -22C-50 -9.8 -59.8 0 -72 0C-84.2 0 -94 -9.8 -94 -22C-94 -34.2 -84.2 -44 -72 -44Z" fill="#17132e"/>
+<path d="M-72 -32C-66.5 -32 -62 -27.5 -62 -22C-62 -16.5 -66.5 -12 -72 -12C-77.5 -12 -82 -16.5 -82 -22C-82 -27.5 -77.5 -32 -72 -32Z" fill="#cfc6e8"/>
+<path d="M-80 -22C-80 -22 -72 -22 -72 -22C-72 -22 -64 -22 -64 -22" fill="none" stroke="#17132e" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4"/>
+</g>
+</g>
+</g>
+<g transform="translate(72 -22)">
+<g class="ghi4-car-wheel-front__r" transform="rotate(900)">
+<g transform="translate(-72 22)">
+<path d="M72 -44C84.2 -44 94 -34.2 94 -22C94 -9.8 84.2 0 72 0C59.8 0 50 -9.8 50 -22C50 -34.2 59.8 -44 72 -44Z" fill="#17132e"/>
+<path d="M72 -32C77.5 -32 82 -27.5 82 -22C82 -16.5 77.5 -12 72 -12C66.5 -12 62 -16.5 62 -22C62 -27.5 66.5 -32 72 -32Z" fill="#cfc6e8"/>
+<path d="M64 -22C64 -22 72 -22 72 -22C72 -22 80 -22 80 -22" fill="none" stroke="#17132e" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4"/>
+</g>
+</g>
+</g>
+</g>
+</g>
+</svg>

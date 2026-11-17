@@ -1,0 +1,71 @@
+{
+  "gertie": 1,
+  "name": "hamburger-close",
+  "tier": "icon",
+  "canvas": { "w": 512, "h": 512 },
+  "fps": 30,
+  "duration": 3,
+  "loop": true,
+  "poster": 0.8,
+  "palette": { "ink": "#1f2937" },
+  "nodes": [
+    {
+      "id": "bar-top", "type": "rect", "w": 260, "h": 36, "radius": 18,
+      "x": 256, "y": 156, "fill": "$ink",
+      "animate": {
+        "y": [
+          [0, 156],
+          [0.8, 156, "smooth"],
+          { "t": 1.4, "v": 256, "ease": "easeOut", "overshoot": { "past": 0.15, "back": 0.05, "time": 0.3 } },
+          [2.2, 256, "smooth"],
+          [2.8, 156, "settle"],
+          [3.0, 156, "smooth"]
+        ],
+        "rotation": [
+          [0, 0],
+          [0.8, 0, "smooth"],
+          { "t": 1.4, "v": 45, "ease": "easeOut", "overshoot": { "past": 0.15, "back": 0.05, "time": 0.3 } },
+          [2.2, 45, "smooth"],
+          [2.8, 0, "settle"],
+          [3.0, 0, "smooth"]
+        ]
+      }
+    },
+    {
+      "id": "bar-mid", "type": "rect", "w": 260, "h": 36, "radius": 18,
+      "x": 256, "y": 256, "fill": "$ink",
+      "animate": {
+        "scale": [
+          [0, [1, 1]],
+          [0.8, [1, 1], "smooth"],
+          [1.2, [0.01, 1], "snap"],
+          [2.2, [0.01, 1], "smooth"],
+          [2.6, [1, 1], "settle"],
+          [3.0, [1, 1], "smooth"]
+        ]
+      }
+    },
+    {
+      "id": "bar-bottom", "type": "rect", "w": 260, "h": 36, "radius": 18,
+      "x": 256, "y": 356, "fill": "$ink",
+      "animate": {
+        "y": [
+          [0, 356],
+          [0.8, 356, "smooth"],
+          { "t": 1.4, "v": 256, "ease": "easeOut", "overshoot": { "past": 0.15, "back": 0.05, "time": 0.3 } },
+          [2.2, 256, "smooth"],
+          [2.8, 356, "settle"],
+          [3.0, 356, "smooth"]
+        ],
+        "rotation": [
+          [0, 0],
+          [0.8, 0, "smooth"],
+          { "t": 1.4, "v": -45, "ease": "easeOut", "overshoot": { "past": 0.15, "back": 0.05, "time": 0.3 } },
+          [2.2, -45, "smooth"],
+          [2.8, 0, "settle"],
+          [3.0, 0, "smooth"]
+        ]
+      }
+    }
+  ]
+}

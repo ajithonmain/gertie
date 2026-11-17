@@ -1,0 +1,29 @@
+{
+  "gertie": 1,
+  "name": "bouncing-dots",
+  "canvas": { "w": 512, "h": 512 },
+  "fps": 30,
+  "duration": 1.2,
+  "loop": true,
+  "palette": { "blue": "#3b82f6" },
+  "nodes": [
+    {
+      "id": "dot-1", "type": "ellipse", "r": 28, "x": 156, "y": 256, "fill": "$blue",
+      "animate": {
+        "y": [[0, 256], [0.3, 176, "easeOutQuad"], [0.6, 256, "easeInQuad"], [1.2, 256]]
+      }
+    },
+    {
+      "id": "dot-2", "type": "ellipse", "r": 28, "x": 256, "y": 256, "fill": "$blue",
+      "animate": {
+        "y": [[0, 256], [0.15, 256], [0.45, 176, "easeOutQuad"], [0.75, 256, "easeInQuad"], [1.2, 256]]
+      }
+    },
+    {
+      "id": "dot-3", "type": "ellipse", "r": 28, "x": 356, "y": 256, "fill": "$blue",
+      "animate": {
+        "y": [[0, 256], [0.3, 256], [0.6, 176, "easeOutQuad"], [0.9, 256, "easeInQuad"], [1.2, 256]]
+      }
+    }
+  ]
+}

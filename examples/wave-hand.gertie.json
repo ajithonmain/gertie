@@ -1,0 +1,20 @@
+{
+  "gertie": 1,
+  "name": "wave-hand",
+  "canvas": { "w": 192, "h": 224, "background": "#111827" },
+  "duration": 1.6,
+  "nodes": [
+    { "id": "sleeve", "type": "rect", "w": 60, "h": 46, "radius": 10, "x": 96, "y": 190, "fill": "#6366f1" },
+    {
+      "id": "hand", "type": "group", "x": 96, "y": 166, "pivot": [0, 0],
+      "animate": { "rotation": [[0, -14], [0.4, 18, "easeInOut"], [0.8, -14, "easeInOut"], [1.2, 18, "easeInOut"], [1.6, -14, "easeInOut"]] },
+      "children": [
+        { "id": "palm", "type": "ellipse", "rx": 30, "ry": 34, "y": -34, "fill": "#fcd34d" },
+        { "id": "thumb", "type": "ellipse", "rx": 9, "ry": 20, "x": -32, "y": -28, "rotation": -30, "fill": "#fcd34d" },
+        { "id": "finger-1", "type": "rect", "w": 12, "h": 34, "radius": 6, "x": -17, "y": -76, "fill": "#fcd34d" },
+        { "id": "finger-2", "type": "rect", "w": 12, "h": 38, "radius": 6, "x": -3, "y": -80, "fill": "#fcd34d" },
+        { "id": "finger-3", "type": "rect", "w": 12, "h": 34, "radius": 6, "x": 11, "y": -76, "fill": "#fcd34d" }
+      ]
+    }
+  ]
+}

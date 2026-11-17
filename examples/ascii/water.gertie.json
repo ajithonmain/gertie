@@ -1,0 +1,28 @@
+{
+  "gertie": 1,
+  "name": "water",
+  "canvas": { "w": 960, "h": 640, "background": "#05161c" },
+  "fps": 30,
+  "duration": 8,
+  "loop": true,
+  "palette": { "wave": "#2f8d93", "ring": "#7fd3d0" },
+  "nodes": [
+    { "id": "waves", "type": "group",
+      "animate": { "x": { "keys": [[0, 0], [4, -80, "easeInOutSine"]], "repeat": "pingpong" } },
+      "children": [
+        { "id": "wave-1", "type": "path", "d": "M-160 90 q40 -14 80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0", "stroke": { "color": "$wave", "width": 5 } },
+        { "id": "wave-2", "type": "path", "d": "M-120 210 q40 -14 80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0", "stroke": { "color": "$wave", "width": 4 } },
+        { "id": "wave-3", "type": "path", "d": "M-150 330 q40 -14 80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0", "stroke": { "color": "$wave", "width": 5 } },
+        { "id": "wave-4", "type": "path", "d": "M-100 450 q40 -14 80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0", "stroke": { "color": "$wave", "width": 4 } },
+        { "id": "wave-5", "type": "path", "d": "M-140 570 q40 -14 80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0", "stroke": { "color": "$wave", "width": 5 } }
+      ] },
+    { "id": "ring-1", "type": "ellipse", "rx": 150, "ry": 60, "x": 300, "y": 260, "stroke": { "color": "$ring", "width": 6 },
+      "animate": {
+        "scale": [[0, 0.1], [4, 1, "easeOutSine"], [4.03, 0.1, "hold"], [7.97, 1, "easeOutSine"], [8, 0.1, "hold"]],
+        "opacity": [[0, 1], [4, 0, "linear"], [4.03, 1, "hold"], [7.97, 0, "linear"], [8, 1, "hold"]] } },
+    { "id": "ring-2", "type": "ellipse", "rx": 130, "ry": 52, "x": 700, "y": 420, "stroke": { "color": "$ring", "width": 6 },
+      "animate": {
+        "scale": [[0, 0.55], [2, 1, "easeOutSine"], [2.03, 0.1, "hold"], [6, 1, "easeOutSine"], [6.03, 0.1, "hold"], [8, 0.55, "easeOutSine"]],
+        "opacity": [[0, 0.5], [2, 0, "linear"], [2.03, 1, "hold"], [6, 0, "linear"], [6.03, 1, "hold"], [8, 0.5, "linear"]] } }
+  ]
+}

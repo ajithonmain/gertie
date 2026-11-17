@@ -1,0 +1,63 @@
+{
+  "gertie": 1,
+  "name": "sitting-cat",
+  "canvas": { "w": 512, "h": 512, "background": "#e2e8f0" },
+  "duration": 4,
+  "loop": true,
+  "palette": {
+    "ink": "#1e293b",
+    "eye": "#facc15"
+  },
+  "nodes": [
+    {
+      "id": "ground-shadow", "type": "ellipse", "x": 256, "y": 440, "rx": 190, "ry": 12,
+      "fill": "#0f172a2e"
+    },
+    {
+      "id": "cat", "type": "group", "children": [
+        {
+          "id": "cat-tail", "type": "group", "x": 356, "y": 432, "pivot": [0, 0],
+          "motion": [ { "preset": "sway", "angle": 6, "duration": 2, "repeat": "loop" } ],
+          "children": [
+            {
+              "id": "cat-tail-shape", "type": "path", "fill": null,
+              "stroke": { "color": "$ink", "width": 22, "cap": "round", "join": "round" },
+              "d": "M 0 0 C 70 6 110 -30 112 -110 C 114 -160 96 -190 80 -214"
+            }
+          ]
+        },
+        {
+          "id": "cat-body", "type": "path", "fill": "$ink",
+          "d": "M 256 200 C 300 200 330 260 340 330 C 350 390 380 430 390 440 L 122 440 C 132 430 162 390 172 330 C 182 260 212 200 256 200 Z"
+        },
+        { "id": "cat-haunch-l", "type": "ellipse", "x": 180, "y": 380, "rx": 62, "ry": 60, "fill": "$ink" },
+        { "id": "cat-haunch-r", "type": "ellipse", "x": 332, "y": 380, "rx": 62, "ry": 60, "fill": "$ink" },
+        { "id": "cat-foreleg-l", "type": "rect", "x": 214, "y": 370, "w": 36, "h": 140, "radius": 18, "fill": "$ink" },
+        { "id": "cat-foreleg-r", "type": "rect", "x": 298, "y": 370, "w": 36, "h": 140, "radius": 18, "fill": "$ink" },
+        {
+          "id": "cat-ear-l", "type": "path", "fill": "$ink",
+          "d": "M 200 108 C 196 80 198 56 204 40 C 228 58 244 78 250 96 Z"
+        },
+        {
+          "id": "cat-ear-r", "type": "path", "fill": "$ink",
+          "d": "M 312 108 C 316 80 314 56 308 40 C 284 58 268 78 262 96 Z"
+        },
+        { "id": "cat-head", "type": "ellipse", "x": 256, "y": 150, "rx": 66, "ry": 58, "fill": "$ink" },
+        {
+          "id": "cat-eye-l", "type": "ellipse", "x": 234, "y": 152, "rx": 9, "ry": 11, "fill": "$eye",
+          "motion": [
+            { "preset": "blink", "at": 1.2 },
+            { "preset": "blink", "at": 3.1 }
+          ]
+        },
+        {
+          "id": "cat-eye-r", "type": "ellipse", "x": 278, "y": 152, "rx": 9, "ry": 11, "fill": "$eye",
+          "motion": [
+            { "preset": "blink", "at": 1.2 },
+            { "preset": "blink", "at": 3.1 }
+          ]
+        }
+      ]
+    }
+  ]
+}

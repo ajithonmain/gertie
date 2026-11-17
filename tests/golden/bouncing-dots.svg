@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+<style>
+@keyframes g1ah-dot-1__t{0%{transform:translate(156px,256px);animation-timing-function:cubic-bezier(0.5,1,0.89,1)}25%{transform:translate(156px,176px);animation-timing-function:cubic-bezier(0.11,0,0.5,0)}50%{transform:translate(156px,256px);animation-timing-function:cubic-bezier(0.65,0,0.35,1)}100%{transform:translate(156px,256px)}}
+@keyframes g1ah-dot-2__t{0%{transform:translate(256px,256px);animation-timing-function:cubic-bezier(0.65,0,0.35,1)}13.8888%{transform:translate(256px,256px);animation-timing-function:cubic-bezier(0.5,1,0.89,1)}38.8888%{transform:translate(256px,176px);animation-timing-function:cubic-bezier(0.11,0,0.5,0)}63.8888%{transform:translate(256px,256px);animation-timing-function:cubic-bezier(0.65,0,0.35,1)}100%{transform:translate(256px,256px)}}
+@keyframes g1ah-dot-3__t{0%{transform:translate(356px,256px);animation-timing-function:cubic-bezier(0.65,0,0.35,1)}25%{transform:translate(356px,256px);animation-timing-function:cubic-bezier(0.5,1,0.89,1)}50%{transform:translate(356px,176px);animation-timing-function:cubic-bezier(0.11,0,0.5,0)}75%{transform:translate(356px,256px);animation-timing-function:cubic-bezier(0.65,0,0.35,1)}100%{transform:translate(356px,256px)}}
+.g1ah-dot-1__t{animation:g1ah-dot-1__t 1.2s linear infinite both;transform-origin:0 0}
+.g1ah-dot-2__t{animation:g1ah-dot-2__t 1.2s linear infinite both;transform-origin:0 0}
+.g1ah-dot-3__t{animation:g1ah-dot-3__t 1.2s linear infinite both;transform-origin:0 0}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+<g class="g1ah-dot-1__t" transform="translate(156 256)">
+<ellipse rx="28" ry="28" fill="#3b82f6"/>
+</g>
+<g class="g1ah-dot-2__t" transform="translate(256 256)">
+<ellipse rx="28" ry="28" fill="#3b82f6"/>
+</g>
+<g class="g1ah-dot-3__t" transform="translate(356 256)">
+<ellipse rx="28" ry="28" fill="#3b82f6"/>
+</g>
+</svg>

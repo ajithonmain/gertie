@@ -1,0 +1,39 @@
+{
+  "gertie": 1,
+  "name": "broken",
+  "canvas": {
+    "w": 200,
+    "h": 200
+  },
+  "duration": 2,
+  "loop": false,
+  "nodes": [
+    {
+      "id": "g",
+      "type": "group",
+      "stagger": {
+        "each": 0.1
+      },
+      "motion": [
+        {
+          "preset": "fade-in"
+        }
+      ],
+      "children": [
+        {
+          "id": "c",
+          "type": "rect",
+          "w": 50,
+          "h": 50,
+          "x": 100,
+          "y": 100,
+          "fill": "#ffffff",
+          "stroke": {
+            "color": "#ff0000",
+            "width": 4
+          }
+        }
+      ]
+    }
+  ]
+}

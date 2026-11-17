@@ -1,0 +1,19 @@
+{
+  "gertie": 1,
+  "name": "typing-indicator",
+  "tier": "icon",
+  "canvas": { "w": 240, "h": 120 },
+  "fps": 30,
+  "duration": 1.2,
+  "loop": true,
+  "poster": 0.3,
+  "palette": { "dot": "#64748b" },
+  "nodes": [
+    { "id": "dot-1", "type": "ellipse", "r": 11, "x": 90, "y": 60, "fill": "$dot",
+      "motion": [ { "preset": "bounce", "height": 18, "duration": 1.2, "repeat": "loop", "phase": 0 } ] },
+    { "id": "dot-2", "type": "ellipse", "r": 11, "x": 120, "y": 60, "fill": "$dot",
+      "motion": [ { "preset": "bounce", "height": 18, "duration": 1.2, "repeat": "loop", "phase": 0.125 } ] },
+    { "id": "dot-3", "type": "ellipse", "r": 11, "x": 150, "y": 60, "fill": "$dot",
+      "motion": [ { "preset": "bounce", "height": 18, "duration": 1.2, "repeat": "loop", "phase": 0.25 } ] }
+  ]
+}

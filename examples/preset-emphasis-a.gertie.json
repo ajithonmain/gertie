@@ -1,0 +1,132 @@
+{
+  "gertie": 1,
+  "name": "preset-emphasis-a",
+  "canvas": {
+    "w": 576,
+    "h": 240,
+    "background": "#111827"
+  },
+  "duration": 2.4,
+  "nodes": [
+    {
+      "id": "pulse",
+      "type": "ellipse",
+      "r": 26,
+      "x": 48,
+      "y": 130,
+      "fill": "#6366f1",
+      "motion": [
+        {
+          "preset": "pulse",
+          "amount": 1.2,
+          "repeat": "loop",
+          "phase": 0.25
+        }
+      ]
+    },
+    {
+      "id": "breathe",
+      "type": "rect",
+      "w": 50,
+      "h": 56,
+      "radius": 14,
+      "x": 144,
+      "y": 130,
+      "fill": "#22c55e",
+      "motion": [
+        {
+          "preset": "breathe",
+          "duration": 2.4,
+          "amount": 0.06
+        }
+      ]
+    },
+    {
+      "id": "float",
+      "type": "ellipse",
+      "rx": 24,
+      "ry": 20,
+      "x": 240,
+      "y": 130,
+      "fill": "#f59e0b",
+      "motion": [
+        {
+          "preset": "float",
+          "distance": 18
+        }
+      ],
+      "animate": {
+        "x": [
+          [
+            0,
+            240
+          ],
+          [
+            1.2,
+            246,
+            "gentle"
+          ],
+          [
+            2.4,
+            240,
+            "smooth"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "wiggle",
+      "type": "rect",
+      "w": 44,
+      "h": 44,
+      "radius": 8,
+      "x": 336,
+      "y": 130,
+      "fill": "#ef4444",
+      "motion": [
+        {
+          "preset": "wiggle",
+          "angle": 14,
+          "repeat": "loop",
+          "phase": 0.4
+        }
+      ]
+    },
+    {
+      "id": "shake",
+      "type": "rect",
+      "w": 44,
+      "h": 44,
+      "radius": 8,
+      "x": 432,
+      "y": 130,
+      "fill": "#38bdf8",
+      "motion": [
+        {
+          "preset": "shake",
+          "duration": 0.6,
+          "distance": 10,
+          "repeat": "loop",
+          "phase": 0.6
+        }
+      ]
+    },
+    {
+      "id": "spin",
+      "type": "star",
+      "points": 5,
+      "r": 28,
+      "innerR": 13,
+      "x": 528,
+      "y": 130,
+      "fill": "#e879f9",
+      "motion": [
+        {
+          "preset": "spin",
+          "duration": 1.2,
+          "repeat": "loop"
+        }
+      ]
+    }
+  ]
+}

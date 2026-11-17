@@ -1,0 +1,41 @@
+name: ci
+on:
+  push:
+  pull_request:
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm run check:licences
+      - run: npm test
+      - run: npm run build:site
+      - run: npm run build
+      - name: Committed bundles match a fresh build
+        run: git diff --exit-code skills/gertie/scripts
+  browser:
+    runs-on: ubuntu-latest
+    needs: check
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      # The export tests need ffmpeg. HEVC with alpha needs macOS, so that case is skipped on Linux.
+      - run: sudo apt-get update && sudo apt-get install -y ffmpeg
+      # The runner has Google Chrome, which Gertie and the tests use by default.
+      - run: npm run test:browser
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: browser-test-results
+          path: test-results/

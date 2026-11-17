@@ -1,0 +1,59 @@
+{
+  "gertie": 1,
+  "name": "robot-idle",
+  "tier": "icon",
+  "canvas": { "w": 512, "h": 512 },
+  "fps": 30,
+  "duration": 6,
+  "loop": true,
+  "poster": 0,
+  "palette": {
+    "body": "#cbd5e1",
+    "shade": "#94a3b8",
+    "dark": "#1e293b",
+    "eye": "#38bdf8",
+    "accent": "#f97316"
+  },
+  "nodes": [
+    { "id": "shadow", "type": "ellipse", "rx": 96, "ry": 14, "x": 256, "y": 432, "fill": "#00000033" },
+    { "id": "robot", "type": "group", "x": 256, "y": 430,
+      "motion": [
+        { "preset": "rig-idle", "repeat": "loop" },
+        { "preset": "rig-blink", "seed": 4 },
+        { "preset": "float", "distance": 5, "duration": 2, "repeat": "loop" }
+      ],
+      "children": [
+        { "id": "robot-leg-l", "type": "rect", "x": -28, "y": -25, "w": 36, "h": 50, "radius": 10, "fill": "$shade" },
+        { "id": "robot-leg-r", "type": "rect", "x": 28, "y": -25, "w": 36, "h": 50, "radius": 10, "fill": "$shade" },
+        { "id": "robot-body", "type": "group", "pivot": [0, -50], "children": [
+          { "id": "robot-torso", "type": "rect", "x": 0, "y": -105, "w": 124, "h": 112, "radius": 26, "fill": "$body" },
+          { "id": "robot-torso-shade", "type": "path", "fill": "$shade",
+            "d": "M 24 -160 C 58 -150 62 -90 60 -50 L 62 -160 Z" },
+          { "id": "robot-panel", "type": "rect", "x": 0, "y": -110, "w": 64, "h": 40, "radius": 10, "fill": "$dark" },
+          { "id": "robot-light", "type": "ellipse", "x": 0, "y": -110, "r": 9, "fill": "$eye" },
+          { "id": "robot-arm-l", "type": "group", "pivot": [-62, -130], "children": [
+            { "id": "robot-arm-l-rect", "type": "rect", "x": -62, "y": -90, "w": 22, "h": 80, "radius": 11, "fill": "$body" }
+          ] },
+          { "id": "robot-arm-r", "type": "group", "pivot": [62, -130], "children": [
+            { "id": "robot-arm-r-rect", "type": "rect", "x": 62, "y": -90, "w": 22, "h": 80, "radius": 11, "fill": "$body" }
+          ] },
+          { "id": "robot-head", "type": "group", "pivot": [0, -160], "children": [
+            { "id": "robot-ear-l", "type": "ellipse", "x": -58, "y": -200, "rx": 8, "ry": 16, "fill": "$shade" },
+            { "id": "robot-ear-r", "type": "ellipse", "x": 58, "y": -200, "rx": 8, "ry": 16, "fill": "$shade" },
+            { "id": "robot-skull", "type": "rect", "x": 0, "y": -200, "w": 112, "h": 84, "radius": 24, "fill": "$body" },
+            { "id": "robot-screen", "type": "rect", "x": 0, "y": -198, "w": 84, "h": 52, "radius": 14, "fill": "$dark" },
+            { "id": "robot-eye-l", "type": "ellipse", "x": -20, "y": -200, "rx": 10, "ry": 13, "fill": "$eye" },
+            { "id": "robot-eye-r", "type": "ellipse", "x": 20, "y": -200, "rx": 10, "ry": 13, "fill": "$eye" },
+            { "id": "robot-mouth", "type": "rect", "x": 0, "y": -176, "w": 36, "h": 5, "radius": 2, "fill": "$eye" },
+            { "id": "robot-antenna", "type": "group", "pivot": [0, -242],
+              "motion": [ { "preset": "wiggle", "angle": 10, "duration": 1.2, "repeat": "loop" } ],
+              "children": [
+                { "id": "robot-antenna-stem", "type": "rect", "x": 0, "y": -272, "w": 6, "h": 60, "fill": "$dark" },
+                { "id": "robot-antenna-ball", "type": "ellipse", "x": 0, "y": -306, "r": 12, "fill": "$accent" }
+              ] }
+          ] }
+        ] }
+      ]
+    }
+  ]
+}

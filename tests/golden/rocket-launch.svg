@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 320" width="256" height="320">
+<style>
+@keyframes g122-rocket__t{0%{transform:translate(128px,250px);animation-timing-function:cubic-bezier(0.65,0,0.35,1)}25%{transform:translate(128px,250px);animation-timing-function:cubic-bezier(0.11,0,0.5,0)}100%{transform:translate(128px,-60px)}}
+@keyframes g122-flame__v{0%{opacity:0;animation-timing-function:step-end}16.6656%{opacity:1;animation-timing-function:step-end}100%{opacity:1}}
+@keyframes g122-flame-outer__s{0%{transform:scale(1,0.6);animation-timing-function:step-end}16.6656%{transform:scale(1,0.6);animation-timing-function:cubic-bezier(0.33,1,0.68,1)}29.1666%{transform:scale(1,1.1);animation-timing-function:cubic-bezier(0.65,0,0.35,1)}45.8333%{transform:scale(1,0.9);animation-timing-function:cubic-bezier(0.65,0,0.35,1)}62.5%{transform:scale(1,1.1);animation-timing-function:cubic-bezier(0.65,0,0.35,1)}100%{transform:scale(1,1)}}
+@keyframes g122-smoke__v{0%{opacity:0;animation-timing-function:step-end}24.999%{opacity:1;animation-timing-function:step-end}74.999%{opacity:0;animation-timing-function:step-end}100%{opacity:0}}
+@keyframes g122-smoke__s{0%{transform:scale(0.4,0.4);animation-timing-function:step-end}24.999%{transform:scale(0.4,0.4);animation-timing-function:cubic-bezier(0.33,1,0.68,1)}75%{transform:scale(1.6,1.6);animation-timing-function:step-end}100%{transform:scale(1.6,1.6)}}
+@keyframes g122-smoke__o{0%{opacity:0;animation-timing-function:step-end}24.999%{opacity:0;animation-timing-function:cubic-bezier(0.33,1,0.68,1)}37.5%{opacity:0.7;animation-timing-function:cubic-bezier(0.32,0,0.67,0)}75%{opacity:0;animation-timing-function:step-end}100%{opacity:0}}
+.g122-rocket__t{animation:g122-rocket__t 2.4s linear 1 both;transform-origin:0 0}
+.g122-flame__v{animation:g122-flame__v 2.4s linear 1 both}
+.g122-flame-outer__s{animation:g122-flame-outer__s 2.4s linear 1 both;transform-origin:0 0}
+.g122-smoke__v{animation:g122-smoke__v 2.4s linear 1 both}
+.g122-smoke__s{animation:g122-smoke__s 2.4s linear 1 both;transform-origin:0 0}
+.g122-smoke__sh{animation:g122-smoke__o 2.4s linear 1 both}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+<rect width="256" height="320" fill="#0b1020"/>
+<g class="g122-rocket__t" transform="translate(128 250)">
+<g class="g122-flame__v" opacity="0">
+<g transform="translate(0 52)">
+<g class="g122-flame-outer__s" transform="scale(1 0.6)">
+<path d="M-14 0C-14 24 -4 36 0 48C4 36 14 24 14 0C14 0 -14 0 -14 0Z" fill="#fb923c"/>
+</g>
+<g transform="translate(0 10)">
+<ellipse rx="6" ry="14" fill="#fde047"/>
+</g>
+</g>
+</g>
+<path d="M0 -60C24 -36 24 12 18 52C18 52 -18 52 -18 52C-24 12 -24 -36 0 -60Z" fill="#e2e8f0"/>
+<g transform="translate(0 -14)">
+<ellipse rx="10" ry="10" fill="#38bdf8" stroke="#475569" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4"/>
+</g>
+<path d="M-18 24C-18 24 -34 56 -34 56C-34 56 -18 48 -18 48C-18 48 -18 24 -18 24Z" fill="#ef4444"/>
+<path d="M18 24C18 24 34 56 34 56C34 56 18 48 18 48C18 48 18 24 18 24Z" fill="#ef4444"/>
+</g>
+<g class="g122-smoke__v" opacity="0">
+<g transform="translate(128 296)">
+<g class="g122-smoke__s" transform="scale(0.4 0.4)">
+<ellipse class="g122-smoke__sh" rx="40" ry="16" fill="#94a3b8" opacity="0"/>
+</g>
+</g>
+</g>
+</svg>

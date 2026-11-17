@@ -1,0 +1,41 @@
+{
+  "gertie": 1,
+  "name": "pulse-badge",
+  "tier": "icon",
+  "canvas": { "w": 512, "h": 512 },
+  "fps": 30,
+  "duration": 2,
+  "loop": true,
+  "poster": 0.5,
+  "palette": { "navy": "#0F172A", "sky": "#38BDF8", "snow": "#F8FAFC" },
+  "nodes": [
+    { "id": "ripple-a", "type": "ellipse", "r": 140, "x": 256, "y": 256,
+      "stroke": { "color": "$sky", "width": 6 }, "opacity": 0,
+      "animate": {
+        "scale":   [[0, 1], [0.15, 1, "linear"], [1.5, 1.6, "easeOutCubic"], [2, 1, "hold"]],
+        "opacity": [[0, 0], [0.15, 0.9, "easeOut"], [1.5, 0, "easeOutQuad"], [2, 0, "linear"]]
+      } },
+    { "id": "ripple-b", "type": "ellipse", "r": 140, "x": 256, "y": 256,
+      "stroke": { "color": "$sky", "width": 4 }, "opacity": 0,
+      "animate": {
+        "scale":   [[0, 1], [0.45, 1, "linear"], [1.85, 1.5, "easeOutCubic"], [2, 1, "hold"]],
+        "opacity": [[0, 0], [0.45, 0, "linear"], [0.6, 0.6, "easeOut"], [1.85, 0, "easeOutQuad"], [2, 0, "linear"]]
+      } },
+    { "id": "badge", "type": "group", "x": 256, "y": 256,
+      "animate": { "scale": [[0, 1], [0.12, 0.94, "easeOutQuad"], [0.4, 1.06, "easeOutBack"], [0.9, 1, "easeInOutSine"], [2, 1, "linear"]] },
+      "children": [
+        { "id": "disc", "type": "ellipse", "r": 140,
+          "fill": "$navy",
+          "stroke": { "color": "$sky", "width": 8 } },
+        { "id": "core-glow", "type": "ellipse", "r": 88, "fill": "$sky", "opacity": 0.25,
+          "animate": { "scale": [[0, 1], [0.2, 1, "linear"], [0.6, 1.18, "easeOutQuad"], [1.4, 1, "easeInOutSine"], [2, 1, "linear"]] } },
+        { "id": "core", "type": "ellipse", "r": 70,
+          "fill": "$sky",
+          "animate": { "scale": [[0, 1], [0.08, 0.9, "easeOutQuad"], [0.35, 1.08, "easeOutBack"], [0.8, 1, "easeInOutSine"], [2, 1, "linear"]] } },
+        { "id": "dot", "type": "ellipse", "r": 26, "fill": "$snow",
+          "animate": { "scale": [[0, 1], [0.15, 0.8, "easeOutQuad"], [0.45, 1.15, "easeOutBack"], [1, 1, "easeInOutSine"], [2, 1, "linear"]] } },
+        { "id": "shine", "type": "ellipse", "rx": 22, "ry": 12, "x": -30, "y": -36, "rotation": -35,
+          "fill": "$snow", "opacity": 0.35 }
+      ] }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "gertie": 1, "name": "cut-off", "canvas": { "w": 200, "h": 200 }, "duration": 1, "loop": false,
+  "nodes": [
+    { "id": "bar", "type": "rect", "w": 400, "h": 40, "x": 100, "y": 100, "fill": "#ef4444",
+      "animate": { "y": [[0, 80], [1, 120]] } }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "gertie": 1,
+  "name": "sunrise-landscape",
+  "canvas": { "w": 1024, "h": 576, "background": "#070a1c" },
+  "fps": 30,
+  "duration": 6,
+  "loop": false,
+  "poster": 6,
+  "nodes": [
+    {
+      "id": "sky-night", "type": "rect", "x": 512, "y": 288, "w": 1024, "h": 576,
+      "fill": { "type": "linear", "from": [0, -288], "to": [0, 288],
+        "stops": [[0, "#070a1c"], [1, "#1b2650"]] }
+    },
+    {
+      "id": "sky-dawn", "type": "rect", "x": 512, "y": 288, "w": 1024, "h": 576,
+      "fill": { "type": "linear", "from": [0, -288], "to": [0, 288],
+        "stops": [[0, "#2e3f86"], [0.5, "#d9768f"], [0.8, "#ffab7a"], [1, "#ffd39a"]] },
+      "animate": { "opacity": [[0, 0], [0.6, 0], [4.6, 1, "easeInOutSine"], [6, 1]] }
+    },
+    {
+      "id": "stars", "type": "group", "children": [
+        { "id": "star-1", "type": "ellipse", "r": 2, "x": 120, "y": 70, "fill": "#f4f1ff",
+          "motion": [{ "preset": "fade-out", "at": 2.4, "duration": 1.8 }] },
+        { "id": "star-2", "type": "ellipse", "r": 1.5, "x": 260, "y": 140, "fill": "#f4f1ff",
+          "motion": [{ "preset": "twinkle", "at": 0.3, "duration": 1.6 }, { "preset": "fade-out", "at": 2.4, "duration": 1.8 }] },
+        { "id": "star-3", "type": "ellipse", "r": 2.2, "x": 380, "y": 60, "fill": "#f4f1ff",
+          "motion": [{ "preset": "fade-out", "at": 2.4, "duration": 1.8 }] },
+        { "id": "star-4", "type": "ellipse", "r": 1.5, "x": 640, "y": 110, "fill": "#f4f1ff",
+          "motion": [{ "preset": "twinkle", "at": 0.8, "duration": 1.6 }, { "preset": "fade-out", "at": 2.4, "duration": 1.8 }] },
+        { "id": "star-5", "type": "ellipse", "r": 2, "x": 760, "y": 50, "fill": "#f4f1ff",
+          "motion": [{ "preset": "fade-out", "at": 2.4, "duration": 1.8 }] },
+        { "id": "star-6", "type": "ellipse", "r": 1.5, "x": 880, "y": 160, "fill": "#f4f1ff",
+          "motion": [{ "preset": "fade-out", "at": 2.4, "duration": 1.8 }] },
+        { "id": "star-7", "type": "ellipse", "r": 2, "x": 960, "y": 80, "fill": "#f4f1ff",
+          "motion": [{ "preset": "twinkle", "at": 0.5, "duration": 1.6 }, { "preset": "fade-out", "at": 2.4, "duration": 1.8 }] },
+        { "id": "star-8", "type": "ellipse", "r": 1.5, "x": 180, "y": 200, "fill": "#f4f1ff",
+          "motion": [{ "preset": "fade-out", "at": 2.4, "duration": 1.8 }] },
+        { "id": "star-9", "type": "ellipse", "r": 1.8, "x": 820, "y": 230, "fill": "#f4f1ff",
+          "motion": [{ "preset": "fade-out", "at": 2.4, "duration": 1.8 }] },
+        { "id": "star-10", "type": "ellipse", "r": 1.5, "x": 60, "y": 190, "fill": "#f4f1ff",
+          "motion": [{ "preset": "fade-out", "at": 2.4, "duration": 1.8 }] }
+      ]
+    },
+    {
+      "id": "horizon-glow", "type": "ellipse", "r": 140, "x": 512, "y": 372, "scale": [3.6, 1],
+      "fill": { "type": "radial", "center": [0, 0], "radius": 140,
+        "stops": [[0, "#ffd9a0"], [1, "#ffb27a00"]] },
+      "animate": { "opacity": [[0, 0], [2.5, 0], [5, 0.85, "easeInOutSine"], [6, 0.85]] }
+    },
+    {
+      "id": "sun", "type": "group", "x": 512, "y": 480,
+      "animate": { "y": [[0, 480], [1.2, 480], [4.6, 250, "easeOutCubic"], [6, 250]] },
+      "children": [
+        {
+          "id": "sun-glow", "type": "ellipse", "r": 150,
+          "fill": { "type": "radial", "center": [0, 0], "radius": 150,
+            "stops": [[0, "#fff2c4"], [0.35, "#ffcf7a"], [1, "#ffb06a00"]] },
+          "animate": { "opacity": [[0, 0], [1.5, 0], [4.6, 0.9, "easeOutSine"], [6, 0.9]] }
+        },
+        { "id": "sun-disc", "type": "ellipse", "r": 56, "fill": "#fff1b5" }
+      ]
+    },
+    {
+      "id": "hill-back", "type": "path", "fill": "#18235a",
+      "d": "M 0 576 L 0 340 C 90 290 170 282 250 300 C 340 320 420 360 512 362 C 600 364 700 300 780 290 C 870 282 950 320 1024 350 L 1024 576 Z",
+      "animate": { "fill": [[0, "#18235a"], [1.5, "#18235a"], [5, "#7a6aa8", "easeInOutSine"], [6, "#7a6aa8"]] }
+    },
+    {
+      "id": "hill-front", "type": "path", "fill": "#0b1230",
+      "d": "M 0 576 L 0 420 C 100 380 220 370 330 390 C 420 405 470 402 512 398 C 600 396 700 380 800 395 C 900 410 980 400 1024 410 L 1024 576 Z",
+      "animate": { "fill": [[0, "#0b1230"], [1.5, "#0b1230"], [5, "#342c58", "easeInOutSine"], [6, "#342c58"]] }
+    }
+  ]
+}

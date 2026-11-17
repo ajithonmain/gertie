@@ -1,0 +1,46 @@
+{
+  "gertie": 1,
+  "name": "tab-underline",
+  "tier": "icon",
+  "canvas": { "w": 600, "h": 240 },
+  "fps": 30,
+  "duration": 3.6,
+  "poster": 0.5,
+  "palette": {
+    "bar": "#0f172a",
+    "edge": "#1e293b",
+    "dim": "#475569",
+    "lit": "#f1f5f9",
+    "accent": "#38bdf8"
+  },
+  "nodes": [
+    { "id": "bar", "type": "rect", "x": 300, "y": 120, "w": 560, "h": 120, "radius": 18,
+      "fill": { "type": "linear", "from": [0, -60], "to": [0, 60], "stops": [[0, "#1e293b"], [1, "#0f172a"]] } },
+    { "id": "track", "type": "rect", "x": 300, "y": 152, "w": 520, "h": 2, "fill": "$edge" },
+
+    { "id": "tab-1", "type": "group", "x": 120, "y": 110, "children": [
+      { "id": "icon-1", "type": "ellipse", "r": 9, "x": -46, "fill": "$lit",
+        "animate": { "fill": [[0, "$lit"], [0.8, "$lit"], [1.0, "$dim"], [3.25, "$dim"], [3.5, "$lit"]] } },
+      { "id": "label-1", "type": "rect", "x": 10, "w": 76, "h": 14, "radius": 7, "fill": "$lit",
+        "animate": { "fill": [[0, "$lit"], [0.8, "$lit"], [1.0, "$dim"], [3.25, "$dim"], [3.5, "$lit"]] } }
+    ] },
+    { "id": "tab-2", "type": "group", "x": 300, "y": 110, "children": [
+      { "id": "icon-2", "type": "ellipse", "r": 9, "x": -56, "fill": "$dim",
+        "animate": { "fill": [[0, "$dim"], [0.9, "$dim"], [1.15, "$lit"], [2.0, "$lit"], [2.2, "$dim"]] } },
+      { "id": "label-2", "type": "rect", "x": 10, "w": 96, "h": 14, "radius": 7, "fill": "$dim",
+        "animate": { "fill": [[0, "$dim"], [0.9, "$dim"], [1.15, "$lit"], [2.0, "$lit"], [2.2, "$dim"]] } }
+    ] },
+    { "id": "tab-3", "type": "group", "x": 480, "y": 110, "children": [
+      { "id": "icon-3", "type": "ellipse", "r": 9, "x": -40, "fill": "$dim",
+        "animate": { "fill": [[0, "$dim"], [2.1, "$dim"], [2.35, "$lit"], [3.2, "$lit"], [3.4, "$dim"]] } },
+      { "id": "label-3", "type": "rect", "x": 10, "w": 64, "h": 14, "radius": 7, "fill": "$dim",
+        "animate": { "fill": [[0, "$dim"], [2.1, "$dim"], [2.35, "$lit"], [3.2, "$lit"], [3.4, "$dim"]] } }
+    ] },
+
+    { "id": "underline", "type": "rect", "x": 120, "y": 152, "w": 112, "h": 6, "radius": 3, "fill": "$accent",
+      "animate": {
+        "x": [[0, 120], [0.8, 120], [1.2, 300, "easeInOutCubic"], [2.0, 300], [2.4, 480, "easeInOutCubic"], [3.2, 480], [3.6, 120, "easeInOutCubic"]],
+        "w": [[0, 112], [0.8, 112], [1.0, 170, "easeOutQuad"], [1.2, 132, "easeInOutQuad"], [2.0, 132], [2.2, 180, "easeOutQuad"], [2.4, 100, "easeInOutQuad"], [3.2, 100], [3.4, 260, "easeOutQuad"], [3.6, 112, "easeInOutQuad"]]
+      } }
+  ]
+}

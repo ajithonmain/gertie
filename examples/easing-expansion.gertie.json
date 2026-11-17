@@ -1,0 +1,95 @@
+{
+  "gertie": 1,
+  "name": "easing-expansion",
+  "canvas": {
+    "w": 480,
+    "h": 280,
+    "background": "#111827"
+  },
+  "duration": 2.4,
+  "loop": false,
+  "poster": 2.3,
+  "nodes": [
+    {
+      "id": "floor",
+      "type": "rect",
+      "w": 400,
+      "h": 4,
+      "radius": 2,
+      "x": 240,
+      "y": 244,
+      "fill": "#374151"
+    },
+    {
+      "id": "ball",
+      "type": "ellipse",
+      "r": 22,
+      "x": 90,
+      "y": 40,
+      "fill": "#ef4444",
+      "animate": {
+        "y": [
+          [
+            0.1,
+            40
+          ],
+          [
+            1.1,
+            220,
+            "bounce"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "box",
+      "type": "rect",
+      "w": 60,
+      "h": 60,
+      "radius": 10,
+      "x": 240,
+      "y": 150,
+      "fill": "#6366f1",
+      "animate": {
+        "scale": [
+          [
+            0.2,
+            0
+          ],
+          [
+            1.2,
+            1,
+            "spring"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "sign",
+      "type": "rect",
+      "w": 70,
+      "h": 40,
+      "radius": 6,
+      "x": 390,
+      "y": 80,
+      "pivot": [
+        0,
+        -20
+      ],
+      "fill": "#f59e0b",
+      "animate": {
+        "rotation": [
+          [
+            0.2,
+            -50
+          ],
+          [
+            1.4,
+            0,
+            "elastic"
+          ]
+        ]
+      }
+    }
+  ]
+}

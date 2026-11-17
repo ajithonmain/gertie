@@ -1,0 +1,61 @@
+{
+  "gertie": 1,
+  "name": "colour-wipe",
+  "canvas": { "w": 960, "h": 540, "background": "#0f172a" },
+  "fps": 30,
+  "duration": 3,
+  "loop": false,
+  "poster": 2.4,
+  "palette": {
+    "coral": "#f43f5e",
+    "amber": "#f59e0b",
+    "teal": "#14b8a6"
+  },
+  "nodes": [
+    {
+      "id": "band-1",
+      "type": "rect",
+      "w": 960, "h": 540, "radius": 0,
+      "x": -480, "y": 270,
+      "fill": "$coral",
+      "animate": {
+        "x": [
+          [0, -480],
+          [0.2, -480],
+          [0.9, 480, "smooth"],
+          [3, 480]
+        ]
+      }
+    },
+    {
+      "id": "band-2",
+      "type": "rect",
+      "w": 960, "h": 540, "radius": 0,
+      "x": -480, "y": 270,
+      "fill": "$amber",
+      "animate": {
+        "x": [
+          [0, -480],
+          [0.9, -480],
+          [1.6, 480, "easeInOutCubic"],
+          [3, 480]
+        ]
+      }
+    },
+    {
+      "id": "band-3",
+      "type": "rect",
+      "w": 960, "h": 540, "radius": 0,
+      "x": -480, "y": 270,
+      "fill": "$teal",
+      "animate": {
+        "x": [
+          [0, -480],
+          [1.6, -480],
+          [2.3, 480, "settle"],
+          [3, 480]
+        ]
+      }
+    }
+  ]
+}

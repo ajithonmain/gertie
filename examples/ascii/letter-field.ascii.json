@@ -1,0 +1,17 @@
+{
+  "ascii": 1,
+  "name": "letter-field",
+  "cols": 120,
+  "rows": 52,
+  "fps": 24,
+  "duration": 4,
+  "loop": true,
+  "style": {"background":{"from":"#070b1f","to":"#23356e","angle":180},"fontSize":12,"glow":0.3},
+  "layers": [
+    { "id": "flower", "at": [[0, 0, 4]],
+      "source": { "file": "star-flower.gertie.json", "cols": 120, "chars": "CZ*o+^", "seed": 3, "shimmer": 0.08 } },
+    { "id": "caption", "at": [[0, 3, 1]], "color": "#cbd5f5",
+      "text": ["SPECIMEN 07", "BLUE STAR FLOWER, TURNING"],
+      "fx": [ { "effect": "type", "at": 0.3, "cps": 14 } ] }
+  ]
+}

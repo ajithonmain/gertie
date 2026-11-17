@@ -1,0 +1,24 @@
+{
+  "gertie": 1,
+  "name": "blinking-eyes",
+  "canvas": { "w": 256, "h": 160, "background": "#111827" },
+  "duration": 2.4,
+  "nodes": [
+    {
+      "id": "eye-left", "type": "ellipse", "rx": 26, "ry": 30, "x": 90, "y": 80, "fill": "#f9fafb",
+      "animate": { "scale": [[0, [1, 1]], [1.8, [1, 0.08], "hold"], [1.95, [1, 1], "hold"], [2.4, [1, 1]]] }
+    },
+    {
+      "id": "eye-right", "type": "ellipse", "rx": 26, "ry": 30, "x": 166, "y": 80, "fill": "#f9fafb",
+      "animate": { "scale": [[0, [1, 1]], [1.8, [1, 0.08], "hold"], [1.95, [1, 1], "hold"], [2.4, [1, 1]]] }
+    },
+    {
+      "id": "pupil-left", "type": "ellipse", "r": 11, "x": 90, "y": 82, "fill": "#111827",
+      "animate": { "x": [[0, 86], [1.2, 96, "easeInOut"], [2.4, 86, "easeInOut"]], "opacity": [[0, 1], [1.8, 0, "hold"], [1.95, 1, "hold"], [2.4, 1]] }
+    },
+    {
+      "id": "pupil-right", "type": "ellipse", "r": 11, "x": 166, "y": 82, "fill": "#111827",
+      "animate": { "x": [[0, 162], [1.2, 172, "easeInOut"], [2.4, 162, "easeInOut"]], "opacity": [[0, 1], [1.8, 0, "hold"], [1.95, 1, "hold"], [2.4, 1]] }
+    }
+  ]
+}

@@ -1,0 +1,213 @@
+{
+  "gertie": 1,
+  "name": "stagger-bars",
+  "tier": "icon",
+  "canvas": {
+    "w": 512,
+    "h": 256,
+    "background": "#111827"
+  },
+  "duration": 2.4,
+  "loop": false,
+  "poster": 2.3,
+  "nodes": [
+    {
+      "id": "bars",
+      "type": "group",
+      "stagger": {
+        "each": 0.1,
+        "order": "center-out"
+      },
+      "motion": [
+        {
+          "preset": "grow-in",
+          "at": 0.1,
+          "axis": "y",
+          "applyTo": "children"
+        }
+      ],
+      "children": [
+        {
+          "id": "bar-1",
+          "type": "rect",
+          "w": 30,
+          "h": 110,
+          "radius": 6,
+          "x": 37,
+          "y": 130,
+          "pivot": [
+            0,
+            55
+          ],
+          "fill": "#6366f1"
+        },
+        {
+          "id": "bar-2",
+          "type": "rect",
+          "w": 30,
+          "h": 110,
+          "radius": 6,
+          "x": 110,
+          "y": 130,
+          "pivot": [
+            0,
+            55
+          ],
+          "fill": "#22c55e"
+        },
+        {
+          "id": "bar-3",
+          "type": "rect",
+          "w": 30,
+          "h": 110,
+          "radius": 6,
+          "x": 183,
+          "y": 130,
+          "pivot": [
+            0,
+            55
+          ],
+          "fill": "#f59e0b"
+        },
+        {
+          "id": "bar-4",
+          "type": "rect",
+          "w": 30,
+          "h": 110,
+          "radius": 6,
+          "x": 256,
+          "y": 130,
+          "pivot": [
+            0,
+            55
+          ],
+          "fill": "#ef4444"
+        },
+        {
+          "id": "bar-5",
+          "type": "rect",
+          "w": 30,
+          "h": 110,
+          "radius": 6,
+          "x": 329,
+          "y": 130,
+          "pivot": [
+            0,
+            55
+          ],
+          "fill": "#38bdf8"
+        },
+        {
+          "id": "bar-6",
+          "type": "rect",
+          "w": 30,
+          "h": 110,
+          "radius": 6,
+          "x": 402,
+          "y": 130,
+          "pivot": [
+            0,
+            55
+          ],
+          "fill": "#e879f9"
+        },
+        {
+          "id": "bar-7",
+          "type": "rect",
+          "w": 30,
+          "h": 110,
+          "radius": 6,
+          "x": 475,
+          "y": 130,
+          "pivot": [
+            0,
+            55
+          ],
+          "fill": "#f9fafb"
+        }
+      ]
+    },
+    {
+      "id": "dots",
+      "type": "group",
+      "stagger": {
+        "each": 0.08,
+        "order": "random",
+        "seed": 4
+      },
+      "motion": [
+        {
+          "preset": "pop-in",
+          "at": 0.9,
+          "applyTo": "children"
+        }
+      ],
+      "children": [
+        {
+          "id": "dot-1",
+          "type": "ellipse",
+          "r": 12,
+          "x": 32,
+          "y": 210,
+          "fill": "#f59e0b"
+        },
+        {
+          "id": "dot-2",
+          "type": "ellipse",
+          "r": 12,
+          "x": 96,
+          "y": 210,
+          "fill": "#ef4444"
+        },
+        {
+          "id": "dot-3",
+          "type": "ellipse",
+          "r": 12,
+          "x": 160,
+          "y": 210,
+          "fill": "#38bdf8"
+        },
+        {
+          "id": "dot-4",
+          "type": "ellipse",
+          "r": 12,
+          "x": 224,
+          "y": 210,
+          "fill": "#e879f9"
+        },
+        {
+          "id": "dot-5",
+          "type": "ellipse",
+          "r": 12,
+          "x": 288,
+          "y": 210,
+          "fill": "#f9fafb"
+        },
+        {
+          "id": "dot-6",
+          "type": "ellipse",
+          "r": 12,
+          "x": 352,
+          "y": 210,
+          "fill": "#6366f1"
+        },
+        {
+          "id": "dot-7",
+          "type": "ellipse",
+          "r": 12,
+          "x": 416,
+          "y": 210,
+          "fill": "#22c55e"
+        },
+        {
+          "id": "dot-8",
+          "type": "ellipse",
+          "r": 12,
+          "x": 480,
+          "y": 210,
+          "fill": "#f59e0b"
+        }
+      ]
+    }
+  ]
+}

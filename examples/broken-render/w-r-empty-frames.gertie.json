@@ -1,0 +1,9 @@
+{
+  "gertie": 1, "name": "blank-gap", "canvas": { "w": 200, "h": 200 }, "duration": 1, "loop": false,
+  "nodes": [
+    { "id": "first", "type": "ellipse", "r": 30, "x": 60, "y": 100, "fill": "#ef4444", "to": 0.4,
+      "animate": { "y": [[0, 80], [0.3, 120]] } },
+    { "id": "second", "type": "ellipse", "r": 30, "x": 140, "y": 100, "fill": "#3b82f6", "from": 0.45,
+      "animate": { "y": [[0.45, 80], [1, 120]] } }
+  ]
+}

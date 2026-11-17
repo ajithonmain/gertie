@@ -1,0 +1,92 @@
+{
+  "gertie": 1,
+  "name": "bell-ring",
+  "tier": "icon",
+  "canvas": { "w": 512, "h": 512 },
+  "fps": 30,
+  "duration": 2,
+  "loop": true,
+  "poster": 0.35,
+  "palette": {
+    "gold": "#f59e0b",
+    "deep": "#b45309",
+    "brown": "#78350f"
+  },
+  "nodes": [
+    {
+      "id": "waves-l",
+      "type": "group",
+      "animate": {
+        "opacity": [[0, 0], [0.1, 0, "smooth"], [0.22, 1, "snap"], [0.7, 0, "smooth"], [2, 0, "smooth"]]
+      },
+      "children": [
+        { "id": "wave-l-1", "type": "path", "d": "M 92 200 Q 72 250 92 300", "fill": null, "stroke": { "color": "$gold", "width": 12, "cap": "round" } },
+        { "id": "wave-l-2", "type": "path", "d": "M 66 180 Q 36 250 66 320", "fill": null, "stroke": { "color": "$gold", "width": 12, "cap": "round" } }
+      ]
+    },
+    {
+      "id": "waves-r",
+      "type": "group",
+      "animate": {
+        "opacity": [[0, 0], [0.1, 0, "smooth"], [0.22, 1, "snap"], [0.7, 0, "smooth"], [2, 0, "smooth"]]
+      },
+      "children": [
+        { "id": "wave-r-1", "type": "path", "d": "M 420 200 Q 440 250 420 300", "fill": null, "stroke": { "color": "$gold", "width": 12, "cap": "round" } },
+        { "id": "wave-r-2", "type": "path", "d": "M 446 180 Q 476 250 446 320", "fill": null, "stroke": { "color": "$gold", "width": 12, "cap": "round" } }
+      ]
+    },
+    {
+      "id": "bell",
+      "type": "group",
+      "x": 256,
+      "y": 130,
+      "scale": 0.8,
+      "animate": {
+        "rotation": [
+          [0, 0],
+          [0.12, 14, "snap"],
+          [0.42, -10, "smooth"],
+          [0.66, 7, "smooth"],
+          [0.86, -4, "smooth"],
+          [1.06, 2, "settle"],
+          [1.26, -1, "smooth"],
+          [1.5, 0.5, "smooth"],
+          [2, 0, "smooth"]
+        ]
+      },
+      "children": [
+        {
+          "id": "bell-body",
+          "type": "path",
+          "d": "M -28 0 C -70 10 -120 90 -128 190 Q -134 226 -150 232 L 150 232 Q 134 226 128 190 C 120 90 70 10 28 0 Z",
+          "fill": { "type": "linear", "from": [-130, 0], "to": [130, 0], "stops": [[0, "#fcd34d"], [0.5, "#f59e0b"], [1, "#b45309"]] }
+        },
+        {
+          "id": "bell-lip",
+          "type": "path",
+          "d": "M -150 232 Q 0 246 150 232 L 156 244 Q 0 262 -156 244 Z",
+          "fill": "$deep"
+        },
+        {
+          "id": "bell-shine",
+          "type": "path",
+          "d": "M -92 120 Q -100 170 -96 200",
+          "fill": null,
+          "stroke": { "color": "#ffffff", "width": 10, "cap": "round" },
+          "opacity": 0.45
+        },
+        {
+          "id": "clapper",
+          "type": "group",
+          "follow": { "delay": 0.12, "scale": 1.4 },
+          "children": [
+            { "id": "clapper-stem", "type": "path", "d": "M 0 0 L 0 182", "fill": null, "stroke": { "color": "$brown", "width": 6, "cap": "round" } },
+            { "id": "clapper-ball", "type": "ellipse", "r": 18, "x": 0, "y": 198, "fill": "$brown" }
+          ]
+        }
+      ]
+    },
+    { "id": "knob", "type": "ellipse", "x": 256, "y": 122, "r": 11, "fill": "$brown" },
+    { "id": "hanger", "type": "rect", "x": 256, "y": 104, "w": 14, "h": 22, "radius": 4, "fill": "$brown" }
+  ]
+}

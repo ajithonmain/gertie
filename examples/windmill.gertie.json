@@ -1,0 +1,19 @@
+{
+  "gertie": 1,
+  "name": "windmill",
+  "canvas": { "w": 256, "h": 256 },
+  "duration": 3,
+  "nodes": [
+    { "id": "tower", "type": "path", "d": "M118 128 L138 128 L146 230 L110 230 Z", "fill": "#94a3b8" },
+    {
+      "id": "rotor", "type": "group", "x": 128, "y": 128,
+      "animate": { "rotation": [[0, 0], [3, 360, "linear"]] },
+      "children": [
+        { "id": "blade-1", "type": "rect", "w": 18, "h": 90, "radius": 6, "y": -45, "pivot": [0, 45], "fill": "#f8fafc" },
+        { "id": "blade-2", "type": "rect", "w": 18, "h": 90, "radius": 6, "y": -45, "pivot": [0, 45], "rotation": 120, "fill": "#f8fafc" },
+        { "id": "blade-3", "type": "rect", "w": 18, "h": 90, "radius": 6, "y": -45, "pivot": [0, 45], "rotation": 240, "fill": "#f8fafc" },
+        { "id": "cap", "type": "ellipse", "r": 10, "fill": "#475569" }
+      ]
+    }
+  ]
+}

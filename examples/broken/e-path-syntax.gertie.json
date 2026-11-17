@@ -1,0 +1,29 @@
+{
+  "gertie": 1,
+  "name": "broken",
+  "canvas": {
+    "w": 200,
+    "h": 200
+  },
+  "duration": 1,
+  "nodes": [
+    {
+      "id": "p",
+      "type": "path",
+      "d": "M0 0 L10",
+      "fill": "#fff",
+      "animate": {
+        "x": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      }
+    }
+  ]
+}

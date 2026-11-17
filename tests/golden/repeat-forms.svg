@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 224" width="512" height="224">
+<style>
+@keyframes g9r9-slider__t{0%{transform:translate(60px,60px);animation-timing-function:cubic-bezier(0.65,0,0.35,1)}50%{transform:translate(452px,60px);animation-timing-function:cubic-bezier(0.65,0,0.35,1)}100%{transform:translate(60px,60px)}}
+@keyframes g9r9-rocker__r{0%{transform:rotate(-12deg);animation-timing-function:cubic-bezier(0.65,0,0.35,1)}25%{transform:rotate(12deg);animation-timing-function:cubic-bezier(0.65,0,0.35,1)}50%{transform:rotate(-12deg);animation-timing-function:cubic-bezier(0.65,0,0.35,1)}75%{transform:rotate(12deg);animation-timing-function:cubic-bezier(0.65,0,0.35,1)}100%{transform:rotate(-12deg)}}
+@keyframes g9r9-dots__s{0%{transform:scale(1,1);animation-timing-function:cubic-bezier(0.65,0,0.35,1)}16.6666%{transform:scale(1.5,1.5);animation-timing-function:cubic-bezier(0.65,0,0.35,1)}33.3333%{transform:scale(1,1);animation-timing-function:cubic-bezier(0.65,0,0.35,1)}50%{transform:scale(1.5,1.5);animation-timing-function:cubic-bezier(0.65,0,0.35,1)}66.6666%{transform:scale(1,1);animation-timing-function:cubic-bezier(0.65,0,0.35,1)}83.3333%{transform:scale(1.5,1.5);animation-timing-function:cubic-bezier(0.65,0,0.35,1)}100%{transform:scale(1,1)}}
+.g9r9-slider__t{animation:g9r9-slider__t 2.4s linear infinite both;transform-origin:0 0}
+.g9r9-rocker__r{animation:g9r9-rocker__r 2.4s linear infinite both;transform-origin:0 0}
+.g9r9-dots__s{animation:g9r9-dots__s 2.4s linear infinite both;transform-origin:0 0}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+<rect width="512" height="224" fill="#111827"/>
+<g class="g9r9-slider__t" transform="translate(60 60)">
+<ellipse rx="18" ry="18" fill="#22c55e"/>
+</g>
+<g transform="translate(256 120)">
+<g class="g9r9-rocker__r" transform="rotate(-12)">
+<rect x="-40" y="-7" width="80" height="14" rx="7" fill="#6366f1"/>
+</g>
+</g>
+<g transform="translate(256 180)">
+<g class="g9r9-dots__s" transform="scale(1 1)">
+<ellipse rx="12" ry="12" fill="#f59e0b"/>
+</g>
+</g>
+</svg>

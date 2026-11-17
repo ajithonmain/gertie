@@ -1,0 +1,72 @@
+{
+  "gertie": 1,
+  "name": "toggle-switch",
+  "canvas": { "w": 512, "h": 512 },
+  "fps": 30,
+  "duration": 4,
+  "loop": true,
+  "poster": 1.9,
+  "tier": "icon",
+  "nodes": [
+    {
+      "id": "track",
+      "type": "rect",
+      "w": 200,
+      "h": 110,
+      "radius": 55,
+      "x": 256,
+      "y": 256,
+      "fill": "#cbd5e1",
+      "animate": {
+        "fill": [
+          [0, "#cbd5e1"],
+          [0.8, "#cbd5e1", "smooth"],
+          [1.4, "#22c55e", "smooth"],
+          [2.4, "#22c55e", "smooth"],
+          [3.0, "#cbd5e1", "smooth"],
+          [4.0, "#cbd5e1"]
+        ]
+      }
+    },
+    {
+      "id": "knob",
+      "type": "group",
+      "x": 211,
+      "y": 256,
+      "animate": {
+        "x": [
+          [0, 211],
+          [0.8, 211, "smooth"],
+          { "t": 1.4, "v": 301, "ease": "easeOut", "overshoot": { "past": 0.08, "back": 0.03, "time": 0.3 } },
+          [2.4, 301, "smooth"],
+          [3.0, 211, "easeInOutCubic"],
+          [4.0, 211]
+        ]
+      },
+      "children": [
+        {
+          "id": "knob-shadow",
+          "type": "ellipse",
+          "r": 45,
+          "x": 0,
+          "y": 6,
+          "fill": "#0f172a",
+          "opacity": 0.2
+        },
+        {
+          "id": "knob-face",
+          "type": "ellipse",
+          "r": 45,
+          "x": 0,
+          "y": 0,
+          "fill": {
+            "type": "radial",
+            "center": [0, -10],
+            "radius": 50,
+            "stops": [[0, "#ffffff"], [1, "#e2e8f0"]]
+          }
+        }
+      ]
+    }
+  ]
+}

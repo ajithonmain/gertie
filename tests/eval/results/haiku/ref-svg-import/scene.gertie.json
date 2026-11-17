@@ -1,0 +1,32 @@
+{
+  "gertie": 1,
+  "name": "logo-tick",
+  "tier": "icon",
+  "canvas": { "w": 100, "h": 100 },
+  "duration": 1.6,
+  "loop": false,
+  "poster": 1.5,
+  "nodes": [
+    {
+      "id": "badge",
+      "type": "ellipse",
+      "r": 40,
+      "x": 50,
+      "y": 50,
+      "fill": "#f97316",
+      "motion": [
+        { "preset": "pop-in", "at": 0.1, "duration": 0.5 }
+      ]
+    },
+    {
+      "id": "tick",
+      "type": "path",
+      "d": "M30 50 L45 65 L72 35",
+      "fill": null,
+      "stroke": { "color": "#ffffff", "width": 8, "cap": "round", "join": "round" },
+      "motion": [
+        { "preset": "draw-on", "at": 0.6, "duration": 0.6 }
+      ]
+    }
+  ]
+}

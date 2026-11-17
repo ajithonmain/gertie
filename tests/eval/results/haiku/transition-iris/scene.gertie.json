@@ -1,0 +1,54 @@
+{
+  "gertie": 1,
+  "name": "iris-transition",
+  "canvas": { "w": 512, "h": 512, "background": "#0f3d3e" },
+  "fps": 30,
+  "duration": 2,
+  "loop": true,
+  "poster": 0.9,
+  "tier": "icon",
+  "nodes": [
+    {
+      "id": "next-scene",
+      "type": "group",
+      "children": [
+        {
+          "id": "next-bg",
+          "type": "rect", "x": 256, "y": 256, "w": 512, "h": 512,
+          "fill": { "type": "linear", "from": [0, -256], "to": [0, 256],
+                    "stops": [[0, "#0f766e"], [1, "#134e4a"]] }
+        },
+        { "id": "next-sun", "type": "ellipse", "r": 70, "x": 370, "y": 150, "fill": "#fde047" },
+        {
+          "id": "next-wave", "type": "path",
+          "d": "M0 360 C128 320 256 400 384 350 S512 330 512 330 L512 512 L0 512 Z",
+          "fill": "#2dd4bf"
+        }
+      ]
+    },
+    {
+      "id": "prev-scene",
+      "type": "group",
+      "matte": { "by": "iris", "mode": "alpha" },
+      "children": [
+        { "id": "prev-bg", "type": "rect", "x": 256, "y": 256, "w": 512, "h": 512, "fill": "#f97316" },
+        { "id": "prev-ring", "type": "ellipse", "r": 110, "x": 256, "y": 256,
+          "stroke": { "color": "#fff7ed", "width": 16 } },
+        { "id": "prev-dot", "type": "ellipse", "r": 26, "x": 256, "y": 256, "fill": "#fff7ed" }
+      ]
+    },
+    {
+      "id": "iris",
+      "type": "ellipse",
+      "x": 256, "y": 256, "r": 0.01, "fill": "#000",
+      "animate": {
+        "r": [
+          [0, 0.01],
+          [0.9, 380, "easeInOutCubic"],
+          [1.1, 380, "linear"],
+          [2, 0.01, "easeInOutCubic"]
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+<style>
+@keyframes gvoe-ring__trim{0%{stroke-dasharray:0 1;stroke-dashoffset:0;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}6.6666%{stroke-dasharray:0 1;stroke-dashoffset:0;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}26.6666%{stroke-dasharray:1 0;stroke-dashoffset:0;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}73.3333%{stroke-dasharray:1 0;stroke-dashoffset:0;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}92.2222%{stroke-dasharray:0 1;stroke-dashoffset:0;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}100%{stroke-dasharray:0 1;stroke-dashoffset:0}}
+@keyframes gvoe-ring__guard{0%{stroke-opacity:0;animation-timing-function:step-end}0.0001%{stroke-opacity:0;animation-timing-function:step-end}6.6656%{stroke-opacity:0;animation-timing-function:step-end}6.6667%{stroke-opacity:1;animation-timing-function:step-end}26.6656%{stroke-opacity:1;animation-timing-function:step-end}73.3323%{stroke-opacity:1;animation-timing-function:step-end}92.2212%{stroke-opacity:0;animation-timing-function:step-end}92.2223%{stroke-opacity:0;animation-timing-function:step-end}100%{stroke-opacity:0}}
+@keyframes gvoe-badge__s{0%{transform:scale(1,1);animation-timing-function:cubic-bezier(0.7,0,0.3,1)}4.4444%{transform:scale(1,1);animation-timing-function:cubic-bezier(0.7,0,0.3,1)}11.1111%{transform:scale(0.9,0.9);animation-timing-function:cubic-bezier(0.3,1,0.7,1)}18.8888%{transform:scale(1.09,1.09);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}23.3333%{transform:scale(0.975,0.975);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}31.1111%{transform:scale(1,1);animation-timing-function:cubic-bezier(0.7,0,0.3,1)}46.6666%{transform:scale(1,1);animation-timing-function:cubic-bezier(0.7,0,0.3,1)}58.8888%{transform:scale(1.035,1.035);animation-timing-function:cubic-bezier(0.7,0,0.3,1)}70%{transform:scale(1,1);animation-timing-function:cubic-bezier(0.7,0,0.3,1)}100%{transform:scale(1,1)}}
+@keyframes gvoe-disc__fill{0%{fill:#dbe3ec;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}11.1111%{fill:#dbe3ec;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}18.8888%{fill:#22c55e;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}75.5555%{fill:#22c55e;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}88.8888%{fill:#dbe3ec;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}100%{fill:#dbe3ec}}
+@keyframes gvoe-shading__o{0%{opacity:0;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}13.3333%{opacity:0;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}22.2222%{opacity:1;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}73.3333%{opacity:1;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}85.5555%{opacity:0;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}100%{opacity:0}}
+@keyframes gvoe-tick__s{0%{transform:scale(1,1);animation-timing-function:cubic-bezier(0.7,0,0.3,1)}26.6666%{transform:scale(1,1);animation-timing-function:cubic-bezier(0.3,1,0.7,1)}32.2222%{transform:scale(1.12,1.12);animation-timing-function:cubic-bezier(0.7,0,0.3,1)}38.8888%{transform:scale(1,1);animation-timing-function:cubic-bezier(0.7,0,0.3,1)}100%{transform:scale(1,1)}}
+@keyframes gvoe-tick__trim{0%{stroke-dasharray:0 1;stroke-dashoffset:0;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}18.8888%{stroke-dasharray:0 1;stroke-dashoffset:0;animation-timing-function:cubic-bezier(0.3,1,0.7,1)}31.1111%{stroke-dasharray:1 1;stroke-dashoffset:0;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}73.3333%{stroke-dasharray:1 1;stroke-dashoffset:0;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}83.3333%{stroke-dasharray:0 1;stroke-dashoffset:0;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}100%{stroke-dasharray:0 1;stroke-dashoffset:0}}
+@keyframes gvoe-tick__guard{0%{stroke-opacity:0;animation-timing-function:step-end}0.0001%{stroke-opacity:0;animation-timing-function:step-end}18.8878%{stroke-opacity:0;animation-timing-function:step-end}18.8889%{stroke-opacity:1;animation-timing-function:step-end}31.1101%{stroke-opacity:1;animation-timing-function:step-end}73.3323%{stroke-opacity:1;animation-timing-function:step-end}83.3323%{stroke-opacity:0;animation-timing-function:step-end}83.3334%{stroke-opacity:0;animation-timing-function:step-end}100%{stroke-opacity:0}}
+@keyframes gvoe-sparks-a__o{0%{opacity:0;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}23.3333%{opacity:0;animation-timing-function:cubic-bezier(0.3,1,0.7,1)}27.7777%{opacity:1;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}36.6666%{opacity:1;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}48.8888%{opacity:0;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}100%{opacity:0}}
+@keyframes gvoe-sparks-a__s{0%{transform:scale(0.72,0.72);animation-timing-function:cubic-bezier(0.7,0,0.3,1)}23.3333%{transform:scale(0.72,0.72);animation-timing-function:cubic-bezier(0.3,1,0.7,1)}33.3333%{transform:scale(1,1);animation-timing-function:cubic-bezier(0.7,0,0.3,1)}48.8888%{transform:scale(1.1,1.1);animation-timing-function:cubic-bezier(0.7,0,0.3,1)}100%{transform:scale(0.72,0.72)}}
+@keyframes gvoe-sparks-b__o{0%{opacity:0;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}26.6666%{opacity:0;animation-timing-function:cubic-bezier(0.3,1,0.7,1)}31.1111%{opacity:1;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}40%{opacity:1;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}52.2222%{opacity:0;animation-timing-function:cubic-bezier(0.7,0,0.3,1)}100%{opacity:0}}
+@keyframes gvoe-sparks-b__s{0%{transform:scale(0.72,0.72);animation-timing-function:cubic-bezier(0.7,0,0.3,1)}26.6666%{transform:scale(0.72,0.72);animation-timing-function:cubic-bezier(0.3,1,0.7,1)}36.6666%{transform:scale(1,1);animation-timing-function:cubic-bezier(0.7,0,0.3,1)}52.2222%{transform:scale(1.1,1.1);animation-timing-function:cubic-bezier(0.7,0,0.3,1)}100%{transform:scale(0.72,0.72)}}
+.gvoe-ring__sh{animation:gvoe-ring__trim 3s linear infinite both,gvoe-ring__guard 3s linear infinite both}
+.gvoe-badge__s{animation:gvoe-badge__s 3s linear infinite both;transform-origin:0 0}
+.gvoe-disc__sh{animation:gvoe-disc__fill 3s linear infinite both}
+.gvoe-shading__o{animation:gvoe-shading__o 3s linear infinite both}
+.gvoe-tick__s{animation:gvoe-tick__s 3s linear infinite both;transform-origin:0 0}
+.gvoe-tick__sh{animation:gvoe-tick__trim 3s linear infinite both,gvoe-tick__guard 3s linear infinite both}
+.gvoe-sparks-a__o{animation:gvoe-sparks-a__o 3s linear infinite both}
+.gvoe-sparks-a__s{animation:gvoe-sparks-a__s 3s linear infinite both;transform-origin:0 0}
+.gvoe-sparks-b__o{animation:gvoe-sparks-b__o 3s linear infinite both}
+.gvoe-sparks-b__s{animation:gvoe-sparks-b__s 3s linear infinite both;transform-origin:0 0}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+<path d="M256 106C338.8 106 406 173.2 406 256C406 338.8 338.8 406 256 406C173.2 406 106 338.8 106 256C106 173.2 173.2 106 256 106Z" fill="none" stroke="#dbe3ec" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4"/>
+<path class="gvoe-ring__sh" d="M256 106C338.8 106 406 173.2 406 256C406 338.8 338.8 406 256 406C173.2 406 106 338.8 106 256C106 173.2 173.2 106 256 106Z" fill="none" stroke="#22c55e" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" pathLength="1" stroke-dasharray="1 0" stroke-dashoffset="0"/>
+<g transform="translate(256 256)">
+<g class="gvoe-badge__s" transform="scale(1.0027 1.0027)">
+<path class="gvoe-disc__sh" d="M0 -118C65.2 -118 118 -65.2 118 0C118 65.2 65.2 118 0 118C-65.2 118 -118 65.2 -118 0C-118 -65.2 -65.2 -118 0 -118Z" fill="#22c55e"/>
+<g class="gvoe-shading__o" opacity="1">
+<path d="M-104 56C-98 56 -68.8 88 -40 96C-11.2 104 11.2 104 40 96C68.8 88 98 56 104 56C110 56 90.8 83.6 70 96C49.2 108.4 28 118 0 118C-28 118 -49.2 108.4 -70 96C-90.8 83.6 -110 56 -104 56Z" fill="#15994a"/>
+<path d="M-88 -40C-84 -52 -74.8 -69.2 -60 -82C-45.2 -94.8 -20 -103.6 -14 -104C-8 -104.4 -19.6 -94.4 -30 -84C-40.4 -73.6 -56 -64.4 -66 -52C-76 -39.6 -75.6 -24.4 -80 -22C-84.4 -19.6 -92 -28 -88 -40Z" fill="#9be8b6"/>
+</g>
+</g>
+</g>
+<g transform="translate(256 262)">
+<g class="gvoe-tick__s" transform="scale(1 1)">
+<g transform="translate(-256 -262)">
+<path class="gvoe-tick__sh" d="M198 260C198 260 240 302 240 302C240 302 318 216 318 216" fill="none" stroke="#ffffff" stroke-width="26" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" pathLength="1" stroke-dasharray="1 1" stroke-dashoffset="0"/>
+</g>
+</g>
+</g>
+<g class="gvoe-sparks-a__o" opacity="0">
+<g transform="translate(256 256)">
+<g class="gvoe-sparks-a__s" transform="scale(1.0999 1.0999)">
+<path d="M0 -180C2.8 -180 7 -191.4 7 -199C7 -206.6 2.8 -218 0 -218C-2.8 -218 -7 -206.6 -7 -199C-7 -191.4 -2.8 -180 0 -180Z" fill="#22c55e"/>
+<path d="M141.8 110.8C140.1 113 145.1 122.2 150.1 126.2C155.2 130.1 165.3 132.7 167.1 130.5C168.8 128.3 163.8 119.1 158.8 115.2C153.7 111.2 143.6 108.6 141.8 110.8Z" fill="#22c55e"/>
+<path d="M-141.8 110.8C-143.6 108.6 -154.7 112 -160.3 116.4C-166 120.8 -171.9 130.8 -170.2 133C-168.5 135.2 -157.4 131.8 -151.7 127.4C-146 123 -140.1 113 -141.8 110.8Z" fill="#22c55e"/>
+</g>
+</g>
+</g>
+<g class="gvoe-sparks-b__o" opacity="0.029">
+<g transform="translate(256 256)">
+<g class="gvoe-sparks-b__s" transform="scale(1.0983 1.0983)">
+<path d="M143.4 -112.1C145.1 -109.8 153.9 -111.3 158 -114.5C162.1 -117.7 165.6 -125.9 163.9 -128.1C162.2 -130.3 153.5 -128.8 149.4 -125.6C145.3 -122.4 141.7 -114.3 143.4 -112.1Z" fill="#9be8b6"/>
+<path d="M0 182C-2.8 182 -7 189.2 -7 194C-7 198.8 -2.8 206 0 206C2.8 206 7 198.8 7 194C7 189.2 2.8 182 0 182Z" fill="#9be8b6"/>
+<path d="M-143.4 -112.1C-141.7 -114.3 -145.7 -122.7 -150.1 -126.2C-154.6 -129.6 -163.8 -131.5 -165.5 -129.3C-167.2 -127.1 -163.2 -118.6 -158.8 -115.2C-154.3 -111.7 -145.1 -109.8 -143.4 -112.1Z" fill="#9be8b6"/>
+</g>
+</g>
+</g>
+</svg>

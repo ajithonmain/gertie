@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 80" width="160" height="80">
+<style>
+@keyframes g2tz-dot-1__o{0%{opacity:0.25;animation-timing-function:cubic-bezier(0.33,1,0.68,1)}25%{opacity:1;animation-timing-function:cubic-bezier(0.32,0,0.67,0)}50%{opacity:0.25;animation-timing-function:cubic-bezier(0.65,0,0.35,1)}100%{opacity:0.25}}
+@keyframes g2tz-dot-2__o{0%{opacity:0.25;animation-timing-function:cubic-bezier(0.65,0,0.35,1)}16.6666%{opacity:0.25;animation-timing-function:cubic-bezier(0.33,1,0.68,1)}41.6666%{opacity:1;animation-timing-function:cubic-bezier(0.32,0,0.67,0)}66.6666%{opacity:0.25;animation-timing-function:cubic-bezier(0.65,0,0.35,1)}100%{opacity:0.25}}
+@keyframes g2tz-dot-3__o{0%{opacity:0.25;animation-timing-function:cubic-bezier(0.65,0,0.35,1)}33.3333%{opacity:0.25;animation-timing-function:cubic-bezier(0.33,1,0.68,1)}58.3333%{opacity:1;animation-timing-function:cubic-bezier(0.32,0,0.67,0)}83.3333%{opacity:0.25;animation-timing-function:cubic-bezier(0.65,0,0.35,1)}100%{opacity:0.25}}
+.g2tz-dot-1__sh{animation:g2tz-dot-1__o 1.2s linear infinite both}
+.g2tz-dot-2__sh{animation:g2tz-dot-2__o 1.2s linear infinite both}
+.g2tz-dot-3__sh{animation:g2tz-dot-3__o 1.2s linear infinite both}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+<g transform="translate(40 40)">
+<ellipse class="g2tz-dot-1__sh" rx="9" ry="9" fill="#94a3b8" opacity="0.25"/>
+</g>
+<g transform="translate(80 40)">
+<ellipse class="g2tz-dot-2__sh" rx="9" ry="9" fill="#94a3b8" opacity="0.25"/>
+</g>
+<g transform="translate(120 40)">
+<ellipse class="g2tz-dot-3__sh" rx="9" ry="9" fill="#94a3b8" opacity="0.25"/>
+</g>
+</svg>

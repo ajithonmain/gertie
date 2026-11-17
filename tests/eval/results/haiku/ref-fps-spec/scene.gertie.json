@@ -1,0 +1,186 @@
+{
+  "gertie": 1,
+  "name": "gear-spin",
+  "canvas": {
+    "w": 1080,
+    "h": 1080,
+    "background": "#d5d8dc"
+  },
+  "fps": 60,
+  "duration": 1.5,
+  "loop": true,
+  "poster": 0,
+  "palette": {
+    "backdrop": "#d5d8dc",
+    "gear-shadow": "#00000022",
+    "gear-base": "#8b9099",
+    "gear-light": "#aab0b8",
+    "gear-rim": "#7a808a",
+    "gear-dark": "#5f646c",
+    "gear-hub": "#6e737c",
+    "bore": "#3d4148"
+  },
+  "nodes": [
+    {
+      "id": "shadow",
+      "type": "ellipse",
+      "r": 400,
+      "x": 554,
+      "y": 562,
+      "fill": "$gear-shadow"
+    },
+    {
+      "id": "gear",
+      "type": "group",
+      "x": 540,
+      "y": 540,
+      "animate": {
+        "rotation": [
+          [
+            0,
+            0
+          ],
+          [
+            1.5,
+            360,
+            "linear"
+          ]
+        ]
+      },
+      "children": [
+        {
+          "id": "gear-body",
+          "type": "path",
+          "d": "M -68.6 -322.8 L -48.7 -397.0 Q 0.0 -412.0 48.7 -397.0 L 68.6 -322.8 L 134.2 -301.5 L 193.9 -349.8 Q 242.2 -333.3 272.8 -292.5 L 245.2 -220.8 L 285.8 -165.0 L 362.5 -169.0 Q 391.8 -127.3 392.7 -76.3 L 328.2 -34.5 L 328.2 34.5 L 392.7 76.3 Q 391.8 127.3 362.5 169.0 L 285.8 165.0 L 245.2 220.8 L 272.8 292.5 Q 242.2 333.3 193.9 349.8 L 134.2 301.5 L 68.6 322.8 L 48.7 397.0 Q 0.0 412.0 -48.7 397.0 L -68.6 322.8 L -134.2 301.5 L -193.9 349.8 Q -242.2 333.3 -272.8 292.5 L -245.2 220.8 L -285.8 165.0 L -362.5 169.0 Q -391.8 127.3 -392.7 76.3 L -328.2 34.5 L -328.2 -34.5 L -392.7 -76.3 Q -391.8 -127.3 -362.5 -169.0 L -285.8 -165.0 L -245.2 -220.8 L -272.8 -292.5 Q -242.2 -333.3 -193.9 -349.8 L -134.2 -301.5 Z",
+          "fill": "$gear-base",
+          "stroke": {
+            "color": "$gear-rim",
+            "width": 4,
+            "join": "round"
+          }
+        },
+        {
+          "id": "gear-face",
+          "type": "ellipse",
+          "r": 270,
+          "x": 0,
+          "y": 0,
+          "fill": "$gear-light"
+        },
+        {
+          "id": "gear-face-ring",
+          "type": "ellipse",
+          "r": 270,
+          "x": 0,
+          "y": 0,
+          "fill": null,
+          "stroke": {
+            "color": "$gear-rim",
+            "width": 5
+          }
+        },
+        {
+          "id": "spokes",
+          "type": "group",
+          "children": [
+            {
+              "id": "spoke-1",
+              "type": "rect",
+              "w": 90,
+              "h": 150,
+              "radius": 20,
+              "x": 0,
+              "y": -75,
+              "pivot": [
+                0,
+                75
+              ],
+              "rotation": 0,
+              "fill": "$gear-dark"
+            },
+            {
+              "id": "spoke-2",
+              "type": "rect",
+              "w": 90,
+              "h": 150,
+              "radius": 20,
+              "x": 0,
+              "y": -75,
+              "pivot": [
+                0,
+                75
+              ],
+              "rotation": 72,
+              "fill": "$gear-dark"
+            },
+            {
+              "id": "spoke-3",
+              "type": "rect",
+              "w": 90,
+              "h": 150,
+              "radius": 20,
+              "x": 0,
+              "y": -75,
+              "pivot": [
+                0,
+                75
+              ],
+              "rotation": 144,
+              "fill": "$gear-dark"
+            },
+            {
+              "id": "spoke-4",
+              "type": "rect",
+              "w": 90,
+              "h": 150,
+              "radius": 20,
+              "x": 0,
+              "y": -75,
+              "pivot": [
+                0,
+                75
+              ],
+              "rotation": 216,
+              "fill": "$gear-dark"
+            },
+            {
+              "id": "spoke-5",
+              "type": "rect",
+              "w": 90,
+              "h": 150,
+              "radius": 20,
+              "x": 0,
+              "y": -75,
+              "pivot": [
+                0,
+                75
+              ],
+              "rotation": 288,
+              "fill": "$gear-dark"
+            }
+          ]
+        },
+        {
+          "id": "hub",
+          "type": "ellipse",
+          "r": 120,
+          "x": 0,
+          "y": 0,
+          "fill": "$gear-hub",
+          "stroke": {
+            "color": "$gear-rim",
+            "width": 5
+          }
+        },
+        {
+          "id": "bore",
+          "type": "ellipse",
+          "r": 52,
+          "x": 0,
+          "y": 0,
+          "fill": "$bore"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "ascii": 1,
+  "name": "pond",
+  "cols": 120,
+  "rows": 40,
+  "fps": 24,
+  "duration": 8,
+  "loop": true,
+  "style": {"color":"#cfe9e6","background":"#05161c","fontSize":10},
+  "layers": [
+    { "id": "water", "source": { "file": "water.gertie.json", "cols": 120, "ramp": "dots", "tint": "#62c6c6", "gamma": 0.6 } },
+    { "id": "pad-a", "framesFile": "lily.txt", "color": "#5fbf5a",
+      "at": [[0, 14, 3], [4, 20, 5, "easeInOutSine"], [8, 14, 3, "easeInOutSine"]] },
+    { "id": "koi-a", "framesFile": "koi-right.txt", "color": "#ff7a3d",
+      "at": [[0, -24, 10], [3, 40, 16, "easeInOutSine"], [5.5, 80, 12, "easeInOutSine"], [8, 124, 15, "easeInOutSine"]] },
+    { "id": "koi-b", "framesFile": "koi-left.txt", "color": "#f4f1ea",
+      "at": [[0, 122, 27], [4, 60, 31, "easeInOutSine"], [8, -24, 25, "easeInOutSine"]] },
+    { "id": "pad-b", "framesFile": "lily.txt", "color": "#4aa84a",
+      "at": [[0, 92, 30], [4, 86, 32, "easeInOutSine"], [8, 92, 30, "easeInOutSine"]] }
+  ]
+}

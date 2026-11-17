@@ -1,0 +1,37 @@
+{
+  "gertie": 1, "name": "friendly-robot",
+  "canvas": { "w": 512, "h": 512 }, "duration": 2, "fps": 30,
+  "palette": { "metal": "#94a3b8", "dark": "#1e293b", "accent": "#38bdf8", "warm": "#fbbf24" },
+  "nodes": [
+    { "id": "robot", "type": "group",
+      "animate": { "y": [[0, 0], [0.5, -6], [1, 0], [1.5, -6], [2, 0]] },
+      "children": [
+        { "id": "arm-left", "type": "rect", "w": 28, "h": 100, "radius": 14, "x": 190, "y": 335, "pivot": [0, -50], "fill": "$metal",
+          "animate": { "rotation": [[0, 8], [1, 3], [2, 8]] } },
+        { "id": "body", "type": "rect", "w": 150, "h": 150, "radius": 28, "x": 256, "y": 330, "fill": "$metal" },
+        { "id": "belly", "type": "ellipse", "r": 18, "x": 256, "y": 330, "fill": "$accent",
+          "animate": { "scale": [[0, 1], [0.5, 1.2], [1, 1], [1.5, 1.2], [2, 1]] } },
+        { "id": "neck", "type": "rect", "w": 30, "h": 24, "x": 256, "y": 250, "fill": "$dark" },
+        { "id": "antenna-stem", "type": "rect", "w": 6, "h": 40, "x": 256, "y": 80, "fill": "$dark" },
+        { "id": "antenna-tip", "type": "ellipse", "r": 11, "x": 256, "y": 56, "fill": "$warm",
+          "animate": { "scale": [[0, 1], [0.5, 1.3], [1, 1], [1.5, 1.3], [2, 1]] } },
+        { "id": "head", "type": "group", "x": 256, "y": 170, "pivot": [0, 60],
+          "animate": { "rotation": [[0, -3], [1, 3], [2, -3]] },
+          "children": [
+            { "id": "head-shape", "type": "rect", "w": 170, "h": 120, "radius": 36, "fill": "$metal" },
+            { "id": "face", "type": "rect", "w": 138, "h": 80, "radius": 26, "y": -2, "fill": "$dark" },
+            { "id": "eye-l", "type": "ellipse", "rx": 12, "ry": 14, "x": -30, "y": -8, "fill": "$accent",
+              "animate": { "scale": [[0, [1, 1]], [0.9, [1, 1]], [1.0, [1, 0.1]], [1.1, [1, 1]], [2, [1, 1]]] } },
+            { "id": "eye-r", "type": "ellipse", "rx": 12, "ry": 14, "x": 30, "y": -8, "fill": "$accent",
+              "animate": { "scale": [[0, [1, 1]], [0.9, [1, 1]], [1.0, [1, 0.1]], [1.1, [1, 1]], [2, [1, 1]]] } },
+            { "id": "smile", "type": "path", "d": "M -22 14 Q 0 32 22 14", "stroke": { "color": "#38bdf8", "width": 6 } }
+          ] },
+        { "id": "arm-right", "type": "group", "x": 322, "y": 292,
+          "animate": { "rotation": [[0, -125], [0.25, -172, "easeInOut"], [0.5, -125, "easeInOut"], [0.75, -172, "easeInOut"], [1, -125, "easeInOut"], [1.25, -172, "easeInOut"], [1.5, -125, "easeInOut"], [1.75, -172, "easeInOut"], [2, -125, "easeInOut"]] },
+          "children": [
+            { "id": "arm-right-shape", "type": "rect", "w": 28, "h": 100, "radius": 14, "y": 40, "fill": "$metal" },
+            { "id": "hand", "type": "ellipse", "r": 20, "y": 100, "fill": "$warm" }
+          ] }
+      ] }
+  ]
+}

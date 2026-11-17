@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+<style>
+@keyframes g1kf-arc__r{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+.g1kf-arc__r{animation:g1kf-arc__r 1s linear infinite both;transform-origin:0 0}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+<g transform="translate(128 128)">
+<ellipse rx="60" ry="60" fill="none" stroke="#1e293b" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4"/>
+</g>
+<g transform="translate(128 128)">
+<g class="g1kf-arc__r" transform="rotate(0)">
+<path d="M0 -60C33.14 -60 60 -33.14 60 0C60 33.14 33.14 60 0 60C-33.14 60 -60 33.14 -60 0C-60 -33.14 -33.14 -60 0 -60Z" fill="none" stroke="#38bdf8" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" pathLength="1" stroke-dasharray="0.3 0.7" stroke-dashoffset="0"/>
+</g>
+</g>
+</svg>

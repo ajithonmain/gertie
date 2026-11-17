@@ -1,0 +1,14 @@
+{
+  "ascii": 1,
+  "name": "bands",
+  "fps": 24,
+  "loop": true,
+  "style": {"color":"#e6edf5","background":"#000000","fontSize":12},
+  "source": {
+    "file": "orb.gertie.json",
+    "cols": 80,
+    "ramp": "bands",
+    "gamma": 1.8,
+    "edgeColor": "#ff7a2f"
+  }
+}

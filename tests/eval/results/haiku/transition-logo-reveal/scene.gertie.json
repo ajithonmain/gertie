@@ -1,0 +1,23 @@
+{
+  "gertie": 1,
+  "name": "logo-reveal",
+  "canvas": { "w": 512, "h": 512 },
+  "fps": 30,
+  "duration": 2.4,
+  "loop": false,
+  "poster": 2.4,
+  "tier": "icon",
+  "palette": { "ink": "#111827", "accent": "#f59e0b" },
+  "nodes": [
+    { "id": "mark", "type": "group", "x": 256, "y": 200,
+      "motion": [ { "preset": "pop-in", "at": 0.1, "duration": 0.6, "overshoot": 1.2 } ],
+      "children": [
+        { "id": "mark-square", "type": "rect", "w": 128, "h": 128, "radius": 28, "fill": "$ink" },
+        { "id": "mark-dot", "type": "ellipse", "r": 22, "fill": "$accent" }
+      ] },
+    { "id": "rule", "type": "line", "x1": 156, "y1": 300, "x2": 356, "y2": 300,
+      "stroke": { "color": "$ink", "width": 6, "cap": "round" },
+      "trim": { "start": 0, "end": 0 },
+      "motion": [ { "preset": "draw-on", "at": 0.7, "duration": 0.8 } ] }
+  ]
+}
