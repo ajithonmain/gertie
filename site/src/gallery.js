@@ -23,6 +23,26 @@ let paused = reduceMotion.matches;
 const visibleCards = new Set();
 const playingCards = new Map();
 
+// The standalone 3D player is built for a full page: a dark backdrop, a viewport-capped
+// canvas and its own Play/Pause button. In a card or the drawer it should fill the frame
+// like the SVG previews do, so restyle it from here (same origin) and leave the player as is.
+const EMBED_STYLE = 'html,body{height:100%;margin:0;overflow:hidden;background:transparent}' +
+  'body{display:block;min-height:0}main{width:100%;height:100%}' +
+  'canvas{width:100%!important;height:100%!important;max-height:none!important;object-fit:contain}' +
+  'button,#status,#gertie-credit{display:none!important}';
+function fitEmbeddedPlayer(frame) {
+  try {
+    const doc = frame.contentDocument;
+    if (!doc || doc.getElementById('gertie-embed')) return;
+    const style = doc.createElement('style');
+    style.id = 'gertie-embed';
+    style.textContent = EMBED_STYLE;
+    doc.head.append(style);
+  } catch {
+    // Cross-origin or detached frame: keep the player's own layout.
+  }
+}
+
 function syncCardMotion() {
   const enabled = !paused && !document.hidden && !dialog.open;
   for (const [card, { poster, frame }] of playingCards) {
@@ -47,7 +67,9 @@ function syncCardMotion() {
       frame.src = card.href;
       frame.hidden = true;
       frame.addEventListener('load', () => {
-        if (playingCards.get(card) === state && frame.contentWindow.location.href !== 'about:blank') frame.hidden = false;
+        if (playingCards.get(card) !== state || frame.contentWindow.location.href === 'about:blank') return;
+        fitEmbeddedPlayer(frame);
+        frame.hidden = false;
       });
       art.append(frame);
     } else {
@@ -131,6 +153,7 @@ function updatePreview() {
 
 player.addEventListener('load', () => {
   if (dialog.open && player.hasAttribute('src') && player.contentWindow.location.href !== 'about:blank') {
+    fitEmbeddedPlayer(player);
     player.hidden = false;
   }
 });
@@ -148,8 +171,9 @@ grid.addEventListener('click', event => {
   feedback.textContent = '';
   const three = card.dataset.format === 'three';
   primary.href = card.href;
-  primary.textContent = three ? 'Open player' : 'Download SVG';
-  primary.toggleAttribute('download', !three);
+  // 3D plays inside the drawer; the button downloads the self-contained player instead of leaving the page.
+  primary.textContent = three ? 'Download HTML' : 'Download SVG';
+  primary.setAttribute('download', '');
   for (const link of dialog.querySelectorAll('[data-source], [data-lottie]')) {
     const url = card.dataset[link.hasAttribute('data-source') ? 'source' : 'lottie'];
     link.hidden = !url;

@@ -127,8 +127,28 @@ function resetDrawerPlayer() {
   drawerPlayer.hidden = true;
   drawerPlayer.removeAttribute('src');
 }
+// The standalone 3D player is built for a full page: a dark backdrop, a viewport-capped
+// canvas and its own Play/Pause button. Inside the drawer it should fill the frame like
+// the SVG previews do, so restyle it from here (same origin) and leave the player as is.
+const EMBED_STYLE = 'html,body{height:100%;margin:0;overflow:hidden;background:transparent}' +
+  'body{display:block;min-height:0}main{width:100%;height:100%}' +
+  'canvas{width:100%!important;height:100%!important;max-height:none!important;object-fit:contain}' +
+  'button,#status,#gertie-credit{display:none!important}';
+function fitEmbeddedPlayer(frame) {
+  try {
+    const doc = frame.contentDocument;
+    if (!doc || doc.getElementById('gertie-embed')) return;
+    const style = doc.createElement('style');
+    style.id = 'gertie-embed';
+    style.textContent = EMBED_STYLE;
+    doc.head.append(style);
+  } catch {
+    // Cross-origin or detached frame: keep the player's own layout.
+  }
+}
 drawerPlayer.addEventListener('load', () => {
   if (!drawerPlayer.hasAttribute('src') || drawerPlayer.contentWindow.location.href === 'about:blank') return;
+  fitEmbeddedPlayer(drawerPlayer);
   drawerPlayer.hidden = false;
   requestAnimationFrame(() => {
     if (!drawerPlayer.hidden) drawerPlayer.classList.add('is-loaded');
@@ -147,8 +167,9 @@ function openDrawer(tile) {
   document.querySelector('#drawer-copy-label').textContent = 'Copy prompt';
   const action = document.querySelector('#drawer-download');
   action.href = player ?? src;
-  action.textContent = player ? 'Play 3D' : 'Download SVG';
-  action.toggleAttribute('download', !player);
+  // 3D plays inside the drawer; the button downloads the self-contained player instead of leaving the page.
+  action.textContent = player ? 'Download HTML' : 'Download SVG';
+  action.setAttribute('download', '');
   drawer.hidden = false;
   updateMotion();
   document.body.classList.add('drawer-open');
@@ -187,6 +208,16 @@ for (const track of railTracks) {
   });
 }
 rails.classList.add('is-ready');
+// Links to a 3D player that is also in the rail (such as "Play the 3D robot") open the same drawer.
+// The href stays as a fallback for no-JS and modified clicks.
+document.addEventListener('click', event => {
+  const link = event.target.closest('a[href^="gallery/"][href$=".html"]');
+  if (!link || link.closest('#drawer') || event.button || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+  const tile = rails.querySelector(`.rail-track > .gtile[data-player="${link.getAttribute('href')}"]`);
+  if (!tile) return;
+  event.preventDefault();
+  openDrawer(tile);
+});
 if ('ResizeObserver' in window) {
   const railSpeed = 14.6; // CSS pixels per second in either direction.
   const trackSize = new ResizeObserver(entries => {

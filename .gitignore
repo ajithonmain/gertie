@@ -9,3 +9,16 @@ examples/cutout/painting.cutout/
 site/dist/
 tests/eval/results/*.log
 tests/eval/results/*/*/stream.jsonl
+
+# Local tooling
+.wrangler/
+.claude/
+
+# Scratch and experiment folders kept locally, not part of the release
+basketball/
+nativity/
+experiments/
+forest-lantern-animation/
+forest-lantern.svg
+site/review/
+site/logo-drafts/

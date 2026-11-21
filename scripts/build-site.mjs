@@ -151,6 +151,34 @@ for (const { name, buildScript, modelSource } of threeGallery) {
 }
 const threePoster = name => `animations/posters/${name}.png`;
 const threePlayer = name => `gallery/${name}.html`;
+// The standalone 3D players are full pages that people may share on their own. Give each one
+// a real title, a description, link-preview tags, the favicon, a heading for screen readers and
+// a small credit link back to the site. The gallery and landing drawers hide the credit when embedded.
+for (const { name, title, prompt } of threeGallery) {
+  const file = join(dist, "gallery", `${name}.html`);
+  const pageTitle = `${title} · Gertie 3D animation`;
+  const desc = prompt ? `Made with Gertie, a free open-source animation skill for AI agents. Prompt: ${prompt}` : "Made with Gertie, a free open-source animation skill for AI agents.";
+  const head = [
+    `<title>${esc(pageTitle)}</title>`,
+    `<meta name="description" content="${esc(desc)}">`,
+    `<link rel="icon" href="../favicon.svg" type="image/svg+xml">`,
+    `<link rel="canonical" href="${SITE}/gallery/${name}">`,
+    `<meta property="og:title" content="${esc(pageTitle)}">`,
+    `<meta property="og:description" content="${esc(desc)}">`,
+    `<meta property="og:type" content="website">`,
+    `<meta property="og:url" content="${SITE}/gallery/${name}">`,
+    `<meta property="og:image" content="${SITE}/${threePoster(name)}">`,
+    `<meta name="twitter:card" content="summary_large_image">`,
+  ].join("\n");
+  const credit = `<a id="gertie-credit" href="../" style="position:fixed;left:50%;bottom:12px;transform:translateX(-50%);font:13px/1.4 system-ui,sans-serif;color:#cfd6e6;text-decoration:none;opacity:.8">Made with Gertie</a>`;
+  const heading = `<h1 style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap">${esc(title)}</h1>`;
+  const html = readFileSync(file, "utf8");
+  if (!/<title>[^<]*<\/title>/.test(html) || !html.includes("<main>")) throw new Error(`Unexpected 3D player markup in ${file}`);
+  writeFileSync(file, html
+    .replace(/<title>[^<]*<\/title>/, () => head)
+    .replace("<main>", () => `<main>\n${heading}`)
+    .replace("</main>", () => `</main>\n${credit}`));
+}
 
 for (const [folder, name] of [["", "preset-entrances"], ["", "preset-exits"], ["import", "w3c-demo"], ["trace", "logo-anim"]]) {
   const source = readFileSync(join(exDir, folder, `${name}.gertie.json`), "utf8");

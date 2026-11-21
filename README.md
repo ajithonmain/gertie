@@ -1,4 +1,11 @@
-<p align="center"><img src="site/src/icons/logo.svg" width="128" height="128" alt="Gertie sauropod logo"></p>
+<p align="center"><img src="site/src/og.png" width="720" alt="Gertie: your ideas, now in motion. Free, open source animation skill for your AI agent."></p>
+
+<p align="center">
+  <a href="https://gertiestudio.pages.dev">Website</a> ·
+  <a href="https://gertiestudio.pages.dev/gallery">Gallery</a> ·
+  <a href="https://gertiestudio.pages.dev/docs/">Docs</a> ·
+  <a href="#install">Install</a>
+</p>
 
 # Gertie
 
@@ -6,12 +13,19 @@ A free, open-source skill that lets any AI agent create vector animations: Lotti
 
 You ask your agent for an animation in plain language. The agent writes a small scene file. Gertie compiles it, checks it, renders it in a real browser, and exports the formats you need.
 
+<p align="center"><img src="assets/header.svg" width="128" height="128" alt="A pulsing ring animation, a self-contained animated SVG made with Gertie"></p>
+
+## What it makes
+
 - Lottie JSON and `.lottie` for apps and websites
-- Self-contained animated SVG that plays in an `<img>` tag with no JavaScript ([see the pulsing ring example](assets/header.svg))
+- Self-contained animated SVG that plays in an `<img>` tag with no JavaScript, like the pulsing ring above
 - GIF, transparent GIF, APNG, animated WebP
 - WebM with alpha, ProRes 4444, HEVC with alpha, MP4, and direct export for Telegram, Discord, Slack, WhatsApp and more
 - Multi-scene videos from a storyboard, with captions, transitions and music
 - ASCII (text-character) animation
+- Smooth, looping Three.js 3D scenes as standalone HTML
+
+See them in the [gallery](https://gertiestudio.pages.dev/gallery). Each example shows the prompt that made it.
 
 ## Requirements
 
@@ -58,15 +72,25 @@ node skills/gertie/scripts/gertie.mjs export examples/spinner-ring.gertie.json -
 
 `qa` writes the Lottie JSON, the SVG and a contact sheet to `out/` next to the scene. `export` writes to `out/` too, or to `--out dir`. Run `gertie <command> --help` for a command's options.
 
+### 3D animation
+
+Build smooth, looping Three.js scenes with procedural shapes, lighting, adjustable materials, multi-axis rotation and floating motion. The generated HTML plays offline in a WebGL 2 browser.
+
+```bash
+node skills/gertie/scripts/gertie.mjs three build examples/three-turntable.three.json --out out/turntable.html
+```
+
+See the [Three.js scene reference](skills/gertie/references/three.md) for options.
+
+## Which agents it works with
+
+Tested in Claude Code and Codex CLI. Gemini CLI and Cursor read the same skill folders but have not been tested yet. Firefox rendering has not been verified. Agent pass rates and the method are on the website and in [`docs/19-agent-evaluation.md`](docs/19-agent-evaluation.md).
+
 ## Privacy and ownership
 
 Gertie runs entirely on your machine. It makes no network requests: lottie-web and the Lottie schema are bundled and the renderer loads local files only. There is no telemetry.
 
 Gertie claims no rights over what it produces. Animations belong to the person who made them, subject to the rights in any artwork they supplied.
-
-## Status
-
-Phases 0 to 8 and the quality work of phase 10 are built, and the release work is done except publishing: see [`docs/20-release-checklist.md`](docs/20-release-checklist.md). The skill is tested in Claude Code and Codex CLI. It is not yet tested in Gemini CLI or Cursor. Agent pass rates and the method are on the website and in [`docs/19-agent-evaluation.md`](docs/19-agent-evaluation.md). Firefox rendering has not been verified.
 
 ## Develop
 
@@ -79,22 +103,12 @@ npm run build:site   # website into site/dist
 node tests/eval/run.mjs --model haiku   # agent evaluation (costs tokens)
 ```
 
-The design is in [`docs/`](docs/00-index.md), starting at the index. See [`CONTRIBUTING.md`](CONTRIBUTING.md).
+The design is in [`docs/`](docs/00-index.md), starting at the index. See [`CONTRIBUTING.md`](CONTRIBUTING.md). Bugs and ideas go in [issues](https://github.com/ajithonmain/gertie/issues).
 
 ## Licence
 
-MIT. Bundled third-party notices are in [`skills/gertie/assets/THIRD-PARTY-LICENSES.txt`](skills/gertie/assets/THIRD-PARTY-LICENSES.txt); the audit is in [`docs/18-licence-audit.md`](docs/18-licence-audit.md).
+Code: MIT, see [`LICENSE`](LICENSE). Bundled third-party notices are in [`skills/gertie/assets/THIRD-PARTY-LICENSES.txt`](skills/gertie/assets/THIRD-PARTY-LICENSES.txt); the audit is in [`docs/18-licence-audit.md`](docs/18-licence-audit.md).
+
+Gallery and website artwork remain the property of their creators and are not covered by the MIT licence unless stated.
 
 Gertie is not affiliated with LottieFiles or the Lottie Animation Community. Lottie is an open animation format; Gertie produces files in that format.
-
-## 3D animation
-
-Build smooth, looping Three.js scenes with procedural shapes, lighting, adjustable
-materials, multi-axis rotation, and floating motion. The generated HTML plays
-offline in a WebGL 2 browser.
-
-```sh
-node skills/gertie/scripts/gertie.mjs three build examples/three-turntable.three.json --out out/turntable.html
-```
-
-See the [Three.js scene reference](skills/gertie/references/three.md) for options.
