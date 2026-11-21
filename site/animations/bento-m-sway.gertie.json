@@ -1,0 +1,697 @@
+{
+  "gertie": 1,
+  "name": "bento-m-sway",
+  "canvas": {
+    "w": 800,
+    "h": 450,
+    "background": "#D99650"
+  },
+  "fps": 30,
+  "duration": 5,
+  "loop": true,
+  "tier": "scene",
+  "poster": 0.7,
+  "nodes": [
+    {
+      "id": "wall",
+      "type": "rect",
+      "x": 400,
+      "y": 225,
+      "w": 800,
+      "h": 450,
+      "fill": {
+        "type": "linear",
+        "from": [
+          -400,
+          -180
+        ],
+        "to": [
+          400,
+          200
+        ],
+        "stops": [
+          [
+            0,
+            "#E7A154"
+          ],
+          [
+            1,
+            "#D1904D"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "light-edge-0",
+      "type": "path",
+      "d": "M546 374 V152 C546 48 598 10 663 10 C725 10 765 66 765 145 V309Z",
+      "scale": 1.085,
+      "pivot": [
+        655,
+        189
+      ],
+      "opacity": 0.105,
+      "fill": {
+        "type": "linear",
+        "from": [
+          546,
+          360
+        ],
+        "to": [
+          765,
+          28
+        ],
+        "stops": [
+          [
+            0,
+            "#FFCF81"
+          ],
+          [
+            1,
+            "#FFE5A4"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "light-edge-1",
+      "type": "path",
+      "d": "M546 374 V152 C546 48 598 10 663 10 C725 10 765 66 765 145 V309Z",
+      "scale": 1.062,
+      "pivot": [
+        655,
+        189
+      ],
+      "opacity": 0.105,
+      "fill": {
+        "type": "linear",
+        "from": [
+          546,
+          360
+        ],
+        "to": [
+          765,
+          28
+        ],
+        "stops": [
+          [
+            0,
+            "#FFCF81"
+          ],
+          [
+            1,
+            "#FFE5A4"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "light-edge-2",
+      "type": "path",
+      "d": "M546 374 V152 C546 48 598 10 663 10 C725 10 765 66 765 145 V309Z",
+      "scale": 1.04,
+      "pivot": [
+        655,
+        189
+      ],
+      "opacity": 0.105,
+      "fill": {
+        "type": "linear",
+        "from": [
+          546,
+          360
+        ],
+        "to": [
+          765,
+          28
+        ],
+        "stops": [
+          [
+            0,
+            "#FFCF81"
+          ],
+          [
+            1,
+            "#FFE5A4"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "light-edge-3",
+      "type": "path",
+      "d": "M546 374 V152 C546 48 598 10 663 10 C725 10 765 66 765 145 V309Z",
+      "scale": 1.018,
+      "pivot": [
+        655,
+        189
+      ],
+      "opacity": 0.105,
+      "fill": {
+        "type": "linear",
+        "from": [
+          546,
+          360
+        ],
+        "to": [
+          765,
+          28
+        ],
+        "stops": [
+          [
+            0,
+            "#FFCF81"
+          ],
+          [
+            1,
+            "#FFE5A4"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "light-edge-4",
+      "type": "path",
+      "d": "M546 374 V152 C546 48 598 10 663 10 C725 10 765 66 765 145 V309Z",
+      "scale": 0.996,
+      "pivot": [
+        655,
+        189
+      ],
+      "opacity": 0.105,
+      "fill": {
+        "type": "linear",
+        "from": [
+          546,
+          360
+        ],
+        "to": [
+          765,
+          28
+        ],
+        "stops": [
+          [
+            0,
+            "#FFCF81"
+          ],
+          [
+            1,
+            "#FFE5A4"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "light-edge-5",
+      "type": "path",
+      "d": "M546 374 V152 C546 48 598 10 663 10 C725 10 765 66 765 145 V309Z",
+      "scale": 0.975,
+      "pivot": [
+        655,
+        189
+      ],
+      "opacity": 0.105,
+      "fill": {
+        "type": "linear",
+        "from": [
+          546,
+          360
+        ],
+        "to": [
+          765,
+          28
+        ],
+        "stops": [
+          [
+            0,
+            "#FFCF81"
+          ],
+          [
+            1,
+            "#FFE5A4"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "light-edge-6",
+      "type": "path",
+      "d": "M546 374 V152 C546 48 598 10 663 10 C725 10 765 66 765 145 V309Z",
+      "scale": 0.955,
+      "pivot": [
+        655,
+        189
+      ],
+      "opacity": 0.105,
+      "fill": {
+        "type": "linear",
+        "from": [
+          546,
+          360
+        ],
+        "to": [
+          765,
+          28
+        ],
+        "stops": [
+          [
+            0,
+            "#FFCF81"
+          ],
+          [
+            1,
+            "#FFE5A4"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "soft-shadow-0",
+      "type": "path",
+      "d": "M655 13 V335 M550 157 L762 95 M550 260 L762 197",
+      "fill": null,
+      "opacity": 0.12,
+      "stroke": {
+        "color": "#C98139",
+        "width": 17,
+        "cap": "round"
+      }
+    },
+    {
+      "id": "soft-shadow-1",
+      "type": "path",
+      "d": "M655 13 V335 M550 157 L762 95 M550 260 L762 197",
+      "fill": null,
+      "opacity": 0.12,
+      "stroke": {
+        "color": "#C98139",
+        "width": 13,
+        "cap": "round"
+      }
+    },
+    {
+      "id": "soft-shadow-2",
+      "type": "path",
+      "d": "M655 13 V335 M550 157 L762 95 M550 260 L762 197",
+      "fill": null,
+      "opacity": 0.12,
+      "stroke": {
+        "color": "#C98139",
+        "width": 9,
+        "cap": "round"
+      }
+    },
+    {
+      "id": "soft-shadow-3",
+      "type": "path",
+      "d": "M655 13 V335 M550 157 L762 95 M550 260 L762 197",
+      "fill": null,
+      "opacity": 0.12,
+      "stroke": {
+        "color": "#C98139",
+        "width": 5,
+        "cap": "round"
+      }
+    },
+    {
+      "id": "floor",
+      "type": "path",
+      "d": "M0 391 H800 V450 H0Z",
+      "fill": "#F2B770"
+    },
+    {
+      "id": "pot-shadow",
+      "type": "ellipse",
+      "x": 144,
+      "y": 414,
+      "rx": 108,
+      "ry": 11,
+      "fill": "#C9894B"
+    },
+    {
+      "id": "pot",
+      "type": "path",
+      "d": "M186 311 H329 L309 421 Q297 440 225 433 Q209 430 207 420Z",
+      "fill": {
+        "type": "linear",
+        "from": [
+          186,
+          330
+        ],
+        "to": [
+          329,
+          401
+        ],
+        "stops": [
+          [
+            0,
+            "#A64726"
+          ],
+          [
+            1,
+            "#D56C38"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "pot-top",
+      "type": "ellipse",
+      "x": 257,
+      "y": 312,
+      "rx": 73,
+      "ry": 15,
+      "fill": "#D47C45"
+    },
+    {
+      "id": "soil",
+      "type": "ellipse",
+      "x": 257,
+      "y": 312,
+      "rx": 62,
+      "ry": 9,
+      "fill": "#6F3821"
+    },
+    {
+      "id": "left-low",
+      "type": "group",
+      "children": [
+        {
+          "id": "left-low-stem",
+          "type": "path",
+          "d": "M-13 -3 Q-22 -101 -75 -111",
+          "fill": null,
+          "stroke": {
+            "color": "#53602B",
+            "width": 5
+          }
+        },
+        {
+          "id": "left-low-leaf",
+          "type": "path",
+          "d": "M-75 -111 C-114 -145 -155 -139 -183 -104 C-209 -76 -207 -46 -194 -22 C-190 -60 -132 -45 -100 -70 Q-80 -83 -75 -111Z",
+          "fill": {
+            "type": "linear",
+            "from": [
+              -20,
+              -220
+            ],
+            "to": [
+              60,
+              -62
+            ],
+            "stops": [
+              [
+                0,
+                "#65702D"
+              ],
+              [
+                1,
+                "#4B5427"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "left-low-vein",
+          "type": "path",
+          "d": "M-75 -111 Q-146 -109 -194 -35",
+          "fill": null,
+          "stroke": {
+            "color": "#929146",
+            "width": 1.8
+          }
+        }
+      ],
+      "x": 257,
+      "y": 315,
+      "motion": [
+        {
+          "preset": "sway",
+          "duration": 5,
+          "repeat": "loop",
+          "angle": 3,
+          "phase": 0.18
+        }
+      ]
+    },
+    {
+      "id": "left-high",
+      "type": "group",
+      "children": [
+        {
+          "id": "left-high-stem",
+          "type": "path",
+          "d": "M-7 -4 Q-12 -111 -62 -166",
+          "fill": null,
+          "stroke": {
+            "color": "#53602B",
+            "width": 5
+          }
+        },
+        {
+          "id": "left-high-leaf",
+          "type": "path",
+          "d": "M-62 -166 C-70 -194 -56 -233 -111 -241 C-144 -244 -175 -255 -191 -229 C-166 -237 -164 -198 -141 -184 Q-118 -171 -93 -176 Q-74 -176 -62 -166Z",
+          "fill": {
+            "type": "linear",
+            "from": [
+              -20,
+              -220
+            ],
+            "to": [
+              60,
+              -62
+            ],
+            "stops": [
+              [
+                0,
+                "#747A34"
+              ],
+              [
+                1,
+                "#4B5427"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "left-high-vein",
+          "type": "path",
+          "d": "M-62 -166 Q-110 -219 -180 -233",
+          "fill": null,
+          "stroke": {
+            "color": "#929146",
+            "width": 1.8
+          }
+        }
+      ],
+      "x": 257,
+      "y": 315,
+      "motion": [
+        {
+          "preset": "sway",
+          "duration": 5,
+          "repeat": "loop",
+          "angle": 4,
+          "phase": 0.42
+        }
+      ]
+    },
+    {
+      "id": "top",
+      "type": "group",
+      "children": [
+        {
+          "id": "top-stem",
+          "type": "path",
+          "d": "M0 -3 Q-18 -115 -9 -180",
+          "fill": null,
+          "stroke": {
+            "color": "#53602B",
+            "width": 5
+          }
+        },
+        {
+          "id": "top-leaf",
+          "type": "path",
+          "d": "M-9 -180 C-55 -223 -23 -266 22 -287 C63 -306 103 -306 131 -286 Q104 -301 85 -259 Q70 -218 31 -211 Q1 -205 -9 -180Z",
+          "fill": {
+            "type": "linear",
+            "from": [
+              -20,
+              -220
+            ],
+            "to": [
+              60,
+              -62
+            ],
+            "stops": [
+              [
+                0,
+                "#65702D"
+              ],
+              [
+                1,
+                "#4B5427"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "top-vein",
+          "type": "path",
+          "d": "M-9 -180 Q13 -257 111 -292",
+          "fill": null,
+          "stroke": {
+            "color": "#929146",
+            "width": 1.8
+          }
+        }
+      ],
+      "x": 257,
+      "y": 315,
+      "motion": [
+        {
+          "preset": "sway",
+          "duration": 5,
+          "repeat": "loop",
+          "angle": 3,
+          "phase": 0.12
+        }
+      ]
+    },
+    {
+      "id": "right-high",
+      "type": "group",
+      "children": [
+        {
+          "id": "right-high-stem",
+          "type": "path",
+          "d": "M8 -3 Q24 -113 91 -152",
+          "fill": null,
+          "stroke": {
+            "color": "#53602B",
+            "width": 5
+          }
+        },
+        {
+          "id": "right-high-leaf",
+          "type": "path",
+          "d": "M91 -152 C94 -202 137 -227 182 -214 Q219 -204 232 -181 Q217 -194 195 -169 Q168 -141 133 -149 Q109 -155 91 -152Z",
+          "fill": {
+            "type": "linear",
+            "from": [
+              -20,
+              -220
+            ],
+            "to": [
+              60,
+              -62
+            ],
+            "stops": [
+              [
+                0,
+                "#747A34"
+              ],
+              [
+                1,
+                "#4B5427"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "right-high-vein",
+          "type": "path",
+          "d": "M91 -152 Q151 -190 224 -186",
+          "fill": null,
+          "stroke": {
+            "color": "#929146",
+            "width": 1.8
+          }
+        }
+      ],
+      "x": 257,
+      "y": 315,
+      "motion": [
+        {
+          "preset": "sway",
+          "duration": 5,
+          "repeat": "loop",
+          "angle": 4,
+          "phase": 0.68
+        }
+      ]
+    },
+    {
+      "id": "right-low",
+      "type": "group",
+      "children": [
+        {
+          "id": "right-low-stem",
+          "type": "path",
+          "d": "M16 -3 Q38 -69 76 -87",
+          "fill": null,
+          "stroke": {
+            "color": "#53602B",
+            "width": 5
+          }
+        },
+        {
+          "id": "right-low-leaf",
+          "type": "path",
+          "d": "M76 -87 Q118 -139 165 -108 Q199 -87 196 -36 Q184 -62 148 -53 Q105 -49 76 -87Z",
+          "fill": {
+            "type": "linear",
+            "from": [
+              -20,
+              -220
+            ],
+            "to": [
+              60,
+              -62
+            ],
+            "stops": [
+              [
+                0,
+                "#65702D"
+              ],
+              [
+                1,
+                "#4B5427"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "right-low-vein",
+          "type": "path",
+          "d": "M76 -87 Q148 -104 190 -48",
+          "fill": null,
+          "stroke": {
+            "color": "#929146",
+            "width": 1.8
+          }
+        }
+      ],
+      "x": 257,
+      "y": 315,
+      "motion": [
+        {
+          "preset": "sway",
+          "duration": 5,
+          "repeat": "loop",
+          "angle": 3,
+          "phase": 0.84
+        }
+      ]
+    },
+    {
+      "id": "pot-rim",
+      "type": "path",
+      "d": "M184 312 Q257 328 330 312 L327 335 Q257 351 187 335Z",
+      "fill": "#C46130"
+    }
+  ]
+}

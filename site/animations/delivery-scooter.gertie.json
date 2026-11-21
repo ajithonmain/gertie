@@ -1,0 +1,2015 @@
+{
+  "gertie": 1,
+  "name": "delivery-scooter",
+  "canvas": {
+    "w": 760,
+    "h": 420,
+    "background": "#f1dfc3"
+  },
+  "duration": 6,
+  "fps": 30,
+  "loop": true,
+  "poster": 1.54,
+  "nodes": [
+    {
+      "id": "low-sun",
+      "type": "ellipse",
+      "x": 639,
+      "y": 125,
+      "rx": 45,
+      "ry": 45,
+      "fill": "#f2d49e"
+    },
+    {
+      "id": "distant-district",
+      "type": "group",
+      "children": [
+        {
+          "id": "district-0-instance",
+          "type": "use",
+          "ref": "district-0-tile",
+          "x": 0
+        },
+        {
+          "id": "district-1-instance",
+          "type": "use",
+          "ref": "district-0-tile",
+          "x": 448
+        },
+        {
+          "id": "district-2-instance",
+          "type": "use",
+          "ref": "district-0-tile",
+          "x": 896
+        }
+      ],
+      "animate": {
+        "x": [
+          [
+            0,
+            0
+          ],
+          [
+            6,
+            -448,
+            "linear"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "passing-storefronts",
+      "type": "group",
+      "children": [
+        {
+          "id": "block-0-instance",
+          "type": "use",
+          "ref": "block-0-tile",
+          "x": 0
+        },
+        {
+          "id": "block-1-instance",
+          "type": "use",
+          "ref": "block-0-tile",
+          "x": 620
+        },
+        {
+          "id": "block-2-instance",
+          "type": "use",
+          "ref": "block-0-tile",
+          "x": 1240
+        }
+      ],
+      "animate": {
+        "x": [
+          [
+            0,
+            0
+          ],
+          [
+            6,
+            -620,
+            "linear"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "pavement",
+      "type": "rect",
+      "x": 380,
+      "y": 299,
+      "w": 760,
+      "h": 22,
+      "radius": 0,
+      "fill": "#d9b596"
+    },
+    {
+      "id": "curb",
+      "type": "rect",
+      "x": 380,
+      "y": 314,
+      "w": 760,
+      "h": 8,
+      "radius": 0,
+      "fill": "#ede1c4"
+    },
+    {
+      "id": "road",
+      "type": "rect",
+      "x": 380,
+      "y": 371,
+      "w": 760,
+      "h": 110,
+      "radius": 0,
+      "fill": "#777889"
+    },
+    {
+      "id": "road-dashes",
+      "type": "group",
+      "children": [
+        {
+          "id": "lane-mark-0",
+          "type": "rect",
+          "x": 31,
+          "y": 391,
+          "w": 43,
+          "h": 4,
+          "radius": 2,
+          "fill": "#e4c9ac"
+        },
+        {
+          "id": "lane-mark-1",
+          "type": "rect",
+          "x": 132,
+          "y": 391,
+          "w": 43,
+          "h": 4,
+          "radius": 2,
+          "fill": "#e4c9ac"
+        },
+        {
+          "id": "lane-mark-2",
+          "type": "rect",
+          "x": 233,
+          "y": 391,
+          "w": 43,
+          "h": 4,
+          "radius": 2,
+          "fill": "#e4c9ac"
+        },
+        {
+          "id": "lane-mark-3",
+          "type": "rect",
+          "x": 334,
+          "y": 391,
+          "w": 43,
+          "h": 4,
+          "radius": 2,
+          "fill": "#e4c9ac"
+        },
+        {
+          "id": "lane-mark-4",
+          "type": "rect",
+          "x": 435,
+          "y": 391,
+          "w": 43,
+          "h": 4,
+          "radius": 2,
+          "fill": "#e4c9ac"
+        },
+        {
+          "id": "lane-mark-5",
+          "type": "rect",
+          "x": 536,
+          "y": 391,
+          "w": 43,
+          "h": 4,
+          "radius": 2,
+          "fill": "#e4c9ac"
+        },
+        {
+          "id": "lane-mark-6",
+          "type": "rect",
+          "x": 637,
+          "y": 391,
+          "w": 43,
+          "h": 4,
+          "radius": 2,
+          "fill": "#e4c9ac"
+        },
+        {
+          "id": "lane-mark-7",
+          "type": "rect",
+          "x": 738,
+          "y": 391,
+          "w": 43,
+          "h": 4,
+          "radius": 2,
+          "fill": "#e4c9ac"
+        },
+        {
+          "id": "lane-mark-8",
+          "type": "rect",
+          "x": 839,
+          "y": 391,
+          "w": 43,
+          "h": 4,
+          "radius": 2,
+          "fill": "#e4c9ac"
+        },
+        {
+          "id": "lane-mark-9",
+          "type": "rect",
+          "x": 940,
+          "y": 391,
+          "w": 43,
+          "h": 4,
+          "radius": 2,
+          "fill": "#e4c9ac"
+        },
+        {
+          "id": "lane-mark-10",
+          "type": "rect",
+          "x": 1041,
+          "y": 391,
+          "w": 43,
+          "h": 4,
+          "radius": 2,
+          "fill": "#e4c9ac"
+        },
+        {
+          "id": "lane-mark-11",
+          "type": "rect",
+          "x": 1142,
+          "y": 391,
+          "w": 43,
+          "h": 4,
+          "radius": 2,
+          "fill": "#e4c9ac"
+        },
+        {
+          "id": "lane-mark-12",
+          "type": "rect",
+          "x": 1243,
+          "y": 391,
+          "w": 43,
+          "h": 4,
+          "radius": 2,
+          "fill": "#e4c9ac"
+        },
+        {
+          "id": "lane-mark-13",
+          "type": "rect",
+          "x": 1344,
+          "y": 391,
+          "w": 43,
+          "h": 4,
+          "radius": 2,
+          "fill": "#e4c9ac"
+        },
+        {
+          "id": "lane-mark-14",
+          "type": "rect",
+          "x": 1445,
+          "y": 391,
+          "w": 43,
+          "h": 4,
+          "radius": 2,
+          "fill": "#e4c9ac"
+        },
+        {
+          "id": "lane-mark-15",
+          "type": "rect",
+          "x": 1546,
+          "y": 391,
+          "w": 43,
+          "h": 4,
+          "radius": 2,
+          "fill": "#e4c9ac"
+        },
+        {
+          "id": "lane-mark-16",
+          "type": "rect",
+          "x": 1647,
+          "y": 391,
+          "w": 43,
+          "h": 4,
+          "radius": 2,
+          "fill": "#e4c9ac"
+        },
+        {
+          "id": "lane-mark-17",
+          "type": "rect",
+          "x": 1748,
+          "y": 391,
+          "w": 43,
+          "h": 4,
+          "radius": 2,
+          "fill": "#e4c9ac"
+        },
+        {
+          "id": "lane-mark-18",
+          "type": "rect",
+          "x": 1849,
+          "y": 391,
+          "w": 43,
+          "h": 4,
+          "radius": 2,
+          "fill": "#e4c9ac"
+        }
+      ],
+      "animate": {
+        "x": [
+          [
+            0,
+            0
+          ],
+          [
+            6,
+            -1010,
+            "linear"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "scooter-shadow",
+      "type": "ellipse",
+      "x": 378,
+      "y": 342,
+      "rx": 175,
+      "ry": 10,
+      "fill": "#515668",
+      "opacity": 0.67,
+      "animate": {
+        "x": [
+          [
+            0,
+            378
+          ],
+          [
+            0.8,
+            378
+          ],
+          [
+            2.42,
+            410,
+            "smooth"
+          ],
+          [
+            3.5,
+            408,
+            "gentle"
+          ],
+          [
+            5.28,
+            378,
+            "smooth"
+          ],
+          [
+            6,
+            378
+          ]
+        ]
+      }
+    },
+    {
+      "id": "scooter-and-courier",
+      "type": "group",
+      "children": [
+        {
+          "id": "rear-wheel",
+          "type": "group",
+          "children": [
+            {
+              "id": "rear-wheel-tire",
+              "type": "ellipse",
+              "x": 0,
+              "y": 0,
+              "rx": 49,
+              "ry": 49,
+              "fill": "#2d3038",
+              "stroke": {
+                "color": "#272936",
+                "width": 3.5
+              }
+            },
+            {
+              "id": "rear-wheel-sidewall",
+              "type": "ellipse",
+              "x": 0,
+              "y": 0,
+              "rx": 40,
+              "ry": 40,
+              "fill": null,
+              "stroke": {
+                "color": "#505052",
+                "width": 2
+              }
+            },
+            {
+              "id": "rear-wheel-hubcap",
+              "type": "ellipse",
+              "x": 0,
+              "y": 0,
+              "rx": 27,
+              "ry": 27,
+              "fill": "#fff1d5",
+              "stroke": {
+                "color": "#272936",
+                "width": 2.5
+              }
+            },
+            {
+              "id": "rear-wheel-hub",
+              "type": "ellipse",
+              "x": 0,
+              "y": 0,
+              "rx": 5,
+              "ry": 5,
+              "fill": "#49515a"
+            },
+            {
+              "id": "rear-wheel-spokes",
+              "type": "path",
+              "d": "M0 -20 L0 -9 M17 9 L7 4 M-17 9 L-7 4",
+              "fill": null,
+              "stroke": {
+                "color": "#b1aa98",
+                "width": 3
+              }
+            },
+            {
+              "id": "rear-wheel-tread",
+              "type": "path",
+              "d": "M-5 -42 L-2 -36 M38 21 L33 18 M-37 20 L-32 17",
+              "fill": null,
+              "stroke": {
+                "color": "#696764",
+                "width": 2
+              }
+            }
+          ],
+          "x": 180,
+          "y": 363,
+          "animate": {
+            "rotation": [
+              [
+                0,
+                0
+              ],
+              [
+                6,
+                1440,
+                "linear"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "front-wheel",
+          "type": "group",
+          "children": [
+            {
+              "id": "front-wheel-tire",
+              "type": "ellipse",
+              "x": 0,
+              "y": 0,
+              "rx": 49,
+              "ry": 49,
+              "fill": "#2d3038",
+              "stroke": {
+                "color": "#272936",
+                "width": 3.5
+              }
+            },
+            {
+              "id": "front-wheel-sidewall",
+              "type": "ellipse",
+              "x": 0,
+              "y": 0,
+              "rx": 40,
+              "ry": 40,
+              "fill": null,
+              "stroke": {
+                "color": "#505052",
+                "width": 2
+              }
+            },
+            {
+              "id": "front-wheel-hubcap",
+              "type": "ellipse",
+              "x": 0,
+              "y": 0,
+              "rx": 27,
+              "ry": 27,
+              "fill": "#fff1d5",
+              "stroke": {
+                "color": "#272936",
+                "width": 2.5
+              }
+            },
+            {
+              "id": "front-wheel-hub",
+              "type": "ellipse",
+              "x": 0,
+              "y": 0,
+              "rx": 5,
+              "ry": 5,
+              "fill": "#49515a"
+            },
+            {
+              "id": "front-wheel-spokes",
+              "type": "path",
+              "d": "M0 -20 L0 -9 M17 9 L7 4 M-17 9 L-7 4",
+              "fill": null,
+              "stroke": {
+                "color": "#b1aa98",
+                "width": 3
+              }
+            },
+            {
+              "id": "front-wheel-tread",
+              "type": "path",
+              "d": "M-5 -42 L-2 -36 M38 21 L33 18 M-37 20 L-32 17",
+              "fill": null,
+              "stroke": {
+                "color": "#696764",
+                "width": 2
+              }
+            }
+          ],
+          "x": 436,
+          "y": 363,
+          "animate": {
+            "rotation": [
+              [
+                0,
+                0
+              ],
+              [
+                6,
+                1440,
+                "linear"
+              ]
+            ],
+            "y": [
+              [
+                0,
+                363
+              ],
+              [
+                2.57,
+                363
+              ],
+              [
+                2.78,
+                359,
+                "snap"
+              ],
+              [
+                3.02,
+                363,
+                "settle"
+              ],
+              [
+                6,
+                363
+              ]
+            ]
+          }
+        },
+        {
+          "id": "suspension",
+          "type": "group",
+          "children": [
+            {
+              "id": "rack",
+              "type": "path",
+              "d": "M124 246 L137 269 L216 268 M146 247 L135 277 M201 242 L194 265",
+              "fill": null,
+              "stroke": {
+                "color": "#272936",
+                "width": 4.5
+              }
+            },
+            {
+              "id": "tail-light",
+              "type": "path",
+              "d": "M119 282 L140 280 L132 301 L112 299 Z",
+              "fill": "#c45c4a",
+              "stroke": {
+                "color": "#272936",
+                "width": 3
+              }
+            },
+            {
+              "id": "scooter-frame",
+              "type": "path",
+              "d": "M163 280 Q197 249 257 260 L280 343 L329 345 Q351 346 360 322 Q381 280 365 242 L359 223 Q361 215 376 220 Q409 246 422 286 Q433 321 410 340 Q393 344 372 345 Q359 372 326 373 L235 370 Q207 368 197 346 L143 344 Z",
+              "fill": "#91bc9c",
+              "stroke": {
+                "color": "#272936",
+                "width": 3.3
+              }
+            },
+            {
+              "id": "rear-fairing",
+              "type": "path",
+              "d": "M113 344 Q123 303 148 284 C172 265 226 263 247 285 Q271 306 247 347 Q211 355 113 344 Z",
+              "fill": "#91bc9c",
+              "stroke": {
+                "color": "#272936",
+                "width": 3.3
+              }
+            },
+            {
+              "id": "fairing-trim",
+              "type": "path",
+              "d": "M122 330 Q133 298 153 290 Q175 276 203 279",
+              "fill": null,
+              "stroke": {
+                "color": "#c7dcc0",
+                "width": 2.6
+              }
+            },
+            {
+              "id": "air-vents",
+              "type": "path",
+              "d": "M163 313 L214 315 M158 323 L209 325 M155 333 L204 335",
+              "fill": null,
+              "stroke": {
+                "color": "#638e79",
+                "width": 3.1
+              }
+            },
+            {
+              "id": "floorboard",
+              "type": "path",
+              "d": "M248 348 L330 347 Q352 347 364 324",
+              "fill": null,
+              "stroke": {
+                "color": "#456054",
+                "width": 4
+              }
+            },
+            {
+              "id": "seat",
+              "type": "path",
+              "d": "M170 246 Q179 238 200 241 L274 248 Q288 251 281 261 Q276 269 264 268 L183 260 Q171 260 170 246 Z",
+              "fill": "#675065",
+              "stroke": {
+                "color": "#272936",
+                "width": 3.3
+              }
+            },
+            {
+              "id": "fork",
+              "type": "path",
+              "d": "M394 294 L436 366",
+              "fill": null,
+              "stroke": {
+                "color": "#4d5557",
+                "width": 9
+              }
+            },
+            {
+              "id": "spring",
+              "type": "path",
+              "d": "M414 324 L420 322 M419 333 L425 331 M424 342 L430 340 M429 351 L435 349",
+              "fill": null,
+              "stroke": {
+                "color": "#f0dfbd",
+                "width": 4.4
+              }
+            },
+            {
+              "id": "front-fender",
+              "type": "path",
+              "d": "M384 327 Q389 287 420 281 Q459 272 483 316 Q457 311 435 318 Q407 327 384 327 Z",
+              "fill": "#91bc9c",
+              "stroke": {
+                "color": "#272936",
+                "width": 3.3
+              }
+            },
+            {
+              "id": "fender-highlight",
+              "type": "path",
+              "d": "M399 309 Q421 286 449 294",
+              "fill": null,
+              "stroke": {
+                "color": "#c7dcc0",
+                "width": 2.3
+              }
+            },
+            {
+              "id": "headlight-shell",
+              "type": "path",
+              "d": "M360 188 L400 184 Q415 185 413 204 Q413 222 400 223 L365 221 Z",
+              "fill": "#91bc9c",
+              "stroke": {
+                "color": "#272936",
+                "width": 3.3
+              }
+            },
+            {
+              "id": "headlight",
+              "type": "ellipse",
+              "x": 400,
+              "y": 204,
+              "rx": 9,
+              "ry": 20,
+              "fill": "#fff1d5",
+              "stroke": {
+                "color": "#272936",
+                "width": 3
+              }
+            },
+            {
+              "id": "headlight-reflection",
+              "type": "path",
+              "d": "M402 192 L401 203",
+              "fill": null,
+              "stroke": {
+                "color": "#fffaf0",
+                "width": 2.4
+              }
+            },
+            {
+              "id": "mirror-stem",
+              "type": "path",
+              "d": "M372 188 Q376 165 367 154",
+              "fill": null,
+              "stroke": {
+                "color": "#272936",
+                "width": 3
+              }
+            },
+            {
+              "id": "mirror",
+              "type": "ellipse",
+              "x": 365,
+              "y": 149,
+              "rx": 10,
+              "ry": 14,
+              "fill": "#273850",
+              "stroke": {
+                "color": "#272936",
+                "width": 2.5
+              },
+              "rotation": 24
+            },
+            {
+              "id": "grip",
+              "type": "path",
+              "d": "M342 204 L365 203",
+              "fill": null,
+              "stroke": {
+                "color": "#272936",
+                "width": 7
+              }
+            },
+            {
+              "id": "cargo-box",
+              "type": "group",
+              "children": [
+                {
+                  "id": "cargo-shadow",
+                  "type": "path",
+                  "d": "M113 228 L211 239 L211 246 L120 243 Z",
+                  "fill": "#826651",
+                  "stroke": {
+                    "color": "#272936",
+                    "width": 3.3
+                  }
+                },
+                {
+                  "id": "delivery-box",
+                  "type": "path",
+                  "d": "M119 154 Q121 148 132 148 L207 151 Q220 153 220 168 L215 232 Q214 244 201 244 L121 238 Q112 236 112 226 Z",
+                  "fill": "#edb64e",
+                  "stroke": {
+                    "color": "#272936",
+                    "width": 3.3
+                  }
+                },
+                {
+                  "id": "box-lid",
+                  "type": "path",
+                  "d": "M115 169 L218 173 L218 160 Q215 151 204 151 L131 148 Q120 149 117 154 Z",
+                  "fill": "#f5cf6b",
+                  "stroke": {
+                    "color": "#272936",
+                    "width": 2.7
+                  }
+                },
+                {
+                  "id": "box-straps",
+                  "type": "path",
+                  "d": "M147 150 L142 239 M194 151 L190 242",
+                  "fill": null,
+                  "stroke": {
+                    "color": "#5f4a44",
+                    "width": 4.5
+                  }
+                },
+                {
+                  "id": "left-buckle",
+                  "type": "rect",
+                  "x": 144,
+                  "y": 204,
+                  "w": 10,
+                  "h": 14,
+                  "radius": 2,
+                  "fill": "#68534b",
+                  "stroke": {
+                    "color": "#272936",
+                    "width": 2.4
+                  }
+                },
+                {
+                  "id": "right-buckle",
+                  "type": "rect",
+                  "x": 192,
+                  "y": 206,
+                  "w": 10,
+                  "h": 14,
+                  "radius": 2,
+                  "fill": "#68534b",
+                  "stroke": {
+                    "color": "#272936",
+                    "width": 2.4
+                  }
+                },
+                {
+                  "id": "parcel-seam",
+                  "type": "path",
+                  "d": "M122 226 L133 226",
+                  "fill": null,
+                  "stroke": {
+                    "color": "#f9d681",
+                    "width": 2.7
+                  }
+                }
+              ],
+              "pivot": [
+                177,
+                244
+              ],
+              "animate": {
+                "rotation": [
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    2.63,
+                    0
+                  ],
+                  [
+                    2.9,
+                    2.6,
+                    "snap"
+                  ],
+                  [
+                    3.23,
+                    -1.5,
+                    "smooth"
+                  ],
+                  [
+                    3.62,
+                    0,
+                    "settle"
+                  ],
+                  [
+                    6,
+                    0
+                  ]
+                ]
+              }
+            },
+            {
+              "id": "courier-trousers",
+              "type": "path",
+              "d": "M226 214 Q254 211 282 226 L323 234 Q347 239 335 271 L318 321 L287 319 L296 265 L251 262 Q226 259 215 245 Z",
+              "fill": "#38394b",
+              "stroke": {
+                "color": "#272936",
+                "width": 3.3
+              }
+            },
+            {
+              "id": "trouser-fold",
+              "type": "path",
+              "d": "M306 267 Q310 256 322 253 M292 314 L316 315",
+              "fill": null,
+              "stroke": {
+                "color": "#545368",
+                "width": 2.1
+              }
+            },
+            {
+              "id": "courier-ankle",
+              "type": "path",
+              "d": "M290 316 L307 319 L305 332 L287 332 Z",
+              "fill": "#d1916f",
+              "stroke": {
+                "color": "#272936",
+                "width": 2
+              }
+            },
+            {
+              "id": "courier-shoe",
+              "type": "path",
+              "d": "M286 328 Q295 332 305 327 L325 330 Q342 331 347 342 L347 351 L277 351 Q276 338 286 328 Z",
+              "fill": "#fff1d5",
+              "stroke": {
+                "color": "#272936",
+                "width": 3.3
+              }
+            },
+            {
+              "id": "shoe-laces",
+              "type": "path",
+              "d": "M315 330 L311 338 M324 332 L320 340 M280 345 L345 346",
+              "fill": null,
+              "stroke": {
+                "color": "#65626a",
+                "width": 2.3
+              }
+            },
+            {
+              "id": "courier-upper",
+              "type": "group",
+              "children": [
+                {
+                  "id": "courier-neck",
+                  "type": "path",
+                  "d": "M255 105 L275 104 L287 124 L275 139 L248 123 Z",
+                  "fill": "#e5a17d",
+                  "stroke": {
+                    "color": "#272936",
+                    "width": 2.8
+                  }
+                },
+                {
+                  "id": "jacket",
+                  "type": "path",
+                  "d": "M243 117 Q267 117 279 135 C294 153 282 171 281 183 Q277 206 277 222 Q246 226 216 238 Q209 221 213 195 C217 162 225 136 243 117 Z",
+                  "fill": "#ba604b",
+                  "stroke": {
+                    "color": "#272936",
+                    "width": 3.3
+                  }
+                },
+                {
+                  "id": "jacket-collar",
+                  "type": "path",
+                  "d": "M239 118 L251 112 L275 124 L269 140 Z",
+                  "fill": "#d67e61",
+                  "stroke": {
+                    "color": "#272936",
+                    "width": 2.2
+                  }
+                },
+                {
+                  "id": "jacket-fold",
+                  "type": "path",
+                  "d": "M218 218 Q242 215 253 205",
+                  "fill": null,
+                  "stroke": {
+                    "color": "#743f40",
+                    "width": 2.4
+                  }
+                },
+                {
+                  "id": "helmet-face",
+                  "type": "path",
+                  "d": "M274 55 Q298 47 313 66 Q318 75 316 85 L323 94 L316 98 Q315 121 299 122 Q284 119 279 109 L272 93 Z",
+                  "fill": "#edae88",
+                  "stroke": {
+                    "color": "#272936",
+                    "width": 2.8
+                  }
+                },
+                {
+                  "id": "helmet-shell",
+                  "type": "path",
+                  "d": "M233 88 Q230 65 244 49 Q261 30 288 35 Q314 39 325 65 L316 70 Q292 70 284 82 L284 100 Q263 112 246 103 Q236 98 233 88 Z",
+                  "fill": "#273850",
+                  "stroke": {
+                    "color": "#272936",
+                    "width": 3.3
+                  }
+                },
+                {
+                  "id": "helmet-stripe",
+                  "type": "path",
+                  "d": "M235 83 Q268 61 318 57 L324 65 Q270 69 236 93 Z",
+                  "fill": "#fff1d5",
+                  "stroke": {
+                    "color": "#272936",
+                    "width": 2.2
+                  }
+                },
+                {
+                  "id": "helmet-ear",
+                  "type": "ellipse",
+                  "x": 272,
+                  "y": 92,
+                  "rx": 8,
+                  "ry": 10,
+                  "fill": "#e6a37d",
+                  "stroke": {
+                    "color": "#272936",
+                    "width": 2
+                  }
+                },
+                {
+                  "id": "helmet-strap",
+                  "type": "path",
+                  "d": "M278 99 Q282 111 294 119",
+                  "fill": null,
+                  "stroke": {
+                    "color": "#272936",
+                    "width": 3.1
+                  }
+                },
+                {
+                  "id": "courier-eye",
+                  "type": "path",
+                  "d": "M305 79 L305 85",
+                  "fill": null,
+                  "stroke": {
+                    "color": "#272936",
+                    "width": 3.5
+                  }
+                },
+                {
+                  "id": "courier-expression",
+                  "type": "path",
+                  "d": "M305 105 Q309 108 315 104",
+                  "fill": null,
+                  "stroke": {
+                    "color": "#844a46",
+                    "width": 1.6
+                  }
+                },
+                {
+                  "id": "helmet-shine",
+                  "type": "path",
+                  "d": "M242 67 Q251 47 279 43",
+                  "fill": null,
+                  "stroke": {
+                    "color": "#56677c",
+                    "width": 2.4
+                  }
+                }
+              ],
+              "pivot": [
+                239,
+                223
+              ],
+              "animate": {
+                "rotation": [
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0.86,
+                    0
+                  ],
+                  [
+                    1.55,
+                    8,
+                    "smooth"
+                  ],
+                  [
+                    2.46,
+                    8,
+                    "gentle"
+                  ],
+                  [
+                    2.82,
+                    12,
+                    "snap"
+                  ],
+                  [
+                    3.15,
+                    4,
+                    "settle"
+                  ],
+                  [
+                    3.61,
+                    8,
+                    "gentle"
+                  ],
+                  [
+                    4.5,
+                    0,
+                    "smooth"
+                  ],
+                  [
+                    6,
+                    0
+                  ]
+                ]
+              }
+            },
+            {
+              "id": "courier-sleeve",
+              "type": "path",
+              "d": "M245 154 C254 151 261 164 265 177 Q270 182 282 184 L329 187 L332 210 L278 207 C258 203 247 195 241 179 Q233 163 245 154 Z",
+              "fill": "#ba604b",
+              "stroke": {
+                "color": "#272936",
+                "width": 3.3
+              },
+              "animate": {
+                "d": [
+                  [
+                    0,
+                    "M245 154 C254 151 261 164 265 177 Q270 182 282 184 L329 187 L332 210 L278 207 C258 203 247 195 241 179 Q233 163 245 154 Z"
+                  ],
+                  [
+                    0.86,
+                    "M245 154 C254 151 261 164 265 177 Q270 182 282 184 L329 187 L332 210 L278 207 C258 203 247 195 241 179 Q233 163 245 154 Z"
+                  ],
+                  [
+                    1.55,
+                    "M259 153 C267 149 275 162 279 174 Q284 181 292 184 L329 187 L332 210 L284 207 C268 203 260 195 254 178 Q247 162 259 153 Z",
+                    "smooth"
+                  ],
+                  [
+                    2.46,
+                    "M259 153 C267 149 275 162 279 174 Q284 181 292 184 L329 187 L332 210 L284 207 C268 203 260 195 254 178 Q247 162 259 153 Z",
+                    "gentle"
+                  ],
+                  [
+                    2.82,
+                    "M268 161 C276 157 284 168 287 179 Q291 185 300 186 L329 187 L332 210 L292 207 C277 204 270 198 263 187 Q255 169 268 161 Z",
+                    "snap"
+                  ],
+                  [
+                    3.14,
+                    "M259 153 C267 149 275 162 279 174 Q284 181 292 184 L329 187 L332 210 L284 207 C268 203 260 195 254 178 Q247 162 259 153 Z",
+                    "settle"
+                  ],
+                  [
+                    4.5,
+                    "M245 154 C254 151 261 164 265 177 Q270 182 282 184 L329 187 L332 210 L278 207 C258 203 247 195 241 179 Q233 163 245 154 Z",
+                    "smooth"
+                  ],
+                  [
+                    6,
+                    "M245 154 C254 151 261 164 265 177 Q270 182 282 184 L329 187 L332 210 L278 207 C258 203 247 195 241 179 Q233 163 245 154 Z"
+                  ]
+                ]
+              }
+            },
+            {
+              "id": "jacket-cuff",
+              "type": "path",
+              "d": "M318 186 L330 187 L333 209 L320 209 Z",
+              "fill": "#a14d41",
+              "stroke": {
+                "color": "#272936",
+                "width": 2.3
+              }
+            },
+            {
+              "id": "courier-hand",
+              "type": "path",
+              "d": "M330 190 Q342 184 353 190 Q365 197 360 206 Q353 214 345 207 L336 208 Z",
+              "fill": "#edae88",
+              "stroke": {
+                "color": "#272936",
+                "width": 2.7
+              }
+            },
+            {
+              "id": "handle-end",
+              "type": "path",
+              "d": "M344 205 L351 205",
+              "fill": null,
+              "stroke": {
+                "color": "#343447",
+                "width": 4.1
+              }
+            }
+          ],
+          "animate": {
+            "y": [
+              [
+                0,
+                0
+              ],
+              [
+                2.65,
+                0
+              ],
+              [
+                2.87,
+                5,
+                "snap"
+              ],
+              [
+                3.15,
+                -3,
+                "settle"
+              ],
+              [
+                3.55,
+                0,
+                "smooth"
+              ],
+              [
+                6,
+                0
+              ]
+            ]
+          }
+        }
+      ],
+      "x": 116,
+      "y": 0,
+      "scale": 0.82,
+      "animate": {
+        "x": [
+          [
+            0,
+            135
+          ],
+          [
+            0.8,
+            135
+          ],
+          [
+            2.42,
+            167,
+            "smooth"
+          ],
+          [
+            3.5,
+            165,
+            "gentle"
+          ],
+          [
+            5.28,
+            135,
+            "smooth"
+          ],
+          [
+            6,
+            135
+          ]
+        ]
+      }
+    }
+  ],
+  "defs": {
+    "district-0-tile": {
+      "id": "district-0",
+      "type": "group",
+      "children": [
+        {
+          "id": "district-0-block-0",
+          "type": "rect",
+          "x": 35.5,
+          "y": 196.0,
+          "w": 71,
+          "h": 92,
+          "radius": 0,
+          "fill": "#d9c5ac"
+        },
+        {
+          "id": "district-0-roof-0",
+          "type": "path",
+          "d": "M-3 150 L35.5 135 L74 150 Z",
+          "fill": "#cbb4a1"
+        },
+        {
+          "id": "district-0-block-1",
+          "type": "rect",
+          "x": 106.0,
+          "y": 211.0,
+          "w": 48,
+          "h": 62,
+          "radius": 0,
+          "fill": "#d9c5ac"
+        },
+        {
+          "id": "district-0-roof-1",
+          "type": "path",
+          "d": "M79 180 L106.0 165 L133 180 Z",
+          "fill": "#cbb4a1"
+        },
+        {
+          "id": "district-0-block-2",
+          "type": "rect",
+          "x": 174.0,
+          "y": 188.5,
+          "w": 76,
+          "h": 107,
+          "radius": 0,
+          "fill": "#d9c5ac"
+        },
+        {
+          "id": "district-0-roof-2",
+          "type": "path",
+          "d": "M133 135 L174.0 120 L215 135 Z",
+          "fill": "#cbb4a1"
+        },
+        {
+          "id": "district-0-block-3",
+          "type": "rect",
+          "x": 246.0,
+          "y": 204.5,
+          "w": 40,
+          "h": 75,
+          "radius": 0,
+          "fill": "#d9c5ac"
+        },
+        {
+          "id": "district-0-roof-3",
+          "type": "path",
+          "d": "M223 167 L246.0 152 L269 167 Z",
+          "fill": "#cbb4a1"
+        },
+        {
+          "id": "district-0-block-4",
+          "type": "rect",
+          "x": 310.0,
+          "y": 198.0,
+          "w": 64,
+          "h": 88,
+          "radius": 0,
+          "fill": "#d9c5ac"
+        },
+        {
+          "id": "district-0-roof-4",
+          "type": "path",
+          "d": "M275 154 L310.0 139 L345 154 Z",
+          "fill": "#cbb4a1"
+        },
+        {
+          "id": "district-0-block-5",
+          "type": "rect",
+          "x": 394.0,
+          "y": 207.0,
+          "w": 76,
+          "h": 70,
+          "radius": 0,
+          "fill": "#d9c5ac"
+        },
+        {
+          "id": "district-0-roof-5",
+          "type": "path",
+          "d": "M353 172 L394.0 157 L435 172 Z",
+          "fill": "#cbb4a1"
+        }
+      ],
+      "x": 0
+    },
+    "block-0-tile": {
+      "id": "block-0",
+      "type": "group",
+      "children": [
+        {
+          "id": "block-0-shop-0-wall",
+          "type": "rect",
+          "x": 65.5,
+          "y": 231.0,
+          "w": 131,
+          "h": 144,
+          "radius": 0,
+          "fill": "#d5a58d"
+        },
+        {
+          "id": "block-0-shop-0-cornice",
+          "type": "path",
+          "d": "M-3 159 L133 159",
+          "fill": null,
+          "stroke": {
+            "color": "#ae7e74",
+            "width": 4
+          }
+        },
+        {
+          "id": "block-0-shop-0-storefront",
+          "type": "rect",
+          "x": 65.5,
+          "y": 262,
+          "w": 107,
+          "h": 68,
+          "radius": 2,
+          "fill": "#ae7e74"
+        },
+        {
+          "id": "block-0-shop-0-glass",
+          "type": "rect",
+          "x": 55.5,
+          "y": 260,
+          "w": 79,
+          "h": 54,
+          "radius": 1,
+          "fill": "#9aaaad"
+        },
+        {
+          "id": "block-0-shop-0-upper-window-0",
+          "type": "rect",
+          "x": 18.0,
+          "y": 181,
+          "w": 14,
+          "h": 25,
+          "radius": 3,
+          "fill": "#7f8b98"
+        },
+        {
+          "id": "block-0-shop-0-window-bar-0",
+          "type": "path",
+          "d": "M12.0 181 L24.0 181",
+          "fill": null,
+          "stroke": {
+            "color": "#c6c5b7",
+            "width": 1
+          }
+        },
+        {
+          "id": "block-0-shop-0-upper-window-1",
+          "type": "rect",
+          "x": 51.0,
+          "y": 181,
+          "w": 14,
+          "h": 25,
+          "radius": 3,
+          "fill": "#7f8b98"
+        },
+        {
+          "id": "block-0-shop-0-window-bar-1",
+          "type": "path",
+          "d": "M45.0 181 L57.0 181",
+          "fill": null,
+          "stroke": {
+            "color": "#c6c5b7",
+            "width": 1
+          }
+        },
+        {
+          "id": "block-0-shop-0-upper-window-2",
+          "type": "rect",
+          "x": 84.0,
+          "y": 181,
+          "w": 14,
+          "h": 25,
+          "radius": 3,
+          "fill": "#7f8b98"
+        },
+        {
+          "id": "block-0-shop-0-window-bar-2",
+          "type": "path",
+          "d": "M78.0 181 L90.0 181",
+          "fill": null,
+          "stroke": {
+            "color": "#c6c5b7",
+            "width": 1
+          }
+        },
+        {
+          "id": "block-0-shop-0-glass-reflection",
+          "type": "path",
+          "d": "M39 240 L20 270 M51 240 L35 264",
+          "fill": null,
+          "stroke": {
+            "color": "#b9c7c1",
+            "width": 2
+          }
+        },
+        {
+          "id": "block-0-shop-0-awning-0",
+          "type": "path",
+          "d": "M10.0 222 L25.857142857142858 222 L30.857142857142858 239 Q21.92857142857143 248 13.0 239 Z",
+          "fill": "#b76659"
+        },
+        {
+          "id": "block-0-shop-0-awning-1",
+          "type": "path",
+          "d": "M25.857142857142858 222 L41.714285714285715 222 L46.714285714285715 239 Q37.785714285714285 248 28.857142857142858 239 Z",
+          "fill": "#f4dfbd"
+        },
+        {
+          "id": "block-0-shop-0-awning-2",
+          "type": "path",
+          "d": "M41.714285714285715 222 L57.57142857142857 222 L62.57142857142857 239 Q53.642857142857146 248 44.714285714285715 239 Z",
+          "fill": "#b76659"
+        },
+        {
+          "id": "block-0-shop-0-awning-3",
+          "type": "path",
+          "d": "M57.57142857142857 222 L73.42857142857143 222 L78.42857142857143 239 Q69.5 248 60.57142857142857 239 Z",
+          "fill": "#f4dfbd"
+        },
+        {
+          "id": "block-0-shop-0-awning-4",
+          "type": "path",
+          "d": "M73.42857142857143 222 L89.28571428571429 222 L94.28571428571429 239 Q85.35714285714286 248 76.42857142857143 239 Z",
+          "fill": "#b76659"
+        },
+        {
+          "id": "block-0-shop-0-awning-5",
+          "type": "path",
+          "d": "M89.28571428571429 222 L105.14285714285715 222 L110.14285714285715 239 Q101.21428571428572 248 92.28571428571429 239 Z",
+          "fill": "#f4dfbd"
+        },
+        {
+          "id": "block-0-shop-0-awning-6",
+          "type": "path",
+          "d": "M105.14285714285714 222 L121.0 222 L126.0 239 Q117.07142857142857 248 108.14285714285714 239 Z",
+          "fill": "#b76659"
+        },
+        {
+          "id": "block-0-shop-1-wall",
+          "type": "rect",
+          "x": 205.0,
+          "y": 217.5,
+          "w": 138,
+          "h": 171,
+          "radius": 0,
+          "fill": "#c9bba5"
+        },
+        {
+          "id": "block-0-shop-1-cornice",
+          "type": "path",
+          "d": "M133 132 L276 132",
+          "fill": null,
+          "stroke": {
+            "color": "#9e9790",
+            "width": 4
+          }
+        },
+        {
+          "id": "block-0-shop-1-storefront",
+          "type": "rect",
+          "x": 205.0,
+          "y": 262,
+          "w": 114,
+          "h": 68,
+          "radius": 2,
+          "fill": "#9e9790"
+        },
+        {
+          "id": "block-0-shop-1-glass",
+          "type": "rect",
+          "x": 195.0,
+          "y": 260,
+          "w": 86,
+          "h": 54,
+          "radius": 1,
+          "fill": "#9aaaad"
+        },
+        {
+          "id": "block-0-shop-1-upper-window-0",
+          "type": "rect",
+          "x": 154.0,
+          "y": 154,
+          "w": 14,
+          "h": 25,
+          "radius": 3,
+          "fill": "#7f8b98"
+        },
+        {
+          "id": "block-0-shop-1-window-bar-0",
+          "type": "path",
+          "d": "M148.0 154 L160.0 154",
+          "fill": null,
+          "stroke": {
+            "color": "#c6c5b7",
+            "width": 1
+          }
+        },
+        {
+          "id": "block-0-shop-1-upper-window-1",
+          "type": "rect",
+          "x": 189.33333333333334,
+          "y": 154,
+          "w": 14,
+          "h": 25,
+          "radius": 3,
+          "fill": "#7f8b98"
+        },
+        {
+          "id": "block-0-shop-1-window-bar-1",
+          "type": "path",
+          "d": "M183.33333333333334 154 L195.33333333333334 154",
+          "fill": null,
+          "stroke": {
+            "color": "#c6c5b7",
+            "width": 1
+          }
+        },
+        {
+          "id": "block-0-shop-1-upper-window-2",
+          "type": "rect",
+          "x": 224.66666666666669,
+          "y": 154,
+          "w": 14,
+          "h": 25,
+          "radius": 3,
+          "fill": "#7f8b98"
+        },
+        {
+          "id": "block-0-shop-1-window-bar-2",
+          "type": "path",
+          "d": "M218.66666666666669 154 L230.66666666666669 154",
+          "fill": null,
+          "stroke": {
+            "color": "#c6c5b7",
+            "width": 1
+          }
+        },
+        {
+          "id": "block-0-shop-1-glass-reflection",
+          "type": "path",
+          "d": "M175 240 L156 270 M187 240 L171 264",
+          "fill": null,
+          "stroke": {
+            "color": "#b9c7c1",
+            "width": 2
+          }
+        },
+        {
+          "id": "block-0-shop-1-fascia",
+          "type": "rect",
+          "x": 205.0,
+          "y": 224,
+          "w": 120,
+          "h": 11,
+          "radius": 1,
+          "fill": "#638a89"
+        },
+        {
+          "id": "block-0-shop-2-wall",
+          "type": "rect",
+          "x": 375.0,
+          "y": 238.5,
+          "w": 146,
+          "h": 129,
+          "radius": 0,
+          "fill": "#d8be94"
+        },
+        {
+          "id": "block-0-shop-2-cornice",
+          "type": "path",
+          "d": "M299 174 L450 174",
+          "fill": null,
+          "stroke": {
+            "color": "#bda381",
+            "width": 4
+          }
+        },
+        {
+          "id": "block-0-shop-2-storefront",
+          "type": "rect",
+          "x": 375.0,
+          "y": 262,
+          "w": 122,
+          "h": 68,
+          "radius": 2,
+          "fill": "#bda381"
+        },
+        {
+          "id": "block-0-shop-2-glass",
+          "type": "rect",
+          "x": 365.0,
+          "y": 260,
+          "w": 94,
+          "h": 54,
+          "radius": 1,
+          "fill": "#9aaaad"
+        },
+        {
+          "id": "block-0-shop-2-upper-window-0",
+          "type": "rect",
+          "x": 320.0,
+          "y": 196,
+          "w": 14,
+          "h": 25,
+          "radius": 3,
+          "fill": "#7f8b98"
+        },
+        {
+          "id": "block-0-shop-2-window-bar-0",
+          "type": "path",
+          "d": "M314.0 196 L326.0 196",
+          "fill": null,
+          "stroke": {
+            "color": "#c6c5b7",
+            "width": 1
+          }
+        },
+        {
+          "id": "block-0-shop-2-upper-window-1",
+          "type": "rect",
+          "x": 358.0,
+          "y": 196,
+          "w": 14,
+          "h": 25,
+          "radius": 3,
+          "fill": "#7f8b98"
+        },
+        {
+          "id": "block-0-shop-2-window-bar-1",
+          "type": "path",
+          "d": "M352.0 196 L364.0 196",
+          "fill": null,
+          "stroke": {
+            "color": "#c6c5b7",
+            "width": 1
+          }
+        },
+        {
+          "id": "block-0-shop-2-upper-window-2",
+          "type": "rect",
+          "x": 396.0,
+          "y": 196,
+          "w": 14,
+          "h": 25,
+          "radius": 3,
+          "fill": "#7f8b98"
+        },
+        {
+          "id": "block-0-shop-2-window-bar-2",
+          "type": "path",
+          "d": "M390.0 196 L402.0 196",
+          "fill": null,
+          "stroke": {
+            "color": "#c6c5b7",
+            "width": 1
+          }
+        },
+        {
+          "id": "block-0-shop-2-glass-reflection",
+          "type": "path",
+          "d": "M341 240 L322 270 M353 240 L337 264",
+          "fill": null,
+          "stroke": {
+            "color": "#b9c7c1",
+            "width": 2
+          }
+        },
+        {
+          "id": "block-0-shop-2-awning-0",
+          "type": "path",
+          "d": "M312.0 222 L330.0 222 L335.0 239 Q325.0 248 315.0 239 Z",
+          "fill": "#6e8e88"
+        },
+        {
+          "id": "block-0-shop-2-awning-1",
+          "type": "path",
+          "d": "M330.0 222 L348.0 222 L353.0 239 Q343.0 248 333.0 239 Z",
+          "fill": "#f4dfbd"
+        },
+        {
+          "id": "block-0-shop-2-awning-2",
+          "type": "path",
+          "d": "M348.0 222 L366.0 222 L371.0 239 Q361.0 248 351.0 239 Z",
+          "fill": "#6e8e88"
+        },
+        {
+          "id": "block-0-shop-2-awning-3",
+          "type": "path",
+          "d": "M366.0 222 L384.0 222 L389.0 239 Q379.0 248 369.0 239 Z",
+          "fill": "#f4dfbd"
+        },
+        {
+          "id": "block-0-shop-2-awning-4",
+          "type": "path",
+          "d": "M384.0 222 L402.0 222 L407.0 239 Q397.0 248 387.0 239 Z",
+          "fill": "#6e8e88"
+        },
+        {
+          "id": "block-0-shop-2-awning-5",
+          "type": "path",
+          "d": "M402.0 222 L420.0 222 L425.0 239 Q415.0 248 405.0 239 Z",
+          "fill": "#f4dfbd"
+        },
+        {
+          "id": "block-0-shop-2-awning-6",
+          "type": "path",
+          "d": "M420.0 222 L438.0 222 L443.0 239 Q433.0 248 423.0 239 Z",
+          "fill": "#6e8e88"
+        },
+        {
+          "id": "block-0-shop-3-wall",
+          "type": "rect",
+          "x": 523.0,
+          "y": 225.5,
+          "w": 140,
+          "h": 155,
+          "radius": 0,
+          "fill": "#b7b4a3"
+        },
+        {
+          "id": "block-0-shop-3-cornice",
+          "type": "path",
+          "d": "M450 148 L595 148",
+          "fill": null,
+          "stroke": {
+            "color": "#8c968d",
+            "width": 4
+          }
+        },
+        {
+          "id": "block-0-shop-3-storefront",
+          "type": "rect",
+          "x": 523.0,
+          "y": 262,
+          "w": 116,
+          "h": 68,
+          "radius": 2,
+          "fill": "#8c968d"
+        },
+        {
+          "id": "block-0-shop-3-glass",
+          "type": "rect",
+          "x": 513.0,
+          "y": 260,
+          "w": 88,
+          "h": 54,
+          "radius": 1,
+          "fill": "#9aaaad"
+        },
+        {
+          "id": "block-0-shop-3-upper-window-0",
+          "type": "rect",
+          "x": 471.0,
+          "y": 170,
+          "w": 14,
+          "h": 25,
+          "radius": 3,
+          "fill": "#7f8b98"
+        },
+        {
+          "id": "block-0-shop-3-window-bar-0",
+          "type": "path",
+          "d": "M465.0 170 L477.0 170",
+          "fill": null,
+          "stroke": {
+            "color": "#c6c5b7",
+            "width": 1
+          }
+        },
+        {
+          "id": "block-0-shop-3-upper-window-1",
+          "type": "rect",
+          "x": 507.0,
+          "y": 170,
+          "w": 14,
+          "h": 25,
+          "radius": 3,
+          "fill": "#7f8b98"
+        },
+        {
+          "id": "block-0-shop-3-window-bar-1",
+          "type": "path",
+          "d": "M501.0 170 L513.0 170",
+          "fill": null,
+          "stroke": {
+            "color": "#c6c5b7",
+            "width": 1
+          }
+        },
+        {
+          "id": "block-0-shop-3-upper-window-2",
+          "type": "rect",
+          "x": 543.0,
+          "y": 170,
+          "w": 14,
+          "h": 25,
+          "radius": 3,
+          "fill": "#7f8b98"
+        },
+        {
+          "id": "block-0-shop-3-window-bar-2",
+          "type": "path",
+          "d": "M537.0 170 L549.0 170",
+          "fill": null,
+          "stroke": {
+            "color": "#c6c5b7",
+            "width": 1
+          }
+        },
+        {
+          "id": "block-0-shop-3-glass-reflection",
+          "type": "path",
+          "d": "M492 240 L473 270 M504 240 L488 264",
+          "fill": null,
+          "stroke": {
+            "color": "#b9c7c1",
+            "width": 2
+          }
+        },
+        {
+          "id": "block-0-shop-3-fascia",
+          "type": "rect",
+          "x": 523.0,
+          "y": 224,
+          "w": 122,
+          "h": 11,
+          "radius": 1,
+          "fill": "#a87463"
+        },
+        {
+          "id": "block-0-lamp-0",
+          "type": "path",
+          "d": "M286 302 L286 198 M278 198 L294 198 L291 216 L281 216 Z",
+          "fill": "#ddcab1",
+          "stroke": {
+            "color": "#74766e",
+            "width": 2.8
+          }
+        },
+        {
+          "id": "block-0-planter-0",
+          "type": "path",
+          "d": "M272 302 L268 286 L303 286 L298 302 Z",
+          "fill": "#b7856d"
+        },
+        {
+          "id": "block-0-plant-0-0",
+          "type": "ellipse",
+          "x": 276,
+          "y": 281,
+          "rx": 8,
+          "ry": 10,
+          "fill": "#879378"
+        },
+        {
+          "id": "block-0-plant-0-1",
+          "type": "ellipse",
+          "x": 284,
+          "y": 285,
+          "rx": 8,
+          "ry": 10,
+          "fill": "#879378"
+        },
+        {
+          "id": "block-0-plant-0-2",
+          "type": "ellipse",
+          "x": 292,
+          "y": 281,
+          "rx": 8,
+          "ry": 10,
+          "fill": "#879378"
+        },
+        {
+          "id": "block-0-lamp-1",
+          "type": "path",
+          "d": "M611 302 L611 198 M603 198 L619 198 L616 216 L606 216 Z",
+          "fill": "#ddcab1",
+          "stroke": {
+            "color": "#74766e",
+            "width": 2.8
+          }
+        },
+        {
+          "id": "block-0-planter-1",
+          "type": "path",
+          "d": "M597 302 L593 286 L628 286 L623 302 Z",
+          "fill": "#b7856d"
+        },
+        {
+          "id": "block-0-plant-1-0",
+          "type": "ellipse",
+          "x": 601,
+          "y": 281,
+          "rx": 8,
+          "ry": 10,
+          "fill": "#879378"
+        },
+        {
+          "id": "block-0-plant-1-1",
+          "type": "ellipse",
+          "x": 609,
+          "y": 285,
+          "rx": 8,
+          "ry": 10,
+          "fill": "#879378"
+        },
+        {
+          "id": "block-0-plant-1-2",
+          "type": "ellipse",
+          "x": 617,
+          "y": 281,
+          "rx": 8,
+          "ry": 10,
+          "fill": "#879378"
+        }
+      ],
+      "x": 0
+    }
+  }
+}

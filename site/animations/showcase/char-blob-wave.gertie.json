@@ -1,0 +1,350 @@
+{
+  "gertie": 1,
+  "name": "blob-wave",
+  "tier": "character",
+  "canvas": {
+    "w": 1024,
+    "h": 1024
+  },
+  "fps": 30,
+  "duration": 6,
+  "poster": 2,
+  "palette": {
+    "body": "#5ccfb0",
+    "body-shade": "#3aa98d",
+    "body-tint": "#b4f3e2",
+    "ink": "#22303f",
+    "white": "#ffffff",
+    "cheek": "#ff8fa3",
+    "tongue": "#e35d78",
+    "leaf": "#8bd65c",
+    "leaf-shade": "#5fae3a"
+  },
+  "nodes": [
+    {
+      "id": "ground-shadow",
+      "type": "ellipse",
+      "x": 512,
+      "y": 824,
+      "rx": 210,
+      "ry": 24,
+      "fill": "#22303f33"
+    },
+    {
+      "id": "blob",
+      "type": "group",
+      "x": 512,
+      "y": 820,
+      "motion": [
+        {
+          "preset": "rig-idle",
+          "duration": 3,
+          "repeat": "loop",
+          "armSway": 3
+        },
+        {
+          "preset": "rig-blink",
+          "at": 0.4,
+          "every": 2.4,
+          "seed": 7
+        },
+        {
+          "preset": "rig-wave",
+          "arm": "r",
+          "at": 0.9,
+          "duration": 2.6,
+          "raise": 135,
+          "angle": 26,
+          "count": 3
+        },
+        {
+          "preset": "rig-nod",
+          "at": 4.3,
+          "duration": 1.0,
+          "distance": 8
+        }
+      ],
+      "children": [
+        {
+          "id": "blob-body",
+          "type": "group",
+          "pivot": [
+            0,
+            0
+          ],
+          "children": [
+            {
+              "id": "blob-arm-l",
+              "type": "group",
+              "pivot": [
+                -185,
+                -210
+              ],
+              "children": [
+                {
+                  "id": "arm-r-base",
+                  "type": "path",
+                  "fill": "$body",
+                  "d": "M -200 -228 C -228 -200 -246 -150 -248 -112 C -250 -84 -226 -72 -208 -86 C -192 -100 -182 -150 -168 -196 Z"
+                },
+                {
+                  "id": "arm-r-shade",
+                  "type": "path",
+                  "fill": "$body-shade",
+                  "clip": {
+                    "type": "path",
+                    "d": "M -200 -228 C -228 -200 -246 -150 -248 -112 C -250 -84 -226 -72 -208 -86 C -192 -100 -182 -150 -168 -196 Z"
+                  },
+                  "d": "M -190 -230 C -200 -170 -205 -120 -215 -70 L -160 -70 L -160 -230 Z"
+                }
+              ]
+            },
+            {
+              "id": "body-base",
+              "type": "path",
+              "fill": "$body",
+              "d": "M 0 -440 C 120 -440 200 -360 220 -250 C 238 -150 230 -40 150 -8 C 90 12 -90 12 -150 -8 C -230 -40 -238 -150 -220 -250 C -200 -360 -120 -440 0 -440 Z"
+            },
+            {
+              "id": "body-shade",
+              "type": "path",
+              "fill": "$body-shade",
+              "clip": {
+                "type": "path",
+                "d": "M 0 -440 C 120 -440 200 -360 220 -250 C 238 -150 230 -40 150 -8 C 90 12 -90 12 -150 -8 C -230 -40 -238 -150 -220 -250 C -200 -360 -120 -440 0 -440 Z"
+              },
+              "d": "M 260 -420 C 200 -300 190 -160 110 -80 C 40 -20 -120 -10 -260 -40 L -260 40 L 260 40 Z"
+            },
+            {
+              "id": "body-highlight",
+              "type": "path",
+              "fill": "$body-tint",
+              "opacity": 0.8,
+              "d": "M -150 -330 C -130 -380 -80 -410 -40 -405 C -20 -400 -30 -380 -60 -365 C -100 -345 -120 -310 -140 -300 C -160 -292 -162 -310 -150 -330 Z"
+            },
+            {
+              "id": "body-glint",
+              "type": "ellipse",
+              "x": -170,
+              "y": -268,
+              "rx": 12,
+              "ry": 16,
+              "rotation": -20,
+              "fill": "$body-tint",
+              "opacity": 0.8
+            },
+            {
+              "id": "blob-arm-r-ctl",
+              "type": "group",
+              "pivot": [
+                185,
+                -210
+              ],
+              "children": [
+                {
+                  "id": "blob-arm-r",
+                  "type": "group",
+                  "pivot": [
+                    185,
+                    -210
+                  ],
+                  "children": [
+                    {
+                      "id": "arm-l-base",
+                      "type": "path",
+                      "fill": "$body",
+                      "d": "M 200 -228 C 228 -200 246 -150 248 -112 C 250 -84 226 -72 208 -86 C 192 -100 182 -150 168 -196 Z"
+                    },
+                    {
+                      "id": "arm-l-shade",
+                      "type": "path",
+                      "fill": "$body-shade",
+                      "clip": {
+                        "type": "path",
+                        "d": "M 200 -228 C 228 -200 246 -150 248 -112 C 250 -84 226 -72 208 -86 C 192 -100 182 -150 168 -196 Z"
+                      },
+                      "d": "M 218 -230 C 230 -170 236 -120 226 -70 L 260 -70 L 260 -230 Z"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "blob-head-ctl",
+              "type": "group",
+              "pivot": [
+                0,
+                -240
+              ],
+              "children": [
+                {
+                  "id": "blob-head",
+                  "type": "group",
+                  "pivot": [
+                    0,
+                    -240
+                  ],
+                  "children": [
+                    {
+                      "id": "sprout",
+                      "type": "group",
+                      "x": 0,
+                      "y": -436,
+                      "pivot": [
+                        0,
+                        0
+                      ],
+                      "motion": [
+                        {
+                          "preset": "sway",
+                          "angle": 6,
+                          "duration": 2,
+                          "repeat": "loop",
+                          "phase": 0.25
+                        }
+                      ],
+                      "children": [
+                        {
+                          "id": "sprout-stem",
+                          "type": "path",
+                          "fill": null,
+                          "stroke": {
+                            "color": "$leaf-shade",
+                            "width": 8
+                          },
+                          "d": "M 0 6 C -2 -14 4 -30 10 -44"
+                        },
+                        {
+                          "id": "sprout-leaf-l",
+                          "type": "path",
+                          "fill": "$leaf",
+                          "d": "M 8 -40 C -10 -64 -42 -70 -62 -58 C -46 -36 -14 -30 8 -40 Z"
+                        },
+                        {
+                          "id": "sprout-leaf-r",
+                          "type": "path",
+                          "fill": "$leaf-shade",
+                          "d": "M 10 -44 C 22 -70 50 -80 72 -72 C 62 -48 36 -38 10 -44 Z"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "blob-eye-r",
+                      "type": "group",
+                      "x": -72,
+                      "y": -280,
+                      "children": [
+                        {
+                          "id": "eye-r-pupil",
+                          "type": "ellipse",
+                          "rx": 26,
+                          "ry": 36,
+                          "fill": "$ink"
+                        },
+                        {
+                          "id": "eye-r-sparkle",
+                          "type": "ellipse",
+                          "x": -8,
+                          "y": -13,
+                          "r": 9,
+                          "fill": "$white"
+                        },
+                        {
+                          "id": "eye-r-sparkle-2",
+                          "type": "ellipse",
+                          "x": 9,
+                          "y": 12,
+                          "r": 4,
+                          "fill": "$white"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "blob-eye-l",
+                      "type": "group",
+                      "x": 72,
+                      "y": -280,
+                      "children": [
+                        {
+                          "id": "eye-l-pupil",
+                          "type": "ellipse",
+                          "rx": 26,
+                          "ry": 36,
+                          "fill": "$ink"
+                        },
+                        {
+                          "id": "eye-l-sparkle",
+                          "type": "ellipse",
+                          "x": -8,
+                          "y": -13,
+                          "r": 9,
+                          "fill": "$white"
+                        },
+                        {
+                          "id": "eye-l-sparkle-2",
+                          "type": "ellipse",
+                          "x": 9,
+                          "y": 12,
+                          "r": 4,
+                          "fill": "$white"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "cheek-r",
+                      "type": "ellipse",
+                      "x": -128,
+                      "y": -222,
+                      "rx": 30,
+                      "ry": 17,
+                      "fill": "$cheek",
+                      "opacity": 0.65
+                    },
+                    {
+                      "id": "cheek-l",
+                      "type": "ellipse",
+                      "x": 128,
+                      "y": -222,
+                      "rx": 30,
+                      "ry": 17,
+                      "fill": "$cheek",
+                      "opacity": 0.65
+                    },
+                    {
+                      "id": "blob-mouth",
+                      "type": "group",
+                      "x": 0,
+                      "y": -222,
+                      "pivot": [
+                        0,
+                        0
+                      ],
+                      "children": [
+                        {
+                          "id": "mouth-open",
+                          "type": "path",
+                          "fill": "$ink",
+                          "d": "M -46 -8 C -30 -4 30 -4 46 -8 C 42 26 20 42 0 42 C -20 42 -42 26 -46 -8 Z"
+                        },
+                        {
+                          "id": "mouth-tongue",
+                          "type": "path",
+                          "fill": "$tongue",
+                          "clip": {
+                            "type": "path",
+                            "d": "M -46 -8 C -30 -4 30 -4 46 -8 C 42 26 20 42 0 42 C -20 42 -42 26 -46 -8 Z"
+                          },
+                          "d": "M -30 44 C -26 20 -8 14 0 22 C 8 14 26 20 30 44 Z"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

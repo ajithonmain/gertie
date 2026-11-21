@@ -1,0 +1,546 @@
+{
+  "gertie": 1,
+  "name": "showcase-aurora-prism",
+  "canvas": {
+    "w": 480,
+    "h": 315,
+    "background": "#10132D"
+  },
+  "duration": 4,
+  "fps": 30,
+  "loop": true,
+  "poster": 0.65,
+  "nodes": [
+    {
+      "id": "stage",
+      "type": "rect",
+      "x": 240,
+      "y": 157.5,
+      "w": 480,
+      "h": 315,
+      "radius": 0,
+      "fill": {
+        "type": "linear",
+        "from": [
+          -225,
+          -150
+        ],
+        "to": [
+          225,
+          150
+        ],
+        "stops": [
+          [
+            0,
+            "#11172D"
+          ],
+          [
+            1,
+            "#24235D"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "halo",
+      "type": "ellipse",
+      "x": 242,
+      "y": 149,
+      "rx": 141,
+      "ry": 132,
+      "fill": {
+        "type": "radial",
+        "center": [
+          0,
+          0
+        ],
+        "radius": 132,
+        "stops": [
+          [
+            0,
+            "#564AC390"
+          ],
+          [
+            1,
+            "#22275C00"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "pedestal",
+      "type": "ellipse",
+      "x": 240,
+      "y": 260,
+      "rx": 96,
+      "ry": 10,
+      "fill": "#6AE6FF38",
+      "animate": {
+        "scale": [
+          [
+            0,
+            1
+          ],
+          [
+            0.12,
+            1
+          ],
+          [
+            1.67,
+            0.88,
+            "easeInOutSine"
+          ],
+          [
+            3.62,
+            1,
+            "easeInOutSine"
+          ],
+          [
+            4,
+            1,
+            "easeInOutSine"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "prism-star-l",
+      "type": "group",
+      "x": 130,
+      "y": 110,
+      "children": [
+        {
+          "id": "prism-star-l-shape",
+          "type": "path",
+          "d": "M-11 0 Q0 -2 0 -11 Q2 0 11 0 Q0 2 0 11 Q-2 0 -11 0 Z",
+          "fill": "#6FF2FB"
+        }
+      ],
+      "animate": {
+        "scale": [
+          [
+            0,
+            0.65
+          ],
+          [
+            1,
+            1.15,
+            "easeInOutSine"
+          ],
+          [
+            3,
+            0.42,
+            "easeInOutSine"
+          ],
+          [
+            4,
+            0.65,
+            "easeInOutSine"
+          ]
+        ],
+        "opacity": [
+          [
+            0,
+            0.45
+          ],
+          [
+            0.25,
+            0.45
+          ],
+          [
+            1.76,
+            1,
+            "easeInOutCubic"
+          ],
+          [
+            3.74,
+            0.45,
+            "easeInOutCubic"
+          ],
+          [
+            4,
+            0.45,
+            "easeInOutSine"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "prism-star-r",
+      "type": "group",
+      "x": 351,
+      "y": 180,
+      "children": [
+        {
+          "id": "prism-star-r-shape",
+          "type": "path",
+          "d": "M-15 0 Q0 -2 0 -15 Q2 0 15 0 Q0 2 0 15 Q-2 0 -15 0 Z",
+          "fill": "#FFB9F5"
+        }
+      ],
+      "animate": {
+        "scale": [
+          [
+            0,
+            0.65
+          ],
+          [
+            1.7,
+            1.15,
+            "easeInOutSine"
+          ],
+          [
+            3,
+            0.42,
+            "easeInOutSine"
+          ],
+          [
+            4,
+            0.65,
+            "easeInOutSine"
+          ]
+        ],
+        "opacity": [
+          [
+            0,
+            0.45
+          ],
+          [
+            0.38,
+            0.45
+          ],
+          [
+            1.85,
+            1,
+            "easeInOutQuad"
+          ],
+          [
+            3.86,
+            0.45,
+            "easeInOutQuad"
+          ],
+          [
+            4,
+            0.45,
+            "easeInOutSine"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "crystal",
+      "type": "group",
+      "x": 240,
+      "y": 155,
+      "children": [
+        {
+          "id": "outer",
+          "type": "path",
+          "d": "M-68 -10 L-26 -86 L29 -96 L70 -35 L50 44 L2 88 L-47 48 Z",
+          "fill": "#566BB4",
+          "stroke": {
+            "color": "#C2E6FA",
+            "width": 2,
+            "cap": "round",
+            "join": "round"
+          }
+        },
+        {
+          "id": "facet-blue",
+          "type": "path",
+          "d": "M-68 -10 L-26 -86 L-14 -31 L-47 48 Z",
+          "fill": {
+            "type": "linear",
+            "from": [
+              -65,
+              -70
+            ],
+            "to": [
+              -15,
+              65
+            ],
+            "stops": [
+              [
+                0,
+                "#8CCAFF"
+              ],
+              [
+                1,
+                "#3D4B8E"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "facet-light",
+          "type": "path",
+          "d": "M-26 -86 L29 -96 L15 -46 L-14 -31 Z",
+          "fill": {
+            "type": "linear",
+            "from": [
+              -20,
+              -85
+            ],
+            "to": [
+              21,
+              -34
+            ],
+            "stops": [
+              [
+                0,
+                "#FFFFFF"
+              ],
+              [
+                1,
+                "#AADEFF"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "facet-mint",
+          "type": "path",
+          "d": "M29 -96 L70 -35 L15 -46 Z",
+          "fill": {
+            "type": "linear",
+            "from": [
+              15,
+              -80
+            ],
+            "to": [
+              55,
+              -32
+            ],
+            "stops": [
+              [
+                0,
+                "#B3FFF9"
+              ],
+              [
+                1,
+                "#7D82DC"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "facet-front",
+          "type": "path",
+          "d": "M-14 -31 L15 -46 L31 37 L2 88 Z",
+          "fill": {
+            "type": "linear",
+            "from": [
+              0,
+              -50
+            ],
+            "to": [
+              18,
+              79
+            ],
+            "stops": [
+              [
+                0,
+                "#D8FCFA"
+              ],
+              [
+                0.5,
+                "#867BEF"
+              ],
+              [
+                1,
+                "#313E89"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "facet-violet",
+          "type": "path",
+          "d": "M15 -46 L70 -35 L50 44 L31 37 Z",
+          "fill": {
+            "type": "linear",
+            "from": [
+              20,
+              -48
+            ],
+            "to": [
+              60,
+              56
+            ],
+            "stops": [
+              [
+                0,
+                "#E4B8FF"
+              ],
+              [
+                0.5,
+                "#646CC9"
+              ],
+              [
+                1,
+                "#242C6E"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "facet-edge",
+          "type": "path",
+          "d": "M-14 -31 L2 88 L-47 48 Z",
+          "fill": {
+            "type": "linear",
+            "from": [
+              -33,
+              -32
+            ],
+            "to": [
+              1,
+              88
+            ],
+            "stops": [
+              [
+                0,
+                "#668EDB"
+              ],
+              [
+                1,
+                "#393777"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "prism-sheen",
+          "type": "path",
+          "d": "M-47 48 L-14 -31 L15 -46 L70 -35",
+          "fill": null,
+          "stroke": {
+            "color": "#F7FFFF",
+            "width": 2,
+            "cap": "round",
+            "join": "round"
+          },
+          "animate": {
+            "opacity": [
+              [
+                0,
+                0.18
+              ],
+              [
+                0.9,
+                0.18
+              ],
+              [
+                2.21,
+                1,
+                "easeInOutSine"
+              ],
+              [
+                3.62,
+                0.18,
+                "easeInOutSine"
+              ],
+              [
+                4,
+                0.18,
+                "easeInOutSine"
+              ]
+            ]
+          }
+        }
+      ],
+      "animate": {
+        "y": [
+          [
+            0,
+            155
+          ],
+          [
+            0.51,
+            155
+          ],
+          [
+            1.94,
+            137,
+            "easeInOutSine"
+          ],
+          [
+            3.62,
+            155,
+            "easeInOutSine"
+          ],
+          [
+            4,
+            155,
+            "easeInOutSine"
+          ]
+        ],
+        "rotation": [
+          [
+            0,
+            -10
+          ],
+          [
+            0.64,
+            -10
+          ],
+          [
+            2.03,
+            10,
+            "easeInOutCubic"
+          ],
+          [
+            3.74,
+            -10,
+            "easeInOutCubic"
+          ],
+          [
+            4,
+            -10,
+            "easeInOutSine"
+          ]
+        ],
+        "scale": [
+          [
+            0,
+            [
+              1,
+              1
+            ]
+          ],
+          [
+            0.77,
+            [
+              1,
+              1
+            ]
+          ],
+          [
+            2.12,
+            [
+              0.85,
+              1
+            ],
+            "easeInOutQuad"
+          ],
+          [
+            3.86,
+            [
+              1,
+              1
+            ],
+            "easeInOutQuad"
+          ],
+          [
+            4,
+            [
+              1,
+              1
+            ],
+            "easeInOutSine"
+          ]
+        ]
+      }
+    }
+  ]
+}

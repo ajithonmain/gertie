@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Gertie: animation with your AI agent</title>
+<meta name="description" content="Gertie is a free, open-source skill that lets your AI agent make animations. Lottie, SVG, GIF and video. Runs on your machine.">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:title" content="Gertie: animation with your AI agent">
+<meta property="og:description" content="Ask your agent for an animation. Get Lottie, SVG, GIF and video. Free and local.">
+<meta property="og:type" content="website">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preload" as="image" href="animations/hero-line.poster.svg" fetchpriority="high">
+<link rel="stylesheet" href="landing.css">
+<script src="/navigation.js" defer></script>
+<script src="landing.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+{{site-header}}
+
+<main id="main">
+<p id="copy-status" class="sr-only" role="status"></p>
+
+<section class="hero wrap" aria-labelledby="hero-title">
+<div class="hero-copy">
+<h1 id="hero-title" class="hero-title">Your ideas.<br>Now in <em>motion.</em></h1>
+<p class="intro">Create Lottie, SVG, GIF and video animations with your AI agent, just by asking. Free, open source and local.</p>
+{{command:hero}}
+<div class="hero-secondary">
+<p class="hero-note"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Works in Claude Code and Codex CLI</p>
+</div>
+</div>
+<div class="hero-art">
+<div class="hero-stage">
+<img class="animated-art" src="animations/hero-line.poster.svg" data-animation="animations/hero-line.svg" data-still="animations/hero-line.poster.svg" alt="Gertie, a long-necked blue dinosaur, walks through a meadow, sniffs a flower, greets a butterfly and kicks a runaway ball." width="880" height="640" fetchpriority="high">
+<img class="hero-burst" data-burst="animations/hero-line-pop.svg" alt="" width="880" height="640" hidden>
+</div>
+<p class="hero-scene">Made with Gertie</p>
+<button class="motion-toggle" type="button" hidden aria-pressed="false" aria-label="Pause all animations"><span class="ico i-pause" aria-hidden="true"></span></button>
+</div>
+</section>
+
+<section class="how wrap" id="how" aria-label="Animation workflow">
+{{workflow-steps}}
+</section>
+
+<section class="gallery" id="gallery" aria-labelledby="gallery-title">
+<div class="wrap gallery-head">
+<h2 id="gallery-title">Premium motion, made with Gertie</h2>
+<p class="section-sub">Open any animation to see and copy its prompt.</p>
+</div>
+<div class="rails-wrap">
+<div class="rails">
+<!--gallery-->
+</div>
+<a class="button rails-cta" href="gallery.html">Explore all animations<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+</div>
+</section>
+
+<section class="features wrap" id="features" aria-labelledby="features-title">
+<h2 id="features-title">What you can make with Gertie</h2>
+<div class="feature-grid">
+{{feature-cards}}
+<article class="feature-demo proof-benchmark" id="qa" data-proof-reveal>
+  <!--proof-benchmark-->
+</article>
+<article class="feature-demo" id="local">
+  <header class="feature-intro"><h3>Yours to keep</h3><p>Everything runs on your machine, and the output belongs to you.</p></header>
+  <div class="proof-principles"><dl>
+    <div><dt>Runs locally</dt><dd>No network calls or telemetry.</dd></div>
+    <div><dt>Free and open source</dt><dd>MIT licensed, with no account required.</dd></div>
+    <div><dt>Your output is yours</dt><dd>Gertie claims no rights over what you make.</dd></div>
+    <div class="proof-deps"><dt><span data-proof-count>{{proof:dependencies}}</span> compiler runtime dependencies</dt><dd>Rendering uses Playwright. Frame exports use ffmpeg.</dd></div>
+  </dl></div>
+</article>
+{{agent-card}}
+</div>
+<p class="proof-limits"><strong>Limits</strong><span>New poses from one drawing, photorealism, and complex characters from text alone are outside Gertie’s scope.</span></p>
+</section>
+
+</main>
+
+{{site-footer}}
+
+<div class="drawer" id="drawer" hidden>
+<div class="drawer-backdrop" data-close></div>
+<div class="drawer-sheet" role="dialog" aria-modal="true" aria-labelledby="drawer-title" tabindex="-1">
+<button class="drawer-close" type="button" aria-label="Close" data-close><span class="ico i-close" aria-hidden="true"></span></button>
+<div class="drawer-art"><img id="drawer-img" alt="" width="400" height="300"><iframe id="drawer-player" title="3D animation" hidden></iframe></div>
+<div class="drawer-info">
+<p class="eyebrow">PROMPT USED</p>
+<h2 id="drawer-title"></h2>
+<p class="drawer-prompt" id="drawer-prompt"></p>
+<p class="sr-only" id="drawer-status" role="status"></p>
+<div class="drawer-actions"><button class="button" type="button" id="drawer-copy"><span class="ico i-copy" aria-hidden="true"></span><span id="drawer-copy-label">Copy prompt</span></button><a class="button ghost" id="drawer-download" href="#" download>Download SVG</a></div>
+
+</div>
+</div>
+</div>
+</body></html>

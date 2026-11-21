@@ -1,0 +1,593 @@
+{
+  "gertie": 1,
+  "name": "showcase-postcard",
+  "canvas": {
+    "w": 480,
+    "h": 315,
+    "background": "#DAE6AA"
+  },
+  "duration": 4,
+  "fps": 30,
+  "loop": true,
+  "poster": 0.65,
+  "nodes": [
+    {
+      "id": "stage",
+      "type": "rect",
+      "x": 240,
+      "y": 157.5,
+      "w": 480,
+      "h": 315,
+      "radius": 0,
+      "fill": {
+        "type": "linear",
+        "from": [
+          -225,
+          -150
+        ],
+        "to": [
+          225,
+          150
+        ],
+        "stops": [
+          [
+            0,
+            "#E9F2AD"
+          ],
+          [
+            1,
+            "#97D5BC"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "panel-shadow",
+      "type": "ellipse",
+      "x": 240,
+      "y": 260,
+      "rx": 110,
+      "ry": 11,
+      "fill": "#458A684D",
+      "animate": {
+        "scale": [
+          [
+            0,
+            1
+          ],
+          [
+            0.12,
+            1
+          ],
+          [
+            1.67,
+            0.88,
+            "easeInOutSine"
+          ],
+          [
+            3.62,
+            1,
+            "easeInOutSine"
+          ],
+          [
+            4,
+            1,
+            "easeInOutSine"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "weather",
+      "type": "group",
+      "x": 240,
+      "y": 147,
+      "children": [
+        {
+          "id": "card-border",
+          "type": "rect",
+          "x": 0,
+          "y": 3,
+          "w": 229,
+          "h": 184,
+          "radius": 18,
+          "fill": "#256D68"
+        },
+        {
+          "id": "card",
+          "type": "rect",
+          "x": 0,
+          "y": 0,
+          "w": 229,
+          "h": 178,
+          "radius": 18,
+          "fill": "#FCF8D6"
+        },
+        {
+          "id": "screen",
+          "type": "rect",
+          "x": 0,
+          "y": -15,
+          "w": 201,
+          "h": 118,
+          "radius": 11,
+          "fill": {
+            "type": "linear",
+            "from": [
+              0,
+              -74
+            ],
+            "to": [
+              0,
+              44
+            ],
+            "stops": [
+              [
+                0,
+                "#628D9E"
+              ],
+              [
+                1,
+                "#B9DCD0"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "sun",
+          "type": "group",
+          "x": 30,
+          "y": -22,
+          "children": [
+            {
+              "id": "sunlight",
+              "type": "ellipse",
+              "x": 0,
+              "y": 0,
+              "rx": 31,
+              "ry": 31,
+              "fill": {
+                "type": "radial",
+                "center": [
+                  0,
+                  0
+                ],
+                "radius": 35,
+                "stops": [
+                  [
+                    0,
+                    "#FFF6AE"
+                  ],
+                  [
+                    0.5,
+                    "#FDC37E"
+                  ],
+                  [
+                    1,
+                    "#F5A26F"
+                  ]
+                ]
+              }
+            },
+            {
+              "id": "ray-0",
+              "type": "ellipse",
+              "x": 41,
+              "y": 0,
+              "rx": 2.3,
+              "ry": 2.3,
+              "fill": "#FFE2A5"
+            },
+            {
+              "id": "ray-1",
+              "type": "ellipse",
+              "x": 28.99137802864845,
+              "y": 28.991378028648445,
+              "rx": 2.3,
+              "ry": 2.3,
+              "fill": "#FFE2A5"
+            },
+            {
+              "id": "ray-2",
+              "type": "ellipse",
+              "x": 2.510525938252074e-15,
+              "y": 41,
+              "rx": 2.3,
+              "ry": 2.3,
+              "fill": "#FFE2A5"
+            },
+            {
+              "id": "ray-3",
+              "type": "ellipse",
+              "x": -28.991378028648445,
+              "y": 28.99137802864845,
+              "rx": 2.3,
+              "ry": 2.3,
+              "fill": "#FFE2A5"
+            },
+            {
+              "id": "ray-4",
+              "type": "ellipse",
+              "x": -41,
+              "y": 5.021051876504148e-15,
+              "rx": 2.3,
+              "ry": 2.3,
+              "fill": "#FFE2A5"
+            },
+            {
+              "id": "ray-5",
+              "type": "ellipse",
+              "x": -28.991378028648455,
+              "y": -28.991378028648445,
+              "rx": 2.3,
+              "ry": 2.3,
+              "fill": "#FFE2A5"
+            },
+            {
+              "id": "ray-6",
+              "type": "ellipse",
+              "x": -7.531577814756221e-15,
+              "y": -41,
+              "rx": 2.3,
+              "ry": 2.3,
+              "fill": "#FFE2A5"
+            },
+            {
+              "id": "ray-7",
+              "type": "ellipse",
+              "x": 28.99137802864844,
+              "y": -28.991378028648455,
+              "rx": 2.3,
+              "ry": 2.3,
+              "fill": "#FFE2A5"
+            }
+          ],
+          "animate": {
+            "y": [
+              [
+                0,
+                -17
+              ],
+              [
+                0.51,
+                -17
+              ],
+              [
+                1.94,
+                -38,
+                "easeInOutSine"
+              ],
+              [
+                3.62,
+                -17,
+                "easeInOutSine"
+              ],
+              [
+                4,
+                -17,
+                "easeInOutSine"
+              ]
+            ],
+            "rotation": [
+              [
+                0,
+                0
+              ],
+              [
+                4,
+                360,
+                "linear"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "cloud",
+          "type": "path",
+          "d": "M-74 12 Q-78 -9 -59 -11 Q-53 -36 -29 -32 Q-7 -32 0 -15 Q23 -22 34 -3 Q53 -6 57 10 Q60 22 44 22 L-59 22 Q-71 22 -74 12 Z",
+          "fill": "#F5FFEB",
+          "animate": {
+            "x": [
+              [
+                0,
+                -5
+              ],
+              [
+                0.64,
+                -5
+              ],
+              [
+                2.03,
+                11,
+                "easeInOutCubic"
+              ],
+              [
+                3.74,
+                -5,
+                "easeInOutCubic"
+              ],
+              [
+                4,
+                -5,
+                "easeInOutSine"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "drop-0",
+          "type": "path",
+          "d": "M-30 25 L-35 32",
+          "fill": null,
+          "stroke": {
+            "color": "#297F95",
+            "width": 2,
+            "cap": "round",
+            "join": "round"
+          },
+          "animate": {
+            "y": [
+              [
+                0,
+                0
+              ],
+              [
+                0.77,
+                0
+              ],
+              [
+                2.12,
+                8,
+                "easeInOutQuad"
+              ],
+              [
+                3.86,
+                0,
+                "easeInOutQuad"
+              ],
+              [
+                4,
+                0,
+                "easeInOutSine"
+              ]
+            ],
+            "opacity": [
+              [
+                0,
+                0.6
+              ],
+              [
+                0.9,
+                0.6
+              ],
+              [
+                2.21,
+                0.09,
+                "easeInOutSine"
+              ],
+              [
+                3.62,
+                0.6,
+                "easeInOutSine"
+              ],
+              [
+                4,
+                0.6,
+                "easeInOutSine"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "drop-1",
+          "type": "path",
+          "d": "M-10 25 L-15 32",
+          "fill": null,
+          "stroke": {
+            "color": "#297F95",
+            "width": 2,
+            "cap": "round",
+            "join": "round"
+          },
+          "animate": {
+            "y": [
+              [
+                0,
+                0
+              ],
+              [
+                0.12,
+                0
+              ],
+              [
+                1.67,
+                8,
+                "easeInOutCubic"
+              ],
+              [
+                3.74,
+                0,
+                "easeInOutCubic"
+              ],
+              [
+                4,
+                0,
+                "easeInOutSine"
+              ]
+            ],
+            "opacity": [
+              [
+                0,
+                0.6
+              ],
+              [
+                0.25,
+                0.6
+              ],
+              [
+                1.76,
+                0.09,
+                "easeInOutQuad"
+              ],
+              [
+                3.86,
+                0.6,
+                "easeInOutQuad"
+              ],
+              [
+                4,
+                0.6,
+                "easeInOutSine"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "drop-2",
+          "type": "path",
+          "d": "M11 25 L6 32",
+          "fill": null,
+          "stroke": {
+            "color": "#297F95",
+            "width": 2,
+            "cap": "round",
+            "join": "round"
+          },
+          "animate": {
+            "y": [
+              [
+                0,
+                0
+              ],
+              [
+                0.38,
+                0
+              ],
+              [
+                1.85,
+                8,
+                "easeInOutSine"
+              ],
+              [
+                3.62,
+                0,
+                "easeInOutSine"
+              ],
+              [
+                4,
+                0,
+                "easeInOutSine"
+              ]
+            ],
+            "opacity": [
+              [
+                0,
+                0.6
+              ],
+              [
+                0.51,
+                0.6
+              ],
+              [
+                1.94,
+                0.09,
+                "easeInOutCubic"
+              ],
+              [
+                3.74,
+                0.6,
+                "easeInOutCubic"
+              ],
+              [
+                4,
+                0.6,
+                "easeInOutSine"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "caption",
+          "type": "rect",
+          "x": -50,
+          "y": 62,
+          "w": 83,
+          "h": 5,
+          "radius": 2.5,
+          "fill": "#458780"
+        },
+        {
+          "id": "caption-short",
+          "type": "rect",
+          "x": 23,
+          "y": 62,
+          "w": 41,
+          "h": 5,
+          "radius": 2.5,
+          "fill": "#A3B7A5"
+        },
+        {
+          "id": "status",
+          "type": "ellipse",
+          "x": 85,
+          "y": 62,
+          "rx": 4,
+          "ry": 4,
+          "fill": "#FF9D70"
+        }
+      ],
+      "animate": {
+        "rotation": [
+          [
+            0,
+            -5
+          ],
+          [
+            0.25,
+            -5
+          ],
+          [
+            1.76,
+            4,
+            "easeInOutCubic"
+          ],
+          [
+            3.74,
+            -5,
+            "easeInOutCubic"
+          ],
+          [
+            4,
+            -5,
+            "easeInOutSine"
+          ]
+        ],
+        "y": [
+          [
+            0,
+            145
+          ],
+          [
+            0.38,
+            145
+          ],
+          [
+            1.85,
+            151,
+            "easeInOutQuad"
+          ],
+          [
+            3.86,
+            145,
+            "easeInOutQuad"
+          ],
+          [
+            4,
+            145,
+            "easeInOutSine"
+          ]
+        ]
+      }
+    }
+  ]
+}

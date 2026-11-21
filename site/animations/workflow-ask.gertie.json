@@ -1,0 +1,32 @@
+{
+  "gertie": 1,
+  "name": "workflow-ask",
+  "canvas": {
+    "w": 480,
+    "h": 378,
+    "background": "#c9d7fb"
+  },
+  "duration": 4,
+  "fps": 30,
+  "tier": "icon",
+  "nodes": [
+    {"id": "light-falloff", "type": "rect", "x": 240, "y": 189, "w": 480, "h": 378, "fill": {"type": "radial", "center": [-78, -110], "radius": 425, "stops": [[0, "#ffffff"], [1, "#c9d7fb"]]}, "opacity": 0.38},
+    {"id": "ground-shadow", "type": "ellipse", "x": 242, "y": 306, "rx": 143, "ry": 24, "fill": {"type": "radial", "center": [0, 0], "radius": 140, "stops": [[0, "#879de6"], [1, "#c9d7fb"]]}, "scale": [1, 0.44], "opacity": 0.45},
+    {"id": "composer", "type": "group", "animate": {"y": [[0, 0], [2, -7, "gentle"], [4, 0, "gentle"]]}, "children": [
+      {"id": "composer-depth", "type": "path", "d": "M99 100 L351 70 C378 67 398 85 398 112 L398 191 C398 216 380 236 353 239 L171 261 L122 296 Q113 303 113 291 L112 268 C86 268 70 252 70 230 L70 136 C70 117 81 103 99 100Z", "fill": {"type": "linear", "from": [100, 80], "to": [346, 280], "stops": [[0, "#a9c3f6"], [1, "#748adb"]]}, "x": -7, "y": 6},
+      {"id": "glass-face", "type": "path", "d": "M99 100 L351 70 C378 67 398 85 398 112 L398 191 C398 216 380 236 353 239 L171 261 L122 296 Q113 303 113 291 L112 268 C86 268 70 252 70 230 L70 136 C70 117 81 103 99 100Z", "fill": {"type": "linear", "from": [130, 79], "to": [344, 268], "stops": [[0, "#f4f8ff"], [0.53, "#c9dcff"], [1, "#a7bff5"]]}, "stroke": {"color": "#eff8ff", "width": 2.5}},
+      {"id": "glass-reflection", "type": "path", "d": "M76 150 C76 119 86 108 110 104 L352 76 C369 74 381 78 389 92 C301 90 170 138 76 150Z", "fill": "#ffffff", "opacity": 0.38},
+      {"id": "upper-rim", "type": "path", "d": "M78 137 Q82 113 105 109 L316 83", "stroke": {"color": "#ffffff", "width": 2.5}, "opacity": 0.86},
+      {"id": "prompt-line-1", "type": "path", "d": "M123 151 L283 131.8", "stroke": {"color": "#6e9ce8", "width": 9}, "opacity": 0.68, "animate": {"opacity": [[0, 0.68], [0.12, 0.68], [0.3, 1], [0.67, 0.68], [4, 0.68]]}},
+      {"id": "prompt-line-2", "type": "path", "d": "M123 179 L256 163.0", "stroke": {"color": "#6e9ce8", "width": 9}, "opacity": 0.68, "animate": {"opacity": [[0, 0.68], [0.29, 0.68], [0.47, 1], [0.8400000000000001, 0.68], [4, 0.68]]}},
+      {"id": "prompt-line-3", "type": "path", "d": "M123 207 L219 195.5", "stroke": {"color": "#6e9ce8", "width": 9}, "opacity": 0.68, "animate": {"opacity": [[0, 0.68], [0.46, 0.68], [0.64, 1], [1.01, 0.68], [4, 0.68]]}},
+      {"id": "send-button", "type": "group", "x": 327, "y": 166, "animate": {"x": [[0, 327], [0.65, 327], [0.83, 320, "easeInCubic"], [1.05, 345, "easeOutCubic"], [1.65, 327, "easeOutBack"], [4, 327]], "scale": [[0, 1], [0.83, 0.9], [1.05, 1.08], [1.65, 1], [4, 1]]}, "children": [
+        {"id": "send-depth", "type": "path", "d": "M-17 -22 Q-17 -29 -10 -25 L25 -5 Q33 0 25 6 L-10 26 Q-17 30 -17 22Z", "fill": "#2657c5", "x": -3, "y": 3},
+        {"id": "send-face", "type": "path", "d": "M-17 -22 Q-17 -29 -10 -25 L25 -5 Q33 0 25 6 L-10 26 Q-17 30 -17 22Z", "fill": {"type": "linear", "from": [-18, -29], "to": [18, 26], "stops": [[0, "#75e2ff"], [0.53, "#2685fc"], [1, "#144ae1"]]}, "stroke": {"color": "#c2ebff", "width": 1.5}},
+        {"id": "send-rim", "type": "path", "d": "M-13 18 L-13 -17 Q-13 -23 -7 -20 L8 -12", "stroke": {"color": "#9eeaff", "width": 2}}
+      ]}
+    ]},
+    {"id": "send-glint", "type": "path", "d": "M0 -13 Q2 -2 13 0 Q2 2 0 13 Q-2 2 -13 0 Q-2 -2 0 -13Z", "fill": "#ffffff", "x": 414, "y": 142, "opacity": 0.65, "motion": [{"preset": "pulse", "at": 0.9, "duration": 0.8}]},
+    {"id": "composer-glint", "type": "path", "d": "M0 -13 Q2 -2 13 0 Q2 2 0 13 Q-2 2 -13 0 Q-2 -2 0 -13Z", "fill": "#e5f3ff", "x": 52, "y": 192, "opacity": 0.65, "motion": [{"preset": "pulse", "at": 2.5, "duration": 0.8}]}
+  ]
+}

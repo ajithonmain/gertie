@@ -1,0 +1,35 @@
+{
+  "gertie": 1,
+  "name": "headland-beacon",
+  "tier": "icon",
+  "duration": 4,
+  "fps": 30,
+  "poster": 0.7,
+  "canvas": {
+    "w": 400,
+    "h": 300,
+    "background": "#141f39"
+  },
+  "nodes": [
+    {"id": "backdrop", "type": "rect", "x": 200, "y": 150, "w": 400, "h": 300, "radius": 0, "fill": {"type": "linear", "from": [-170, -150], "to": [160, 150], "stops": [[0, "#313c60"], [1, "#101b33"]]}},
+    {"id": "moon", "type": "ellipse", "x": 298, "y": 72, "r": 24, "fill": "#f4d6a1"},
+    {"id": "far-star", "type": "ellipse", "x": 77, "y": 76, "r": 2.6, "fill": "#f8dcb1"},
+    {"id": "high-star", "type": "ellipse", "x": 211, "y": 43, "r": 1.8, "fill": "#f8dcb1"},
+    {"id": "water", "type": "path", "d": "M0 220 Q76 193 157 212 Q233 228 400 201 V300 H0Z", "fill": {"type": "linear", "from": [0, 206], "to": [0, 300], "stops": [[0, "#334a6b"], [1, "#162a49"]]}},
+    {"id": "foam", "type": "path", "d": "M250 250 Q283 240 320 246 Q346 250 371 245", "animate": {"x": [[0, -10], [2, 8], [4, -10]]}, "stroke": {"color": "#6980a3", "width": 2}},
+    {"id": "foam-small", "type": "path", "d": "M280 272 Q312 265 337 271", "animate": {"x": [[0, 3], [2, -11], [4, 3]]}, "stroke": {"color": "#50698f", "width": 1.5}},
+    {"id": "headland", "type": "path", "d": "M0 284 L40 263 L76 251 L104 224 L142 216 L172 226 L205 220 L238 236 L249 259 L285 300 H0Z", "fill": "#1a2639"},
+    {"id": "headland-light", "type": "path", "d": "M25 276 L76 253 L104 224 L142 216 L172 226 L205 220 L238 236 L230 243 L200 232 L172 239 L129 230 L112 237 L87 263Z", "fill": "#3e4a5e"},
+    {"id": "lamp-beam", "type": "group", "x": 148, "y": 115, "animate": {"rotation": [[0, -5], [1.7, 14], [4, -5]], "opacity": [[0, 0.83], [0.94, 1], [2, 0.55], [3, 0.12], [4, 0.83]]}, "children": [
+      {"id": "beam", "type": "path", "d": "M0 0 L187 -51 L187 47Z", "opacity": 0.56, "fill": {"type": "linear", "from": [0, 0], "to": [187, 0], "stops": [[0, "#ffe4a2"], [1, "#687595"]]}}
+    ]},
+    {"id": "tower", "type": "path", "d": "M119 222 L130 126 L158 126 L170 225Z", "fill": {"type": "linear", "from": [119, 0], "to": [170, 0], "stops": [[0, "#fbe1bc"], [1, "#97747a"]]}},
+    {"id": "tower-stripe", "type": "path", "d": "M126 165 L162 165 L166 190 L122 190Z", "fill": "#bc675e"},
+    {"id": "tower-base", "type": "path", "d": "M119 219 L170 219 L175 230 L115 230Z", "fill": "#6d5869"},
+    {"id": "lantern-cap", "type": "rect", "x": 144, "y": 101, "w": 35, "h": 9, "radius": 2, "fill": "#5b4154"},
+    {"id": "roof", "type": "path", "d": "M125 99 L143 87 L163 99Z", "fill": "#bd756a"},
+    {"id": "lantern-frame", "type": "rect", "x": 144, "y": 114, "w": 29, "h": 21, "radius": 3, "fill": "#5c4054"},
+    {"id": "lamp", "type": "rect", "x": 144, "y": 114, "w": 21, "h": 14, "radius": 2, "fill": "#ffce8a", "animate": {"opacity": [[0, 0.83], [1, 1], [2, 0.54], [3, 0.35], [4, 0.83]]}},
+    {"id": "door", "type": "rect", "x": 144, "y": 210, "w": 12, "h": 18, "radius": 4, "fill": "#4b4259"}
+  ]
+}

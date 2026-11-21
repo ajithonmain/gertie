@@ -1,0 +1,36 @@
+{
+  "gertie": 1,
+  "name": "workflow-check",
+  "canvas": {
+    "w": 480,
+    "h": 378,
+    "background": "#c4eee4"
+  },
+  "duration": 4,
+  "fps": 30,
+  "tier": "icon",
+  "nodes": [
+    {"id": "light-falloff", "type": "rect", "x": 240, "y": 189, "w": 480, "h": 378, "fill": {"type": "radial", "center": [-78, -110], "radius": 425, "stops": [[0, "#ffffff"], [1, "#c4eee4"]]}, "opacity": 0.38},
+    {"id": "ground-shadow", "type": "ellipse", "x": 242, "y": 306, "rx": 143, "ry": 24, "fill": {"type": "radial", "center": [0, 0], "radius": 140, "stops": [[0, "#66bbae"], [1, "#c4eee4"]]}, "scale": [1, 0.44], "opacity": 0.45},
+    {"id": "browser", "type": "group", "animate": {"y": [[0, 0], [2.1, -6, "gentle"], [4, 0, "gentle"]]}, "children": [
+      {"id": "browser-depth", "type": "path", "d": "M103 83 L363 57 C388 54 406 69 406 92 L406 217 C406 240 391 254 367 257 L105 284 C81 287 66 271 66 247 L66 125 C66 102 79 86 103 83Z", "fill": {"type": "linear", "from": [64, 90], "to": [406, 270], "stops": [[0, "#76d9c1"], [1, "#419e9e"]]}, "x": -7, "y": 5},
+      {"id": "browser-glass", "type": "path", "d": "M103 83 L363 57 C388 54 406 69 406 92 L406 217 C406 240 391 254 367 257 L105 284 C81 287 66 271 66 247 L66 125 C66 102 79 86 103 83Z", "fill": {"type": "linear", "from": [92, 81], "to": [385, 260], "stops": [[0, "#e7fff8"], [0.53, "#bcdfed"], [1, "#b1eadb"]]}, "stroke": {"color": "#eafff6", "width": 2.3}},
+      {"id": "browser-chrome", "type": "path", "d": "M66 125 C66 102 79 86 103 83 L363 57 C388 54 406 69 406 92 L406 109 L66 143Z", "fill": {"type": "linear", "from": [80, 80], "to": [374, 126], "stops": [[0, "#a4ead7"], [0.53, "#b6f2dd"], [1, "#5ebcaa"]]}},
+      {"id": "browser-divider", "type": "path", "d": "M69 143 L404 109", "stroke": {"color": "#ecfff7", "width": 2}},
+      {"id": "window-dot-1", "type": "ellipse", "x": 96, "y": 116, "rx": 7, "ry": 7, "fill": "#e2fff4"},
+      {"id": "window-dot-2", "type": "ellipse", "x": 119, "y": 113, "rx": 7, "ry": 7, "fill": "#e2fff4"},
+      {"id": "window-dot-3", "type": "ellipse", "x": 142, "y": 111, "rx": 7, "ry": 7, "fill": "#e2fff4"},
+      {"id": "spinner", "type": "group", "x": 240, "y": 187, "children": [
+        {"id": "spinner-track", "type": "ellipse", "x": 0, "y": 0, "rx": 48, "ry": 48, "stroke": {"color": "#94cbed", "width": 12}},
+        {"id": "spinner-orbit", "type": "path", "d": "M0 -48 C26.51 -48 48 -26.51 48 0", "stroke": {"color": "#1679f6", "width": 12}, "animate": {"rotation": [[0, 0], [4, 720, "linear"]]}},
+        {"id": "spinner-reflection", "type": "path", "d": "M0 -48 C26.51 -48 48 -26.51 48 0", "stroke": {"color": "#71e2ff", "width": 3}, "animate": {"rotation": [[0, 1], [4, 721, "linear"]]}}
+      ]},
+      {"id": "browser-highlight", "type": "path", "d": "M77 220 V130 Q77 102 106 97 L208 87", "stroke": {"color": "#f0fff9", "width": 2.5}, "opacity": 0.7},
+      {"id": "pass-indicator", "type": "group", "x": 359, "y": 221, "motion": [{"preset": "pulse", "at": 1.8, "duration": 0.65}], "children": [
+        {"id": "pass-disc", "type": "ellipse", "x": 0, "y": 0, "rx": 22, "ry": 22, "fill": {"type": "linear", "from": [-15, -18], "to": [13, 20], "stops": [[0, "#ceffef"], [1, "#54cfa7"]]}, "stroke": {"color": "#e5fff4", "width": 2}},
+        {"id": "pass-check", "type": "path", "d": "M-8 0 L-2 6 L10 -7", "stroke": {"color": "#126b56", "width": 3.5}}
+      ]}
+    ]},
+    {"id": "browser-glint", "type": "path", "d": "M0 -13 Q2 -2 13 0 Q2 2 0 13 Q-2 2 -13 0 Q-2 -2 0 -13Z", "fill": "#edfff7", "x": 422, "y": 87, "opacity": 0.65, "motion": [{"preset": "pulse", "at": 1.95, "duration": 0.8}]}
+  ]
+}

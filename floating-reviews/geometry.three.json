@@ -1,0 +1,10 @@
+{
+  "width": 1000,
+  "height": 667,
+  "duration": 8,
+  "background": "#9fe5ee",
+  "camera": [0, 0, 9],
+  "objects": [
+    { "shape": "team", "spin": [0, 0, 0] }
+  ]
+}

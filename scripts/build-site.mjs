@@ -1,9 +1,13 @@
 // Builds the website into site/dist. Run with: node --import tsx scripts/build-site.mjs
-// Pages: home, playground, gallery, docs, benchmark. The playground bundles the real compiler from src/.
-import { build } from "esbuild";
-import { cpSync, existsSync, mkdirSync, readFileSync, readdirSync, rmSync, statSync, writeFileSync } from "node:fs";
-import { join, basename } from "node:path";
+// Pages: home, gallery, and docs.
+import { execFileSync } from "node:child_process";
+import { transform } from "esbuild";
+import { cpSync, existsSync, mkdirSync, readFileSync, readdirSync, rmSync, writeFileSync } from "node:fs";
+import { join, basename, dirname } from "node:path";
+import { parseAscii } from "../src/ascii/parse.ts";
+import { emitAsciiSvg } from "../src/ascii/svg.ts";
 import { compileSceneText } from "../src/compile.ts";
+import { agentCard, commandBox, examplePrompt, featureCards, workflowSteps } from "./landing-content.mjs";
 
 const root = new URL("..", import.meta.url).pathname;
 const dist = join(root, "site", "dist");
@@ -15,29 +19,51 @@ rmSync(dist, { recursive: true, force: true });
 mkdirSync(join(dist, "gallery"), { recursive: true });
 mkdirSync(join(dist, "docs"), { recursive: true });
 
-const LOGO = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="8" stroke="#1e293b"/><path d="M12 4a8 8 0 0 1 8 8"/></svg>`;
-const NAV = [["index.html", "Home"], ["playground.html", "Playground"], ["gallery.html", "Gallery"], ["docs/index.html", "Docs"], ["benchmark.html", "Benchmark"]];
+const SITE = "https://gertiestudio.pages.dev";
+const publicPath = file => `/${file.replace(/(^|\/)index\.html$/, "$1")}`;
+const seoTags = (file, title, desc, full = true) => {
+  const url = SITE + publicPath(file);
+  return [
+    `<link rel="canonical" href="${url}">`,
+    ...(full ? [`<meta property="og:title" content="${esc(title)}">`, `<meta property="og:description" content="${esc(desc)}">`, `<meta property="og:type" content="website">`] : []),
+    `<meta property="og:url" content="${url}">`,
+    `<meta property="og:image" content="${SITE}/og.png">`,
+    `<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">`,
+    `<meta name="twitter:card" content="summary_large_image">`,
+  ].join("");
+};
+const headerMarkup = readFileSync(join(root, "site", "src", "header.html"), "utf8").trim();
+const footerMarkup = readFileSync(join(root, "site", "src", "footer.html"), "utf8").trim();
+const siteHeader = file => headerMarkup
+  .replaceAll("{{repo}}", esc(repo))
+  .replace("{{docs-current}}", file.startsWith("docs/") ? ' aria-current="page"' : "")
+  .replace("{{gallery-current}}", file === "gallery.html" ? ' aria-current="page"' : "");
+const siteFooter = footerMarkup.replaceAll("{{repo}}", esc(repo));
 
-function page({ title, desc, file, body, script }) {
-  const depth = file.split("/").length - 1;
-  const up = "../".repeat(depth);
-  const nav = NAV.map(([href, label]) => `<a href="${up}${href}"${href === file || (file.startsWith("docs/") && href === "docs/index.html") ? ' aria-current="page"' : ""}>${label}</a>`).join("");
-  const github = repo ? `<a href="${esc(repo)}">GitHub</a>` : "";
+function page({ title, desc, file, body }) {
   const html = `<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>${esc(title)}</title><meta name="description" content="${esc(desc)}">
-<link rel="icon" href="${up}favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="${up}style.css"></head>
-<body><header class="top"><div class="in"><a class="brand" href="${up}index.html">${LOGO}Gertie</a><nav>${nav}${github}</nav></div></header>
-<main>${body}</main>
-<footer><div class="in">Gertie is MIT licensed and free. It runs on your machine and makes no network requests. Gertie is not affiliated with LottieFiles or the Lottie Animation Community.</div></footer>
-${script ?? ""}</body></html>`;
+${seoTags(file, title, desc)}
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/landing.css"><link rel="stylesheet" href="/docs.css">
+<script src="/navigation.js" defer></script></head>
+<body class="reference-page">
+<a class="skip" href="#main">Skip to content</a>
+${siteHeader(file)}
+<main id="main" class="wrap reference-main">${body}</main>
+${siteFooter}
+</body></html>`;
   writeFileSync(join(dist, file), html);
 }
 
-cpSync(join(root, "site", "src", "style.css"), join(dist, "style.css"));
 cpSync(join(root, "assets", "header.svg"), join(dist, "header.svg"));
-writeFileSync(join(dist, "favicon.svg"), LOGO.replace('width="24" height="24" ', "").replace("<svg ", '<svg xmlns="http://www.w3.org/2000/svg" '));
 writeFileSync(join(dist, "_headers"), "/*\n  X-Content-Type-Options: nosniff\n  Referrer-Policy: no-referrer\n");
+
+const posterOf = (svg) => svg
+  .replace(/@keyframes\s+[^{}]+\{(?:[^{}]|\{[^{}]*\})*\}/g, "")
+  .replace(/@media\s*\(prefers-reduced-motion:\s*reduce\)/g, "@media all")
+  .replace(/<animate\b[^>]*\/>/g, "");
 
 // Gallery: compile every example that produces an SVG without needing a fragment file.
 const exDir = join(root, "examples");
@@ -48,58 +74,220 @@ for (const f of readdirSync(exDir).filter((x) => x.endsWith(".gertie.json")).sor
   const r = compileSceneText(text);
   if (r.diagnostics.some((d) => d.severity === "error") || !r.svg || !r.lottie) continue;
   writeFileSync(join(dist, "gallery", `${name}.svg`), r.svg.svg);
+  writeFileSync(join(dist, "gallery", `${name}.poster.svg`), posterOf(r.svg.svg));
   writeFileSync(join(dist, "gallery", `${name}.lottie.json`), JSON.stringify(r.lottie));
   writeFileSync(join(dist, "gallery", `${name}.gertie.json`), text);
-  items.push({ name, text });
+  items.push({ name, background: JSON.parse(text).canvas.background });
 }
 
-const cards = (list) => list.map((i) => `<div class="card"><div class="stage"><img src="gallery/${i.name}.svg" alt="${esc(i.name)} animation" loading="lazy"></div><div class="name">${esc(i.name)}</div><div class="links"><a href="gallery/${i.name}.gertie.json">scene</a><a href="gallery/${i.name}.lottie.json">lottie</a><a href="gallery/${i.name}.svg">svg</a></div></div>`).join("");
 
-page({
-  title: "Gertie: free vector animation for any AI agent",
-  desc: "Open-source agent skill that compiles a small scene file to Lottie JSON and animated SVG, then renders, checks and exports GIF, video and more.",
-  file: "index.html",
-  body: `<section class="hero"><div><h1>Vector animation from any AI agent. Free.</h1>
-<p class="lead">Ask your agent for an animation. It writes a small scene file. Gertie compiles it to Lottie JSON and animated SVG, renders it in a real browser, checks it, and exports GIF, transparent video and more. No credits, no account, no network calls.</p>
-<div class="install"><pre><code>npx skills add ${esc(repo.replace("https://github.com/", "") || "OWNER/gertie")}</code></pre></div>
-<p><a href="playground.html">Try the playground</a> &middot; <a href="docs/index.html">Read the docs</a></p></div>
-<img src="header.svg" alt="A pulsing ring, animated by Gertie"></section>
-<h2>What you get</h2>
-<table><tr><th>Output</th><th>Use it for</th></tr>
-<tr><td>Lottie JSON and .lottie</td><td>Apps and websites</td></tr>
-<tr><td>Animated SVG</td><td>Works in an img tag with no JavaScript, including READMEs</td></tr>
-<tr><td>GIF, APNG, WebP</td><td>Anywhere that needs an image</td></tr>
-<tr><td>WebM with alpha, ProRes 4444, HEVC with alpha, MP4</td><td>Video, with transparency where the format allows</td></tr>
-<tr><td>Destination presets</td><td>Telegram, Discord, Slack, WhatsApp and more, within their limits</td></tr>
-<tr><td>Storyboards</td><td>Multi-scene videos with captions, transitions and music</td></tr></table>
-<h2>Examples</h2><div class="grid">${cards(items.slice(0, 8))}</div><p><a href="gallery.html">See all ${items.length}</a></p>
-<h2>Works with</h2><p>Claude Code, Codex CLI, Gemini CLI, Cursor and any agent that reads the Agent Skills format. See the <a href="benchmark.html">benchmark</a> for how well agents do with it, and the exact prompts used.</p>`,
-});
+// Landing page: every image is a Gertie scene in site/animations, compiled here to an animated SVG and a still poster.
+// Posters keep the reduced-motion geometry and drop the animation keyframes.
+const outAnim = join(dist, "animations");
+mkdirSync(outAnim, { recursive: true });
+const landingAnimations = join(root, "site", "animations");
+const galleryBackgrounds = new Map();
+for (const f of readdirSync(landingAnimations).filter((f) => f.endsWith(".gertie.json"))) {
+  const source = readFileSync(join(landingAnimations, f), "utf8");
+  const scene = JSON.parse(source);
+  galleryBackgrounds.set(scene.name, scene.canvas.background);
+  const result = compileSceneText(source);
+  if (result.diagnostics.some((d) => d.severity === "error") || !result.svg) throw new Error(`Landing animation failed: ${f}: ${result.diagnostics.filter((d) => d.severity === "error").map((d) => d.message).join("; ")}`);
+  writeFileSync(join(outAnim, `${scene.name}.svg`), result.svg.svg);
+  writeFileSync(join(outAnim, `${scene.name}.poster.svg`), posterOf(result.svg.svg));
+  // Scenes shown as "Made with Gertie" are published next to their SVG so visitors can open the source.
+  if (scene.name.startsWith("hero-")) writeFileSync(join(outAnim, f), source);
+}
+// The editable hero also appears in the examples gallery. Reuse that build for the landing page.
+for (const ext of ["svg", "gertie.json"]) {
+  cpSync(join(dist, "gallery", `hero-gertie.${ext}`), join(outAnim, `hero-gertie.${ext}`));
+}
+// Ready-made SVGs (for example ASCII animation exported by `gertie ascii export`) are copied as they are and win over a scene of the same name.
+for (const f of readdirSync(landingAnimations).filter((f) => f.endsWith(".svg") && !f.endsWith(".poster.svg") && f !== "hero-gertie.svg")) {
+  const svg = readFileSync(join(landingAnimations, f), "utf8");
+  writeFileSync(join(outAnim, f), svg);
+  writeFileSync(join(outAnim, f.replace(/\.svg$/, ".poster.svg")), posterOf(svg));
+}
+const ascii = parseAscii(JSON.parse(readFileSync(join(landingAnimations, "landing-starfield.ascii.json"), "utf8")));
+if (!ascii.scene || ascii.diagnostics.some(d => d.severity === "error")) throw new Error("Cannot compile landing starfield");
+writeFileSync(join(outAnim, "landing-starfield.svg"), emitAsciiSvg(ascii.scene));
+writeFileSync(join(outAnim, "landing-starfield.poster.svg"), emitAsciiSvg({ ...ascii.scene, frames: [ascii.scene.frames[0]] }));
+cpSync(join(root, "site", "src", "icons"), join(dist, "icons"), { recursive: true });
+cpSync(join(root, "site", "src", "fonts"), join(dist, "fonts"), { recursive: true });
+cpSync(join(dist, "icons", "logo.svg"), join(dist, "favicon.svg"));
+for (const file of ["landing.css", "landing.js", "gallery.css", "gallery.js", "docs.css", "navigation.js"]) {
+  const loader = file.split(".").at(-1);
+  const source = readFileSync(join(root, "site", "src", file), "utf8");
+  const result = await transform(source, { loader, minify: true, target: "es2020" });
+  writeFileSync(join(dist, file), result.code);
+}
+// The gallery carousel is generated from site/src/gallery.json, so the prompt shown in the drawer is stored in one place.
+const galleryItems = JSON.parse(readFileSync(join(root, "site", "src", "gallery.json"), "utf8"));
+const threeGallery = galleryItems.filter(item => item.format === "three");
+for (const { name, buildScript, modelSource } of threeGallery) {
+  if (buildScript) {
+    execFileSync(process.execPath, [
+      join(root, buildScript), join(dist, "gallery", `${name}.html`),
+    ], { stdio: "inherit" });
+    if (modelSource) cpSync(join(root, modelSource), join(dist, "gallery", basename(modelSource)));
+    continue;
+  }
+  const source = join(exDir, `${name}.three.json`);
+  execFileSync(process.execPath, [
+    join(root, "skills", "gertie", "scripts", "gertie.mjs"),
+    "three", "build", source, "--out", join(dist, "gallery", `${name}.html`),
+  ], { stdio: "inherit" });
+  cpSync(source, join(dist, "gallery", `${name}.three.json`));
+  const scene = JSON.parse(readFileSync(source, "utf8"));
+  for (const object of scene.objects) {
+    if (object.shape !== "relief") continue;
+    for (const asset of [object.image, object.depthMap]) {
+      const target = join(dist, "gallery", asset);
+      mkdirSync(dirname(target), { recursive: true });
+      cpSync(join(exDir, asset), target);
+    }
+  }
+  galleryBackgrounds.set(name, scene.background);
+}
+const threePoster = name => `animations/posters/${name}.png`;
+const threePlayer = name => `gallery/${name}.html`;
 
-page({
-  title: "Gertie gallery",
-  desc: "Every example scene in the Gertie corpus, with its scene file, Lottie JSON and SVG.",
-  file: "gallery.html",
-  body: `<h1>Gallery</h1><p class="lead">Every example below was compiled from a scene file by Gertie. Nothing is hand-written Lottie.</p><div class="grid">${cards(items)}</div>`,
+for (const [folder, name] of [["", "preset-entrances"], ["", "preset-exits"], ["import", "w3c-demo"], ["trace", "logo-anim"]]) {
+  const source = readFileSync(join(exDir, folder, `${name}.gertie.json`), "utf8");
+  const result = compileSceneText(source, { loadFragment: path => JSON.parse(readFileSync(join(exDir, folder, path), "utf8")) });
+  if (!result.svg || result.diagnostics.some(d => d.severity === "error")) throw new Error(`Cannot compile landing example ${name}`);
+  writeFileSync(join(dist, "gallery", `${name}.svg`), result.svg.svg);
+  writeFileSync(join(dist, "gallery", `${name}.poster.svg`), posterOf(result.svg.svg));
+}
+const showcaseDir = join(landingAnimations, "showcase");
+for (const file of readdirSync(showcaseDir).filter(file => file.endsWith(".gertie.json"))) {
+  const name = file.replace(/\.gertie\.json$/, "");
+  const source = readFileSync(join(showcaseDir, file), "utf8");
+  galleryBackgrounds.set(name, JSON.parse(source).canvas.background);
+  const result = compileSceneText(source);
+  if (!result.svg || result.diagnostics.some(d => d.severity === "error")) throw new Error(`Cannot compile showcase scene ${name}`);
+  writeFileSync(join(outAnim, `${name}.svg`), result.svg.svg);
+  writeFileSync(join(outAnim, `${name}.poster.svg`), posterOf(result.svg.svg));
+}
+const tile = g => {
+  const isThree = g.format === "three";
+  const poster = isThree ? threePoster(g.name) : `animations/${g.name}.poster.svg`;
+  const animation = isThree ? poster : `animations/${g.name}.svg`;
+  const player = isThree ? ` data-player="${threePlayer(g.name)}"` : "";
+  const background = galleryBackgrounds.get(g.name);
+  const style = /^#[\da-f]{6}$/i.test(background) ? ` style="--tile-bg: ${background}"` : "";
+  return `<button class="gtile"${style} type="button" data-title="${esc(g.title)}" data-prompt="${esc(g.prompt)}" data-src="${animation}" data-still="${poster}"${player} aria-label="Open ${esc(g.title)}"><img class="rail-poster" alt="" loading="lazy"><noscript><img src="${poster}" alt="" loading="lazy"></noscript></button>`;
+};
+const railItems = galleryItems.filter(item => !item.galleryOnly);
+const perRow = Math.ceil(railItems.length / 3);
+const rows = [0, 1, 2].map((r) => {
+  const items = railItems.slice(r * perRow, (r + 1) * perRow);
+  return `<div class="rail${r === 1 ? " reverse" : ""}"><div class="rail-track">${items.map(tile).join("")}</div></div>`;
 });
+// Keep only the assets used by the landing page’s SVG previews and still illustrations.
+const mediaDir = join(landingAnimations, "media");
+mkdirSync(join(outAnim, "media"), { recursive: true });
+for (const f of ["painting.webp", "portrait.svg", "story-strip.webp", "study.webp"]) {
+  cpSync(join(mediaDir, f), join(outAnim, "media", f));
+}
+cpSync(join(exDir, "import", "third-party", "w3c-illustration-1.svg"), join(outAnim, "media", "source-art.svg"));
+cpSync(join(exDir, "trace", "logo.png"), join(outAnim, "media", "logo.png"));
+// Benchmark: published pass rates and the prompts, from tests/eval/results.
+const resDir = join(root, "tests", "eval", "results");
+const prompts = JSON.parse(readFileSync(join(root, "tests", "eval", "prompts.json"), "utf8"));
+const runs = existsSync(resDir) ? readdirSync(resDir).filter((d) => existsSync(join(resDir, d, "results.json"))).map((d) => JSON.parse(readFileSync(join(resDir, d, "results.json"), "utf8"))) : [];
+const benchmarkPrompts = runs.reduce((total, run) => total + run.prompts, 0);
+const benchmarkPasses = runs.reduce((total, run) => total + run.rows.filter((row) => row.final).length, 0);
+const firstPassRates = runs.map((run) => run.firstPassPct);
+const firstPassLow = Math.min(...firstPassRates);
+const firstPassHigh = Math.max(...firstPassRates);
+const firstPass = firstPassLow === firstPassHigh ? `${firstPassLow}%` : `${firstPassLow}% to ${firstPassHigh}%`;
+const proof = {
+  dependencies: Object.keys({ ...pkg.dependencies, ...pkg.optionalDependencies, ...pkg.peerDependencies }).length,
+  node: esc(pkg.engines.node.match(/\d+/)[0]),
+};
+const proofNumber = (value, suffix = "") =>
+  `<span class="sr-only">${value}${suffix}</span><span class="proof-number" aria-hidden="true"><span data-proof-count>${value}</span>${suffix}</span>`;
+const benchmarkSummary = benchmarkPrompts
+  ? `${proofNumber(Number((100 * benchmarkPasses / benchmarkPrompts).toFixed(1)), "%")}
+    <h3>of final scenes passed QA</h3>
+    <p>${benchmarkPrompts} prompt runs across ${new Set(runs.map((run) => run.model)).size} models. ${firstPass} on the first try.</p>
+    <p class="proof-method">QA checks scene validity and motion. Visual quality requires review.</p>`
+  : "<h3>Scene QA benchmark</h3>";
+const postersDir = join(landingAnimations, "posters");
+const posters = new Set(readdirSync(postersDir));
+cpSync(postersDir, join(outAnim, "posters"), { recursive: true });
+const landing = readFileSync(join(root, "site", "src", "landing.html"), "utf8")
+  .replace("<!--gallery-->", rows.join("\n"))
+  .replace("<!--proof-benchmark-->", benchmarkSummary)
+  .replace("</head>", `${seoTags("index.html", "", "", false)}</head>`);
+const replacements = {
+  repo: esc(repo),
+  "site-header": siteHeader("index.html"),
+  "site-footer": siteFooter,
+  "command:hero": commandBox("hero"),
+  "example-prompt": esc(examplePrompt),
+  "workflow-steps": workflowSteps(),
+  "feature-cards": featureCards(root, prompts),
+  "agent-card": agentCard(),
+  "proof:dependencies": proof.dependencies,
+  "proof:node": proof.node,
+};
+writeFileSync(join(dist, "index.html"), landing.replace(/\{\{(.*?)\}\}/gs, (_, key) => {
+  if (!Object.hasOwn(replacements, key)) throw new Error(`Unknown landing placeholder: ${key}`);
+  return replacements[key];
+}).replace(/(?:animations|gallery)\/([\w-]+\.poster)\.svg/g, (path, name) => {
+  const poster = `${name}.webp`;
+  return posters.has(poster) ? `animations/posters/${poster}` : path;
+}));
 
-// Playground
-await build({ entryPoints: [join(root, "site", "src", "playground.ts")], bundle: true, platform: "browser", format: "iife", target: "es2022", minify: true, outfile: join(dist, "playground.js"), alias: { "node:path": join(root, "site", "src", "path-shim.ts") }, logLevel: "warning", legalComments: "none" });
-const small = items.filter((i) => i.text.length < 30000);
-page({
-  title: "Gertie playground",
-  desc: "Edit a Gertie scene file and see the compiled animation and lint messages live in your browser.",
-  file: "playground.html",
-  body: `<h1>Playground</h1><p class="lead">The real compiler runs in your browser. Paste a scene file from a chat model, or edit an example. Nothing is uploaded. Video and GIF export need ffmpeg, so use the skill for those.</p>
-<div class="bar"><label>Example <select id="picker"></select></label><button id="dl-lottie" disabled>Download Lottie JSON</button><button id="dl-svg" disabled>Download SVG</button></div>
-<div class="cols"><div><textarea id="editor" spellcheck="false" aria-label="Scene file"></textarea></div><div><div class="stage big" id="stage"></div><ul class="diag" id="diag"></ul></div></div>
-<script id="examples" type="application/json">${JSON.stringify(small).replace(/</g, "\\u003c")}</script>`,
-  script: `<script src="playground.js"></script>`,
-});
+const curatedNames = new Set(galleryItems.map(item => item.name));
+const curatedTitles = new Set(galleryItems.map(item => item.title.toLowerCase()));
+const sourceExamples = new Map(items.map(item => [item.name, item]));
+const galleryCard = ({ title, format, poster, animation, prompt, source, lottie, background }) => {
+  const style = /^#[\da-f]{6}$/i.test(background) ? ` style="--card-bg: ${background}"` : "";
+  const extra = Object.entries({ prompt, source, lottie })
+    .filter(([, value]) => value).map(([key, value]) => ` data-${key}="${esc(value)}"`).join("");
+  return `<li><a class="gallery-card" href="${animation}" data-format="${format}"${style}${extra}>
+    <span class="gallery-card-art"><img src="${poster}" alt="" width="400" height="300" loading="lazy" decoding="async"></span>
+    <span class="gallery-card-name sr-only">${esc(title)}</span>
+  </a></li>`;
+};
+const fullGallery = [
+  ...galleryItems.map(({ name, title, format, prompt, galleryOnly, modelSource }) => {
+    const three = format === "three";
+    const webp = `${name}.poster.webp`;
+    const folder = galleryOnly ? "gallery" : "animations";
+    const animation = three ? threePlayer(name) : `${folder}/${name}.svg`;
+    const exportedExample = !three && sourceExamples.has(name) &&
+      readFileSync(join(dist, animation)).equals(readFileSync(join(dist, "gallery", `${name}.svg`)));
+    return galleryCard({
+      title, format: three ? "three" : "vector", animation, prompt,
+      poster: three ? threePoster(name) : posters.has(webp) ? `animations/posters/${webp}` : `${folder}/${name}.poster.svg`,
+      source: three ? `gallery/${modelSource ? basename(modelSource) : `${name}.three.json`}` : exportedExample ? `gallery/${name}.gertie.json` : undefined,
+      lottie: exportedExample ? `gallery/${name}.lottie.json` : undefined,
+      background: galleryBackgrounds.get(name) ?? sourceExamples.get(name)?.background,
+    });
+  }),
+  ...items.filter(({ name }) => !curatedNames.has(name)).map(({ name, background }) => {
+    const title = name.replaceAll("-", " ").replace(/^./, character => character.toUpperCase());
+    return galleryCard({
+      title: curatedTitles.has(title.toLowerCase()) ? `${title} (source demo)` : title,
+      format: "vector", poster: `gallery/${name}.poster.svg`, animation: `gallery/${name}.svg`,
+      source: `gallery/${name}.gertie.json`, lottie: `gallery/${name}.lottie.json`, background,
+    });
+  }),
+];
+const galleryPage = readFileSync(join(root, "site", "src", "gallery.html"), "utf8");
+writeFileSync(join(dist, "gallery.html"), galleryPage
+  .replace("{{site-header}}", siteHeader("gallery.html"))
+  .replace("{{site-footer}}", siteFooter)
+  .replace("<!--gallery-cards-->", fullGallery.join("\n"))
+  .replace("</head>", `${seoTags("gallery.html", "Animation gallery · Gertie", "Browse vector and 3D animations made with Gertie. Open an example to see how it was made.")}</head>`));
 
 // Docs: the skill's reference files, rendered.
 function inline(s) {
-  return esc(s).replace(/`([^`]+)`/g, "<code>$1</code>").replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>").replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_, t, u) => `<a href="${u.replace(/\.md(#|$)/, ".html$1")}">${t}</a>`);
+  return esc(s).replace(/`([^`]+)`/g, "<code>$1</code>").replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>").replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_, t, u) => `<a href="${u.replace(/^(?:references\/)?([a-z-]+)\.md(?=#|$)/, "/docs/$1/")}">${t}</a>`);
 }
 function md(src) {
   const out = [];
@@ -120,7 +308,7 @@ function md(src) {
       const rows = [row(l, "th")];
       for (i += 2; i < lines.length && /^\|/.test(lines[i]); i++) rows.push(row(lines[i], "td"));
       i--;
-      out.push(`<table>${rows.join("")}</table>`);
+      out.push(`<div class="reference-table" tabindex="0" role="region" aria-label="Reference table"><table>${rows.join("")}</table></div>`);
     } else if (/^\s*([-*]|\d+\.) /.test(l)) {
       const ord = /^\s*\d+\./.test(l);
       const rows = [];
@@ -137,45 +325,55 @@ function md(src) {
 }
 const refDir = join(root, "skills", "gertie", "references");
 const refs = readdirSync(refDir).filter((f) => f.endsWith(".md")).sort();
-const side = `<aside><a href="index.html">Overview</a>${refs.map((f) => `<a href="${f.replace(/\.md$/, ".html")}">${f.replace(/\.md$/, "")}</a>`).join("")}</aside>`;
-page({
-  title: "Gertie docs",
-  desc: "The Gertie skill reference files: scene format, motion presets, artwork, export, video and ASCII.",
-  file: "docs/index.html",
-  body: `<div class="docs">${side}<article>${md(readFileSync(join(root, "skills", "gertie", "SKILL.md"), "utf8"))}</article></div>`,
-});
-for (const f of refs) {
-  page({ title: `Gertie docs: ${f.replace(/\.md$/, "")}`, desc: `Gertie reference: ${f.replace(/\.md$/, "")}.`, file: `docs/${f.replace(/\.md$/, ".html")}`, body: `<div class="docs">${side}<article>${md(readFileSync(join(refDir, f), "utf8"))}</article></div>` });
+const referenceLabels = {
+  artwork: "Artwork", ascii: "ASCII", cutout: "Cutouts", export: "Export", import: "Import",
+  lottie: "Lottie", motion: "Motion", "motion-reference": "Motion reference", scene: "Scene format",
+  three: "Three.js", trace: "Tracing", video: "Video",
+};
+const referencePages = [
+  { file: "index.html", name: "Overview", path: join(root, "skills", "gertie", "SKILL.md") },
+  ...refs.map(file => {
+    const slug = file.replace(/\.md$/, "");
+    return { file: `${slug}/index.html`, legacy: `/docs/${slug}.html`, name: referenceLabels[slug] ?? slug, path: join(refDir, file) };
+  }),
+];
+for (const reference of referencePages) {
+  const links = referencePages.map(({ file, name }) =>
+    `<a href="${publicPath(`docs/${file}`)}"${file === reference.file ? ' aria-current="page"' : ""}>${esc(name)}</a>`).join("");
+  mkdirSync(dirname(join(dist, "docs", reference.file)), { recursive: true });
+  page({
+    title: `${reference.name} · Gertie Docs`,
+    desc: reference.file === "index.html"
+      ? "Learn how to make, animate, and export Gertie scenes."
+      : `Gertie documentation for ${reference.name}.`,
+    file: `docs/${reference.file}`,
+    body: `<div class="reference-layout">
+      <nav class="reference-nav" aria-label="Documentation"><p>Documentation</p>${links}</nav>
+      <article class="reference-article">${md(readFileSync(reference.path, "utf8"))}</article>
+    </div>`,
+  });
 }
+const legacyDocs = referencePages.filter(reference => reference.legacy);
+for (const reference of legacyDocs) {
+  const target = publicPath(`docs/${reference.file}`);
+  writeFileSync(join(dist, reference.legacy.slice(1)), `<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>${esc(reference.name)} · Gertie Docs</title>
+<link rel="canonical" href="${SITE}${target}"><meta http-equiv="refresh" content="0; url=${target}"></head>
+<body><a href="${target}">Open ${esc(reference.name)}</a></body></html>`);
+}
+writeFileSync(join(dist, "_redirects"), [
+  "/docs/index.html /docs/ 301",
+  ...legacyDocs.map(reference => `${reference.legacy} ${publicPath(`docs/${reference.file}`)} 301`),
+].join("\n") + "\n");
+
 // Paste-in prompt for chat apps that cannot run commands.
 writeFileSync(join(dist, "prompt.txt"), ["You write Gertie scene files. Reply with one JSON scene file and nothing else. Follow the format below exactly.\n", readFileSync(join(refDir, "scene.md"), "utf8"), readFileSync(join(refDir, "motion.md"), "utf8")].join("\n\n"));
 
-// Benchmark: published pass rates and the prompts, from tests/eval/results.
-const resDir = join(root, "tests", "eval", "results");
-const prompts = JSON.parse(readFileSync(join(root, "tests", "eval", "prompts.json"), "utf8"));
-const runs = existsSync(resDir) ? readdirSync(resDir).filter((d) => existsSync(join(resDir, d, "results.json"))).map((d) => ({ dir: d, ...JSON.parse(readFileSync(join(resDir, d, "results.json"), "utf8")) })) : [];
-let bench;
-if (runs.length) {
-  bench = `<table><tr><th>Model</th><th>Date</th><th>Prompts</th><th>First pass</th><th>Within three runs</th><th>Final scene passes</th></tr>${runs.map((r) => `<tr><td>${esc(r.model)}</td><td>${esc(r.date)}</td><td>${r.prompts}</td><td>${r.firstPassPct}%</td><td>${r.within3Pct}%</td><td>${r.finalPct}%</td></tr>`).join("")}</table>`;
-  mkdirSync(join(dist, "benchmark"), { recursive: true });
-  for (const r of runs) {
-    const sheets = r.rows.filter((x) => existsSync(join(resDir, r.dir, x.id, "sheet.png")));
-    for (const x of sheets) { mkdirSync(join(dist, "benchmark", r.dir), { recursive: true }); cpSync(join(resDir, r.dir, x.id, "sheet.png"), join(dist, "benchmark", r.dir, `${x.id}.png`)); }
-    bench += `<h3>${esc(r.model)}: contact sheets</h3><div class="grid">${sheets.map((x) => `<div class="card"><img src="benchmark/${r.dir}/${x.id}.png" alt="Contact sheet for ${esc(x.id)}" loading="lazy"><div class="name">${esc(x.id)}</div><div class="links">${x.final ? "passes" : "fails"} qa</div></div>`).join("")}</div>`;
-  }
-} else bench = `<p class="mut">No evaluation run has been published yet.</p>`;
-page({
-  title: "Gertie benchmark",
-  desc: "Published pass rates for AI agents using the Gertie skill, with the method and the full prompt set.",
-  file: "benchmark.html",
-  body: `<h1>Benchmark</h1><p class="lead">Can an agent with Gertie installed make a valid animation from a plain prompt? Passing means the scene compiles, validates, renders and has zero qa errors. It does not mean the animation is beautiful, so judge the contact sheets yourself.</p>
-${bench}
-<h2>Method</h2><ul><li>Each prompt runs in a fresh folder with only the skill installed, using the agent in non-interactive mode.</li>
-<li><strong>First pass</strong>: the first qa run the agent made had zero errors.</li><li><strong>Within three runs</strong>: one of its first three qa runs had zero errors.</li>
-<li><strong>Final</strong>: the scene left in the folder passes qa when the harness runs it afterwards.</li>
-<li>The renderer is provisioned in advance, so the score measures the skill and not an npm install.</li>
-<li>One run per prompt per model. Treat differences of a few points as noise.</li>
-<li>Code and prompts: <code>tests/eval/</code> in the repository. Run it with <code>node tests/eval/run.mjs --model haiku</code>.</li></ul>
-<h2>The ${prompts.length} prompts</h2><table><tr><th>Id</th><th>Category</th><th>Prompt</th></tr>${prompts.map((p) => `<tr><td>${esc(p.id)}</td><td>${esc(p.category)}</td><td>${esc(p.prompt)}</td></tr>`).join("")}</table>`,
-});
-console.log(`site built: ${items.length} gallery items, ${refs.length + 1} docs pages, ${runs.length} benchmark runs`);
+// Crawl and share files.
+cpSync(join(root, "site", "src", "og.png"), join(dist, "og.png"));
+const pages = ["index.html", "gallery.html", ...referencePages.map(reference => `docs/${reference.file}`)];
+writeFileSync(join(dist, "robots.txt"), `User-agent: *\nAllow: /\n\nSitemap: ${SITE}/sitemap.xml\n`);
+writeFileSync(join(dist, "sitemap.xml"), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${pages.sort().map((f) => `<url><loc>${SITE}${publicPath(f)}</loc></url>`).join("\n")}\n</urlset>\n`);
+page({ title: "Page not found · Gertie", desc: "This page does not exist.", file: "404.html", body: `<div><article class="reference-article"><h1>Page not found</h1><p>That page does not exist. Go to the <a href="/index.html">home page</a>, the <a href="/gallery.html">gallery</a> or the <a href="/docs/">docs</a>.</p></article></div>` });
+
+console.log(`site built: ${items.length + threeGallery.length} gallery items, ${refs.length + 1} docs pages, ${runs.length} benchmark runs`);

@@ -1,0 +1,1778 @@
+{
+  "gertie": 1,
+  "name": "showcase-blue-dive",
+  "canvas": {
+    "w": 480,
+    "h": 315,
+    "background": "#184575"
+  },
+  "duration": 4,
+  "fps": 30,
+  "loop": true,
+  "poster": 0.65,
+  "nodes": [
+    {
+      "id": "stage",
+      "type": "rect",
+      "x": 240,
+      "y": 157.5,
+      "w": 480,
+      "h": 315,
+      "radius": 0,
+      "fill": {
+        "type": "linear",
+        "from": [
+          -225,
+          -150
+        ],
+        "to": [
+          225,
+          150
+        ],
+        "stops": [
+          [
+            0,
+            "#296B8E"
+          ],
+          [
+            1,
+            "#20294F"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "light",
+      "type": "ellipse",
+      "x": 150,
+      "y": 35,
+      "rx": 192,
+      "ry": 145,
+      "fill": {
+        "type": "radial",
+        "center": [
+          0,
+          0
+        ],
+        "radius": 180,
+        "stops": [
+          [
+            0,
+            "#9CE7D274"
+          ],
+          [
+            1,
+            "#24597E00"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "sunbeam-0",
+      "type": "path",
+      "d": "M42 0 L62 0 L176 293 L91 293 Z",
+      "fill": "#BAEBD412",
+      "animate": {
+        "opacity": [
+          [
+            0,
+            0.28
+          ],
+          [
+            0.0667,
+            0.28
+          ],
+          [
+            1.05,
+            0.72,
+            "easeInOutCubic"
+          ],
+          [
+            2.0333,
+            0.45,
+            "easeInOutSine"
+          ],
+          [
+            3.0167,
+            0.84,
+            "easeInOutQuad"
+          ],
+          [
+            4.0,
+            0.28,
+            "easeInOutSine"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "sunbeam-1",
+      "type": "path",
+      "d": "M107 0 L127 0 L239 293 L153 293 Z",
+      "fill": "#BAEBD412",
+      "animate": {
+        "opacity": [
+          [
+            0,
+            0.28
+          ],
+          [
+            0.1333,
+            0.28
+          ],
+          [
+            1.1,
+            0.72,
+            "easeInOutCubic"
+          ],
+          [
+            2.0667,
+            0.45,
+            "easeInOutSine"
+          ],
+          [
+            3.0333,
+            0.84,
+            "easeInOutQuad"
+          ],
+          [
+            4.0,
+            0.28,
+            "easeInOutSine"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "sunbeam-2",
+      "type": "path",
+      "d": "M172 0 L192 0 L302 293 L215 293 Z",
+      "fill": "#BAEBD412",
+      "animate": {
+        "opacity": [
+          [
+            0,
+            0.28
+          ],
+          [
+            0.2,
+            0.28
+          ],
+          [
+            1.15,
+            0.72,
+            "easeInOutCubic"
+          ],
+          [
+            2.1,
+            0.45,
+            "easeInOutSine"
+          ],
+          [
+            3.05,
+            0.84,
+            "easeInOutQuad"
+          ],
+          [
+            4.0,
+            0.28,
+            "easeInOutSine"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "sunbeam-3",
+      "type": "path",
+      "d": "M237 0 L257 0 L365 293 L277 293 Z",
+      "fill": "#BAEBD412",
+      "animate": {
+        "opacity": [
+          [
+            0,
+            0.28
+          ],
+          [
+            0.2667,
+            0.28
+          ],
+          [
+            1.2,
+            0.72,
+            "easeInOutCubic"
+          ],
+          [
+            2.1333,
+            0.45,
+            "easeInOutSine"
+          ],
+          [
+            3.0667,
+            0.84,
+            "easeInOutQuad"
+          ],
+          [
+            4.0,
+            0.28,
+            "easeInOutSine"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "seabed",
+      "type": "path",
+      "d": "M0 268 Q98 247 174 273 Q265 298 359 267 Q426 244 480 267 L480 315 H0 Z",
+      "fill": "#232A55"
+    },
+    {
+      "id": "kelp-0",
+      "type": "group",
+      "x": 47,
+      "y": 309,
+      "children": [
+        {
+          "id": "stalk-0",
+          "type": "path",
+          "d": "M0 0 Q-9 -32 4 -61 Q18 -87 5 -112",
+          "fill": null,
+          "stroke": {
+            "color": "#387587",
+            "width": 5,
+            "cap": "round",
+            "join": "round"
+          }
+        },
+        {
+          "id": "kelp-tip-0",
+          "type": "path",
+          "d": "M7 -81 Q-25 -93 -25 -112 Q2 -112 7 -81 Z M1 -59 Q33 -79 33 -94 Q8 -88 1 -59 Z M-5 -26 Q-32 -43 -31 -65 Q-7 -56 -5 -26 Z",
+          "fill": "#427B88"
+        }
+      ],
+      "animate": {
+        "rotation": [
+          [
+            0,
+            -3
+          ],
+          [
+            0.3333,
+            -3
+          ],
+          [
+            1.25,
+            6,
+            "easeInOutCubic"
+          ],
+          [
+            2.1667,
+            -5,
+            "easeInOutSine"
+          ],
+          [
+            3.0833,
+            3,
+            "easeInOutQuad"
+          ],
+          [
+            4.0,
+            -3,
+            "easeInOutSine"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "kelp-1",
+      "type": "group",
+      "x": 70,
+      "y": 309,
+      "children": [
+        {
+          "id": "stalk-1",
+          "type": "path",
+          "d": "M0 0 Q-9 -32 4 -61 Q18 -87 5 -112",
+          "fill": null,
+          "stroke": {
+            "color": "#4F9A91",
+            "width": 5,
+            "cap": "round",
+            "join": "round"
+          }
+        },
+        {
+          "id": "kelp-tip-1",
+          "type": "path",
+          "d": "M7 -81 Q-25 -93 -25 -112 Q2 -112 7 -81 Z M1 -59 Q33 -79 33 -94 Q8 -88 1 -59 Z M-5 -26 Q-32 -43 -31 -65 Q-7 -56 -5 -26 Z",
+          "fill": "#62A896"
+        }
+      ],
+      "animate": {
+        "rotation": [
+          [
+            0,
+            -2
+          ],
+          [
+            0.4,
+            -2
+          ],
+          [
+            1.3,
+            5,
+            "easeInOutCubic"
+          ],
+          [
+            2.2,
+            -4,
+            "easeInOutSine"
+          ],
+          [
+            3.1,
+            2,
+            "easeInOutQuad"
+          ],
+          [
+            4.0,
+            -2,
+            "easeInOutSine"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "kelp-2",
+      "type": "group",
+      "x": 403,
+      "y": 309,
+      "children": [
+        {
+          "id": "stalk-2",
+          "type": "path",
+          "d": "M0 0 Q-9 -32 4 -61 Q18 -87 5 -112",
+          "fill": null,
+          "stroke": {
+            "color": "#387587",
+            "width": 5,
+            "cap": "round",
+            "join": "round"
+          }
+        },
+        {
+          "id": "kelp-tip-2",
+          "type": "path",
+          "d": "M7 -81 Q-25 -93 -25 -112 Q2 -112 7 -81 Z M1 -59 Q33 -79 33 -94 Q8 -88 1 -59 Z M-5 -26 Q-32 -43 -31 -65 Q-7 -56 -5 -26 Z",
+          "fill": "#427B88"
+        }
+      ],
+      "animate": {
+        "rotation": [
+          [
+            0,
+            -1
+          ],
+          [
+            0.0667,
+            -1
+          ],
+          [
+            1.05,
+            4,
+            "easeInOutCubic"
+          ],
+          [
+            2.0333,
+            -3,
+            "easeInOutSine"
+          ],
+          [
+            3.0167,
+            1,
+            "easeInOutQuad"
+          ],
+          [
+            4.0,
+            -1,
+            "easeInOutSine"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "kelp-3",
+      "type": "group",
+      "x": 453,
+      "y": 309,
+      "children": [
+        {
+          "id": "stalk-3",
+          "type": "path",
+          "d": "M0 0 Q-9 -32 4 -61 Q18 -87 5 -112",
+          "fill": null,
+          "stroke": {
+            "color": "#4F9A91",
+            "width": 5,
+            "cap": "round",
+            "join": "round"
+          }
+        },
+        {
+          "id": "kelp-tip-3",
+          "type": "path",
+          "d": "M7 -81 Q-25 -93 -25 -112 Q2 -112 7 -81 Z M1 -59 Q33 -79 33 -94 Q8 -88 1 -59 Z M-5 -26 Q-32 -43 -31 -65 Q-7 -56 -5 -26 Z",
+          "fill": "#62A896"
+        }
+      ],
+      "animate": {
+        "rotation": [
+          [
+            0,
+            0
+          ],
+          [
+            0.1333,
+            0
+          ],
+          [
+            1.1,
+            3,
+            "easeInOutCubic"
+          ],
+          [
+            2.0667,
+            -2,
+            "easeInOutSine"
+          ],
+          [
+            3.0333,
+            0,
+            "easeInOutQuad"
+          ],
+          [
+            4.0,
+            0,
+            "easeInOutSine"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "whale",
+      "type": "group",
+      "x": 236,
+      "y": 149,
+      "children": [
+        {
+          "id": "tail",
+          "type": "group",
+          "x": -82,
+          "y": 9,
+          "children": [
+            {
+              "id": "tail-shape",
+              "type": "path",
+              "d": "M7 2 Q-6 2 -22 -12 Q-38 -27 -58 -17 Q-48 -6 -33 2 Q-55 1 -63 17 Q-41 27 -20 13 Q-9 6 6 11 Z",
+              "fill": {
+                "type": "linear",
+                "from": [
+                  -55,
+                  -18
+                ],
+                "to": [
+                  9,
+                  13
+                ],
+                "stops": [
+                  [
+                    0,
+                    "#7CB5DB"
+                  ],
+                  [
+                    1,
+                    "#4D6DAD"
+                  ]
+                ]
+              },
+              "stroke": {
+                "color": "#373C72",
+                "width": 2,
+                "cap": "round",
+                "join": "round"
+              }
+            }
+          ],
+          "animate": {
+            "rotation": [
+              [
+                0,
+                -15
+              ],
+              [
+                1,
+                12,
+                "easeInOutCubic"
+              ],
+              [
+                2,
+                -12,
+                "easeInOutSine"
+              ],
+              [
+                3,
+                17,
+                "easeInOutQuad"
+              ],
+              [
+                4,
+                -15,
+                "easeInOutSine"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "body",
+          "type": "path",
+          "d": "M-86 5 Q-60 -2 -37 -28 Q-10 -61 34 -52 Q78 -49 102 -25 Q119 -6 102 11 Q78 34 39 29 Q0 31 -32 16 Q-61 10 -83 13 Z",
+          "fill": {
+            "type": "linear",
+            "from": [
+              -55,
+              -42
+            ],
+            "to": [
+              50,
+              29
+            ],
+            "stops": [
+              [
+                0,
+                "#8CD7DE"
+              ],
+              [
+                0.5,
+                "#5D9FC7"
+              ],
+              [
+                1,
+                "#535F9E"
+              ]
+            ]
+          },
+          "stroke": {
+            "color": "#354B7C",
+            "width": 2,
+            "cap": "round",
+            "join": "round"
+          }
+        },
+        {
+          "id": "belly",
+          "type": "path",
+          "d": "M-34 9 Q3 6 33 9 Q81 10 107 -1 Q103 18 74 24 Q23 33 -34 9 Z",
+          "fill": {
+            "type": "linear",
+            "from": [
+              -13,
+              7
+            ],
+            "to": [
+              86,
+              29
+            ],
+            "stops": [
+              [
+                0,
+                "#B0E1D5"
+              ],
+              [
+                1,
+                "#83C8D6"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "grooves",
+          "type": "path",
+          "d": "M49 15 Q75 15 91 9 M50 20 Q76 21 91 14",
+          "fill": null,
+          "stroke": {
+            "color": "#5CA9C4",
+            "width": 1.5,
+            "cap": "round",
+            "join": "round"
+          }
+        },
+        {
+          "id": "flipper",
+          "type": "group",
+          "x": 20,
+          "y": 3,
+          "children": [
+            {
+              "id": "fin",
+              "type": "path",
+              "d": "M-4 -4 Q4 4 22 13 Q36 22 35 34 Q20 42 0 23 Q-11 14 -13 2 Z",
+              "fill": {
+                "type": "linear",
+                "from": [
+                  -10,
+                  0
+                ],
+                "to": [
+                  36,
+                  33
+                ],
+                "stops": [
+                  [
+                    0,
+                    "#64ABC9"
+                  ],
+                  [
+                    1,
+                    "#4D64A4"
+                  ]
+                ]
+              },
+              "stroke": {
+                "color": "#39567F",
+                "width": 1.5,
+                "cap": "round",
+                "join": "round"
+              }
+            }
+          ],
+          "animate": {
+            "rotation": [
+              [
+                0,
+                -16
+              ],
+              [
+                1,
+                26,
+                "easeInOutCubic"
+              ],
+              [
+                2,
+                -5,
+                "easeInOutSine"
+              ],
+              [
+                3,
+                20,
+                "easeInOutQuad"
+              ],
+              [
+                4,
+                -16,
+                "easeInOutSine"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "whale-eye",
+          "type": "ellipse",
+          "x": 82,
+          "y": -13,
+          "rx": 3.8,
+          "ry": 4,
+          "fill": "#2C365A",
+          "animate": {
+            "scale": [
+              [
+                0,
+                1
+              ],
+              [
+                2.4,
+                1
+              ],
+              [
+                2.55,
+                [
+                  1,
+                  0.2
+                ]
+              ],
+              [
+                2.7,
+                1
+              ],
+              [
+                4,
+                1
+              ]
+            ]
+          }
+        },
+        {
+          "id": "whale-glint",
+          "type": "ellipse",
+          "x": 83,
+          "y": -14,
+          "rx": 1.2,
+          "ry": 1.2,
+          "fill": "#ECFBEC"
+        }
+      ],
+      "animate": {
+        "x": [
+          [
+            0,
+            225
+          ],
+          [
+            2,
+            263,
+            "easeInOutSine"
+          ],
+          [
+            4,
+            225,
+            "easeInOutSine"
+          ]
+        ],
+        "y": [
+          [
+            0,
+            165
+          ],
+          [
+            2,
+            127,
+            "easeInOutSine"
+          ],
+          [
+            4,
+            165,
+            "easeInOutSine"
+          ]
+        ],
+        "rotation": [
+          [
+            0,
+            9
+          ],
+          [
+            1,
+            -11,
+            "easeInOutCubic"
+          ],
+          [
+            2,
+            -2,
+            "easeInOutSine"
+          ],
+          [
+            3,
+            11,
+            "easeInOutQuad"
+          ],
+          [
+            4,
+            9,
+            "easeInOutSine"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "fish-0",
+      "type": "group",
+      "x": 114,
+      "y": 112,
+      "children": [
+        {
+          "id": "fish-body-0",
+          "type": "path",
+          "d": "M-12 0 Q-4 -9 7 -1 L13 -5 L13 5 L7 1 Q-4 9 -12 0 Z",
+          "fill": "#EEC89E"
+        },
+        {
+          "id": "fish-eye-0",
+          "type": "ellipse",
+          "x": -6,
+          "y": 0,
+          "rx": 1,
+          "ry": 1,
+          "fill": "#456487"
+        }
+      ],
+      "animate": {
+        "x": [
+          [
+            0,
+            114
+          ],
+          [
+            0.2,
+            114
+          ],
+          [
+            1.15,
+            100,
+            "easeInOutCubic"
+          ],
+          [
+            2.1,
+            133,
+            "easeInOutSine"
+          ],
+          [
+            3.05,
+            121,
+            "easeInOutQuad"
+          ],
+          [
+            4.0,
+            114,
+            "easeInOutSine"
+          ]
+        ],
+        "y": [
+          [
+            0,
+            112
+          ],
+          [
+            0.2,
+            112
+          ],
+          [
+            1.15,
+            120,
+            "easeInOutCubic"
+          ],
+          [
+            2.1,
+            102,
+            "easeInOutSine"
+          ],
+          [
+            3.05,
+            114,
+            "easeInOutQuad"
+          ],
+          [
+            4.0,
+            112,
+            "easeInOutSine"
+          ]
+        ],
+        "rotation": [
+          [
+            0,
+            1
+          ],
+          [
+            0.2,
+            1
+          ],
+          [
+            1.15,
+            -8,
+            "easeInOutCubic"
+          ],
+          [
+            2.1,
+            10,
+            "easeInOutSine"
+          ],
+          [
+            3.05,
+            -3,
+            "easeInOutQuad"
+          ],
+          [
+            4.0,
+            1,
+            "easeInOutSine"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "fish-1",
+      "type": "group",
+      "x": 132,
+      "y": 94,
+      "children": [
+        {
+          "id": "fish-body-1",
+          "type": "path",
+          "d": "M-12 0 Q-4 -9 7 -1 L13 -5 L13 5 L7 1 Q-4 9 -12 0 Z",
+          "fill": "#EEC89E"
+        },
+        {
+          "id": "fish-eye-1",
+          "type": "ellipse",
+          "x": -6,
+          "y": 0,
+          "rx": 1,
+          "ry": 1,
+          "fill": "#456487"
+        }
+      ],
+      "animate": {
+        "x": [
+          [
+            0,
+            132
+          ],
+          [
+            0.2667,
+            132
+          ],
+          [
+            1.2,
+            118,
+            "easeInOutCubic"
+          ],
+          [
+            2.1333,
+            151,
+            "easeInOutSine"
+          ],
+          [
+            3.0667,
+            139,
+            "easeInOutQuad"
+          ],
+          [
+            4.0,
+            132,
+            "easeInOutSine"
+          ]
+        ],
+        "y": [
+          [
+            0,
+            94
+          ],
+          [
+            0.2667,
+            94
+          ],
+          [
+            1.2,
+            101,
+            "easeInOutCubic"
+          ],
+          [
+            2.1333,
+            85,
+            "easeInOutSine"
+          ],
+          [
+            3.0667,
+            96,
+            "easeInOutQuad"
+          ],
+          [
+            4.0,
+            94,
+            "easeInOutSine"
+          ]
+        ],
+        "rotation": [
+          [
+            0,
+            1
+          ],
+          [
+            0.2667,
+            1
+          ],
+          [
+            1.2,
+            -8,
+            "easeInOutCubic"
+          ],
+          [
+            2.1333,
+            10,
+            "easeInOutSine"
+          ],
+          [
+            3.0667,
+            -3,
+            "easeInOutQuad"
+          ],
+          [
+            4.0,
+            1,
+            "easeInOutSine"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "fish-2",
+      "type": "group",
+      "x": 156,
+      "y": 116,
+      "children": [
+        {
+          "id": "fish-body-2",
+          "type": "path",
+          "d": "M-12 0 Q-4 -9 7 -1 L13 -5 L13 5 L7 1 Q-4 9 -12 0 Z",
+          "fill": "#EEC89E"
+        },
+        {
+          "id": "fish-eye-2",
+          "type": "ellipse",
+          "x": -6,
+          "y": 0,
+          "rx": 1,
+          "ry": 1,
+          "fill": "#456487"
+        }
+      ],
+      "animate": {
+        "x": [
+          [
+            0,
+            156
+          ],
+          [
+            0.3333,
+            156
+          ],
+          [
+            1.25,
+            142,
+            "easeInOutCubic"
+          ],
+          [
+            2.1667,
+            175,
+            "easeInOutSine"
+          ],
+          [
+            3.0833,
+            163,
+            "easeInOutQuad"
+          ],
+          [
+            4.0,
+            156,
+            "easeInOutSine"
+          ]
+        ],
+        "y": [
+          [
+            0,
+            116
+          ],
+          [
+            0.3333,
+            116
+          ],
+          [
+            1.25,
+            122,
+            "easeInOutCubic"
+          ],
+          [
+            2.1667,
+            108,
+            "easeInOutSine"
+          ],
+          [
+            3.0833,
+            118,
+            "easeInOutQuad"
+          ],
+          [
+            4.0,
+            116,
+            "easeInOutSine"
+          ]
+        ],
+        "rotation": [
+          [
+            0,
+            1
+          ],
+          [
+            0.3333,
+            1
+          ],
+          [
+            1.25,
+            -8,
+            "easeInOutCubic"
+          ],
+          [
+            2.1667,
+            10,
+            "easeInOutSine"
+          ],
+          [
+            3.0833,
+            -3,
+            "easeInOutQuad"
+          ],
+          [
+            4.0,
+            1,
+            "easeInOutSine"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "fish-3",
+      "type": "group",
+      "x": 343,
+      "y": 65,
+      "children": [
+        {
+          "id": "fish-body-3",
+          "type": "path",
+          "d": "M-12 0 Q-4 -9 7 -1 L13 -5 L13 5 L7 1 Q-4 9 -12 0 Z",
+          "fill": "#B8E9D4"
+        },
+        {
+          "id": "fish-eye-3",
+          "type": "ellipse",
+          "x": -6,
+          "y": 0,
+          "rx": 1,
+          "ry": 1,
+          "fill": "#456487"
+        }
+      ],
+      "animate": {
+        "x": [
+          [
+            0,
+            343
+          ],
+          [
+            0.4,
+            343
+          ],
+          [
+            1.3,
+            329,
+            "easeInOutCubic"
+          ],
+          [
+            2.2,
+            362,
+            "easeInOutSine"
+          ],
+          [
+            3.1,
+            350,
+            "easeInOutQuad"
+          ],
+          [
+            4.0,
+            343,
+            "easeInOutSine"
+          ]
+        ],
+        "y": [
+          [
+            0,
+            65
+          ],
+          [
+            0.4,
+            65
+          ],
+          [
+            1.3,
+            70,
+            "easeInOutCubic"
+          ],
+          [
+            2.2,
+            58,
+            "easeInOutSine"
+          ],
+          [
+            3.1,
+            67,
+            "easeInOutQuad"
+          ],
+          [
+            4.0,
+            65,
+            "easeInOutSine"
+          ]
+        ],
+        "rotation": [
+          [
+            0,
+            1
+          ],
+          [
+            0.4,
+            1
+          ],
+          [
+            1.3,
+            -8,
+            "easeInOutCubic"
+          ],
+          [
+            2.2,
+            10,
+            "easeInOutSine"
+          ],
+          [
+            3.1,
+            -3,
+            "easeInOutQuad"
+          ],
+          [
+            4.0,
+            1,
+            "easeInOutSine"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "fish-4",
+      "type": "group",
+      "x": 371,
+      "y": 77,
+      "children": [
+        {
+          "id": "fish-body-4",
+          "type": "path",
+          "d": "M-12 0 Q-4 -9 7 -1 L13 -5 L13 5 L7 1 Q-4 9 -12 0 Z",
+          "fill": "#B8E9D4"
+        },
+        {
+          "id": "fish-eye-4",
+          "type": "ellipse",
+          "x": -6,
+          "y": 0,
+          "rx": 1,
+          "ry": 1,
+          "fill": "#456487"
+        }
+      ],
+      "animate": {
+        "x": [
+          [
+            0,
+            371
+          ],
+          [
+            0.0667,
+            371
+          ],
+          [
+            1.05,
+            357,
+            "easeInOutCubic"
+          ],
+          [
+            2.0333,
+            390,
+            "easeInOutSine"
+          ],
+          [
+            3.0167,
+            378,
+            "easeInOutQuad"
+          ],
+          [
+            4.0,
+            371,
+            "easeInOutSine"
+          ]
+        ],
+        "y": [
+          [
+            0,
+            77
+          ],
+          [
+            0.0667,
+            77
+          ],
+          [
+            1.05,
+            81,
+            "easeInOutCubic"
+          ],
+          [
+            2.0333,
+            71,
+            "easeInOutSine"
+          ],
+          [
+            3.0167,
+            79,
+            "easeInOutQuad"
+          ],
+          [
+            4.0,
+            77,
+            "easeInOutSine"
+          ]
+        ],
+        "rotation": [
+          [
+            0,
+            1
+          ],
+          [
+            0.0667,
+            1
+          ],
+          [
+            1.05,
+            -8,
+            "easeInOutCubic"
+          ],
+          [
+            2.0333,
+            10,
+            "easeInOutSine"
+          ],
+          [
+            3.0167,
+            -3,
+            "easeInOutQuad"
+          ],
+          [
+            4.0,
+            1,
+            "easeInOutSine"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "fish-5",
+      "type": "group",
+      "x": 389,
+      "y": 55,
+      "children": [
+        {
+          "id": "fish-body-5",
+          "type": "path",
+          "d": "M-12 0 Q-4 -9 7 -1 L13 -5 L13 5 L7 1 Q-4 9 -12 0 Z",
+          "fill": "#B8E9D4"
+        },
+        {
+          "id": "fish-eye-5",
+          "type": "ellipse",
+          "x": -6,
+          "y": 0,
+          "rx": 1,
+          "ry": 1,
+          "fill": "#456487"
+        }
+      ],
+      "animate": {
+        "x": [
+          [
+            0,
+            389
+          ],
+          [
+            0.1333,
+            389
+          ],
+          [
+            1.1,
+            375,
+            "easeInOutCubic"
+          ],
+          [
+            2.0667,
+            408,
+            "easeInOutSine"
+          ],
+          [
+            3.0333,
+            396,
+            "easeInOutQuad"
+          ],
+          [
+            4.0,
+            389,
+            "easeInOutSine"
+          ]
+        ],
+        "y": [
+          [
+            0,
+            55
+          ],
+          [
+            0.1333,
+            55
+          ],
+          [
+            1.1,
+            58,
+            "easeInOutCubic"
+          ],
+          [
+            2.0667,
+            50,
+            "easeInOutSine"
+          ],
+          [
+            3.0333,
+            57,
+            "easeInOutQuad"
+          ],
+          [
+            4.0,
+            55,
+            "easeInOutSine"
+          ]
+        ],
+        "rotation": [
+          [
+            0,
+            1
+          ],
+          [
+            0.1333,
+            1
+          ],
+          [
+            1.1,
+            -8,
+            "easeInOutCubic"
+          ],
+          [
+            2.0667,
+            10,
+            "easeInOutSine"
+          ],
+          [
+            3.0333,
+            -3,
+            "easeInOutQuad"
+          ],
+          [
+            4.0,
+            1,
+            "easeInOutSine"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "fish-6",
+      "type": "group",
+      "x": 360,
+      "y": 102,
+      "children": [
+        {
+          "id": "fish-body-6",
+          "type": "path",
+          "d": "M-12 0 Q-4 -9 7 -1 L13 -5 L13 5 L7 1 Q-4 9 -12 0 Z",
+          "fill": "#B8E9D4"
+        },
+        {
+          "id": "fish-eye-6",
+          "type": "ellipse",
+          "x": -6,
+          "y": 0,
+          "rx": 1,
+          "ry": 1,
+          "fill": "#456487"
+        }
+      ],
+      "animate": {
+        "x": [
+          [
+            0,
+            360
+          ],
+          [
+            0.2,
+            360
+          ],
+          [
+            1.15,
+            346,
+            "easeInOutCubic"
+          ],
+          [
+            2.1,
+            379,
+            "easeInOutSine"
+          ],
+          [
+            3.05,
+            367,
+            "easeInOutQuad"
+          ],
+          [
+            4.0,
+            360,
+            "easeInOutSine"
+          ]
+        ],
+        "y": [
+          [
+            0,
+            102
+          ],
+          [
+            0.2,
+            102
+          ],
+          [
+            1.15,
+            104,
+            "easeInOutCubic"
+          ],
+          [
+            2.1,
+            98,
+            "easeInOutSine"
+          ],
+          [
+            3.05,
+            104,
+            "easeInOutQuad"
+          ],
+          [
+            4.0,
+            102,
+            "easeInOutSine"
+          ]
+        ],
+        "rotation": [
+          [
+            0,
+            1
+          ],
+          [
+            0.2,
+            1
+          ],
+          [
+            1.15,
+            -8,
+            "easeInOutCubic"
+          ],
+          [
+            2.1,
+            10,
+            "easeInOutSine"
+          ],
+          [
+            3.05,
+            -3,
+            "easeInOutQuad"
+          ],
+          [
+            4.0,
+            1,
+            "easeInOutSine"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "air-0",
+      "type": "ellipse",
+      "x": 325,
+      "y": 110,
+      "rx": 3,
+      "ry": 3,
+      "fill": "#D1F6E273",
+      "animate": {
+        "y": [
+          [
+            0,
+            110
+          ],
+          [
+            1,
+            99,
+            "easeInOutCubic"
+          ],
+          [
+            2,
+            86,
+            "easeInOutSine"
+          ],
+          [
+            3,
+            79,
+            "easeInOutQuad"
+          ],
+          [
+            4,
+            110,
+            "easeInOutSine"
+          ]
+        ],
+        "opacity": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0.8,
+            "easeInOutCubic"
+          ],
+          [
+            2,
+            0.5,
+            "easeInOutSine"
+          ],
+          [
+            3,
+            0,
+            "easeInOutQuad"
+          ],
+          [
+            4,
+            0,
+            "easeInOutSine"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "air-1",
+      "type": "ellipse",
+      "x": 342,
+      "y": 88,
+      "rx": 5,
+      "ry": 5,
+      "fill": "#D1F6E273",
+      "animate": {
+        "y": [
+          [
+            0,
+            88
+          ],
+          [
+            1,
+            77,
+            "easeInOutCubic"
+          ],
+          [
+            2,
+            64,
+            "easeInOutSine"
+          ],
+          [
+            3,
+            57,
+            "easeInOutQuad"
+          ],
+          [
+            4,
+            88,
+            "easeInOutSine"
+          ]
+        ],
+        "opacity": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0.8,
+            "easeInOutCubic"
+          ],
+          [
+            2,
+            0.5,
+            "easeInOutSine"
+          ],
+          [
+            3,
+            0,
+            "easeInOutQuad"
+          ],
+          [
+            4,
+            0,
+            "easeInOutSine"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "air-2",
+      "type": "ellipse",
+      "x": 309,
+      "y": 81,
+      "rx": 7,
+      "ry": 7,
+      "fill": "#D1F6E273",
+      "animate": {
+        "y": [
+          [
+            0,
+            81
+          ],
+          [
+            1,
+            70,
+            "easeInOutCubic"
+          ],
+          [
+            2,
+            57,
+            "easeInOutSine"
+          ],
+          [
+            3,
+            50,
+            "easeInOutQuad"
+          ],
+          [
+            4,
+            81,
+            "easeInOutSine"
+          ]
+        ],
+        "opacity": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0.8,
+            "easeInOutCubic"
+          ],
+          [
+            2,
+            0.5,
+            "easeInOutSine"
+          ],
+          [
+            3,
+            0,
+            "easeInOutQuad"
+          ],
+          [
+            4,
+            0,
+            "easeInOutSine"
+          ]
+        ]
+      }
+    }
+  ]
+}

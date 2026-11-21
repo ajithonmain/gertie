@@ -1,0 +1,1110 @@
+{
+  "gertie": 1,
+  "name": "showcase-folded-bloom",
+  "canvas": {
+    "w": 480,
+    "h": 315,
+    "background": "#F5E7E8"
+  },
+  "duration": 4,
+  "fps": 30,
+  "loop": true,
+  "poster": 0.65,
+  "nodes": [
+    {
+      "id": "stage",
+      "type": "rect",
+      "x": 240,
+      "y": 157.5,
+      "w": 480,
+      "h": 315,
+      "radius": 0,
+      "fill": {
+        "type": "linear",
+        "from": [
+          -225,
+          -150
+        ],
+        "to": [
+          225,
+          150
+        ],
+        "stops": [
+          [
+            0,
+            "#FCEDDE"
+          ],
+          [
+            1,
+            "#F8D6E6"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "bloom-shadow",
+      "type": "ellipse",
+      "x": 240,
+      "y": 255,
+      "rx": 78,
+      "ry": 9,
+      "fill": "#84586833",
+      "animate": {
+        "scale": [
+          [
+            0,
+            1
+          ],
+          [
+            0.12,
+            1
+          ],
+          [
+            1.67,
+            0.88,
+            "easeInOutSine"
+          ],
+          [
+            3.62,
+            1,
+            "easeInOutSine"
+          ],
+          [
+            4,
+            1,
+            "easeInOutSine"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "stem",
+      "type": "path",
+      "d": "M238 250 Q253 211 239 154",
+      "fill": null,
+      "stroke": {
+        "color": "#3E6964",
+        "width": 5,
+        "cap": "round",
+        "join": "round"
+      }
+    },
+    {
+      "id": "leaf-l",
+      "type": "path",
+      "d": "M246 212 Q190 217 184 182 Q225 179 246 212 Z",
+      "fill": {
+        "type": "linear",
+        "from": [
+          186,
+          182
+        ],
+        "to": [
+          245,
+          211
+        ],
+        "stops": [
+          [
+            0,
+            "#ABD6A9"
+          ],
+          [
+            1,
+            "#588678"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "leaf-r",
+      "type": "path",
+      "d": "M247 229 Q272 187 306 197 Q292 229 247 229 Z",
+      "fill": {
+        "type": "linear",
+        "from": [
+          251,
+          227
+        ],
+        "to": [
+          302,
+          194
+        ],
+        "stops": [
+          [
+            0,
+            "#4B776D"
+          ],
+          [
+            1,
+            "#9DD6A8"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "bloom",
+      "type": "group",
+      "x": 240,
+      "y": 147,
+      "children": [
+        {
+          "id": "petal-0",
+          "type": "group",
+          "x": 0,
+          "y": 0,
+          "children": [
+            {
+              "id": "fold-0",
+              "type": "path",
+              "d": "M0 5 C-24 -7 -37 -40 -13 -75 L0 -90 L17 -73 C38 -40 22 -8 0 5 Z",
+              "fill": {
+                "type": "linear",
+                "from": [
+                  -23,
+                  -75
+                ],
+                "to": [
+                  22,
+                  5
+                ],
+                "stops": [
+                  [
+                    0,
+                    "#FFD7A9"
+                  ],
+                  [
+                    0.5,
+                    "#F39B8B"
+                  ],
+                  [
+                    1,
+                    "#A64E87"
+                  ]
+                ]
+              }
+            },
+            {
+              "id": "crease-0",
+              "type": "path",
+              "d": "M0 2 L0 -85",
+              "fill": null,
+              "stroke": {
+                "color": "#FFF1D997",
+                "width": 1.5,
+                "cap": "round",
+                "join": "round"
+              }
+            }
+          ],
+          "animate": {
+            "rotation": [
+              [
+                0,
+                -12
+              ],
+              [
+                0.38,
+                -12
+              ],
+              [
+                1.85,
+                0,
+                "easeInOutQuad"
+              ],
+              [
+                3.86,
+                -12,
+                "easeInOutQuad"
+              ],
+              [
+                4,
+                -12,
+                "easeInOutSine"
+              ]
+            ],
+            "scale": [
+              [
+                0,
+                0.52
+              ],
+              [
+                0.51,
+                0.52
+              ],
+              [
+                1.94,
+                1,
+                "easeInOutSine"
+              ],
+              [
+                3.62,
+                0.52,
+                "easeInOutSine"
+              ],
+              [
+                4,
+                0.52,
+                "easeInOutSine"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "petal-1",
+          "type": "group",
+          "x": 0,
+          "y": 0,
+          "children": [
+            {
+              "id": "fold-1",
+              "type": "path",
+              "d": "M0 5 C-24 -7 -37 -40 -13 -75 L0 -90 L17 -73 C38 -40 22 -8 0 5 Z",
+              "fill": {
+                "type": "linear",
+                "from": [
+                  -23,
+                  -75
+                ],
+                "to": [
+                  22,
+                  5
+                ],
+                "stops": [
+                  [
+                    0,
+                    "#FFC2C6"
+                  ],
+                  [
+                    0.5,
+                    "#E980A2"
+                  ],
+                  [
+                    1,
+                    "#A64E87"
+                  ]
+                ]
+              }
+            },
+            {
+              "id": "crease-1",
+              "type": "path",
+              "d": "M0 2 L0 -85",
+              "fill": null,
+              "stroke": {
+                "color": "#FFF1D997",
+                "width": 1.5,
+                "cap": "round",
+                "join": "round"
+              }
+            }
+          ],
+          "animate": {
+            "rotation": [
+              [
+                0,
+                39.43
+              ],
+              [
+                0.64,
+                39.43
+              ],
+              [
+                2.03,
+                51.43,
+                "easeInOutCubic"
+              ],
+              [
+                3.74,
+                39.43,
+                "easeInOutCubic"
+              ],
+              [
+                4,
+                39.43,
+                "easeInOutSine"
+              ]
+            ],
+            "scale": [
+              [
+                0,
+                0.52
+              ],
+              [
+                0.77,
+                0.52
+              ],
+              [
+                2.12,
+                1,
+                "easeInOutQuad"
+              ],
+              [
+                3.86,
+                0.52,
+                "easeInOutQuad"
+              ],
+              [
+                4,
+                0.52,
+                "easeInOutSine"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "petal-2",
+          "type": "group",
+          "x": 0,
+          "y": 0,
+          "children": [
+            {
+              "id": "fold-2",
+              "type": "path",
+              "d": "M0 5 C-24 -7 -37 -40 -13 -75 L0 -90 L17 -73 C38 -40 22 -8 0 5 Z",
+              "fill": {
+                "type": "linear",
+                "from": [
+                  -23,
+                  -75
+                ],
+                "to": [
+                  22,
+                  5
+                ],
+                "stops": [
+                  [
+                    0,
+                    "#FFD7A9"
+                  ],
+                  [
+                    0.5,
+                    "#F39B8B"
+                  ],
+                  [
+                    1,
+                    "#A64E87"
+                  ]
+                ]
+              }
+            },
+            {
+              "id": "crease-2",
+              "type": "path",
+              "d": "M0 2 L0 -85",
+              "fill": null,
+              "stroke": {
+                "color": "#FFF1D997",
+                "width": 1.5,
+                "cap": "round",
+                "join": "round"
+              }
+            }
+          ],
+          "animate": {
+            "rotation": [
+              [
+                0,
+                90.86
+              ],
+              [
+                0.9,
+                90.86
+              ],
+              [
+                2.21,
+                102.86,
+                "easeInOutSine"
+              ],
+              [
+                3.62,
+                90.86,
+                "easeInOutSine"
+              ],
+              [
+                4,
+                90.86,
+                "easeInOutSine"
+              ]
+            ],
+            "scale": [
+              [
+                0,
+                0.52
+              ],
+              [
+                0.12,
+                0.52
+              ],
+              [
+                1.67,
+                1,
+                "easeInOutCubic"
+              ],
+              [
+                3.74,
+                0.52,
+                "easeInOutCubic"
+              ],
+              [
+                4,
+                0.52,
+                "easeInOutSine"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "petal-3",
+          "type": "group",
+          "x": 0,
+          "y": 0,
+          "children": [
+            {
+              "id": "fold-3",
+              "type": "path",
+              "d": "M0 5 C-24 -7 -37 -40 -13 -75 L0 -90 L17 -73 C38 -40 22 -8 0 5 Z",
+              "fill": {
+                "type": "linear",
+                "from": [
+                  -23,
+                  -75
+                ],
+                "to": [
+                  22,
+                  5
+                ],
+                "stops": [
+                  [
+                    0,
+                    "#FFC2C6"
+                  ],
+                  [
+                    0.5,
+                    "#E980A2"
+                  ],
+                  [
+                    1,
+                    "#A64E87"
+                  ]
+                ]
+              }
+            },
+            {
+              "id": "crease-3",
+              "type": "path",
+              "d": "M0 2 L0 -85",
+              "fill": null,
+              "stroke": {
+                "color": "#FFF1D997",
+                "width": 1.5,
+                "cap": "round",
+                "join": "round"
+              }
+            }
+          ],
+          "animate": {
+            "rotation": [
+              [
+                0,
+                142.29
+              ],
+              [
+                0.25,
+                142.29
+              ],
+              [
+                1.76,
+                154.29,
+                "easeInOutQuad"
+              ],
+              [
+                3.86,
+                142.29,
+                "easeInOutQuad"
+              ],
+              [
+                4,
+                142.29,
+                "easeInOutSine"
+              ]
+            ],
+            "scale": [
+              [
+                0,
+                0.52
+              ],
+              [
+                0.38,
+                0.52
+              ],
+              [
+                1.85,
+                1,
+                "easeInOutSine"
+              ],
+              [
+                3.62,
+                0.52,
+                "easeInOutSine"
+              ],
+              [
+                4,
+                0.52,
+                "easeInOutSine"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "petal-4",
+          "type": "group",
+          "x": 0,
+          "y": 0,
+          "children": [
+            {
+              "id": "fold-4",
+              "type": "path",
+              "d": "M0 5 C-24 -7 -37 -40 -13 -75 L0 -90 L17 -73 C38 -40 22 -8 0 5 Z",
+              "fill": {
+                "type": "linear",
+                "from": [
+                  -23,
+                  -75
+                ],
+                "to": [
+                  22,
+                  5
+                ],
+                "stops": [
+                  [
+                    0,
+                    "#FFD7A9"
+                  ],
+                  [
+                    0.5,
+                    "#F39B8B"
+                  ],
+                  [
+                    1,
+                    "#A64E87"
+                  ]
+                ]
+              }
+            },
+            {
+              "id": "crease-4",
+              "type": "path",
+              "d": "M0 2 L0 -85",
+              "fill": null,
+              "stroke": {
+                "color": "#FFF1D997",
+                "width": 1.5,
+                "cap": "round",
+                "join": "round"
+              }
+            }
+          ],
+          "animate": {
+            "rotation": [
+              [
+                0,
+                193.72
+              ],
+              [
+                0.51,
+                193.72
+              ],
+              [
+                1.94,
+                205.72,
+                "easeInOutCubic"
+              ],
+              [
+                3.74,
+                193.72,
+                "easeInOutCubic"
+              ],
+              [
+                4,
+                193.72,
+                "easeInOutSine"
+              ]
+            ],
+            "scale": [
+              [
+                0,
+                0.52
+              ],
+              [
+                0.64,
+                0.52
+              ],
+              [
+                2.03,
+                1,
+                "easeInOutQuad"
+              ],
+              [
+                3.86,
+                0.52,
+                "easeInOutQuad"
+              ],
+              [
+                4,
+                0.52,
+                "easeInOutSine"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "petal-5",
+          "type": "group",
+          "x": 0,
+          "y": 0,
+          "children": [
+            {
+              "id": "fold-5",
+              "type": "path",
+              "d": "M0 5 C-24 -7 -37 -40 -13 -75 L0 -90 L17 -73 C38 -40 22 -8 0 5 Z",
+              "fill": {
+                "type": "linear",
+                "from": [
+                  -23,
+                  -75
+                ],
+                "to": [
+                  22,
+                  5
+                ],
+                "stops": [
+                  [
+                    0,
+                    "#FFC2C6"
+                  ],
+                  [
+                    0.5,
+                    "#E980A2"
+                  ],
+                  [
+                    1,
+                    "#A64E87"
+                  ]
+                ]
+              }
+            },
+            {
+              "id": "crease-5",
+              "type": "path",
+              "d": "M0 2 L0 -85",
+              "fill": null,
+              "stroke": {
+                "color": "#FFF1D997",
+                "width": 1.5,
+                "cap": "round",
+                "join": "round"
+              }
+            }
+          ],
+          "animate": {
+            "rotation": [
+              [
+                0,
+                245.14999999999998
+              ],
+              [
+                0.77,
+                245.14999999999998
+              ],
+              [
+                2.12,
+                257.15,
+                "easeInOutSine"
+              ],
+              [
+                3.62,
+                245.14999999999998,
+                "easeInOutSine"
+              ],
+              [
+                4,
+                245.14999999999998,
+                "easeInOutSine"
+              ]
+            ],
+            "scale": [
+              [
+                0,
+                0.52
+              ],
+              [
+                0.9,
+                0.52
+              ],
+              [
+                2.21,
+                1,
+                "easeInOutCubic"
+              ],
+              [
+                3.74,
+                0.52,
+                "easeInOutCubic"
+              ],
+              [
+                4,
+                0.52,
+                "easeInOutSine"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "petal-6",
+          "type": "group",
+          "x": 0,
+          "y": 0,
+          "children": [
+            {
+              "id": "fold-6",
+              "type": "path",
+              "d": "M0 5 C-24 -7 -37 -40 -13 -75 L0 -90 L17 -73 C38 -40 22 -8 0 5 Z",
+              "fill": {
+                "type": "linear",
+                "from": [
+                  -23,
+                  -75
+                ],
+                "to": [
+                  22,
+                  5
+                ],
+                "stops": [
+                  [
+                    0,
+                    "#FFD7A9"
+                  ],
+                  [
+                    0.5,
+                    "#F39B8B"
+                  ],
+                  [
+                    1,
+                    "#A64E87"
+                  ]
+                ]
+              }
+            },
+            {
+              "id": "crease-6",
+              "type": "path",
+              "d": "M0 2 L0 -85",
+              "fill": null,
+              "stroke": {
+                "color": "#FFF1D997",
+                "width": 1.5,
+                "cap": "round",
+                "join": "round"
+              }
+            }
+          ],
+          "animate": {
+            "rotation": [
+              [
+                0,
+                296.58
+              ],
+              [
+                0.12,
+                296.58
+              ],
+              [
+                1.67,
+                308.58,
+                "easeInOutQuad"
+              ],
+              [
+                3.86,
+                296.58,
+                "easeInOutQuad"
+              ],
+              [
+                4,
+                296.58,
+                "easeInOutSine"
+              ]
+            ],
+            "scale": [
+              [
+                0,
+                0.52
+              ],
+              [
+                0.25,
+                0.52
+              ],
+              [
+                1.76,
+                1,
+                "easeInOutSine"
+              ],
+              [
+                3.62,
+                0.52,
+                "easeInOutSine"
+              ],
+              [
+                4,
+                0.52,
+                "easeInOutSine"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "pollen",
+          "type": "ellipse",
+          "x": 0,
+          "y": 0,
+          "rx": 20,
+          "ry": 20,
+          "fill": {
+            "type": "linear",
+            "from": [
+              -14,
+              -13
+            ],
+            "to": [
+              14,
+              16
+            ],
+            "stops": [
+              [
+                0,
+                "#FFF5B8"
+              ],
+              [
+                1,
+                "#E58A6A"
+              ]
+            ]
+          },
+          "animate": {
+            "scale": [
+              [
+                0,
+                0.74
+              ],
+              [
+                0.38,
+                0.74
+              ],
+              [
+                1.85,
+                1,
+                "easeInOutCubic"
+              ],
+              [
+                3.74,
+                0.74,
+                "easeInOutCubic"
+              ],
+              [
+                4,
+                0.74,
+                "easeInOutSine"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "seed-0",
+          "type": "ellipse",
+          "x": 0,
+          "y": -8,
+          "rx": 2,
+          "ry": 2,
+          "fill": "#A35368"
+        },
+        {
+          "id": "seed-1",
+          "type": "ellipse",
+          "x": 8,
+          "y": 1,
+          "rx": 2,
+          "ry": 2,
+          "fill": "#A35368"
+        },
+        {
+          "id": "seed-2",
+          "type": "ellipse",
+          "x": -8,
+          "y": 3,
+          "rx": 2,
+          "ry": 2,
+          "fill": "#A35368"
+        },
+        {
+          "id": "seed-3",
+          "type": "ellipse",
+          "x": 0,
+          "y": 9,
+          "rx": 2,
+          "ry": 2,
+          "fill": "#A35368"
+        }
+      ],
+      "animate": {
+        "rotation": [
+          [
+            0,
+            -10
+          ],
+          [
+            0.25,
+            -10
+          ],
+          [
+            1.76,
+            8,
+            "easeInOutCubic"
+          ],
+          [
+            3.74,
+            -10,
+            "easeInOutCubic"
+          ],
+          [
+            4,
+            -10,
+            "easeInOutSine"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "pollen-l",
+      "type": "group",
+      "x": 131,
+      "y": 130,
+      "children": [
+        {
+          "id": "pollen-l-shape",
+          "type": "path",
+          "d": "M-10 0 Q0 -2 0 -10 Q2 0 10 0 Q0 2 0 10 Q-2 0 -10 0 Z",
+          "fill": "#FFFFFF"
+        }
+      ],
+      "animate": {
+        "scale": [
+          [
+            0,
+            0.65
+          ],
+          [
+            1,
+            1.15,
+            "easeInOutSine"
+          ],
+          [
+            3,
+            0.42,
+            "easeInOutSine"
+          ],
+          [
+            4,
+            0.65,
+            "easeInOutSine"
+          ]
+        ],
+        "opacity": [
+          [
+            0,
+            0.45
+          ],
+          [
+            0.51,
+            0.45
+          ],
+          [
+            1.94,
+            1,
+            "easeInOutQuad"
+          ],
+          [
+            3.86,
+            0.45,
+            "easeInOutQuad"
+          ],
+          [
+            4,
+            0.45,
+            "easeInOutSine"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "pollen-r",
+      "type": "group",
+      "x": 341,
+      "y": 103,
+      "children": [
+        {
+          "id": "pollen-r-shape",
+          "type": "path",
+          "d": "M-12 0 Q0 -2 0 -12 Q2 0 12 0 Q0 2 0 12 Q-2 0 -12 0 Z",
+          "fill": "#FFFFFF"
+        }
+      ],
+      "animate": {
+        "scale": [
+          [
+            0,
+            0.65
+          ],
+          [
+            1.7,
+            1.15,
+            "easeInOutSine"
+          ],
+          [
+            3,
+            0.42,
+            "easeInOutSine"
+          ],
+          [
+            4,
+            0.65,
+            "easeInOutSine"
+          ]
+        ],
+        "opacity": [
+          [
+            0,
+            0.45
+          ],
+          [
+            0.64,
+            0.45
+          ],
+          [
+            2.03,
+            1,
+            "easeInOutSine"
+          ],
+          [
+            3.62,
+            0.45,
+            "easeInOutSine"
+          ],
+          [
+            4,
+            0.45,
+            "easeInOutSine"
+          ]
+        ]
+      }
+    }
+  ]
+}

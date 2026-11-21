@@ -1,0 +1,671 @@
+{
+  "gertie": 1,
+  "name": "showcase-tape-deck",
+  "canvas": {
+    "w": 480,
+    "h": 315,
+    "background": "#FFE5C8"
+  },
+  "duration": 4,
+  "fps": 30,
+  "loop": true,
+  "poster": 0.65,
+  "nodes": [
+    {
+      "id": "stage",
+      "type": "rect",
+      "x": 240,
+      "y": 157.5,
+      "w": 480,
+      "h": 315,
+      "radius": 0,
+      "fill": {
+        "type": "linear",
+        "from": [
+          -225,
+          -150
+        ],
+        "to": [
+          225,
+          150
+        ],
+        "stops": [
+          [
+            0,
+            "#FFF2C8"
+          ],
+          [
+            1,
+            "#FFBEAD"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "tape-shadow",
+      "type": "ellipse",
+      "x": 240,
+      "y": 243,
+      "rx": 123,
+      "ry": 10,
+      "fill": "#B35B6A42",
+      "animate": {
+        "scale": [
+          [
+            0,
+            1
+          ],
+          [
+            0.12,
+            1
+          ],
+          [
+            1.67,
+            0.88,
+            "easeInOutSine"
+          ],
+          [
+            3.62,
+            1,
+            "easeInOutSine"
+          ],
+          [
+            4,
+            1,
+            "easeInOutSine"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "body",
+      "type": "group",
+      "x": 240,
+      "y": 144,
+      "children": [
+        {
+          "id": "shell",
+          "type": "rect",
+          "x": 0,
+          "y": 0,
+          "w": 257,
+          "h": 141,
+          "radius": 18,
+          "fill": "#593955"
+        },
+        {
+          "id": "case-highlight",
+          "type": "path",
+          "d": "M-117 -38 Q-117 -58 -94 -60 L93 -60",
+          "fill": null,
+          "stroke": {
+            "color": "#FFF4D1",
+            "width": 3,
+            "cap": "round"
+          }
+        },
+        {
+          "id": "shell-face",
+          "type": "rect",
+          "x": 0,
+          "y": -4,
+          "w": 246,
+          "h": 130,
+          "radius": 14,
+          "fill": {
+            "type": "linear",
+            "from": [
+              -100,
+              -60
+            ],
+            "to": [
+              110,
+              64
+            ],
+            "stops": [
+              [
+                0,
+                "#FFF5D4"
+              ],
+              [
+                1,
+                "#F7B7A9"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "label",
+          "type": "rect",
+          "x": 0,
+          "y": -12,
+          "w": 212,
+          "h": 74,
+          "radius": 13,
+          "fill": "#FA816E"
+        },
+        {
+          "id": "window",
+          "type": "rect",
+          "x": 0,
+          "y": -13,
+          "w": 131,
+          "h": 34,
+          "radius": 15,
+          "fill": "#58374E"
+        },
+        {
+          "id": "tape",
+          "type": "rect",
+          "x": 0,
+          "y": -13,
+          "w": 68,
+          "h": 14,
+          "radius": 6,
+          "fill": "#D78D88"
+        },
+        {
+          "id": "reel-0",
+          "type": "group",
+          "x": -45,
+          "y": -13,
+          "children": [
+            {
+              "id": "disc-0",
+              "type": "ellipse",
+              "x": 0,
+              "y": 0,
+              "rx": 14,
+              "ry": 14,
+              "fill": "#FFF0D0"
+            },
+            {
+              "id": "hub-0",
+              "type": "ellipse",
+              "x": 0,
+              "y": 0,
+              "rx": 5,
+              "ry": 5,
+              "fill": "#683954"
+            },
+            {
+              "id": "spokes-0",
+              "type": "path",
+              "d": "M0 -12 L0 -7 M10 6 L6 3 M-10 6 L-6 3",
+              "fill": null,
+              "stroke": {
+                "color": "#683954",
+                "width": 2,
+                "cap": "round",
+                "join": "round"
+              }
+            }
+          ],
+          "animate": {
+            "rotation": [
+              [
+                0,
+                0
+              ],
+              [
+                4,
+                720,
+                "linear"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "reel-1",
+          "type": "group",
+          "x": 45,
+          "y": -13,
+          "children": [
+            {
+              "id": "disc-1",
+              "type": "ellipse",
+              "x": 0,
+              "y": 0,
+              "rx": 14,
+              "ry": 14,
+              "fill": "#FFF0D0"
+            },
+            {
+              "id": "hub-1",
+              "type": "ellipse",
+              "x": 0,
+              "y": 0,
+              "rx": 5,
+              "ry": 5,
+              "fill": "#683954"
+            },
+            {
+              "id": "spokes-1",
+              "type": "path",
+              "d": "M0 -12 L0 -7 M10 6 L6 3 M-10 6 L-6 3",
+              "fill": null,
+              "stroke": {
+                "color": "#683954",
+                "width": 2,
+                "cap": "round",
+                "join": "round"
+              }
+            }
+          ],
+          "animate": {
+            "rotation": [
+              [
+                0,
+                0
+              ],
+              [
+                4,
+                720,
+                "linear"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "base",
+          "type": "path",
+          "d": "M-80 62 L-66 36 L66 36 L80 62 Z",
+          "fill": "#613D54"
+        },
+        {
+          "id": "socket-0",
+          "type": "ellipse",
+          "x": -19,
+          "y": 51,
+          "rx": 3,
+          "ry": 3,
+          "fill": "#EDAC9C"
+        },
+        {
+          "id": "socket-1",
+          "type": "ellipse",
+          "x": 0,
+          "y": 51,
+          "rx": 3,
+          "ry": 3,
+          "fill": "#EDAC9C"
+        },
+        {
+          "id": "socket-2",
+          "type": "ellipse",
+          "x": 19,
+          "y": 51,
+          "rx": 3,
+          "ry": 3,
+          "fill": "#EDAC9C"
+        },
+        {
+          "id": "screw-0",
+          "type": "ellipse",
+          "x": -105,
+          "y": -53,
+          "rx": 4,
+          "ry": 4,
+          "fill": "#8D5D69"
+        },
+        {
+          "id": "screw-1",
+          "type": "ellipse",
+          "x": 105,
+          "y": -53,
+          "rx": 4,
+          "ry": 4,
+          "fill": "#8D5D69"
+        }
+      ],
+      "animate": {
+        "rotation": [
+          [
+            0,
+            -7
+          ],
+          [
+            0.25,
+            -7
+          ],
+          [
+            1.76,
+            6,
+            "easeInOutCubic"
+          ],
+          [
+            3.74,
+            -7,
+            "easeInOutCubic"
+          ],
+          [
+            4,
+            -7,
+            "easeInOutSine"
+          ]
+        ],
+        "y": [
+          [
+            0,
+            145
+          ],
+          [
+            0.38,
+            145
+          ],
+          [
+            1.85,
+            137,
+            "easeInOutQuad"
+          ],
+          [
+            3.86,
+            145,
+            "easeInOutQuad"
+          ],
+          [
+            4,
+            145,
+            "easeInOutSine"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "level-0",
+      "type": "rect",
+      "x": 214,
+      "y": 269,
+      "w": 6,
+      "h": 13,
+      "radius": 3,
+      "fill": "#AD4C71",
+      "animate": {
+        "scale": [
+          [
+            0,
+            [
+              1,
+              0.46
+            ]
+          ],
+          [
+            0.51,
+            [
+              1,
+              0.46
+            ]
+          ],
+          [
+            1.94,
+            [
+              1,
+              1.15
+            ],
+            "easeInOutSine"
+          ],
+          [
+            3.62,
+            [
+              1,
+              0.46
+            ],
+            "easeInOutSine"
+          ],
+          [
+            4,
+            [
+              1,
+              0.46
+            ],
+            "easeInOutSine"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "level-1",
+      "type": "rect",
+      "x": 227,
+      "y": 269,
+      "w": 6,
+      "h": 25,
+      "radius": 3,
+      "fill": "#AD4C71",
+      "animate": {
+        "scale": [
+          [
+            0,
+            [
+              1,
+              0.54
+            ]
+          ],
+          [
+            0.64,
+            [
+              1,
+              0.54
+            ]
+          ],
+          [
+            2.03,
+            [
+              1,
+              1.02
+            ],
+            "easeInOutCubic"
+          ],
+          [
+            3.74,
+            [
+              1,
+              0.54
+            ],
+            "easeInOutCubic"
+          ],
+          [
+            4,
+            [
+              1,
+              0.54
+            ],
+            "easeInOutSine"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "level-2",
+      "type": "rect",
+      "x": 240,
+      "y": 269,
+      "w": 6,
+      "h": 18,
+      "radius": 3,
+      "fill": "#AD4C71",
+      "animate": {
+        "scale": [
+          [
+            0,
+            [
+              1,
+              0.62
+            ]
+          ],
+          [
+            0.77,
+            [
+              1,
+              0.62
+            ]
+          ],
+          [
+            2.12,
+            [
+              1,
+              0.8899999999999999
+            ],
+            "easeInOutQuad"
+          ],
+          [
+            3.86,
+            [
+              1,
+              0.62
+            ],
+            "easeInOutQuad"
+          ],
+          [
+            4,
+            [
+              1,
+              0.62
+            ],
+            "easeInOutSine"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "level-3",
+      "type": "rect",
+      "x": 253,
+      "y": 269,
+      "w": 6,
+      "h": 30,
+      "radius": 3,
+      "fill": "#AD4C71",
+      "animate": {
+        "scale": [
+          [
+            0,
+            [
+              1,
+              0.7
+            ]
+          ],
+          [
+            0.9,
+            [
+              1,
+              0.7
+            ]
+          ],
+          [
+            2.21,
+            [
+              1,
+              0.7599999999999999
+            ],
+            "easeInOutSine"
+          ],
+          [
+            3.62,
+            [
+              1,
+              0.7
+            ],
+            "easeInOutSine"
+          ],
+          [
+            4,
+            [
+              1,
+              0.7
+            ],
+            "easeInOutSine"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "level-4",
+      "type": "rect",
+      "x": 266,
+      "y": 269,
+      "w": 6,
+      "h": 15,
+      "radius": 3,
+      "fill": "#AD4C71",
+      "animate": {
+        "scale": [
+          [
+            0,
+            [
+              1,
+              0.78
+            ]
+          ],
+          [
+            0.12,
+            [
+              1,
+              0.78
+            ]
+          ],
+          [
+            1.67,
+            [
+              1,
+              0.6299999999999999
+            ],
+            "easeInOutCubic"
+          ],
+          [
+            3.74,
+            [
+              1,
+              0.78
+            ],
+            "easeInOutCubic"
+          ],
+          [
+            4,
+            [
+              1,
+              0.78
+            ],
+            "easeInOutSine"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "pilot",
+      "type": "ellipse",
+      "x": 190,
+      "y": 269,
+      "rx": 4,
+      "ry": 4,
+      "fill": "#F04973",
+      "animate": {
+        "opacity": [
+          [
+            0,
+            0.35
+          ],
+          [
+            0.25,
+            0.35
+          ],
+          [
+            1.76,
+            1,
+            "easeInOutQuad"
+          ],
+          [
+            3.86,
+            0.35,
+            "easeInOutQuad"
+          ],
+          [
+            4,
+            0.35,
+            "easeInOutSine"
+          ]
+        ]
+      }
+    }
+  ]
+}

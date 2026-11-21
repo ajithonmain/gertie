@@ -1,0 +1,22 @@
+{
+  "gertie": 1,
+  "name": "studio-bell",
+  "canvas": {
+    "w": 160,
+    "h": 160
+  },
+  "tier": "icon",
+  "duration": 4,
+  "fps": 30,
+  "poster": 0,
+  "nodes": [
+    {"id": "bell", "type": "group", "x": 80, "y": 78, "pivot": [0, -33], "animate": {"rotation": [[0, 0], [0.38, -14, "easeInQuad"], [0.66, 17, "easeInOutSine"], [0.96, -12], [1.24, 8], [1.56, -4], [1.86, 0, "easeOutCubic"], [4, 0]]}, "children": [
+      {"id": "hammer", "type": "path", "d": "M-9 30 Q-7 43 0 43 Q7 43 9 30Z", "fill": {"type": "linear", "from": [0, -40], "to": [0, 42], "stops": [[0, "#e1efff"], [1, "#6390f2"]]}},
+      {"id": "bell-face", "type": "path", "d": "M-33 29 C-37 29 -39 25 -36 22 C-28 15 -26 9 -26 -1 V-8 C-26 -24 -15 -35 0 -35 C15 -35 26 -24 26 -8 V-1 C26 9 28 15 36 22 C39 25 37 29 33 29Z", "fill": {"type": "linear", "from": [0, -40], "to": [0, 42], "stops": [[0, "#739cfb"], [1, "#254baf"]]}, "stroke": {"color": "#bfd6ff", "width": 2}},
+      {"id": "bell-glint", "type": "path", "d": "M-20 -8 C-20 -18 -14 -26 -5 -29", "stroke": {"color": "#e6f1ff", "width": 3}},
+      {"id": "bell-rim", "type": "path", "d": "M-30 23 H30", "stroke": {"color": "#a7c8ff", "width": 2.5}}
+    ]},
+    {"id": "left-wave", "type": "path", "d": "M42 50 Q30 60 30 76", "animate": {"opacity": [[0, 0], [0.35, 0], [0.57, 0.95], [1.15, 0], [4, 0]]}, "stroke": {"color": "#7ab8ff", "width": 2.3}},
+    {"id": "right-wave", "type": "path", "d": "M118 50 Q130 60 130 76", "animate": {"opacity": [[0, 0], [0.53, 0], [0.76, 0.95], [1.32, 0], [4, 0]]}, "stroke": {"color": "#7ab8ff", "width": 2.3}}
+  ]
+}

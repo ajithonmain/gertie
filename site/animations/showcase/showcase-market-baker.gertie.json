@@ -1,0 +1,905 @@
+{
+  "gertie": 1,
+  "name": "showcase-market-baker",
+  "canvas": {
+    "w": 480,
+    "h": 315,
+    "background": "#F1CEAB"
+  },
+  "duration": 4,
+  "fps": 30,
+  "loop": true,
+  "poster": 0.65,
+  "nodes": [
+    {
+      "id": "stage",
+      "type": "rect",
+      "x": 240,
+      "y": 157.5,
+      "w": 480,
+      "h": 315,
+      "radius": 0,
+      "fill": {
+        "type": "linear",
+        "from": [
+          -225,
+          -150
+        ],
+        "to": [
+          225,
+          150
+        ],
+        "stops": [
+          [
+            0,
+            "#DFA684"
+          ],
+          [
+            1,
+            "#F5DEAE"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "shop-shadow",
+      "type": "rect",
+      "x": 241,
+      "y": 149,
+      "w": 340,
+      "h": 243,
+      "radius": 22,
+      "fill": "#855D6B"
+    },
+    {
+      "id": "wall",
+      "type": "rect",
+      "x": 240,
+      "y": 142,
+      "w": 328,
+      "h": 229,
+      "radius": 20,
+      "fill": {
+        "type": "linear",
+        "from": [
+          -165,
+          -100
+        ],
+        "to": [
+          160,
+          112
+        ],
+        "stops": [
+          [
+            0,
+            "#F1C593"
+          ],
+          [
+            1,
+            "#BC7D75"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "window",
+      "type": "rect",
+      "x": 248,
+      "y": 146,
+      "w": 220,
+      "h": 145,
+      "radius": 22,
+      "fill": "#55425E"
+    },
+    {
+      "id": "window-light",
+      "type": "rect",
+      "x": 247,
+      "y": 145,
+      "w": 205,
+      "h": 132,
+      "radius": 16,
+      "fill": {
+        "type": "linear",
+        "from": [
+          0,
+          -66
+        ],
+        "to": [
+          0,
+          66
+        ],
+        "stops": [
+          [
+            0,
+            "#706483"
+          ],
+          [
+            1,
+            "#A88185"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "awning-0",
+      "type": "path",
+      "d": "M83 40 H123 L132 77 Q128 91 113 88 H89 Q75 88 74 77 Z",
+      "fill": "#B96578"
+    },
+    {
+      "id": "awning-1",
+      "type": "path",
+      "d": "M124 40 H164 L173 77 Q169 91 154 88 H130 Q116 88 115 77 Z",
+      "fill": "#FFDCA3"
+    },
+    {
+      "id": "awning-2",
+      "type": "path",
+      "d": "M165 40 H205 L214 77 Q210 91 195 88 H171 Q157 88 156 77 Z",
+      "fill": "#B96578"
+    },
+    {
+      "id": "awning-3",
+      "type": "path",
+      "d": "M206 40 H246 L255 77 Q251 91 236 88 H212 Q198 88 197 77 Z",
+      "fill": "#FFDCA3"
+    },
+    {
+      "id": "awning-4",
+      "type": "path",
+      "d": "M247 40 H287 L296 77 Q292 91 277 88 H253 Q239 88 238 77 Z",
+      "fill": "#B96578"
+    },
+    {
+      "id": "awning-5",
+      "type": "path",
+      "d": "M288 40 H328 L337 77 Q333 91 318 88 H294 Q280 88 279 77 Z",
+      "fill": "#FFDCA3"
+    },
+    {
+      "id": "awning-6",
+      "type": "path",
+      "d": "M329 40 H369 L378 77 Q374 91 359 88 H335 Q321 88 320 77 Z",
+      "fill": "#B96578"
+    },
+    {
+      "id": "awning-7",
+      "type": "path",
+      "d": "M370 40 H410 L419 77 Q415 91 400 88 H376 Q362 88 361 77 Z",
+      "fill": "#FFDCA3"
+    },
+    {
+      "id": "shelf-loaf-0",
+      "type": "path",
+      "d": "M161 127 Q175 98 189 127 Z",
+      "fill": "#EEBD80"
+    },
+    {
+      "id": "shelf-loaf-1",
+      "type": "path",
+      "d": "M194 127 Q208 103 222 127 Z",
+      "fill": "#DEA16F"
+    },
+    {
+      "id": "shelf-loaf-2",
+      "type": "path",
+      "d": "M266 127 Q280 98 294 127 Z",
+      "fill": "#EEBD80"
+    },
+    {
+      "id": "shelf-loaf-3",
+      "type": "path",
+      "d": "M298 127 Q312 103 326 127 Z",
+      "fill": "#DEA16F"
+    },
+    {
+      "id": "shelf",
+      "type": "rect",
+      "x": 244,
+      "y": 131,
+      "w": 173,
+      "h": 5,
+      "radius": 2,
+      "fill": "#D29C82"
+    },
+    {
+      "id": "baker",
+      "type": "group",
+      "x": 232,
+      "y": 221,
+      "children": [
+        {
+          "id": "shirt",
+          "type": "path",
+          "d": "M-48 14 Q-44 -36 -24 -61 Q1 -74 24 -62 Q52 -34 51 13 Z",
+          "fill": {
+            "type": "linear",
+            "from": [
+              -40,
+              -48
+            ],
+            "to": [
+              45,
+              11
+            ],
+            "stops": [
+              [
+                0,
+                "#8ECDAC"
+              ],
+              [
+                1,
+                "#4A787E"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "apron",
+          "type": "path",
+          "d": "M-30 -60 L-23 -42 H22 L30 -61 L37 14 H-38 Z",
+          "fill": "#F3D8AF"
+        },
+        {
+          "id": "bib",
+          "type": "path",
+          "d": "M-18 -29 H18 V-8 Q0 2 -18 -8 Z",
+          "fill": "#E5AD91"
+        },
+        {
+          "id": "head",
+          "type": "group",
+          "x": -4,
+          "y": -65,
+          "children": [
+            {
+              "id": "hair",
+              "type": "path",
+              "d": "M-37 -9 Q-42 -43 -13 -52 Q19 -62 33 -36 L33 7 H-31 Z",
+              "fill": "#51364C"
+            },
+            {
+              "id": "face",
+              "type": "path",
+              "d": "M-25 -34 Q-12 -43 17 -35 Q32 -18 19 4 Q8 21 -10 12 Q-26 5 -25 -34 Z",
+              "fill": "#AD6D5F"
+            },
+            {
+              "id": "hat",
+              "type": "path",
+              "d": "M-26 -36 Q-49 -45 -34 -59 Q-24 -67 -17 -61 Q-12 -82 6 -73 Q14 -69 17 -61 Q40 -66 42 -48 Q38 -34 23 -36 Z",
+              "fill": "#FFF3D5"
+            },
+            {
+              "id": "baker-eye-l",
+              "type": "ellipse",
+              "x": -7,
+              "y": -18,
+              "rx": 4.7,
+              "ry": 7,
+              "fill": "#4C3048",
+              "animate": {
+                "scale": [
+                  [
+                    0,
+                    1
+                  ],
+                  [
+                    1.1,
+                    1
+                  ],
+                  [
+                    1.2,
+                    [
+                      1,
+                      0.13
+                    ]
+                  ],
+                  [
+                    1.3,
+                    1
+                  ],
+                  [
+                    4,
+                    1
+                  ]
+                ]
+              }
+            },
+            {
+              "id": "baker-eye-r",
+              "type": "ellipse",
+              "x": 12,
+              "y": -19,
+              "rx": 4.7,
+              "ry": 7,
+              "fill": "#4C3048",
+              "animate": {
+                "scale": [
+                  [
+                    0,
+                    1
+                  ],
+                  [
+                    1.1,
+                    1
+                  ],
+                  [
+                    1.2,
+                    [
+                      1,
+                      0.13
+                    ]
+                  ],
+                  [
+                    1.3,
+                    1
+                  ],
+                  [
+                    4,
+                    1
+                  ]
+                ]
+              }
+            },
+            {
+              "id": "baker-smile",
+              "type": "path",
+              "d": "M-1 -5 Q6 1 13 -7",
+              "fill": null,
+              "stroke": {
+                "color": "#65384E",
+                "width": 2,
+                "cap": "round",
+                "join": "round"
+              }
+            }
+          ],
+          "animate": {
+            "rotation": [
+              [
+                0,
+                -6
+              ],
+              [
+                1,
+                8,
+                "easeInOutCubic"
+              ],
+              [
+                2,
+                12,
+                "easeInOutSine"
+              ],
+              [
+                3,
+                -3,
+                "easeInOutQuad"
+              ],
+              [
+                4,
+                -6,
+                "easeInOutSine"
+              ]
+            ],
+            "y": [
+              [
+                0,
+                -65
+              ],
+              [
+                2,
+                -57,
+                "easeInOutSine"
+              ],
+              [
+                4,
+                -65,
+                "easeInOutSine"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "left-arm",
+          "type": "group",
+          "x": -35,
+          "y": -46,
+          "children": [
+            {
+              "id": "left-sleeve",
+              "type": "path",
+              "d": "M0 0 Q-18 25 0 37 L40 44",
+              "fill": null,
+              "stroke": {
+                "color": "#85BDA8",
+                "width": 15,
+                "cap": "round",
+                "join": "round"
+              }
+            },
+            {
+              "id": "left-hand",
+              "type": "ellipse",
+              "x": 40,
+              "y": 44,
+              "rx": 8,
+              "ry": 6,
+              "fill": "#AD6D5F"
+            }
+          ],
+          "animate": {
+            "rotation": [
+              [
+                0,
+                -11
+              ],
+              [
+                1,
+                -2,
+                "easeInOutCubic"
+              ],
+              [
+                2,
+                8,
+                "easeInOutSine"
+              ],
+              [
+                3,
+                -11,
+                "easeInOutQuad"
+              ],
+              [
+                4,
+                -11,
+                "easeInOutSine"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "right-arm",
+          "type": "group",
+          "x": 35,
+          "y": -51,
+          "children": [
+            {
+              "id": "right-sleeve",
+              "type": "path",
+              "d": "M0 0 Q19 22 6 33 L-22 43",
+              "fill": null,
+              "stroke": {
+                "color": "#649D93",
+                "width": 15,
+                "cap": "round",
+                "join": "round"
+              }
+            },
+            {
+              "id": "right-hand",
+              "type": "ellipse",
+              "x": -23,
+              "y": 43,
+              "rx": 8,
+              "ry": 6,
+              "fill": "#AD6D5F"
+            },
+            {
+              "id": "lame",
+              "type": "path",
+              "d": "M-30 46 L-45 51",
+              "fill": null,
+              "stroke": {
+                "color": "#FBEDD0",
+                "width": 3,
+                "cap": "round",
+                "join": "round"
+              }
+            }
+          ],
+          "animate": {
+            "rotation": [
+              [
+                0,
+                -13
+              ],
+              [
+                1,
+                18,
+                "easeInOutCubic"
+              ],
+              [
+                2,
+                -11,
+                "easeInOutSine"
+              ],
+              [
+                3,
+                12,
+                "easeInOutQuad"
+              ],
+              [
+                4,
+                -13,
+                "easeInOutSine"
+              ]
+            ]
+          }
+        }
+      ],
+      "animate": {
+        "y": [
+          [
+            0,
+            219
+          ],
+          [
+            2,
+            221,
+            "easeInOutSine"
+          ],
+          [
+            4,
+            219,
+            "easeInOutSine"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "counter",
+      "type": "rect",
+      "x": 240,
+      "y": 244,
+      "w": 370,
+      "h": 16,
+      "radius": 7,
+      "fill": "#F2C895"
+    },
+    {
+      "id": "counter-base",
+      "type": "rect",
+      "x": 240,
+      "y": 274,
+      "w": 347,
+      "h": 47,
+      "radius": 8,
+      "fill": "#AD7278"
+    },
+    {
+      "id": "panel-0",
+      "type": "rect",
+      "x": 105,
+      "y": 274,
+      "w": 4,
+      "h": 35,
+      "radius": 2,
+      "fill": "#BF8681"
+    },
+    {
+      "id": "panel-1",
+      "type": "rect",
+      "x": 130,
+      "y": 274,
+      "w": 4,
+      "h": 35,
+      "radius": 2,
+      "fill": "#BF8681"
+    },
+    {
+      "id": "panel-2",
+      "type": "rect",
+      "x": 350,
+      "y": 274,
+      "w": 4,
+      "h": 35,
+      "radius": 2,
+      "fill": "#BF8681"
+    },
+    {
+      "id": "panel-3",
+      "type": "rect",
+      "x": 375,
+      "y": 274,
+      "w": 4,
+      "h": 35,
+      "radius": 2,
+      "fill": "#BF8681"
+    },
+    {
+      "id": "loaf",
+      "type": "group",
+      "x": 273,
+      "y": 230,
+      "children": [
+        {
+          "id": "bread",
+          "type": "path",
+          "d": "M-34 6 Q-43 -5 -29 -17 Q-9 -31 15 -25 Q42 -21 41 -5 Q38 10 17 12 L-16 12 Z",
+          "fill": {
+            "type": "linear",
+            "from": [
+              -25,
+              -20
+            ],
+            "to": [
+              31,
+              12
+            ],
+            "stops": [
+              [
+                0,
+                "#FFD388"
+              ],
+              [
+                1,
+                "#D78467"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "scoring",
+          "type": "path",
+          "d": "M-21 -14 Q-16 -8 -12 -6 M-5 -20 Q0 -12 5 -10 M13 -19 Q19 -13 22 -10",
+          "fill": null,
+          "stroke": {
+            "color": "#FFF0AE",
+            "width": 4,
+            "cap": "round",
+            "join": "round"
+          }
+        }
+      ],
+      "animate": {
+        "y": [
+          [
+            0,
+            230
+          ],
+          [
+            1.2,
+            230
+          ],
+          [
+            2.5,
+            216,
+            "easeOutCubic"
+          ],
+          [
+            3.7,
+            230,
+            "easeInOutSine"
+          ],
+          [
+            4,
+            230
+          ]
+        ]
+      }
+    },
+    {
+      "id": "steam-0",
+      "type": "group",
+      "x": 260,
+      "y": 204,
+      "children": [
+        {
+          "id": "steam-curl-0",
+          "type": "path",
+          "d": "M0 0 C-13 -8 13 -15 0 -27",
+          "fill": null,
+          "stroke": {
+            "color": "#FFF7D2",
+            "width": 3,
+            "cap": "round",
+            "join": "round"
+          }
+        }
+      ],
+      "animate": {
+        "y": [
+          [
+            0,
+            204
+          ],
+          [
+            1,
+            193,
+            "easeInOutCubic"
+          ],
+          [
+            2,
+            183,
+            "easeInOutSine"
+          ],
+          [
+            3,
+            197,
+            "easeInOutQuad"
+          ],
+          [
+            4,
+            204,
+            "easeInOutSine"
+          ]
+        ],
+        "opacity": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0.67,
+            "easeInOutCubic"
+          ],
+          [
+            2,
+            0.38,
+            "easeInOutSine"
+          ],
+          [
+            3,
+            0,
+            "easeInOutQuad"
+          ],
+          [
+            4,
+            0,
+            "easeInOutSine"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "steam-1",
+      "type": "group",
+      "x": 277,
+      "y": 204,
+      "children": [
+        {
+          "id": "steam-curl-1",
+          "type": "path",
+          "d": "M0 0 C-13 -8 13 -15 0 -27",
+          "fill": null,
+          "stroke": {
+            "color": "#FFF7D2",
+            "width": 3,
+            "cap": "round",
+            "join": "round"
+          }
+        }
+      ],
+      "animate": {
+        "y": [
+          [
+            0,
+            204
+          ],
+          [
+            1,
+            193,
+            "easeInOutCubic"
+          ],
+          [
+            2,
+            183,
+            "easeInOutSine"
+          ],
+          [
+            3,
+            197,
+            "easeInOutQuad"
+          ],
+          [
+            4,
+            204,
+            "easeInOutSine"
+          ]
+        ],
+        "opacity": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0.67,
+            "easeInOutCubic"
+          ],
+          [
+            2,
+            0.38,
+            "easeInOutSine"
+          ],
+          [
+            3,
+            0,
+            "easeInOutQuad"
+          ],
+          [
+            4,
+            0,
+            "easeInOutSine"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "steam-2",
+      "type": "group",
+      "x": 292,
+      "y": 204,
+      "children": [
+        {
+          "id": "steam-curl-2",
+          "type": "path",
+          "d": "M0 0 C-13 -8 13 -15 0 -27",
+          "fill": null,
+          "stroke": {
+            "color": "#FFF7D2",
+            "width": 3,
+            "cap": "round",
+            "join": "round"
+          }
+        }
+      ],
+      "animate": {
+        "y": [
+          [
+            0,
+            204
+          ],
+          [
+            1,
+            193,
+            "easeInOutCubic"
+          ],
+          [
+            2,
+            183,
+            "easeInOutSine"
+          ],
+          [
+            3,
+            197,
+            "easeInOutQuad"
+          ],
+          [
+            4,
+            204,
+            "easeInOutSine"
+          ]
+        ],
+        "opacity": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0.67,
+            "easeInOutCubic"
+          ],
+          [
+            2,
+            0.38,
+            "easeInOutSine"
+          ],
+          [
+            3,
+            0,
+            "easeInOutQuad"
+          ],
+          [
+            4,
+            0,
+            "easeInOutSine"
+          ]
+        ]
+      }
+    }
+  ]
+}

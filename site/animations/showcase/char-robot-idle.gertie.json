@@ -1,0 +1,136 @@
+{
+  "gertie": 1,
+  "name": "robot-idle",
+  "tier": "character",
+  "canvas": { "w": 1024, "h": 1024 },
+  "fps": 30,
+  "duration": 6,
+  "loop": true,
+  "poster": 0,
+  "palette": {
+    "metal": "#a9bccd",
+    "metal-shade": "#71889e",
+    "metal-tint": "#e2ebf3",
+    "dark": "#1d2738",
+    "glow": "#5ff3e6",
+    "accent": "#ff8a4c",
+    "accent-shade": "#d4602f",
+    "cheek": "#ff7aa8"
+  },
+  "nodes": [
+    { "id": "ground-shadow", "type": "ellipse", "x": 512, "y": 936, "rx": 190, "ry": 22, "fill": "#1d273833",
+      "motion": [ { "preset": "pulse", "amount": 1.03, "duration": 3, "repeat": "loop", "phase": 0.25 } ] },
+    { "id": "robot", "type": "group", "x": 512, "y": 930,
+      "motion": [
+        { "preset": "rig-idle", "duration": 3, "repeat": "loop", "armSway": 4 },
+        { "preset": "rig-blink", "at": 0.6, "every": 2.4, "seed": 7 }
+      ],
+      "children": [
+        { "id": "robot-leg-r", "type": "group", "pivot": [-60, -210], "children": [
+          { "id": "leg-r-shin", "type": "path", "fill": "$metal-shade",
+            "d": "M -88 -215 C -88 -226 -32 -226 -32 -215 L -34 -40 C -34 -28 -86 -28 -86 -40 Z" },
+          { "id": "leg-r-knee", "type": "ellipse", "x": -60, "y": -120, "rx": 30, "ry": 16, "fill": "$dark" },
+          { "id": "foot-r", "type": "path", "fill": "$accent",
+            "d": "M -125 0 C -125 -38 -98 -56 -60 -56 C -22 -56 5 -38 5 0 Z" },
+          { "id": "foot-r-shade", "type": "path", "fill": "$accent-shade",
+            "d": "M -125 0 C -122 -14 -110 -20 -95 -20 L -25 -20 C -10 -20 2 -14 5 0 Z" }
+        ] },
+        { "id": "robot-leg-l", "type": "group", "pivot": [60, -210], "children": [
+          { "id": "leg-l-shin", "type": "path", "fill": "$metal-shade",
+            "d": "M 32 -215 C 32 -226 88 -226 88 -215 L 86 -40 C 86 -28 34 -28 34 -40 Z" },
+          { "id": "leg-l-knee", "type": "ellipse", "x": 60, "y": -120, "rx": 30, "ry": 16, "fill": "$dark" },
+          { "id": "foot-l", "type": "path", "fill": "$accent",
+            "d": "M -5 0 C -5 -38 22 -56 60 -56 C 98 -56 125 -38 125 0 Z" },
+          { "id": "foot-l-shade", "type": "path", "fill": "$accent-shade",
+            "d": "M -5 0 C -2 -14 10 -20 25 -20 L 95 -20 C 110 -20 122 -14 125 0 Z" }
+        ] },
+        { "id": "robot-body", "type": "group", "pivot": [0, -210], "children": [
+          { "id": "robot-arm-r", "type": "group", "pivot": [-135, -415], "children": [
+            { "id": "arm-r-limb", "type": "path", "fill": "$metal-shade",
+              "d": "M -158 -420 C -158 -440 -112 -440 -112 -420 L -116 -285 C -116 -268 -154 -268 -154 -285 Z" },
+            { "id": "arm-r-band", "type": "path", "fill": "$accent",
+              "d": "M -157 -360 C -145 -366 -125 -366 -113 -360 L -114 -338 C -126 -344 -144 -344 -156 -338 Z" },
+            { "id": "hand-r", "type": "path", "fill": "$dark",
+              "d": "M -165 -280 C -165 -305 -105 -305 -105 -280 C -105 -250 -118 -238 -126 -238 L -126 -262 L -144 -262 L -144 -238 C -152 -238 -165 -250 -165 -280 Z" }
+          ] },
+          { "id": "robot-torso", "type": "path", "fill": "$metal",
+            "d": "M -130 -400 C -130 -428 -110 -440 -80 -440 L 80 -440 C 110 -440 130 -428 130 -400 L 125 -238 C 123 -214 108 -200 84 -200 L -84 -200 C -108 -200 -123 -214 -125 -238 Z" },
+          { "id": "torso-shade", "type": "path", "fill": "$metal-shade",
+            "clip": { "type": "path", "d": "M -130 -400 C -130 -428 -110 -440 -80 -440 L 80 -440 C 110 -440 130 -428 130 -400 L 125 -238 C 123 -214 108 -200 84 -200 L -84 -200 C -108 -200 -123 -214 -125 -238 Z" },
+            "d": "M 78 -460 C 120 -400 128 -300 80 -180 L 200 -180 L 200 -460 Z M -200 -250 C -100 -228 60 -226 200 -250 L 200 -180 L -200 -180 Z" },
+          { "id": "torso-highlight", "type": "path", "fill": "$metal-tint",
+            "d": "M -112 -400 C -112 -418 -100 -426 -80 -426 L -40 -426 C -30 -426 -30 -414 -40 -414 L -78 -414 C -92 -414 -100 -408 -100 -396 L -100 -330 C -100 -320 -112 -320 -112 -330 Z" },
+          { "id": "chest-panel", "type": "path", "fill": "$dark",
+            "d": "M -78 -386 C -78 -398 -70 -404 -58 -404 L 58 -404 C 70 -404 78 -398 78 -386 L 76 -296 C 76 -284 68 -278 56 -278 L -56 -278 C -68 -278 -76 -284 -76 -296 Z" },
+          { "id": "chest-heart", "type": "path", "fill": "$accent", "x": -28, "y": -342,
+            "d": "M 0 14 C -22 0 -26 -14 -16 -20 C -8 -24 -2 -20 0 -14 C 2 -20 8 -24 16 -20 C 26 -14 22 0 0 14 Z",
+            "motion": [ { "preset": "heartbeat", "amount": 1.12, "duration": 1.5, "repeat": "loop", "phase": 0.3 } ] },
+          { "id": "chest-bar-1", "type": "rect", "x": 32, "y": -362, "w": 50, "h": 8, "radius": 4, "fill": "$glow" },
+          { "id": "chest-bar-2", "type": "rect", "x": 26, "y": -342, "w": 38, "h": 8, "radius": 4, "fill": "$glow", "opacity": 0.7 },
+          { "id": "chest-bar-3", "type": "rect", "x": 34, "y": -322, "w": 54, "h": 8, "radius": 4, "fill": "$glow", "opacity": 0.5 },
+          { "id": "bolt-1", "type": "ellipse", "x": -100, "y": -228, "r": 7, "fill": "$metal-tint" },
+          { "id": "bolt-2", "type": "ellipse", "x": 100, "y": -228, "r": 7, "fill": "$metal" },
+          { "id": "neck", "type": "path", "fill": "$dark",
+            "d": "M -40 -470 L 40 -470 L 36 -432 C 30 -426 -30 -426 -36 -432 Z" },
+          { "id": "robot-head", "type": "group", "pivot": [0, -455], "children": [
+            { "id": "robot-antenna", "type": "group", "x": 0, "y": -705, "pivot": [0, 0],
+              "motion": [ { "preset": "sway", "angle": 9, "duration": 2, "repeat": "loop", "phase": 0.25 } ],
+              "children": [
+                { "id": "antenna-base", "type": "path", "fill": "$metal-shade",
+                  "d": "M -26 6 C -26 -14 -14 -22 0 -22 C 14 -22 26 -14 26 6 Z" },
+                { "id": "antenna-stalk-low", "type": "path", "fill": null,
+                  "stroke": { "color": "$dark", "width": 9 }, "d": "M 0 -14 C 0 -30 1 -45 0 -60" },
+                { "id": "antenna-tip", "type": "group", "y": -60, "pivot": [0, 0],
+                  "follow": { "delay": 0.15, "scale": 1.6 },
+                  "children": [
+                    { "id": "antenna-stalk-high", "type": "path", "fill": null,
+                      "stroke": { "color": "$dark", "width": 7 }, "d": "M 0 4 C 0 -12 -1 -28 0 -44" },
+                    { "id": "antenna-glow", "type": "ellipse", "y": -58, "r": 30, "fill": "#5ff3e640",
+                      "motion": [ { "preset": "pulse", "amount": 1.15, "duration": 1, "repeat": "loop", "phase": 0.5 } ] },
+                    { "id": "antenna-ball", "type": "ellipse", "y": -58, "r": 18, "fill": "$glow" },
+                    { "id": "antenna-shine", "type": "ellipse", "x": -6, "y": -64, "r": 6, "fill": "$metal-tint" }
+                  ] }
+              ] },
+            { "id": "ear-r", "type": "path", "fill": "$accent",
+              "d": "M -160 -625 C -185 -625 -192 -610 -192 -585 C -192 -560 -185 -545 -160 -545 Z" },
+            { "id": "ear-l", "type": "path", "fill": "$accent-shade",
+              "d": "M 160 -625 C 185 -625 192 -610 192 -585 C 192 -560 185 -545 160 -545 Z" },
+            { "id": "head-shell", "type": "path", "fill": "$metal",
+              "d": "M -165 -640 C -165 -688 -135 -708 -85 -708 L 85 -708 C 135 -708 165 -688 165 -640 L 160 -512 C 158 -478 135 -460 102 -460 L -102 -460 C -135 -460 -158 -478 -160 -512 Z" },
+            { "id": "head-shade", "type": "path", "fill": "$metal-shade",
+              "clip": { "type": "path", "d": "M -165 -640 C -165 -688 -135 -708 -85 -708 L 85 -708 C 135 -708 165 -688 165 -640 L 160 -512 C 158 -478 135 -460 102 -460 L -102 -460 C -135 -460 -158 -478 -160 -512 Z" },
+              "d": "M 120 -730 C 175 -650 170 -520 110 -440 L 220 -440 L 220 -730 Z M -220 -500 C -100 -478 80 -478 220 -500 L 220 -440 L -220 -440 Z" },
+            { "id": "head-highlight", "type": "path", "fill": "$metal-tint",
+              "d": "M -146 -650 C -146 -680 -126 -694 -92 -694 L -30 -694 C -20 -694 -20 -682 -30 -682 L -90 -682 C -118 -682 -134 -670 -134 -648 L -134 -600 C -134 -590 -146 -590 -146 -600 Z" },
+            { "id": "face-screen", "type": "path", "fill": "$dark",
+              "d": "M -124 -632 C -124 -660 -104 -672 -74 -672 L 74 -672 C 104 -672 124 -660 124 -632 L 121 -540 C 120 -514 102 -500 76 -500 L -76 -500 C -102 -500 -120 -514 -121 -540 Z" },
+            { "id": "screen-sheen", "type": "path", "fill": "#ffffff14",
+              "d": "M -110 -630 C -110 -650 -98 -660 -74 -660 L 20 -660 C -20 -630 -60 -590 -110 -560 Z" },
+            { "id": "robot-eye-r", "type": "group", "x": -56, "y": -595, "children": [
+              { "id": "eye-r-ball", "type": "ellipse", "rx": 22, "ry": 30, "fill": "$glow" },
+              { "id": "eye-r-shine", "type": "ellipse", "x": -7, "y": -11, "rx": 6, "ry": 8, "fill": "$metal-tint" }
+            ] },
+            { "id": "robot-eye-l", "type": "group", "x": 56, "y": -595, "children": [
+              { "id": "eye-l-ball", "type": "ellipse", "rx": 22, "ry": 30, "fill": "$glow" },
+              { "id": "eye-l-shine", "type": "ellipse", "x": -7, "y": -11, "rx": 6, "ry": 8, "fill": "$metal-tint" }
+            ] },
+            { "id": "cheek-r", "type": "ellipse", "x": -92, "y": -545, "rx": 16, "ry": 9, "fill": "$cheek", "opacity": 0.55 },
+            { "id": "cheek-l", "type": "ellipse", "x": 92, "y": -545, "rx": 16, "ry": 9, "fill": "$cheek", "opacity": 0.55 },
+            { "id": "robot-mouth", "type": "path", "fill": null,
+              "stroke": { "color": "$glow", "width": 7 }, "d": "M -26 -540 C -14 -526 14 -526 26 -540" }
+          ] },
+          { "id": "robot-arm-l", "type": "group", "pivot": [135, -415], "children": [
+            { "id": "arm-l-limb", "type": "path", "fill": "$metal",
+              "d": "M 112 -420 C 112 -440 158 -440 158 -420 L 154 -285 C 154 -268 116 -268 116 -285 Z" },
+            { "id": "arm-l-shade", "type": "path", "fill": "$metal-shade",
+              "d": "M 146 -428 C 156 -420 158 -410 158 -400 L 154 -285 C 154 -275 148 -270 140 -269 C 146 -300 148 -380 146 -428 Z" },
+            { "id": "arm-l-band", "type": "path", "fill": "$accent",
+              "d": "M 113 -360 C 125 -366 145 -366 157 -360 L 156 -338 C 144 -344 126 -344 114 -338 Z" },
+            { "id": "hand-l", "type": "path", "fill": "$dark",
+              "d": "M 105 -280 C 105 -305 165 -305 165 -280 C 165 -250 152 -238 144 -238 L 144 -262 L 126 -262 L 126 -238 C 118 -238 105 -250 105 -280 Z" }
+          ] }
+        ] }
+      ]
+    }
+  ]
+}

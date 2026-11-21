@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Browse vector and 3D animations made with Gertie. Open an example to see how it was made.">
+<title>Animation gallery · Gertie</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="landing.css">
+<link rel="stylesheet" href="gallery.css">
+<script src="/navigation.js" defer></script>
+<script src="gallery.js" defer></script>
+</head>
+<body class="gallery-page">
+<a class="skip" href="#main">Skip to content</a>
+{{site-header}}
+
+<main id="main" class="wrap gallery-main">
+  <header class="gallery-intro">
+    <h1>Animation gallery</h1>
+    <p>Explore loops, characters, and scenes made with Gertie.</p>
+  </header>
+  <div class="gallery-tools" hidden>
+    <div class="gallery-filters" role="group" aria-label="Animation format">
+      <button type="button" data-format="all" aria-pressed="true">All</button>
+      <button type="button" data-format="vector" aria-pressed="false">2D</button>
+      <button type="button" data-format="three" aria-pressed="false">3D</button>
+    </div>
+    <label class="gallery-search"><span class="sr-only">Search animations</span><input type="search" placeholder="Search animations"></label>
+    <button type="button" class="gallery-motion" aria-pressed="false">Pause animations</button>
+    <p id="gallery-status" class="sr-only" role="status"></p>
+  </div>
+  <p class="gallery-empty" hidden>No animations match your search.</p>
+  <ul class="gallery-grid" role="list">
+    <!--gallery-cards-->
+  </ul>
+</main>
+
+{{site-footer}}
+
+<dialog class="gallery-dialog" aria-labelledby="preview-title">
+  <div class="gallery-detail">
+    <div class="gallery-detail-art">
+      <img alt="" width="400" height="300">
+      <iframe title="3D animation" hidden></iframe>
+    </div>
+    <div class="gallery-detail-copy">
+      <form method="dialog"><button class="gallery-close" type="submit" aria-label="Close preview" autofocus><span class="ico i-close" aria-hidden="true"></span></button></form>
+      <h2 id="preview-title"></h2>
+      <p class="gallery-prompt" hidden></p>
+      <div class="gallery-detail-actions">
+        <button class="button" type="button" data-copy hidden>Copy prompt</button>
+        <a class="button outline" data-primary></a>
+        <a class="gallery-resource" data-source hidden>Scene file</a>
+        <a class="gallery-resource" data-lottie download hidden>Download Lottie</a>
+      </div>
+      <p class="sr-only" id="preview-status" role="status"></p>
+    </div>
+  </div>
+</dialog>
+</body>
+</html>

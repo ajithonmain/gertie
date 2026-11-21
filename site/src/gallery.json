@@ -1,0 +1,245 @@
+[
+  {
+    "name": "floating-reviews",
+    "title": "Floating Reviews",
+    "prompt": "Animate a lavender phone with a lifting review card, smiling emoji that blink, flipping star badges, and a separate user icon against a pastel sky.",
+    "format": "three",
+    "galleryOnly": true,
+    "buildScript": "floating-reviews/build-geometry.mjs",
+    "modelSource": "floating-reviews/review-model.js"
+  },
+  {
+    "name": "community-team",
+    "title": "Community Team",
+    "prompt": "Sculpt a clay-style team portrait with four fully modeled characters, soft clothing contours, a five-fingered wave, reacting teammates, and floating icons that travel on separate paths. Keep a steady front view while the team waves, folds her arms, stands with hands on hips, and adjusts her glasses.",
+    "format": "three"
+  },
+  {
+    "name": "desktop-robot",
+    "title": "Desktop Robot",
+    "prompt": "Build a mint-green desktop robot that walks to a control console, taps its controls to light the display, then walks back and waves.",
+    "format": "three"
+  },
+  {
+    "name": "bethlehem-face-refinement",
+    "title": "The Star Over Bethlehem",
+    "prompt": "Tell the Nativity in six animated scenes. Follow the star from Bethlehem to the stable, where Mary, Joseph, and the shepherds gather around Jesus."
+  },
+  {
+    "name": "running-dog",
+    "title": "Running Dalmatian",
+    "prompt": "Loop a spotted Dalmatian galloping in profile, with long legs, floppy ears, and a tapered tail."
+  },
+  {
+    "name": "forest-lantern",
+    "title": "Lantern in the Ghost Forest",
+    "prompt": "Animate a girl glancing around a luminous forest as three smiling ghosts float, leaves sway, and fireflies drift around her flickering lantern."
+  },
+  {
+    "name": "copper-signal-meter",
+    "title": "Copper signal meter",
+    "prompt": "Animate a copper analog meter whose needle sweeps, overshoots, and settles as the indicator lights up.",
+    "galleryOnly": true
+  },
+  {
+    "name": "coffee-pack-turntable",
+    "title": "Coffee packaging turntable",
+    "prompt": "Show the front label and back panel of a coffee package on a full-turn product display.",
+    "format": "three",
+    "galleryOnly": true
+  },
+  {
+    "name": "folded-flight",
+    "title": "Folded flight",
+    "prompt": "Send a paper airplane around a looping flight path with soft banking and a fading white trail.",
+    "galleryOnly": true
+  },
+  {
+    "name": "late-night-record",
+    "title": "Late-night record",
+    "prompt": "Spin a vinyl record on a warm wooden deck with a gently moving tonearm and a glowing power light.",
+    "galleryOnly": true
+  },
+  {
+    "name": "headland-beacon",
+    "title": "Headland beacon",
+    "prompt": "Sweep a lighthouse beam over a coastal headland and gently move the tide beneath a warm moon.",
+    "galleryOnly": true
+  },
+  {
+    "name": "carry-on-fit",
+    "title": "Will it fit?",
+    "prompt": "Lower a carry-on into an open luggage sizer so the clearance is visible through the frame.",
+    "format": "three",
+    "galleryOnly": true
+  },
+  {
+    "name": "filter-cartridge-swap",
+    "title": "Twist, lift, replace",
+    "prompt": "Unlock and lift out a warm-colored filter cartridge, then seat a new mint cartridge in the same housing.",
+    "format": "three",
+    "galleryOnly": true
+  },
+  {
+    "name": "desk-lamp-exploded-view",
+    "title": "See what’s inside",
+    "prompt": "Show a desk lamp separating into its shade, bulb, support, and cable, then reassemble it.",
+    "format": "three",
+    "galleryOnly": true
+  },
+  {
+    "name": "local-file-journey",
+    "title": "Where does my file go?",
+    "prompt": "Move a file from a browser window through a local processor and into an export folder.",
+    "format": "three",
+    "galleryOnly": true
+  },
+  {
+    "name": "shipper-to-display",
+    "title": "One box, three uses",
+    "prompt": "Open a shipping carton, reveal the products, and fold its panels into a countertop display.",
+    "format": "three",
+    "galleryOnly": true
+  },
+  {
+    "name": "sofa-door-clearance",
+    "title": "Before you move it",
+    "prompt": "Rotate a sofa end-first, guide it through a narrow doorway, then turn it back in the next room.",
+    "format": "three",
+    "galleryOnly": true
+  },
+  {
+    "name": "showcase-market-baker",
+    "title": "The last loaf",
+    "prompt": "An apron-wearing baker scores a loaf at a street stall, leans in, then lifts the warm bread as steam curls up."
+  },
+  {
+    "name": "showcase-moon-rover",
+    "title": "Moon rover",
+    "prompt": "Loop a tiny lunar rover rolling across pink regolith with turning wheels and blinking antenna."
+  },
+  {
+    "name": "showcase-folded-bloom",
+    "title": "Folded bloom",
+    "prompt": "Open a folded paper flower petal by petal and gather it back into a bud."
+  },
+  {
+    "name": "rolling-die",
+    "title": "Spinning die",
+    "prompt": "Spin a white die in place, with rounded corners, black pips, and a soft shadow."
+  },
+  {
+    "name": "showcase-tiny-mail",
+    "title": "Tiny mailroom",
+    "prompt": "Animate a lavender envelope that opens, lifts a heart letter, and seals itself again."
+  },
+  {
+    "name": "showcase-tide-light",
+    "title": "Tide light",
+    "prompt": "Make a bioluminescent jellyfish pulse while four ribbon tentacles drift beneath it."
+  },
+  {
+    "name": "bento-m-rig-wave",
+    "title": "Lighthouse keeper",
+    "prompt": "A lighthouse keeper in a yellow raincoat blinks, waves, and settles back into their stance."
+  },
+  {
+    "name": "spacewalk-astronaut",
+    "title": "Spacewalk",
+    "prompt": "Animate a floating astronaut waving in zero gravity, with a ringed planet and a softly glowing suit light."
+  },
+  {
+    "name": "delivery-scooter",
+    "title": "Scooter delivery",
+    "prompt": "Animate a delivery courier riding a mint scooter through a passing neighborhood, with turning wheels and a gentle suspension bounce."
+  },
+  {
+    "name": "bento-m-showreel",
+    "title": "Lotus pond",
+    "prompt": "A koi circles a lotus at dusk. Let the tail steer the swim while rings ripple outward."
+  },
+  {
+    "name": "basketball-ink",
+    "title": "Jump shot",
+    "prompt": "A line-drawn basketball player dribbles twice and sinks a jump shot. The ball bounces back across the court, and the player scoops it up to start the loop again."
+  },
+  {
+    "name": "showcase-tape-deck",
+    "title": "Tape deck",
+    "prompt": "Animate a retro peach cassette with turning reels, an equalizer and a blinking play light."
+  },
+  {
+    "name": "showcase-peach-tea",
+    "title": "Peach tea bounce",
+    "prompt": "Animate a sleepy peach boba tea that bobs, blinks and wiggles its straw on a lavender stage."
+  },
+  {
+    "name": "showcase-blue-dive",
+    "title": "The blue dive",
+    "prompt": "A humpback swims through a kelp forest, banks and sweeps its tail while a school of fish parts around it."
+  },
+  {
+    "name": "bento-m-twinkle",
+    "title": "Mountain night",
+    "prompt": "Stars twinkle above a moonlit mountain range."
+  },
+  {
+    "name": "bento-m-jiggle",
+    "title": "Surprise gift",
+    "prompt": "Animate a wrapped gift box that wiggles before opening and sending up confetti."
+  },
+  {
+    "name": "showcase-evening-ride",
+    "title": "Evening ride",
+    "prompt": "A cyclist pedals along a riverside promenade as lamp posts slide past and their scarf trails in the evening breeze."
+  },
+  {
+    "name": "mixed-breed-dog",
+    "title": "Running tan dog",
+    "prompt": "Loop a tan mixed-breed dog galloping in profile, with floppy ears and cream paws."
+  },
+  {
+    "name": "mobile-onboarding-walkthrough",
+    "title": "Mobile onboarding walkthrough",
+    "prompt": "Present an onboarding screen on a 3D phone, with two callout cards that lift away from the screen.",
+    "format": "three",
+    "galleryOnly": true
+  },
+  {
+    "name": "showcase-aurora-prism",
+    "title": "Aurora prism",
+    "prompt": "Float an asymmetric icy prism above a luminous pedestal and sweep colour across its facets."
+  },
+  {
+    "name": "showcase-postcard",
+    "title": "Rain or shine",
+    "prompt": "Loop a weather card where a sun peeks over drifting clouds and raindrops dissolve."
+  },
+  {
+    "name": "showcase-orbital-mint",
+    "title": "Orbital mint",
+    "prompt": "Loop a midnight orbit of shiny enamel tokens, narrowing their faces as they turn."
+  },
+  {
+    "name": "bento-m-sway",
+    "title": "Window garden",
+    "prompt": "A potted plant sways gently in the late-afternoon light."
+  },
+  {
+    "name": "dashboard-highlight",
+    "title": "Dashboard highlight",
+    "prompt": "Present five performance bars on a 3D dashboard and float a tooltip over the strongest result.",
+    "format": "three",
+    "galleryOnly": true
+  },
+  {
+    "name": "flying-swallow",
+    "title": "Flying swallow",
+    "prompt": "Loop a blue barn swallow in flight, with a deep downstroke, folded recovery, and a gently bobbing body."
+  },
+  {
+    "name": "scene-rocket",
+    "title": "Rocket launch",
+    "prompt": "Make a rocket lifting off with flame, smoke puffs and twinkling stars in the background."
+  }
+]

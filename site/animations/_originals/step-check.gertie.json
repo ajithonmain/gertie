@@ -1,0 +1,811 @@
+{
+  "gertie": 1,
+  "name": "step-check",
+  "canvas": {
+    "w": 480,
+    "h": 360
+  },
+  "fps": 30,
+  "duration": 4,
+  "loop": true,
+  "tier": "icon",
+  "poster": 3.21,
+  "nodes": [
+    {
+      "id": "picture-frame",
+      "type": "group",
+      "children": [
+        {
+          "id": "white-frame",
+          "type": "path",
+          "d": "M146 70 H333 C352 70 367 85 367 104 V244 C367 263 352 279 333 279 H146 C127 279 112 263 112 244 V104 C112 85 127 70 146 70Z",
+          "fill": "#fafbfd",
+          "stroke": {
+            "color": "#e6e2f5",
+            "width": 2
+          }
+        },
+        {
+          "id": "yellow-sky",
+          "type": "path",
+          "d": "M154 92 H323 C336 92 347 103 347 116 V230 C347 244 336 255 323 255 H154 C141 255 131 244 131 230 V116 C131 103 141 92 154 92Z",
+          "fill": {
+            "type": "linear",
+            "from": [
+              230,
+              92
+            ],
+            "to": [
+              230,
+              255
+            ],
+            "stops": [
+              [
+                0,
+                "#ffd475"
+              ],
+              [
+                0.5,
+                "#fde18b"
+              ],
+              [
+                1,
+                "#fce4ba"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "photo-scene",
+          "type": "group",
+          "children": [
+            {
+              "id": "orange-sun",
+              "type": "ellipse",
+              "x": 295.5,
+              "y": 138.5,
+              "r": 22.4,
+              "fill": {
+                "type": "linear",
+                "from": [
+                  -12,
+                  -20
+                ],
+                "to": [
+                  12,
+                  20
+                ],
+                "stops": [
+                  [
+                    0,
+                    "#ff9933"
+                  ],
+                  [
+                    0.5,
+                    "#fc811f"
+                  ],
+                  [
+                    1,
+                    "#f47710"
+                  ]
+                ]
+              },
+              "motion": [
+                {
+                  "preset": "float",
+                  "duration": 4,
+                  "repeat": "loop",
+                  "distance": 5,
+                  "phase": 0.25
+                }
+              ]
+            },
+            {
+              "id": "back-hill",
+              "type": "path",
+              "d": "M118 244 C155 219 180 190 204 184 C235 176 256 204 282 209 C302 193 320 171 341 182 L360 192 L360 267 H115Z",
+              "fill": {
+                "type": "linear",
+                "from": [
+                  160,
+                  179
+                ],
+                "to": [
+                  318,
+                  256
+                ],
+                "stops": [
+                  [
+                    0,
+                    "#fdc64e"
+                  ],
+                  [
+                    1,
+                    "#fdb602"
+                  ]
+                ]
+              }
+            },
+            {
+              "id": "front-hill",
+              "type": "path",
+              "d": "M116 253 C164 248 197 232 225 218 C248 205 268 201 292 221 C307 232 333 246 354 240 L354 264 H118Z",
+              "fill": {
+                "type": "linear",
+                "from": [
+                  170,
+                  240
+                ],
+                "to": [
+                  340,
+                  260
+                ],
+                "stops": [
+                  [
+                    0,
+                    "#fcc025"
+                  ],
+                  [
+                    1,
+                    "#f8a103"
+                  ]
+                ]
+              }
+            }
+          ],
+          "clip": {
+            "type": "path",
+            "d": "M154 92 H323 C336 92 347 103 347 116 V230 C347 244 336 255 323 255 H154 C141 255 131 244 131 230 V116 C131 103 141 92 154 92Z"
+          }
+        }
+      ]
+    },
+    {
+      "id": "lens-magnification",
+      "type": "group",
+      "animate": {
+        "x": [
+          [
+            0,
+            196
+          ],
+          [
+            2,
+            279,
+            "easeInOutSine"
+          ],
+          [
+            4,
+            196,
+            "easeInOutSine"
+          ]
+        ],
+        "y": [
+          [
+            0,
+            190
+          ],
+          [
+            1,
+            169,
+            "easeInOutSine"
+          ],
+          [
+            2,
+            182,
+            "easeInOutSine"
+          ],
+          [
+            3,
+            168,
+            "easeInOutSine"
+          ],
+          [
+            4,
+            190,
+            "easeInOutSine"
+          ]
+        ]
+      },
+      "clip": {
+        "type": "ellipse",
+        "rx": 56.5,
+        "ry": 56.5
+      },
+      "children": [
+        {
+          "id": "zoomed-photo",
+          "type": "group",
+          "scale": 1.18,
+          "animate": {
+            "x": [
+              [
+                0,
+                -231.28
+              ],
+              [
+                2,
+                -329.22,
+                "easeInOutSine"
+              ],
+              [
+                4,
+                -231.28,
+                "easeInOutSine"
+              ]
+            ],
+            "y": [
+              [
+                0,
+                -224.2
+              ],
+              [
+                1,
+                -199.42,
+                "easeInOutSine"
+              ],
+              [
+                2,
+                -214.76,
+                "easeInOutSine"
+              ],
+              [
+                3,
+                -198.24,
+                "easeInOutSine"
+              ],
+              [
+                4,
+                -224.2,
+                "easeInOutSine"
+              ]
+            ]
+          },
+          "children": [
+            {
+              "id": "magnified-picture-frame",
+              "type": "group",
+              "children": [
+                {
+                  "id": "magnified-white-frame",
+                  "type": "path",
+                  "d": "M146 70 H333 C352 70 367 85 367 104 V244 C367 263 352 279 333 279 H146 C127 279 112 263 112 244 V104 C112 85 127 70 146 70Z",
+                  "fill": "#fafbfd",
+                  "stroke": {
+                    "color": "#e6e2f5",
+                    "width": 2
+                  }
+                },
+                {
+                  "id": "magnified-yellow-sky",
+                  "type": "path",
+                  "d": "M154 92 H323 C336 92 347 103 347 116 V230 C347 244 336 255 323 255 H154 C141 255 131 244 131 230 V116 C131 103 141 92 154 92Z",
+                  "fill": {
+                    "type": "linear",
+                    "from": [
+                      230,
+                      92
+                    ],
+                    "to": [
+                      230,
+                      255
+                    ],
+                    "stops": [
+                      [
+                        0,
+                        "#ffd475"
+                      ],
+                      [
+                        0.5,
+                        "#fde18b"
+                      ],
+                      [
+                        1,
+                        "#fce4ba"
+                      ]
+                    ]
+                  }
+                },
+                {
+                  "id": "magnified-photo-scene",
+                  "type": "group",
+                  "children": [
+                    {
+                      "id": "magnified-orange-sun",
+                      "type": "ellipse",
+                      "x": 295.5,
+                      "y": 138.5,
+                      "r": 22.4,
+                      "fill": {
+                        "type": "linear",
+                        "from": [
+                          -12,
+                          -20
+                        ],
+                        "to": [
+                          12,
+                          20
+                        ],
+                        "stops": [
+                          [
+                            0,
+                            "#ff9933"
+                          ],
+                          [
+                            0.5,
+                            "#fc811f"
+                          ],
+                          [
+                            1,
+                            "#f47710"
+                          ]
+                        ]
+                      },
+                      "motion": [
+                        {
+                          "preset": "float",
+                          "duration": 4,
+                          "repeat": "loop",
+                          "distance": 5,
+                          "phase": 0.25
+                        }
+                      ]
+                    },
+                    {
+                      "id": "magnified-back-hill",
+                      "type": "path",
+                      "d": "M118 244 C155 219 180 190 204 184 C235 176 256 204 282 209 C302 193 320 171 341 182 L360 192 L360 267 H115Z",
+                      "fill": {
+                        "type": "linear",
+                        "from": [
+                          160,
+                          179
+                        ],
+                        "to": [
+                          318,
+                          256
+                        ],
+                        "stops": [
+                          [
+                            0,
+                            "#fdc64e"
+                          ],
+                          [
+                            1,
+                            "#fdb602"
+                          ]
+                        ]
+                      }
+                    },
+                    {
+                      "id": "magnified-front-hill",
+                      "type": "path",
+                      "d": "M116 253 C164 248 197 232 225 218 C248 205 268 201 292 221 C307 232 333 246 354 240 L354 264 H118Z",
+                      "fill": {
+                        "type": "linear",
+                        "from": [
+                          170,
+                          240
+                        ],
+                        "to": [
+                          340,
+                          260
+                        ],
+                        "stops": [
+                          [
+                            0,
+                            "#fcc025"
+                          ],
+                          [
+                            1,
+                            "#f8a103"
+                          ]
+                        ]
+                      }
+                    }
+                  ],
+                  "clip": {
+                    "type": "path",
+                    "d": "M154 92 H323 C336 92 347 103 347 116 V230 C347 244 336 255 323 255 H154 C141 255 131 244 131 230 V116 C131 103 141 92 154 92Z"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "magnifying-glass",
+      "type": "group",
+      "children": [
+        {
+          "id": "handle",
+          "type": "path",
+          "d": "M-47 36 C-39 33 -31 41 -34 49 L-82 102 C-90 111 -101 109 -109 101 C-116 94 -114 85 -107 79Z",
+          "fill": {
+            "type": "linear",
+            "from": [
+              -100,
+              73
+            ],
+            "to": [
+              -61,
+              102
+            ],
+            "stops": [
+              [
+                0,
+                "#438bff"
+              ],
+              [
+                0.5,
+                "#146dfe"
+              ],
+              [
+                1,
+                "#1048e2"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "handle-highlight",
+          "type": "path",
+          "d": "M-106 82 L-68 49 Q-62 45 -59 49 Q-59 53 -64 57 L-101 91 C-107 96 -112 89 -106 82Z",
+          "fill": "#438bff"
+        },
+        {
+          "id": "lens-glaze",
+          "type": "ellipse",
+          "x": 0,
+          "y": 0,
+          "r": 58,
+          "fill": {
+            "type": "radial",
+            "center": [
+              -15,
+              -23
+            ],
+            "radius": 87,
+            "stops": [
+              [
+                0,
+                "#ffffff80"
+              ],
+              [
+                0.62,
+                "#ffffff32"
+              ],
+              [
+                1,
+                "#eed9fc1e"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "blue-rim",
+          "type": "path",
+          "d": "M0-71 C39-71 71-39 71 0 C71 39 39 71 0 71 C-39 71-71 39-71 0 C-71-39-39-71 0-71Z M0-55 C-30.4-55-55-30.4-55 0 C-55 30.4-30.4 55 0 55 C30.4 55 55 30.4 55 0 C55-30.4 30.4-55 0-55Z",
+          "fill": {
+            "type": "linear",
+            "from": [
+              -41,
+              -62
+            ],
+            "to": [
+              43,
+              67
+            ],
+            "stops": [
+              [
+                0,
+                "#478bff"
+              ],
+              [
+                0.5,
+                "#2761fe"
+              ],
+              [
+                1,
+                "#1048e2"
+              ]
+            ]
+          },
+          "fillRule": "evenodd"
+        },
+        {
+          "id": "inner-rim",
+          "type": "path",
+          "d": "M40 37 C19 61 -18 63 -41 40 C-62 19 -64-10 -45-34",
+          "fill": null,
+          "stroke": {
+            "color": "#174cfa",
+            "width": 3.6
+          }
+        },
+        {
+          "id": "outer-rim-gloss",
+          "type": "path",
+          "d": "M-50-45 C-36-60 -19-66 2-66",
+          "fill": null,
+          "stroke": {
+            "color": "#619aff",
+            "width": 3.3
+          }
+        },
+        {
+          "id": "lens-shine",
+          "type": "path",
+          "d": "M-38-17 C-33-29 -20-38 -4-41",
+          "fill": null,
+          "stroke": {
+            "color": "#fcfcfc",
+            "width": 9
+          }
+        }
+      ],
+      "animate": {
+        "x": [
+          [
+            0,
+            196
+          ],
+          [
+            2,
+            279,
+            "easeInOutSine"
+          ],
+          [
+            4,
+            196,
+            "easeInOutSine"
+          ]
+        ],
+        "y": [
+          [
+            0,
+            190
+          ],
+          [
+            1,
+            169,
+            "easeInOutSine"
+          ],
+          [
+            2,
+            182,
+            "easeInOutSine"
+          ],
+          [
+            3,
+            168,
+            "easeInOutSine"
+          ],
+          [
+            4,
+            190,
+            "easeInOutSine"
+          ]
+        ]
+      },
+      "motion": [
+        {
+          "preset": "sway",
+          "duration": 4,
+          "repeat": "loop",
+          "angle": 5,
+          "phase": 0.25
+        }
+      ]
+    },
+    {
+      "id": "check-badge",
+      "type": "group",
+      "children": [
+        {
+          "id": "badge-blue",
+          "type": "ellipse",
+          "x": 0,
+          "y": 0,
+          "r": 37.1,
+          "fill": {
+            "type": "linear",
+            "from": [
+              -26,
+              -29
+            ],
+            "to": [
+              27,
+              32
+            ],
+            "stops": [
+              [
+                0,
+                "#538cff"
+              ],
+              [
+                0.5,
+                "#205dfd"
+              ],
+              [
+                1,
+                "#0144fe"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "check-stroke",
+          "type": "path",
+          "d": "M-16 2 L-5 13 L17-11",
+          "fill": null,
+          "stroke": {
+            "color": "#fcfcfc",
+            "width": 9.6
+          },
+          "motion": [
+            {
+              "preset": "draw-on",
+              "at": 2.7,
+              "duration": 0.34
+            },
+            {
+              "preset": "draw-off",
+              "at": 3.76,
+              "duration": 0.23
+            }
+          ]
+        },
+        {
+          "id": "top-tick-edge",
+          "type": "path",
+          "d": "M30-40 L36-50",
+          "fill": null,
+          "stroke": {
+            "color": "#d6c9f5",
+            "width": 7.5
+          },
+          "motion": [
+            {
+              "preset": "draw-on",
+              "at": 2.73,
+              "duration": 0.22
+            },
+            {
+              "preset": "draw-off",
+              "at": 3.76,
+              "duration": 0.23
+            }
+          ]
+        },
+        {
+          "id": "top-tick",
+          "type": "path",
+          "d": "M30-40 L36-50",
+          "fill": null,
+          "stroke": {
+            "color": "#fcfcfc",
+            "width": 5
+          },
+          "motion": [
+            {
+              "preset": "draw-on",
+              "at": 2.73,
+              "duration": 0.22
+            },
+            {
+              "preset": "draw-off",
+              "at": 3.76,
+              "duration": 0.23
+            }
+          ]
+        },
+        {
+          "id": "middle-tick-edge",
+          "type": "path",
+          "d": "M40-34 L52-42",
+          "fill": null,
+          "stroke": {
+            "color": "#d6c9f5",
+            "width": 7.5
+          },
+          "motion": [
+            {
+              "preset": "draw-on",
+              "at": 2.8,
+              "duration": 0.22
+            },
+            {
+              "preset": "draw-off",
+              "at": 3.76,
+              "duration": 0.23
+            }
+          ]
+        },
+        {
+          "id": "middle-tick",
+          "type": "path",
+          "d": "M40-34 L52-42",
+          "fill": null,
+          "stroke": {
+            "color": "#fcfcfc",
+            "width": 5
+          },
+          "motion": [
+            {
+              "preset": "draw-on",
+              "at": 2.8,
+              "duration": 0.22
+            },
+            {
+              "preset": "draw-off",
+              "at": 3.76,
+              "duration": 0.23
+            }
+          ]
+        },
+        {
+          "id": "lower-tick-edge",
+          "type": "path",
+          "d": "M44-23 L55-25",
+          "fill": null,
+          "stroke": {
+            "color": "#d6c9f5",
+            "width": 7.5
+          },
+          "motion": [
+            {
+              "preset": "draw-on",
+              "at": 2.87,
+              "duration": 0.22
+            },
+            {
+              "preset": "draw-off",
+              "at": 3.76,
+              "duration": 0.23
+            }
+          ]
+        },
+        {
+          "id": "lower-tick",
+          "type": "path",
+          "d": "M44-23 L55-25",
+          "fill": null,
+          "stroke": {
+            "color": "#fcfcfc",
+            "width": 5
+          },
+          "motion": [
+            {
+              "preset": "draw-on",
+              "at": 2.87,
+              "duration": 0.22
+            },
+            {
+              "preset": "draw-off",
+              "at": 3.76,
+              "duration": 0.23
+            }
+          ]
+        }
+      ],
+      "x": 348,
+      "y": 252,
+      "motion": [
+        {
+          "preset": "pop-in",
+          "at": 2.43,
+          "duration": 0.57,
+          "overshoot": 1.15
+        },
+        {
+          "preset": "shrink-out",
+          "at": 3.61,
+          "duration": 0.39
+        }
+      ]
+    }
+  ]
+}

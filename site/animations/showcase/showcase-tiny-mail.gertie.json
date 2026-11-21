@@ -1,0 +1,463 @@
+{
+  "gertie": 1,
+  "name": "showcase-tiny-mail",
+  "canvas": {
+    "w": 480,
+    "h": 315,
+    "background": "#F0E8FF"
+  },
+  "duration": 4,
+  "fps": 30,
+  "loop": true,
+  "poster": 0.65,
+  "nodes": [
+    {
+      "id": "stage",
+      "type": "rect",
+      "x": 240,
+      "y": 157.5,
+      "w": 480,
+      "h": 315,
+      "radius": 0,
+      "fill": {
+        "type": "linear",
+        "from": [
+          -225,
+          -150
+        ],
+        "to": [
+          225,
+          150
+        ],
+        "stops": [
+          [
+            0,
+            "#E4DDFF"
+          ],
+          [
+            1,
+            "#F7DFF4"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "mail-shadow",
+      "type": "ellipse",
+      "x": 240,
+      "y": 252,
+      "rx": 98,
+      "ry": 9,
+      "fill": "#735C9B45",
+      "animate": {
+        "scale": [
+          [
+            0,
+            1
+          ],
+          [
+            0.12,
+            1
+          ],
+          [
+            1.67,
+            0.88,
+            "easeInOutSine"
+          ],
+          [
+            3.62,
+            1,
+            "easeInOutSine"
+          ],
+          [
+            4,
+            1,
+            "easeInOutSine"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "mail-star-l",
+      "type": "group",
+      "x": 119,
+      "y": 130,
+      "children": [
+        {
+          "id": "mail-star-l-shape",
+          "type": "path",
+          "d": "M-13 0 Q0 -2 0 -13 Q2 0 13 0 Q0 2 0 13 Q-2 0 -13 0 Z",
+          "fill": "#FFFFFF"
+        }
+      ],
+      "animate": {
+        "scale": [
+          [
+            0,
+            0.65
+          ],
+          [
+            1,
+            1.15,
+            "easeInOutSine"
+          ],
+          [
+            3,
+            0.42,
+            "easeInOutSine"
+          ],
+          [
+            4,
+            0.65,
+            "easeInOutSine"
+          ]
+        ],
+        "opacity": [
+          [
+            0,
+            0.45
+          ],
+          [
+            0.25,
+            0.45
+          ],
+          [
+            1.76,
+            1,
+            "easeInOutCubic"
+          ],
+          [
+            3.74,
+            0.45,
+            "easeInOutCubic"
+          ],
+          [
+            4,
+            0.45,
+            "easeInOutSine"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "mail-star-r",
+      "type": "group",
+      "x": 355,
+      "y": 112,
+      "children": [
+        {
+          "id": "mail-star-r-shape",
+          "type": "path",
+          "d": "M-16 0 Q0 -2 0 -16 Q2 0 16 0 Q0 2 0 16 Q-2 0 -16 0 Z",
+          "fill": "#FFFFFF"
+        }
+      ],
+      "animate": {
+        "scale": [
+          [
+            0,
+            0.65
+          ],
+          [
+            1.5,
+            1.15,
+            "easeInOutSine"
+          ],
+          [
+            3,
+            0.42,
+            "easeInOutSine"
+          ],
+          [
+            4,
+            0.65,
+            "easeInOutSine"
+          ]
+        ],
+        "opacity": [
+          [
+            0,
+            0.45
+          ],
+          [
+            0.38,
+            0.45
+          ],
+          [
+            1.85,
+            1,
+            "easeInOutQuad"
+          ],
+          [
+            3.86,
+            0.45,
+            "easeInOutQuad"
+          ],
+          [
+            4,
+            0.45,
+            "easeInOutSine"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "mail",
+      "type": "group",
+      "x": 240,
+      "y": 163,
+      "children": [
+        {
+          "id": "back",
+          "type": "path",
+          "d": "M-94 -43 L0 -89 L94 -43 L94 55 L-94 55 Z",
+          "fill": "#795DAC"
+        },
+        {
+          "id": "letter",
+          "type": "group",
+          "x": 0,
+          "y": -11,
+          "children": [
+            {
+              "id": "paper",
+              "type": "rect",
+              "x": 0,
+              "y": -9,
+              "w": 138,
+              "h": 104,
+              "radius": 8,
+              "fill": "#FFF8E5"
+            },
+            {
+              "id": "heart",
+              "type": "path",
+              "d": "M0 11 C-5 4 -31 -5 -28 -23 C-25 -38 -9 -39 0 -27 C9 -39 25 -38 28 -23 C31 -5 5 4 0 11 Z",
+              "fill": {
+                "type": "linear",
+                "from": [
+                  -25,
+                  -31
+                ],
+                "to": [
+                  20,
+                  7
+                ],
+                "stops": [
+                  [
+                    0,
+                    "#FFACBD"
+                  ],
+                  [
+                    1,
+                    "#F47599"
+                  ]
+                ]
+              }
+            },
+            {
+              "id": "letter-line",
+              "type": "rect",
+              "x": 0,
+              "y": 25,
+              "w": 68,
+              "h": 4,
+              "radius": 2,
+              "fill": "#C9AFDB"
+            }
+          ],
+          "animate": {
+            "y": [
+              [
+                0,
+                7
+              ],
+              [
+                0.77,
+                7
+              ],
+              [
+                2.12,
+                -47,
+                "easeInOutQuad"
+              ],
+              [
+                3.86,
+                7,
+                "easeInOutQuad"
+              ],
+              [
+                4,
+                7,
+                "easeInOutSine"
+              ]
+            ],
+            "rotation": [
+              [
+                0,
+                -3
+              ],
+              [
+                0.9,
+                -3
+              ],
+              [
+                2.21,
+                5,
+                "easeInOutSine"
+              ],
+              [
+                3.62,
+                -3,
+                "easeInOutSine"
+              ],
+              [
+                4,
+                -3,
+                "easeInOutSine"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "front",
+          "type": "path",
+          "d": "M-94 -43 L0 15 L94 -43 L94 55 Q94 65 84 65 L-84 65 Q-94 65 -94 55 Z",
+          "fill": {
+            "type": "linear",
+            "from": [
+              -92,
+              -46
+            ],
+            "to": [
+              94,
+              62
+            ],
+            "stops": [
+              [
+                0,
+                "#CDC0FA"
+              ],
+              [
+                1,
+                "#8B6BC7"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "folds",
+          "type": "path",
+          "d": "M-88 57 L-23 3 M88 57 L23 3",
+          "fill": null,
+          "stroke": {
+            "color": "#EADFFF",
+            "width": 2,
+            "cap": "round",
+            "join": "round"
+          }
+        },
+        {
+          "id": "flap",
+          "type": "path",
+          "d": "M-94 -43 L0 18 L94 -43 Z",
+          "fill": {
+            "type": "linear",
+            "from": [
+              0,
+              -43
+            ],
+            "to": [
+              0,
+              18
+            ],
+            "stops": [
+              [
+                0,
+                "#AA8EDD"
+              ],
+              [
+                1,
+                "#E0D3FF"
+              ]
+            ]
+          },
+          "animate": {
+            "opacity": [
+              [
+                0,
+                1
+              ],
+              [
+                0.55,
+                0,
+                "easeInOutSine"
+              ],
+              [
+                3.4,
+                0
+              ],
+              [
+                4,
+                1,
+                "easeInOutSine"
+              ]
+            ]
+          }
+        }
+      ],
+      "animate": {
+        "rotation": [
+          [
+            0,
+            -6
+          ],
+          [
+            0.51,
+            -6
+          ],
+          [
+            1.94,
+            5,
+            "easeInOutSine"
+          ],
+          [
+            3.62,
+            -6,
+            "easeInOutSine"
+          ],
+          [
+            4,
+            -6,
+            "easeInOutSine"
+          ]
+        ],
+        "y": [
+          [
+            0,
+            166
+          ],
+          [
+            0.64,
+            166
+          ],
+          [
+            2.03,
+            151,
+            "easeInOutCubic"
+          ],
+          [
+            3.74,
+            166,
+            "easeInOutCubic"
+          ],
+          [
+            4,
+            166,
+            "easeInOutSine"
+          ]
+        ]
+      }
+    }
+  ]
+}

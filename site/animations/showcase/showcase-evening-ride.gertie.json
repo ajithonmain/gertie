@@ -1,0 +1,1718 @@
+{
+  "gertie": 1,
+  "name": "showcase-evening-ride",
+  "canvas": {
+    "w": 480,
+    "h": 315,
+    "background": "#F2B59C"
+  },
+  "duration": 4,
+  "fps": 30,
+  "loop": true,
+  "poster": 0.65,
+  "nodes": [
+    {
+      "id": "stage",
+      "type": "rect",
+      "x": 240,
+      "y": 157.5,
+      "w": 480,
+      "h": 315,
+      "radius": 0,
+      "fill": {
+        "type": "linear",
+        "from": [
+          -225,
+          -150
+        ],
+        "to": [
+          225,
+          150
+        ],
+        "stops": [
+          [
+            0,
+            "#8976BA"
+          ],
+          [
+            1,
+            "#F9B38B"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "sun",
+      "type": "ellipse",
+      "x": 335,
+      "y": 104,
+      "rx": 49,
+      "ry": 49,
+      "fill": {
+        "type": "radial",
+        "center": [
+          0,
+          0
+        ],
+        "radius": 53,
+        "stops": [
+          [
+            0,
+            "#FFF9D6"
+          ],
+          [
+            0.5,
+            "#FFD192"
+          ],
+          [
+            1,
+            "#F2A090"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "city",
+      "type": "path",
+      "d": "M0 180 L0 144 L28 144 L28 116 L58 116 L58 151 L78 151 L78 133 L94 133 L94 153 L121 153 L121 113 L136 103 L154 113 L154 156 L177 156 L177 136 L201 136 L201 153 L224 153 L224 128 L250 128 L250 157 L276 157 L276 139 L309 139 L309 164 L333 164 L333 121 L364 121 L364 151 L390 151 L390 142 L421 142 L421 115 L448 115 L448 153 L480 153 L480 190 Z",
+      "fill": "#705F9F"
+    },
+    {
+      "id": "river",
+      "type": "rect",
+      "x": 240,
+      "y": 206,
+      "w": 480,
+      "h": 54,
+      "radius": 0,
+      "fill": {
+        "type": "linear",
+        "from": [
+          0,
+          -27
+        ],
+        "to": [
+          0,
+          27
+        ],
+        "stops": [
+          [
+            0,
+            "#9D769F"
+          ],
+          [
+            1,
+            "#DB9CA4"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "water-0",
+      "type": "ellipse",
+      "x": 39,
+      "y": 193,
+      "rx": 16,
+      "ry": 1.5,
+      "fill": "#FFE4BC82",
+      "animate": {
+        "x": [
+          [
+            0,
+            39
+          ],
+          [
+            0.0667,
+            39
+          ],
+          [
+            2.0333,
+            49,
+            "easeInOutSine"
+          ],
+          [
+            4.0,
+            39,
+            "easeInOutSine"
+          ]
+        ],
+        "opacity": [
+          [
+            0,
+            0.34
+          ],
+          [
+            0.0667,
+            0.34
+          ],
+          [
+            1.05,
+            0.85,
+            "easeInOutCubic"
+          ],
+          [
+            2.0333,
+            0.46,
+            "easeInOutSine"
+          ],
+          [
+            3.0167,
+            0.64,
+            "easeInOutQuad"
+          ],
+          [
+            4.0,
+            0.34,
+            "easeInOutSine"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "water-1",
+      "type": "ellipse",
+      "x": 88,
+      "y": 204,
+      "rx": 19,
+      "ry": 1.5,
+      "fill": "#FFE4BC82",
+      "animate": {
+        "x": [
+          [
+            0,
+            88
+          ],
+          [
+            0.1333,
+            88
+          ],
+          [
+            2.0667,
+            98,
+            "easeInOutSine"
+          ],
+          [
+            4.0,
+            88,
+            "easeInOutSine"
+          ]
+        ],
+        "opacity": [
+          [
+            0,
+            0.34
+          ],
+          [
+            0.1333,
+            0.34
+          ],
+          [
+            1.1,
+            0.85,
+            "easeInOutCubic"
+          ],
+          [
+            2.0667,
+            0.46,
+            "easeInOutSine"
+          ],
+          [
+            3.0333,
+            0.64,
+            "easeInOutQuad"
+          ],
+          [
+            4.0,
+            0.34,
+            "easeInOutSine"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "water-2",
+      "type": "ellipse",
+      "x": 137,
+      "y": 215,
+      "rx": 22,
+      "ry": 1.5,
+      "fill": "#FFE4BC82",
+      "animate": {
+        "x": [
+          [
+            0,
+            137
+          ],
+          [
+            0.2,
+            137
+          ],
+          [
+            2.1,
+            147,
+            "easeInOutSine"
+          ],
+          [
+            4.0,
+            137,
+            "easeInOutSine"
+          ]
+        ],
+        "opacity": [
+          [
+            0,
+            0.34
+          ],
+          [
+            0.2,
+            0.34
+          ],
+          [
+            1.15,
+            0.85,
+            "easeInOutCubic"
+          ],
+          [
+            2.1,
+            0.46,
+            "easeInOutSine"
+          ],
+          [
+            3.05,
+            0.64,
+            "easeInOutQuad"
+          ],
+          [
+            4.0,
+            0.34,
+            "easeInOutSine"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "water-3",
+      "type": "ellipse",
+      "x": 186,
+      "y": 193,
+      "rx": 25,
+      "ry": 1.5,
+      "fill": "#FFE4BC82",
+      "animate": {
+        "x": [
+          [
+            0,
+            186
+          ],
+          [
+            0.2667,
+            186
+          ],
+          [
+            2.1333,
+            196,
+            "easeInOutSine"
+          ],
+          [
+            4.0,
+            186,
+            "easeInOutSine"
+          ]
+        ],
+        "opacity": [
+          [
+            0,
+            0.34
+          ],
+          [
+            0.2667,
+            0.34
+          ],
+          [
+            1.2,
+            0.85,
+            "easeInOutCubic"
+          ],
+          [
+            2.1333,
+            0.46,
+            "easeInOutSine"
+          ],
+          [
+            3.0667,
+            0.64,
+            "easeInOutQuad"
+          ],
+          [
+            4.0,
+            0.34,
+            "easeInOutSine"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "water-4",
+      "type": "ellipse",
+      "x": 235,
+      "y": 204,
+      "rx": 16,
+      "ry": 1.5,
+      "fill": "#FFE4BC82",
+      "animate": {
+        "x": [
+          [
+            0,
+            235
+          ],
+          [
+            0.3333,
+            235
+          ],
+          [
+            2.1667,
+            245,
+            "easeInOutSine"
+          ],
+          [
+            4.0,
+            235,
+            "easeInOutSine"
+          ]
+        ],
+        "opacity": [
+          [
+            0,
+            0.34
+          ],
+          [
+            0.3333,
+            0.34
+          ],
+          [
+            1.25,
+            0.85,
+            "easeInOutCubic"
+          ],
+          [
+            2.1667,
+            0.46,
+            "easeInOutSine"
+          ],
+          [
+            3.0833,
+            0.64,
+            "easeInOutQuad"
+          ],
+          [
+            4.0,
+            0.34,
+            "easeInOutSine"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "water-5",
+      "type": "ellipse",
+      "x": 284,
+      "y": 215,
+      "rx": 19,
+      "ry": 1.5,
+      "fill": "#FFE4BC82",
+      "animate": {
+        "x": [
+          [
+            0,
+            284
+          ],
+          [
+            0.4,
+            284
+          ],
+          [
+            2.2,
+            294,
+            "easeInOutSine"
+          ],
+          [
+            4.0,
+            284,
+            "easeInOutSine"
+          ]
+        ],
+        "opacity": [
+          [
+            0,
+            0.34
+          ],
+          [
+            0.4,
+            0.34
+          ],
+          [
+            1.3,
+            0.85,
+            "easeInOutCubic"
+          ],
+          [
+            2.2,
+            0.46,
+            "easeInOutSine"
+          ],
+          [
+            3.1,
+            0.64,
+            "easeInOutQuad"
+          ],
+          [
+            4.0,
+            0.34,
+            "easeInOutSine"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "water-6",
+      "type": "ellipse",
+      "x": 333,
+      "y": 193,
+      "rx": 22,
+      "ry": 1.5,
+      "fill": "#FFE4BC82",
+      "animate": {
+        "x": [
+          [
+            0,
+            333
+          ],
+          [
+            0.0667,
+            333
+          ],
+          [
+            2.0333,
+            343,
+            "easeInOutSine"
+          ],
+          [
+            4.0,
+            333,
+            "easeInOutSine"
+          ]
+        ],
+        "opacity": [
+          [
+            0,
+            0.34
+          ],
+          [
+            0.0667,
+            0.34
+          ],
+          [
+            1.05,
+            0.85,
+            "easeInOutCubic"
+          ],
+          [
+            2.0333,
+            0.46,
+            "easeInOutSine"
+          ],
+          [
+            3.0167,
+            0.64,
+            "easeInOutQuad"
+          ],
+          [
+            4.0,
+            0.34,
+            "easeInOutSine"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "water-7",
+      "type": "ellipse",
+      "x": 382,
+      "y": 204,
+      "rx": 25,
+      "ry": 1.5,
+      "fill": "#FFE4BC82",
+      "animate": {
+        "x": [
+          [
+            0,
+            382
+          ],
+          [
+            0.1333,
+            382
+          ],
+          [
+            2.0667,
+            392,
+            "easeInOutSine"
+          ],
+          [
+            4.0,
+            382,
+            "easeInOutSine"
+          ]
+        ],
+        "opacity": [
+          [
+            0,
+            0.34
+          ],
+          [
+            0.1333,
+            0.34
+          ],
+          [
+            1.1,
+            0.85,
+            "easeInOutCubic"
+          ],
+          [
+            2.0667,
+            0.46,
+            "easeInOutSine"
+          ],
+          [
+            3.0333,
+            0.64,
+            "easeInOutQuad"
+          ],
+          [
+            4.0,
+            0.34,
+            "easeInOutSine"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "water-8",
+      "type": "ellipse",
+      "x": 431,
+      "y": 215,
+      "rx": 16,
+      "ry": 1.5,
+      "fill": "#FFE4BC82",
+      "animate": {
+        "x": [
+          [
+            0,
+            431
+          ],
+          [
+            0.2,
+            431
+          ],
+          [
+            2.1,
+            441,
+            "easeInOutSine"
+          ],
+          [
+            4.0,
+            431,
+            "easeInOutSine"
+          ]
+        ],
+        "opacity": [
+          [
+            0,
+            0.34
+          ],
+          [
+            0.2,
+            0.34
+          ],
+          [
+            1.15,
+            0.85,
+            "easeInOutCubic"
+          ],
+          [
+            2.1,
+            0.46,
+            "easeInOutSine"
+          ],
+          [
+            3.05,
+            0.64,
+            "easeInOutQuad"
+          ],
+          [
+            4.0,
+            0.34,
+            "easeInOutSine"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "walkway",
+      "type": "rect",
+      "x": 240,
+      "y": 273,
+      "w": 480,
+      "h": 84,
+      "radius": 0,
+      "fill": {
+        "type": "linear",
+        "from": [
+          0,
+          -42
+        ],
+        "to": [
+          0,
+          42
+        ],
+        "stops": [
+          [
+            0,
+            "#65547A"
+          ],
+          [
+            1,
+            "#3D345B"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "rail",
+      "type": "path",
+      "d": "M0 225 H480 M0 237 H480",
+      "fill": null,
+      "stroke": {
+        "color": "#45395D",
+        "width": 3,
+        "cap": "round",
+        "join": "round"
+      }
+    },
+    {
+      "id": "post-0",
+      "type": "path",
+      "d": "M15 218 V250",
+      "fill": null,
+      "stroke": {
+        "color": "#45395D",
+        "width": 3,
+        "cap": "round",
+        "join": "round"
+      },
+      "animate": {
+        "x": [
+          [
+            0,
+            0
+          ],
+          [
+            4,
+            -120,
+            "linear"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "post-1",
+      "type": "path",
+      "d": "M135 218 V250",
+      "fill": null,
+      "stroke": {
+        "color": "#45395D",
+        "width": 3,
+        "cap": "round",
+        "join": "round"
+      },
+      "animate": {
+        "x": [
+          [
+            0,
+            0
+          ],
+          [
+            4,
+            -120,
+            "linear"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "post-2",
+      "type": "path",
+      "d": "M255 218 V250",
+      "fill": null,
+      "stroke": {
+        "color": "#45395D",
+        "width": 3,
+        "cap": "round",
+        "join": "round"
+      },
+      "animate": {
+        "x": [
+          [
+            0,
+            0
+          ],
+          [
+            4,
+            -120,
+            "linear"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "post-3",
+      "type": "path",
+      "d": "M375 218 V250",
+      "fill": null,
+      "stroke": {
+        "color": "#45395D",
+        "width": 3,
+        "cap": "round",
+        "join": "round"
+      },
+      "animate": {
+        "x": [
+          [
+            0,
+            0
+          ],
+          [
+            4,
+            -120,
+            "linear"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "post-4",
+      "type": "path",
+      "d": "M495 218 V250",
+      "fill": null,
+      "stroke": {
+        "color": "#45395D",
+        "width": 3,
+        "cap": "round",
+        "join": "round"
+      },
+      "animate": {
+        "x": [
+          [
+            0,
+            0
+          ],
+          [
+            4,
+            -120,
+            "linear"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "post-5",
+      "type": "path",
+      "d": "M615 218 V250",
+      "fill": null,
+      "stroke": {
+        "color": "#45395D",
+        "width": 3,
+        "cap": "round",
+        "join": "round"
+      },
+      "animate": {
+        "x": [
+          [
+            0,
+            0
+          ],
+          [
+            4,
+            -120,
+            "linear"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "lamp-0",
+      "type": "group",
+      "x": 100,
+      "y": 225,
+      "children": [
+        {
+          "id": "lamp-pole-0",
+          "type": "path",
+          "d": "M0 0 V-83 Q0 -93 12 -93 H22",
+          "fill": null,
+          "stroke": {
+            "color": "#443456",
+            "width": 4,
+            "cap": "round",
+            "join": "round"
+          }
+        },
+        {
+          "id": "lamp-glow-0",
+          "type": "ellipse",
+          "x": 24,
+          "y": -90,
+          "rx": 25,
+          "ry": 24,
+          "fill": {
+            "type": "radial",
+            "center": [
+              0,
+              0
+            ],
+            "radius": 25,
+            "stops": [
+              [
+                0,
+                "#FFF1B298"
+              ],
+              [
+                1,
+                "#FFD78D00"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "lamp-head-0",
+          "type": "path",
+          "d": "M13 -93 H29 L34 -85 H11 Z",
+          "fill": "#FFE5AA"
+        }
+      ],
+      "animate": {
+        "x": [
+          [
+            0,
+            100
+          ],
+          [
+            4,
+            -125,
+            "linear"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "lamp-1",
+      "type": "group",
+      "x": 325,
+      "y": 225,
+      "children": [
+        {
+          "id": "lamp-pole-1",
+          "type": "path",
+          "d": "M0 0 V-83 Q0 -93 12 -93 H22",
+          "fill": null,
+          "stroke": {
+            "color": "#443456",
+            "width": 4,
+            "cap": "round",
+            "join": "round"
+          }
+        },
+        {
+          "id": "lamp-glow-1",
+          "type": "ellipse",
+          "x": 24,
+          "y": -90,
+          "rx": 25,
+          "ry": 24,
+          "fill": {
+            "type": "radial",
+            "center": [
+              0,
+              0
+            ],
+            "radius": 25,
+            "stops": [
+              [
+                0,
+                "#FFF1B298"
+              ],
+              [
+                1,
+                "#FFD78D00"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "lamp-head-1",
+          "type": "path",
+          "d": "M13 -93 H29 L34 -85 H11 Z",
+          "fill": "#FFE5AA"
+        }
+      ],
+      "animate": {
+        "x": [
+          [
+            0,
+            325
+          ],
+          [
+            4,
+            100,
+            "linear"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "lamp-2",
+      "type": "group",
+      "x": 550,
+      "y": 225,
+      "children": [
+        {
+          "id": "lamp-pole-2",
+          "type": "path",
+          "d": "M0 0 V-83 Q0 -93 12 -93 H22",
+          "fill": null,
+          "stroke": {
+            "color": "#443456",
+            "width": 4,
+            "cap": "round",
+            "join": "round"
+          }
+        },
+        {
+          "id": "lamp-glow-2",
+          "type": "ellipse",
+          "x": 24,
+          "y": -90,
+          "rx": 25,
+          "ry": 24,
+          "fill": {
+            "type": "radial",
+            "center": [
+              0,
+              0
+            ],
+            "radius": 25,
+            "stops": [
+              [
+                0,
+                "#FFF1B298"
+              ],
+              [
+                1,
+                "#FFD78D00"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "lamp-head-2",
+          "type": "path",
+          "d": "M13 -93 H29 L34 -85 H11 Z",
+          "fill": "#FFE5AA"
+        }
+      ],
+      "animate": {
+        "x": [
+          [
+            0,
+            550
+          ],
+          [
+            4,
+            325,
+            "linear"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "cycle-shadow",
+      "type": "ellipse",
+      "x": 243,
+      "y": 278,
+      "rx": 114,
+      "ry": 7,
+      "fill": "#201C4299",
+      "animate": {
+        "scale": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            0.88,
+            "easeInOutSine"
+          ],
+          [
+            4,
+            1,
+            "easeInOutSine"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "cycle",
+      "type": "group",
+      "x": 240,
+      "y": 240,
+      "children": [
+        {
+          "id": "wheel-0",
+          "type": "group",
+          "x": -72,
+          "y": 0,
+          "children": [
+            {
+              "id": "tyre-0",
+              "type": "ellipse",
+              "x": 0,
+              "y": 0,
+              "rx": 34,
+              "ry": 34,
+              "fill": "#36304B"
+            },
+            {
+              "id": "rim-0",
+              "type": "ellipse",
+              "x": 0,
+              "y": 0,
+              "rx": 28.5,
+              "ry": 28.5,
+              "fill": "#B9B1CF"
+            },
+            {
+              "id": "inner-0",
+              "type": "ellipse",
+              "x": 0,
+              "y": 0,
+              "rx": 26,
+              "ry": 26,
+              "fill": "#645573"
+            },
+            {
+              "id": "spokes-0",
+              "type": "path",
+              "d": "M0 -24 V24 M-24 0 H24 M-17 -17 L17 17 M-17 17 L17 -17",
+              "fill": null,
+              "stroke": {
+                "color": "#D0B4C9",
+                "width": 1.5,
+                "cap": "round",
+                "join": "round"
+              }
+            },
+            {
+              "id": "axle-0",
+              "type": "ellipse",
+              "x": 0,
+              "y": 0,
+              "rx": 4,
+              "ry": 4,
+              "fill": "#F4D293"
+            }
+          ],
+          "animate": {
+            "rotation": [
+              [
+                0,
+                0
+              ],
+              [
+                4,
+                720,
+                "linear"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "wheel-1",
+          "type": "group",
+          "x": 67,
+          "y": 0,
+          "children": [
+            {
+              "id": "tyre-1",
+              "type": "ellipse",
+              "x": 0,
+              "y": 0,
+              "rx": 34,
+              "ry": 34,
+              "fill": "#36304B"
+            },
+            {
+              "id": "rim-1",
+              "type": "ellipse",
+              "x": 0,
+              "y": 0,
+              "rx": 28.5,
+              "ry": 28.5,
+              "fill": "#B9B1CF"
+            },
+            {
+              "id": "inner-1",
+              "type": "ellipse",
+              "x": 0,
+              "y": 0,
+              "rx": 26,
+              "ry": 26,
+              "fill": "#645573"
+            },
+            {
+              "id": "spokes-1",
+              "type": "path",
+              "d": "M0 -24 V24 M-24 0 H24 M-17 -17 L17 17 M-17 17 L17 -17",
+              "fill": null,
+              "stroke": {
+                "color": "#D0B4C9",
+                "width": 1.5,
+                "cap": "round",
+                "join": "round"
+              }
+            },
+            {
+              "id": "axle-1",
+              "type": "ellipse",
+              "x": 0,
+              "y": 0,
+              "rx": 4,
+              "ry": 4,
+              "fill": "#F4D293"
+            }
+          ],
+          "animate": {
+            "rotation": [
+              [
+                0,
+                0
+              ],
+              [
+                4,
+                720,
+                "linear"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "far-leg",
+          "type": "group",
+          "x": -19,
+          "y": -72,
+          "children": [
+            {
+              "id": "far",
+              "type": "group",
+              "x": 0,
+              "y": 0,
+              "children": [
+                {
+                  "id": "far-thigh",
+                  "type": "group",
+                  "x": 0,
+                  "y": 0,
+                  "children": [
+                    {
+                      "id": "far-trouser",
+                      "type": "path",
+                      "d": "M0 0 Q17 5 22 25",
+                      "fill": null,
+                      "stroke": {
+                        "color": "#54476C",
+                        "width": 15,
+                        "cap": "round",
+                        "join": "round"
+                      }
+                    },
+                    {
+                      "id": "far-knee",
+                      "type": "group",
+                      "x": 22,
+                      "y": 25,
+                      "children": [
+                        {
+                          "id": "far-shin",
+                          "type": "path",
+                          "d": "M0 0 L-12 30",
+                          "fill": null,
+                          "stroke": {
+                            "color": "#54476C",
+                            "width": 12,
+                            "cap": "round",
+                            "join": "round"
+                          }
+                        },
+                        {
+                          "id": "far-shoe",
+                          "type": "path",
+                          "d": "M-17 24 Q-9 23 -5 30 L4 32 Q6 38 -3 39 L-19 36 Z",
+                          "fill": "#F6D283"
+                        }
+                      ],
+                      "animate": {
+                        "rotation": [
+                          [
+                            0,
+                            20
+                          ],
+                          [
+                            1,
+                            -13,
+                            "easeInOutCubic"
+                          ],
+                          [
+                            2,
+                            31,
+                            "easeInOutSine"
+                          ],
+                          [
+                            3,
+                            6,
+                            "easeInOutQuad"
+                          ],
+                          [
+                            4,
+                            20,
+                            "easeInOutSine"
+                          ]
+                        ]
+                      }
+                    }
+                  ],
+                  "animate": {
+                    "rotation": [
+                      [
+                        0,
+                        10
+                      ],
+                      [
+                        1,
+                        30,
+                        "easeInOutCubic"
+                      ],
+                      [
+                        2,
+                        47,
+                        "easeInOutSine"
+                      ],
+                      [
+                        3,
+                        24,
+                        "easeInOutQuad"
+                      ],
+                      [
+                        4,
+                        10,
+                        "easeInOutSine"
+                      ]
+                    ]
+                  }
+                }
+              ]
+            }
+          ],
+          "animate": {
+            "rotation": [
+              [
+                0,
+                10
+              ],
+              [
+                1,
+                24,
+                "easeInOutCubic"
+              ],
+              [
+                2,
+                -12,
+                "easeInOutSine"
+              ],
+              [
+                3,
+                -21,
+                "easeInOutQuad"
+              ],
+              [
+                4,
+                10,
+                "easeInOutSine"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "frame",
+          "type": "path",
+          "d": "M-72 0 L-37 -52 L23 -49 L-13 0 Z M-37 -52 L-13 0 L67 0 L23 -49 L18 -64",
+          "fill": null,
+          "stroke": {
+            "color": "#E7B378",
+            "width": 5,
+            "cap": "round",
+            "join": "round"
+          }
+        },
+        {
+          "id": "handle",
+          "type": "path",
+          "d": "M23 -49 L22 -75 L45 -81 L53 -78 M-49 -56 H-29",
+          "fill": null,
+          "stroke": {
+            "color": "#FFDEA7",
+            "width": 4,
+            "cap": "round",
+            "join": "round"
+          }
+        },
+        {
+          "id": "rider",
+          "type": "group",
+          "x": -21,
+          "y": -71,
+          "children": [
+            {
+              "id": "coat",
+              "type": "path",
+              "d": "M-12 7 Q-23 -23 -9 -49 Q0 -65 18 -62 Q29 -50 18 -35 L10 10 Z",
+              "fill": {
+                "type": "linear",
+                "from": [
+                  -15,
+                  -55
+                ],
+                "to": [
+                  17,
+                  8
+                ],
+                "stops": [
+                  [
+                    0,
+                    "#83D3C7"
+                  ],
+                  [
+                    1,
+                    "#3B8D91"
+                  ]
+                ]
+              }
+            },
+            {
+              "id": "scarf",
+              "type": "path",
+              "d": "M10 -57 Q-9 -49 -33 -55 Q-58 -68 -72 -55 L-68 -43 Q-48 -53 -30 -42 Q-8 -36 12 -48 Z",
+              "fill": "#F06E83",
+              "animate": {
+                "rotation": [
+                  [
+                    0,
+                    -4
+                  ],
+                  [
+                    1,
+                    8,
+                    "easeInOutCubic"
+                  ],
+                  [
+                    2,
+                    -3,
+                    "easeInOutSine"
+                  ],
+                  [
+                    3,
+                    7,
+                    "easeInOutQuad"
+                  ],
+                  [
+                    4,
+                    -4,
+                    "easeInOutSine"
+                  ]
+                ]
+              }
+            },
+            {
+              "id": "arm",
+              "type": "path",
+              "d": "M17 -45 Q24 -31 37 -21 L67 -8",
+              "fill": null,
+              "stroke": {
+                "color": "#5DAEB0",
+                "width": 13,
+                "cap": "round",
+                "join": "round"
+              }
+            },
+            {
+              "id": "hand",
+              "type": "ellipse",
+              "x": 66,
+              "y": -8,
+              "rx": 8,
+              "ry": 5,
+              "fill": "#9E645E"
+            },
+            {
+              "id": "head",
+              "type": "group",
+              "x": 14,
+              "y": -68,
+              "children": [
+                {
+                  "id": "face",
+                  "type": "path",
+                  "d": "M-16 -11 Q-11 -24 7 -17 Q16 -12 15 -3 L21 4 L15 7 Q15 18 6 19 Q-8 17 -12 10 Z",
+                  "fill": "#AF7061"
+                },
+                {
+                  "id": "hair",
+                  "type": "path",
+                  "d": "M-17 7 Q-28 -7 -16 -21 Q-7 -32 10 -22 L19 -15 Q3 -10 -7 -13 Q-6 4 -17 7 Z",
+                  "fill": "#38304D"
+                },
+                {
+                  "id": "eye",
+                  "type": "ellipse",
+                  "x": 11,
+                  "y": -1,
+                  "rx": 2,
+                  "ry": 2,
+                  "fill": "#322644"
+                }
+              ],
+              "animate": {
+                "rotation": [
+                  [
+                    0,
+                    -6
+                  ],
+                  [
+                    1,
+                    3,
+                    "easeInOutCubic"
+                  ],
+                  [
+                    2,
+                    -2,
+                    "easeInOutSine"
+                  ],
+                  [
+                    3,
+                    5,
+                    "easeInOutQuad"
+                  ],
+                  [
+                    4,
+                    -6,
+                    "easeInOutSine"
+                  ]
+                ]
+              }
+            },
+            {
+              "id": "near",
+              "type": "group",
+              "x": 0,
+              "y": 0,
+              "children": [
+                {
+                  "id": "near-thigh",
+                  "type": "group",
+                  "x": 0,
+                  "y": 0,
+                  "children": [
+                    {
+                      "id": "near-trouser",
+                      "type": "path",
+                      "d": "M0 0 Q17 5 22 25",
+                      "fill": null,
+                      "stroke": {
+                        "color": "#745685",
+                        "width": 15,
+                        "cap": "round",
+                        "join": "round"
+                      }
+                    },
+                    {
+                      "id": "near-knee",
+                      "type": "group",
+                      "x": 22,
+                      "y": 25,
+                      "children": [
+                        {
+                          "id": "near-shin",
+                          "type": "path",
+                          "d": "M0 0 L-12 30",
+                          "fill": null,
+                          "stroke": {
+                            "color": "#745685",
+                            "width": 12,
+                            "cap": "round",
+                            "join": "round"
+                          }
+                        },
+                        {
+                          "id": "near-shoe",
+                          "type": "path",
+                          "d": "M-17 24 Q-9 23 -5 30 L4 32 Q6 38 -3 39 L-19 36 Z",
+                          "fill": "#F6D283"
+                        }
+                      ],
+                      "animate": {
+                        "rotation": [
+                          [
+                            0,
+                            -7
+                          ],
+                          [
+                            1,
+                            -40,
+                            "easeInOutCubic"
+                          ],
+                          [
+                            2,
+                            4,
+                            "easeInOutSine"
+                          ],
+                          [
+                            3,
+                            -21,
+                            "easeInOutQuad"
+                          ],
+                          [
+                            4,
+                            -7,
+                            "easeInOutSine"
+                          ]
+                        ]
+                      }
+                    }
+                  ],
+                  "animate": {
+                    "rotation": [
+                      [
+                        0,
+                        -17
+                      ],
+                      [
+                        1,
+                        3,
+                        "easeInOutCubic"
+                      ],
+                      [
+                        2,
+                        20,
+                        "easeInOutSine"
+                      ],
+                      [
+                        3,
+                        -3,
+                        "easeInOutQuad"
+                      ],
+                      [
+                        4,
+                        -17,
+                        "easeInOutSine"
+                      ]
+                    ]
+                  }
+                }
+              ]
+            }
+          ],
+          "animate": {
+            "y": [
+              [
+                0,
+                -72
+              ],
+              [
+                1,
+                -75,
+                "easeInOutCubic"
+              ],
+              [
+                2,
+                -70,
+                "easeInOutSine"
+              ],
+              [
+                3,
+                -74,
+                "easeInOutQuad"
+              ],
+              [
+                4,
+                -72,
+                "easeInOutSine"
+              ]
+            ]
+          }
+        }
+      ],
+      "animate": {
+        "y": [
+          [
+            0,
+            240
+          ],
+          [
+            1,
+            239,
+            "easeInOutCubic"
+          ],
+          [
+            2,
+            241,
+            "easeInOutSine"
+          ],
+          [
+            3,
+            238,
+            "easeInOutQuad"
+          ],
+          [
+            4,
+            240,
+            "easeInOutSine"
+          ]
+        ],
+        "x": [
+          [
+            0,
+            237
+          ],
+          [
+            2,
+            248,
+            "easeInOutSine"
+          ],
+          [
+            4,
+            237,
+            "easeInOutSine"
+          ]
+        ]
+      }
+    }
+  ]
+}

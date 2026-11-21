@@ -1,0 +1,579 @@
+{
+  "gertie": 1,
+  "name": "showcase-moon-rover",
+  "canvas": {
+    "w": 480,
+    "h": 315,
+    "background": "#24243E"
+  },
+  "duration": 4,
+  "fps": 30,
+  "loop": true,
+  "poster": 0.65,
+  "nodes": [
+    {
+      "id": "stage",
+      "type": "rect",
+      "x": 240,
+      "y": 157.5,
+      "w": 480,
+      "h": 315,
+      "radius": 0,
+      "fill": {
+        "type": "linear",
+        "from": [
+          -225,
+          -150
+        ],
+        "to": [
+          225,
+          150
+        ],
+        "stops": [
+          [
+            0,
+            "#251A3B"
+          ],
+          [
+            1,
+            "#374275"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "planet",
+      "type": "ellipse",
+      "x": 343,
+      "y": 85,
+      "rx": 33,
+      "ry": 33,
+      "fill": {
+        "type": "linear",
+        "from": [
+          -25,
+          -25
+        ],
+        "to": [
+          25,
+          25
+        ],
+        "stops": [
+          [
+            0,
+            "#FFD5C5"
+          ],
+          [
+            1,
+            "#B56D9E"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "sky-star",
+      "type": "group",
+      "x": 118,
+      "y": 74,
+      "children": [
+        {
+          "id": "sky-star-shape",
+          "type": "path",
+          "d": "M-9 0 Q0 -2 0 -9 Q2 0 9 0 Q0 2 0 9 Q-2 0 -9 0 Z",
+          "fill": "#DBF7FF"
+        }
+      ],
+      "animate": {
+        "scale": [
+          [
+            0,
+            0.65
+          ],
+          [
+            1,
+            1.15,
+            "easeInOutSine"
+          ],
+          [
+            3,
+            0.42,
+            "easeInOutSine"
+          ],
+          [
+            4,
+            0.65,
+            "easeInOutSine"
+          ]
+        ],
+        "opacity": [
+          [
+            0,
+            0.45
+          ],
+          [
+            0.12,
+            0.45
+          ],
+          [
+            1.67,
+            1,
+            "easeInOutSine"
+          ],
+          [
+            3.62,
+            0.45,
+            "easeInOutSine"
+          ],
+          [
+            4,
+            0.45,
+            "easeInOutSine"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "sky-star-2",
+      "type": "group",
+      "x": 292,
+      "y": 44,
+      "children": [
+        {
+          "id": "sky-star-2-shape",
+          "type": "path",
+          "d": "M-6 0 Q0 -2 0 -6 Q2 0 6 0 Q0 2 0 6 Q-2 0 -6 0 Z",
+          "fill": "#FFCFE5"
+        }
+      ],
+      "animate": {
+        "scale": [
+          [
+            0,
+            0.65
+          ],
+          [
+            1.4,
+            1.15,
+            "easeInOutSine"
+          ],
+          [
+            3,
+            0.42,
+            "easeInOutSine"
+          ],
+          [
+            4,
+            0.65,
+            "easeInOutSine"
+          ]
+        ],
+        "opacity": [
+          [
+            0,
+            0.45
+          ],
+          [
+            0.25,
+            0.45
+          ],
+          [
+            1.76,
+            1,
+            "easeInOutCubic"
+          ],
+          [
+            3.74,
+            0.45,
+            "easeInOutCubic"
+          ],
+          [
+            4,
+            0.45,
+            "easeInOutSine"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "distant-ridge",
+      "type": "path",
+      "d": "M0 230 Q80 183 152 222 Q215 249 292 208 Q391 161 480 215 L480 315 L0 315 Z",
+      "fill": "#715182"
+    },
+    {
+      "id": "surface",
+      "type": "path",
+      "d": "M0 256 Q133 235 260 250 Q367 267 480 243 L480 315 L0 315 Z",
+      "fill": {
+        "type": "linear",
+        "from": [
+          0,
+          240
+        ],
+        "to": [
+          0,
+          315
+        ],
+        "stops": [
+          [
+            0,
+            "#C583A5"
+          ],
+          [
+            1,
+            "#6D4979"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "crater-0",
+      "type": "ellipse",
+      "x": 66,
+      "y": 273,
+      "rx": 18,
+      "ry": 4,
+      "fill": "#613D747C"
+    },
+    {
+      "id": "crater-1",
+      "type": "ellipse",
+      "x": 183,
+      "y": 282,
+      "rx": 20,
+      "ry": 4,
+      "fill": "#613D747C"
+    },
+    {
+      "id": "crater-2",
+      "type": "ellipse",
+      "x": 300,
+      "y": 273,
+      "rx": 22,
+      "ry": 4,
+      "fill": "#613D747C"
+    },
+    {
+      "id": "crater-3",
+      "type": "ellipse",
+      "x": 417,
+      "y": 282,
+      "rx": 24,
+      "ry": 4,
+      "fill": "#613D747C"
+    },
+    {
+      "id": "rover",
+      "type": "group",
+      "x": 237,
+      "y": 205,
+      "children": [
+        {
+          "id": "antenna",
+          "type": "path",
+          "d": "M27 -36 L37 -65 L50 -73",
+          "fill": null,
+          "stroke": {
+            "color": "#FAD7CB",
+            "width": 4,
+            "cap": "round",
+            "join": "round"
+          }
+        },
+        {
+          "id": "signal",
+          "type": "ellipse",
+          "x": 50,
+          "y": -73,
+          "rx": 5,
+          "ry": 5,
+          "fill": "#6BFFE4",
+          "animate": {
+            "opacity": [
+              [
+                0,
+                0.3
+              ],
+              [
+                0.77,
+                0.3
+              ],
+              [
+                2.12,
+                1,
+                "easeInOutQuad"
+              ],
+              [
+                3.86,
+                0.3,
+                "easeInOutQuad"
+              ],
+              [
+                4,
+                0.3,
+                "easeInOutSine"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "chassis",
+          "type": "rect",
+          "x": 0,
+          "y": -8,
+          "w": 133,
+          "h": 38,
+          "radius": 12,
+          "fill": {
+            "type": "linear",
+            "from": [
+              -65,
+              -20
+            ],
+            "to": [
+              65,
+              20
+            ],
+            "stops": [
+              [
+                0,
+                "#FFDEAB"
+              ],
+              [
+                1,
+                "#E88F84"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "cabin",
+          "type": "rect",
+          "x": -10,
+          "y": -35,
+          "w": 59,
+          "h": 29,
+          "radius": 9,
+          "fill": "#FFB58F"
+        },
+        {
+          "id": "glass",
+          "type": "rect",
+          "x": -11,
+          "y": -37,
+          "w": 38,
+          "h": 15,
+          "radius": 5,
+          "fill": "#4C3C70"
+        },
+        {
+          "id": "headlamp",
+          "type": "rect",
+          "x": 60,
+          "y": -6,
+          "w": 12,
+          "h": 10,
+          "radius": 4,
+          "fill": "#FFF1B0"
+        },
+        {
+          "id": "wheel-0",
+          "type": "group",
+          "x": -42,
+          "y": 16,
+          "children": [
+            {
+              "id": "tyre-0",
+              "type": "ellipse",
+              "x": 0,
+              "y": 0,
+              "rx": 20,
+              "ry": 20,
+              "fill": "#30253F"
+            },
+            {
+              "id": "rim-0",
+              "type": "ellipse",
+              "x": 0,
+              "y": 0,
+              "rx": 13,
+              "ry": 13,
+              "fill": "#A185A8"
+            },
+            {
+              "id": "spoke-0",
+              "type": "path",
+              "d": "M0 -11 L0 11 M-11 0 L11 0",
+              "fill": null,
+              "stroke": {
+                "color": "#563F6D",
+                "width": 3,
+                "cap": "round",
+                "join": "round"
+              }
+            },
+            {
+              "id": "bolt-0",
+              "type": "ellipse",
+              "x": 0,
+              "y": 0,
+              "rx": 4,
+              "ry": 4,
+              "fill": "#E9AFAD"
+            }
+          ],
+          "animate": {
+            "rotation": [
+              [
+                0,
+                0
+              ],
+              [
+                4,
+                360,
+                "linear"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "wheel-1",
+          "type": "group",
+          "x": 41,
+          "y": 16,
+          "children": [
+            {
+              "id": "tyre-1",
+              "type": "ellipse",
+              "x": 0,
+              "y": 0,
+              "rx": 20,
+              "ry": 20,
+              "fill": "#30253F"
+            },
+            {
+              "id": "rim-1",
+              "type": "ellipse",
+              "x": 0,
+              "y": 0,
+              "rx": 13,
+              "ry": 13,
+              "fill": "#A185A8"
+            },
+            {
+              "id": "spoke-1",
+              "type": "path",
+              "d": "M0 -11 L0 11 M-11 0 L11 0",
+              "fill": null,
+              "stroke": {
+                "color": "#563F6D",
+                "width": 3,
+                "cap": "round",
+                "join": "round"
+              }
+            },
+            {
+              "id": "bolt-1",
+              "type": "ellipse",
+              "x": 0,
+              "y": 0,
+              "rx": 4,
+              "ry": 4,
+              "fill": "#E9AFAD"
+            }
+          ],
+          "animate": {
+            "rotation": [
+              [
+                0,
+                0
+              ],
+              [
+                4,
+                360,
+                "linear"
+              ]
+            ]
+          }
+        }
+      ],
+      "animate": {
+        "x": [
+          [
+            0,
+            211
+          ],
+          [
+            0.38,
+            211
+          ],
+          [
+            1.85,
+            271,
+            "easeInOutQuad"
+          ],
+          [
+            3.86,
+            211,
+            "easeInOutQuad"
+          ],
+          [
+            4,
+            211,
+            "easeInOutSine"
+          ]
+        ],
+        "y": [
+          [
+            0,
+            218
+          ],
+          [
+            0.51,
+            218
+          ],
+          [
+            1.94,
+            211,
+            "easeInOutSine"
+          ],
+          [
+            3.62,
+            218,
+            "easeInOutSine"
+          ],
+          [
+            4,
+            218,
+            "easeInOutSine"
+          ]
+        ],
+        "rotation": [
+          [
+            0,
+            -3
+          ],
+          [
+            0.64,
+            -3
+          ],
+          [
+            2.03,
+            3,
+            "easeInOutCubic"
+          ],
+          [
+            3.74,
+            -3,
+            "easeInOutCubic"
+          ],
+          [
+            4,
+            -3,
+            "easeInOutSine"
+          ]
+        ]
+      }
+    }
+  ]
+}

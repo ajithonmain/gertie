@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+<style>
+@keyframes g1ua-needle__r{0%{transform:rotate(-49deg);animation-timing-function:cubic-bezier(0.65,0,0.35,1)}19.1666%{transform:rotate(-15deg);animation-timing-function:cubic-bezier(0.34,1.56,0.64,1)}30%{transform:rotate(29deg);animation-timing-function:cubic-bezier(0.65,0,0.35,1)}39.1666%{transform:rotate(18deg);animation-timing-function:cubic-bezier(0.34,1.56,0.64,1)}52.5%{transform:rotate(54deg);animation-timing-function:cubic-bezier(0.65,0,0.35,1)}68.3333%{transform:rotate(27deg);animation-timing-function:cubic-bezier(0.65,0,0.35,1)}100%{transform:rotate(-49deg)}}
+@keyframes g1ua-status__o{0%{opacity:0.45;animation-timing-function:cubic-bezier(0.65,0,0.35,1)}24.1666%{opacity:0.45;animation-timing-function:cubic-bezier(0.65,0,0.35,1)}30.8333%{opacity:1;animation-timing-function:cubic-bezier(0.65,0,0.35,1)}68.3333%{opacity:1;animation-timing-function:cubic-bezier(0.65,0,0.35,1)}100%{opacity:0.45}}
+.g1ua-needle__r{animation:g1ua-needle__r 4s linear infinite both;transform-origin:0 0}
+.g1ua-status__sh{animation:g1ua-status__o 4s linear infinite both}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+<defs>
+<linearGradient id="g1ua-backdrop__grad" gradientUnits="userSpaceOnUse" x1="-170" y1="-150" x2="160" y2="150"><stop offset="0" stop-color="#31545c"/><stop offset="1" stop-color="#132932"/></linearGradient>
+<linearGradient id="g1ua-meter-shell__grad" gradientUnits="userSpaceOnUse" x1="0" y1="-80" x2="0" y2="80"><stop offset="0" stop-color="#f6ad80"/><stop offset="0.5" stop-color="#d97756"/><stop offset="1" stop-color="#ad4c38"/></linearGradient>
+<linearGradient id="g1ua-dial__grad" gradientUnits="userSpaceOnUse" x1="0" y1="-60" x2="0" y2="60"><stop offset="0" stop-color="#ffeccc"/><stop offset="1" stop-color="#ddb88b"/></linearGradient>
+</defs>
+<rect width="400" height="300" fill="#18343e"/>
+<g transform="translate(200 150)">
+<rect x="-200" y="-150" width="400" height="300" fill="url(#g1ua-backdrop__grad)"/>
+</g>
+<g transform="translate(200 243)">
+<ellipse rx="111" ry="11" fill="#0c252b" opacity="0.37"/>
+</g>
+<g transform="translate(200 158)">
+<rect x="-115" y="-80.5" width="230" height="161" rx="25" fill="#913c2c"/>
+</g>
+<g transform="translate(198 146)">
+<rect x="-115" y="-80.5" width="230" height="161" rx="25" fill="url(#g1ua-meter-shell__grad)"/>
+</g>
+<g transform="translate(198 143)">
+<rect x="-99" y="-61.5" width="198" height="123" rx="15" fill="url(#g1ua-dial__grad)"/>
+</g>
+<path d="M118 184C133 107 174 101 200 101C226 101 267 107 282 184" fill="none" stroke="#bd9873" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4"/>
+<g transform="translate(200 199) rotate(-63)">
+<path d="M0 -82C0 -82 0 -72 0 -72" fill="none" stroke="#294451" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4"/>
+</g>
+<g transform="translate(200 199) rotate(-45)">
+<path d="M0 -82C0 -82 0 -72 0 -72" fill="none" stroke="#294451" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4"/>
+</g>
+<g transform="translate(200 199) rotate(-24)">
+<path d="M0 -82C0 -82 0 -72 0 -72" fill="none" stroke="#294451" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4"/>
+</g>
+<g transform="translate(200 199)">
+<path d="M0 -82C0 -82 0 -72 0 -72" fill="none" stroke="#294451" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4"/>
+</g>
+<g transform="translate(200 199) rotate(24)">
+<path d="M0 -82C0 -82 0 -72 0 -72" fill="none" stroke="#294451" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4"/>
+</g>
+<g transform="translate(200 199) rotate(45)">
+<path d="M0 -82C0 -82 0 -72 0 -72" fill="none" stroke="#294451" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4"/>
+</g>
+<g transform="translate(200 199) rotate(63)">
+<path d="M0 -82C0 -82 0 -72 0 -72" fill="none" stroke="#294451" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4"/>
+</g>
+<g transform="translate(200 199)">
+<g class="g1ua-needle__r" transform="rotate(24.879)">
+<path d="M-3 4C-3 4 -1 -78 -1 -78C-1 -78 2 -78 2 -78C2 -78 3 4 3 4C3 4 -3 4 -3 4Z" fill="#a33e35"/>
+</g>
+</g>
+<g transform="translate(200 199)">
+<ellipse rx="7" ry="7" fill="#503f42"/>
+</g>
+<g transform="translate(288 199)">
+<ellipse rx="6" ry="6" fill="#98644e"/>
+</g>
+<g transform="translate(288 199)">
+<ellipse class="g1ua-status__sh" rx="3.6" ry="3.6" fill="#ffe3a4" opacity="1"/>
+</g>
+</svg>

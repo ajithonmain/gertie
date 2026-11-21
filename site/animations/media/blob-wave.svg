@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+<style>
+@keyframes g1qq-blob-body__t{0%{transform:translate(0px,0px);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}25%{transform:translate(0px,3px);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}50%{transform:translate(0px,0px);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}75%{transform:translate(0px,3px);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}100%{transform:translate(0px,0px)}}
+@keyframes g1qq-blob-body__s{0%{transform:scale(1,1);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}25%{transform:scale(1.01,1.02);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}50%{transform:scale(1,1);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}75%{transform:scale(1.01,1.02);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}100%{transform:scale(1,1)}}
+@keyframes g1qq-blob-arm-l__r{0%{transform:rotate(2.388deg);animation-timing-function:cubic-bezier(0.3144,0.5866,0.6417,1)}7.7777%{transform:rotate(3deg);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}32.7777%{transform:rotate(0deg);animation-timing-function:cubic-bezier(0.375,0,0.6709,0.6325)}50%{transform:rotate(2.388deg);animation-timing-function:cubic-bezier(0.3144,0.5866,0.6417,1)}57.7777%{transform:rotate(3deg);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}82.7777%{transform:rotate(0deg);animation-timing-function:cubic-bezier(0.375,0,0.6709,0.6325)}100%{transform:rotate(2.388deg)}}
+@keyframes g1qq-blob-arm-r-ctl__r{0%{transform:rotate(0deg);animation-timing-function:step-end}14.999%{transform:rotate(0deg);animation-timing-function:cubic-bezier(0.33,1,0.68,1)}21.6666%{transform:rotate(-135deg);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}28.3333%{transform:rotate(-161deg);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}32.7777%{transform:rotate(-109deg);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}37.2222%{transform:rotate(-161deg);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}41.6666%{transform:rotate(-109deg);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}46.1111%{transform:rotate(-161deg);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}50.5555%{transform:rotate(-109deg);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}52.2222%{transform:rotate(-135deg);animation-timing-function:cubic-bezier(0.65,0,0.35,1)}58.3333%{transform:rotate(0deg);animation-timing-function:step-end}100%{transform:rotate(0deg)}}
+@keyframes g1qq-blob-arm-r__r{0%{transform:rotate(0deg);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}25%{transform:rotate(-3deg);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}50%{transform:rotate(0deg);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}75%{transform:rotate(-3deg);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}100%{transform:rotate(0deg)}}
+@keyframes g1qq-blob-head-ctl__t{0%{transform:translate(0px,-240px);animation-timing-function:step-end}71.6656%{transform:translate(0px,-240px);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}75%{transform:translate(0px,-232px);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}78.3333%{transform:translate(0px,-240px);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}81.6666%{transform:translate(0px,-232px);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}85%{transform:translate(0px,-240px);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}88.3333%{transform:translate(0px,-240px);animation-timing-function:step-end}100%{transform:translate(0px,-240px)}}
+@keyframes g1qq-blob-head__r{0%{transform:rotate(0deg);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}15%{transform:rotate(2deg);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}35%{transform:rotate(-2deg);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}50%{transform:rotate(0deg);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}65%{transform:rotate(2deg);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}85%{transform:rotate(-2deg);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}100%{transform:rotate(0deg)}}
+@keyframes g1qq-sprout__r{0%{transform:rotate(6deg);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}8.3333%{transform:rotate(0deg);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}16.6666%{transform:rotate(-6deg);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}25%{transform:rotate(0deg);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}33.3333%{transform:rotate(6deg);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}41.6666%{transform:rotate(0deg);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}50%{transform:rotate(-6deg);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}58.3333%{transform:rotate(0deg);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}66.6666%{transform:rotate(6deg);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}75%{transform:rotate(0deg);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}83.3333%{transform:rotate(-6deg);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}91.6666%{transform:rotate(0deg);animation-timing-function:cubic-bezier(0.37,0,0.63,1)}100%{transform:rotate(6deg)}}
+@keyframes g1qq-blob-eye-r__s{0%{transform:scale(1,1);animation-timing-function:step-end}26.6656%{transform:scale(1,1);animation-timing-function:cubic-bezier(0.32,0,0.67,0)}28.8888%{transform:scale(1,0.1);animation-timing-function:step-end}29.4434%{transform:scale(1,0.1);animation-timing-function:cubic-bezier(0.33,1,0.68,1)}31.6666%{transform:scale(1,1);animation-timing-function:cubic-bezier(0.65,0,0.35,1)}56.1111%{transform:scale(1,1);animation-timing-function:cubic-bezier(0.32,0,0.67,0)}58.3333%{transform:scale(1,0.1);animation-timing-function:step-end}58.8878%{transform:scale(1,0.1);animation-timing-function:cubic-bezier(0.33,1,0.68,1)}61.1111%{transform:scale(1,1);animation-timing-function:step-end}100%{transform:scale(1,1)}}
+.g1qq-blob-body__t{animation:g1qq-blob-body__t 6s linear infinite both;transform-origin:0 0}
+.g1qq-blob-body__s{animation:g1qq-blob-body__s 6s linear infinite both;transform-origin:0 0}
+.g1qq-blob-arm-l__r{animation:g1qq-blob-arm-l__r 6s linear infinite both;transform-origin:0 0}
+.g1qq-blob-arm-r-ctl__r{animation:g1qq-blob-arm-r-ctl__r 6s linear infinite both;transform-origin:0 0}
+.g1qq-blob-arm-r__r{animation:g1qq-blob-arm-r__r 6s linear infinite both;transform-origin:0 0}
+.g1qq-blob-head-ctl__t{animation:g1qq-blob-head-ctl__t 6s linear infinite both;transform-origin:0 0}
+.g1qq-blob-head__r{animation:g1qq-blob-head__r 6s linear infinite both;transform-origin:0 0}
+.g1qq-sprout__r{animation:g1qq-sprout__r 6s linear infinite both;transform-origin:0 0}
+.g1qq-blob-eye-r__s{animation:g1qq-blob-eye-r__s 6s linear infinite both;transform-origin:0 0}
+.g1qq-blob-eye-l__s{animation:g1qq-blob-eye-r__s 6s linear infinite both;transform-origin:0 0}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+<defs>
+<clipPath id="g1qq-arm-r-shade__clip"><path d="M-200 -228C-228 -200 -246 -150 -248 -112C-250 -84 -226 -72 -208 -86C-192 -100 -182 -150 -168 -196C-168 -196 -200 -228 -200 -228Z"/></clipPath>
+<clipPath id="g1qq-body-shade__clip"><path d="M0 -440C120 -440 200 -360 220 -250C238 -150 230 -40 150 -8C90 12 -90 12 -150 -8C-230 -40 -238 -150 -220 -250C-200 -360 -120 -440 0 -440Z"/></clipPath>
+<clipPath id="g1qq-arm-l-shade__clip"><path d="M200 -228C228 -200 246 -150 248 -112C250 -84 226 -72 208 -86C192 -100 182 -150 168 -196C168 -196 200 -228 200 -228Z"/></clipPath>
+<clipPath id="g1qq-mouth-tongue__clip"><path d="M-46 -8C-30 -4 30 -4 46 -8C42 26 20 42 0 42C-20 42 -42 26 -46 -8Z"/></clipPath>
+</defs>
+<g transform="translate(512 824)">
+<ellipse rx="210" ry="24" fill="#22303f" fill-opacity="0.2"/>
+</g>
+<g transform="translate(512 820)">
+<g class="g1qq-blob-body__t" transform="translate(0 2.26)">
+<g class="g1qq-blob-body__s" transform="scale(1.0075 1.015)">
+<g transform="translate(-185 -210)">
+<g class="g1qq-blob-arm-l__r" transform="rotate(0.004)">
+<g transform="translate(185 210)">
+<path d="M-200 -228C-228 -200 -246 -150 -248 -112C-250 -84 -226 -72 -208 -86C-192 -100 -182 -150 -168 -196C-168 -196 -200 -228 -200 -228Z" fill="#5ccfb0"/>
+<g clip-path="url(#g1qq-arm-r-shade__clip)">
+<path d="M-190 -230C-200 -170 -205 -120 -215 -70C-215 -70 -160 -70 -160 -70C-160 -70 -160 -230 -160 -230C-160 -230 -190 -230 -190 -230Z" fill="#3aa98d"/>
+</g>
+</g>
+</g>
+</g>
+<path d="M0 -440C120 -440 200 -360 220 -250C238 -150 230 -40 150 -8C90 12 -90 12 -150 -8C-230 -40 -238 -150 -220 -250C-200 -360 -120 -440 0 -440Z" fill="#5ccfb0"/>
+<g clip-path="url(#g1qq-body-shade__clip)">
+<path d="M260 -420C200 -300 190 -160 110 -80C40 -20 -120 -10 -260 -40C-260 -40 -260 40 -260 40C-260 40 260 40 260 40C260 40 260 -420 260 -420Z" fill="#3aa98d"/>
+</g>
+<path d="M-150 -330C-130 -380 -80 -410 -40 -405C-20 -400 -30 -380 -60 -365C-100 -345 -120 -310 -140 -300C-160 -292 -162 -310 -150 -330Z" fill="#b4f3e2" opacity="0.8"/>
+<g transform="translate(-170 -268) rotate(-20)">
+<ellipse rx="12" ry="16" fill="#b4f3e2" opacity="0.8"/>
+</g>
+<g transform="translate(185 -210)">
+<g class="g1qq-blob-arm-r-ctl__r" transform="rotate(-110.947)">
+<g transform="translate(-185 210)">
+<g transform="translate(185 -210)">
+<g class="g1qq-blob-arm-r__r" transform="rotate(-2.256)">
+<g transform="translate(-185 210)">
+<path d="M200 -228C228 -200 246 -150 248 -112C250 -84 226 -72 208 -86C192 -100 182 -150 168 -196C168 -196 200 -228 200 -228Z" fill="#5ccfb0"/>
+<g clip-path="url(#g1qq-arm-l-shade__clip)">
+<path d="M218 -230C230 -170 236 -120 226 -70C226 -70 260 -70 260 -70C260 -70 260 -230 260 -230C260 -230 218 -230 218 -230Z" fill="#3aa98d"/>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+<g class="g1qq-blob-head-ctl__t" transform="translate(0 -240)">
+<g transform="translate(0 240)">
+<g transform="translate(0 -240)">
+<g class="g1qq-blob-head__r" transform="rotate(-1.933)">
+<g transform="translate(0 240)">
+<g transform="translate(0 -436)">
+<g class="g1qq-sprout__r" transform="rotate(6)">
+<path d="M0 6C-2 -14 4 -30 10 -44" fill="none" stroke="#5fae3a" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4"/>
+<path d="M8 -40C-10 -64 -42 -70 -62 -58C-46 -36 -14 -30 8 -40Z" fill="#8bd65c"/>
+<path d="M10 -44C22 -70 50 -80 72 -72C62 -48 36 -38 10 -44Z" fill="#5fae3a"/>
+</g>
+</g>
+<g transform="translate(-72 -280)">
+<g class="g1qq-blob-eye-r__s" transform="scale(1 1)">
+<ellipse rx="26" ry="36" fill="#22303f"/>
+<g transform="translate(-8 -13)">
+<ellipse rx="9" ry="9" fill="#ffffff"/>
+</g>
+<g transform="translate(9 12)">
+<ellipse rx="4" ry="4" fill="#ffffff"/>
+</g>
+</g>
+</g>
+<g transform="translate(72 -280)">
+<g class="g1qq-blob-eye-l__s" transform="scale(1 1)">
+<ellipse rx="26" ry="36" fill="#22303f"/>
+<g transform="translate(-8 -13)">
+<ellipse rx="9" ry="9" fill="#ffffff"/>
+</g>
+<g transform="translate(9 12)">
+<ellipse rx="4" ry="4" fill="#ffffff"/>
+</g>
+</g>
+</g>
+<g transform="translate(-128 -222)">
+<ellipse rx="30" ry="17" fill="#ff8fa3" opacity="0.65"/>
+</g>
+<g transform="translate(128 -222)">
+<ellipse rx="30" ry="17" fill="#ff8fa3" opacity="0.65"/>
+</g>
+<g transform="translate(0 -222)">
+<path d="M-46 -8C-30 -4 30 -4 46 -8C42 26 20 42 0 42C-20 42 -42 26 -46 -8Z" fill="#22303f"/>
+<g clip-path="url(#g1qq-mouth-tongue__clip)">
+<path d="M-30 44C-26 20 -8 14 0 22C8 14 26 20 30 44C30 44 -30 44 -30 44Z" fill="#e35d78"/>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</svg>

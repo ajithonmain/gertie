@@ -1,0 +1,252 @@
+{
+  "gertie": 1,
+  "name": "bento-m-jiggle",
+  "canvas": {
+    "w": 800,
+    "h": 450,
+    "background": "#B67A6E"
+  },
+  "fps": 30,
+  "duration": 4,
+  "loop": true,
+  "tier": "scene",
+  "poster": 0.45,
+  "nodes": [
+    {
+      "id": "ground-shadow",
+      "type": "ellipse",
+      "x": 465,
+      "y": 377,
+      "rx": 188,
+      "ry": 31,
+      "fill": "#975E54"
+    },
+    {
+      "id": "parcel",
+      "type": "group",
+      "children": [
+        {
+          "id": "front",
+          "type": "path",
+          "d": "M-143 -183 L168 -160 V-4 Q168 0 160 0 L-137 -22 Q-145 -23 -145 -31Z",
+          "fill": {
+            "type": "linear",
+            "from": [
+              -120,
+              -166
+            ],
+            "to": [
+              167,
+              0
+            ],
+            "stops": [
+              [
+                0,
+                "#A74229"
+              ],
+              [
+                1,
+                "#85311F"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "side",
+          "type": "path",
+          "d": "M168 -160 L248 -212 V-66 L168 0Z",
+          "fill": "#782B1E"
+        },
+        {
+          "id": "ribbon-front",
+          "type": "path",
+          "d": "M-11 -175 L46 -172 V-9 L-11 -13Z",
+          "fill": "#F5DEC2"
+        },
+        {
+          "id": "lid",
+          "type": "group",
+          "children": [
+            {
+              "id": "lid-top",
+              "type": "path",
+              "d": "M-152 -233 L-63 -276 L252 -270 L169 -211Z",
+              "fill": "#C15D43"
+            },
+            {
+              "id": "lid-front",
+              "type": "path",
+              "d": "M-152 -233 L169 -211 V-155 L-152 -178Z",
+              "fill": "#A84129"
+            },
+            {
+              "id": "lid-side",
+              "type": "path",
+              "d": "M169 -211 L252 -270 V-216 L169 -155Z",
+              "fill": "#87321F"
+            },
+            {
+              "id": "band",
+              "type": "path",
+              "d": "M-9 -224 L75 -274 L131 -273 L47 -220 L47 -164 L-9 -169Z",
+              "fill": "#F5DEC2"
+            },
+            {
+              "id": "band-side",
+              "type": "path",
+              "d": "M190 -226 L212 -242 V-190 L190 -173Z",
+              "fill": "#CDA77F"
+            },
+            {
+              "id": "left-bow",
+              "type": "path",
+              "d": "M38 -257 C-17 -236 -110 -258 -108 -299 C-106 -314 -72 -356 -57 -366 C-18 -394 30 -339 47 -283 Q54 -265 38 -257Z M33 -274 C-19 -298 -52 -334 -88 -324 Q-110 -317 -101 -295 Q-80 -261 33 -274Z",
+              "fill": "#F5DEC2",
+              "fillRule": "evenodd"
+            },
+            {
+              "id": "right-bow",
+              "type": "path",
+              "d": "M42 -270 C64 -328 109 -381 151 -371 C177 -366 204 -311 200 -294 C196 -249 89 -229 42 -270Z M55 -269 Q108 -261 153 -287 Q173 -300 178 -322 Q129 -349 55 -269Z",
+              "fill": "#F5DEC2",
+              "fillRule": "evenodd"
+            },
+            {
+              "id": "left-tail",
+              "type": "path",
+              "d": "M29 -265 C-30 -263 -54 -226 -125 -149 L-81 -161 L-60 -125 C-32 -190 -5 -226 41 -245Z",
+              "fill": "#F5DEC2"
+            },
+            {
+              "id": "right-tail",
+              "type": "path",
+              "d": "M47 -263 C97 -257 122 -206 155 -123 L116 -139 L89 -111 C75 -180 60 -224 34 -245Z",
+              "fill": "#F5DEC2"
+            },
+            {
+              "id": "seal",
+              "type": "path",
+              "d": "M27 -259 C24 -271 38 -273 46 -270 C54 -278 68 -269 70 -260 C84 -252 79 -237 69 -233 C61 -225 51 -230 43 -227 C29 -230 23 -240 27 -259Z",
+              "fill": "#913124"
+            },
+            {
+              "id": "seal-inset",
+              "type": "ellipse",
+              "x": 51,
+              "y": -250,
+              "rx": 17,
+              "ry": 14,
+              "fill": "#A9402C"
+            }
+          ],
+          "animate": {
+            "y": [
+              [
+                0,
+                0
+              ],
+              [
+                0.27,
+                -10,
+                "easeOutCubic"
+              ],
+              [
+                0.69,
+                0,
+                "settle"
+              ],
+              [
+                4,
+                0
+              ]
+            ]
+          }
+        }
+      ],
+      "x": 374,
+      "y": 414,
+      "scale": 0.92,
+      "motion": [
+        {
+          "preset": "jiggle",
+          "duration": 2,
+          "repeat": "loop",
+          "amount": 0.045,
+          "shift": 5
+        }
+      ]
+    },
+    {
+      "id": "confetti-0",
+      "type": "path",
+      "d": "M-14 -6 Q1 -4 16 -11 L16 2 Q0 10 -14 7Z",
+      "fill": "#F5DEC2",
+      "x": 151,
+      "y": 119,
+      "rotation": -34,
+      "motion": [
+        {
+          "preset": "float",
+          "duration": 4,
+          "repeat": "loop",
+          "distance": 9,
+          "phase": 0
+        }
+      ]
+    },
+    {
+      "id": "confetti-1",
+      "type": "path",
+      "d": "M-14 -6 Q1 -4 16 -11 L16 2 Q0 10 -14 7Z",
+      "fill": "#E8A749",
+      "x": 114,
+      "y": 218,
+      "rotation": 40,
+      "motion": [
+        {
+          "preset": "float",
+          "duration": 4,
+          "repeat": "loop",
+          "distance": 9,
+          "phase": 0.21
+        }
+      ]
+    },
+    {
+      "id": "confetti-2",
+      "type": "path",
+      "d": "M-14 -6 Q1 -4 16 -11 L16 2 Q0 10 -14 7Z",
+      "fill": "#E8A749",
+      "x": 651,
+      "y": 89,
+      "rotation": -40,
+      "motion": [
+        {
+          "preset": "float",
+          "duration": 4,
+          "repeat": "loop",
+          "distance": 9,
+          "phase": 0.42
+        }
+      ]
+    },
+    {
+      "id": "confetti-3",
+      "type": "path",
+      "d": "M-14 -6 Q1 -4 16 -11 L16 2 Q0 10 -14 7Z",
+      "fill": "#F5DEC2",
+      "x": 686,
+      "y": 198,
+      "rotation": -43,
+      "motion": [
+        {
+          "preset": "float",
+          "duration": 4,
+          "repeat": "loop",
+          "distance": 9,
+          "phase": 0.63
+        }
+      ]
+    }
+  ]
+}

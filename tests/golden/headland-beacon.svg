@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+<style>
+@keyframes g1et-foam__t{0%{transform:translate(-10px,0px);animation-timing-function:cubic-bezier(0.65,0,0.35,1)}50%{transform:translate(8px,0px);animation-timing-function:cubic-bezier(0.65,0,0.35,1)}100%{transform:translate(-10px,0px)}}
+@keyframes g1et-foam-small__t{0%{transform:translate(3px,0px);animation-timing-function:cubic-bezier(0.65,0,0.35,1)}50%{transform:translate(-11px,0px);animation-timing-function:cubic-bezier(0.65,0,0.35,1)}100%{transform:translate(3px,0px)}}
+@keyframes g1et-lamp-beam__o{0%{opacity:0.83;animation-timing-function:cubic-bezier(0.65,0,0.35,1)}23.3333%{opacity:1;animation-timing-function:cubic-bezier(0.65,0,0.35,1)}50%{opacity:0.55;animation-timing-function:cubic-bezier(0.65,0,0.35,1)}75%{opacity:0.12;animation-timing-function:cubic-bezier(0.65,0,0.35,1)}100%{opacity:0.83}}
+@keyframes g1et-lamp-beam__r{0%{transform:rotate(-5deg);animation-timing-function:cubic-bezier(0.65,0,0.35,1)}42.5%{transform:rotate(14deg);animation-timing-function:cubic-bezier(0.65,0,0.35,1)}100%{transform:rotate(-5deg)}}
+@keyframes g1et-lamp__o{0%{opacity:0.83;animation-timing-function:cubic-bezier(0.65,0,0.35,1)}25%{opacity:1;animation-timing-function:cubic-bezier(0.65,0,0.35,1)}50%{opacity:0.54;animation-timing-function:cubic-bezier(0.65,0,0.35,1)}75%{opacity:0.35;animation-timing-function:cubic-bezier(0.65,0,0.35,1)}100%{opacity:0.83}}
+.g1et-foam__t{animation:g1et-foam__t 4s linear infinite both;transform-origin:0 0}
+.g1et-foam-small__t{animation:g1et-foam-small__t 4s linear infinite both;transform-origin:0 0}
+.g1et-lamp-beam__o{animation:g1et-lamp-beam__o 4s linear infinite both}
+.g1et-lamp-beam__r{animation:g1et-lamp-beam__r 4s linear infinite both;transform-origin:0 0}
+.g1et-lamp__sh{animation:g1et-lamp__o 4s linear infinite both}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+<defs>
+<linearGradient id="g1et-backdrop__grad" gradientUnits="userSpaceOnUse" x1="-170" y1="-150" x2="160" y2="150"><stop offset="0" stop-color="#313c60"/><stop offset="1" stop-color="#101b33"/></linearGradient>
+<linearGradient id="g1et-water__grad" gradientUnits="userSpaceOnUse" x1="0" y1="206" x2="0" y2="300"><stop offset="0" stop-color="#334a6b"/><stop offset="1" stop-color="#162a49"/></linearGradient>
+<linearGradient id="g1et-beam__grad" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="187" y2="0"><stop offset="0" stop-color="#ffe4a2"/><stop offset="1" stop-color="#687595"/></linearGradient>
+<linearGradient id="g1et-tower__grad" gradientUnits="userSpaceOnUse" x1="119" y1="0" x2="170" y2="0"><stop offset="0" stop-color="#fbe1bc"/><stop offset="1" stop-color="#97747a"/></linearGradient>
+</defs>
+<rect width="400" height="300" fill="#141f39"/>
+<g transform="translate(200 150)">
+<rect x="-200" y="-150" width="400" height="300" fill="url(#g1et-backdrop__grad)"/>
+</g>
+<g transform="translate(298 72)">
+<ellipse rx="24" ry="24" fill="#f4d6a1"/>
+</g>
+<g transform="translate(77 76)">
+<ellipse rx="2.6" ry="2.6" fill="#f8dcb1"/>
+</g>
+<g transform="translate(211 43)">
+<ellipse rx="1.8" ry="1.8" fill="#f8dcb1"/>
+</g>
+<path d="M0 220C50.67 202 103 199.33 157 212C207.67 222.67 288.67 219 400 201C400 201 400 300 400 300C400 300 0 300 0 300C0 300 0 220 0 220Z" fill="url(#g1et-water__grad)"/>
+<g class="g1et-foam__t" transform="translate(-6.93 0)">
+<path d="M250 250C272 243.33 295.33 242 320 246C337.33 248.67 354.33 248.33 371 245" fill="none" stroke="#6980a3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4"/>
+</g>
+<g class="g1et-foam-small__t" transform="translate(0.61 0)">
+<path d="M280 272C301.33 267.33 320.33 267 337 271" fill="none" stroke="#50698f" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4"/>
+</g>
+<path d="M0 284C0 284 40 263 40 263C40 263 76 251 76 251C76 251 104 224 104 224C104 224 142 216 142 216C142 216 172 226 172 226C172 226 205 220 205 220C205 220 238 236 238 236C238 236 249 259 249 259C249 259 285 300 285 300C285 300 0 300 0 300C0 300 0 284 0 284Z" fill="#1a2639"/>
+<path d="M25 276C25 276 76 253 76 253C76 253 104 224 104 224C104 224 142 216 142 216C142 216 172 226 172 226C172 226 205 220 205 220C205 220 238 236 238 236C238 236 230 243 230 243C230 243 200 232 200 232C200 232 172 239 172 239C172 239 129 230 129 230C129 230 112 237 112 237C112 237 87 263 87 263C87 263 25 276 25 276Z" fill="#3e4a5e"/>
+<g class="g1et-lamp-beam__o" opacity="0.988">
+<g transform="translate(148 115)">
+<g class="g1et-lamp-beam__r" transform="rotate(0.232)">
+<path d="M0 0C0 0 187 -51 187 -51C187 -51 187 47 187 47C187 47 0 0 0 0Z" fill="url(#g1et-beam__grad)" opacity="0.56"/>
+</g>
+</g>
+</g>
+<path d="M119 222C119 222 130 126 130 126C130 126 158 126 158 126C158 126 170 225 170 225C170 225 119 222 119 222Z" fill="url(#g1et-tower__grad)"/>
+<path d="M126 165C126 165 162 165 162 165C162 165 166 190 166 190C166 190 122 190 122 190C122 190 126 165 126 165Z" fill="#bc675e"/>
+<path d="M119 219C119 219 170 219 170 219C170 219 175 230 175 230C175 230 115 230 115 230C115 230 119 219 119 219Z" fill="#6d5869"/>
+<g transform="translate(144 101)">
+<rect x="-17.5" y="-4.5" width="35" height="9" rx="2" fill="#5b4154"/>
+</g>
+<path d="M125 99C125 99 143 87 143 87C143 87 163 99 163 99C163 99 125 99 125 99Z" fill="#bd756a"/>
+<g transform="translate(144 114)">
+<rect x="-14.5" y="-10.5" width="29" height="21" rx="3" fill="#5c4054"/>
+</g>
+<g transform="translate(144 114)">
+<rect class="g1et-lamp__sh" x="-10.5" y="-7" width="21" height="14" rx="2" fill="#ffce8a" opacity="0.981"/>
+</g>
+<g transform="translate(144 210)">
+<rect x="-6" y="-9" width="12" height="18" rx="4" fill="#4b4259"/>
+</g>
+</svg>

@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+<style>
+@keyframes g1mx-wake-0__o{0%{opacity:0}3.4722%{opacity:0}5.5555%{opacity:0.72}14.5833%{opacity:0}100%{opacity:0}}
+@keyframes g1mx-wake-1__o{0%{opacity:0}7.6388%{opacity:0}9.7222%{opacity:0.72}18.75%{opacity:0}100%{opacity:0}}
+@keyframes g1mx-wake-2__o{0%{opacity:0}11.8055%{opacity:0}13.8888%{opacity:0.72}22.9166%{opacity:0}100%{opacity:0}}
+@keyframes g1mx-wake-3__o{0%{opacity:0}15.9722%{opacity:0}18.0555%{opacity:0.72}27.0833%{opacity:0}100%{opacity:0}}
+@keyframes g1mx-wake-4__o{0%{opacity:0}20.1388%{opacity:0}22.2222%{opacity:0.72}31.25%{opacity:0}100%{opacity:0}}
+@keyframes g1mx-wake-5__o{0%{opacity:0}24.3055%{opacity:0}26.3888%{opacity:0.72}35.4166%{opacity:0}100%{opacity:0}}
+@keyframes g1mx-wake-6__o{0%{opacity:0}28.4722%{opacity:0}30.5555%{opacity:0.72}39.5833%{opacity:0}100%{opacity:0}}
+@keyframes g1mx-wake-7__o{0%{opacity:0}32.6388%{opacity:0}34.7222%{opacity:0.72}43.75%{opacity:0}100%{opacity:0}}
+@keyframes g1mx-wake-8__o{0%{opacity:0}36.8055%{opacity:0}38.8888%{opacity:0.72}47.9166%{opacity:0}100%{opacity:0}}
+@keyframes g1mx-wake-9__o{0%{opacity:0}40.9722%{opacity:0}43.0555%{opacity:0.72}52.0833%{opacity:0}100%{opacity:0}}
+@keyframes g1mx-wake-10__o{0%{opacity:0}45.1388%{opacity:0}47.2222%{opacity:0.72}56.25%{opacity:0}100%{opacity:0}}
+@keyframes g1mx-wake-11__o{0%{opacity:0}49.3055%{opacity:0}51.3888%{opacity:0.72}60.4166%{opacity:0}100%{opacity:0}}
+@keyframes g1mx-wake-12__o{0%{opacity:0}53.4722%{opacity:0}55.5555%{opacity:0.72}64.5833%{opacity:0}100%{opacity:0}}
+@keyframes g1mx-wake-13__o{0%{opacity:0}57.6388%{opacity:0}59.7222%{opacity:0.72}68.75%{opacity:0}100%{opacity:0}}
+@keyframes g1mx-wake-14__o{0%{opacity:0}61.8055%{opacity:0}63.8888%{opacity:0.72}72.9166%{opacity:0}100%{opacity:0}}
+@keyframes g1mx-wake-15__o{0%{opacity:0}65.9722%{opacity:0}68.0555%{opacity:0.72}77.0833%{opacity:0}100%{opacity:0}}
+@keyframes g1mx-wake-16__o{0%{opacity:0}70.1388%{opacity:0}72.2222%{opacity:0.72}81.25%{opacity:0}100%{opacity:0}}
+@keyframes g1mx-wake-17__o{0%{opacity:0}74.3055%{opacity:0}76.3888%{opacity:0.72}85.4166%{opacity:0}100%{opacity:0}}
+@keyframes g1mx-wake-18__o{0%{opacity:0}78.4722%{opacity:0}80.5555%{opacity:0.72}89.5833%{opacity:0}100%{opacity:0}}
+@keyframes g1mx-wake-19__o{0%{opacity:0}82.6388%{opacity:0}84.7222%{opacity:0.72}93.75%{opacity:0}100%{opacity:0}}
+@keyframes g1mx-wake-20__o{0%{opacity:0}86.8055%{opacity:0}88.8888%{opacity:0.72}97.9166%{opacity:0}100%{opacity:0}}
+@keyframes g1mx-wake-21__o{0%{opacity:0.151}2.0833%{opacity:0}90.9722%{opacity:0}93.0555%{opacity:0.72}100%{opacity:0.151}}
+@keyframes g1mx-wake-22__o{0%{opacity:0.486}6.25%{opacity:0}95.1388%{opacity:0}97.2222%{opacity:0.72}100%{opacity:0.486}}
+@keyframes g1mx-wake-23__o{0%{opacity:0.288}1.3888%{opacity:0.72}10.4166%{opacity:0}99.3055%{opacity:0}100%{opacity:0.288}}
+@keyframes g1mx-plane__t{0%{transform:translate(187.18px,94.46px)}3.4722%{transform:translate(208.71px,90.61px)}6.25%{transform:translate(229.92px,89.05px)}9.7222%{transform:translate(249.97px,89.82px)}12.5%{transform:translate(268.1px,92.91px)}15.9722%{transform:translate(283.61px,98.2px)}18.75%{transform:translate(295.92px,105.47px)}22.2222%{transform:translate(304.53px,114.45px)}25%{transform:translate(309.13px,124.81px)}28.4722%{transform:translate(309.53px,136.13px)}31.25%{transform:translate(305.73px,147.98px)}34.7222%{transform:translate(297.86px,159.91px)}37.5%{transform:translate(286.23px,171.46px)}40.9722%{transform:translate(271.29px,182.18px)}43.75%{transform:translate(253.61px,191.67px)}47.2222%{transform:translate(233.87px,199.56px)}50%{transform:translate(212.82px,205.54px)}53.4722%{transform:translate(191.29px,209.39px)}56.25%{transform:translate(170.08px,210.95px)}59.7222%{transform:translate(150.03px,210.18px)}62.5%{transform:translate(131.9px,207.09px)}65.9722%{transform:translate(116.39px,201.8px)}68.75%{transform:translate(104.08px,194.53px)}72.2222%{transform:translate(95.47px,185.55px)}75%{transform:translate(90.87px,175.2px)}78.4722%{transform:translate(90.47px,163.88px)}81.25%{transform:translate(94.27px,152.02px)}84.7222%{transform:translate(102.14px,140.09px)}87.5%{transform:translate(113.77px,128.54px)}90.9722%{transform:translate(128.71px,117.82px)}93.75%{transform:translate(146.39px,108.33px)}97.2222%{transform:translate(166.13px,100.44px)}100%{transform:translate(187.18px,94.46px)}}
+@keyframes g1mx-plane__r{0%{transform:rotate(-13deg)}3.4722%{transform:rotate(-7.22deg)}6.25%{transform:rotate(-1.096deg)}9.7222%{transform:rotate(5.781deg)}12.5%{transform:rotate(13.973deg)}15.9722%{transform:rotate(24.295deg)}18.75%{transform:rotate(37.858deg)}22.2222%{transform:rotate(55.652deg)}25%{transform:rotate(77deg)}28.4722%{transform:rotate(98.348deg)}31.25%{transform:rotate(116.142deg)}34.7222%{transform:rotate(129.705deg)}37.5%{transform:rotate(140.027deg)}40.9722%{transform:rotate(148.219deg)}43.75%{transform:rotate(155.096deg)}47.2222%{transform:rotate(161.22deg)}50%{transform:rotate(167deg)}53.4722%{transform:rotate(172.78deg)}56.25%{transform:rotate(178.904deg)}59.7222%{transform:rotate(185.781deg)}62.5%{transform:rotate(193.973deg)}65.9722%{transform:rotate(204.295deg)}68.75%{transform:rotate(217.858deg)}72.2222%{transform:rotate(235.652deg)}75%{transform:rotate(257deg)}78.4722%{transform:rotate(278.348deg)}81.25%{transform:rotate(296.142deg)}84.7222%{transform:rotate(309.705deg)}87.5%{transform:rotate(320.027deg)}90.9722%{transform:rotate(328.219deg)}93.75%{transform:rotate(335.096deg)}97.2222%{transform:rotate(341.22deg)}100%{transform:rotate(347deg)}}
+.g1mx-wake-0__sh{animation:g1mx-wake-0__o 4.8s linear infinite both}
+.g1mx-wake-1__sh{animation:g1mx-wake-1__o 4.8s linear infinite both}
+.g1mx-wake-2__sh{animation:g1mx-wake-2__o 4.8s linear infinite both}
+.g1mx-wake-3__sh{animation:g1mx-wake-3__o 4.8s linear infinite both}
+.g1mx-wake-4__sh{animation:g1mx-wake-4__o 4.8s linear infinite both}
+.g1mx-wake-5__sh{animation:g1mx-wake-5__o 4.8s linear infinite both}
+.g1mx-wake-6__sh{animation:g1mx-wake-6__o 4.8s linear infinite both}
+.g1mx-wake-7__sh{animation:g1mx-wake-7__o 4.8s linear infinite both}
+.g1mx-wake-8__sh{animation:g1mx-wake-8__o 4.8s linear infinite both}
+.g1mx-wake-9__sh{animation:g1mx-wake-9__o 4.8s linear infinite both}
+.g1mx-wake-10__sh{animation:g1mx-wake-10__o 4.8s linear infinite both}
+.g1mx-wake-11__sh{animation:g1mx-wake-11__o 4.8s linear infinite both}
+.g1mx-wake-12__sh{animation:g1mx-wake-12__o 4.8s linear infinite both}
+.g1mx-wake-13__sh{animation:g1mx-wake-13__o 4.8s linear infinite both}
+.g1mx-wake-14__sh{animation:g1mx-wake-14__o 4.8s linear infinite both}
+.g1mx-wake-15__sh{animation:g1mx-wake-15__o 4.8s linear infinite both}
+.g1mx-wake-16__sh{animation:g1mx-wake-16__o 4.8s linear infinite both}
+.g1mx-wake-17__sh{animation:g1mx-wake-17__o 4.8s linear infinite both}
+.g1mx-wake-18__sh{animation:g1mx-wake-18__o 4.8s linear infinite both}
+.g1mx-wake-19__sh{animation:g1mx-wake-19__o 4.8s linear infinite both}
+.g1mx-wake-20__sh{animation:g1mx-wake-20__o 4.8s linear infinite both}
+.g1mx-wake-21__sh{animation:g1mx-wake-21__o 4.8s linear infinite both}
+.g1mx-wake-22__sh{animation:g1mx-wake-22__o 4.8s linear infinite both}
+.g1mx-wake-23__sh{animation:g1mx-wake-23__o 4.8s linear infinite both}
+.g1mx-plane__t{animation:g1mx-plane__t 4.8s linear infinite both;transform-origin:0 0}
+.g1mx-plane__r{animation:g1mx-plane__r 4.8s linear infinite both;transform-origin:0 0}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+<defs>
+<linearGradient id="g1mx-backdrop__grad" gradientUnits="userSpaceOnUse" x1="-170" y1="-150" x2="160" y2="150"><stop offset="0" stop-color="#e9edf2"/><stop offset="1" stop-color="#a4cbe4"/></linearGradient>
+<linearGradient id="g1mx-wing__grad" gradientUnits="userSpaceOnUse" x1="0" y1="-20" x2="0" y2="6"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#d4e3f4"/></linearGradient>
+</defs>
+<rect width="400" height="300" fill="#bcd9ed"/>
+<g transform="translate(200 150)">
+<rect x="-200" y="-150" width="400" height="300" fill="url(#g1mx-backdrop__grad)"/>
+</g>
+<path d="M22 89C22 81 27.67 77.33 39 78C43 69.33 50.33 66 61 68C69.67 69.33 76 73.33 80 80C90.67 76 99.67 79 107 89C107 89 22 89 22 89Z" fill="#f4f7f8" opacity="0.75"/>
+<path d="M269 219C274.33 210.33 282 207.33 292 210C298.67 199.33 308.33 195 321 197C333.67 197.67 343 203 349 213C362.33 209.67 372 211.67 378 219C378 219 269 219 269 219Z" fill="#e9f2fb" opacity="0.8"/>
+<path class="g1mx-wake-0__sh" d="M187.18 94.46C196.75 92.59 206.31 91.04 215.86 89.83" fill="none" stroke="#ffffff" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" opacity="0.72"/>
+<path class="g1mx-wake-1__sh" d="M215.86 89.83C225.23 89.31 234.43 89.13 243.46 89.3" fill="none" stroke="#ffffff" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" opacity="0"/>
+<path class="g1mx-wake-2__sh" d="M243.46 89.3C251.99 90.17 260.21 91.37 268.1 92.91" fill="none" stroke="#ffffff" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" opacity="0"/>
+<path class="g1mx-wake-3__sh" d="M268.1 92.91C275.21 95.1 281.88 97.6 288.1 100.41" fill="none" stroke="#ffffff" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" opacity="0"/>
+<path class="g1mx-wake-4__sh" d="M288.1 100.41C293.31 103.78 297.98 107.41 302.09 111.29" fill="none" stroke="#ffffff" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" opacity="0"/>
+<path class="g1mx-wake-5__sh" d="M302.09 111.29C305.04 115.61 307.39 120.12 309.13 124.81" fill="none" stroke="#ffffff" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" opacity="0"/>
+<path class="g1mx-wake-6__sh" d="M309.13 124.81C309.62 129.78 309.49 134.86 308.73 140.04" fill="none" stroke="#ffffff" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" opacity="0"/>
+<path class="g1mx-wake-7__sh" d="M308.73 140.04C306.73 145.33 304.13 150.64 300.92 155.95" fill="none" stroke="#ffffff" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" opacity="0"/>
+<path class="g1mx-wake-8__sh" d="M300.92 155.95C296.56 161.2 291.66 166.37 286.23 171.46" fill="none" stroke="#ffffff" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" opacity="0"/>
+<path class="g1mx-wake-9__sh" d="M286.23 171.46C279.82 176.3 272.96 180.98 265.67 185.5" fill="none" stroke="#ffffff" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" opacity="0"/>
+<path class="g1mx-wake-10__sh" d="M265.67 185.5C257.63 189.61 249.28 193.49 240.63 197.13" fill="none" stroke="#ffffff" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" opacity="0"/>
+<path class="g1mx-wake-11__sh" d="M240.63 197.13C231.52 200.23 222.25 203.03 212.82 205.54" fill="none" stroke="#ffffff" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" opacity="0"/>
+<path class="g1mx-wake-12__sh" d="M212.82 205.54C203.25 207.41 193.69 208.96 184.14 210.17" fill="none" stroke="#ffffff" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" opacity="0"/>
+<path class="g1mx-wake-13__sh" d="M184.14 210.17C174.77 210.69 165.57 210.87 156.54 210.7" fill="none" stroke="#ffffff" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" opacity="0"/>
+<path class="g1mx-wake-14__sh" d="M156.54 210.7C148.01 209.83 139.79 208.63 131.9 207.09" fill="none" stroke="#ffffff" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" opacity="0"/>
+<path class="g1mx-wake-15__sh" d="M131.9 207.09C124.79 204.9 118.12 202.4 111.9 199.59" fill="none" stroke="#ffffff" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" opacity="0"/>
+<path class="g1mx-wake-16__sh" d="M111.9 199.59C106.69 196.22 102.02 192.59 97.91 188.71" fill="none" stroke="#ffffff" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" opacity="0"/>
+<path class="g1mx-wake-17__sh" d="M97.91 188.71C94.96 184.39 92.61 179.88 90.87 175.19" fill="none" stroke="#ffffff" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" opacity="0"/>
+<path class="g1mx-wake-18__sh" d="M90.87 175.19C90.38 170.22 90.51 165.14 91.27 159.96" fill="none" stroke="#ffffff" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" opacity="0"/>
+<path class="g1mx-wake-19__sh" d="M91.27 159.96C93.27 154.67 95.87 149.36 99.08 144.05" fill="none" stroke="#ffffff" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" opacity="0"/>
+<path class="g1mx-wake-20__sh" d="M99.08 144.05C103.44 138.8 108.34 133.63 113.77 128.54" fill="none" stroke="#ffffff" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" opacity="0"/>
+<path class="g1mx-wake-21__sh" d="M113.77 128.54C120.18 123.7 127.04 119.02 134.33 114.5" fill="none" stroke="#ffffff" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" opacity="0"/>
+<path class="g1mx-wake-22__sh" d="M134.33 114.5C142.37 110.39 150.72 106.51 159.37 102.87" fill="none" stroke="#ffffff" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" opacity="0.054"/>
+<path class="g1mx-wake-23__sh" d="M159.37 102.87C168.48 99.77 177.75 96.97 187.18 94.46" fill="none" stroke="#ffffff" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" opacity="0.388"/>
+<g class="g1mx-plane__t" transform="translate(224.62 89.44)">
+<g class="g1mx-plane__r" transform="rotate(-2.627)">
+<path d="M38 0C38 0 -35 19 -35 19C-35 19 -22 1 -22 1C-22 1 38 0 38 0Z" fill="#687fae"/>
+<path d="M-37 -22C-37 -22 38 0 38 0C38 0 -22 1 -22 1C-22 1 -37 -22 -37 -22Z" fill="url(#g1mx-wing__grad)"/>
+<path d="M-22 1C-22 1 38 0 38 0C38 0 -13 13 -13 13C-13 13 -22 1 -22 1Z" fill="#a4bce0"/>
+<path d="M-22 1C-22 1 38 0 38 0" fill="none" stroke="#58759e" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4"/>
+</g>
+</g>
+</svg>

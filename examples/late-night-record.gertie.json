@@ -1,0 +1,41 @@
+{
+  "gertie": 1,
+  "name": "late-night-record",
+  "tier": "icon",
+  "duration": 4,
+  "fps": 30,
+  "poster": 0.7,
+  "canvas": {
+    "w": 400,
+    "h": 300,
+    "background": "#342740"
+  },
+  "nodes": [
+    {"id": "backdrop", "type": "rect", "x": 200, "y": 150, "w": 400, "h": 300, "radius": 0, "fill": {"type": "linear", "from": [-170, -150], "to": [160, 150], "stops": [[0, "#51415d"], [1, "#211c35"]]}},
+    {"id": "shadow", "type": "ellipse", "x": 200, "y": 245, "rx": 111, "ry": 11, "fill": "#171523", "opacity": 0.37},
+    {"id": "deck-depth", "type": "rect", "x": 199, "y": 156, "w": 244, "h": 171, "radius": 18, "fill": "#493841"},
+    {"id": "deck", "type": "rect", "x": 197, "y": 146, "w": 244, "h": 170, "radius": 18, "fill": {"type": "linear", "from": [0, -85], "to": [0, 85], "stops": [[0, "#e1ae91"], [1, "#aa735d"]]}},
+    {"id": "deck-inset", "type": "rect", "x": 197, "y": 143, "w": 214, "h": 141, "radius": 12, "fill": "#7d5349"},
+    {"id": "record", "type": "group", "x": 174, "y": 142, "animate": {"rotation": [[0, 0], [4, 720, "linear"]]}, "children": [
+      {"id": "vinyl", "type": "ellipse", "x": 0, "y": 0, "r": 68, "fill": "#201f33"},
+      {"id": "groove-31", "type": "path", "d": "M-31 0 A31 31 0 1 0 31 0 A31 31 0 1 0 -31 0", "stroke": {"color": "#54526d", "width": 1}},
+      {"id": "groove-42", "type": "path", "d": "M-42 0 A42 42 0 1 0 42 0 A42 42 0 1 0 -42 0", "stroke": {"color": "#54526d", "width": 1}},
+      {"id": "groove-53", "type": "path", "d": "M-53 0 A53 53 0 1 0 53 0 A53 53 0 1 0 -53 0", "stroke": {"color": "#54526d", "width": 1}},
+      {"id": "groove-64", "type": "path", "d": "M-64 0 A64 64 0 1 0 64 0 A64 64 0 1 0 -64 0", "stroke": {"color": "#54526d", "width": 1}},
+      {"id": "record-glint", "type": "path", "d": "M-53 16 C-60 -9 -43 -46 -16 -54", "opacity": 0.7, "stroke": {"color": "#a6a0c2", "width": 3}},
+      {"id": "short-glint", "type": "path", "d": "M34 43 Q46 35 51 23", "opacity": 0.45, "stroke": {"color": "#a6a0c2", "width": 2}},
+      {"id": "label", "type": "ellipse", "x": 0, "y": 0, "r": 24, "fill": "#f2ad7b"},
+      {"id": "label-band", "type": "path", "d": "M-17 7 Q0 15 17 7", "stroke": {"color": "#aa573f", "width": 2}},
+      {"id": "label-point", "type": "ellipse", "x": 0, "y": -11, "r": 3.4, "fill": "#fce4b7"}
+    ]},
+    {"id": "spindle", "type": "ellipse", "x": 174, "y": 142, "r": 3.2, "fill": "#433443"},
+    {"id": "arm-hub", "type": "ellipse", "x": 276, "y": 92, "r": 13, "fill": "#302638"},
+    {"id": "tone-arm", "type": "group", "x": 276, "y": 92, "animate": {"rotation": [[0, 1], [1.96, 13], [4, 1]]}, "children": [
+      {"id": "arm-shadow", "type": "path", "d": "M0 0 L-5 59 L-24 85", "stroke": {"color": "#332d3a", "width": 8}},
+      {"id": "arm-metal", "type": "path", "d": "M0 0 L-5 58 L-24 85", "stroke": {"color": "#e6ccd0", "width": 4.8}},
+      {"id": "cartridge", "type": "path", "d": "M-22 78 L-30 90", "stroke": {"color": "#4c3a47", "width": 8}}
+    ]},
+    {"id": "power", "type": "rect", "x": 270, "y": 201, "w": 18, "h": 9, "radius": 4, "fill": "#362b3d"},
+    {"id": "power-light", "type": "ellipse", "x": 270, "y": 201, "r": 2.8, "fill": "#ffc38c", "animate": {"opacity": [[0, 0.7], [2, 1], [4, 0.7]]}}
+  ]
+}

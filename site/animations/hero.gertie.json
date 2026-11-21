@@ -1,0 +1,1676 @@
+{
+  "gertie": 1,
+  "name": "hero",
+  "canvas": {
+    "w": 1000,
+    "h": 800
+  },
+  "fps": 30,
+  "duration": 6,
+  "loop": true,
+  "tier": "character",
+  "poster": 0,
+  "nodes": [
+    {
+      "id": "ground-shadow",
+      "type": "ellipse",
+      "x": 505,
+      "y": 695,
+      "rx": 434,
+      "ry": 434,
+      "fill": {
+        "type": "radial",
+        "center": [
+          0,
+          0
+        ],
+        "radius": 434,
+        "stops": [
+          [
+            0,
+            "#c1b3e6"
+          ],
+          [
+            0.78,
+            "#c4b4e7"
+          ],
+          [
+            1,
+            "#c4b4e700"
+          ]
+        ]
+      },
+      "scale": [
+        1,
+        0.07834
+      ],
+      "motion": [
+        {
+          "preset": "pulse",
+          "duration": 6,
+          "phase": 0.5,
+          "repeat": "loop",
+          "amount": 1.012
+        }
+      ]
+    },
+    {
+      "id": "sparkle-gold-left",
+      "type": "path",
+      "d": "M0-1 C.25-.29 .37-.18 1 0 C.37.18 .25.34 0 1 C-.22.34 -.36.19 -1 0 C-.36-.18 -.22-.34 0-1Z",
+      "fill": "#fdc701",
+      "x": 324,
+      "y": 252,
+      "scale": [
+        37,
+        44
+      ],
+      "motion": [
+        {
+          "preset": "twinkle",
+          "duration": 6,
+          "phase": 0.35,
+          "repeat": "loop",
+          "dip": 0.27
+        },
+        {
+          "preset": "float",
+          "duration": 6,
+          "phase": 0.25,
+          "repeat": "loop",
+          "distance": 8.879999999999999
+        }
+      ]
+    },
+    {
+      "id": "sparkle-orange-left",
+      "type": "path",
+      "d": "M0-1 C.25-.29 .37-.18 1 0 C.37.18 .25.34 0 1 C-.22.34 -.36.19 -1 0 C-.36-.18 -.22-.34 0-1Z",
+      "fill": "#fa865a",
+      "x": 267,
+      "y": 305,
+      "scale": [
+        19,
+        23
+      ],
+      "motion": [
+        {
+          "preset": "twinkle",
+          "duration": 6,
+          "phase": 0.65,
+          "repeat": "loop",
+          "dip": 0.27
+        }
+      ]
+    },
+    {
+      "id": "sparkle-gold-right",
+      "type": "path",
+      "d": "M0-1 C.25-.29 .37-.18 1 0 C.37.18 .25.34 0 1 C-.22.34 -.36.19 -1 0 C-.36-.18 -.22-.34 0-1Z",
+      "fill": "#fcc900",
+      "x": 821,
+      "y": 346,
+      "scale": [
+        28,
+        32
+      ],
+      "motion": [
+        {
+          "preset": "twinkle",
+          "duration": 6,
+          "phase": 0.5,
+          "repeat": "loop",
+          "dip": 0.27
+        },
+        {
+          "preset": "float",
+          "duration": 6,
+          "phase": 0.75,
+          "repeat": "loop",
+          "distance": 6.72
+        }
+      ]
+    },
+    {
+      "id": "sparkle-orange-right",
+      "type": "path",
+      "d": "M0-1 C.25-.29 .37-.18 1 0 C.37.18 .25.34 0 1 C-.22.34 -.36.19 -1 0 C-.36-.18 -.22-.34 0-1Z",
+      "fill": "#fc8758",
+      "x": 875,
+      "y": 404,
+      "scale": [
+        20,
+        22
+      ],
+      "motion": [
+        {
+          "preset": "twinkle",
+          "duration": 6,
+          "phase": 0.83,
+          "repeat": "loop",
+          "dip": 0.27
+        }
+      ]
+    },
+    {
+      "id": "star",
+      "type": "group",
+      "children": [
+        {
+          "id": "star-body",
+          "type": "group",
+          "children": [
+            {
+              "id": "star-silhouette",
+              "type": "path",
+              "d": "M491 301 C477 287 452 265 450 240 C448 219 465 207 489 203 L541 196 Q550 194 555 183 C567 160 581 123 602 125 C627 124 637 162 651 183 Q659 195 673 199 L719 209 C740 214 753 226 751 244 C750 266 718 288 694 306 Q686 312 690 329 C693 351 705 380 690 397 C673 419 649 406 625 393 L590 373 Q583 370 573 375 C549 383 507 404 488 386 C473 371 486 330 495 313 Q498 306 491 301Z",
+              "fill": {
+                "type": "linear",
+                "from": [
+                  522,
+                  148
+                ],
+                "to": [
+                  681,
+                  363
+                ],
+                "stops": [
+                  [
+                    0,
+                    "#fdd22c"
+                  ],
+                  [
+                    0.5,
+                    "#fcc702"
+                  ],
+                  [
+                    1,
+                    "#fdc801"
+                  ]
+                ]
+              }
+            },
+            {
+              "id": "star-shade",
+              "type": "path",
+              "d": "M751 244 C750 266 718 288 694 306 Q686 312 690 329 C693 351 705 380 690 397 C673 419 649 406 625 393 L590 373 Q583 370 573 375 C549 383 507 404 488 386 C516 386 554 371 583 355 C600 351 629 383 662 358 C679 345 679 324 675 303 C671 285 690 282 710 269 C731 254 741 242 739 227 Q753 233 751 244Z",
+              "fill": {
+                "type": "linear",
+                "from": [
+                  619,
+                  263
+                ],
+                "to": [
+                  677,
+                  399
+                ],
+                "stops": [
+                  [
+                    0,
+                    "#fcc601"
+                  ],
+                  [
+                    1,
+                    "#fdad01"
+                  ]
+                ]
+              }
+            },
+            {
+              "id": "star-gloss-0",
+              "type": "path",
+              "d": "M562 184 C572 162 588 141 601 137 C609 134 613 141 607 149 C593 165 582 178 574 191 C568 199 557 195 562 184Z",
+              "fill": "#fde885"
+            },
+            {
+              "id": "star-gloss-1",
+              "type": "path",
+              "d": "M468 223 C482 214 508 207 524 208 C536 209 535 217 524 220 C504 223 485 231 474 235 C465 239 460 230 468 223Z",
+              "fill": "#fde885"
+            }
+          ],
+          "pivot": [
+            620,
+            363
+          ],
+          "motion": [
+            {
+              "preset": "float",
+              "at": 0.42,
+              "duration": 1.84,
+              "distance": 5
+            }
+          ]
+        }
+      ],
+      "pivot": [
+        591,
+        465
+      ],
+      "y": -9
+    },
+    {
+      "id": "cloud",
+      "type": "group",
+      "children": [
+        {
+          "id": "cloud-leg-r",
+          "type": "group",
+          "children": [
+            {
+              "id": "cloud-leg-r-ink",
+              "type": "path",
+              "d": "M180 596 L174 664",
+              "fill": null,
+              "stroke": {
+                "color": "#25183f",
+                "width": 14
+              }
+            },
+            {
+              "id": "cloud-leg-r-shoe",
+              "type": "group",
+              "children": [
+                {
+                  "id": "cloud-leg-r-shoe-dome",
+                  "type": "path",
+                  "d": "M-34 1 C-33-15 -20-29 0-29 C20-29 33-18 34 0 C36 11 25 16 0 16 C-24 16 -36 12 -34 1Z",
+                  "fill": {
+                    "type": "linear",
+                    "from": [
+                      -19,
+                      -26
+                    ],
+                    "to": [
+                      23,
+                      16
+                    ],
+                    "stops": [
+                      [
+                        0,
+                        "#fb5aba"
+                      ],
+                      [
+                        0.5,
+                        "#ef3ba0"
+                      ],
+                      [
+                        1,
+                        "#d12e8f"
+                      ]
+                    ]
+                  }
+                },
+                {
+                  "id": "cloud-leg-r-shoe-sole",
+                  "type": "path",
+                  "d": "M-33-1 C-30 9 -14 10 1 10 C22 9 31 3 30-12 C33-7 34-3 34 0 C36 11 25 16 0 16 C-24 16 -36 12 -34 1Z",
+                  "fill": "#d12e8f"
+                },
+                {
+                  "id": "cloud-leg-r-shoe-gloss",
+                  "type": "ellipse",
+                  "x": -13,
+                  "y": -17,
+                  "rx": 9,
+                  "ry": 5,
+                  "fill": "#fc87d0",
+                  "rotation": -26
+                }
+              ],
+              "x": 167,
+              "y": 678,
+              "scale": 0.88
+            }
+          ],
+          "pivot": [
+            180,
+            596
+          ]
+        },
+        {
+          "id": "cloud-leg-l",
+          "type": "group",
+          "children": [
+            {
+              "id": "cloud-leg-l-ink",
+              "type": "path",
+              "d": "M226 591 L230 664",
+              "fill": null,
+              "stroke": {
+                "color": "#25183f",
+                "width": 14
+              }
+            },
+            {
+              "id": "cloud-leg-l-shoe",
+              "type": "group",
+              "children": [
+                {
+                  "id": "cloud-leg-l-shoe-dome",
+                  "type": "path",
+                  "d": "M-34 1 C-33-15 -20-29 0-29 C20-29 33-18 34 0 C36 11 25 16 0 16 C-24 16 -36 12 -34 1Z",
+                  "fill": {
+                    "type": "linear",
+                    "from": [
+                      -19,
+                      -26
+                    ],
+                    "to": [
+                      23,
+                      16
+                    ],
+                    "stops": [
+                      [
+                        0,
+                        "#fb5aba"
+                      ],
+                      [
+                        0.5,
+                        "#ef3ba0"
+                      ],
+                      [
+                        1,
+                        "#d12e8f"
+                      ]
+                    ]
+                  }
+                },
+                {
+                  "id": "cloud-leg-l-shoe-sole",
+                  "type": "path",
+                  "d": "M-33-1 C-30 9 -14 10 1 10 C22 9 31 3 30-12 C33-7 34-3 34 0 C36 11 25 16 0 16 C-24 16 -36 12 -34 1Z",
+                  "fill": "#d12e8f"
+                },
+                {
+                  "id": "cloud-leg-l-shoe-gloss",
+                  "type": "ellipse",
+                  "x": -13,
+                  "y": -17,
+                  "rx": 9,
+                  "ry": 5,
+                  "fill": "#fc87d0",
+                  "rotation": -26
+                }
+              ],
+              "x": 243,
+              "y": 676,
+              "scale": 0.88
+            }
+          ],
+          "pivot": [
+            226,
+            591
+          ]
+        },
+        {
+          "id": "cloud-body",
+          "type": "group",
+          "children": [
+            {
+              "id": "cloud-arm-l",
+              "type": "group",
+              "children": [
+                {
+                  "id": "cloud-arm-l-ink",
+                  "type": "path",
+                  "d": "M270 517 Q286 544 282 585",
+                  "fill": null,
+                  "stroke": {
+                    "color": "#25183f",
+                    "width": 10
+                  }
+                },
+                {
+                  "id": "cloud-arm-l-hand",
+                  "type": "ellipse",
+                  "x": 282,
+                  "y": 585,
+                  "rx": 15,
+                  "ry": 15,
+                  "fill": "#25183f"
+                }
+              ],
+              "pivot": [
+                270,
+                517
+              ]
+            },
+            {
+              "id": "cloud-silhouette",
+              "type": "path",
+              "d": "M79 530 C60 512 48 492 54 469 C60 446 79 430 101 425 C95 397 110 378 132 372 C144 369 155 370 167 376 C180 356 204 341 226 345 C246 348 258 364 265 382 C288 376 313 389 324 411 C341 451 325 474 311 488 C334 511 325 555 298 579 C272 604 235 620 208 600 C184 625 145 628 117 617 C83 603 70 576 79 530Z",
+              "fill": {
+                "type": "linear",
+                "from": [
+                  124,
+                  377
+                ],
+                "to": [
+                  269,
+                  609
+                ],
+                "stops": [
+                  [
+                    0,
+                    "#fc65c0"
+                  ],
+                  [
+                    0.5,
+                    "#fc63bf"
+                  ],
+                  [
+                    1,
+                    "#fc62bf"
+                  ]
+                ]
+              }
+            },
+            {
+              "id": "cloud-shade",
+              "type": "path",
+              "d": "M79 548 C86 583 110 604 144 602 C169 598 188 582 204 562 C245 582 292 548 310 506 C331 528 323 557 298 579 C272 604 235 620 208 600 C184 625 145 628 117 617 C88 606 76 580 79 548Z",
+              "fill": {
+                "type": "linear",
+                "from": [
+                  170,
+                  535
+                ],
+                "to": [
+                  232,
+                  620
+                ],
+                "stops": [
+                  [
+                    0,
+                    "#fc62bf"
+                  ],
+                  [
+                    0.5,
+                    "#f74aaf"
+                  ],
+                  [
+                    1,
+                    "#f646ac"
+                  ]
+                ]
+              }
+            },
+            {
+              "id": "cloud-gloss-0",
+              "type": "path",
+              "d": "M72 450 C80 441 94 435 102 436 C109 437 109 444 102 446 C91 450 83 456 77 463 C71 468 65 460 72 450Z",
+              "fill": "#fc87d0"
+            },
+            {
+              "id": "cloud-gloss-1",
+              "type": "path",
+              "d": "M112 402 C119 388 136 377 145 380 C151 381 153 387 146 390 C132 394 125 401 119 409 C115 416 108 411 112 402Z",
+              "fill": "#fc87d0"
+            },
+            {
+              "id": "cloud-gloss-2",
+              "type": "path",
+              "d": "M186 373 C190 363 206 352 216 355 C222 356 221 362 214 365 C204 369 198 375 192 381 C186 386 182 381 186 373Z",
+              "fill": "#fc87d0"
+            },
+            {
+              "id": "cloud-head",
+              "type": "group",
+              "children": [
+                {
+                  "id": "cloud-eye-r",
+                  "type": "group",
+                  "children": [
+                    {
+                      "id": "cloud-eye-r-white",
+                      "type": "ellipse",
+                      "x": 0,
+                      "y": 0,
+                      "rx": 29,
+                      "ry": 34,
+                      "fill": "#f6f6f7",
+                      "rotation": 5
+                    },
+                    {
+                      "id": "cloud-eye-r-pupil",
+                      "type": "ellipse",
+                      "x": 9,
+                      "y": -1,
+                      "rx": 16,
+                      "ry": 20,
+                      "fill": "#25183f",
+                      "rotation": 2.5
+                    },
+                    {
+                      "id": "cloud-eye-r-catchlight",
+                      "type": "ellipse",
+                      "x": 11,
+                      "y": -11,
+                      "rx": 5.44,
+                      "ry": 5.44,
+                      "fill": "#fcfcfc"
+                    }
+                  ],
+                  "x": 168,
+                  "y": 480
+                },
+                {
+                  "id": "cloud-eye-l",
+                  "type": "group",
+                  "children": [
+                    {
+                      "id": "cloud-eye-l-white",
+                      "type": "ellipse",
+                      "x": 0,
+                      "y": 0,
+                      "rx": 29,
+                      "ry": 34,
+                      "fill": "#f6f6f7",
+                      "rotation": 3
+                    },
+                    {
+                      "id": "cloud-eye-l-pupil",
+                      "type": "ellipse",
+                      "x": -10,
+                      "y": 2,
+                      "rx": 16,
+                      "ry": 20,
+                      "fill": "#25183f",
+                      "rotation": 1.5
+                    },
+                    {
+                      "id": "cloud-eye-l-catchlight",
+                      "type": "ellipse",
+                      "x": -13,
+                      "y": -7,
+                      "rx": 5.44,
+                      "ry": 5.44,
+                      "fill": "#fcfcfc"
+                    }
+                  ],
+                  "x": 234,
+                  "y": 468
+                },
+                {
+                  "id": "cloud-mouth",
+                  "type": "path",
+                  "d": "M191 515 C201 530 220 529 225 512",
+                  "fill": null,
+                  "stroke": {
+                    "color": "#25183f",
+                    "width": 8
+                  }
+                }
+              ],
+              "pivot": [
+                204,
+                482
+              ]
+            },
+            {
+              "id": "cloud-arm-r",
+              "type": "group",
+              "children": [
+                {
+                  "id": "cloud-arm-r-ink",
+                  "type": "path",
+                  "d": "M114 541 C85 540 70 524 60 492",
+                  "fill": null,
+                  "stroke": {
+                    "color": "#25183f",
+                    "width": 11
+                  }
+                },
+                {
+                  "id": "cloud-pinwheel",
+                  "type": "group",
+                  "children": [
+                    {
+                      "id": "pinwheel-stick",
+                      "type": "path",
+                      "d": "M57 498 Q53 465 51 424",
+                      "fill": null,
+                      "stroke": {
+                        "color": "#302f43",
+                        "width": 4
+                      }
+                    },
+                    {
+                      "id": "pinwheel-rotor",
+                      "type": "group",
+                      "children": [
+                        {
+                          "id": "pinwheel-blades",
+                          "type": "path",
+                          "d": "M0 0 C-15-6 -22-16 -18-23 Q-4-22 0 0 C6-15 16-22 23-18 Q22-4 0 0 C15 6 22 16 18 23 Q4 22 0 0 C-6 15 -16 22 -23 18 Q-22 4 0 0Z",
+                          "fill": {
+                            "type": "linear",
+                            "from": [
+                              -20,
+                              -20
+                            ],
+                            "to": [
+                              20,
+                              20
+                            ],
+                            "stops": [
+                              [
+                                0,
+                                "#b0f4ff"
+                              ],
+                              [
+                                0.5,
+                                "#42cfca"
+                              ],
+                              [
+                                1,
+                                "#3156d8"
+                              ]
+                            ]
+                          }
+                        },
+                        {
+                          "id": "pinwheel-hub",
+                          "type": "ellipse",
+                          "x": 0,
+                          "y": 0,
+                          "rx": 3.8,
+                          "ry": 3.8,
+                          "fill": "#302f43"
+                        }
+                      ],
+                      "x": 51,
+                      "y": 424,
+                      "scale": 1.27,
+                      "motion": [
+                        {
+                          "preset": "spin",
+                          "duration": 2,
+                          "repeat": "loop",
+                          "turns": 1
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "cloud-arm-r-hand",
+                  "type": "ellipse",
+                  "x": 60,
+                  "y": 492,
+                  "rx": 19,
+                  "ry": 19,
+                  "fill": "#25183f"
+                }
+              ],
+              "pivot": [
+                114,
+                541
+              ],
+              "motion": [
+                {
+                  "preset": "swing",
+                  "at": 1.25,
+                  "duration": 1.22,
+                  "angle": 7
+                }
+              ]
+            }
+          ],
+          "pivot": [
+            183,
+            599
+          ]
+        }
+      ],
+      "pivot": [
+        204,
+        679
+      ],
+      "y": 0,
+      "motion": [
+        {
+          "preset": "rig-blink",
+          "at": 0.5,
+          "every": 2.51,
+          "seed": 99
+        },
+        {
+          "preset": "rig-look",
+          "at": 1.3,
+          "duration": 1.48,
+          "direction": "left",
+          "amount": 4.5
+        },
+        {
+          "preset": "rig-nod",
+          "at": 1.64,
+          "duration": 1.25,
+          "distance": 3
+        }
+      ]
+    },
+    {
+      "id": "blue",
+      "type": "group",
+      "children": [
+        {
+          "id": "blue-leg-r",
+          "type": "group",
+          "children": [
+            {
+              "id": "blue-leg-r-ink",
+              "type": "path",
+              "d": "M386 587 L373 662",
+              "fill": null,
+              "stroke": {
+                "color": "#25183f",
+                "width": 15
+              }
+            },
+            {
+              "id": "blue-leg-r-shoe",
+              "type": "group",
+              "children": [
+                {
+                  "id": "blue-leg-r-shoe-dome",
+                  "type": "path",
+                  "d": "M-34 1 C-33-15 -20-29 0-29 C20-29 33-18 34 0 C36 11 25 16 0 16 C-24 16 -36 12 -34 1Z",
+                  "fill": {
+                    "type": "linear",
+                    "from": [
+                      -19,
+                      -26
+                    ],
+                    "to": [
+                      23,
+                      16
+                    ],
+                    "stops": [
+                      [
+                        0,
+                        "#2a4cef"
+                      ],
+                      [
+                        0.5,
+                        "#2439df"
+                      ],
+                      [
+                        1,
+                        "#1e2dbe"
+                      ]
+                    ]
+                  }
+                },
+                {
+                  "id": "blue-leg-r-shoe-sole",
+                  "type": "path",
+                  "d": "M-33-1 C-30 9 -14 10 1 10 C22 9 31 3 30-12 C33-7 34-3 34 0 C36 11 25 16 0 16 C-24 16 -36 12 -34 1Z",
+                  "fill": "#1e2dbe"
+                },
+                {
+                  "id": "blue-leg-r-shoe-gloss",
+                  "type": "ellipse",
+                  "x": -13,
+                  "y": -17,
+                  "rx": 9,
+                  "ry": 5,
+                  "fill": "#476cf7",
+                  "rotation": -26
+                }
+              ],
+              "x": 362,
+              "y": 684,
+              "scale": 1.18
+            }
+          ],
+          "pivot": [
+            386,
+            587
+          ]
+        },
+        {
+          "id": "blue-leg-l",
+          "type": "group",
+          "children": [
+            {
+              "id": "blue-leg-l-ink",
+              "type": "path",
+              "d": "M465 584 L478 663",
+              "fill": null,
+              "stroke": {
+                "color": "#25183f",
+                "width": 15
+              }
+            },
+            {
+              "id": "blue-leg-l-shoe",
+              "type": "group",
+              "children": [
+                {
+                  "id": "blue-leg-l-shoe-dome",
+                  "type": "path",
+                  "d": "M-34 1 C-33-15 -20-29 0-29 C20-29 33-18 34 0 C36 11 25 16 0 16 C-24 16 -36 12 -34 1Z",
+                  "fill": {
+                    "type": "linear",
+                    "from": [
+                      -19,
+                      -26
+                    ],
+                    "to": [
+                      23,
+                      16
+                    ],
+                    "stops": [
+                      [
+                        0,
+                        "#2a4cef"
+                      ],
+                      [
+                        0.5,
+                        "#2439df"
+                      ],
+                      [
+                        1,
+                        "#1e2dbe"
+                      ]
+                    ]
+                  }
+                },
+                {
+                  "id": "blue-leg-l-shoe-sole",
+                  "type": "path",
+                  "d": "M-33-1 C-30 9 -14 10 1 10 C22 9 31 3 30-12 C33-7 34-3 34 0 C36 11 25 16 0 16 C-24 16 -36 12 -34 1Z",
+                  "fill": "#1e2dbe"
+                },
+                {
+                  "id": "blue-leg-l-shoe-gloss",
+                  "type": "ellipse",
+                  "x": -13,
+                  "y": -17,
+                  "rx": 9,
+                  "ry": 5,
+                  "fill": "#476cf7",
+                  "rotation": -26
+                }
+              ],
+              "x": 485,
+              "y": 682,
+              "scale": 1.19
+            }
+          ],
+          "pivot": [
+            465,
+            584
+          ]
+        },
+        {
+          "id": "blue-body",
+          "type": "group",
+          "children": [
+            {
+              "id": "blue-silhouette",
+              "type": "path",
+              "d": "M352 346 Q406 337 477 340 C516 340 539 363 543 399 Q548 453 550 523 C552 574 535 597 493 602 Q442 608 369 608 C326 609 298 592 291 552 Q283 511 280 455 C276 399 299 359 352 346Z",
+              "fill": {
+                "type": "linear",
+                "from": [
+                  332,
+                  351
+                ],
+                "to": [
+                  511,
+                  598
+                ],
+                "stops": [
+                  [
+                    0,
+                    "#3c61fb"
+                  ],
+                  [
+                    0.5,
+                    "#385dfb"
+                  ],
+                  [
+                    1,
+                    "#375afc"
+                  ]
+                ]
+              }
+            },
+            {
+              "id": "blue-shade",
+              "type": "path",
+              "d": "M300 573 C329 607 384 591 435 574 C491 554 528 525 544 454 Q548 481 550 523 C552 574 535 597 493 602 Q442 608 369 608 C337 609 314 600 300 573Z",
+              "fill": {
+                "type": "linear",
+                "from": [
+                  346,
+                  546
+                ],
+                "to": [
+                  511,
+                  604
+                ],
+                "stops": [
+                  [
+                    0,
+                    "#385dfb"
+                  ],
+                  [
+                    1,
+                    "#3142ec"
+                  ]
+                ]
+              }
+            },
+            {
+              "id": "blue-gloss-0",
+              "type": "path",
+              "d": "M297 418 C303 390 333 365 363 361 C376 358 383 367 374 373 C349 384 324 402 313 425 C306 437 294 435 297 418Z",
+              "fill": "#799afc"
+            },
+            {
+              "id": "blue-head",
+              "type": "group",
+              "children": [
+                {
+                  "id": "blue-eye-r",
+                  "type": "group",
+                  "children": [
+                    {
+                      "id": "blue-eye-r-white",
+                      "type": "ellipse",
+                      "x": 0,
+                      "y": 0,
+                      "rx": 35,
+                      "ry": 40,
+                      "fill": "#f6f6f7",
+                      "rotation": 7
+                    },
+                    {
+                      "id": "blue-eye-r-pupil",
+                      "type": "ellipse",
+                      "x": 13,
+                      "y": -1,
+                      "rx": 18,
+                      "ry": 23,
+                      "fill": "#25183f",
+                      "rotation": 3.5
+                    },
+                    {
+                      "id": "blue-eye-r-catchlight",
+                      "type": "ellipse",
+                      "x": 17,
+                      "y": -12,
+                      "rx": 6.12,
+                      "ry": 6.12,
+                      "fill": "#fcfcfc"
+                    }
+                  ],
+                  "x": 373,
+                  "y": 457
+                },
+                {
+                  "id": "blue-eye-l",
+                  "type": "group",
+                  "children": [
+                    {
+                      "id": "blue-eye-l-white",
+                      "type": "ellipse",
+                      "x": 0,
+                      "y": 0,
+                      "rx": 35,
+                      "ry": 40,
+                      "fill": "#f6f6f7",
+                      "rotation": -9
+                    },
+                    {
+                      "id": "blue-eye-l-pupil",
+                      "type": "ellipse",
+                      "x": -13,
+                      "y": 3,
+                      "rx": 18,
+                      "ry": 23,
+                      "fill": "#25183f",
+                      "rotation": -4.5
+                    },
+                    {
+                      "id": "blue-eye-l-catchlight",
+                      "type": "ellipse",
+                      "x": -21,
+                      "y": -9,
+                      "rx": 6.12,
+                      "ry": 6.12,
+                      "fill": "#fcfcfc"
+                    }
+                  ],
+                  "x": 451,
+                  "y": 449
+                },
+                {
+                  "id": "blue-mouth",
+                  "type": "path",
+                  "d": "M394 501 Q416 515 440 499 C438 517 429 525 416 525 C405 525 397 516 394 501Z",
+                  "fill": "#25183f"
+                },
+                {
+                  "id": "blue-tongue",
+                  "type": "path",
+                  "d": "M405 519 Q417 511 429 518 Q417 528 405 519Z",
+                  "fill": "#fc87d0"
+                }
+              ],
+              "pivot": [
+                419,
+                460
+              ]
+            },
+            {
+              "id": "blue-arm-l-lift",
+              "type": "group",
+              "children": [
+                {
+                  "id": "blue-arm-l-ctl",
+                  "type": "group",
+                  "children": [
+                    {
+                      "id": "blue-arm-l",
+                      "type": "group",
+                      "children": [
+                        {
+                          "id": "blue-arm-l-ink",
+                          "type": "path",
+                          "d": "M508 499 Q541 510 562 487",
+                          "fill": null,
+                          "stroke": {
+                            "color": "#25183f",
+                            "width": 10
+                          }
+                        },
+                        {
+                          "id": "blue-arm-l-hand",
+                          "type": "ellipse",
+                          "x": 562,
+                          "y": 487,
+                          "rx": 18,
+                          "ry": 18,
+                          "fill": "#25183f"
+                        }
+                      ],
+                      "pivot": [
+                        508,
+                        499
+                      ],
+                      "scale": [
+                        -1,
+                        1
+                      ]
+                    }
+                  ],
+                  "pivot": [
+                    508,
+                    499
+                  ]
+                }
+              ],
+              "pivot": [
+                508,
+                499
+              ],
+              "scale": [
+                -1,
+                1
+              ]
+            },
+            {
+              "id": "blue-arm-r",
+              "type": "group",
+              "children": [
+                {
+                  "id": "blue-arm-r-ink",
+                  "type": "path",
+                  "d": "M291 520 Q259 548 282 589",
+                  "fill": null,
+                  "stroke": {
+                    "color": "#25183f",
+                    "width": 12
+                  }
+                },
+                {
+                  "id": "blue-arm-r-hand",
+                  "type": "ellipse",
+                  "x": 282,
+                  "y": 589,
+                  "rx": 20,
+                  "ry": 20,
+                  "fill": "#25183f"
+                }
+              ],
+              "pivot": [
+                291,
+                520
+              ]
+            }
+          ],
+          "pivot": [
+            419,
+            580
+          ],
+          "motion": [
+            {
+              "preset": "sway",
+              "at": 2.04,
+              "duration": 1.98,
+              "angle": 2.3
+            }
+          ]
+        }
+      ],
+      "pivot": [
+        426,
+        684
+      ],
+      "y": 0,
+      "motion": [
+        {
+          "preset": "rig-blink",
+          "at": 0.88,
+          "every": 2.37,
+          "seed": 51
+        },
+        {
+          "preset": "rig-look",
+          "at": 1.86,
+          "duration": 1.48,
+          "direction": "up",
+          "amount": 5
+        },
+        {
+          "preset": "rig-wave",
+          "arm": "l",
+          "at": 2.04,
+          "duration": 1.98,
+          "raise": 46,
+          "angle": 10,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "orange",
+      "type": "group",
+      "children": [
+        {
+          "id": "orange-leg-r",
+          "type": "group",
+          "children": [
+            {
+              "id": "orange-leg-r-ink",
+              "type": "path",
+              "d": "M630 602 L619 670",
+              "fill": null,
+              "stroke": {
+                "color": "#25183f",
+                "width": 14
+              }
+            },
+            {
+              "id": "orange-leg-r-shoe",
+              "type": "group",
+              "children": [
+                {
+                  "id": "orange-leg-r-shoe-dome",
+                  "type": "path",
+                  "d": "M-34 1 C-33-15 -20-29 0-29 C20-29 33-18 34 0 C36 11 25 16 0 16 C-24 16 -36 12 -34 1Z",
+                  "fill": {
+                    "type": "linear",
+                    "from": [
+                      -19,
+                      -26
+                    ],
+                    "to": [
+                      23,
+                      16
+                    ],
+                    "stops": [
+                      [
+                        0,
+                        "#fd8024"
+                      ],
+                      [
+                        0.5,
+                        "#fb7b23"
+                      ],
+                      [
+                        1,
+                        "#d54f15"
+                      ]
+                    ]
+                  }
+                },
+                {
+                  "id": "orange-leg-r-shoe-sole",
+                  "type": "path",
+                  "d": "M-33-1 C-30 9 -14 10 1 10 C22 9 31 3 30-12 C33-7 34-3 34 0 C36 11 25 16 0 16 C-24 16 -36 12 -34 1Z",
+                  "fill": "#d54f15"
+                },
+                {
+                  "id": "orange-leg-r-shoe-gloss",
+                  "type": "ellipse",
+                  "x": -13,
+                  "y": -17,
+                  "rx": 9,
+                  "ry": 5,
+                  "fill": "#fd9a49",
+                  "rotation": -26
+                }
+              ],
+              "x": 604,
+              "y": 682,
+              "scale": 0.99
+            }
+          ],
+          "pivot": [
+            630,
+            602
+          ]
+        },
+        {
+          "id": "orange-leg-l",
+          "type": "group",
+          "children": [
+            {
+              "id": "orange-leg-l-ink",
+              "type": "path",
+              "d": "M677 602 L684 669",
+              "fill": null,
+              "stroke": {
+                "color": "#25183f",
+                "width": 14
+              }
+            },
+            {
+              "id": "orange-leg-l-shoe",
+              "type": "group",
+              "children": [
+                {
+                  "id": "orange-leg-l-shoe-dome",
+                  "type": "path",
+                  "d": "M-34 1 C-33-15 -20-29 0-29 C20-29 33-18 34 0 C36 11 25 16 0 16 C-24 16 -36 12 -34 1Z",
+                  "fill": {
+                    "type": "linear",
+                    "from": [
+                      -19,
+                      -26
+                    ],
+                    "to": [
+                      23,
+                      16
+                    ],
+                    "stops": [
+                      [
+                        0,
+                        "#fd8024"
+                      ],
+                      [
+                        0.5,
+                        "#fb7b23"
+                      ],
+                      [
+                        1,
+                        "#d54f15"
+                      ]
+                    ]
+                  }
+                },
+                {
+                  "id": "orange-leg-l-shoe-sole",
+                  "type": "path",
+                  "d": "M-33-1 C-30 9 -14 10 1 10 C22 9 31 3 30-12 C33-7 34-3 34 0 C36 11 25 16 0 16 C-24 16 -36 12 -34 1Z",
+                  "fill": "#d54f15"
+                },
+                {
+                  "id": "orange-leg-l-shoe-gloss",
+                  "type": "ellipse",
+                  "x": -13,
+                  "y": -17,
+                  "rx": 9,
+                  "ry": 5,
+                  "fill": "#fd9a49",
+                  "rotation": -26
+                }
+              ],
+              "x": 698,
+              "y": 683,
+              "scale": 0.96
+            }
+          ],
+          "pivot": [
+            677,
+            602
+          ]
+        },
+        {
+          "id": "orange-body",
+          "type": "group",
+          "children": [
+            {
+              "id": "orange-silhouette",
+              "type": "path",
+              "d": "M557 490 C571 439 611 407 658 405 C708 401 749 426 768 470 C789 522 766 585 716 612 C666 639 608 625 576 590 C554 566 548 525 557 490Z",
+              "fill": {
+                "type": "linear",
+                "from": [
+                  598,
+                  432
+                ],
+                "to": [
+                  730,
+                  594
+                ],
+                "stops": [
+                  [
+                    0,
+                    "#fc8b2f"
+                  ],
+                  [
+                    0.5,
+                    "#fc8529"
+                  ],
+                  [
+                    1,
+                    "#fd8024"
+                  ]
+                ]
+              }
+            },
+            {
+              "id": "orange-shade",
+              "type": "path",
+              "d": "M568 573 C596 611 643 605 681 589 C729 568 752 532 755 493 C757 473 752 451 741 434 C753 444 761 454 768 470 C789 522 766 585 716 612 C666 639 608 625 576 590 Q571 583 568 573Z",
+              "fill": {
+                "type": "linear",
+                "from": [
+                  735,
+                  452
+                ],
+                "to": [
+                  693,
+                  620
+                ],
+                "stops": [
+                  [
+                    0,
+                    "#fb7b23"
+                  ],
+                  [
+                    0.5,
+                    "#f77322"
+                  ],
+                  [
+                    1,
+                    "#f66b1e"
+                  ]
+                ]
+              }
+            },
+            {
+              "id": "orange-gloss-0",
+              "type": "path",
+              "d": "M598 444 C615 427 646 413 667 413 C678 413 682 422 672 426 C647 431 624 439 607 452 C598 458 592 451 598 444Z",
+              "fill": "#fdad6c"
+            },
+            {
+              "id": "orange-head",
+              "type": "group",
+              "children": [
+                {
+                  "id": "orange-eye-r",
+                  "type": "group",
+                  "children": [
+                    {
+                      "id": "orange-eye-r-white",
+                      "type": "ellipse",
+                      "x": 0,
+                      "y": 0,
+                      "rx": 28,
+                      "ry": 32,
+                      "fill": "#f6f6f7",
+                      "rotation": 14
+                    },
+                    {
+                      "id": "orange-eye-r-pupil",
+                      "type": "ellipse",
+                      "x": 10,
+                      "y": 1,
+                      "rx": 15,
+                      "ry": 19,
+                      "fill": "#25183f",
+                      "rotation": 7
+                    },
+                    {
+                      "id": "orange-eye-r-catchlight",
+                      "type": "ellipse",
+                      "x": 14,
+                      "y": -7,
+                      "rx": 5.1000000000000005,
+                      "ry": 5.1000000000000005,
+                      "fill": "#fcfcfc"
+                    }
+                  ],
+                  "x": 634,
+                  "y": 488
+                },
+                {
+                  "id": "orange-eye-l",
+                  "type": "group",
+                  "children": [
+                    {
+                      "id": "orange-eye-l-white",
+                      "type": "ellipse",
+                      "x": 0,
+                      "y": 0,
+                      "rx": 28,
+                      "ry": 33,
+                      "fill": "#f6f6f7",
+                      "rotation": 15
+                    },
+                    {
+                      "id": "orange-eye-l-pupil",
+                      "type": "ellipse",
+                      "x": -10,
+                      "y": 0,
+                      "rx": 15,
+                      "ry": 19,
+                      "fill": "#25183f",
+                      "rotation": 7.5
+                    },
+                    {
+                      "id": "orange-eye-l-catchlight",
+                      "type": "ellipse",
+                      "x": -9,
+                      "y": -8,
+                      "rx": 5.1000000000000005,
+                      "ry": 5.1000000000000005,
+                      "fill": "#fcfcfc"
+                    }
+                  ],
+                  "x": 698,
+                  "y": 498
+                },
+                {
+                  "id": "orange-mouth",
+                  "type": "path",
+                  "d": "M641 531 C644 546 662 549 674 536",
+                  "fill": null,
+                  "stroke": {
+                    "color": "#25183f",
+                    "width": 8
+                  }
+                }
+              ],
+              "pivot": [
+                665,
+                501
+              ]
+            },
+            {
+              "id": "headphones-band",
+              "type": "path",
+              "d": "M553 491 C545 429 592 391 653 391 C716 390 766 431 776 492",
+              "fill": null,
+              "stroke": {
+                "color": "#258954",
+                "width": 14
+              }
+            },
+            {
+              "id": "headphones-band-highlight",
+              "type": "path",
+              "d": "M555 459 C575 409 620 393 653 393 C692 393 728 407 751 436",
+              "fill": null,
+              "stroke": {
+                "color": "#b7f985",
+                "width": 4
+              }
+            },
+            {
+              "id": "headphones-cushions",
+              "type": "path",
+              "d": "M547 476 Q533 478 534 493 L537 514 Q540 529 555 528 Q567 527 567 515 L564 485 Q563 474 547 476Z M770 475 Q786 472 791 488 L794 512 Q794 527 779 531 Q765 533 761 520 L758 491 Q757 479 770 475Z",
+              "fill": "#194e39"
+            },
+            {
+              "id": "headphones-earcups",
+              "type": "path",
+              "d": "M544 482 Q534 484 537 496 L540 513 Q542 524 553 521 Q560 520 559 509 L557 490 Q555 480 544 482Z M777 481 Q787 479 790 492 L792 510 Q794 522 782 525 Q772 528 769 515 L767 497 Q765 485 777 481Z",
+              "fill": {
+                "type": "linear",
+                "from": [
+                  540,
+                  481
+                ],
+                "to": [
+                  793,
+                  525
+                ],
+                "stops": [
+                  [
+                    0,
+                    "#a3ed57"
+                  ],
+                  [
+                    0.5,
+                    "#58c74e"
+                  ],
+                  [
+                    1,
+                    "#299657"
+                  ]
+                ]
+              }
+            },
+            {
+              "id": "orange-arm-r",
+              "type": "group",
+              "children": [
+                {
+                  "id": "orange-arm-r-ink",
+                  "type": "path",
+                  "d": "M574 541 C548 555 544 566 579 593",
+                  "fill": null,
+                  "stroke": {
+                    "color": "#25183f",
+                    "width": 11
+                  }
+                },
+                {
+                  "id": "orange-arm-r-hand",
+                  "type": "ellipse",
+                  "x": 579,
+                  "y": 593,
+                  "rx": 16,
+                  "ry": 16,
+                  "fill": "#25183f"
+                }
+              ],
+              "pivot": [
+                574,
+                541
+              ]
+            },
+            {
+              "id": "orange-arm-l",
+              "type": "group",
+              "children": [
+                {
+                  "id": "orange-arm-l-ink",
+                  "type": "path",
+                  "d": "M747 557 C769 571 774 581 735 602",
+                  "fill": null,
+                  "stroke": {
+                    "color": "#25183f",
+                    "width": 10
+                  }
+                },
+                {
+                  "id": "orange-arm-l-hand",
+                  "type": "ellipse",
+                  "x": 735,
+                  "y": 602,
+                  "rx": 15,
+                  "ry": 15,
+                  "fill": "#25183f"
+                }
+              ],
+              "pivot": [
+                747,
+                557
+              ]
+            }
+          ],
+          "pivot": [
+            665,
+            632
+          ],
+          "motion": [
+            {
+              "preset": "sway",
+              "at": 4.21,
+              "duration": 1.6,
+              "angle": 2.6
+            }
+          ]
+        }
+      ],
+      "pivot": [
+        651,
+        686
+      ],
+      "y": 0,
+      "motion": [
+        {
+          "preset": "rig-blink",
+          "at": 0.19,
+          "every": 2.43,
+          "seed": 900
+        },
+        {
+          "preset": "rig-look",
+          "at": 4.29,
+          "duration": 1.48,
+          "direction": "right",
+          "amount": 4.5
+        },
+        {
+          "preset": "rig-nod",
+          "at": 4.57,
+          "duration": 1.25,
+          "distance": 3
+        }
+      ]
+    }
+  ]
+}

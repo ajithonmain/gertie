@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360" role="img" aria-label="A terminal: install the skill, ask for a loading spinner, then the agent reports the loop is checked and spinner.svg is exported">
+<style>
+@keyframes l1{0%,3%{opacity:0;transform:translateY(6px)}6%,94%{opacity:1;transform:none}98%,100%{opacity:0;transform:translateY(6px)}}
+@keyframes l2{0%,16%{opacity:0;transform:translateY(6px)}19%,94%{opacity:1;transform:none}98%,100%{opacity:0;transform:translateY(6px)}}
+@keyframes l3{0%,30%{opacity:0;transform:translateY(6px)}33%,94%{opacity:1;transform:none}98%,100%{opacity:0;transform:translateY(6px)}}
+@keyframes l4{0%,46%{opacity:0;transform:translateY(6px)}49%,94%{opacity:1;transform:none}98%,100%{opacity:0;transform:translateY(6px)}}
+@keyframes l5{0%,58%{opacity:0;transform:translateY(6px)}61%,94%{opacity:1;transform:none}98%,100%{opacity:0;transform:translateY(6px)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+text{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:17px}
+.l1{animation:l1 10s ease-out infinite}.l2{animation:l2 10s ease-out infinite}.l3{animation:l3 10s ease-out infinite}.l4{animation:l4 10s ease-out infinite}.l5{animation:l5 10s ease-out infinite}
+.sp{transform-box:fill-box;transform-origin:center;animation:spin 1.2s linear infinite}
+@media (prefers-reduced-motion:reduce){.l1,.l2,.l3,.l4,.l5,.sp{animation:none}}
+</style>
+<rect width="640" height="360" rx="22" fill="#0d1020"/>
+<rect width="640" height="44" rx="22" fill="#171b30"/><rect y="22" width="640" height="22" fill="#171b30"/>
+<circle cx="26" cy="22" r="6" fill="#ff5f57"/><circle cx="46" cy="22" r="6" fill="#febc2e"/><circle cx="66" cy="22" r="6" fill="#28c840"/>
+<g class="l1"><text x="28" y="92" fill="#7f8bb0">$</text><text x="50" y="92" fill="#f4f6ff">npx skills add ajithonmain/gertie</text></g>
+<g class="l2"><text x="28" y="136" fill="#7f8bb0">$</text><text x="50" y="136" fill="#f4f6ff">claude</text></g>
+<g class="l3"><text x="28" y="188" fill="#8fa9ff">&gt;</text><text x="50" y="188" fill="#f4f6ff">Make a blue loading spinner that</text><text x="50" y="214" fill="#f4f6ff">loops every two seconds.</text></g>
+<g class="l4"><text x="28" y="262" fill="#3ddc97">&#10003;</text><text x="50" y="262" fill="#cfd6ee">Loop checked</text></g>
+<g class="l5"><text x="28" y="302" fill="#3ddc97">&#10003;</text><text x="50" y="302" fill="#cfd6ee">Exported spinner.svg</text><circle class="sp" cx="560" cy="294" r="14" fill="none" stroke="#2f5bff" stroke-width="5" stroke-linecap="round" stroke-dasharray="58 30"/></g>
+</svg>

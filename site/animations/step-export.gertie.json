@@ -1,0 +1,500 @@
+{
+  "gertie": 1,
+  "name": "step-export",
+  "tier": "icon",
+  "canvas": {
+    "w": 240,
+    "h": 180,
+    "background": "#E9E2FF"
+  },
+  "fps": 30,
+  "duration": 4,
+  "loop": true,
+  "poster": 1.9,
+  "nodes": [
+    {
+      "id": "source",
+      "type": "group",
+      "x": 120,
+      "y": 90,
+      "animate": {
+        "x": [
+          [
+            0,
+            120
+          ],
+          [
+            0.45,
+            120
+          ],
+          [
+            1.3,
+            67,
+            "easeInOutSine"
+          ],
+          [
+            2.7,
+            67
+          ],
+          [
+            3.42,
+            120,
+            "easeInOutSine"
+          ],
+          [
+            4,
+            120
+          ]
+        ],
+        "scale": [
+          [
+            0,
+            1
+          ],
+          [
+            0.45,
+            1
+          ],
+          [
+            1.3,
+            0.78,
+            "easeInOutSine"
+          ],
+          [
+            2.7,
+            0.78
+          ],
+          [
+            3.42,
+            1,
+            "easeInOutSine"
+          ],
+          [
+            4,
+            1
+          ]
+        ],
+        "opacity": [
+          [
+            0,
+            1
+          ],
+          [
+            0.6,
+            1
+          ],
+          [
+            1.3,
+            0,
+            "easeInOutSine"
+          ],
+          [
+            2.8,
+            0
+          ],
+          [
+            3.42,
+            1,
+            "easeInOutSine"
+          ],
+          [
+            4,
+            1
+          ]
+        ]
+      },
+      "children": [
+        {
+          "id": "source-tile",
+          "type": "rect",
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 64,
+          "radius": 16,
+          "fill": "#9B7BFF",
+          "stroke": {
+            "color": "#202039",
+            "width": 3
+          }
+        },
+        {
+          "id": "source-arrow",
+          "type": "path",
+          "d": "M-12 12 L12 -12 M-4 -12 H12 V4",
+          "fill": null,
+          "stroke": {
+            "color": "#202039",
+            "width": 4
+          }
+        }
+      ]
+    },
+    {
+      "id": "tile-return-1",
+      "type": "group",
+      "children": [
+        {
+          "id": "tile-1",
+          "type": "rect",
+          "x": 96,
+          "y": 90,
+          "w": 36,
+          "h": 36,
+          "radius": 9,
+          "fill": "#FFC400",
+          "stroke": {
+            "color": "#202039",
+            "width": 2.5
+          },
+          "motion": [
+            {
+              "preset": "slide-in",
+              "at": 0.66,
+              "duration": 0.58,
+              "from": "left",
+              "distance": 29
+            }
+          ],
+          "animate": {
+            "x": [
+              [
+                3.8,
+                96
+              ],
+              [
+                4,
+                67
+              ]
+            ],
+            "opacity": [
+              [
+                3.8,
+                1
+              ],
+              [
+                4,
+                0
+              ]
+            ]
+          }
+        }
+      ],
+      "animate": {
+        "x": [
+          [
+            0,
+            0
+          ],
+          [
+            2.58,
+            0
+          ],
+          [
+            3.42,
+            24,
+            "easeInOutSine"
+          ],
+          [
+            3.8,
+            24
+          ],
+          [
+            4,
+            0
+          ]
+        ],
+        "y": [
+          [
+            0,
+            0
+          ],
+          [
+            2.58,
+            0
+          ],
+          [
+            3.42,
+            0,
+            "easeInOutSine"
+          ],
+          [
+            3.8,
+            0
+          ],
+          [
+            4,
+            0
+          ]
+        ],
+        "opacity": [
+          [
+            0,
+            0
+          ],
+          [
+            0.6,
+            1
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3.42,
+            0,
+            "easeInOutSine"
+          ],
+          [
+            4,
+            0
+          ]
+        ]
+      }
+    },
+    {
+      "id": "tile-return-2",
+      "type": "group",
+      "children": [
+        {
+          "id": "tile-2",
+          "type": "rect",
+          "x": 140,
+          "y": 90,
+          "w": 36,
+          "h": 36,
+          "radius": 9,
+          "fill": "#FF8AE2",
+          "stroke": {
+            "color": "#202039",
+            "width": 2.5
+          },
+          "motion": [
+            {
+              "preset": "slide-in",
+              "at": 0.79,
+              "duration": 0.58,
+              "from": "left",
+              "distance": 73
+            }
+          ],
+          "animate": {
+            "x": [
+              [
+                3.8,
+                140
+              ],
+              [
+                4,
+                67
+              ]
+            ],
+            "opacity": [
+              [
+                3.8,
+                1
+              ],
+              [
+                4,
+                0
+              ]
+            ]
+          }
+        }
+      ],
+      "animate": {
+        "x": [
+          [
+            0,
+            0
+          ],
+          [
+            2.58,
+            0
+          ],
+          [
+            3.42,
+            -20,
+            "easeInOutSine"
+          ],
+          [
+            3.8,
+            -20
+          ],
+          [
+            4,
+            0
+          ]
+        ],
+        "y": [
+          [
+            0,
+            0
+          ],
+          [
+            2.58,
+            0
+          ],
+          [
+            3.42,
+            0,
+            "easeInOutSine"
+          ],
+          [
+            3.8,
+            0
+          ],
+          [
+            4,
+            0
+          ]
+        ],
+        "opacity": [
+          [
+            0,
+            0
+          ],
+          [
+            0.6,
+            1
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3.42,
+            0,
+            "easeInOutSine"
+          ],
+          [
+            4,
+            0
+          ]
+        ]
+      }
+    },
+    {
+      "id": "tile-return-3",
+      "type": "group",
+      "children": [
+        {
+          "id": "tile-3",
+          "type": "rect",
+          "x": 184,
+          "y": 90,
+          "w": 36,
+          "h": 36,
+          "radius": 9,
+          "fill": "#2F5BFF",
+          "stroke": {
+            "color": "#202039",
+            "width": 2.5
+          },
+          "motion": [
+            {
+              "preset": "slide-in",
+              "at": 0.92,
+              "duration": 0.58,
+              "from": "left",
+              "distance": 117
+            }
+          ],
+          "animate": {
+            "x": [
+              [
+                3.8,
+                184
+              ],
+              [
+                4,
+                67
+              ]
+            ],
+            "opacity": [
+              [
+                3.8,
+                1
+              ],
+              [
+                4,
+                0
+              ]
+            ]
+          }
+        }
+      ],
+      "animate": {
+        "x": [
+          [
+            0,
+            0
+          ],
+          [
+            2.58,
+            0
+          ],
+          [
+            3.42,
+            -64,
+            "easeInOutSine"
+          ],
+          [
+            3.8,
+            -64
+          ],
+          [
+            4,
+            0
+          ]
+        ],
+        "y": [
+          [
+            0,
+            0
+          ],
+          [
+            2.58,
+            0
+          ],
+          [
+            3.42,
+            0,
+            "easeInOutSine"
+          ],
+          [
+            3.8,
+            0
+          ],
+          [
+            4,
+            0
+          ]
+        ],
+        "opacity": [
+          [
+            0,
+            0
+          ],
+          [
+            0.6,
+            1
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3.42,
+            0,
+            "easeInOutSine"
+          ],
+          [
+            4,
+            0
+          ]
+        ]
+      }
+    }
+  ]
+}

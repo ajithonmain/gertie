@@ -1,0 +1,178 @@
+{
+  "gertie": 1,
+  "name": "step-ask",
+  "tier": "icon",
+  "canvas": {
+    "w": 240,
+    "h": 180,
+    "background": "#FFF4C2"
+  },
+  "fps": 30,
+  "duration": 4,
+  "loop": true,
+  "poster": 1.45,
+  "nodes": [
+    {
+      "id": "bubble",
+      "type": "group",
+      "children": [
+        {
+          "id": "bubble-shape",
+          "type": "path",
+          "d": "M-40 -29 H40 Q60 -29 60 -9 V11 Q60 31 40 31 H-18 L-38 49 V31 H-40 Q-60 31 -60 11 V-9 Q-60 -29 -40 -29 Z",
+          "fill": "#FFFFFF",
+          "stroke": {
+            "color": "#202039",
+            "width": 3
+          }
+        },
+        {
+          "id": "dot-1",
+          "type": "ellipse",
+          "x": -22,
+          "y": 1,
+          "r": 6,
+          "fill": "#2F5BFF",
+          "animate": {
+            "scale": [
+              [
+                0,
+                1
+              ],
+              [
+                0.7,
+                1
+              ],
+              [
+                0.9,
+                1.45,
+                "easeOutCubic"
+              ],
+              [
+                1.12,
+                1,
+                "easeInOutSine"
+              ],
+              [
+                4,
+                1
+              ]
+            ]
+          }
+        },
+        {
+          "id": "dot-2",
+          "type": "ellipse",
+          "x": 0,
+          "y": 1,
+          "r": 6,
+          "fill": "#2F5BFF",
+          "animate": {
+            "scale": [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                1.2,
+                1.45,
+                "easeOutCubic"
+              ],
+              [
+                1.42,
+                1,
+                "easeInOutSine"
+              ],
+              [
+                4,
+                1
+              ]
+            ]
+          }
+        },
+        {
+          "id": "dot-3",
+          "type": "ellipse",
+          "x": 22,
+          "y": 1,
+          "r": 6,
+          "fill": "#2F5BFF",
+          "animate": {
+            "scale": [
+              [
+                0,
+                1
+              ],
+              [
+                1.3,
+                1
+              ],
+              [
+                1.5,
+                1.45,
+                "easeOutCubic"
+              ],
+              [
+                1.72,
+                1,
+                "easeInOutSine"
+              ],
+              [
+                4,
+                1
+              ]
+            ]
+          }
+        },
+        {
+          "id": "sparkle",
+          "type": "path",
+          "d": "M0 -17 Q2 -3 16 0 Q2 3 0 17 Q-2 3 -16 0 Q-2 -3 0 -17 Z",
+          "fill": "#FF8AE2",
+          "x": 60,
+          "y": -32,
+          "stroke": {
+            "color": "#202039",
+            "width": 2
+          },
+          "motion": [
+            {
+              "preset": "twinkle",
+              "duration": 2,
+              "repeat": "loop",
+              "dip": 0.65
+            }
+          ]
+        }
+      ],
+      "x": 117,
+      "y": 87,
+      "animate": {
+        "scale": [
+          [
+            0,
+            1
+          ],
+          [
+            0.24,
+            1.08,
+            "easeOutCubic"
+          ],
+          [
+            0.58,
+            1,
+            "easeInOutSine"
+          ],
+          [
+            4,
+            1
+          ]
+        ]
+      }
+    }
+  ]
+}
