@@ -86,10 +86,18 @@ test("the SVG and canvas renderers draw one small coloured frame alike: under 2 
       const [f, exact, fromSvg, fromCanvas] = await both(browser, sample(style));
       results.push(`${name}: ${(f * 100).toFixed(2)}% (${(exact * 100).toFixed(2)}% not exactly equal)`);
       if (f >= 0.02) {
-        // Keep both pictures so a failure on another platform can be looked at, not guessed at.
+        // Keep both pictures so a failure on another platform can be looked at, not guessed at. The files go to the
+        // test's output folder (which CI uploads); a short summary is also printed, because the list reporter keeps
+        // in-memory attachments out of the folder.
         const slug = name.replace(/\W+/g, "-");
-        await testInfo.attach(`${slug}-svg.png`, { body: fromSvg, contentType: "image/png" });
-        await testInfo.attach(`${slug}-canvas.png`, { body: fromCanvas, contentType: "image/png" });
+        for (const [label, body] of [["svg", fromSvg], ["canvas", fromCanvas]] as const) {
+          const file = testInfo.outputPath(`${slug}-${label}.png`);
+          writeFileSync(file, body);
+          await testInfo.attach(`${slug}-${label}.png`, { path: file, contentType: "image/png" });
+          console.log(`ASCII-DIFF ${slug} ${label} ${body.length} bytes png base64: ${body.toString("base64")}`);
+        }
+        const fonts = spawnSync("fc-match", ["monospace"], { encoding: "utf8" });
+        console.log(`ASCII-DIFF fonts: ${fonts.error ? "fc-match not available" : fonts.stdout.trim()}`);
       }
       expect(f, name).toBeLessThan(0.02);
     }
