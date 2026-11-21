@@ -11,6 +11,7 @@ const EXCEPTIONS = new Map([
   ["@img/sharp-libvips-darwin-x64", "same as above"],
   ["@img/sharp-libvips-linux-x64", "same as above"],
   ["@img/sharp-libvips-linux-arm64", "same as above"],
+  ["@img/sharp-wasm32", "Apache-2.0 AND LGPL-3.0-or-later AND MIT; WebAssembly build of sharp with libvips, optional install on Linux, dev-only via hyperframes, not bundled"],
 ]);
 
 function packages(root) {

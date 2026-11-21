@@ -59,7 +59,7 @@ No product, package, script or command name uses a LottieFiles name. The README 
 
 `npm run check:licences` (`scripts/check-licences.mjs`) walks every installed package, including nested ones, and fails on any licence outside the allowed list. It runs in CI after the type check. At the time of audit it passed over 94 packages.
 
-One reviewed exception: `@img/sharp-libvips-*` (LGPL-3.0-or-later), the prebuilt libvips that sharp loads. It arrives only through hyperframes, an optional external tool, as a dev dependency. It is not bundled, not shipped and not imported by Gertie.
+One reviewed exception: the libvips that sharp loads, which is LGPL-3.0-or-later. It comes as `@img/sharp-libvips-*` (prebuilt native builds) and, on Linux, as `@img/sharp-wasm32` (a WebAssembly build licensed Apache-2.0 AND LGPL-3.0-or-later AND MIT, installed as an optional dependency, so the check only meets it in CI). Both arrive only through hyperframes, an optional external tool, as a dev dependency. They are not bundled, not shipped and not imported by Gertie.
 
 ## Not yet done
 
