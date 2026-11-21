@@ -33,14 +33,27 @@ See them in the [gallery](https://gertiestudio.pages.dev/gallery). Each example 
 - Playwright and a browser to render and run quality checks. If Google Chrome is installed, `npm install playwright` in the skill folder is enough. Otherwise also run `npx playwright install chromium` (on Linux add `--with-deps`).
 - ffmpeg to export anything except `lottie`, `svg` and `lottie-zip`.
 
-Run `node scripts/gertie.mjs doctor` inside the skill folder. It reports what is present and what is missing.
+`doctor` reports what is present and what is missing; see [Install](#install) for where to run it.
 
 ## Install
 
-With the skills installer:
+With the skills installer, run inside your project:
 
 ```bash
 npx skills add ajithonmain/gertie
+```
+
+This installs the skill for that project only, in `.agents/skills/gertie`, with a link at `.claude/skills/gertie` for Claude Code. Agents that read `.agents/skills/` (Codex CLI, Gemini CLI, Cursor and others) pick it up from there. Check the setup from the project folder:
+
+```bash
+node .claude/skills/gertie/scripts/gertie.mjs doctor
+```
+
+To install it once for every project, add `-g`. The skill then lives in `~/.agents/skills/gertie`, with a link at `~/.claude/skills/gertie`:
+
+```bash
+npx skills add ajithonmain/gertie -g
+node ~/.claude/skills/gertie/scripts/gertie.mjs doctor
 ```
 
 Or by hand. Claude Code:
@@ -48,15 +61,12 @@ Or by hand. Claude Code:
 ```bash
 git clone https://github.com/ajithonmain/gertie
 cp -r gertie/skills/gertie ~/.claude/skills/
+node ~/.claude/skills/gertie/scripts/gertie.mjs doctor
 ```
 
 Codex CLI, Gemini CLI and Cursor read `.agents/skills/` (user folder `~/.agents/skills/`); Cursor also reads `.cursor/skills/` and `.claude/skills/`. Copy `skills/gertie` into the folder your agent uses.
 
-Then check the setup:
-
-```bash
-node ~/.claude/skills/gertie/scripts/gertie.mjs doctor
-```
+On a new machine `doctor` usually reports Playwright as missing. Compiling and validating work without it; to render and run the visual checks, follow the fix it prints (`npm install playwright` in the skill folder, then `npx playwright install chromium` if Google Chrome is not installed).
 
 ## Use
 
