@@ -71,21 +71,31 @@ async function both(browser: PwBrowser, s: NAscii, t: NAscii = s): Promise<[numb
   return [differing(ra, rb, 48), differing(ra, rb, 0), fromSvg as Buffer, fromCanvas as Buffer];
 }
 
-test("the SVG and canvas renderers draw one small coloured frame alike: under 2 percent of pixels differ", async ({}, testInfo) => {
+/**
+ * How much the two renderers may differ. Dots and squares are plain shapes, so they must agree to 2 percent anywhere.
+ * Text depends on the font and on how the platform rasterises it. On macOS the two renderers draw the same pixels; on
+ * the Linux CI runner (DejaVu Sans Mono) the cells line up exactly, but the canvas draws about 2 percent less ink per
+ * glyph, which put plain text 3.6 percent apart. Text is held to 8 percent off macOS, still far below the 20 percent
+ * that a frame with different characters differs by, so the measure can still fail.
+ */
+const SHAPE_LIMIT = 0.02;
+const TEXT_LIMIT = process.platform === "darwin" ? 0.02 : 0.08;
+
+test("the SVG and canvas renderers draw one small coloured frame alike: shapes under 2 percent of pixels differ, text under 2 percent on macOS and 8 percent elsewhere", async ({}, testInfo) => {
   const { browser } = await launchBrowser();
   try {
-    const cases: [string, Record<string, unknown>][] = [
-      ["text", {}],
-      ["text with glow", { glow: 0.5 }],
-      ["text on a gradient, font size 12", { background: { from: "#0b0f19", to: "#1e3a8a", angle: 135 }, fontSize: 12 }],
-      ["dots on square cells", { glyph: "dot", ramp: " .:-=+*#%@", cellAspect: 1 }],
-      ["squares", { glyph: "square", ramp: " .:-=+*#%@", cellAspect: 1 }],
+    const cases: [string, Record<string, unknown>, number][] = [
+      ["text", {}, TEXT_LIMIT],
+      ["text with glow", { glow: 0.5 }, TEXT_LIMIT],
+      ["text on a gradient, font size 12", { background: { from: "#0b0f19", to: "#1e3a8a", angle: 135 }, fontSize: 12 }, TEXT_LIMIT],
+      ["dots on square cells", { glyph: "dot", ramp: " .:-=+*#%@", cellAspect: 1 }, SHAPE_LIMIT],
+      ["squares", { glyph: "square", ramp: " .:-=+*#%@", cellAspect: 1 }, SHAPE_LIMIT],
     ];
     const results: string[] = [];
-    for (const [name, style] of cases) {
+    for (const [name, style, limit] of cases) {
       const [f, exact, fromSvg, fromCanvas] = await both(browser, sample(style));
-      results.push(`${name}: ${(f * 100).toFixed(2)}% (${(exact * 100).toFixed(2)}% not exactly equal)`);
-      if (f >= 0.02) {
+      results.push(`${name}: ${(f * 100).toFixed(2)}% of ${(limit * 100).toFixed(0)}% allowed (${(exact * 100).toFixed(2)}% not exactly equal)`);
+      if (f >= limit) {
         // Keep both pictures so a failure on another platform can be looked at, not guessed at. The files go to the
         // test's output folder (which CI uploads); a short summary is also printed, because the list reporter keeps
         // in-memory attachments out of the folder.
@@ -99,13 +109,14 @@ test("the SVG and canvas renderers draw one small coloured frame alike: under 2 
         const fonts = spawnSync("fc-match", ["monospace"], { encoding: "utf8" });
         console.log(`ASCII-DIFF fonts: ${fonts.error ? "fc-match not available" : fonts.stdout.trim()}`);
       }
-      expect(f, name).toBeLessThan(0.02);
+      // Soft, so one run reports every case instead of stopping at the first miss.
+      expect.soft(f, name).toBeLessThan(limit);
     }
     console.log(`renderers differ in: ${results.join(", ")}`);
     // The measure can fail: a frame with other characters, drawn by the canvas, differs from the SVG in far more pixels.
     const [control] = await both(browser, sample({}), sample({}, 7));
     console.log(`control (different characters): ${(control * 100).toFixed(2)}%`);
-    expect(control).toBeGreaterThan(0.02);
+    expect(control).toBeGreaterThan(TEXT_LIMIT);
   } finally {
     await browser.close();
   }

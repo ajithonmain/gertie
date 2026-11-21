@@ -82,9 +82,11 @@ for (const name of corpus()) {
     const first = await page.screenshot();
     await page.waitForTimeout(400);
     let moved = !(await page.screenshot()).equals(first);
-    // A loop whose length divides 400 milliseconds could land on the same frame. Look once more at a different time.
-    if (!moved) {
-      await page.waitForTimeout(170);
+    // A loop whose length divides 400 milliseconds could land on the same frame, and on a busy machine the animation
+    // can start late. Look again at other times, for about two seconds in all, before deciding it does not play.
+    for (const wait of [170, 330, 500, 1000]) {
+      if (moved) break;
+      await page.waitForTimeout(wait);
       moved = !(await page.screenshot()).equals(first);
     }
     expect(moved, "two screenshots of the <img> differ, so the animation plays").toBe(true);
