@@ -40,7 +40,7 @@ This repository is at the design stage. The documents in `docs/` are the source 
 
 - Project and skill name: `gertie`
 - GitHub repository: `<owner>/gertie`
-- Website: `askgertie.pages.dev` (Cloudflare Pages)
+- Website: `gertiestudio.pages.dev` (Cloudflare Pages)
 - npm, only if a CLI package is published later: `gertie-cli`
 - Scene file extension: `.gertie.json`
 - Storyboard file extension: `.story.json`

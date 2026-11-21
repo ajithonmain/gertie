@@ -1,4 +1,5 @@
 import { spawn } from "node:child_process";
+import { processLimitMs, timeoutMessage, trackChild } from "../shutdown.ts";
 import { requireFfmpeg } from "../export/ffmpeg.ts";
 
 /** A rectangle of the source picture in source pixels. */
@@ -26,11 +27,24 @@ export async function rawFrames(file: string, o: { cols: number; rows: number; f
   const chunks: Buffer[] = [];
   let err = "";
   await new Promise<void>((resolve, reject) => {
-    const p = spawn("ffmpeg", args, { stdio: ["ignore", "pipe", "pipe"] });
+    const p = trackChild(spawn("ffmpeg", args, { stdio: ["ignore", "pipe", "pipe"] }));
+    let expired = false;
+    const timer = setTimeout(() => {
+      expired = true;
+      p.kill("SIGKILL");
+    }, processLimitMs("decode"));
     p.stdout.on("data", (d: Buffer) => chunks.push(d));
     p.stderr.on("data", (d: Buffer) => (err += d.toString()));
-    p.on("error", reject);
-    p.on("close", (code) => (code === 0 ? resolve() : reject(new Error(`ffmpeg could not read ${file} (exit ${code}): ${err.trim().split("\n").slice(-3).join(" | ")}`))));
+    p.on("error", (e) => {
+      clearTimeout(timer);
+      reject(e);
+    });
+    p.on("close", (code) => {
+      clearTimeout(timer);
+      if (expired) reject(new Error(timeoutMessage(`ffmpeg reading ${file}`, "decode")));
+      else if (code === 0) resolve();
+      else reject(new Error(`ffmpeg could not read ${file} (exit ${code}): ${err.trim().split("\n").slice(-3).join(" | ")}`));
+    });
   });
   const buf = Buffer.concat(chunks);
   const size = o.cols * o.rows * 4;
@@ -49,7 +63,7 @@ const filterChain = (o: { cols: number; rows: number; fps: number; crop?: CropRe
 export async function* streamFrames(file: string, o: { cols: number; rows: number; fps: number; maxSeconds: number; maxFrames: number; crop?: CropRect }): AsyncGenerator<Uint8Array> {
   requireFfmpeg();
   const args = ["-hide_banner", "-loglevel", "error", ...(Number.isFinite(o.maxSeconds) ? ["-t", String(o.maxSeconds)] : []), "-i", file, "-vf", filterChain(o), "-frames:v", String(o.maxFrames), "-f", "rawvideo", "-pix_fmt", "rgba", "-"];
-  const p = spawn("ffmpeg", args, { stdio: ["ignore", "pipe", "pipe"] });
+  const p = trackChild(spawn("ffmpeg", args, { stdio: ["ignore", "pipe", "pipe"] }));
   let err = "";
   p.stderr.on("data", (d: Buffer) => (err += d.toString()));
   const closed = new Promise<number | null>((resolve, reject) => {

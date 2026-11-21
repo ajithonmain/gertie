@@ -3,15 +3,21 @@
 @keyframes gir6-bar__t{0%{transform:translate(36px,48px);animation-timing-function:cubic-bezier(0.65,0,0.35,1)}80%{transform:translate(128px,48px);animation-timing-function:cubic-bezier(0.65,0,0.35,1)}100%{transform:translate(128px,48px)}}
 .gir6-bar__t{animation:gir6-bar__t 2s linear 1 both;transform-origin:0 0}
 @media (prefers-reduced-motion:reduce){*{animation:none!important}}
+@media (prefers-reduced-motion:reduce){.gir6__geometry-motion{display:none}.gir6__geometry-poster{display:inline}}
 </style>
 <rect width="256" height="96" fill="#0f172a"/>
 <g transform="translate(128 48)">
 <rect x="-100" y="-8" width="200" height="16" rx="8" fill="#1e293b"/>
 </g>
 <g class="gir6-bar__t" transform="translate(36 48)">
+<g class="gir6__geometry-motion">
 <rect x="-8" y="-8" width="16" height="16" rx="8" fill="#34d399">
 <animate attributeName="x" dur="2s" repeatCount="1" fill="freeze" calcMode="spline" values="-8;-100;-100" keyTimes="0;0.8;1" keySplines="0.65 0 0.35 1;0.65 0 0.35 1"/>
 <animate attributeName="width" dur="2s" repeatCount="1" fill="freeze" calcMode="spline" values="16;200;200" keyTimes="0;0.8;1" keySplines="0.65 0 0.35 1;0.65 0 0.35 1"/>
 </rect>
+</g>
+<g class="gir6__geometry-poster" display="none">
+<rect x="-8" y="-8" width="16" height="16" rx="8" fill="#34d399"/>
+</g>
 </g>
 </svg>

@@ -190,7 +190,7 @@ Add this rule to the style block:
 
 With animations off, each element shows its static attributes. The emitter therefore writes every animated property's **poster value** as the static attribute. The poster frame defaults to frame 0. A scene may set `"poster": <seconds>` at the top level to choose a more representative moment, for example the end of a reveal animation.
 
-SMIL animations are not affected by this media query. This is acceptable; morphs keep running.
+For SMIL shape and gradient geometry, the media query switches to a copy at the poster geometry.
 
 ## Size
 

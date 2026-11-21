@@ -1,4 +1,5 @@
 import { copyFileSync, existsSync, mkdirSync, mkdtempSync, readFileSync, rmSync, statSync, writeFileSync } from "node:fs";
+import { syncLimit } from "../shutdown.ts";
 import { spawnSync } from "node:child_process";
 import { tmpdir } from "node:os";
 import { basename, dirname, extname, join, resolve } from "node:path";
@@ -90,7 +91,7 @@ export function audioFilter(inputIndex: number, audio: NonNullable<NStory["audio
 }
 
 function hasAudioStream(file: string): boolean {
-  const r = spawnSync("ffprobe", ["-v", "error", "-select_streams", "a:0", "-show_entries", "stream=codec_type", "-of", "csv=p=0", file], { encoding: "utf8" });
+  const r = spawnSync("ffprobe", ["-v", "error", "-select_streams", "a:0", "-show_entries", "stream=codec_type", "-of", "csv=p=0", file], { encoding: "utf8", ...syncLimit("quick") });
   return r.status === 0 && r.stdout.trim() === "audio";
 }
 

@@ -1,4 +1,5 @@
 import { existsSync, mkdirSync, mkdtempSync, readdirSync, readFileSync, rmSync, statSync, writeFileSync } from "node:fs";
+import { syncLimit, timedOut, timeoutMessage } from "../../shutdown.ts";
 import { tmpdir } from "node:os";
 import { basename, dirname, extname, join, resolve } from "node:path";
 import { parseHex } from "../../spec/color.ts";
@@ -357,7 +358,7 @@ interface DoctorReport {
 export async function doctorCommand(): Promise<Outcome> {
   const major = Number(process.versions.node.split(".")[0]);
   const status = await browserStatus();
-  const ff = spawnSync("ffmpeg", ["-version"], { encoding: "utf8" });
+  const ff = spawnSync("ffmpeg", ["-version"], { encoding: "utf8", ...syncLimit("quick") });
   const ffVersion = ff.status === 0 ? /ffmpeg version (\S+)/.exec(ff.stdout)?.[1] : undefined;
   const notes: string[] = [];
   if (!status.source && status.fix) notes.push(`To enable rendering: ${status.fix}`);
@@ -790,9 +791,9 @@ export function sampleCommand(args: Args): Outcome {
   const timeFlag = args.flags.get("time");
   const time = numFlag(args, "time", 0, 0, 36000);
   if (typeof time === "string" || timeFlag === true) return fileProblem(typeof time === "string" ? time : "--time needs a number of seconds, such as --time 1.5.");
-  const have = (cmd: string): boolean => spawnSync(cmd, ["-version"], { encoding: "utf8" }).status === 0;
+  const have = (cmd: string): boolean => spawnSync(cmd, ["-version"], { encoding: "utf8", ...syncLimit("quick") }).status === 0;
   if (!have("ffmpeg") || !have("ffprobe")) return { code: EXIT_USAGE, message: "sample needs ffmpeg and ffprobe, and they were not found.\n  fix: install ffmpeg (for example 'brew install ffmpeg' or 'apt install ffmpeg'), then run 'gertie doctor'" };
-  const probe = spawnSync("ffprobe", ["-v", "error", "-select_streams", "v:0", "-show_entries", "stream=width,height", "-of", "json", path], { encoding: "utf8" });
+  const probe = spawnSync("ffprobe", ["-v", "error", "-select_streams", "v:0", "-show_entries", "stream=width,height", "-of", "json", path], { encoding: "utf8", ...syncLimit("quick") });
   let size: { width?: number; height?: number } | undefined;
   try {
     size = (JSON.parse(probe.stdout) as { streams?: { width?: number; height?: number }[] }).streams?.[0];
@@ -803,7 +804,8 @@ export function sampleCommand(args: Args): Outcome {
   const { width: w, height: h } = size;
   const outside = points.find((p) => p.x >= w || p.y >= h);
   if (outside) return fileProblem(`--at ${outside.x},${outside.y} is outside the ${w} x ${h} frame.\n  fix: x runs from 0 to ${w - 1} and y from 0 to ${h - 1}. Run 'gertie grid' on the image to read coordinates.`);
-  const ex = spawnSync("ffmpeg", ["-v", "error", ...(time > 0 ? ["-ss", String(time)] : []), "-i", path, "-frames:v", "1", "-f", "rawvideo", "-pix_fmt", "rgba", "pipe:1"], { maxBuffer: w * h * 4 + 1024, stdio: ["ignore", "pipe", "pipe"] });
+  const ex = spawnSync("ffmpeg", ["-v", "error", ...(time > 0 ? ["-ss", String(time)] : []), "-i", path, "-frames:v", "1", "-f", "rawvideo", "-pix_fmt", "rgba", "pipe:1"], { maxBuffer: w * h * 4 + 1024, stdio: ["ignore", "pipe", "pipe"], ...syncLimit("quick") });
+  if (timedOut(ex)) return fileProblem(timeoutMessage(`Taking a frame from ${file}`, "quick"));
   if (ex.status !== 0 || ex.stdout.length !== w * h * 4) return fileProblem(`No frame could be taken from ${file}${time > 0 ? ` at ${time} seconds (is the clip that long?)` : ""}: ${String(ex.stderr).trim().split("\n")[0] ?? "no output"}`);
   const colours = sampleColours(ex.stdout, w, h, points);
   return {
@@ -833,10 +835,10 @@ export async function studyCommand(args: Args): Promise<Outcome> {
     if (parts.length !== 4 || !parts.every((n) => Number.isInteger(n))) return fileProblem("--crop needs four whole numbers in source pixels: --crop x,y,w,h (for example --crop 120,80,200,200).");
     cropBox = { x: parts[0] as number, y: parts[1] as number, w: parts[2] as number, h: parts[3] as number };
   }
-  const have = (cmd: string): boolean => spawnSync(cmd, ["-version"], { encoding: "utf8" }).status === 0;
+  const have = (cmd: string): boolean => spawnSync(cmd, ["-version"], { encoding: "utf8", ...syncLimit("quick") }).status === 0;
   if (!have("ffmpeg") || !have("ffprobe")) return { code: EXIT_USAGE, message: "study needs ffmpeg and ffprobe, and they were not found.\n  fix: install ffmpeg (for example 'brew install ffmpeg' or 'apt install ffmpeg'), then run 'gertie doctor'" };
 
-  const probe = spawnSync("ffprobe", ["-v", "error", "-select_streams", "v:0", "-show_entries", "stream=width,height,r_frame_rate,avg_frame_rate,duration:format=duration", "-of", "json", path], { encoding: "utf8" });
+  const probe = spawnSync("ffprobe", ["-v", "error", "-select_streams", "v:0", "-show_entries", "stream=width,height,r_frame_rate,avg_frame_rate,duration:format=duration", "-of", "json", path], { encoding: "utf8", ...syncLimit("quick") });
   let info: { streams?: { width?: number; height?: number; r_frame_rate?: string; avg_frame_rate?: string; duration?: string }[]; format?: { duration?: string } };
   try {
     info = JSON.parse(probe.stdout) as typeof info;
@@ -860,8 +862,9 @@ export async function studyCommand(args: Args): Promise<Outcome> {
 
   const tmp = mkdtempSync(join(tmpdir(), "gertie-study-"));
   try {
-    const ex = spawnSync("ffmpeg", ["-v", "error", "-t", String(seconds), "-i", path, "-vf", `${cropBox ? `crop=${cropBox.w}:${cropBox.h}:${cropBox.x}:${cropBox.y},` : ""}fps=${afps},scale=${width}:-2:flags=area`, join(tmp, "f-%05d.png")], { encoding: "utf8" });
+    const ex = spawnSync("ffmpeg", ["-v", "error", "-t", String(seconds), "-i", path, "-vf", `${cropBox ? `crop=${cropBox.w}:${cropBox.h}:${cropBox.x}:${cropBox.y},` : ""}fps=${afps},scale=${width}:-2:flags=area`, join(tmp, "f-%05d.png")], { encoding: "utf8", ...syncLimit("decode") });
     const names = readdirSync(tmp).filter((n) => n.endsWith(".png")).sort();
+    if (timedOut(ex)) return fileProblem(timeoutMessage(`Taking frames from ${file}`, "decode"));
     if (ex.status !== 0 || names.length < 3) return fileProblem(`No frames could be taken from ${file}: ${ex.stderr.trim().split("\n")[0] ?? "too few frames"}`);
     const pngs = names.map((n) => readFileSync(join(tmp, n)));
     const { browser } = await launchBrowser().catch((e: unknown) => {

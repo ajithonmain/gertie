@@ -104,9 +104,7 @@ for (const name of corpus()) {
     expect(requests).toEqual([]);
   });
 
-  const hasMorph = /<animate /.test(c.svg);
-  test(`${name}: reduced motion stops CSS animation and shows the poster frame`, async ({ page }) => {
-    test.skip(hasMorph, "SMIL is not affected by prefers-reduced-motion, by design");
+  test(`${name}: reduced motion shows the poster frame`, async ({ page }) => {
     await page.emulateMedia({ reducedMotion: "reduce" });
     await page.setViewportSize({ width: c.scene.w, height: c.scene.h });
     const dir = mkdtempSync(join(tmpdir(), "gertie-svg-"));

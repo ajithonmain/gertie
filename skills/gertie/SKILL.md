@@ -1,6 +1,6 @@
 ---
 name: gertie
-description: Create vector animations and export them as Lottie JSON and animated SVG. Use when the user asks for an animation, animated icon, loader, spinner, logo animation, sticker, motion graphic or any short looping vector animation. You write a small scene file; Gertie compiles it to valid Lottie JSON, renders it in a real browser, checks it and gives you a contact sheet image to look at. Free alternative to paid AI animation tools. Requires Node 22 and a shell.
+description: Create vector animations as Lottie JSON and animated SVG, and smooth Three.js 3D loops as standalone HTML. Use when the user asks for an animation, animated icon, loader, spinner, logo animation, sticker, motion graphic or any short looping vector animation. You write a small scene file; Gertie compiles it to valid Lottie JSON, renders it in a real browser, checks it and gives you a contact sheet image to look at. Free alternative to paid AI animation tools. Requires Node 22 and a shell.
 ---
 
 # Gertie
@@ -9,10 +9,12 @@ Gertie turns a small scene file that you write into a finished animation, as Lot
 
 This version covers writing, compiling, validating and quality-checking scenes, with both outputs, and exporting to GIF, APNG, WebP, WebM, ProRes, HEVC, MP4 and a `.lottie` archive, or straight to a platform with its limits (Telegram, Discord, Slack, WhatsApp and more), and building multi-scene videos with captions, transitions and music from a storyboard, and making text-character (ASCII) animation. Read `references/export.md` before exporting, `references/video.md` before making a video and `references/ascii.md` before making ASCII animation.
 
+For 3D animation, follow [the Three.js workflow](references/three.md). Write a `.three.json` scene, run `three validate` and `three build`, then open the HTML and inspect a full loop before delivering it.
+
 ## Rules
 
 1. Never write Lottie JSON by hand. Write a scene file and compile it.
-2. Never present a result that did not pass `qa` with zero errors.
+2. Run `qa` with zero errors before delivering a vector scene.
 3. Read `references/scene.md` before writing your first scene. Models that skip it invent fields that do not exist.
 4. If the user supplies an SVG, import it instead of redrawing it: read `references/import.md`.
 5. If the user supplies a Lottie file, read `references/lottie.md`. Do not rewrite it by hand.
@@ -58,6 +60,7 @@ Other commands:
     node scripts/gertie.mjs profile <scene or file.json> [--tier icon|character|scene] --json   measure paths, colours, keyframes and easing against the quality bands
     node scripts/gertie.mjs inspect <file.json> --json   describe a Lottie file; also recolor, retime and render, see references/lottie.md
     node scripts/gertie.mjs doctor                    report whether Node, a browser and ffmpeg are available, and which export formats work
+    node scripts/gertie.mjs cleanup                   stop headless browsers that an earlier, killed run left behind
 
 Exit code 0 means no errors, 1 means errors were found, 2 means the command could not run.
 
@@ -77,7 +80,7 @@ Declare the tier in the scene with `"tier": "icon"` (or `"character"`, `"scene"`
 
 - **Lottie JSON** plays in lottie-web, dotlottie players and native mobile players. Use it for apps.
 - **GIF, APNG, WebP, WebM, ProRes, HEVC, MP4** are made by `export`. They are pictures of the animation, not vectors.
-- **Animated SVG** needs no player and no JavaScript. It plays when opened in a browser, in an `<img>` tag and in a README (checked in Chromium and WebKit; Firefox has not been checked). It cannot be paused or scrubbed, and native mobile apps cannot play it. Under `prefers-reduced-motion` it shows one still frame, chosen by the scene's optional top-level `poster` (seconds). Morphs and rect or ellipse size changes keep moving under reduced motion.
+- **Animated SVG** needs no player and no JavaScript. It plays when opened in a browser, in an `<img>` tag and in a README (checked in Chromium and WebKit; Firefox has not been checked). It cannot be paused or scrubbed, and native mobile apps cannot play it. Under `prefers-reduced-motion` it shows one still frame, chosen by the scene's optional top-level `poster` (seconds).
 
 ## If you cannot see images
 
@@ -86,6 +89,8 @@ Skip step 5. Rely on the automatic checks and tell the user the result was check
 ## If there is no browser
 
 `qa` still compiles and validates, and reports `"render": "skipped"` with the command that fixes it. Run `node scripts/gertie.mjs doctor`, follow what it says, and tell the user that the render checks did not run until they do.
+
+Every command closes the headless browser and any ffmpeg process it started before it exits, including when it fails or is interrupted with SIGINT or SIGTERM, so nothing keeps using the machine afterwards. Each launch also stops orphaned headless browsers from earlier runs that were killed outright. If the machine still feels slow after rendering, run `node scripts/gertie.mjs cleanup`. Every ffmpeg and hyperframes step also has a time limit (60 seconds for probes up to 60 minutes for a hyperframes render); if a step reports that it was stopped at its limit on a long clip or a slow machine, run the command again with `GERTIE_TIMEOUT_SCALE=4`.
 
 ## If you cannot run commands
 

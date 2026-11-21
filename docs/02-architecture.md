@@ -86,6 +86,27 @@ Rules for every command:
 
 `gertie qa` is the command the agent runs most. It is the whole inner loop in one call.
 
+## Process cleanup
+
+Rendering starts a headless browser and export starts ffmpeg. These must never outlive the command, because a leftover Chromium keeps using CPU and memory on the user's machine. `src/shutdown.ts` is the single place that owns this:
+
+- `launchBrowser()` registers every browser. Its `close()` is idempotent and gives up waiting after 5 seconds.
+- Async ffmpeg spawns are wrapped in `trackChild()` and killed with SIGKILL if still running at shutdown.
+- The CLI entry calls `shutdown()` in a `finally` block after every command, then exits after 2 seconds if some handle still keeps Node alive.
+- SIGINT, SIGTERM and SIGHUP run the same shutdown, then exit with 130, 143 or 129.
+- A SIGKILL of Node cannot run any handler, so each `launchBrowser()` first reaps orphans: headless processes with a Playwright temporary profile whose parent is PID 1. `gertie cleanup` runs the same reaper on demand. POSIX only; `GERTIE_KEEP_ORPHANS=1` turns it off.
+
+Every external process also has a time limit, so a stuck child cannot hang Gertie or the agent waiting on it. Limits live in `processLimitMs()` in `src/shutdown.ts`:
+
+| Kind | Limit | Used for |
+|---|---|---|
+| `quick` | 60 s | version checks, capability lists, ffprobe, one decoded frame, the orphan scan |
+| `decode` | 5 min | decoding a clip into frames (`study`, `rawFrame`, ascii `rawFrames`) |
+| `encode` | 30 min | one ffmpeg export encode (`runFfmpeg`) |
+| `render` | 60 min | a full `hyperframes render` |
+
+A child past its limit is killed with SIGKILL and the command fails with a message that names the step and the fix. `GERTIE_TIMEOUT_SCALE` multiplies every limit (for example `GERTIE_TIMEOUT_SCALE=4` on a slow machine). Blocking `spawnSync` calls still delay signal handlers until the child returns, but now at most until its limit. The live ascii `streamFrames` decode has no limit, because playback length is chosen by the user and ends when the stream is stopped.
+
 ## Repository layout
 
 ```

@@ -99,6 +99,10 @@ Several loops that start together and share a period move as one block, which re
 
 **Decision.** Phase is a fraction of a cycle and not seconds, so one value keeps working when the preset's `duration` changes. The idea of giving every repeated or neighbouring thing its own phase comes from the rossark-motion-skill (see `15-licences-and-naming.md`); that project computes motion at run time from a clock, which Gertie cannot do, so here the shift is made once, at compile time, on the keyframes.
 
+## Named Bézier easings
+
+Gertie provides 26 named Bézier easings, including `linear`. Use `hold` for a step between keyframes. The three special easings below expand into multiple keyframes.
+
 ## Bounce, elastic and spring easings
 
 These cannot be expressed as one bezier curve. When a keyframe's ease is one of these names, the normalizer replaces that one segment with several keyframes.

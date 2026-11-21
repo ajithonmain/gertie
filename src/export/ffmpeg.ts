@@ -1,4 +1,5 @@
 import { spawn, spawnSync } from "node:child_process";
+import { processLimitMs, syncLimit, timedOut, timeoutMessage, trackChild } from "../shutdown.ts";
 import { readFileSync } from "node:fs";
 
 export class ExportUnavailableError extends Error {
@@ -24,10 +25,10 @@ let cached: FfmpegInfo | null | undefined;
 /** Finds ffmpeg and lists its encoders by parsing `ffmpeg -encoders`. Null when ffmpeg is not installed. */
 export function ffmpegInfo(): FfmpegInfo | null {
   if (cached !== undefined) return cached;
-  const v = spawnSync("ffmpeg", ["-hide_banner", "-version"], { encoding: "utf8" });
+  const v = spawnSync("ffmpeg", ["-hide_banner", "-version"], { encoding: "utf8", ...syncLimit("quick") });
   if (v.status !== 0) return (cached = null);
   const version = /ffmpeg version (\S+)/.exec(v.stdout)?.[1] ?? "unknown";
-  const e = spawnSync("ffmpeg", ["-hide_banner", "-encoders"], { encoding: "utf8" });
+  const e = spawnSync("ffmpeg", ["-hide_banner", "-encoders"], { encoding: "utf8", ...syncLimit("quick") });
   const encoders = new Set<string>();
   for (const line of e.stdout.split("\n")) {
     const m = /^\s*[VAS][A-Z.]{5}\s+(\S+)/.exec(line);
@@ -42,7 +43,7 @@ let filtersCache: Set<string> | undefined;
 export function ffmpegFilters(): Set<string> {
   if (filtersCache) return filtersCache;
   const out = new Set<string>();
-  const r = spawnSync("ffmpeg", ["-hide_banner", "-filters"], { encoding: "utf8" });
+  const r = spawnSync("ffmpeg", ["-hide_banner", "-filters"], { encoding: "utf8", ...syncLimit("quick") });
   if (r.status === 0) for (const line of r.stdout.split("\n")) {
     const m = /^\s*[T.][S.][C.]\s+(\S+)/.exec(line);
     if (m) out.add(m[1] as string);
@@ -55,7 +56,7 @@ let drawtextAlign: boolean | undefined;
 /** Whether `drawtext` has the `text_align` option (ffmpeg 6.1 and newer), which centres the lines of a wrapped caption. */
 export function drawtextHasAlign(): boolean {
   if (drawtextAlign !== undefined) return drawtextAlign;
-  const r = spawnSync("ffmpeg", ["-hide_banner", "-h", "filter=drawtext"], { encoding: "utf8" });
+  const r = spawnSync("ffmpeg", ["-hide_banner", "-h", "filter=drawtext"], { encoding: "utf8", ...syncLimit("quick") });
   return (drawtextAlign = r.status === 0 && /\btext_align\b/.test(r.stdout));
 }
 
@@ -68,11 +69,24 @@ export function requireFfmpeg(): FfmpegInfo {
 /** Runs ffmpeg and rejects with its last lines of output when it fails. */
 export function runFfmpeg(args: readonly string[], opts: { cwd?: string } = {}): Promise<void> {
   return new Promise((resolve, reject) => {
-    const p = spawn("ffmpeg", ["-hide_banner", "-loglevel", "error", "-y", ...args], { stdio: ["ignore", "ignore", "pipe"], ...(opts.cwd ? { cwd: opts.cwd } : {}) });
+    const p = trackChild(spawn("ffmpeg", ["-hide_banner", "-loglevel", "error", "-y", ...args], { stdio: ["ignore", "ignore", "pipe"], ...(opts.cwd ? { cwd: opts.cwd } : {}) }));
     let err = "";
+    let expired = false;
+    const timer = setTimeout(() => {
+      expired = true;
+      p.kill("SIGKILL");
+    }, processLimitMs("encode"));
     p.stderr.on("data", (d: Buffer) => (err += d.toString()));
-    p.on("error", reject);
-    p.on("close", (code) => (code === 0 ? resolve() : reject(new Error(`ffmpeg failed (exit ${code}): ${err.trim().split("\n").slice(-4).join(" | ")}`))));
+    p.on("error", (e) => {
+      clearTimeout(timer);
+      reject(e);
+    });
+    p.on("close", (code) => {
+      clearTimeout(timer);
+      if (expired) reject(new Error(timeoutMessage("An ffmpeg export encode", "encode")));
+      else if (code === 0) resolve();
+      else reject(new Error(`ffmpeg failed (exit ${code}): ${err.trim().split("\n").slice(-4).join(" | ")}`));
+    });
   });
 }
 
@@ -80,7 +94,8 @@ export function runFfmpeg(args: readonly string[], opts: { cwd?: string } = {}):
 export function rawFrame(file: string, opts: { decoder?: string; filter?: string; index?: number } = {}): Buffer {
   const vf = [opts.index ? `select=eq(n\\,${opts.index})` : "", opts.filter ?? ""].filter((x) => x !== "").join(",");
   const args = ["-hide_banner", "-loglevel", "error", ...(opts.decoder ? ["-c:v", opts.decoder] : []), "-i", file, ...(vf ? ["-vf", vf, "-fps_mode", "passthrough"] : []), "-frames:v", "1", "-f", "rawvideo", "-pix_fmt", "rgba", "-"];
-  const r = spawnSync("ffmpeg", args, { maxBuffer: 512 * 1024 * 1024 });
+  const r = spawnSync("ffmpeg", args, { maxBuffer: 512 * 1024 * 1024, ...syncLimit("decode") });
+  if (timedOut(r)) throw new Error(timeoutMessage(`ffmpeg decoding ${file}`, "decode"));
   if (r.status !== 0) throw new Error(`ffmpeg could not decode ${file}: ${r.stderr.toString().trim().split("\n").slice(-2).join(" | ")}`);
   return r.stdout;
 }
@@ -95,7 +110,7 @@ export interface Probe {
 
 /** Stream facts from ffprobe. Frame count is counted, not read from the header, because GIF and WebP headers lie. */
 export function probe(file: string, countFrames = true): Probe {
-  const r = spawnSync("ffprobe", ["-v", "error", "-select_streams", "v:0", ...(countFrames ? ["-count_frames"] : []), "-show_entries", "stream=codec_name,width,height,nb_read_frames,nb_frames,duration:format=duration", "-of", "json", file], { encoding: "utf8" });
+  const r = spawnSync("ffprobe", ["-v", "error", "-select_streams", "v:0", ...(countFrames ? ["-count_frames"] : []), "-show_entries", "stream=codec_name,width,height,nb_read_frames,nb_frames,duration:format=duration", "-of", "json", file], { encoding: "utf8", ...syncLimit("decode") });
   if (r.status !== 0) throw new Error(`ffprobe failed on ${file}: ${r.stderr.trim()}`);
   const j = JSON.parse(r.stdout) as { streams: { codec_name: string; width: number; height: number; nb_read_frames?: string; nb_frames?: string; duration?: string }[]; format: { duration?: string } };
   const s = j.streams[0];

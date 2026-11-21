@@ -1,4 +1,5 @@
 import { spawnSync } from "node:child_process";
+import { syncLimit } from "../shutdown.ts";
 import { existsSync } from "node:fs";
 import { join } from "node:path";
 import { ffmpegFilters, ffmpegInfo } from "../export/ffmpeg.ts";
@@ -6,7 +7,7 @@ import { systemFont } from "./captions.ts";
 
 /** The command that runs HyperFrames: one on the path, else the project's own `node_modules/.bin`. */
 export function hyperframesCommand(cwd: string = process.cwd()): string {
-  const r = spawnSync("hyperframes", ["--version"], { encoding: "utf8" });
+  const r = spawnSync("hyperframes", ["--version"], { encoding: "utf8", ...syncLimit("quick") });
   if (r.status === 0) return "hyperframes";
   const local = join(cwd, "node_modules", ".bin", process.platform === "win32" ? "hyperframes.cmd" : "hyperframes");
   return existsSync(local) ? local : "hyperframes";
@@ -14,7 +15,7 @@ export function hyperframesCommand(cwd: string = process.cwd()): string {
 
 /** Whether HyperFrames is installed (on the path or in `node_modules`), and its version. */
 export function hyperframesVersion(): string | undefined {
-  const r = spawnSync(hyperframesCommand(), ["--version"], { encoding: "utf8" });
+  const r = spawnSync(hyperframesCommand(), ["--version"], { encoding: "utf8", ...syncLimit("quick") });
   return r.status === 0 ? r.stdout.trim().split("\n").pop() : undefined;
 }
 

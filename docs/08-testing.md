@@ -191,13 +191,13 @@ These use Playwright Test. Each runs across the whole corpus.
 
 **Second player.** Render each Lottie output with dotlottie-web (MIT, uses the ThorVG engine) as well as lottie-web, and compare. Agreement between two independent players is strong evidence the file is portable. Differences are recorded per feature in a compatibility table in the documentation.
 
-**Cross-browser SVG.** Render each SVG output in Chromium, Firefox and WebKit and compare each with the Chromium render (`tests/browser/svg.spec.ts`). Playwright installs all three with `npx playwright install`. This is where the Safari-specific risks (path morphing, transform origin) are caught. Chromium runs every spec; to add the other engines run `npx playwright install firefox webkit` and then `GERTIE_BROWSERS=chromium,firefox,webkit npm run test:browser`, which runs the SVG spec in each. Status: Chromium and WebKit pass all 105 cases (two SMIL scenes skip the reduced-motion case); Firefox has not run (see `05-svg-emitter.md`).
+**Cross-browser SVG.** Render each SVG output in Chromium, Firefox and WebKit and compare each with the Chromium render (`tests/browser/svg.spec.ts`). Playwright installs all three with `npx playwright install`. This is where the Safari-specific risks (path morphing, transform origin) are caught. Chromium runs every spec; to add the other engines run `npx playwright install firefox webkit` and then `GERTIE_BROWSERS=chromium,firefox,webkit npm run test:browser`, which runs the SVG spec in each. See `05-svg-emitter.md` for browser coverage and SVG behavior.
 
 **SVG inside `<img>`.** Load each SVG through an `<img>` tag, take a screenshot, wait 400 milliseconds, take another. The two must differ. This settles the open research question of whether in-file CSS animation plays inside an image, in all three browsers. Record the result in `05-svg-emitter.md`.
 
 **SVG self-containment.** Load each SVG with network access blocked and assert that no request is attempted.
 
-**Reduced motion.** With `prefers-reduced-motion: reduce` emulated, two screenshots 400 milliseconds apart are identical for scenes without morphs.
+**Reduced motion.** With `prefers-reduced-motion: reduce` emulated, two screenshots 400 milliseconds apart are identical and match the configured poster frame.
 
 **Lottie console.** No console errors or warnings from lottie-web for any corpus file.
 

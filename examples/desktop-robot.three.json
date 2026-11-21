@@ -1,0 +1,17 @@
+{
+  "width": 720,
+  "height": 600,
+  "duration": 13,
+  "background": "#28394f",
+  "camera": [0.95, 0.75, 6.55],
+  "objects": [
+    {
+      "shape": "robot",
+      "color": "#77c4ba",
+      "metalness": 0.05,
+      "roughness": 0.44,
+      "scale": 1.13,
+      "spin": [0, 0, 0]
+    }
+  ]
+}

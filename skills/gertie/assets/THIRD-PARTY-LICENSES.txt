@@ -1,6 +1,6 @@
 Third-party licence notices for code and data bundled into Gertie.
 Bundled into skills/gertie/scripts/gertie.mjs: ajv, fast-deep-equal, fast-uri, json-schema-traverse, @lottie-animation-community/lottie-specs.
-Shipped as files in skills/gertie/assets/: lottie-web (lottie.min.js) and the Lottie JSON Schema (lottie.schema.json, from lottie-specs).
+Shipped as files in skills/gertie/assets/: lottie-web (lottie.min.js) the Lottie JSON Schema (lottie.schema.json, from lottie-specs), and Three.js (three-player.js, MIT notice included in the file).
 
 ================================================================
 ajv

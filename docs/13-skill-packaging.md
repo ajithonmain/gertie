@@ -170,7 +170,7 @@ Chat applications that cannot run commands cannot use the scripts. Two options:
 
 ## The website
 
-Address: `askgertie.pages.dev`, hosted on Cloudflare Pages, built from the `site/` folder of the repository.
+Address: `gertiestudio.pages.dev`, hosted on Cloudflare Pages, built from the `site/` folder of the repository.
 
 Because the compiler and validator are pure code with no dependencies, they run in a browser. The site uses that.
 

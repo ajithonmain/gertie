@@ -88,6 +88,7 @@ class SvgEmitter {
   /** Every node by id (ids are unique across the scene), so a matte can find its source. */
   private readonly byId = new Map<string, NNode>();
   private readonly maskDone = new Set<string>();
+  private hasGeometryAnimation = false;
 
   constructor(
     private readonly scene: NScene,
@@ -281,7 +282,7 @@ class SvgEmitter {
    * CSS cannot animate gradient attributes, so animated geometry uses SMIL on the gradient element,
    * as morphs do. The static attribute holds the poster value, which is what shows with animation off.
    */
-  private gradient(id: string, g: NGradient, tracks: NTracks): string {
+  private gradient(id: string, g: NGradient, tracks: NTracks): { id: string; posterId?: string } {
     const gid = this.cls(id, "grad");
     const stops = g.stops.map((s) => `<stop offset="${f(s.offset, 4)}" stop-color="${hex(s.color)}"${s.color[3] < 1 ? ` stop-opacity="${f(s.color[3], 4)}"` : ""}/>`).join("");
     const point = (keys: Keys | undefined, v: Vec2, xa: string, ya: string, label: string): { attrs: string; anims: string } => {
@@ -296,18 +297,29 @@ class SvgEmitter {
       }
       return { attrs: `${xa}="${f(at[0])}" ${ya}="${f(at[1])}"`, anims };
     };
+    let tag: string;
+    let attrs: string;
+    let animations: string;
     if (g.type === "linear") {
       const a = point(tracks["fill.from"], g.from, "x1", "y1", `${id}.fill.from`);
       const b = point(tracks["fill.to"], g.to, "x2", "y2", `${id}.fill.to`);
-      this.defs.push(`<linearGradient id="${gid}" gradientUnits="userSpaceOnUse" ${a.attrs} ${b.attrs}>${stops}${a.anims}${b.anims}</linearGradient>`);
+      tag = "linearGradient";
+      attrs = `${a.attrs} ${b.attrs}`;
+      animations = a.anims + b.anims;
     } else {
       const c = point(tracks["fill.center"], g.center, "cx", "cy", `${id}.fill.center`);
       const rk = tracks["fill.radius"];
       const r = rk ? (this.poster(rk) as number) : g.radius;
       const ra = rk ? this.smil("r", rk, (x) => f(x as number), `${id}.fill.radius`) : "";
-      this.defs.push(`<radialGradient id="${gid}" gradientUnits="userSpaceOnUse" ${c.attrs} r="${f(r)}">${stops}${c.anims}${ra}</radialGradient>`);
+      tag = "radialGradient";
+      attrs = `${c.attrs} r="${f(r)}"`;
+      animations = c.anims + ra;
     }
-    return gid;
+    this.defs.push(`<${tag} id="${gid}" gradientUnits="userSpaceOnUse" ${attrs}>${stops}${animations}</${tag}>`);
+    if (!animations) return { id: gid };
+    const posterId = `${gid}__poster`;
+    this.defs.push(`<${tag} id="${posterId}" href="#${gid}" gradientUnits="userSpaceOnUse" ${attrs}/>`);
+    return { id: gid, posterId };
   }
 
   private smil(attr: string, keys: Keys, map: (v: TrackValue) => string, label: string): string {
@@ -393,13 +405,18 @@ class SvgEmitter {
 
     // fill
     const fillKeys = n.tracks.fill;
+    let posterGradient: string | undefined;
     if (n.fill === null) attrs.push(["fill", "none"]);
     else if (Array.isArray(n.fill)) {
       const color = fillKeys ? (this.poster(fillKeys) as Rgba) : n.fill;
       attrs.push(["fill", hex(color)]);
       if (n.fill[3] < 1) attrs.push(["fill-opacity", f(n.fill[3], 4)]);
       if (fillKeys) anims.push(this.colorTrack(fillKeys, id, "fill", "fill").name);
-    } else attrs.push(["fill", `url(#${this.gradient(id, n.fill, n.tracks)})`]);
+    } else {
+      const gradient = this.gradient(id, n.fill, n.tracks);
+      attrs.push(["fill", `url(#${gradient.id})`]);
+      posterGradient = gradient.posterId;
+    }
     if (n.fill !== null && n.fillRule === 2) attrs.push(["fill-rule", "evenodd"]);
 
     // stroke
@@ -431,7 +448,15 @@ class SvgEmitter {
       attrs.unshift(["class", cls]);
       this.sheet.rule(cls, anims, false);
     }
-    return this.element(tag, attrs, children);
+    if (children.length === 0 && !posterGradient) return this.element(tag, attrs, children);
+
+    // CSS cannot pause SMIL. Show the same shape at its sampled poster geometry
+    // when reduced motion is requested, retaining its paint and wrapper state.
+    this.hasGeometryAnimation = true;
+    const animated = this.element(tag, attrs, children);
+    if (posterGradient) setAttr(attrs, "fill", `url(#${posterGradient})`);
+    const poster = this.element(tag, attrs, []);
+    return `<g class="${this.p}__geometry-motion">${animated}</g><g class="${this.p}__geometry-poster" display="none">${poster}</g>`;
   }
 
   /** Trim paths as dash values on a path of length 1. */
@@ -606,7 +631,12 @@ class SvgEmitter {
       body.unshift(`<rect width="${s.w}" height="${s.h}" fill="${hex(s.background)}"${a < 1 ? ` fill-opacity="${f(a, 4)}"` : ""}/>`);
     }
     const out: string[] = [`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${s.w} ${s.h}" width="${s.w}" height="${s.h}">`];
-    if (this.sheet.animated) out.push(`<style>\n${this.sheet.text()}\n</style>`);
+    if (this.sheet.animated || this.hasGeometryAnimation) {
+      const geometry = this.hasGeometryAnimation
+        ? `\n@media (prefers-reduced-motion:reduce){.${this.p}__geometry-motion{display:none}.${this.p}__geometry-poster{display:inline}}`
+        : "";
+      out.push(`<style>\n${this.sheet.text()}${geometry}\n</style>`);
+    }
     if (this.defs.length > 0) out.push(`<defs>\n${this.defs.join("\n")}\n</defs>`);
     out.push(...body.map((b) => b.replace(/></g, ">\n<")));
     out.push("</svg>");

@@ -28,3 +28,16 @@ for (const file of entries) {
   chmodSync(outfile, 0o755);
   console.log(`built skills/gertie/scripts/${name}.mjs`);
 }
+
+// Keep the 3D runtime separate from the Node CLI and inline it only in 3D output.
+await build({
+  entryPoints: [join(root, "src", "three", "player.js")],
+  outfile: join(root, "skills", "gertie", "assets", "three-player.js"),
+  bundle: true,
+  platform: "browser",
+  target: "es2022",
+  format: "iife",
+  minify: true,
+  legalComments: "none",
+  banner: { js: "/*! Three.js\n" + readFileSync(join(root, "node_modules", "three", "LICENSE"), "utf8") + "\n*/" },
+});

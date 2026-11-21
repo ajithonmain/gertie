@@ -1,6 +1,8 @@
-import { existsSync } from "node:fs";
+import { spawnSync } from "node:child_process";
+import { existsSync, rmSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
+import { onShutdown, syncLimit } from "../shutdown.ts";
 
 /** The subset of Playwright that Gertie uses. Playwright is loaded at run time, never bundled. */
 export interface PwPage {
@@ -50,11 +52,90 @@ async function loadPlaywright(): Promise<PwModule> {
   }
 }
 
+/** Browsers launched by this process that have not been closed yet. */
+const openBrowsers = new Set<PwBrowser>();
+let registered = false;
+/** How long a graceful close may take before the process stops waiting for it. */
+const CLOSE_TIMEOUT_MS = 5000;
+/** Marker in the temporary profile path of every browser that Playwright launches. */
+const PROFILE_MARKER = "playwright_chromiumdev_profile-";
+
+async function closeWithTimeout(browser: PwBrowser, close: () => Promise<void>): Promise<void> {
+  if (!openBrowsers.delete(browser)) return;
+  let timer: NodeJS.Timeout | undefined;
+  const timeout = new Promise<void>((resolve) => {
+    timer = setTimeout(resolve, CLOSE_TIMEOUT_MS);
+    timer.unref();
+  });
+  try {
+    await Promise.race([close().catch(() => undefined), timeout]);
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
+/**
+ * Tracks a launched browser so it is always shut down: its close() becomes idempotent and
+ * bounded by a timeout, and closeAllBrowsers() (called when the CLI finishes or is
+ * interrupted) closes anything a command left open.
+ */
+function track(browser: PwBrowser): PwBrowser {
+  const close = browser.close.bind(browser);
+  openBrowsers.add(browser);
+  browser.close = () => closeWithTimeout(browser, close);
+  if (!registered) {
+    registered = true;
+    onShutdown(closeAllBrowsers);
+  }
+  return browser;
+}
+
+/** Closes every browser this process launched that is still open. Safe to call more than once. */
+export async function closeAllBrowsers(): Promise<void> {
+  await Promise.all([...openBrowsers].map((b) => b.close()));
+}
+
+/**
+ * Kills headless browsers that an earlier Gertie (or other Playwright) run left behind when its
+ * Node process was killed before it could close them. Only processes that use a Playwright
+ * temporary profile and whose parent has died (re-parented to PID 1) are touched, so a browser
+ * that another live process still owns is never killed. POSIX only; returns the killed PIDs.
+ * Set GERTIE_KEEP_ORPHANS=1 to disable.
+ */
+export function reapOrphanBrowsers(): number[] {
+  if (process.platform === "win32" || process.env["GERTIE_KEEP_ORPHANS"] === "1") return [];
+  const ps = spawnSync("ps", ["-axo", "pid=,ppid=,command="], { encoding: "utf8", ...syncLimit("quick") });
+  if (ps.status !== 0) return [];
+  const killed: number[] = [];
+  for (const line of ps.stdout.split("\n")) {
+    const m = /^\s*(\d+)\s+(\d+)\s+(.*)$/.exec(line);
+    if (!m) continue;
+    const [, pidText, ppidText, command] = m as unknown as [string, string, string, string];
+    if (ppidText !== "1" || !command.includes(PROFILE_MARKER) || !command.includes("--headless")) continue;
+    const pid = Number(pidText);
+    try {
+      process.kill(pid, "SIGKILL");
+      killed.push(pid);
+    } catch {
+      continue;
+    }
+    const profile = /--user-data-dir=(\S+)/.exec(command)?.[1];
+    if (profile?.includes(PROFILE_MARKER)) rmSync(profile, { recursive: true, force: true });
+  }
+  return killed;
+}
+
 /**
  * Launches a headless browser. Order: the GERTIE_BROWSER executable, an installed Google Chrome,
- * then Playwright's own Chromium.
+ * then Playwright's own Chromium. Every browser is tracked so it is closed when the CLI exits.
  */
 export async function launchBrowser(): Promise<{ browser: PwBrowser; source: BrowserSource }> {
+  const { browser, source } = await launchUntracked();
+  return { browser: track(browser), source };
+}
+
+async function launchUntracked(): Promise<{ browser: PwBrowser; source: BrowserSource }> {
+  reapOrphanBrowsers();
   const pw = await loadPlaywright();
   const custom = process.env["GERTIE_BROWSER"];
   if (custom) {

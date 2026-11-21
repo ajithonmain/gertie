@@ -27,6 +27,7 @@
     "hyperframes": "^0.9.43",
     "lottie-web": "^5.13.0",
     "playwright": "^1.65.0",
+    "three": "0.187.0",
     "tsx": "^4.23.15",
     "typescript": "^5.7.0"
   },
@@ -34,5 +35,5 @@
     "type": "git",
     "url": "https://github.com/ajithonmain/gertie.git"
   },
-  "homepage": "https://askgertie.pages.dev"
+  "homepage": "https://gertiestudio.pages.dev"
 }

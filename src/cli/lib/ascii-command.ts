@@ -1,4 +1,5 @@
 import { spawnSync } from "node:child_process";
+import { syncLimit, timedOut, timeoutMessage } from "../../shutdown.ts";
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { basename, dirname, join, relative, resolve, sep } from "node:path";
 import { parseHex } from "../../spec/color.ts";
@@ -849,9 +850,9 @@ async function probeCommand(args: Args): Promise<Outcome> {
   if (!existsSync(path)) return fileProblem(`File not found: ${file}`);
   const timeFlag = args.flags.get("time");
   if (timeFlag === true) return fileProblem("--time needs a number of seconds, such as --time 1.5.");
-  const have = (cmd: string): boolean => spawnSync(cmd, ["-version"], { encoding: "utf8" }).status === 0;
+  const have = (cmd: string): boolean => spawnSync(cmd, ["-version"], { encoding: "utf8", ...syncLimit("quick") }).status === 0;
   if (!have("ffmpeg") || !have("ffprobe")) return { code: EXIT_USAGE, message: "ascii probe needs ffmpeg and ffprobe, and they were not found.\n  fix: install ffmpeg (for example 'brew install ffmpeg' or 'apt install ffmpeg'), then run 'gertie doctor'" };
-  const info = spawnSync("ffprobe", ["-v", "error", "-select_streams", "v:0", "-show_entries", "stream=width,height,r_frame_rate,avg_frame_rate,duration:format=duration", "-of", "json", path], { encoding: "utf8" });
+  const info = spawnSync("ffprobe", ["-v", "error", "-select_streams", "v:0", "-show_entries", "stream=width,height,r_frame_rate,avg_frame_rate,duration:format=duration", "-of", "json", path], { encoding: "utf8", ...syncLimit("quick") });
   let st: { width?: number; height?: number; r_frame_rate?: string; avg_frame_rate?: string; duration?: string } | undefined;
   let fmtDuration: string | undefined;
   try {
@@ -879,7 +880,8 @@ async function probeCommand(args: Args): Promise<Outcome> {
     if (!isStill && t >= duration) return fileProblem(`--time ${t} is at or past the end of the clip, which is ${duration.toFixed(2)} s long. Give a time under that.`);
     time = t;
   }
-  const one = spawnSync("ffmpeg", ["-v", "error", ...(time > 0 ? ["-ss", String(time)] : []), "-i", path, "-frames:v", "1", "-f", "rawvideo", "-pix_fmt", "rgba", "pipe:1"], { maxBuffer: w * h * 4 + 1024, stdio: ["ignore", "pipe", "pipe"] });
+  const one = spawnSync("ffmpeg", ["-v", "error", ...(time > 0 ? ["-ss", String(time)] : []), "-i", path, "-frames:v", "1", "-f", "rawvideo", "-pix_fmt", "rgba", "pipe:1"], { maxBuffer: w * h * 4 + 1024, stdio: ["ignore", "pipe", "pipe"], ...syncLimit("quick") });
+  if (timedOut(one)) return fileProblem(timeoutMessage(`Taking a frame from ${file}`, "quick"));
   if (one.status !== 0 || one.stdout.length !== w * h * 4) return fileProblem(`No frame could be taken from ${file} at ${time} seconds: ${String(one.stderr).trim().split("\n")[0] ?? "no output"}`);
   const frame = probeFrame(new Uint8Array(one.stdout.buffer, one.stdout.byteOffset, one.stdout.length), w, h);
   // How often the picture changes, from up to 3 seconds at the clip's own rate (at most 60), on small frames.
@@ -889,7 +891,7 @@ async function probeCommand(args: Args): Promise<Outcome> {
     const shh = Math.max(2, Math.round((h * sw) / w / 2) * 2);
     const afps = Math.min(60, fps);
     const from = Math.max(0, Math.min(time, duration - 3));
-    const run = spawnSync("ffmpeg", ["-v", "error", "-ss", String(from), "-t", "3", "-i", path, "-vf", `fps=${afps},scale=${sw}:${shh}:flags=area`, "-f", "rawvideo", "-pix_fmt", "rgba", "pipe:1"], { maxBuffer: sw * shh * 4 * 200 + 1024, stdio: ["ignore", "pipe", "pipe"] });
+    const run = spawnSync("ffmpeg", ["-v", "error", "-ss", String(from), "-t", "3", "-i", path, "-vf", `fps=${afps},scale=${sw}:${shh}:flags=area`, "-f", "rawvideo", "-pix_fmt", "rgba", "pipe:1"], { maxBuffer: sw * shh * 4 * 200 + 1024, stdio: ["ignore", "pipe", "pipe"] , ...syncLimit("quick") });
     if (run.status === 0) {
       const size = sw * shh * 4;
       const frames: Uint8Array[] = [];

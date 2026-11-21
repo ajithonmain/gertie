@@ -8140,7 +8140,80 @@ function parseArgs(argv) {
 
 // src/cli/lib/story-command.ts
 import { existsSync as existsSync6, mkdirSync as mkdirSync4, readFileSync as readFileSync5, writeFileSync as writeFileSync4 } from "node:fs";
-import { spawnSync as spawnSync5 } from "node:child_process";
+
+// src/shutdown.ts
+var cleanups = /* @__PURE__ */ new Set();
+var children = /* @__PURE__ */ new Set();
+var handlersInstalled = false;
+var shuttingDown;
+function onShutdown(fn) {
+  cleanups.add(fn);
+  installHandlers();
+  return () => cleanups.delete(fn);
+}
+function trackChild(child) {
+  children.add(child);
+  child.once("exit", () => children.delete(child));
+  child.once("error", () => children.delete(child));
+  installHandlers();
+  return child;
+}
+function killChildren() {
+  for (const child of children) {
+    if (child.exitCode === null && child.signalCode === null) child.kill("SIGKILL");
+  }
+  children.clear();
+}
+function shutdown() {
+  shuttingDown ??= (async () => {
+    killChildren();
+    await Promise.all([...cleanups].map(async (fn) => {
+      try {
+        await fn();
+      } catch {
+      }
+    }));
+    cleanups.clear();
+  })();
+  return shuttingDown;
+}
+function installHandlers() {
+  if (handlersInstalled) return;
+  handlersInstalled = true;
+  const codes = { SIGINT: 130, SIGTERM: 143, SIGHUP: 129 };
+  for (const [signal, code] of Object.entries(codes)) {
+    process.once(signal, () => {
+      void shutdown().finally(() => process.exit(code));
+    });
+  }
+  process.once("exit", killChildren);
+}
+var BASE_LIMIT_MS = {
+  /** Version checks, capability lists, ffprobe, one decoded frame. */
+  quick: 6e4,
+  /** Decoding a clip or a few seconds of one into frames. */
+  decode: 5 * 6e4,
+  /** One ffmpeg export encode. */
+  encode: 30 * 6e4,
+  /** A full hyperframes video render. */
+  render: 60 * 6e4
+};
+function processLimitMs(kind) {
+  const scale = Number(process.env["GERTIE_TIMEOUT_SCALE"]);
+  return Math.round(BASE_LIMIT_MS[kind] * (Number.isFinite(scale) && scale > 0 ? scale : 1));
+}
+function syncLimit(kind) {
+  return { timeout: processLimitMs(kind), killSignal: "SIGKILL" };
+}
+function timedOut(r) {
+  return r.error?.code === "ETIMEDOUT";
+}
+function timeoutMessage(what, kind) {
+  return `${what} was stopped after ${Math.round(processLimitMs(kind) / 1e3)} seconds without finishing. If the input is very long or the machine is slow, raise the limit with GERTIE_TIMEOUT_SCALE=4 and run the command again.`;
+}
+
+// src/cli/lib/story-command.ts
+import { spawnSync as spawnSync6 } from "node:child_process";
 
 // src/story/tools.ts
 import { spawnSync as spawnSync2 } from "node:child_process";
@@ -8160,10 +8233,10 @@ var ExportUnavailableError = class extends Error {
 var cached;
 function ffmpegInfo() {
   if (cached !== void 0) return cached;
-  const v = spawnSync("ffmpeg", ["-hide_banner", "-version"], { encoding: "utf8" });
+  const v = spawnSync("ffmpeg", ["-hide_banner", "-version"], { encoding: "utf8", ...syncLimit("quick") });
   if (v.status !== 0) return cached = null;
   const version = /ffmpeg version (\S+)/.exec(v.stdout)?.[1] ?? "unknown";
-  const e = spawnSync("ffmpeg", ["-hide_banner", "-encoders"], { encoding: "utf8" });
+  const e = spawnSync("ffmpeg", ["-hide_banner", "-encoders"], { encoding: "utf8", ...syncLimit("quick") });
   const encoders = /* @__PURE__ */ new Set();
   for (const line of e.stdout.split("\n")) {
     const m = /^\s*[VAS][A-Z.]{5}\s+(\S+)/.exec(line);
@@ -8175,7 +8248,7 @@ var filtersCache;
 function ffmpegFilters() {
   if (filtersCache) return filtersCache;
   const out2 = /* @__PURE__ */ new Set();
-  const r = spawnSync("ffmpeg", ["-hide_banner", "-filters"], { encoding: "utf8" });
+  const r = spawnSync("ffmpeg", ["-hide_banner", "-filters"], { encoding: "utf8", ...syncLimit("quick") });
   if (r.status === 0) for (const line of r.stdout.split("\n")) {
     const m = /^\s*[T.][S.][C.]\s+(\S+)/.exec(line);
     if (m) out2.add(m[1]);
@@ -8185,7 +8258,7 @@ function ffmpegFilters() {
 var drawtextAlign;
 function drawtextHasAlign() {
   if (drawtextAlign !== void 0) return drawtextAlign;
-  const r = spawnSync("ffmpeg", ["-hide_banner", "-h", "filter=drawtext"], { encoding: "utf8" });
+  const r = spawnSync("ffmpeg", ["-hide_banner", "-h", "filter=drawtext"], { encoding: "utf8", ...syncLimit("quick") });
   return drawtextAlign = r.status === 0 && /\btext_align\b/.test(r.stdout);
 }
 function requireFfmpeg() {
@@ -8195,22 +8268,36 @@ function requireFfmpeg() {
 }
 function runFfmpeg(args, opts = {}) {
   return new Promise((resolve6, reject) => {
-    const p = spawn("ffmpeg", ["-hide_banner", "-loglevel", "error", "-y", ...args], { stdio: ["ignore", "ignore", "pipe"], ...opts.cwd ? { cwd: opts.cwd } : {} });
+    const p = trackChild(spawn("ffmpeg", ["-hide_banner", "-loglevel", "error", "-y", ...args], { stdio: ["ignore", "ignore", "pipe"], ...opts.cwd ? { cwd: opts.cwd } : {} }));
     let err = "";
+    let expired = false;
+    const timer = setTimeout(() => {
+      expired = true;
+      p.kill("SIGKILL");
+    }, processLimitMs("encode"));
     p.stderr.on("data", (d) => err += d.toString());
-    p.on("error", reject);
-    p.on("close", (code) => code === 0 ? resolve6() : reject(new Error(`ffmpeg failed (exit ${code}): ${err.trim().split("\n").slice(-4).join(" | ")}`)));
+    p.on("error", (e) => {
+      clearTimeout(timer);
+      reject(e);
+    });
+    p.on("close", (code) => {
+      clearTimeout(timer);
+      if (expired) reject(new Error(timeoutMessage("An ffmpeg export encode", "encode")));
+      else if (code === 0) resolve6();
+      else reject(new Error(`ffmpeg failed (exit ${code}): ${err.trim().split("\n").slice(-4).join(" | ")}`));
+    });
   });
 }
 function rawFrame(file, opts = {}) {
   const vf = [opts.index ? `select=eq(n\\,${opts.index})` : "", opts.filter ?? ""].filter((x) => x !== "").join(",");
   const args = ["-hide_banner", "-loglevel", "error", ...opts.decoder ? ["-c:v", opts.decoder] : [], "-i", file, ...vf ? ["-vf", vf, "-fps_mode", "passthrough"] : [], "-frames:v", "1", "-f", "rawvideo", "-pix_fmt", "rgba", "-"];
-  const r = spawnSync("ffmpeg", args, { maxBuffer: 512 * 1024 * 1024 });
+  const r = spawnSync("ffmpeg", args, { maxBuffer: 512 * 1024 * 1024, ...syncLimit("decode") });
+  if (timedOut(r)) throw new Error(timeoutMessage(`ffmpeg decoding ${file}`, "decode"));
   if (r.status !== 0) throw new Error(`ffmpeg could not decode ${file}: ${r.stderr.toString().trim().split("\n").slice(-2).join(" | ")}`);
   return r.stdout;
 }
 function probe(file, countFrames2 = true) {
-  const r = spawnSync("ffprobe", ["-v", "error", "-select_streams", "v:0", ...countFrames2 ? ["-count_frames"] : [], "-show_entries", "stream=codec_name,width,height,nb_read_frames,nb_frames,duration:format=duration", "-of", "json", file], { encoding: "utf8" });
+  const r = spawnSync("ffprobe", ["-v", "error", "-select_streams", "v:0", ...countFrames2 ? ["-count_frames"] : [], "-show_entries", "stream=codec_name,width,height,nb_read_frames,nb_frames,duration:format=duration", "-of", "json", file], { encoding: "utf8", ...syncLimit("decode") });
   if (r.status !== 0) throw new Error(`ffprobe failed on ${file}: ${r.stderr.trim()}`);
   const j = JSON.parse(r.stdout);
   const s = j.streams[0];
@@ -8291,13 +8378,13 @@ var ffColor = (hex6) => `0x${hex6.slice(1)}`;
 
 // src/story/tools.ts
 function hyperframesCommand(cwd = process.cwd()) {
-  const r = spawnSync2("hyperframes", ["--version"], { encoding: "utf8" });
+  const r = spawnSync2("hyperframes", ["--version"], { encoding: "utf8", ...syncLimit("quick") });
   if (r.status === 0) return "hyperframes";
   const local = join(cwd, "node_modules", ".bin", process.platform === "win32" ? "hyperframes.cmd" : "hyperframes");
   return existsSync2(local) ? local : "hyperframes";
 }
 function hyperframesVersion() {
-  const r = spawnSync2(hyperframesCommand(), ["--version"], { encoding: "utf8" });
+  const r = spawnSync2(hyperframesCommand(), ["--version"], { encoding: "utf8", ...syncLimit("quick") });
   return r.status === 0 ? r.stdout.trim().split("\n").pop() : void 0;
 }
 var HYPERFRAMES_INSTALL = "HyperFrames is not installed. It is a separate open-source tool (Apache 2.0, Node 22 or newer). Install it with: npm install -g hyperframes   or run it without installing as: npx hyperframes render --output video.mp4";
@@ -8323,7 +8410,8 @@ function storyReadiness() {
 import { basename as basename4, dirname as dirname4, extname as extname4, join as join7, resolve as resolve3 } from "node:path";
 
 // src/render/browser.ts
-import { existsSync as existsSync3 } from "node:fs";
+import { spawnSync as spawnSync3 } from "node:child_process";
+import { existsSync as existsSync3, rmSync } from "node:fs";
 import { dirname, join as join2 } from "node:path";
 import { fileURLToPath } from "node:url";
 var RenderUnavailableError = class extends Error {
@@ -8341,7 +8429,64 @@ async function loadPlaywright() {
     throw new RenderUnavailableError("Playwright is not installed, so frames cannot be rendered.", "Run: npm install playwright (in the skill directory), then: npx playwright install chromium");
   }
 }
+var openBrowsers = /* @__PURE__ */ new Set();
+var registered = false;
+var CLOSE_TIMEOUT_MS = 5e3;
+var PROFILE_MARKER = "playwright_chromiumdev_profile-";
+async function closeWithTimeout(browser, close) {
+  if (!openBrowsers.delete(browser)) return;
+  let timer;
+  const timeout = new Promise((resolve6) => {
+    timer = setTimeout(resolve6, CLOSE_TIMEOUT_MS);
+    timer.unref();
+  });
+  try {
+    await Promise.race([close().catch(() => void 0), timeout]);
+  } finally {
+    clearTimeout(timer);
+  }
+}
+function track(browser) {
+  const close = browser.close.bind(browser);
+  openBrowsers.add(browser);
+  browser.close = () => closeWithTimeout(browser, close);
+  if (!registered) {
+    registered = true;
+    onShutdown(closeAllBrowsers);
+  }
+  return browser;
+}
+async function closeAllBrowsers() {
+  await Promise.all([...openBrowsers].map((b) => b.close()));
+}
+function reapOrphanBrowsers() {
+  if (process.platform === "win32" || process.env["GERTIE_KEEP_ORPHANS"] === "1") return [];
+  const ps = spawnSync3("ps", ["-axo", "pid=,ppid=,command="], { encoding: "utf8", ...syncLimit("quick") });
+  if (ps.status !== 0) return [];
+  const killed = [];
+  for (const line of ps.stdout.split("\n")) {
+    const m = /^\s*(\d+)\s+(\d+)\s+(.*)$/.exec(line);
+    if (!m) continue;
+    const [, pidText, ppidText, command] = m;
+    if (ppidText !== "1" || !command.includes(PROFILE_MARKER) || !command.includes("--headless")) continue;
+    const pid = Number(pidText);
+    try {
+      process.kill(pid, "SIGKILL");
+      killed.push(pid);
+    } catch {
+      continue;
+    }
+    const profile = /--user-data-dir=(\S+)/.exec(command)?.[1];
+    if (profile?.includes(PROFILE_MARKER)) rmSync(profile, { recursive: true, force: true });
+  }
+  return killed;
+}
 async function launchBrowser() {
+  const { browser, source: source2 } = await launchUntracked();
+  return { browser: track(browser), source: source2 };
+}
+async function launchUntracked() {
+  reapOrphanBrowsers();
   const pw = await loadPlaywright();
   const custom = process.env["GERTIE_BROWSER"];
   if (custom) {
@@ -8954,8 +9099,8 @@ function joinFilters(plan) {
 }
 
 // src/story/sequence.ts
-import { copyFileSync, existsSync as existsSync4, mkdirSync, mkdtempSync, readFileSync as readFileSync2, rmSync, statSync, writeFileSync } from "node:fs";
-import { spawnSync as spawnSync3 } from "node:child_process";
+import { copyFileSync, existsSync as existsSync4, mkdirSync, mkdtempSync, readFileSync as readFileSync2, rmSync as rmSync2, statSync, writeFileSync } from "node:fs";
+import { spawnSync as spawnSync4 } from "node:child_process";
 import { tmpdir } from "node:os";
 import { basename as basename2, dirname as dirname2, extname as extname2, join as join4, resolve } from "node:path";
 
@@ -9046,7 +9191,7 @@ function audioFilter(inputIndex, audio, seconds) {
   return `[${inputIndex}:a]${parts.join(",")}[aout]`;
 }
 function hasAudioStream(file) {
-  const r = spawnSync3("ffprobe", ["-v", "error", "-select_streams", "a:0", "-show_entries", "stream=codec_type", "-of", "csv=p=0", file], { encoding: "utf8" });
+  const r = spawnSync4("ffprobe", ["-v", "error", "-select_streams", "a:0", "-show_entries", "stream=codec_type", "-of", "csv=p=0", file], { encoding: "utf8", ...syncLimit("quick") });
   return r.status === 0 && r.stdout.trim() === "audio";
 }
 function requireStoryTools(story) {
@@ -9166,7 +9311,7 @@ async function sequenceStory(req) {
     if (p.frames !== plan.totalFrames) notes.push(`the file has ${p.frames} frames, the plan had ${plan.totalFrames}`);
     return { out: resolve(req.out), bytes: statSync(resolve(req.out)).size, probe: p, filterGraph: graph, notes };
   } finally {
-    if (!req.keepWork) rmSync(work, { recursive: true, force: true });
+    if (!req.keepWork) rmSync2(work, { recursive: true, force: true });
   }
 }
 function sheetFrames(plan) {
@@ -9193,7 +9338,7 @@ async function extractFrames(video, frames) {
     unique.forEach((n3, i) => out2.set(n3, readFileSync2(join4(dir, `${String(i + 1).padStart(3, "0")}.png`))));
     return out2;
   } finally {
-    rmSync(dir, { recursive: true, force: true });
+    rmSync2(dir, { recursive: true, force: true });
   }
 }
 async function storyboardSheet(video, plan, canvas) {
@@ -9215,7 +9360,7 @@ async function storyboardSheet(video, plan, canvas) {
 }
 
 // src/cli/lib/commands.ts
-import { existsSync as existsSync5, mkdirSync as mkdirSync3, mkdtempSync as mkdtempSync3, readdirSync, readFileSync as readFileSync4, rmSync as rmSync3, statSync as statSync3, writeFileSync as writeFileSync3 } from "node:fs";
+import { existsSync as existsSync5, mkdirSync as mkdirSync3, mkdtempSync as mkdtempSync3, readdirSync, readFileSync as readFileSync4, rmSync as rmSync4, statSync as statSync3, writeFileSync as writeFileSync3 } from "node:fs";
 import { tmpdir as tmpdir3 } from "node:os";
 import { basename as basename3, dirname as dirname3, extname as extname3, join as join6, resolve as resolve2 } from "node:path";
 
@@ -12331,7 +12476,7 @@ function normalizeScene(raw) {
     return parseHex(str2.startsWith("$") ? palette[str2.slice(1)] : str2);
   };
   const frameOf = (t) => Math.round(t * fps);
-  const track = (prop2, rawKeys) => {
+  const track2 = (prop2, rawKeys) => {
     const keys = rawKeys.map((k, i) => {
       const r = readKey(k, i);
       if (!r.ok) throw new Error(`normalize: bad keyframe at ${prop2}[${i}]`);
@@ -12430,7 +12575,7 @@ function normalizeScene(raw) {
     const tracks = {};
     const animate = n3["animate"] ?? {};
     for (const [prop2, keys] of Object.entries(animate)) {
-      const list = track(prop2, keys);
+      const list = track2(prop2, keys);
       if (type === "ellipse" && prop2 === "r") {
         tracks.rx = list;
         tracks.ry = list.map((k) => ({ ...k }));
@@ -13054,6 +13199,7 @@ var SvgEmitter = class {
   /** Every node by id (ids are unique across the scene), so a matte can find its source. */
   byId = /* @__PURE__ */ new Map();
   maskDone = /* @__PURE__ */ new Set();
+  hasGeometryAnimation = false;
   // ---------------------------------------------------------------- keyframes
   /** CSS puts easing on the keyframe where a segment starts; the scene puts it where the segment ends. */
   frames(keys, decl) {
@@ -13224,18 +13370,29 @@ var SvgEmitter = class {
       }
       return { attrs: `${xa}="${f(at2[0])}" ${ya}="${f(at2[1])}"`, anims };
     };
+    let tag;
+    let attrs;
+    let animations;
     if (g.type === "linear") {
       const a = point(tracks["fill.from"], g.from, "x1", "y1", `${id}.fill.from`);
       const b = point(tracks["fill.to"], g.to, "x2", "y2", `${id}.fill.to`);
-      this.defs.push(`<linearGradient id="${gid}" gradientUnits="userSpaceOnUse" ${a.attrs} ${b.attrs}>${stops}${a.anims}${b.anims}</linearGradient>`);
+      tag = "linearGradient";
+      attrs = `${a.attrs} ${b.attrs}`;
+      animations = a.anims + b.anims;
     } else {
       const c = point(tracks["fill.center"], g.center, "cx", "cy", `${id}.fill.center`);
       const rk = tracks["fill.radius"];
       const r = rk ? this.poster(rk) : g.radius;
       const ra = rk ? this.smil("r", rk, (x) => f(x), `${id}.fill.radius`) : "";
-      this.defs.push(`<radialGradient id="${gid}" gradientUnits="userSpaceOnUse" ${c.attrs} r="${f(r)}">${stops}${c.anims}${ra}</radialGradient>`);
+      tag = "radialGradient";
+      attrs = `${c.attrs} r="${f(r)}"`;
+      animations = c.anims + ra;
     }
-    return gid;
+    this.defs.push(`<${tag} id="${gid}" gradientUnits="userSpaceOnUse" ${attrs}>${stops}${animations}</${tag}>`);
+    if (!animations) return { id: gid };
+    const posterId = `${gid}__poster`;
+    this.defs.push(`<${tag} id="${posterId}" href="#${gid}" gradientUnits="userSpaceOnUse" ${attrs}/>`);
+    return { id: gid, posterId };
   }
   smil(attr, keys, map, label2) {
     const allHold = keys.slice(1).every((k) => k.ease === "hold");
@@ -13259,7 +13416,7 @@ var SvgEmitter = class {
     const cls = this.cls(id, "sh");
     const attrs = [];
     const anims = [];
-    const children = [];
+    const children2 = [];
     const at2 = this.scene.posterFrame;
     const trim = n3.stroke && n3.trim ? n3.trim : null;
     let tag;
@@ -13278,14 +13435,14 @@ var SvgEmitter = class {
         attrs.push(["x", f(-w / 2)], ["y", f(-h / 2)], ["width", f(w)], ["height", f(h)]);
         if (r > 0 || n3.tracks.radius) attrs.push(["rx", f(r)]);
         if (n3.tracks.w) {
-          children.push(this.smil("x", n3.tracks.w, (v) => f(-v / 2), `${id}.w`));
-          children.push(this.smil("width", n3.tracks.w, (v) => f(v), `${id}.w`));
+          children2.push(this.smil("x", n3.tracks.w, (v) => f(-v / 2), `${id}.w`));
+          children2.push(this.smil("width", n3.tracks.w, (v) => f(v), `${id}.w`));
         }
         if (n3.tracks.h) {
-          children.push(this.smil("y", n3.tracks.h, (v) => f(-v / 2), `${id}.h`));
-          children.push(this.smil("height", n3.tracks.h, (v) => f(v), `${id}.h`));
+          children2.push(this.smil("y", n3.tracks.h, (v) => f(-v / 2), `${id}.h`));
+          children2.push(this.smil("height", n3.tracks.h, (v) => f(v), `${id}.h`));
         }
-        if (n3.tracks.radius) children.push(this.smil("rx", n3.tracks.radius, (v) => f(v), `${id}.radius`));
+        if (n3.tracks.radius) children2.push(this.smil("rx", n3.tracks.radius, (v) => f(v), `${id}.radius`));
         break;
       }
       case "ellipse": {
@@ -13299,26 +13456,31 @@ var SvgEmitter = class {
         const rx = n3.tracks.rx ? sampleKeys(n3.tracks.rx, at2) : n3.rx;
         const ry = n3.tracks.ry ? sampleKeys(n3.tracks.ry, at2) : n3.ry;
         attrs.push(["rx", f(rx)], ["ry", f(ry)]);
-        if (n3.tracks.rx) children.push(this.smil("rx", n3.tracks.rx, (v) => f(v), `${id}.rx`));
-        if (n3.tracks.ry) children.push(this.smil("ry", n3.tracks.ry, (v) => f(v), `${id}.ry`));
+        if (n3.tracks.rx) children2.push(this.smil("rx", n3.tracks.rx, (v) => f(v), `${id}.rx`));
+        if (n3.tracks.ry) children2.push(this.smil("ry", n3.tracks.ry, (v) => f(v), `${id}.ry`));
         break;
       }
       case "path": {
         tag = "path";
         const morph2 = n3.tracks.d;
         attrs.push(["d", pathData(morph2 ? this.poster(morph2) : n3.d)]);
-        if (morph2) children.push(this.smil("d", morph2, (v) => pathData(v), `${id}.d`));
+        if (morph2) children2.push(this.smil("d", morph2, (v) => pathData(v), `${id}.d`));
         break;
       }
     }
     const fillKeys = n3.tracks.fill;
+    let posterGradient;
     if (n3.fill === null) attrs.push(["fill", "none"]);
     else if (Array.isArray(n3.fill)) {
       const color = fillKeys ? this.poster(fillKeys) : n3.fill;
       attrs.push(["fill", hex(color)]);
       if (n3.fill[3] < 1) attrs.push(["fill-opacity", f(n3.fill[3], 4)]);
       if (fillKeys) anims.push(this.colorTrack(fillKeys, id, "fill", "fill").name);
-    } else attrs.push(["fill", `url(#${this.gradient(id, n3.fill, n3.tracks)})`]);
+    } else {
+      const gradient = this.gradient(id, n3.fill, n3.tracks);
+      attrs.push(["fill", `url(#${gradient.id})`]);
+      posterGradient = gradient.posterId;
+    }
     if (n3.fill !== null && n3.fillRule === 2) attrs.push(["fill-rule", "evenodd"]);
     const st = n3.stroke;
     if (st) {
@@ -13345,7 +13507,12 @@ var SvgEmitter = class {
       attrs.unshift(["class", cls]);
       this.sheet.rule(cls, anims, false);
     }
-    return this.element(tag, attrs, children);
+    if (children2.length === 0 && !posterGradient) return this.element(tag, attrs, children2);
+    this.hasGeometryAnimation = true;
+    const animated2 = this.element(tag, attrs, children2);
+    if (posterGradient) setAttr(attrs, "fill", `url(#${posterGradient})`);
+    const poster = this.element(tag, attrs, []);
+    return `<g class="${this.p}__geometry-motion">${animated2}</g><g class="${this.p}__geometry-poster" display="none">${poster}</g>`;
   }
   /** Trim paths as dash values on a path of length 1. */
   trim(n3, trim, closed, attrs, anims) {
@@ -13389,9 +13556,9 @@ var SvgEmitter = class {
       if (dash(this.posterOf(keys)).vis <= EPS) setAttr(attrs, "stroke-opacity", "0");
     }
   }
-  element(tag, attrs, children) {
+  element(tag, attrs, children2) {
     const a = attrs.map(([k, v]) => ` ${k}="${escapeAttr(v)}"`).join("");
-    return children.length === 0 ? `<${tag}${a}/>` : `<${tag}${a}>${children.join("")}</${tag}>`;
+    return children2.length === 0 ? `<${tag}${a}/>` : `<${tag}${a}>${children2.join("")}</${tag}>`;
   }
   // ---------------------------------------------------------------- nodes
   image(n3) {
@@ -13507,9 +13674,13 @@ var SvgEmitter = class {
       body.unshift(`<rect width="${s.w}" height="${s.h}" fill="${hex(s.background)}"${a < 1 ? ` fill-opacity="${f(a, 4)}"` : ""}/>`);
     }
     const out2 = [`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${s.w} ${s.h}" width="${s.w}" height="${s.h}">`];
-    if (this.sheet.animated) out2.push(`<style>
-${this.sheet.text()}
+    if (this.sheet.animated || this.hasGeometryAnimation) {
+      const geometry2 = this.hasGeometryAnimation ? `
+@media (prefers-reduced-motion:reduce){.${this.p}__geometry-motion{display:none}.${this.p}__geometry-poster{display:inline}}` : "";
+      out2.push(`<style>
+${this.sheet.text()}${geometry2}
 </style>`);
+    }
     if (this.defs.length > 0) out2.push(`<defs>
 ${this.defs.join("\n")}
 </defs>`);
@@ -19209,10 +19380,10 @@ function buildQaReport(scene, diagnostics, extra) {
 }
 
 // src/cli/lib/commands.ts
-import { spawnSync as spawnSync4 } from "node:child_process";
+import { spawnSync as spawnSync5 } from "node:child_process";
 
 // src/export/index.ts
-import { copyFileSync as copyFileSync2, mkdirSync as mkdirSync2, mkdtempSync as mkdtempSync2, rmSync as rmSync2, statSync as statSync2, writeFileSync as writeFileSync2 } from "node:fs";
+import { copyFileSync as copyFileSync2, mkdirSync as mkdirSync2, mkdtempSync as mkdtempSync2, rmSync as rmSync3, statSync as statSync2, writeFileSync as writeFileSync2 } from "node:fs";
 import { tmpdir as tmpdir2 } from "node:os";
 import { join as join5 } from "node:path";
 
@@ -19797,7 +19968,7 @@ async function exportScene(req) {
       if (info.alpha !== "none" && !solid && req.scene.background === null) {
         file.alpha = await verifyAlpha(out2, j.format, plan, first2);
         if (!file.alpha.ok) {
-          rmSync2(out2, { force: true });
+          rmSync3(out2, { force: true });
           result.failures.push({ format: j.format, reason: `Alpha verification failed: ${file.alpha.detail}`, fix: `Use ${info.fallback ?? "another format"}, or export with --bg <colour> for a solid background.`, environment: false });
           continue;
         }
@@ -19808,7 +19979,7 @@ async function exportScene(req) {
         file.checks = runChecks({ file: out2, format: j.format, plan, framePath: (i) => join5(dir, `f_${String(i).padStart(4, "0")}.png`), sourceFrames: src.count, outputFrames: pr.frames, outFps: rate, srcFps: req.scene.fps, solid: solid || req.scene.background !== null, loops: req.scene.loop === true, bg: [bgc[0], bgc[1], bgc[2]] });
         const bad = file.checks.find((c) => c.checked && !c.ok);
         if (bad) {
-          rmSync2(out2, { force: true });
+          rmSync3(out2, { force: true });
           result.failures.push({ format: j.format, reason: `Check '${bad.name}' failed: ${bad.detail}.`, fix: bad.name === "loop" ? "Re-export. If it fails again, make each animated property end on its starting value." : "Re-export with a lower --scale or --quality high, or use a lossless format (apng).", environment: false });
           continue;
         }
@@ -19818,7 +19989,7 @@ async function exportScene(req) {
       result.files.push(file);
     }
   } finally {
-    if (!req.keepFrames) rmSync2(dir, { recursive: true, force: true });
+    if (!req.keepFrames) rmSync3(dir, { recursive: true, force: true });
   }
   result.notes = [...new Set(result.notes)];
   return result;
@@ -20093,7 +20264,7 @@ async function exportCommand(args) {
 async function doctorCommand() {
   const major = Number(process.versions.node.split(".")[0]);
   const status = await browserStatus();
-  const ff = spawnSync4("ffmpeg", ["-version"], { encoding: "utf8" });
+  const ff = spawnSync5("ffmpeg", ["-version"], { encoding: "utf8", ...syncLimit("quick") });
   const ffVersion = ff.status === 0 ? /ffmpeg version (\S+)/.exec(ff.stdout)?.[1] : void 0;
   const notes = [];
   if (!status.source && status.fix) notes.push(`To enable rendering: ${status.fix}`);
@@ -20492,9 +20663,9 @@ function sampleCommand(args) {
   const timeFlag = args.flags.get("time");
   const time = numFlag(args, "time", 0, 0, 36e3);
   if (typeof time === "string" || timeFlag === true) return fileProblem(typeof time === "string" ? time : "--time needs a number of seconds, such as --time 1.5.");
-  const have = (cmd) => spawnSync4(cmd, ["-version"], { encoding: "utf8" }).status === 0;
+  const have = (cmd) => spawnSync5(cmd, ["-version"], { encoding: "utf8", ...syncLimit("quick") }).status === 0;
   if (!have("ffmpeg") || !have("ffprobe")) return { code: EXIT_USAGE, message: "sample needs ffmpeg and ffprobe, and they were not found.\n  fix: install ffmpeg (for example 'brew install ffmpeg' or 'apt install ffmpeg'), then run 'gertie doctor'" };
-  const probe2 = spawnSync4("ffprobe", ["-v", "error", "-select_streams", "v:0", "-show_entries", "stream=width,height", "-of", "json", path], { encoding: "utf8" });
+  const probe2 = spawnSync5("ffprobe", ["-v", "error", "-select_streams", "v:0", "-show_entries", "stream=width,height", "-of", "json", path], { encoding: "utf8", ...syncLimit("quick") });
   let size;
   try {
     size = JSON.parse(probe2.stdout).streams?.[0];
@@ -20506,7 +20677,8 @@ function sampleCommand(args) {
   const outside = points.find((p) => p.x >= w || p.y >= h);
   if (outside) return fileProblem(`--at ${outside.x},${outside.y} is outside the ${w} x ${h} frame.
   fix: x runs from 0 to ${w - 1} and y from 0 to ${h - 1}. Run 'gertie grid' on the image to read coordinates.`);
-  const ex = spawnSync4("ffmpeg", ["-v", "error", ...time > 0 ? ["-ss", String(time)] : [], "-i", path, "-frames:v", "1", "-f", "rawvideo", "-pix_fmt", "rgba", "pipe:1"], { maxBuffer: w * h * 4 + 1024, stdio: ["ignore", "pipe", "pipe"] });
+  const ex = spawnSync5("ffmpeg", ["-v", "error", ...time > 0 ? ["-ss", String(time)] : [], "-i", path, "-frames:v", "1", "-f", "rawvideo", "-pix_fmt", "rgba", "pipe:1"], { maxBuffer: w * h * 4 + 1024, stdio: ["ignore", "pipe", "pipe"], ...syncLimit("quick") });
+  if (timedOut(ex)) return fileProblem(timeoutMessage(`Taking a frame from ${file}`, "quick"));
   if (ex.status !== 0 || ex.stdout.length !== w * h * 4) return fileProblem(`No frame could be taken from ${file}${time > 0 ? ` at ${time} seconds (is the clip that long?)` : ""}: ${String(ex.stderr).trim().split("\n")[0] ?? "no output"}`);
   const colours = sampleColours(ex.stdout, w, h, points);
   return {
@@ -20535,9 +20707,9 @@ async function studyCommand(args) {
     if (parts.length !== 4 || !parts.every((n3) => Number.isInteger(n3))) return fileProblem("--crop needs four whole numbers in source pixels: --crop x,y,w,h (for example --crop 120,80,200,200).");
     cropBox = { x: parts[0], y: parts[1], w: parts[2], h: parts[3] };
   }
-  const have = (cmd) => spawnSync4(cmd, ["-version"], { encoding: "utf8" }).status === 0;
+  const have = (cmd) => spawnSync5(cmd, ["-version"], { encoding: "utf8", ...syncLimit("quick") }).status === 0;
   if (!have("ffmpeg") || !have("ffprobe")) return { code: EXIT_USAGE, message: "study needs ffmpeg and ffprobe, and they were not found.\n  fix: install ffmpeg (for example 'brew install ffmpeg' or 'apt install ffmpeg'), then run 'gertie doctor'" };
-  const probe2 = spawnSync4("ffprobe", ["-v", "error", "-select_streams", "v:0", "-show_entries", "stream=width,height,r_frame_rate,avg_frame_rate,duration:format=duration", "-of", "json", path], { encoding: "utf8" });
+  const probe2 = spawnSync5("ffprobe", ["-v", "error", "-select_streams", "v:0", "-show_entries", "stream=width,height,r_frame_rate,avg_frame_rate,duration:format=duration", "-of", "json", path], { encoding: "utf8", ...syncLimit("quick") });
   let info;
   try {
     info = JSON.parse(probe2.stdout);
@@ -20560,8 +20732,9 @@ async function studyCommand(args) {
   const width = Math.min(256, cropBox ? cropBox.w : st.width);
   const tmp = mkdtempSync3(join6(tmpdir3(), "gertie-study-"));
   try {
-    const ex = spawnSync4("ffmpeg", ["-v", "error", "-t", String(seconds), "-i", path, "-vf", `${cropBox ? `crop=${cropBox.w}:${cropBox.h}:${cropBox.x}:${cropBox.y},` : ""}fps=${afps},scale=${width}:-2:flags=area`, join6(tmp, "f-%05d.png")], { encoding: "utf8" });
+    const ex = spawnSync5("ffmpeg", ["-v", "error", "-t", String(seconds), "-i", path, "-vf", `${cropBox ? `crop=${cropBox.w}:${cropBox.h}:${cropBox.x}:${cropBox.y},` : ""}fps=${afps},scale=${width}:-2:flags=area`, join6(tmp, "f-%05d.png")], { encoding: "utf8", ...syncLimit("decode") });
     const names = readdirSync(tmp).filter((n3) => n3.endsWith(".png")).sort();
+    if (timedOut(ex)) return fileProblem(timeoutMessage(`Taking frames from ${file}`, "decode"));
     if (ex.status !== 0 || names.length < 3) return fileProblem(`No frames could be taken from ${file}: ${ex.stderr.trim().split("\n")[0] ?? "too few frames"}`);
     const pngs = names.map((n3) => readFileSync4(join6(tmp, n3)));
     const { browser } = await launchBrowser().catch((e) => {
@@ -20632,7 +20805,7 @@ async function studyCommand(args) {
     return { code: EXIT_USAGE, message: `Study failed: ${e instanceof Error ? e.message : String(e)}
   fix: run 'gertie doctor' to check that rendering is available` };
   } finally {
-    rmSync3(tmp, { recursive: true, force: true });
+    rmSync4(tmp, { recursive: true, force: true });
   }
 }
 async function cutoutCommand(args) {
@@ -20850,7 +21023,8 @@ async function storyCommand(args) {
       if (!v) return { code: EXIT_USAGE, report: rep, lines: [...lines, HYPERFRAMES_INSTALL], outputs: written, full: { ok: false, engine, summary: summary2, project: paths.dir, outputs: written, diagnostics: rep.diagnostics, error: HYPERFRAMES_INSTALL } };
       lines.push(`running hyperframes ${v}`);
       const videoOut = join7(paths.dir, `${story.name}.mp4`);
-      const r = spawnSync5(hyperframesCommand(), ["render", "--output", videoOut], { cwd: paths.dir, stdio: json ? ["ignore", "ignore", "inherit"] : ["ignore", "inherit", "inherit"] });
+      const r = spawnSync6(hyperframesCommand(), ["render", "--output", videoOut], { cwd: paths.dir, stdio: json ? ["ignore", "ignore", "inherit"] : ["ignore", "inherit", "inherit"], ...syncLimit("render") });
+      if (timedOut(r)) return { code: EXIT_FAIL, report: report([...diagnostics, makeDiagnostic("E-STORY-HYPERFRAMES", timeoutMessage("hyperframes render", "render"), `Run it yourself to watch progress: cd ${paths.dir} && hyperframes render --output ${videoOut}`)]), lines, outputs: written };
       if (r.status !== 0) return { code: EXIT_FAIL, report: report([...diagnostics, makeDiagnostic("E-STORY-HYPERFRAMES", `hyperframes render exited with ${String(r.status)}.`, `Run it yourself to see the output: cd ${paths.dir} && hyperframes lint && hyperframes render`)]), lines, outputs: written };
       written.push(videoOut);
     } else if (!hyperframesVersion()) lines.push(HYPERFRAMES_INSTALL);
@@ -20891,7 +21065,7 @@ async function storyCommand(args) {
 }
 
 // src/cli/lib/ascii-command.ts
-import { spawnSync as spawnSync6 } from "node:child_process";
+import { spawnSync as spawnSync7 } from "node:child_process";
 import { existsSync as existsSync8, mkdirSync as mkdirSync5, readFileSync as readFileSync6, writeFileSync as writeFileSync5 } from "node:fs";
 import { basename as basename5, dirname as dirname5, join as join9, relative, resolve as resolve5, sep } from "node:path";
 
@@ -23230,7 +23404,7 @@ var filterChain = (o) => `${o.crop ? `crop=${o.crop.w}:${o.crop.h}:${o.crop.x}:$
 async function* streamFrames(file, o) {
   requireFfmpeg();
   const args = ["-hide_banner", "-loglevel", "error", ...Number.isFinite(o.maxSeconds) ? ["-t", String(o.maxSeconds)] : [], "-i", file, "-vf", filterChain(o), "-frames:v", String(o.maxFrames), "-f", "rawvideo", "-pix_fmt", "rgba", "-"];
-  const p = spawn2("ffmpeg", args, { stdio: ["ignore", "pipe", "pipe"] });
+  const p = trackChild(spawn2("ffmpeg", args, { stdio: ["ignore", "pipe", "pipe"] }));
   let err = "";
   p.stderr.on("data", (d) => err += d.toString());
   const closed = new Promise((resolve6, reject) => {
@@ -24425,9 +24599,9 @@ async function probeCommand(args) {
   if (!existsSync8(path)) return fileProblem(`File not found: ${file}`);
   const timeFlag = args.flags.get("time");
   if (timeFlag === true) return fileProblem("--time needs a number of seconds, such as --time 1.5.");
-  const have = (cmd) => spawnSync6(cmd, ["-version"], { encoding: "utf8" }).status === 0;
+  const have = (cmd) => spawnSync7(cmd, ["-version"], { encoding: "utf8", ...syncLimit("quick") }).status === 0;
   if (!have("ffmpeg") || !have("ffprobe")) return { code: EXIT_USAGE, message: "ascii probe needs ffmpeg and ffprobe, and they were not found.\n  fix: install ffmpeg (for example 'brew install ffmpeg' or 'apt install ffmpeg'), then run 'gertie doctor'" };
-  const info = spawnSync6("ffprobe", ["-v", "error", "-select_streams", "v:0", "-show_entries", "stream=width,height,r_frame_rate,avg_frame_rate,duration:format=duration", "-of", "json", path], { encoding: "utf8" });
+  const info = spawnSync7("ffprobe", ["-v", "error", "-select_streams", "v:0", "-show_entries", "stream=width,height,r_frame_rate,avg_frame_rate,duration:format=duration", "-of", "json", path], { encoding: "utf8", ...syncLimit("quick") });
   let st;
   let fmtDuration;
   try {
@@ -24454,7 +24628,8 @@ async function probeCommand(args) {
     if (!isStill && t >= duration) return fileProblem(`--time ${t} is at or past the end of the clip, which is ${duration.toFixed(2)} s long. Give a time under that.`);
     time = t;
   }
-  const one = spawnSync6("ffmpeg", ["-v", "error", ...time > 0 ? ["-ss", String(time)] : [], "-i", path, "-frames:v", "1", "-f", "rawvideo", "-pix_fmt", "rgba", "pipe:1"], { maxBuffer: w * h * 4 + 1024, stdio: ["ignore", "pipe", "pipe"] });
+  const one = spawnSync7("ffmpeg", ["-v", "error", ...time > 0 ? ["-ss", String(time)] : [], "-i", path, "-frames:v", "1", "-f", "rawvideo", "-pix_fmt", "rgba", "pipe:1"], { maxBuffer: w * h * 4 + 1024, stdio: ["ignore", "pipe", "pipe"], ...syncLimit("quick") });
+  if (timedOut(one)) return fileProblem(timeoutMessage(`Taking a frame from ${file}`, "quick"));
   if (one.status !== 0 || one.stdout.length !== w * h * 4) return fileProblem(`No frame could be taken from ${file} at ${time} seconds: ${String(one.stderr).trim().split("\n")[0] ?? "no output"}`);
   const frame = probeFrame(new Uint8Array(one.stdout.buffer, one.stdout.byteOffset, one.stdout.length), w, h);
   let changesPerSecond = null;
@@ -24463,7 +24638,7 @@ async function probeCommand(args) {
     const shh = Math.max(2, Math.round(h * sw / w / 2) * 2);
     const afps = Math.min(60, fps);
     const from = Math.max(0, Math.min(time, duration - 3));
-    const run = spawnSync6("ffmpeg", ["-v", "error", "-ss", String(from), "-t", "3", "-i", path, "-vf", `fps=${afps},scale=${sw}:${shh}:flags=area`, "-f", "rawvideo", "-pix_fmt", "rgba", "pipe:1"], { maxBuffer: sw * shh * 4 * 200 + 1024, stdio: ["ignore", "pipe", "pipe"] });
+    const run = spawnSync7("ffmpeg", ["-v", "error", "-ss", String(from), "-t", "3", "-i", path, "-vf", `fps=${afps},scale=${sw}:${shh}:flags=area`, "-f", "rawvideo", "-pix_fmt", "rgba", "pipe:1"], { maxBuffer: sw * shh * 4 * 200 + 1024, stdio: ["ignore", "pipe", "pipe"], ...syncLimit("quick") });
     if (run.status === 0) {
       const size = sw * shh * 4;
       const frames = [];
@@ -24480,6 +24655,158 @@ async function probeCommand(args) {
     ...frame.note ? [`note: ${frame.note}`] : []
   ];
   return { code: EXIT_OK, full: { ok: true, errors: 0, warnings: 0, diagnostics: [], ...result }, lines };
+}
+
+// src/cli/lib/three-command.ts
+import { existsSync as existsSync9, mkdirSync as mkdirSync6, readFileSync as readFileSync7, realpathSync, writeFileSync as writeFileSync6 } from "node:fs";
+import { basename as basename6, dirname as dirname6, resolve as resolveThreePath } from "node:path";
+import { fileURLToPath as fileURLToPath2 } from "node:url";
+
+// src/three/scene.ts
+var import__2 = __toESM(require__(), 1);
+var ThreeAjvClass = import__2.default.default ?? import__2.default;
+var validateThreeScene;
+var boundedNumber = (minimum, maximum) => ({ type: "number", minimum, maximum });
+var vectorSchema = (item) => ({ type: "array", minItems: 3, maxItems: 3, items: item });
+var hexColorSchema = { type: "string", pattern: "^#[0-9a-fA-F]{6}$" };
+var threeSceneSchema = {
+  type: "object",
+  additionalProperties: false,
+  required: ["objects"],
+  properties: {
+    width: { type: "integer", minimum: 64, maximum: 2048, default: 640 },
+    height: { type: "integer", minimum: 64, maximum: 2048, default: 480 },
+    orbit: { type: "boolean" },
+    duration: { ...boundedNumber(0.25, 120), default: 4 },
+    background: { ...hexColorSchema, default: "#171427" },
+    camera: { ...vectorSchema(boundedNumber(-30, 30)), default: [0, 2, 7] },
+    objects: {
+      type: "array",
+      minItems: 1,
+      maxItems: 64,
+      items: {
+        type: "object",
+        additionalProperties: false,
+        required: ["shape"],
+        properties: {
+          shape: { enum: ["box", "sphere", "cylinder", "crystal", "knot", "robot", "team", "relief"] },
+          image: { type: "string", pattern: "^[a-zA-Z0-9_-]+(?:/[a-zA-Z0-9_-]+)*[.]png$" },
+          depthMap: { type: "string", pattern: "^[a-zA-Z0-9_-]+(?:/[a-zA-Z0-9_-]+)*[.]png$" },
+          depth: { ...boundedNumber(0, 2), default: 1.05 },
+          color: { ...hexColorSchema, default: "#ff9e8a" },
+          position: { ...vectorSchema(boundedNumber(-30, 30)), default: [0, 0, 0] },
+          rotation: { ...vectorSchema(boundedNumber(-Math.PI * 2, Math.PI * 2)), default: [0, 0, 0] },
+          scale: { anyOf: [boundedNumber(0.01, 10), vectorSchema(boundedNumber(0.01, 10))], default: 1 },
+          pivot: vectorSchema(boundedNumber(-30, 30)),
+          motion: {
+            type: "array",
+            minItems: 2,
+            maxItems: 64,
+            items: {
+              type: "object",
+              additionalProperties: false,
+              required: ["at"],
+              properties: {
+                at: boundedNumber(0, 120),
+                offset: { ...vectorSchema(boundedNumber(-30, 30)), default: [0, 0, 0] },
+                turn: { ...vectorSchema(boundedNumber(-Math.PI * 16, Math.PI * 16)), default: [0, 0, 0] }
+              }
+            }
+          },
+          metalness: { ...boundedNumber(0, 1), default: 0.15 },
+          roughness: { ...boundedNumber(0, 1), default: 0.36 },
+          spin: { ...vectorSchema({ ...boundedNumber(-8, 8), type: "integer" }), default: [0, 1, 0] },
+          bob: { ...boundedNumber(0, 10), default: 0 },
+          phase: { ...boundedNumber(0, 1), default: 0 }
+        }
+      }
+    }
+  }
+};
+function parseThreeScene(source2) {
+  const scene = JSON.parse(source2);
+  validateThreeScene ??= new ThreeAjvClass({ allErrors: true, useDefaults: true }).compile(threeSceneSchema);
+  if (!validateThreeScene(scene)) {
+    throw new Error(validateThreeScene.errors?.map((error) => `${error.instancePath || "/"} ${error.message}`).join("\n"));
+  }
+  for (const [index, spec] of scene.objects.entries()) {
+    if (spec.motion) {
+      const motion = spec.motion;
+      const first2 = motion[0];
+      const last = motion.at(-1);
+      if (first2.at !== 0 || last.at !== scene.duration || motion.some((key2, i) => i > 0 && key2.at <= motion[i - 1].at)) {
+        throw new Error(`/objects/${index}/motion needs increasing times from 0 to the scene duration`);
+      }
+      if (first2.offset.some((v, i) => v !== last.offset[i]) || first2.turn.some((v, i) => v !== last.turn[i])) {
+        throw new Error(`/objects/${index}/motion needs matching opening and closing poses`);
+      }
+    }
+    if (spec.shape === "relief" && (!spec.image || !spec.depthMap)) {
+      throw new Error(`/objects/${index} requires image and depthMap PNG files for a relief`);
+    }
+    if (spec.shape !== "relief" && (spec.image || spec.depthMap)) {
+      throw new Error(`/objects/${index} image and depthMap require shape relief`);
+    }
+  }
+  const { camera } = scene;
+  if (Math.hypot(...camera) <= 0.1) throw new Error("/camera must be more than 0.1 units from the origin");
+  return scene;
+}
+
+// src/cli/lib/three-command.ts
+function threeCommand(args) {
+  const [action, input] = args.positional;
+  const output = args.flags.get("out");
+  if (!input || args.positional.length !== 2 || !["validate", "build"].includes(action ?? "") || output === true || action === "validate" && output !== void 0 || [...args.flags.keys()].some((flag) => flag !== "out" && flag !== "json")) {
+    return { code: 2, message: "Usage: gertie three validate <scene> [--json] or gertie three build <scene> [--out animation.html] [--json]" };
+  }
+  try {
+    const scene = parseThreeScene(readFileSync7(input, "utf8"));
+    for (const spec of scene.objects) {
+      if (spec.shape !== "relief") continue;
+      for (const field of ["image", "depthMap"]) {
+        const path = resolveThreePath(dirname6(input), spec[field]);
+        const png = readFileSync7(path);
+        if (png.subarray(0, 8).toString("hex") !== "89504e470d0a1a0a") throw new Error(`${path} must be a PNG file`);
+        if (action === "build") spec[field] = `data:image/png;base64,${png.toString("base64")}`;
+      }
+    }
+    if (action === "validate") return { code: 0, lines: ["3D scene is valid."], full: { valid: true } };
+    const destination = resolveThreePath(output ?? resolveThreePath(dirname6(input), "out", basename6(input).replace(/(?:\.three)?\.json$/i, "") + ".html"));
+    if (!destination.toLowerCase().endsWith(".html")) throw new Error("--out must end in .html");
+    if (existsSync9(destination) && realpathSync(destination) === realpathSync(input)) {
+      throw new Error("Output would overwrite the input scene");
+    }
+    const adjacent = new URL("../assets/three-player.js", import.meta.url);
+    const sourceTree = new URL("../../../skills/gertie/assets/three-player.js", import.meta.url);
+    const player = readFileSync7(existsSync9(fileURLToPath2(adjacent)) ? adjacent : sourceTree, "utf8");
+    const html = `<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Gertie 3D animation</title>
+<style>
+  body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: #111; color: white; font-family: system-ui, sans-serif; }
+  main { max-width: 100%; text-align: center; }
+  canvas { display: block; max-width: 100%; max-height: calc(100vh - 3rem); width: auto; height: auto; }
+  button { margin: 0.75rem; padding: 0.4rem 1rem; }
+</style>
+<main>
+  <canvas role="img" aria-label="3D animation"></canvas>
+  <button type="button" hidden>Play</button>
+  <p id="status" role="status">Loading 3D animation\u2026</p>
+</main>
+<script id="scene" type="application/json">${JSON.stringify(scene).replaceAll("<", "\\u003c")}</script>
+<script>${player.replace(/<\/script/gi, "<\\/script")}</script>
+</html>
+`;
+    mkdirSync6(dirname6(destination), { recursive: true });
+    writeFileSync6(destination, html);
+    return { code: 0, lines: [`wrote ${destination}`], full: { valid: true, outputs: { html: destination } } };
+  } catch (error) {
+    const message = error instanceof Error ? error.message : String(error);
+    return { code: 1, report: report([makeDiagnostic("E-THREE", message, void 0)]) };
+  }
 }
 
 // src/cli/gertie.ts
@@ -24499,6 +24826,8 @@ Usage:
   gertie sample <image-or-clip> --at x,y [--at x,y ...] [--time seconds] [--json]
   gertie story <video.story.json> [--out video.mp4] [--engine builtin|hyperframes] [--render] [--lint-only] [--no-qa] [--keep-work dir] [--no-sheet] [--json] [--strict]
   gertie ascii <lint|export|render|from|gen|play> ...   text-character animation; run gertie ascii for the options
+  gertie three validate <scene.three.json> [--json]
+  gertie three build <scene.three.json> [--out animation.html] [--json]
   gertie profile <scene.gertie.json | lottie.json> [--tier icon|character|scene] [--json]
   gertie inspect <animation.json> [--json]
   gertie recolor <animation.json> --map "#ff0000=#3b82f6,..." [--tolerance n] [--out file] [--no-render] [--json]
@@ -24506,6 +24835,7 @@ Usage:
   gertie render <animation.json> [--sheet-frames n] [--times 0.6,1.1] [--out sheet.png | folder] [--json]
   gertie grid <image> [--step 50] [--out grid.png]
   gertie doctor [--json]
+  gertie cleanup [--json]   stop headless browsers left behind by earlier runs
   gertie --version`;
 async function main(argv) {
   const args = parseArgs(argv.slice(2));
@@ -24585,6 +24915,11 @@ async function main(argv) {
       emit(o, json);
       return o.code;
     }
+    case "three": {
+      const o = threeCommand(args);
+      emit(o, json);
+      return o.code;
+    }
     case "profile": {
       const o = profileCommand(args);
       emit(o, json);
@@ -24610,6 +24945,12 @@ async function main(argv) {
       emit(o, json);
       return o.code;
     }
+    case "cleanup": {
+      const killed = reapOrphanBrowsers();
+      const message = killed.length === 0 ? "No leftover headless browsers found." : `Stopped ${killed.length} leftover headless browser process(es): ${killed.join(", ")}`;
+      console.log(json ? JSON.stringify({ ok: true, killed }) : message);
+      return 0;
+    }
     case "doctor": {
       const o = await doctorCommand();
       emit(o, json);
@@ -24620,4 +24961,9 @@ async function main(argv) {
       return EXIT_USAGE;
   }
 }
-process.exitCode = await main(process.argv);
+try {
+  process.exitCode = await main(process.argv);
+} finally {
+  await shutdown();
+  setTimeout(() => process.exit(process.exitCode ?? 0), 2e3).unref();
+}

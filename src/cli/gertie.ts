@@ -4,6 +4,10 @@ import { storyCommand } from "./lib/story-command.ts";
 import { asciiCommand } from "./lib/ascii-command.ts";
 import { compileCommand, doctorCommand, emit, EXIT_USAGE, exportCommand, cutoutCommand, gridCommand, groupCommand, importCommand, inspectCommand, profileCommand, qaCommand, recolorCommand, renderCommand, retimeCommand, sampleCommand, studyCommand, traceCommand, validateCommand } from "./lib/commands.ts";
 
+import { threeCommand } from "./lib/three-command.ts";
+import { reapOrphanBrowsers } from "../render/browser.ts";
+import { shutdown } from "../shutdown.ts";
+
 declare const __GERTIE_VERSION__: string;
 
 const VERSION: string =
@@ -26,6 +30,8 @@ Usage:
   gertie sample <image-or-clip> --at x,y [--at x,y ...] [--time seconds] [--json]
   gertie story <video.story.json> [--out video.mp4] [--engine builtin|hyperframes] [--render] [--lint-only] [--no-qa] [--keep-work dir] [--no-sheet] [--json] [--strict]
   gertie ascii <lint|export|render|from|gen|play> ...   text-character animation; run gertie ascii for the options
+  gertie three validate <scene.three.json> [--json]
+  gertie three build <scene.three.json> [--out animation.html] [--json]
   gertie profile <scene.gertie.json | lottie.json> [--tier icon|character|scene] [--json]
   gertie inspect <animation.json> [--json]
   gertie recolor <animation.json> --map "#ff0000=#3b82f6,..." [--tolerance n] [--out file] [--no-render] [--json]
@@ -33,6 +39,7 @@ Usage:
   gertie render <animation.json> [--sheet-frames n] [--times 0.6,1.1] [--out sheet.png | folder] [--json]
   gertie grid <image> [--step 50] [--out grid.png]
   gertie doctor [--json]
+  gertie cleanup [--json]   stop headless browsers left behind by earlier runs
   gertie --version`;
 
 async function main(argv: readonly string[]): Promise<number> {
@@ -113,6 +120,11 @@ async function main(argv: readonly string[]): Promise<number> {
       emit(o, json);
       return o.code;
     }
+    case "three": {
+      const o = threeCommand(args);
+      emit(o, json);
+      return o.code;
+    }
     case "profile": {
       const o = profileCommand(args);
       emit(o, json);
@@ -138,6 +150,12 @@ async function main(argv: readonly string[]): Promise<number> {
       emit(o, json);
       return o.code;
     }
+    case "cleanup": {
+      const killed = reapOrphanBrowsers();
+      const message = killed.length === 0 ? "No leftover headless browsers found." : `Stopped ${killed.length} leftover headless browser process(es): ${killed.join(", ")}`;
+      console.log(json ? JSON.stringify({ ok: true, killed }) : message);
+      return 0;
+    }
     case "doctor": {
       const o = await doctorCommand();
       emit(o, json);
@@ -149,4 +167,11 @@ async function main(argv: readonly string[]): Promise<number> {
   }
 }
 
-process.exitCode = await main(process.argv);
+try {
+  process.exitCode = await main(process.argv);
+} finally {
+  // Every command must leave nothing running: close browsers and kill child processes still
+  // open, and if some handle still keeps Node alive afterwards, exit anyway.
+  await shutdown();
+  setTimeout(() => process.exit(process.exitCode ?? 0), 2000).unref();
+}

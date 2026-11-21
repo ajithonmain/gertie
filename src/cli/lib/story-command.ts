@@ -1,4 +1,5 @@
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { syncLimit, timedOut, timeoutMessage } from "../../shutdown.ts";
 import { spawnSync } from "node:child_process";
 import { HYPERFRAMES_INSTALL, hyperframesCommand, hyperframesVersion } from "../../story/tools.ts";
 import { basename, dirname, extname, join, resolve } from "node:path";
@@ -142,7 +143,8 @@ export async function storyCommand(args: Args): Promise<Outcome> {
       if (!v) return { code: EXIT_USAGE, report: rep, lines: [...lines, HYPERFRAMES_INSTALL], outputs: written, full: { ok: false, engine, summary, project: paths.dir, outputs: written, diagnostics: rep.diagnostics, error: HYPERFRAMES_INSTALL } };
       lines.push(`running hyperframes ${v}`);
       const videoOut = join(paths.dir, `${story.name}.mp4`);
-      const r = spawnSync(hyperframesCommand(), ["render", "--output", videoOut], { cwd: paths.dir, stdio: json ? ["ignore", "ignore", "inherit"] : ["ignore", "inherit", "inherit"] });
+      const r = spawnSync(hyperframesCommand(), ["render", "--output", videoOut], { cwd: paths.dir, stdio: json ? ["ignore", "ignore", "inherit"] : ["ignore", "inherit", "inherit"], ...syncLimit("render") });
+      if (timedOut(r)) return { code: EXIT_FAIL, report: report([...diagnostics, makeDiagnostic("E-STORY-HYPERFRAMES", timeoutMessage("hyperframes render", "render"), `Run it yourself to watch progress: cd ${paths.dir} && hyperframes render --output ${videoOut}`)]), lines, outputs: written };
       if (r.status !== 0) return { code: EXIT_FAIL, report: report([...diagnostics, makeDiagnostic("E-STORY-HYPERFRAMES", `hyperframes render exited with ${String(r.status)}.`, `Run it yourself to see the output: cd ${paths.dir} && hyperframes lint && hyperframes render`)]), lines, outputs: written };
       written.push(videoOut);
     } else if (!hyperframesVersion()) lines.push(HYPERFRAMES_INSTALL);

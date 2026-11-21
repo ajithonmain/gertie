@@ -1,4 +1,4 @@
-<p align="center"><img src="assets/header.svg" width="128" height="128" alt="A pulsing ring, animated by Gertie"></p>
+<p align="center"><img src="site/src/icons/logo.svg" width="128" height="128" alt="Gertie sauropod logo"></p>
 
 # Gertie
 
@@ -7,7 +7,7 @@ A free, open-source skill that lets any AI agent create vector animations: Lotti
 You ask your agent for an animation in plain language. The agent writes a small scene file. Gertie compiles it, checks it, renders it in a real browser, and exports the formats you need.
 
 - Lottie JSON and `.lottie` for apps and websites
-- Self-contained animated SVG that plays in an `<img>` tag with no JavaScript (the header above is one)
+- Self-contained animated SVG that plays in an `<img>` tag with no JavaScript ([see the pulsing ring example](assets/header.svg))
 - GIF, transparent GIF, APNG, animated WebP
 - WebM with alpha, ProRes 4444, HEVC with alpha, MP4, and direct export for Telegram, Discord, Slack, WhatsApp and more
 - Multi-scene videos from a storyboard, with captions, transitions and music
@@ -86,3 +86,15 @@ The design is in [`docs/`](docs/00-index.md), starting at the index. See [`CONTR
 MIT. Bundled third-party notices are in [`skills/gertie/assets/THIRD-PARTY-LICENSES.txt`](skills/gertie/assets/THIRD-PARTY-LICENSES.txt); the audit is in [`docs/18-licence-audit.md`](docs/18-licence-audit.md).
 
 Gertie is not affiliated with LottieFiles or the Lottie Animation Community. Lottie is an open animation format; Gertie produces files in that format.
+
+## 3D animation
+
+Build smooth, looping Three.js scenes with procedural shapes, lighting, adjustable
+materials, multi-axis rotation, and floating motion. The generated HTML plays
+offline in a WebGL 2 browser.
+
+```sh
+node skills/gertie/scripts/gertie.mjs three build examples/three-turntable.three.json --out out/turntable.html
+```
+
+See the [Three.js scene reference](skills/gertie/references/three.md) for options.

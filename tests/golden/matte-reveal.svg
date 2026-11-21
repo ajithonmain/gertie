@@ -5,9 +5,10 @@
 .gjio-hole__matte-inv__src [fill]:not([fill="none"]){fill:#000!important}
 .gjio-hole__matte-inv__src [stroke]{stroke:#000!important}
 @media (prefers-reduced-motion:reduce){*{animation:none!important}}
+@media (prefers-reduced-motion:reduce){.gjio__geometry-motion{display:none}.gjio__geometry-poster{display:inline}}
 </style>
 <defs>
-<mask id="gjio-hole__matte-inv" maskUnits="userSpaceOnUse" x="-512" y="-512" width="1536" height="1536"><rect x="-512" y="-512" width="1536" height="1536" fill="#fff"/><g class="gjio-hole__matte-inv__src"><g transform="translate(256 256)"><ellipse rx="10" ry="10" fill="#000000"><animate attributeName="rx" dur="4s" repeatCount="indefinite" calcMode="spline" values="10;300;300;10" keyTimes="0;0.375;0.625;1" keySplines="0.65 0 0.35 1;0.65 0 0.35 1;0.65 0 0.35 1"/><animate attributeName="ry" dur="4s" repeatCount="indefinite" calcMode="spline" values="10;300;300;10" keyTimes="0;0.375;0.625;1" keySplines="0.65 0 0.35 1;0.65 0 0.35 1;0.65 0 0.35 1"/></ellipse></g></g></mask>
+<mask id="gjio-hole__matte-inv" maskUnits="userSpaceOnUse" x="-512" y="-512" width="1536" height="1536"><rect x="-512" y="-512" width="1536" height="1536" fill="#fff"/><g class="gjio-hole__matte-inv__src"><g transform="translate(256 256)"><g class="gjio__geometry-motion"><ellipse rx="10" ry="10" fill="#000000"><animate attributeName="rx" dur="4s" repeatCount="indefinite" calcMode="spline" values="10;300;300;10" keyTimes="0;0.375;0.625;1" keySplines="0.65 0 0.35 1;0.65 0 0.35 1;0.65 0 0.35 1"/><animate attributeName="ry" dur="4s" repeatCount="indefinite" calcMode="spline" values="10;300;300;10" keyTimes="0;0.375;0.625;1" keySplines="0.65 0 0.35 1;0.65 0 0.35 1;0.65 0 0.35 1"/></ellipse></g><g class="gjio__geometry-poster" display="none"><ellipse rx="10" ry="10" fill="#000000"/></g></g></g></mask>
 </defs>
 <rect width="512" height="512" fill="#0b1020"/>
 <g transform="translate(256 256)">

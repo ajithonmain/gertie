@@ -1,0 +1,11 @@
+{
+  "width": 840,
+  "height": 700,
+  "duration": 8,
+  "orbit": true,
+  "background": "#ffffff",
+  "camera": [0.15, 1.0, 8.8],
+  "objects": [
+    { "shape": "team", "spin": [0, 0, 0] }
+  ]
+}
