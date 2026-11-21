@@ -57,8 +57,8 @@ function differing(a: { data: ArrayLike<number>; w: number; h: number }, b: { da
   return n / (a.w * a.h);
 }
 
-/** Draws `s` with the SVG renderer and `t` (by default the same scene) with the canvas renderer; returns the differing fraction at a tolerance of 48 and of 0. */
-async function both(browser: PwBrowser, s: NAscii, t: NAscii = s): Promise<[number, number]> {
+/** Draws `s` with the SVG renderer and `t` (by default the same scene) with the canvas renderer; returns the differing fraction at a tolerance of 48 and of 0, and both PNGs. */
+async function both(browser: PwBrowser, s: NAscii, t: NAscii = s): Promise<[number, number, Buffer, Buffer]> {
   const { w, h } = canvasSize(s);
   const svg = await openSvg(emitAsciiSvg(s), { w, h, fps: s.fps }, { browser });
   const fromSvg = await svg.renderFrame(0);
@@ -68,10 +68,10 @@ async function both(browser: PwBrowser, s: NAscii, t: NAscii = s): Promise<[numb
   await canvas.close();
   const [ra, rb] = await decodeImages([fromSvg, fromCanvas as Buffer], { browser });
   if (!ra || !rb) throw new Error("decoding gave no image");
-  return [differing(ra, rb, 48), differing(ra, rb, 0)];
+  return [differing(ra, rb, 48), differing(ra, rb, 0), fromSvg as Buffer, fromCanvas as Buffer];
 }
 
-test("the SVG and canvas renderers draw one small coloured frame alike: under 2 percent of pixels differ", async () => {
+test("the SVG and canvas renderers draw one small coloured frame alike: under 2 percent of pixels differ", async ({}, testInfo) => {
   const { browser } = await launchBrowser();
   try {
     const cases: [string, Record<string, unknown>][] = [
@@ -83,8 +83,14 @@ test("the SVG and canvas renderers draw one small coloured frame alike: under 2 
     ];
     const results: string[] = [];
     for (const [name, style] of cases) {
-      const [f, exact] = await both(browser, sample(style));
+      const [f, exact, fromSvg, fromCanvas] = await both(browser, sample(style));
       results.push(`${name}: ${(f * 100).toFixed(2)}% (${(exact * 100).toFixed(2)}% not exactly equal)`);
+      if (f >= 0.02) {
+        // Keep both pictures so a failure on another platform can be looked at, not guessed at.
+        const slug = name.replace(/\W+/g, "-");
+        await testInfo.attach(`${slug}-svg.png`, { body: fromSvg, contentType: "image/png" });
+        await testInfo.attach(`${slug}-canvas.png`, { body: fromCanvas, contentType: "image/png" });
+      }
       expect(f, name).toBeLessThan(0.02);
     }
     console.log(`renderers differ in: ${results.join(", ")}`);
