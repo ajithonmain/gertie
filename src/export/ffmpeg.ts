@@ -111,7 +111,13 @@ export interface Probe {
 /** Stream facts from ffprobe. Frame count is counted, not read from the header, because GIF and WebP headers lie. */
 export function probe(file: string, countFrames = true): Probe {
   const r = spawnSync("ffprobe", ["-v", "error", "-select_streams", "v:0", ...(countFrames ? ["-count_frames"] : []), "-show_entries", "stream=codec_name,width,height,nb_read_frames,nb_frames,duration:format=duration", "-of", "json", file], { encoding: "utf8", ...syncLimit("decode") });
-  if (r.status !== 0) throw new Error(`ffprobe failed on ${file}: ${r.stderr.trim()}`);
+  if (r.error) {
+    const missing = (r.error as NodeJS.ErrnoException).code === "ENOENT";
+    throw new Error(missing
+      ? `ffprobe was not found, so ${file} cannot be read. Install ffmpeg, which includes ffprobe (macOS: brew install ffmpeg; Debian or Ubuntu: apt install ffmpeg), then run: node scripts/gertie.mjs doctor`
+      : `ffprobe could not run on ${file}: ${r.error.message}`);
+  }
+  if (r.status !== 0) throw new Error(`ffprobe failed on ${file}: ${(r.stderr ?? "").trim()}`);
   const j = JSON.parse(r.stdout) as { streams: { codec_name: string; width: number; height: number; nb_read_frames?: string; nb_frames?: string; duration?: string }[]; format: { duration?: string } };
   const s = j.streams[0];
   if (!s) throw new Error(`no video stream in ${file}`);

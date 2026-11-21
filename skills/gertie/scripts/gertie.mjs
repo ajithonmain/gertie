@@ -8298,7 +8298,11 @@ function rawFrame(file, opts = {}) {
 }
 function probe(file, countFrames2 = true) {
   const r = spawnSync("ffprobe", ["-v", "error", "-select_streams", "v:0", ...countFrames2 ? ["-count_frames"] : [], "-show_entries", "stream=codec_name,width,height,nb_read_frames,nb_frames,duration:format=duration", "-of", "json", file], { encoding: "utf8", ...syncLimit("decode") });
-  if (r.status !== 0) throw new Error(`ffprobe failed on ${file}: ${r.stderr.trim()}`);
+  if (r.error) {
+    const missing = r.error.code === "ENOENT";
+    throw new Error(missing ? `ffprobe was not found, so ${file} cannot be read. Install ffmpeg, which includes ffprobe (macOS: brew install ffmpeg; Debian or Ubuntu: apt install ffmpeg), then run: node scripts/gertie.mjs doctor` : `ffprobe could not run on ${file}: ${r.error.message}`);
+  }
+  if (r.status !== 0) throw new Error(`ffprobe failed on ${file}: ${(r.stderr ?? "").trim()}`);
   const j = JSON.parse(r.stdout);
   const s = j.streams[0];
   if (!s) throw new Error(`no video stream in ${file}`);

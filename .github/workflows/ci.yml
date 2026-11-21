@@ -12,6 +12,8 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
+      # Some unit tests read pictures and video through ffmpeg and ffprobe.
+      - run: sudo apt-get update && sudo apt-get install -y ffmpeg
       - run: npm run typecheck
       - run: npm run check:licences
       - run: npm test
